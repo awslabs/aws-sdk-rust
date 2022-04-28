@@ -1215,17 +1215,51 @@ impl AsRef<str> for SourceFrequency {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceKeyword {
-    /// <p> The method of input for the keyword. </p>
+    /// <p> The input method for the keyword. </p>
     pub keyword_input_type: std::option::Option<crate::model::KeywordInputType>,
-    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
+    /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
+    /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
+    /// <ul>
+    /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of Config managed rules</a>.</p>
+    /// <ul>
+    /// <li> <p>Managed rule name: <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-acl-prohibited.html">s3-bucket-acl-prohibited</a> </p> <p> <code>keywordValue</code>: <code>S3_BUCKET_ACL_PROHIBITED</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. This prefix distinguishes the rule from a managed rule.</p>
+    /// <ul>
+    /// <li> <p>Custom rule name: my-custom-config-rule</p> <p> <code>keywordValue</code>: <code>Custom_my-custom-config-rule</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
+    /// <ul>
+    /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
+    /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
+    /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub keyword_value: std::option::Option<std::string::String>,
 }
 impl SourceKeyword {
-    /// <p> The method of input for the keyword. </p>
+    /// <p> The input method for the keyword. </p>
     pub fn keyword_input_type(&self) -> std::option::Option<&crate::model::KeywordInputType> {
         self.keyword_input_type.as_ref()
     }
-    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
+    /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
+    /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
+    /// <ul>
+    /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of Config managed rules</a>.</p>
+    /// <ul>
+    /// <li> <p>Managed rule name: <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-acl-prohibited.html">s3-bucket-acl-prohibited</a> </p> <p> <code>keywordValue</code>: <code>S3_BUCKET_ACL_PROHIBITED</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. This prefix distinguishes the rule from a managed rule.</p>
+    /// <ul>
+    /// <li> <p>Custom rule name: my-custom-config-rule</p> <p> <code>keywordValue</code>: <code>Custom_my-custom-config-rule</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
+    /// <ul>
+    /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
+    /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
+    /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn keyword_value(&self) -> std::option::Option<&str> {
         self.keyword_value.as_deref()
     }
@@ -1248,12 +1282,12 @@ pub mod source_keyword {
         pub(crate) keyword_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The method of input for the keyword. </p>
+        /// <p> The input method for the keyword. </p>
         pub fn keyword_input_type(mut self, input: crate::model::KeywordInputType) -> Self {
             self.keyword_input_type = Some(input);
             self
         }
-        /// <p> The method of input for the keyword. </p>
+        /// <p> The input method for the keyword. </p>
         pub fn set_keyword_input_type(
             mut self,
             input: std::option::Option<crate::model::KeywordInputType>,
@@ -1261,12 +1295,46 @@ pub mod source_keyword {
             self.keyword_input_type = input;
             self
         }
-        /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
+        /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
+        /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
+        /// <ul>
+        /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of Config managed rules</a>.</p>
+        /// <ul>
+        /// <li> <p>Managed rule name: <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-acl-prohibited.html">s3-bucket-acl-prohibited</a> </p> <p> <code>keywordValue</code>: <code>S3_BUCKET_ACL_PROHIBITED</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. This prefix distinguishes the rule from a managed rule.</p>
+        /// <ul>
+        /// <li> <p>Custom rule name: my-custom-config-rule</p> <p> <code>keywordValue</code>: <code>Custom_my-custom-config-rule</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
+        /// <ul>
+        /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
+        /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
+        /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
+        /// </ul> </li>
+        /// </ul>
         pub fn keyword_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.keyword_value = Some(input.into());
             self
         }
-        /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
+        /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
+        /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
+        /// <ul>
+        /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of Config managed rules</a>.</p>
+        /// <ul>
+        /// <li> <p>Managed rule name: <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-acl-prohibited.html">s3-bucket-acl-prohibited</a> </p> <p> <code>keywordValue</code>: <code>S3_BUCKET_ACL_PROHIBITED</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. This prefix distinguishes the rule from a managed rule.</p>
+        /// <ul>
+        /// <li> <p>Custom rule name: my-custom-config-rule</p> <p> <code>keywordValue</code>: <code>Custom_my-custom-config-rule</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.</p>
+        /// <ul>
+        /// <li> <p>Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p> <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li>
+        /// <li> <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p> <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li>
+        /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
+        /// </ul> </li>
+        /// </ul>
         pub fn set_keyword_value(
             mut self,
             input: std::option::Option<std::string::String>,

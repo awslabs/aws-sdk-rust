@@ -1225,6 +1225,9 @@ pub struct ResponseHeadersPolicyConfig {
     /// <p>A configuration for a set of custom HTTP response headers.</p>
     pub custom_headers_config:
         std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
+    /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
+    pub server_timing_headers_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyServerTimingHeadersConfig>,
 }
 impl ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
@@ -1255,6 +1258,12 @@ impl ResponseHeadersPolicyConfig {
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyCustomHeadersConfig> {
         self.custom_headers_config.as_ref()
     }
+    /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
+    pub fn server_timing_headers_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyServerTimingHeadersConfig> {
+        self.server_timing_headers_config.as_ref()
+    }
 }
 impl std::fmt::Debug for ResponseHeadersPolicyConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1264,6 +1273,10 @@ impl std::fmt::Debug for ResponseHeadersPolicyConfig {
         formatter.field("cors_config", &self.cors_config);
         formatter.field("security_headers_config", &self.security_headers_config);
         formatter.field("custom_headers_config", &self.custom_headers_config);
+        formatter.field(
+            "server_timing_headers_config",
+            &self.server_timing_headers_config,
+        );
         formatter.finish()
     }
 }
@@ -1280,6 +1293,8 @@ pub mod response_headers_policy_config {
             std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
         pub(crate) custom_headers_config:
             std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
+        pub(crate) server_timing_headers_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyServerTimingHeadersConfig>,
     }
     impl Builder {
         /// <p>A comment to describe the response headers policy.</p>
@@ -1351,6 +1366,24 @@ pub mod response_headers_policy_config {
             self.custom_headers_config = input;
             self
         }
+        /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
+        pub fn server_timing_headers_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyServerTimingHeadersConfig,
+        ) -> Self {
+            self.server_timing_headers_config = Some(input);
+            self
+        }
+        /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
+        pub fn set_server_timing_headers_config(
+            mut self,
+            input: std::option::Option<
+                crate::model::ResponseHeadersPolicyServerTimingHeadersConfig,
+            >,
+        ) -> Self {
+            self.server_timing_headers_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig)
         pub fn build(self) -> crate::model::ResponseHeadersPolicyConfig {
             crate::model::ResponseHeadersPolicyConfig {
@@ -1359,6 +1392,7 @@ pub mod response_headers_policy_config {
                 cors_config: self.cors_config,
                 security_headers_config: self.security_headers_config,
                 custom_headers_config: self.custom_headers_config,
+                server_timing_headers_config: self.server_timing_headers_config,
             }
         }
     }
@@ -1367,6 +1401,81 @@ impl ResponseHeadersPolicyConfig {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig)
     pub fn builder() -> crate::model::response_headers_policy_config::Builder {
         crate::model::response_headers_policy_config::Builder::default()
+    }
+}
+
+/// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+/// <p>You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header">Server-Timing header</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    pub enabled: std::option::Option<bool>,
+    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+    pub sampling_rate: std::option::Option<f64>,
+}
+impl ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+    pub fn sampling_rate(&self) -> std::option::Option<f64> {
+        self.sampling_rate
+    }
+}
+impl std::fmt::Debug for ResponseHeadersPolicyServerTimingHeadersConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyServerTimingHeadersConfig");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("sampling_rate", &self.sampling_rate);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig)
+pub mod response_headers_policy_server_timing_headers_config {
+    /// A builder for [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) sampling_rate: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+        pub fn sampling_rate(mut self, input: f64) -> Self {
+            self.sampling_rate = Some(input);
+            self
+        }
+        /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+        pub fn set_sampling_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.sampling_rate = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyServerTimingHeadersConfig {
+            crate::model::ResponseHeadersPolicyServerTimingHeadersConfig {
+                enabled: self.enabled,
+                sampling_rate: self.sampling_rate,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig)
+    pub fn builder() -> crate::model::response_headers_policy_server_timing_headers_config::Builder
+    {
+        crate::model::response_headers_policy_server_timing_headers_config::Builder::default()
     }
 }
 

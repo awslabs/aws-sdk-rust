@@ -401,6 +401,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMetricSet {
     }
 }
 
+/// Operation shape for `DetectMetricSetConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`detect_metric_set_config`](crate::client::Client::detect_metric_set_config).
+///
+/// See [`crate::client::fluent_builders::DetectMetricSetConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DetectMetricSetConfig {
+    _private: (),
+}
+impl DetectMetricSetConfig {
+    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigInput`](crate::input::DetectMetricSetConfigInput)
+    pub fn builder() -> crate::input::detect_metric_set_config_input::Builder {
+        crate::input::detect_metric_set_config_input::Builder::default()
+    }
+    /// Creates a new `DetectMetricSetConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DetectMetricSetConfig {
+    type Output = std::result::Result<
+        crate::output::DetectMetricSetConfigOutput,
+        crate::error::DetectMetricSetConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_detect_metric_set_config_error(response)
+        } else {
+            crate::operation_deser::parse_detect_metric_set_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetAnomalyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

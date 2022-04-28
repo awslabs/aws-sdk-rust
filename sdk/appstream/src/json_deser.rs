@@ -3247,6 +3247,13 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_appstream_usb_device_filter_strings(tokens)?
                                 );
                             }
+                            "SessionScriptS3Location" => {
+                                builder = builder.set_session_script_s3_location(
+                                    crate::json_deser::deser_structure_crate_model_s3_location(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

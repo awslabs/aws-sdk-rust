@@ -1072,6 +1072,8 @@ impl Client {
     ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::output::DescribeLoggingStatusOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>
     ///   - [`last_failure_time(Option<DateTime>)`](crate::output::DescribeLoggingStatusOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
     ///   - [`last_failure_message(Option<String>)`](crate::output::DescribeLoggingStatusOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
+    ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::output::DescribeLoggingStatusOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    ///   - [`log_exports(Option<Vec<String>>)`](crate::output::DescribeLoggingStatusOutput::log_exports): <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
     /// - On failure, responds with [`SdkError<DescribeLoggingStatusError>`](crate::error::DescribeLoggingStatusError)
     pub fn describe_logging_status(&self) -> fluent_builders::DescribeLoggingStatus {
         fluent_builders::DescribeLoggingStatus::new(self.handle.clone())
@@ -1322,6 +1324,8 @@ impl Client {
     ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::output::DisableLoggingOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>
     ///   - [`last_failure_time(Option<DateTime>)`](crate::output::DisableLoggingOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
     ///   - [`last_failure_message(Option<String>)`](crate::output::DisableLoggingOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
+    ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::output::DisableLoggingOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    ///   - [`log_exports(Option<Vec<String>>)`](crate::output::DisableLoggingOutput::log_exports): <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
     /// - On failure, responds with [`SdkError<DisableLoggingError>`](crate::error::DisableLoggingError)
     pub fn disable_logging(&self) -> fluent_builders::DisableLogging {
         fluent_builders::DisableLogging::new(self.handle.clone())
@@ -1361,6 +1365,8 @@ impl Client {
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::EnableLogging::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::EnableLogging::set_cluster_identifier): <p>The identifier of the cluster on which logging is to be started.</p>  <p>Example: <code>examplecluster</code> </p>
     ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::EnableLogging::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::EnableLogging::set_bucket_name): <p>The name of an existing S3 bucket where the log files are to be stored.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the same region as the cluster</p> </li>   <li> <p>The cluster must have read bucket and put object permissions</p> </li>  </ul>
     ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::EnableLogging::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::EnableLogging::set_s3_key_prefix): <p>The prefix applied to the log file names.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot exceed 512 characters</p> </li>   <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>    <ul>     <li> <p>x00 to x20</p> </li>     <li> <p>x22</p> </li>     <li> <p>x27</p> </li>     <li> <p>x5c</p> </li>     <li> <p>x7f or larger</p> </li>    </ul> </li>  </ul>
+    ///   - [`log_destination_type(LogDestinationType)`](crate::client::fluent_builders::EnableLogging::log_destination_type) / [`set_log_destination_type(Option<LogDestinationType>)`](crate::client::fluent_builders::EnableLogging::set_log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    ///   - [`log_exports(Vec<String>)`](crate::client::fluent_builders::EnableLogging::log_exports) / [`set_log_exports(Option<Vec<String>>)`](crate::client::fluent_builders::EnableLogging::set_log_exports): <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
     /// - On success, responds with [`EnableLoggingOutput`](crate::output::EnableLoggingOutput) with field(s):
     ///   - [`logging_enabled(bool)`](crate::output::EnableLoggingOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     ///   - [`bucket_name(Option<String>)`](crate::output::EnableLoggingOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
@@ -1368,6 +1374,8 @@ impl Client {
     ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::output::EnableLoggingOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>
     ///   - [`last_failure_time(Option<DateTime>)`](crate::output::EnableLoggingOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
     ///   - [`last_failure_message(Option<String>)`](crate::output::EnableLoggingOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
+    ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::output::EnableLoggingOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    ///   - [`log_exports(Option<Vec<String>>)`](crate::output::EnableLoggingOutput::log_exports): <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
     /// - On failure, responds with [`SdkError<EnableLoggingError>`](crate::error::EnableLoggingError)
     pub fn enable_logging(&self) -> fluent_builders::EnableLogging {
         fluent_builders::EnableLogging::new(self.handle.clone())
@@ -1789,7 +1797,7 @@ impl Client {
     ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_preferred_maintenance_window): <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>  <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>  <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
     ///   - [`automated_snapshot_retention_period(i32)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::automated_snapshot_retention_period) / [`set_automated_snapshot_retention_period(Option<i32>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_automated_snapshot_retention_period): <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>  <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>  <p>Default: The value selected for the cluster from which the snapshot was taken.</p>  <p>Constraints: Must be a value from 0 to 35.</p>
     ///   - [`manual_snapshot_retention_period(i32)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::manual_snapshot_retention_period) / [`set_manual_snapshot_retention_period(Option<i32>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_manual_snapshot_retention_period): <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
     ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_node_type): <p>The node type that the restored cluster will be provisioned with.</p>  <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ///   - [`enhanced_vpc_routing(bool)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::enhanced_vpc_routing) / [`set_enhanced_vpc_routing(Option<bool>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
     ///   - [`additional_info(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::additional_info) / [`set_additional_info(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_additional_info): <p>Reserved.</p>
@@ -1802,7 +1810,7 @@ impl Client {
     ///   - [`default_iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::default_iam_role_arn) / [`set_default_iam_role_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
     ///   - [`reserved_node_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::reserved_node_id) / [`set_reserved_node_id(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_reserved_node_id): <p>The identifier of the target reserved node offering.</p>
     ///   - [`target_reserved_node_offering_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::target_reserved_node_offering_id) / [`set_target_reserved_node_offering_id(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_target_reserved_node_offering_id): <p>The identifier of the target reserved node offering.</p>
-    ///   - [`encrypted(bool)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_encrypted): <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+    ///   - [`encrypted(bool)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_encrypted): <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
     /// - On success, responds with [`RestoreFromClusterSnapshotOutput`](crate::output::RestoreFromClusterSnapshotOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::RestoreFromClusterSnapshotOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<RestoreFromClusterSnapshotError>`](crate::error::RestoreFromClusterSnapshotError)
@@ -10574,6 +10582,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_key_prefix(input);
             self
         }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn log_destination_type(mut self, input: crate::model::LogDestinationType) -> Self {
+            self.inner = self.inner.log_destination_type(input);
+            self
+        }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn set_log_destination_type(
+            mut self,
+            input: std::option::Option<crate::model::LogDestinationType>,
+        ) -> Self {
+            self.inner = self.inner.set_log_destination_type(input);
+            self
+        }
+        /// Appends an item to `LogExports`.
+        ///
+        /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+        ///
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_exports(input.into());
+            self
+        }
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn set_log_exports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_log_exports(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `EnableSnapshotCopy`.
     ///
@@ -13724,12 +13762,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_manual_snapshot_retention_period(input);
             self
         }
-        /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -13912,12 +13950,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_reserved_node_offering_id(input);
             self
         }
-        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.inner = self.inner.encrypted(input);
             self
         }
-        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_encrypted(input);
             self

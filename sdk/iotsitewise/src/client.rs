@@ -145,6 +145,57 @@ impl Client {
     ) -> fluent_builders::BatchDisassociateProjectAssets {
         fluent_builders::BatchDisassociateProjectAssets::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchGetAssetPropertyAggregates`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`entries(Vec<BatchGetAssetPropertyAggregatesEntry>)`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::entries) / [`set_entries(Option<Vec<BatchGetAssetPropertyAggregatesEntry>>)`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::set_entries): <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::BatchGetAssetPropertyAggregates::set_max_results): <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>  <ul>   <li> <p>The size of the result set is less than 1 MB.</p> </li>   <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>  </ul>
+    /// - On success, responds with [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput) with field(s):
+    ///   - [`error_entries(Option<Vec<BatchGetAssetPropertyAggregatesErrorEntry>>)`](crate::output::BatchGetAssetPropertyAggregatesOutput::error_entries): <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    ///   - [`success_entries(Option<Vec<BatchGetAssetPropertyAggregatesSuccessEntry>>)`](crate::output::BatchGetAssetPropertyAggregatesOutput::success_entries): <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    ///   - [`skipped_entries(Option<Vec<BatchGetAssetPropertyAggregatesSkippedEntry>>)`](crate::output::BatchGetAssetPropertyAggregatesOutput::skipped_entries): <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::BatchGetAssetPropertyAggregatesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<BatchGetAssetPropertyAggregatesError>`](crate::error::BatchGetAssetPropertyAggregatesError)
+    pub fn batch_get_asset_property_aggregates(
+        &self,
+    ) -> fluent_builders::BatchGetAssetPropertyAggregates {
+        fluent_builders::BatchGetAssetPropertyAggregates::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchGetAssetPropertyValue`](crate::client::fluent_builders::BatchGetAssetPropertyValue) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::BatchGetAssetPropertyValue::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`entries(Vec<BatchGetAssetPropertyValueEntry>)`](crate::client::fluent_builders::BatchGetAssetPropertyValue::entries) / [`set_entries(Option<Vec<BatchGetAssetPropertyValueEntry>>)`](crate::client::fluent_builders::BatchGetAssetPropertyValue::set_entries): <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::BatchGetAssetPropertyValue::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::BatchGetAssetPropertyValue::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput) with field(s):
+    ///   - [`error_entries(Option<Vec<BatchGetAssetPropertyValueErrorEntry>>)`](crate::output::BatchGetAssetPropertyValueOutput::error_entries): <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    ///   - [`success_entries(Option<Vec<BatchGetAssetPropertyValueSuccessEntry>>)`](crate::output::BatchGetAssetPropertyValueOutput::success_entries): <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    ///   - [`skipped_entries(Option<Vec<BatchGetAssetPropertyValueSkippedEntry>>)`](crate::output::BatchGetAssetPropertyValueOutput::skipped_entries): <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::BatchGetAssetPropertyValueOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<BatchGetAssetPropertyValueError>`](crate::error::BatchGetAssetPropertyValueError)
+    pub fn batch_get_asset_property_value(&self) -> fluent_builders::BatchGetAssetPropertyValue {
+        fluent_builders::BatchGetAssetPropertyValue::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchGetAssetPropertyValueHistory`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`entries(Vec<BatchGetAssetPropertyValueHistoryEntry>)`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::entries) / [`set_entries(Option<Vec<BatchGetAssetPropertyValueHistoryEntry>>)`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::set_entries): <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::BatchGetAssetPropertyValueHistory::set_max_results): <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>  <ul>   <li> <p>The size of the result set is less than 1 MB.</p> </li>   <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>  </ul>
+    /// - On success, responds with [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput) with field(s):
+    ///   - [`error_entries(Option<Vec<BatchGetAssetPropertyValueHistoryErrorEntry>>)`](crate::output::BatchGetAssetPropertyValueHistoryOutput::error_entries): <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    ///   - [`success_entries(Option<Vec<BatchGetAssetPropertyValueHistorySuccessEntry>>)`](crate::output::BatchGetAssetPropertyValueHistoryOutput::success_entries): <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    ///   - [`skipped_entries(Option<Vec<BatchGetAssetPropertyValueHistorySkippedEntry>>)`](crate::output::BatchGetAssetPropertyValueHistoryOutput::skipped_entries): <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::BatchGetAssetPropertyValueHistoryOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<BatchGetAssetPropertyValueHistoryError>`](crate::error::BatchGetAssetPropertyValueHistoryError)
+    pub fn batch_get_asset_property_value_history(
+        &self,
+    ) -> fluent_builders::BatchGetAssetPropertyValueHistory {
+        fluent_builders::BatchGetAssetPropertyValueHistory::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`BatchPutAssetPropertyValue`](crate::client::fluent_builders::BatchPutAssetPropertyValue) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1384,6 +1435,287 @@ pub mod fluent_builders {
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetAssetPropertyAggregates`.
+    ///
+    /// <p>Gets aggregated values (for example, average, minimum, and maximum) for one or more asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetAssetPropertyAggregates {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_asset_property_aggregates_input::Builder,
+    }
+    impl BatchGetAssetPropertyAggregates {
+        /// Creates a new `BatchGetAssetPropertyAggregates`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetAssetPropertyAggregatesOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyAggregatesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::BatchGetAssetPropertyAggregatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::BatchGetAssetPropertyAggregatesPaginator {
+            crate::paginator::BatchGetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
+        }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesEntry,
+        ) -> Self {
+            self.inner = self.inner.entries(input);
+            self
+        }
+        /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn set_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesEntry>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_entries(input);
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetAssetPropertyValue`.
+    ///
+    /// <p>Gets the current value for one or more asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetAssetPropertyValue {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_asset_property_value_input::Builder,
+    }
+    impl BatchGetAssetPropertyValue {
+        /// Creates a new `BatchGetAssetPropertyValue`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetAssetPropertyValueOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyValueError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::BatchGetAssetPropertyValuePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::BatchGetAssetPropertyValuePaginator {
+            crate::paginator::BatchGetAssetPropertyValuePaginator::new(self.handle, self.inner)
+        }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn entries(mut self, input: crate::model::BatchGetAssetPropertyValueEntry) -> Self {
+            self.inner = self.inner.entries(input);
+            self
+        }
+        /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn set_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueEntry>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_entries(input);
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetAssetPropertyValueHistory`.
+    ///
+    /// <p>Gets the historical values for one or more asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetAssetPropertyValueHistory {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_asset_property_value_history_input::Builder,
+    }
+    impl BatchGetAssetPropertyValueHistory {
+        /// Creates a new `BatchGetAssetPropertyValueHistory`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetAssetPropertyValueHistoryOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyValueHistoryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::BatchGetAssetPropertyValueHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::BatchGetAssetPropertyValueHistoryPaginator {
+            crate::paginator::BatchGetAssetPropertyValueHistoryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistoryEntry,
+        ) -> Self {
+            self.inner = self.inner.entries(input);
+            self
+        }
+        /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn set_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryEntry>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_entries(input);
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }

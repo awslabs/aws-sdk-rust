@@ -9,15 +9,16 @@ pub mod analyze_document_input {
         pub(crate) document: std::option::Option<crate::model::Document>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
         pub(crate) human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
+        pub(crate) queries_config: std::option::Option<crate::model::QueriesConfig>,
     }
     impl Builder {
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
             self.document = Some(input);
             self
         }
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
             self.document = input;
@@ -55,6 +56,19 @@ pub mod analyze_document_input {
             self.human_loop_config = input;
             self
         }
+        /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+        pub fn queries_config(mut self, input: crate::model::QueriesConfig) -> Self {
+            self.queries_config = Some(input);
+            self
+        }
+        /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+        pub fn set_queries_config(
+            mut self,
+            input: std::option::Option<crate::model::QueriesConfig>,
+        ) -> Self {
+            self.queries_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput)
         pub fn build(
             self,
@@ -66,6 +80,7 @@ pub mod analyze_document_input {
                 document: self.document,
                 feature_types: self.feature_types,
                 human_loop_config: self.human_loop_config,
+                queries_config: self.queries_config,
             })
         }
     }
@@ -1137,6 +1152,7 @@ pub mod start_document_analysis_input {
         pub(crate) notification_channel: std::option::Option<crate::model::NotificationChannel>,
         pub(crate) output_config: std::option::Option<crate::model::OutputConfig>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) queries_config: std::option::Option<crate::model::QueriesConfig>,
     }
     impl Builder {
         /// <p>The location of the document to be processed.</p>
@@ -1230,6 +1246,19 @@ pub mod start_document_analysis_input {
             self.kms_key_id = input;
             self
         }
+        /// <p></p>
+        pub fn queries_config(mut self, input: crate::model::QueriesConfig) -> Self {
+            self.queries_config = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_queries_config(
+            mut self,
+            input: std::option::Option<crate::model::QueriesConfig>,
+        ) -> Self {
+            self.queries_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput)
         pub fn build(
             self,
@@ -1245,6 +1274,7 @@ pub mod start_document_analysis_input {
                 notification_channel: self.notification_channel,
                 output_config: self.output_config,
                 kms_key_id: self.kms_key_id,
+                queries_config: self.queries_config,
             })
         }
     }
@@ -1921,6 +1951,8 @@ pub struct StartDocumentAnalysisInput {
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub queries_config: std::option::Option<crate::model::QueriesConfig>,
 }
 impl StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
@@ -1951,6 +1983,10 @@ impl StartDocumentAnalysisInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p></p>
+    pub fn queries_config(&self) -> std::option::Option<&crate::model::QueriesConfig> {
+        self.queries_config.as_ref()
+    }
 }
 impl std::fmt::Debug for StartDocumentAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1962,6 +1998,7 @@ impl std::fmt::Debug for StartDocumentAnalysisInput {
         formatter.field("notification_channel", &self.notification_channel);
         formatter.field("output_config", &self.output_config);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("queries_config", &self.queries_config);
         formatter.finish()
     }
 }
@@ -2150,16 +2187,18 @@ impl std::fmt::Debug for AnalyzeExpenseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeDocumentInput {
-    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     pub document: std::option::Option<crate::model::Document>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
+    /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+    pub queries_config: std::option::Option<crate::model::QueriesConfig>,
 }
 impl AnalyzeDocumentInput {
-    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     pub fn document(&self) -> std::option::Option<&crate::model::Document> {
         self.document.as_ref()
@@ -2172,6 +2211,10 @@ impl AnalyzeDocumentInput {
     pub fn human_loop_config(&self) -> std::option::Option<&crate::model::HumanLoopConfig> {
         self.human_loop_config.as_ref()
     }
+    /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+    pub fn queries_config(&self) -> std::option::Option<&crate::model::QueriesConfig> {
+        self.queries_config.as_ref()
+    }
 }
 impl std::fmt::Debug for AnalyzeDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2179,6 +2222,7 @@ impl std::fmt::Debug for AnalyzeDocumentInput {
         formatter.field("document", &self.document);
         formatter.field("feature_types", &self.feature_types);
         formatter.field("human_loop_config", &self.human_loop_config);
+        formatter.field("queries_config", &self.queries_config);
         formatter.finish()
     }
 }

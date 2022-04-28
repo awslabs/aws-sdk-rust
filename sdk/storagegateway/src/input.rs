@@ -938,13 +938,11 @@ pub mod assign_tape_pool_input {
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -2258,13 +2256,13 @@ pub mod create_nfs_file_share_input {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn set_default_storage_class(
             mut self,
@@ -2749,13 +2747,13 @@ pub mod create_smb_file_share_input {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn set_default_storage_class(
             mut self,
@@ -4164,13 +4162,11 @@ pub mod create_tapes_input {
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -4417,13 +4413,11 @@ pub mod create_tape_with_barcode_input {
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -14822,13 +14816,13 @@ pub mod update_nfs_file_share_input {
             self.nfs_file_share_defaults = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn set_default_storage_class(
             mut self,
@@ -15198,13 +15192,13 @@ pub mod update_smb_file_share_input {
             self.kms_key = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn set_default_storage_class(
             mut self,
@@ -16621,7 +16615,7 @@ pub struct UpdateSmbFileShareInput {
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
@@ -16687,7 +16681,7 @@ impl UpdateSmbFileShareInput {
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> std::option::Option<&str> {
         self.default_storage_class.as_deref()
@@ -16810,7 +16804,7 @@ pub struct UpdateNfsFileShareInput {
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The default values for the file share. Optional.</p>
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
@@ -16873,7 +16867,7 @@ impl UpdateNfsFileShareInput {
     ) -> std::option::Option<&crate::model::NfsFileShareDefaults> {
         self.nfs_file_share_defaults.as_ref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> std::option::Option<&str> {
         self.default_storage_class.as_deref()
@@ -18872,7 +18866,6 @@ pub struct CreateTapeWithBarcodeInput {
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
     pub worm: bool,
@@ -18908,7 +18901,6 @@ impl CreateTapeWithBarcodeInput {
         self.kms_key.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -18964,7 +18956,6 @@ pub struct CreateTapesInput {
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
     pub worm: bool,
@@ -19010,7 +19001,6 @@ impl CreateTapesInput {
         self.kms_key.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -19302,7 +19292,7 @@ pub struct CreateSmbFileShareInput {
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
@@ -19406,7 +19396,7 @@ impl CreateSmbFileShareInput {
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> std::option::Option<&str> {
         self.default_storage_class.as_deref()
@@ -19576,7 +19566,7 @@ pub struct CreateNfsFileShareInput {
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
@@ -19672,7 +19662,7 @@ impl CreateNfsFileShareInput {
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> std::option::Option<&str> {
         self.default_storage_class.as_deref()
@@ -20080,7 +20070,6 @@ pub struct AssignTapePoolInput {
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
@@ -20092,7 +20081,6 @@ impl AssignTapePoolInput {
         self.tape_arn.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }

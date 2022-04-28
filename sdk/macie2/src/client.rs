@@ -462,7 +462,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetFindings`](crate::client::fluent_builders::GetFindings) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::GetFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetFindings::set_finding_ids): <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::GetFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetFindings::set_finding_ids): <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::GetFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::GetFindings::set_sort_criteria): <p>The criteria for sorting the results of the request.</p>
     /// - On success, responds with [`GetFindingsOutput`](crate::output::GetFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<Finding>>)`](crate::output::GetFindingsOutput::findings): <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
@@ -780,7 +780,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -2876,12 +2876,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
-        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.finding_ids(input.into());
             self
         }
-        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4575,12 +4575,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

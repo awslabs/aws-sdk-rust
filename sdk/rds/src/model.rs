@@ -5056,6 +5056,10 @@ pub struct DbCluster {
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
+    /// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -5361,6 +5365,13 @@ impl DbCluster {
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
     }
+    /// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfigurationInfo> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DbCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5480,6 +5491,10 @@ impl std::fmt::Debug for DbCluster {
             "performance_insights_retention_period",
             &self.performance_insights_retention_period,
         );
+        formatter.field(
+            "serverless_v2_scaling_configuration",
+            &self.serverless_v2_scaling_configuration,
+        );
         formatter.finish()
     }
 }
@@ -5566,6 +5581,8 @@ pub mod db_cluster {
         pub(crate) performance_insights_enabled: std::option::Option<bool>,
         pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) performance_insights_retention_period: std::option::Option<i32>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
     }
     impl Builder {
         /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -6512,6 +6529,24 @@ pub mod db_cluster {
             self.performance_insights_retention_period = input;
             self
         }
+        /// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfigurationInfo,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfigurationInfo>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbCluster`](crate::model::DbCluster)
         pub fn build(self) -> crate::model::DbCluster {
             crate::model::DbCluster {
@@ -6582,6 +6617,7 @@ pub mod db_cluster {
                 performance_insights_enabled: self.performance_insights_enabled,
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
                 performance_insights_retention_period: self.performance_insights_retention_period,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             }
         }
     }
@@ -6590,6 +6626,80 @@ impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::model::DbCluster)
     pub fn builder() -> crate::model::db_cluster::Builder {
         crate::model::db_cluster::Builder::default()
+    }
+}
+
+/// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerlessV2ScalingConfigurationInfo {
+    /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+    pub min_capacity: std::option::Option<f64>,
+    /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+    pub max_capacity: std::option::Option<f64>,
+}
+impl ServerlessV2ScalingConfigurationInfo {
+    /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+    pub fn min_capacity(&self) -> std::option::Option<f64> {
+        self.min_capacity
+    }
+    /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+}
+impl std::fmt::Debug for ServerlessV2ScalingConfigurationInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServerlessV2ScalingConfigurationInfo");
+        formatter.field("min_capacity", &self.min_capacity);
+        formatter.field("max_capacity", &self.max_capacity);
+        formatter.finish()
+    }
+}
+/// See [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo)
+pub mod serverless_v2_scaling_configuration_info {
+    /// A builder for [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) min_capacity: std::option::Option<f64>,
+        pub(crate) max_capacity: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+        pub fn min_capacity(mut self, input: f64) -> Self {
+            self.min_capacity = Some(input);
+            self
+        }
+        /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+        pub fn set_min_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.min_capacity = input;
+            self
+        }
+        /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.max_capacity = Some(input);
+            self
+        }
+        /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_capacity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo)
+        pub fn build(self) -> crate::model::ServerlessV2ScalingConfigurationInfo {
+            crate::model::ServerlessV2ScalingConfigurationInfo {
+                min_capacity: self.min_capacity,
+                max_capacity: self.max_capacity,
+            }
+        }
+    }
+}
+impl ServerlessV2ScalingConfigurationInfo {
+    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo)
+    pub fn builder() -> crate::model::serverless_v2_scaling_configuration_info::Builder {
+        crate::model::serverless_v2_scaling_configuration_info::Builder::default()
     }
 }
 
@@ -7704,6 +7814,80 @@ impl Ec2SecurityGroup {
     /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup)
     pub fn builder() -> crate::model::ec2_security_group::Builder {
         crate::model::ec2_security_group::Builder::default()
+    }
+}
+
+/// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerlessV2ScalingConfiguration {
+    /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+    pub min_capacity: std::option::Option<f64>,
+    /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+    pub max_capacity: std::option::Option<f64>,
+}
+impl ServerlessV2ScalingConfiguration {
+    /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+    pub fn min_capacity(&self) -> std::option::Option<f64> {
+        self.min_capacity
+    }
+    /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+}
+impl std::fmt::Debug for ServerlessV2ScalingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServerlessV2ScalingConfiguration");
+        formatter.field("min_capacity", &self.min_capacity);
+        formatter.field("max_capacity", &self.max_capacity);
+        formatter.finish()
+    }
+}
+/// See [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration)
+pub mod serverless_v2_scaling_configuration {
+    /// A builder for [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) min_capacity: std::option::Option<f64>,
+        pub(crate) max_capacity: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+        pub fn min_capacity(mut self, input: f64) -> Self {
+            self.min_capacity = Some(input);
+            self
+        }
+        /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
+        pub fn set_min_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.min_capacity = input;
+            self
+        }
+        /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.max_capacity = Some(input);
+            self
+        }
+        /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_capacity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration)
+        pub fn build(self) -> crate::model::ServerlessV2ScalingConfiguration {
+            crate::model::ServerlessV2ScalingConfiguration {
+                min_capacity: self.min_capacity,
+                max_capacity: self.max_capacity,
+            }
+        }
+    }
+}
+impl ServerlessV2ScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration)
+    pub fn builder() -> crate::model::serverless_v2_scaling_configuration::Builder {
+        crate::model::serverless_v2_scaling_configuration::Builder::default()
     }
 }
 
@@ -14691,60 +14875,6 @@ impl Filter {
     }
 }
 
-/// <p>Contains the cause of an installation media failure. Installation media is used for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InstallationMediaFailureCause {
-    /// <p>The reason that an installation media import failed.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl InstallationMediaFailureCause {
-    /// <p>The reason that an installation media import failed.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InstallationMediaFailureCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstallationMediaFailureCause");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-/// See [`InstallationMediaFailureCause`](crate::model::InstallationMediaFailureCause)
-pub mod installation_media_failure_cause {
-    /// A builder for [`InstallationMediaFailureCause`](crate::model::InstallationMediaFailureCause)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The reason that an installation media import failed.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The reason that an installation media import failed.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InstallationMediaFailureCause`](crate::model::InstallationMediaFailureCause)
-        pub fn build(self) -> crate::model::InstallationMediaFailureCause {
-            crate::model::InstallationMediaFailureCause {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InstallationMediaFailureCause {
-    /// Creates a new builder-style object to manufacture [`InstallationMediaFailureCause`](crate::model::InstallationMediaFailureCause)
-    pub fn builder() -> crate::model::installation_media_failure_cause::Builder {
-        crate::model::installation_media_failure_cause::Builder::default()
-    }
-}
-
 /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17391,228 +17521,6 @@ impl MinimumEngineVersionPerAllowedValue {
     /// Creates a new builder-style object to manufacture [`MinimumEngineVersionPerAllowedValue`](crate::model::MinimumEngineVersionPerAllowedValue)
     pub fn builder() -> crate::model::minimum_engine_version_per_allowed_value::Builder {
         crate::model::minimum_engine_version_per_allowed_value::Builder::default()
-    }
-}
-
-/// <p>Contains the installation media for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InstallationMedia {
-    /// <p>The installation medium ID.</p>
-    pub installation_media_id: std::option::Option<std::string::String>,
-    /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-    pub custom_availability_zone_id: std::option::Option<std::string::String>,
-    /// <p>The DB engine.</p>
-    pub engine: std::option::Option<std::string::String>,
-    /// <p>The engine version of the DB engine.</p>
-    pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The path to the installation medium for the DB engine.</p>
-    pub engine_installation_media_path: std::option::Option<std::string::String>,
-    /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-    pub os_installation_media_path: std::option::Option<std::string::String>,
-    /// <p>The status of the installation medium.</p>
-    pub status: std::option::Option<std::string::String>,
-    /// <p>If an installation media failure occurred, the cause of the failure.</p>
-    pub failure_cause: std::option::Option<crate::model::InstallationMediaFailureCause>,
-}
-impl InstallationMedia {
-    /// <p>The installation medium ID.</p>
-    pub fn installation_media_id(&self) -> std::option::Option<&str> {
-        self.installation_media_id.as_deref()
-    }
-    /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_id.as_deref()
-    }
-    /// <p>The DB engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
-        self.engine.as_deref()
-    }
-    /// <p>The engine version of the DB engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
-        self.engine_version.as_deref()
-    }
-    /// <p>The path to the installation medium for the DB engine.</p>
-    pub fn engine_installation_media_path(&self) -> std::option::Option<&str> {
-        self.engine_installation_media_path.as_deref()
-    }
-    /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-    pub fn os_installation_media_path(&self) -> std::option::Option<&str> {
-        self.os_installation_media_path.as_deref()
-    }
-    /// <p>The status of the installation medium.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
-        self.status.as_deref()
-    }
-    /// <p>If an installation media failure occurred, the cause of the failure.</p>
-    pub fn failure_cause(
-        &self,
-    ) -> std::option::Option<&crate::model::InstallationMediaFailureCause> {
-        self.failure_cause.as_ref()
-    }
-}
-impl std::fmt::Debug for InstallationMedia {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstallationMedia");
-        formatter.field("installation_media_id", &self.installation_media_id);
-        formatter.field(
-            "custom_availability_zone_id",
-            &self.custom_availability_zone_id,
-        );
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "engine_installation_media_path",
-            &self.engine_installation_media_path,
-        );
-        formatter.field(
-            "os_installation_media_path",
-            &self.os_installation_media_path,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("failure_cause", &self.failure_cause);
-        formatter.finish()
-    }
-}
-/// See [`InstallationMedia`](crate::model::InstallationMedia)
-pub mod installation_media {
-    /// A builder for [`InstallationMedia`](crate::model::InstallationMedia)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) installation_media_id: std::option::Option<std::string::String>,
-        pub(crate) custom_availability_zone_id: std::option::Option<std::string::String>,
-        pub(crate) engine: std::option::Option<std::string::String>,
-        pub(crate) engine_version: std::option::Option<std::string::String>,
-        pub(crate) engine_installation_media_path: std::option::Option<std::string::String>,
-        pub(crate) os_installation_media_path: std::option::Option<std::string::String>,
-        pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) failure_cause: std::option::Option<crate::model::InstallationMediaFailureCause>,
-    }
-    impl Builder {
-        /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(input.into());
-            self
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn set_installation_media_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.installation_media_id = input;
-            self
-        }
-        /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = Some(input.into());
-            self
-        }
-        /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = input;
-            self
-        }
-        /// <p>The DB engine.</p>
-        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-            self.engine = Some(input.into());
-            self
-        }
-        /// <p>The DB engine.</p>
-        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
-        }
-        /// <p>The engine version of the DB engine.</p>
-        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(input.into());
-            self
-        }
-        /// <p>The engine version of the DB engine.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
-        }
-        /// <p>The path to the installation medium for the DB engine.</p>
-        pub fn engine_installation_media_path(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.engine_installation_media_path = Some(input.into());
-            self
-        }
-        /// <p>The path to the installation medium for the DB engine.</p>
-        pub fn set_engine_installation_media_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_installation_media_path = input;
-            self
-        }
-        /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.os_installation_media_path = Some(input.into());
-            self
-        }
-        /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-        pub fn set_os_installation_media_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.os_installation_media_path = input;
-            self
-        }
-        /// <p>The status of the installation medium.</p>
-        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-            self.status = Some(input.into());
-            self
-        }
-        /// <p>The status of the installation medium.</p>
-        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
-        }
-        /// <p>If an installation media failure occurred, the cause of the failure.</p>
-        pub fn failure_cause(mut self, input: crate::model::InstallationMediaFailureCause) -> Self {
-            self.failure_cause = Some(input);
-            self
-        }
-        /// <p>If an installation media failure occurred, the cause of the failure.</p>
-        pub fn set_failure_cause(
-            mut self,
-            input: std::option::Option<crate::model::InstallationMediaFailureCause>,
-        ) -> Self {
-            self.failure_cause = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InstallationMedia`](crate::model::InstallationMedia)
-        pub fn build(self) -> crate::model::InstallationMedia {
-            crate::model::InstallationMedia {
-                installation_media_id: self.installation_media_id,
-                custom_availability_zone_id: self.custom_availability_zone_id,
-                engine: self.engine,
-                engine_version: self.engine_version,
-                engine_installation_media_path: self.engine_installation_media_path,
-                os_installation_media_path: self.os_installation_media_path,
-                status: self.status,
-                failure_cause: self.failure_cause,
-            }
-        }
-    }
-}
-impl InstallationMedia {
-    /// Creates a new builder-style object to manufacture [`InstallationMedia`](crate::model::InstallationMedia)
-    pub fn builder() -> crate::model::installation_media::Builder {
-        crate::model::installation_media::Builder::default()
     }
 }
 
@@ -20507,308 +20415,6 @@ impl DbClusterBacktrack {
     /// Creates a new builder-style object to manufacture [`DbClusterBacktrack`](crate::model::DbClusterBacktrack)
     pub fn builder() -> crate::model::db_cluster_backtrack::Builder {
         crate::model::db_cluster_backtrack::Builder::default()
-    }
-}
-
-/// <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
-/// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomAvailabilityZone {
-    /// <p>The identifier of the custom AZ.</p>
-    /// <p>Amazon RDS generates a unique identifier when a custom AZ is created.</p>
-    pub custom_availability_zone_id: std::option::Option<std::string::String>,
-    /// <p>The name of the custom AZ.</p>
-    pub custom_availability_zone_name: std::option::Option<std::string::String>,
-    /// <p>The status of the custom AZ.</p>
-    pub custom_availability_zone_status: std::option::Option<std::string::String>,
-    /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website.</p>
-    pub vpn_details: std::option::Option<crate::model::VpnDetails>,
-}
-impl CustomAvailabilityZone {
-    /// <p>The identifier of the custom AZ.</p>
-    /// <p>Amazon RDS generates a unique identifier when a custom AZ is created.</p>
-    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_id.as_deref()
-    }
-    /// <p>The name of the custom AZ.</p>
-    pub fn custom_availability_zone_name(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_name.as_deref()
-    }
-    /// <p>The status of the custom AZ.</p>
-    pub fn custom_availability_zone_status(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_status.as_deref()
-    }
-    /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website.</p>
-    pub fn vpn_details(&self) -> std::option::Option<&crate::model::VpnDetails> {
-        self.vpn_details.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomAvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAvailabilityZone");
-        formatter.field(
-            "custom_availability_zone_id",
-            &self.custom_availability_zone_id,
-        );
-        formatter.field(
-            "custom_availability_zone_name",
-            &self.custom_availability_zone_name,
-        );
-        formatter.field(
-            "custom_availability_zone_status",
-            &self.custom_availability_zone_status,
-        );
-        formatter.field("vpn_details", &self.vpn_details);
-        formatter.finish()
-    }
-}
-/// See [`CustomAvailabilityZone`](crate::model::CustomAvailabilityZone)
-pub mod custom_availability_zone {
-    /// A builder for [`CustomAvailabilityZone`](crate::model::CustomAvailabilityZone)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) custom_availability_zone_id: std::option::Option<std::string::String>,
-        pub(crate) custom_availability_zone_name: std::option::Option<std::string::String>,
-        pub(crate) custom_availability_zone_status: std::option::Option<std::string::String>,
-        pub(crate) vpn_details: std::option::Option<crate::model::VpnDetails>,
-    }
-    impl Builder {
-        /// <p>The identifier of the custom AZ.</p>
-        /// <p>Amazon RDS generates a unique identifier when a custom AZ is created.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the custom AZ.</p>
-        /// <p>Amazon RDS generates a unique identifier when a custom AZ is created.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = input;
-            self
-        }
-        /// <p>The name of the custom AZ.</p>
-        pub fn custom_availability_zone_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the custom AZ.</p>
-        pub fn set_custom_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_name = input;
-            self
-        }
-        /// <p>The status of the custom AZ.</p>
-        pub fn custom_availability_zone_status(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_status = Some(input.into());
-            self
-        }
-        /// <p>The status of the custom AZ.</p>
-        pub fn set_custom_availability_zone_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_status = input;
-            self
-        }
-        /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website.</p>
-        pub fn vpn_details(mut self, input: crate::model::VpnDetails) -> Self {
-            self.vpn_details = Some(input);
-            self
-        }
-        /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website.</p>
-        pub fn set_vpn_details(
-            mut self,
-            input: std::option::Option<crate::model::VpnDetails>,
-        ) -> Self {
-            self.vpn_details = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CustomAvailabilityZone`](crate::model::CustomAvailabilityZone)
-        pub fn build(self) -> crate::model::CustomAvailabilityZone {
-            crate::model::CustomAvailabilityZone {
-                custom_availability_zone_id: self.custom_availability_zone_id,
-                custom_availability_zone_name: self.custom_availability_zone_name,
-                custom_availability_zone_status: self.custom_availability_zone_status,
-                vpn_details: self.vpn_details,
-            }
-        }
-    }
-}
-impl CustomAvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`CustomAvailabilityZone`](crate::model::CustomAvailabilityZone)
-    pub fn builder() -> crate::model::custom_availability_zone::Builder {
-        crate::model::custom_availability_zone::Builder::default()
-    }
-}
-
-/// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website.</p>
-/// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VpnDetails {
-    /// <p>The ID of the VPN.</p>
-    pub vpn_id: std::option::Option<std::string::String>,
-    /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-    pub vpn_tunnel_originator_ip: std::option::Option<std::string::String>,
-    /// <p>The IP address of network traffic from Amazon Web Services to your on-premises data center.</p>
-    pub vpn_gateway_ip: std::option::Option<std::string::String>,
-    /// <p>The preshared key (PSK) for the VPN.</p>
-    pub vpn_psk: std::option::Option<std::string::String>,
-    /// <p>The name of the VPN.</p>
-    pub vpn_name: std::option::Option<std::string::String>,
-    /// <p>The state of the VPN.</p>
-    pub vpn_state: std::option::Option<std::string::String>,
-}
-impl VpnDetails {
-    /// <p>The ID of the VPN.</p>
-    pub fn vpn_id(&self) -> std::option::Option<&str> {
-        self.vpn_id.as_deref()
-    }
-    /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-    pub fn vpn_tunnel_originator_ip(&self) -> std::option::Option<&str> {
-        self.vpn_tunnel_originator_ip.as_deref()
-    }
-    /// <p>The IP address of network traffic from Amazon Web Services to your on-premises data center.</p>
-    pub fn vpn_gateway_ip(&self) -> std::option::Option<&str> {
-        self.vpn_gateway_ip.as_deref()
-    }
-    /// <p>The preshared key (PSK) for the VPN.</p>
-    pub fn vpn_psk(&self) -> std::option::Option<&str> {
-        self.vpn_psk.as_deref()
-    }
-    /// <p>The name of the VPN.</p>
-    pub fn vpn_name(&self) -> std::option::Option<&str> {
-        self.vpn_name.as_deref()
-    }
-    /// <p>The state of the VPN.</p>
-    pub fn vpn_state(&self) -> std::option::Option<&str> {
-        self.vpn_state.as_deref()
-    }
-}
-impl std::fmt::Debug for VpnDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpnDetails");
-        formatter.field("vpn_id", &self.vpn_id);
-        formatter.field("vpn_tunnel_originator_ip", &self.vpn_tunnel_originator_ip);
-        formatter.field("vpn_gateway_ip", &self.vpn_gateway_ip);
-        formatter.field("vpn_psk", &"*** Sensitive Data Redacted ***");
-        formatter.field("vpn_name", &self.vpn_name);
-        formatter.field("vpn_state", &self.vpn_state);
-        formatter.finish()
-    }
-}
-/// See [`VpnDetails`](crate::model::VpnDetails)
-pub mod vpn_details {
-    /// A builder for [`VpnDetails`](crate::model::VpnDetails)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) vpn_id: std::option::Option<std::string::String>,
-        pub(crate) vpn_tunnel_originator_ip: std::option::Option<std::string::String>,
-        pub(crate) vpn_gateway_ip: std::option::Option<std::string::String>,
-        pub(crate) vpn_psk: std::option::Option<std::string::String>,
-        pub(crate) vpn_name: std::option::Option<std::string::String>,
-        pub(crate) vpn_state: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ID of the VPN.</p>
-        pub fn vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of the VPN.</p>
-        pub fn set_vpn_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpn_id = input;
-            self
-        }
-        /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_tunnel_originator_ip = Some(input.into());
-            self
-        }
-        /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        pub fn set_vpn_tunnel_originator_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpn_tunnel_originator_ip = input;
-            self
-        }
-        /// <p>The IP address of network traffic from Amazon Web Services to your on-premises data center.</p>
-        pub fn vpn_gateway_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_gateway_ip = Some(input.into());
-            self
-        }
-        /// <p>The IP address of network traffic from Amazon Web Services to your on-premises data center.</p>
-        pub fn set_vpn_gateway_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpn_gateway_ip = input;
-            self
-        }
-        /// <p>The preshared key (PSK) for the VPN.</p>
-        pub fn vpn_psk(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_psk = Some(input.into());
-            self
-        }
-        /// <p>The preshared key (PSK) for the VPN.</p>
-        pub fn set_vpn_psk(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpn_psk = input;
-            self
-        }
-        /// <p>The name of the VPN.</p>
-        pub fn vpn_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the VPN.</p>
-        pub fn set_vpn_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpn_name = input;
-            self
-        }
-        /// <p>The state of the VPN.</p>
-        pub fn vpn_state(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_state = Some(input.into());
-            self
-        }
-        /// <p>The state of the VPN.</p>
-        pub fn set_vpn_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpn_state = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpnDetails`](crate::model::VpnDetails)
-        pub fn build(self) -> crate::model::VpnDetails {
-            crate::model::VpnDetails {
-                vpn_id: self.vpn_id,
-                vpn_tunnel_originator_ip: self.vpn_tunnel_originator_ip,
-                vpn_gateway_ip: self.vpn_gateway_ip,
-                vpn_psk: self.vpn_psk,
-                vpn_name: self.vpn_name,
-                vpn_state: self.vpn_state,
-            }
-        }
-    }
-}
-impl VpnDetails {
-    /// Creates a new builder-style object to manufacture [`VpnDetails`](crate::model::VpnDetails)
-    pub fn builder() -> crate::model::vpn_details::Builder {
-        crate::model::vpn_details::Builder::default()
     }
 }
 

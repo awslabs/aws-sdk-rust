@@ -194,6 +194,12 @@ impl Client {
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataIngestionJobOutput::created_at): <p>The time at which the data ingestion job was created. </p>
     ///   - [`status(Option<IngestionJobStatus>)`](crate::output::DescribeDataIngestionJobOutput::status): <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
     ///   - [`failed_reason(Option<String>)`](crate::output::DescribeDataIngestionJobOutput::failed_reason): <p>Specifies the reason for failure when a data ingestion job has failed. </p>
+    ///   - [`data_quality_summary(Option<DataQualitySummary>)`](crate::output::DescribeDataIngestionJobOutput::data_quality_summary): <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+    ///   - [`ingested_files_summary(Option<IngestedFilesSummary>)`](crate::output::DescribeDataIngestionJobOutput::ingested_files_summary): <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
+    ///   - [`status_detail(Option<String>)`](crate::output::DescribeDataIngestionJobOutput::status_detail): <p> Provides details about status of the ingestion job that is currently in progress. </p>
+    ///   - [`ingested_data_size(Option<i64>)`](crate::output::DescribeDataIngestionJobOutput::ingested_data_size): <p> Indicates the size of the ingested dataset. </p>
+    ///   - [`data_start_time(Option<DateTime>)`](crate::output::DescribeDataIngestionJobOutput::data_start_time): <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
+    ///   - [`data_end_time(Option<DateTime>)`](crate::output::DescribeDataIngestionJobOutput::data_end_time): <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
     /// - On failure, responds with [`SdkError<DescribeDataIngestionJobError>`](crate::error::DescribeDataIngestionJobError)
     pub fn describe_data_ingestion_job(&self) -> fluent_builders::DescribeDataIngestionJob {
         fluent_builders::DescribeDataIngestionJob::new(self.handle.clone())
@@ -211,6 +217,11 @@ impl Client {
     ///   - [`schema(Option<String>)`](crate::output::DescribeDatasetOutput::schema): <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
     ///   - [`server_side_kms_key_id(Option<String>)`](crate::output::DescribeDatasetOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
     ///   - [`ingestion_input_configuration(Option<IngestionInputConfiguration>)`](crate::output::DescribeDatasetOutput::ingestion_input_configuration): <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    ///   - [`data_quality_summary(Option<DataQualitySummary>)`](crate::output::DescribeDatasetOutput::data_quality_summary): <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+    ///   - [`ingested_files_summary(Option<IngestedFilesSummary>)`](crate::output::DescribeDatasetOutput::ingested_files_summary): <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeDatasetOutput::role_arn): <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
+    ///   - [`data_start_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::data_start_time): <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
+    ///   - [`data_end_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::data_end_time): <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset {
         fluent_builders::DescribeDataset::new(self.handle.clone())
@@ -343,6 +354,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListModelsError>`](crate::error::ListModelsError)
     pub fn list_models(&self) -> fluent_builders::ListModels {
         fluent_builders::ListModels::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSensorStatistics`](crate::client::fluent_builders::ListSensorStatistics) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSensorStatistics::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_dataset_name): <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+    ///   - [`ingestion_job_id(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::ingestion_job_id) / [`set_ingestion_job_id(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_ingestion_job_id): <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSensorStatistics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSensorStatistics::set_max_results): <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_next_token): <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    /// - On success, responds with [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput) with field(s):
+    ///   - [`sensor_statistics_summaries(Option<Vec<SensorStatisticsSummary>>)`](crate::output::ListSensorStatisticsOutput::sensor_statistics_summaries): <p> Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSensorStatisticsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    /// - On failure, responds with [`SdkError<ListSensorStatisticsError>`](crate::error::ListSensorStatisticsError)
+    pub fn list_sensor_statistics(&self) -> fluent_builders::ListSensorStatistics {
+        fluent_builders::ListSensorStatistics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -1110,7 +1136,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataIngestionJob`.
     ///
-    /// <p>Provides information on a specific data ingestion job such as creation time, dataset ARN, status, and so on. </p>
+    /// <p>Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataIngestionJob {
         handle: std::sync::Arc<super::Handle>,
@@ -1163,7 +1189,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
-    /// <p>Provides a JSON description of the data that is in each time series dataset, including names, column names, and data types.</p>
+    /// <p>Provides a JSON description of the data in each time series dataset, including names, column names, and data types.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset {
         handle: std::sync::Arc<super::Handle>,
@@ -1817,6 +1843,98 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_dataset_name_begins_with(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSensorStatistics`.
+    ///
+    /// <p> Lists statistics about the data collected for each of the sensors that have been successfully ingested in the particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSensorStatistics {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_sensor_statistics_input::Builder,
+    }
+    impl ListSensorStatistics {
+        /// Creates a new `ListSensorStatistics`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSensorStatisticsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSensorStatisticsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSensorStatisticsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSensorStatisticsPaginator {
+            crate::paginator::ListSensorStatisticsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
+            self
+        }
+        /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+        pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_name(input);
+            self
+        }
+        /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+        pub fn ingestion_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ingestion_job_id(input.into());
+            self
+        }
+        /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+        pub fn set_ingestion_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ingestion_job_id(input);
+            self
+        }
+        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }

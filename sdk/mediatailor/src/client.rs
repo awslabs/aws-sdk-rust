@@ -113,6 +113,7 @@ impl Client {
     ///   - [`outputs(Vec<RequestOutputItem>)`](crate::client::fluent_builders::CreateChannel::outputs) / [`set_outputs(Option<Vec<RequestOutputItem>>)`](crate::client::fluent_builders::CreateChannel::set_outputs): <p>The channel's output properties.</p>
     ///   - [`playback_mode(PlaybackMode)`](crate::client::fluent_builders::CreateChannel::playback_mode) / [`set_playback_mode(Option<PlaybackMode>)`](crate::client::fluent_builders::CreateChannel::set_playback_mode): <p>The type of playback mode to use for this channel.</p>  <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>  <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags to assign to the channel.</p>
+    ///   - [`tier(Tier)`](crate::client::fluent_builders::CreateChannel::tier) / [`set_tier(Option<Tier>)`](crate::client::fluent_builders::CreateChannel::set_tier): <p>The tier of the channel.</p>
     /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateChannelOutput::arn): <p>The ARN of the channel.</p>
     ///   - [`channel_name(Option<String>)`](crate::output::CreateChannelOutput::channel_name): <p>The name of the channel.</p>
@@ -123,9 +124,29 @@ impl Client {
     ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::CreateChannelOutput::outputs): <p>The channel's output properties.</p>
     ///   - [`playback_mode(Option<String>)`](crate::output::CreateChannelOutput::playback_mode): <p>The channel's playback mode.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    ///   - [`tier(Option<String>)`](crate::output::CreateChannelOutput::tier): <p>The channel's tier.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel {
         fluent_builders::CreateChannel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateLiveSource`](crate::client::fluent_builders::CreateLiveSource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::CreateLiveSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::CreateLiveSource::set_http_package_configurations): <p>A list of HTTP package configuration parameters for this live source.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::CreateLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLiveSource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLiveSource::set_tags): <p>The tags to assign to the live source.</p>
+    /// - On success, responds with [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateLiveSourceOutput::arn): <p>The ARN of the live source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateLiveSourceOutput::creation_time): <p>The timestamp that indicates when the live source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateLiveSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was modified.</p>
+    ///   - [`live_source_name(Option<String>)`](crate::output::CreateLiveSourceOutput::live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateLiveSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLiveSourceOutput::tags): <p>The tags assigned to the live source.</p>
+    /// - On failure, responds with [`SdkError<CreateLiveSourceError>`](crate::error::CreateLiveSourceError)
+    pub fn create_live_source(&self) -> fluent_builders::CreateLiveSource {
+        fluent_builders::CreateLiveSource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreatePrefetchSchedule`](crate::client::fluent_builders::CreatePrefetchSchedule) operation.
     ///
@@ -151,6 +172,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`ad_breaks(Vec<AdBreak>)`](crate::client::fluent_builders::CreateProgram::ad_breaks) / [`set_ad_breaks(Option<Vec<AdBreak>>)`](crate::client::fluent_builders::CreateProgram::set_ad_breaks): <p>The ad break configuration settings.</p>
     ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_live_source_name): <p>The name of the LiveSource for this Program.</p>
     ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_program_name): <p>The identifier for the program you are working on.</p>
     ///   - [`schedule_configuration(ScheduleConfiguration)`](crate::client::fluent_builders::CreateProgram::schedule_configuration) / [`set_schedule_configuration(Option<ScheduleConfiguration>)`](crate::client::fluent_builders::CreateProgram::set_schedule_configuration): <p>The schedule configuration settings.</p>
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateProgram::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateProgram::set_source_location_name): <p>The name of the source location.</p>
@@ -160,6 +182,7 @@ impl Client {
     ///   - [`arn(Option<String>)`](crate::output::CreateProgramOutput::arn): <p>The ARN of the program.</p>
     ///   - [`channel_name(Option<String>)`](crate::output::CreateProgramOutput::channel_name): <p>The name of the channel that the program belongs to.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateProgramOutput::creation_time): <p>The timestamp of when the program was created.</p>
+    ///   - [`live_source_name(Option<String>)`](crate::output::CreateProgramOutput::live_source_name): <p>The name of the LiveSource for this Program.</p>
     ///   - [`program_name(Option<String>)`](crate::output::CreateProgramOutput::program_name): <p>The name of the program.</p>
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::output::CreateProgramOutput::scheduled_start_time): <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::CreateProgramOutput::source_location_name): <p>The source location name.</p>
@@ -174,7 +197,7 @@ impl Client {
     ///   - [`access_configuration(AccessConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::access_configuration) / [`set_access_configuration(Option<AccessConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     ///   - [`default_segment_delivery_configuration(DefaultSegmentDeliveryConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::default_segment_delivery_configuration) / [`set_default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_default_segment_delivery_configuration): <p>The optional configuration for the server that serves segments.</p>
     ///   - [`http_configuration(HttpConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::http_configuration) / [`set_http_configuration(Option<HttpConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_http_configuration): <p>The source's HTTP package configurations.</p>
-    ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::CreateSourceLocation::set_segment_delivery_configurations): (undocumented)
+    ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::CreateSourceLocation::set_segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSourceLocation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSourceLocation::set_tags): <p>The tags to assign to the source location.</p>
     /// - On success, responds with [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput) with field(s):
@@ -184,7 +207,7 @@ impl Client {
     ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::CreateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
     ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::CreateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
-    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::CreateSourceLocationOutput::segment_delivery_configurations): (undocumented)
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::CreateSourceLocationOutput::segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::CreateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
     /// - On failure, responds with [`SdkError<CreateSourceLocationError>`](crate::error::CreateSourceLocationError)
@@ -194,7 +217,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateVodSource`](crate::client::fluent_builders::CreateVodSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::CreateVodSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::CreateVodSource::set_http_package_configurations): <p>An array of HTTP package configuration parameters for this VOD source.</p>
+    ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::CreateVodSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::CreateVodSource::set_http_package_configurations): <p>A list of HTTP package configuration parameters for this VOD source.</p>
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateVodSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVodSource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVodSource::set_tags): <p>The tags to assign to the VOD source.</p>
     ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::CreateVodSource::set_vod_source_name): <p>The identifier for the VOD source you are working on.</p>
@@ -202,7 +225,7 @@ impl Client {
     ///   - [`arn(Option<String>)`](crate::output::CreateVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
     ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::last_modified_time): <p>The ARN for the VOD source.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::last_modified_time): <p>The last modified time of the VOD source.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::CreateVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::output::CreateVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
@@ -229,6 +252,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteChannelPolicyError>`](crate::error::DeleteChannelPolicyError)
     pub fn delete_channel_policy(&self) -> fluent_builders::DeleteChannelPolicy {
         fluent_builders::DeleteChannelPolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteLiveSource`](crate::client::fluent_builders::DeleteLiveSource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::DeleteLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DeleteLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLiveSourceError>`](crate::error::DeleteLiveSourceError)
+    pub fn delete_live_source(&self) -> fluent_builders::DeleteLiveSource {
+        fluent_builders::DeleteLiveSource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeletePlaybackConfiguration`](crate::client::fluent_builders::DeletePlaybackConfiguration) operation.
     ///
@@ -297,9 +331,27 @@ impl Client {
     ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::DescribeChannelOutput::outputs): <p>The channel's output properties.</p>
     ///   - [`playback_mode(Option<String>)`](crate::output::DescribeChannelOutput::playback_mode): <p>The channel's playback mode.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    ///   - [`tier(Option<String>)`](crate::output::DescribeChannelOutput::tier): <p>The channel's tier.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
     pub fn describe_channel(&self) -> fluent_builders::DescribeChannel {
         fluent_builders::DescribeChannel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeLiveSource`](crate::client::fluent_builders::DescribeLiveSource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::DescribeLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::DescribeLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeLiveSourceOutput::arn): <p>The ARN of the live source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLiveSourceOutput::creation_time): <p>The timestamp that indicates when the live source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::DescribeLiveSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was modified.</p>
+    ///   - [`live_source_name(Option<String>)`](crate::output::DescribeLiveSourceOutput::live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::DescribeLiveSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeLiveSourceOutput::tags): <p>The tags assigned to the live source.</p>
+    /// - On failure, responds with [`SdkError<DescribeLiveSourceError>`](crate::error::DescribeLiveSourceError)
+    pub fn describe_live_source(&self) -> fluent_builders::DescribeLiveSource {
+        fluent_builders::DescribeLiveSource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeProgram`](crate::client::fluent_builders::DescribeProgram) operation.
     ///
@@ -311,6 +363,7 @@ impl Client {
     ///   - [`arn(Option<String>)`](crate::output::DescribeProgramOutput::arn): <p>The ARN of the program.</p>
     ///   - [`channel_name(Option<String>)`](crate::output::DescribeProgramOutput::channel_name): <p>The name of the channel that the program belongs to.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeProgramOutput::creation_time): <p>The timestamp of when the program was created.</p>
+    ///   - [`live_source_name(Option<String>)`](crate::output::DescribeProgramOutput::live_source_name): <p>The name of the LiveSource for this Program.</p>
     ///   - [`program_name(Option<String>)`](crate::output::DescribeProgramOutput::program_name): <p>The name of the program.</p>
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::output::DescribeProgramOutput::scheduled_start_time): <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::DescribeProgramOutput::source_location_name): <p>The source location name.</p>
@@ -330,7 +383,7 @@ impl Client {
     ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::DescribeSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
     ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::DescribeSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
-    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::DescribeSourceLocationOutput::segment_delivery_configurations): (undocumented)
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::DescribeSourceLocationOutput::segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::DescribeSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceLocationError>`](crate::error::DescribeSourceLocationError)
@@ -346,7 +399,7 @@ impl Client {
     ///   - [`arn(Option<String>)`](crate::output::DescribeVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
     ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::DescribeVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::last_modified_time): <p>The ARN for the VOD source.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::last_modified_time): <p>The last modified time of the VOD source.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::DescribeVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::output::DescribeVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
@@ -373,7 +426,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetChannelSchedule::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetChannelSchedule::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetChannelSchedule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetChannelSchedule::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     /// - On success, responds with [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput) with field(s):
-    ///   - [`items(Option<Vec<ScheduleEntry>>)`](crate::output::GetChannelScheduleOutput::items): <p>An array of schedule entries for the channel.</p>
+    ///   - [`items(Option<Vec<ScheduleEntry>>)`](crate::output::GetChannelScheduleOutput::items): <p>A list of schedule entries for the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetChannelScheduleOutput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetChannelScheduleError>`](crate::error::GetChannelScheduleError)
     pub fn get_channel_schedule(&self) -> fluent_builders::GetChannelSchedule {
@@ -431,7 +484,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListAlertsOutput`](crate::output::ListAlertsOutput) with field(s):
-    ///   - [`items(Option<Vec<Alert>>)`](crate::output::ListAlertsOutput::items): <p>An array of alerts that are associated with this resource.</p>
+    ///   - [`items(Option<Vec<Alert>>)`](crate::output::ListAlertsOutput::items): <p>A list of alerts that are associated with this resource.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAlertsOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::error::ListAlertsError)
     pub fn list_alerts(&self) -> fluent_builders::ListAlerts {
@@ -444,11 +497,25 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
-    ///   - [`items(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::items): <p>An array of channels that are associated with this account.</p>
+    ///   - [`items(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::items): <p>A list of channels that are associated with this account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels {
         fluent_builders::ListChannels::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListLiveSources`](crate::client::fluent_builders::ListLiveSources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLiveSources::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLiveSources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLiveSources::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLiveSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLiveSources::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::ListLiveSources::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::ListLiveSources::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput) with field(s):
+    ///   - [`items(Option<Vec<LiveSource>>)`](crate::output::ListLiveSourcesOutput::items): <p>Lists the live sources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLiveSourcesOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListLiveSourcesError>`](crate::error::ListLiveSourcesError)
+    pub fn list_live_sources(&self) -> fluent_builders::ListLiveSources {
+        fluent_builders::ListLiveSources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPlaybackConfigurations`](crate::client::fluent_builders::ListPlaybackConfigurations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackConfigurations::into_paginator).
@@ -485,7 +552,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceLocations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSourceLocations::set_max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceLocations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceLocations::set_next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     /// - On success, responds with [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput) with field(s):
-    ///   - [`items(Option<Vec<SourceLocation>>)`](crate::output::ListSourceLocationsOutput::items): <p>An array of source locations.</p>
+    ///   - [`items(Option<Vec<SourceLocation>>)`](crate::output::ListSourceLocationsOutput::items): <p>A list of source locations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSourceLocationsOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSourceLocationsError>`](crate::error::ListSourceLocationsError)
     pub fn list_source_locations(&self) -> fluent_builders::ListSourceLocations {
@@ -625,9 +692,28 @@ impl Client {
     ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::UpdateChannelOutput::outputs): <p>The channel's output properties.</p>
     ///   - [`playback_mode(Option<String>)`](crate::output::UpdateChannelOutput::playback_mode): <p>The channel's playback mode.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    ///   - [`tier(Option<String>)`](crate::output::UpdateChannelOutput::tier): <p>The channel's tier.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel {
         fluent_builders::UpdateChannel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateLiveSource`](crate::client::fluent_builders::UpdateLiveSource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::UpdateLiveSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::UpdateLiveSource::set_http_package_configurations): <p>A list of HTTP package configurations for the live source on this account.</p>
+    ///   - [`live_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLiveSource::live_source_name) / [`set_live_source_name(Option<String>)`](crate::client::fluent_builders::UpdateLiveSource::set_live_source_name): <p>The identifier for the live source you are working on.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLiveSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateLiveSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateLiveSourceOutput::arn): <p>The ARN of the live source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateLiveSourceOutput::creation_time): <p>The timestamp that indicates when the live source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateLiveSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateLiveSourceOutput::last_modified_time): <p>The timestamp that indicates when the live source was modified.</p>
+    ///   - [`live_source_name(Option<String>)`](crate::output::UpdateLiveSourceOutput::live_source_name): <p>The name of the live source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::UpdateLiveSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLiveSourceOutput::tags): <p>The tags assigned to the live source.</p>
+    /// - On failure, responds with [`SdkError<UpdateLiveSourceError>`](crate::error::UpdateLiveSourceError)
+    pub fn update_live_source(&self) -> fluent_builders::UpdateLiveSource {
+        fluent_builders::UpdateLiveSource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateSourceLocation`](crate::client::fluent_builders::UpdateSourceLocation) operation.
     ///
@@ -635,7 +721,7 @@ impl Client {
     ///   - [`access_configuration(AccessConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::access_configuration) / [`set_access_configuration(Option<AccessConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     ///   - [`default_segment_delivery_configuration(DefaultSegmentDeliveryConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::default_segment_delivery_configuration) / [`set_default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_default_segment_delivery_configuration): <p>The optional configuration for the host server that serves segments.</p>
     ///   - [`http_configuration(HttpConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::http_configuration) / [`set_http_configuration(Option<HttpConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_http_configuration): <p>The HTTP configuration for the source location.</p>
-    ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::UpdateSourceLocation::set_segment_delivery_configurations): (undocumented)
+    ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::UpdateSourceLocation::set_segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
     /// - On success, responds with [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput) with field(s):
     ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::UpdateSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
@@ -644,7 +730,7 @@ impl Client {
     ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::UpdateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
     ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::UpdateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
-    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::UpdateSourceLocationOutput::segment_delivery_configurations): (undocumented)
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::UpdateSourceLocationOutput::segment_delivery_configurations): <p>A list of the segment delivery configurations associated with this resource.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::UpdateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceLocationError>`](crate::error::UpdateSourceLocationError)
@@ -654,14 +740,14 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateVodSource`](crate::client::fluent_builders::UpdateVodSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::UpdateVodSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::UpdateVodSource::set_http_package_configurations): <p>An array of HTTP package configurations for the VOD source on this account.</p>
+    ///   - [`http_package_configurations(Vec<HttpPackageConfiguration>)`](crate::client::fluent_builders::UpdateVodSource::http_package_configurations) / [`set_http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::client::fluent_builders::UpdateVodSource::set_http_package_configurations): <p>A list of HTTP package configurations for the VOD source on this account.</p>
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVodSource::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateVodSource::set_source_location_name): <p>The identifier for the source location you are working on.</p>
     ///   - [`vod_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVodSource::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::client::fluent_builders::UpdateVodSource::set_vod_source_name): <p>The identifier for the VOD source you are working on.</p>
     /// - On success, responds with [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
     ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::last_modified_time): <p>The ARN for the VOD source.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::last_modified_time): <p>The last modified time of the VOD source.</p>
     ///   - [`source_location_name(Option<String>)`](crate::output::UpdateVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
     ///   - [`vod_source_name(Option<String>)`](crate::output::UpdateVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
@@ -873,6 +959,128 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The tier of the channel.</p>
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.inner = self.inner.tier(input);
+            self
+        }
+        /// <p>The tier of the channel.</p>
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
+            self.inner = self.inner.set_tier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLiveSource`.
+    ///
+    /// <p>Creates name for a specific live source in a source location.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLiveSource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_live_source_input::Builder,
+    }
+    impl CreateLiveSource {
+        /// Creates a new `CreateLiveSource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLiveSourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLiveSourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `HttpPackageConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configuration parameters for this live source.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            self.inner = self.inner.http_package_configurations(input);
+            self
+        }
+        /// <p>A list of HTTP package configuration parameters for this live source.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_http_package_configurations(input);
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.live_source_name(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_live_source_name(input);
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_location_name(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the live source.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags to assign to the live source.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreatePrefetchSchedule`.
     ///
@@ -1048,6 +1256,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.live_source_name(input.into());
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_live_source_name(input);
+            self
+        }
         /// <p>The identifier for the program you are working on.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.program_name(input.into());
@@ -1189,7 +1410,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -1197,7 +1418,7 @@ pub mod fluent_builders {
             self.inner = self.inner.segment_delivery_configurations(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -1288,7 +1509,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
         ///
-        /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+        /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
         pub fn http_package_configurations(
             mut self,
             input: crate::model::HttpPackageConfiguration,
@@ -1296,7 +1517,7 @@ pub mod fluent_builders {
             self.inner = self.inner.http_package_configurations(input);
             self
         }
-        /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+        /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
         pub fn set_http_package_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -1457,6 +1678,75 @@ pub mod fluent_builders {
         /// <p>The identifier for the channel you are working on.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteLiveSource`.
+    ///
+    /// <p>Deletes a specific live source in a specific source location.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteLiveSource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_live_source_input::Builder,
+    }
+    impl DeleteLiveSource {
+        /// Creates a new `DeleteLiveSource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLiveSourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLiveSourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.live_source_name(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_live_source_name(input);
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_location_name(input);
             self
         }
     }
@@ -1820,6 +2110,75 @@ pub mod fluent_builders {
         /// <p>The identifier for the channel you are working on.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeLiveSource`.
+    ///
+    /// <p>Provides details about a specific live source in a specific source location.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeLiveSource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_live_source_input::Builder,
+    }
+    impl DescribeLiveSource {
+        /// Creates a new `DescribeLiveSource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLiveSourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLiveSourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.live_source_name(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_live_source_name(input);
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_location_name(input);
             self
         }
     }
@@ -2423,6 +2782,88 @@ pub mod fluent_builders {
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListLiveSources`.
+    ///
+    /// <p>lists all the live sources in a source location.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListLiveSources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_live_sources_input::Builder,
+    }
+    impl ListLiveSources {
+        /// Creates a new `ListLiveSources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLiveSourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLiveSourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLiveSourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLiveSourcesPaginator {
+            crate::paginator::ListLiveSourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_location_name(input);
             self
         }
     }
@@ -3443,6 +3884,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateLiveSource`.
+    ///
+    /// <p>Updates a specific live source in a specific source location.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateLiveSource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_live_source_input::Builder,
+    }
+    impl UpdateLiveSource {
+        /// Creates a new `UpdateLiveSource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateLiveSourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateLiveSourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `HttpPackageConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configurations for the live source on this account.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            self.inner = self.inner.http_package_configurations(input);
+            self
+        }
+        /// <p>A list of HTTP package configurations for the live source on this account.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_http_package_configurations(input);
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.live_source_name(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_live_source_name(input);
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_location_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateSourceLocation`.
     ///
     /// <p>Updates a source location on a specific channel.</p>
@@ -3531,7 +4061,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -3539,7 +4069,7 @@ pub mod fluent_builders {
             self.inner = self.inner.segment_delivery_configurations(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -3607,7 +4137,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
         ///
-        /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+        /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
         pub fn http_package_configurations(
             mut self,
             input: crate::model::HttpPackageConfiguration,
@@ -3615,7 +4145,7 @@ pub mod fluent_builders {
             self.inner = self.inner.http_package_configurations(input);
             self
         }
-        /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+        /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
         pub fn set_http_package_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,

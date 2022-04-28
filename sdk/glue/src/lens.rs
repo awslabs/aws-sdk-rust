@@ -229,6 +229,16 @@ pub(crate) fn reflens_structure_crate_output_list_crawlers_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_custom_entity_types_output_next_token(
+    input: &crate::output::ListCustomEntityTypesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_dev_endpoints_output_next_token(
     input: &crate::output::ListDevEndpointsOutput,
 ) -> std::option::Option<&std::string::String> {

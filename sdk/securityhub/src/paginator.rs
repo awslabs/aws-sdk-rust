@@ -22,6 +22,14 @@ impl DescribeActionTargetsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `action_targets`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeActionTargetsPaginatorItems {
+        crate::paginator::DescribeActionTargetsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -107,6 +115,14 @@ impl DescribeProductsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `products`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeProductsPaginatorItems {
+        crate::paginator::DescribeProductsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -196,6 +212,14 @@ impl DescribeStandardsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `standards`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeStandardsPaginatorItems {
+        crate::paginator::DescribeStandardsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -281,6 +305,14 @@ impl DescribeStandardsControlsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `controls`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeStandardsControlsPaginatorItems {
+        crate::paginator::DescribeStandardsControlsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -370,6 +402,14 @@ impl GetEnabledStandardsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `standards_subscriptions`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetEnabledStandardsPaginatorItems {
+        crate::paginator::GetEnabledStandardsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -455,6 +495,14 @@ impl GetFindingsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `findings`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetFindingsPaginatorItems {
+        crate::paginator::GetFindingsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -544,6 +592,14 @@ impl GetInsightsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `insights`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetInsightsPaginatorItems {
+        crate::paginator::GetInsightsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -629,6 +685,14 @@ impl ListEnabledProductsForImportPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `product_subscriptions`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListEnabledProductsForImportPaginatorItems {
+        crate::paginator::ListEnabledProductsForImportPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -718,6 +782,14 @@ impl ListFindingAggregatorsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `finding_aggregators`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListFindingAggregatorsPaginatorItems {
+        crate::paginator::ListFindingAggregatorsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -803,6 +875,14 @@ impl ListInvitationsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `invitations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListInvitationsPaginatorItems {
+        crate::paginator::ListInvitationsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -892,6 +972,14 @@ impl ListMembersPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `members`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListMembersPaginatorItems {
+        crate::paginator::ListMembersPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -979,6 +1067,14 @@ impl ListOrganizationAdminAccountsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `admin_accounts`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListOrganizationAdminAccountsPaginatorItems {
+        crate::paginator::ListOrganizationAdminAccountsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -1040,5 +1136,317 @@ impl ListOrganizationAdminAccountsPaginator {
                 }
             })
         })
+    }
+}
+
+/// Flattened paginator for `DescribeActionTargetsPaginator`
+///
+/// This is created with [`.items()`](DescribeActionTargetsPaginator::items)
+pub struct DescribeActionTargetsPaginatorItems(DescribeActionTargetsPaginator);
+
+impl DescribeActionTargetsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ActionTarget,
+            aws_smithy_http::result::SdkError<crate::error::DescribeActionTargetsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_describe_action_targets_output_action_targets(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `DescribeProductsPaginator`
+///
+/// This is created with [`.items()`](DescribeProductsPaginator::items)
+pub struct DescribeProductsPaginatorItems(DescribeProductsPaginator);
+
+impl DescribeProductsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Product,
+            aws_smithy_http::result::SdkError<crate::error::DescribeProductsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_describe_products_output_products(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `DescribeStandardsPaginator`
+///
+/// This is created with [`.items()`](DescribeStandardsPaginator::items)
+pub struct DescribeStandardsPaginatorItems(DescribeStandardsPaginator);
+
+impl DescribeStandardsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Standard,
+            aws_smithy_http::result::SdkError<crate::error::DescribeStandardsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_describe_standards_output_standards(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `DescribeStandardsControlsPaginator`
+///
+/// This is created with [`.items()`](DescribeStandardsControlsPaginator::items)
+pub struct DescribeStandardsControlsPaginatorItems(DescribeStandardsControlsPaginator);
+
+impl DescribeStandardsControlsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::StandardsControl,
+            aws_smithy_http::result::SdkError<crate::error::DescribeStandardsControlsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_describe_standards_controls_output_controls(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetEnabledStandardsPaginator`
+///
+/// This is created with [`.items()`](GetEnabledStandardsPaginator::items)
+pub struct GetEnabledStandardsPaginatorItems(GetEnabledStandardsPaginator);
+
+impl GetEnabledStandardsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::StandardsSubscription,
+            aws_smithy_http::result::SdkError<crate::error::GetEnabledStandardsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_enabled_standards_output_standards_subscriptions(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetFindingsPaginator`
+///
+/// This is created with [`.items()`](GetFindingsPaginator::items)
+pub struct GetFindingsPaginatorItems(GetFindingsPaginator);
+
+impl GetFindingsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::AwsSecurityFinding,
+            aws_smithy_http::result::SdkError<crate::error::GetFindingsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_findings_output_findings(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetInsightsPaginator`
+///
+/// This is created with [`.items()`](GetInsightsPaginator::items)
+pub struct GetInsightsPaginatorItems(GetInsightsPaginator);
+
+impl GetInsightsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Insight,
+            aws_smithy_http::result::SdkError<crate::error::GetInsightsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_insights_output_insights(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListEnabledProductsForImportPaginator`
+///
+/// This is created with [`.items()`](ListEnabledProductsForImportPaginator::items)
+pub struct ListEnabledProductsForImportPaginatorItems(ListEnabledProductsForImportPaginator);
+
+impl ListEnabledProductsForImportPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            std::string::String,
+            aws_smithy_http::result::SdkError<crate::error::ListEnabledProductsForImportError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_enabled_products_for_import_output_product_subscriptions(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListFindingAggregatorsPaginator`
+///
+/// This is created with [`.items()`](ListFindingAggregatorsPaginator::items)
+pub struct ListFindingAggregatorsPaginatorItems(ListFindingAggregatorsPaginator);
+
+impl ListFindingAggregatorsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::FindingAggregator,
+            aws_smithy_http::result::SdkError<crate::error::ListFindingAggregatorsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_finding_aggregators_output_finding_aggregators(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListInvitationsPaginator`
+///
+/// This is created with [`.items()`](ListInvitationsPaginator::items)
+pub struct ListInvitationsPaginatorItems(ListInvitationsPaginator);
+
+impl ListInvitationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Invitation,
+            aws_smithy_http::result::SdkError<crate::error::ListInvitationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_invitations_output_invitations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListMembersPaginator`
+///
+/// This is created with [`.items()`](ListMembersPaginator::items)
+pub struct ListMembersPaginatorItems(ListMembersPaginator);
+
+impl ListMembersPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Member,
+            aws_smithy_http::result::SdkError<crate::error::ListMembersError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_members_output_members(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListOrganizationAdminAccountsPaginator`
+///
+/// This is created with [`.items()`](ListOrganizationAdminAccountsPaginator::items)
+pub struct ListOrganizationAdminAccountsPaginatorItems(ListOrganizationAdminAccountsPaginator);
+
+impl ListOrganizationAdminAccountsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::AdminAccount,
+            aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_organization_admin_accounts_output_admin_accounts(page).unwrap_or_default().into_iter())
     }
 }

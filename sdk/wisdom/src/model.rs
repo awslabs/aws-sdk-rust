@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnowledgeBaseData {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ pub struct KnowledgeBaseData {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KnowledgeBaseData {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -129,12 +129,12 @@ pub mod knowledge_base_data {
         >,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -313,11 +313,11 @@ impl KnowledgeBaseData {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
-    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
-    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -338,12 +338,12 @@ pub mod server_side_encryption_configuration {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -487,7 +487,7 @@ pub struct AppIntegrationsConfiguration {
     /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
     /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
     /// </ul>
-    /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
+    /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
     pub object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AppIntegrationsConfiguration {
@@ -500,7 +500,7 @@ impl AppIntegrationsConfiguration {
     /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
     /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
     /// </ul>
-    /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
+    /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
     pub fn object_fields(&self) -> std::option::Option<&[std::string::String]> {
         self.object_fields.as_deref()
     }
@@ -545,7 +545,7 @@ pub mod app_integrations_configuration {
         /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
         /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
         /// </ul>
-        /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
+        /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
         pub fn object_fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_fields.unwrap_or_default();
             v.push(input.into());
@@ -557,7 +557,7 @@ pub mod app_integrations_configuration {
         /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
         /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
         /// </ul>
-        /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
+        /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
         pub fn set_object_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -724,7 +724,7 @@ pub struct ContentSummary {
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The name of the content.</p>
     pub name: std::option::Option<std::string::String>,
@@ -756,7 +756,7 @@ impl ContentSummary {
     pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
     }
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -868,12 +868,12 @@ pub mod content_summary {
             self.knowledge_base_arn = input;
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1356,7 +1356,7 @@ impl AsRef<str> for FilterField {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnowledgeBaseSummary {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
@@ -1366,7 +1366,7 @@ pub struct KnowledgeBaseSummary {
     pub knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
     /// <p>The status of the knowledge base summary.</p>
     pub status: std::option::Option<crate::model::KnowledgeBaseStatus>,
-    /// <p>[KEVIN]</p>
+    /// <p>Configuration information about the external data source.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
@@ -1380,7 +1380,7 @@ pub struct KnowledgeBaseSummary {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KnowledgeBaseSummary {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -1400,7 +1400,7 @@ impl KnowledgeBaseSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::KnowledgeBaseStatus> {
         self.status.as_ref()
     }
-    /// <p>[KEVIN]</p>
+    /// <p>Configuration information about the external data source.</p>
     pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
@@ -1469,12 +1469,12 @@ pub mod knowledge_base_summary {
         >,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1531,12 +1531,12 @@ pub mod knowledge_base_summary {
             self.status = input;
             self
         }
-        /// <p>[KEVIN]</p>
+        /// <p>Configuration information about the external data source.</p>
         pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
             self.source_configuration = Some(input);
             self
         }
-        /// <p>[KEVIN]</p>
+        /// <p>Configuration information about the external data source.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -1645,7 +1645,7 @@ pub struct ContentData {
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The name of the content.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1683,7 +1683,7 @@ impl ContentData {
     pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
     }
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -1813,12 +1813,12 @@ pub mod content_data {
             self.knowledge_base_arn = input;
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2000,7 +2000,7 @@ pub struct SessionSummary {
     pub session_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
     pub assistant_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub assistant_arn: std::option::Option<std::string::String>,
 }
 impl SessionSummary {
@@ -2016,7 +2016,7 @@ impl SessionSummary {
     pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
@@ -2073,12 +2073,12 @@ pub mod session_summary {
             self.assistant_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assistant_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2455,7 +2455,7 @@ impl Highlight {
 pub struct ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     pub content_arn: std::option::Option<std::string::String>,
@@ -2467,7 +2467,7 @@ impl ContentReference {
     pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
     }
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -2515,12 +2515,12 @@ pub mod content_reference {
             self.knowledge_base_arn = input;
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2642,6 +2642,371 @@ impl NotifyRecommendationsReceivedError {
     }
 }
 
+/// <p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationTrigger {
+    /// <p>The identifier of the recommendation trigger.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The type of recommendation trigger.</p>
+    pub r#type: std::option::Option<crate::model::RecommendationTriggerType>,
+    /// <p>The source of the recommendation trigger.</p>
+    /// <ul>
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// </ul>
+    pub source: std::option::Option<crate::model::RecommendationSourceType>,
+    /// <p>A union type containing information related to the trigger.</p>
+    pub data: std::option::Option<crate::model::RecommendationTriggerData>,
+    /// <p>The identifiers of the recommendations.</p>
+    pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RecommendationTrigger {
+    /// <p>The identifier of the recommendation trigger.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of recommendation trigger.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RecommendationTriggerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The source of the recommendation trigger.</p>
+    /// <ul>
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// </ul>
+    pub fn source(&self) -> std::option::Option<&crate::model::RecommendationSourceType> {
+        self.source.as_ref()
+    }
+    /// <p>A union type containing information related to the trigger.</p>
+    pub fn data(&self) -> std::option::Option<&crate::model::RecommendationTriggerData> {
+        self.data.as_ref()
+    }
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.recommendation_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for RecommendationTrigger {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationTrigger");
+        formatter.field("id", &self.id);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("source", &self.source);
+        formatter.field("data", &self.data);
+        formatter.field("recommendation_ids", &self.recommendation_ids);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationTrigger`](crate::model::RecommendationTrigger)
+pub mod recommendation_trigger {
+    /// A builder for [`RecommendationTrigger`](crate::model::RecommendationTrigger)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::RecommendationTriggerType>,
+        pub(crate) source: std::option::Option<crate::model::RecommendationSourceType>,
+        pub(crate) data: std::option::Option<crate::model::RecommendationTriggerData>,
+        pub(crate) recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the recommendation trigger.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the recommendation trigger.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The type of recommendation trigger.</p>
+        pub fn r#type(mut self, input: crate::model::RecommendationTriggerType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of recommendation trigger.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationTriggerType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The source of the recommendation trigger.</p>
+        /// <ul>
+        /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
+        /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+        /// </ul>
+        pub fn source(mut self, input: crate::model::RecommendationSourceType) -> Self {
+            self.source = Some(input);
+            self
+        }
+        /// <p>The source of the recommendation trigger.</p>
+        /// <ul>
+        /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
+        /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+        /// </ul>
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationSourceType>,
+        ) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>A union type containing information related to the trigger.</p>
+        pub fn data(mut self, input: crate::model::RecommendationTriggerData) -> Self {
+            self.data = Some(input);
+            self
+        }
+        /// <p>A union type containing information related to the trigger.</p>
+        pub fn set_data(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationTriggerData>,
+        ) -> Self {
+            self.data = input;
+            self
+        }
+        /// Appends an item to `recommendation_ids`.
+        ///
+        /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
+        ///
+        /// <p>The identifiers of the recommendations.</p>
+        pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.recommendation_ids.unwrap_or_default();
+            v.push(input.into());
+            self.recommendation_ids = Some(v);
+            self
+        }
+        /// <p>The identifiers of the recommendations.</p>
+        pub fn set_recommendation_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.recommendation_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::model::RecommendationTrigger)
+        pub fn build(self) -> crate::model::RecommendationTrigger {
+            crate::model::RecommendationTrigger {
+                id: self.id,
+                r#type: self.r#type,
+                source: self.source,
+                data: self.data,
+                recommendation_ids: self.recommendation_ids,
+            }
+        }
+    }
+}
+impl RecommendationTrigger {
+    /// Creates a new builder-style object to manufacture [`RecommendationTrigger`](crate::model::RecommendationTrigger)
+    pub fn builder() -> crate::model::recommendation_trigger::Builder {
+        crate::model::recommendation_trigger::Builder::default()
+    }
+}
+
+/// <p>A union type containing information related to the trigger.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum RecommendationTriggerData {
+    /// <p>Data associated with the QUERY RecommendationTriggerType.</p>
+    Query(crate::model::QueryRecommendationTriggerData),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl RecommendationTriggerData {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Query`](crate::model::RecommendationTriggerData::Query), extracting the inner [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_query(
+        &self,
+    ) -> std::result::Result<&crate::model::QueryRecommendationTriggerData, &Self> {
+        if let RecommendationTriggerData::Query(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Query`](crate::model::RecommendationTriggerData::Query).
+    pub fn is_query(&self) -> bool {
+        self.as_query().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Data associated with the QUERY RecommendationTriggerType.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryRecommendationTriggerData {
+    /// <p>The text associated with the recommendation trigger.</p>
+    pub text: std::option::Option<std::string::String>,
+}
+impl QueryRecommendationTriggerData {
+    /// <p>The text associated with the recommendation trigger.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
+impl std::fmt::Debug for QueryRecommendationTriggerData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryRecommendationTriggerData");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData)
+pub mod query_recommendation_trigger_data {
+    /// A builder for [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The text associated with the recommendation trigger.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>The text associated with the recommendation trigger.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData)
+        pub fn build(self) -> crate::model::QueryRecommendationTriggerData {
+            crate::model::QueryRecommendationTriggerData { text: self.text }
+        }
+    }
+}
+impl QueryRecommendationTriggerData {
+    /// Creates a new builder-style object to manufacture [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData)
+    pub fn builder() -> crate::model::query_recommendation_trigger_data::Builder {
+        crate::model::query_recommendation_trigger_data::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationSourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    IssueDetection,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
+    #[allow(missing_docs)] // documentation missing in model
+    RuleEvaluation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecommendationSourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ISSUE_DETECTION" => RecommendationSourceType::IssueDetection,
+            "OTHER" => RecommendationSourceType::Other,
+            "RULE_EVALUATION" => RecommendationSourceType::RuleEvaluation,
+            other => RecommendationSourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecommendationSourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationSourceType::from(s))
+    }
+}
+impl RecommendationSourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationSourceType::IssueDetection => "ISSUE_DETECTION",
+            RecommendationSourceType::Other => "OTHER",
+            RecommendationSourceType::RuleEvaluation => "RULE_EVALUATION",
+            RecommendationSourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ISSUE_DETECTION", "OTHER", "RULE_EVALUATION"]
+    }
+}
+impl AsRef<str> for RecommendationSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationTriggerType {
+    #[allow(missing_docs)] // documentation missing in model
+    Query,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecommendationTriggerType {
+    fn from(s: &str) -> Self {
+        match s {
+            "QUERY" => RecommendationTriggerType::Query,
+            other => RecommendationTriggerType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecommendationTriggerType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationTriggerType::from(s))
+    }
+}
+impl RecommendationTriggerType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationTriggerType::Query => "QUERY",
+            RecommendationTriggerType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["QUERY"]
+    }
+}
+impl AsRef<str> for RecommendationTriggerType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about the recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2654,6 +3019,8 @@ pub struct RecommendationData {
     pub relevance_score: f64,
     /// <p>The relevance level of the recommendation.</p>
     pub relevance_level: std::option::Option<crate::model::RelevanceLevel>,
+    /// <p>The type of recommendation.</p>
+    pub r#type: std::option::Option<crate::model::RecommendationType>,
 }
 impl RecommendationData {
     /// <p>The identifier of the recommendation.</p>
@@ -2672,6 +3039,10 @@ impl RecommendationData {
     pub fn relevance_level(&self) -> std::option::Option<&crate::model::RelevanceLevel> {
         self.relevance_level.as_ref()
     }
+    /// <p>The type of recommendation.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RecommendationType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for RecommendationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2680,6 +3051,7 @@ impl std::fmt::Debug for RecommendationData {
         formatter.field("document", &self.document);
         formatter.field("relevance_score", &self.relevance_score);
         formatter.field("relevance_level", &self.relevance_level);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -2693,6 +3065,7 @@ pub mod recommendation_data {
         pub(crate) document: std::option::Option<crate::model::Document>,
         pub(crate) relevance_score: std::option::Option<f64>,
         pub(crate) relevance_level: std::option::Option<crate::model::RelevanceLevel>,
+        pub(crate) r#type: std::option::Option<crate::model::RecommendationType>,
     }
     impl Builder {
         /// <p>The identifier of the recommendation.</p>
@@ -2741,6 +3114,19 @@ pub mod recommendation_data {
             self.relevance_level = input;
             self
         }
+        /// <p>The type of recommendation.</p>
+        pub fn r#type(mut self, input: crate::model::RecommendationType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of recommendation.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecommendationData`](crate::model::RecommendationData)
         pub fn build(self) -> crate::model::RecommendationData {
             crate::model::RecommendationData {
@@ -2748,6 +3134,7 @@ pub mod recommendation_data {
                 document: self.document,
                 relevance_score: self.relevance_score.unwrap_or_default(),
                 relevance_level: self.relevance_level,
+                r#type: self.r#type,
             }
         }
     }
@@ -2756,6 +3143,57 @@ impl RecommendationData {
     /// Creates a new builder-style object to manufacture [`RecommendationData`](crate::model::RecommendationData)
     pub fn builder() -> crate::model::recommendation_data::Builder {
         crate::model::recommendation_data::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationType {
+    #[allow(missing_docs)] // documentation missing in model
+    KnowledgeContent,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecommendationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "KNOWLEDGE_CONTENT" => RecommendationType::KnowledgeContent,
+            other => RecommendationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecommendationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationType::from(s))
+    }
+}
+impl RecommendationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationType::KnowledgeContent => "KNOWLEDGE_CONTENT",
+            RecommendationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["KNOWLEDGE_CONTENT"]
+    }
+}
+impl AsRef<str> for RecommendationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2824,7 +3262,7 @@ impl AsRef<str> for RelevanceLevel {
 pub struct AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
     pub assistant_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The name of the assistant.</p>
     pub name: std::option::Option<std::string::String>,
@@ -2846,7 +3284,7 @@ impl AssistantSummary {
     pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
@@ -2926,12 +3364,12 @@ pub mod assistant_summary {
             self.assistant_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assistant_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3180,7 +3618,7 @@ impl AsRef<str> for AssistantType {
 pub struct AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
     pub assistant_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The name.</p>
     pub name: std::option::Option<std::string::String>,
@@ -3202,7 +3640,7 @@ impl AssistantData {
     pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
@@ -3282,12 +3720,12 @@ pub mod assistant_data {
             self.assistant_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assistant_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3562,7 +4000,7 @@ pub struct AssistantAssociationSummary {
     pub assistant_association_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
     pub assistant_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The type of association.</p>
     pub association_type: std::option::Option<crate::model::AssociationType>,
@@ -3585,7 +4023,7 @@ impl AssistantAssociationSummary {
     pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
@@ -3674,12 +4112,12 @@ pub mod assistant_association_summary {
             self.assistant_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assistant_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3805,13 +4243,13 @@ impl AssistantAssociationOutputData {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnowledgeBaseAssociationData {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
 }
 impl KnowledgeBaseAssociationData {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -3838,12 +4276,12 @@ pub mod knowledge_base_association_data {
         pub(crate) knowledge_base_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base.</p>
+        /// <p>The identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3941,7 +4379,7 @@ pub struct AssistantAssociationData {
     pub assistant_association_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
     pub assistant_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The type of association.</p>
     pub association_type: std::option::Option<crate::model::AssociationType>,
@@ -3964,7 +4402,7 @@ impl AssistantAssociationData {
     pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
@@ -4053,12 +4491,12 @@ pub mod assistant_association_data {
             self.assistant_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assistant_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4145,7 +4583,7 @@ impl AssistantAssociationData {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AssistantAssociationInputData {
-    /// <p>The the identifier of the knowledge base.</p>
+    /// <p>The identifier of the knowledge base.</p>
     KnowledgeBaseId(std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

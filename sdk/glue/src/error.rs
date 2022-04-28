@@ -885,6 +885,121 @@ impl std::error::Error for BatchGetCrawlersError {
     }
 }
 
+/// Error type for the `BatchGetCustomEntityTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetCustomEntityTypesError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetCustomEntityTypesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetCustomEntityTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetCustomEntityTypesErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetCustomEntityTypesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetCustomEntityTypesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            BatchGetCustomEntityTypesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            BatchGetCustomEntityTypesErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            BatchGetCustomEntityTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetCustomEntityTypesError {
+    fn code(&self) -> Option<&str> {
+        BatchGetCustomEntityTypesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetCustomEntityTypesError {
+    /// Creates a new `BatchGetCustomEntityTypesError`.
+    pub fn new(kind: BatchGetCustomEntityTypesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetCustomEntityTypesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetCustomEntityTypesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetCustomEntityTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetCustomEntityTypesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetCustomEntityTypesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetCustomEntityTypesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetCustomEntityTypesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetCustomEntityTypesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetCustomEntityTypesErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetCustomEntityTypesErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetCustomEntityTypesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetCustomEntityTypesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            BatchGetCustomEntityTypesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            BatchGetCustomEntityTypesErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            BatchGetCustomEntityTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `BatchGetDevEndpoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2652,6 +2767,173 @@ impl std::error::Error for CreateCrawlerError {
             CreateCrawlerErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             CreateCrawlerErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
             CreateCrawlerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateCustomEntityType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateCustomEntityTypeError {
+    /// Kind of error that occurred.
+    pub kind: CreateCustomEntityTypeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateCustomEntityType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateCustomEntityTypeErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>The same unique identifier was associated with two different records.</p>
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateCustomEntityTypeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateCustomEntityTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateCustomEntityTypeErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateCustomEntityTypeErrorKind::IdempotentParameterMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCustomEntityTypeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateCustomEntityTypeErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateCustomEntityTypeErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CreateCustomEntityTypeErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCustomEntityTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateCustomEntityTypeError {
+    fn code(&self) -> Option<&str> {
+        CreateCustomEntityTypeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateCustomEntityTypeError {
+    /// Creates a new `CreateCustomEntityTypeError`.
+    pub fn new(kind: CreateCustomEntityTypeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateCustomEntityTypeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateCustomEntityTypeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateCustomEntityTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateCustomEntityTypeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::IdempotentParameterMismatchException`.
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::IdempotentParameterMismatchException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomEntityTypeErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomEntityTypeErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateCustomEntityTypeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateCustomEntityTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateCustomEntityTypeErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateCustomEntityTypeErrorKind::IdempotentParameterMismatchException(_inner) => {
+                Some(_inner)
+            }
+            CreateCustomEntityTypeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateCustomEntityTypeErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateCustomEntityTypeErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CreateCustomEntityTypeErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateCustomEntityTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5751,6 +6033,143 @@ impl std::error::Error for DeleteCrawlerError {
             DeleteCrawlerErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             DeleteCrawlerErrorKind::SchedulerTransitioningException(_inner) => Some(_inner),
             DeleteCrawlerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteCustomEntityType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCustomEntityTypeError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCustomEntityTypeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCustomEntityType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCustomEntityTypeErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCustomEntityTypeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCustomEntityTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteCustomEntityTypeErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            DeleteCustomEntityTypeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteCustomEntityTypeErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteCustomEntityTypeErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DeleteCustomEntityTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomEntityTypeError {
+    fn code(&self) -> Option<&str> {
+        DeleteCustomEntityTypeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCustomEntityTypeError {
+    /// Creates a new `DeleteCustomEntityTypeError`.
+    pub fn new(kind: DeleteCustomEntityTypeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCustomEntityTypeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCustomEntityTypeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCustomEntityTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCustomEntityTypeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteCustomEntityTypeErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomEntityTypeErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomEntityTypeErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomEntityTypeErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomEntityTypeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomEntityTypeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomEntityTypeErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomEntityTypeErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomEntityTypeErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomEntityTypeErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteCustomEntityTypeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCustomEntityTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteCustomEntityTypeErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            DeleteCustomEntityTypeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteCustomEntityTypeErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteCustomEntityTypeErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DeleteCustomEntityTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -9440,6 +9859,143 @@ impl std::error::Error for GetCrawlersError {
         match &self.kind {
             GetCrawlersErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             GetCrawlersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetCustomEntityType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetCustomEntityTypeError {
+    /// Kind of error that occurred.
+    pub kind: GetCustomEntityTypeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetCustomEntityType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetCustomEntityTypeErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetCustomEntityTypeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetCustomEntityTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetCustomEntityTypeErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetCustomEntityTypeErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetCustomEntityTypeErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetCustomEntityTypeErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetCustomEntityTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetCustomEntityTypeError {
+    fn code(&self) -> Option<&str> {
+        GetCustomEntityTypeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetCustomEntityTypeError {
+    /// Creates a new `GetCustomEntityTypeError`.
+    pub fn new(kind: GetCustomEntityTypeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetCustomEntityTypeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetCustomEntityTypeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetCustomEntityTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetCustomEntityTypeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetCustomEntityTypeErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomEntityTypeErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCustomEntityTypeErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomEntityTypeErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCustomEntityTypeErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomEntityTypeErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCustomEntityTypeErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomEntityTypeErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCustomEntityTypeErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomEntityTypeErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetCustomEntityTypeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetCustomEntityTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetCustomEntityTypeErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetCustomEntityTypeErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetCustomEntityTypeErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetCustomEntityTypeErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetCustomEntityTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -15763,6 +16319,121 @@ impl std::error::Error for ListCrawlersError {
         match &self.kind {
             ListCrawlersErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             ListCrawlersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListCustomEntityTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCustomEntityTypesError {
+    /// Kind of error that occurred.
+    pub kind: ListCustomEntityTypesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListCustomEntityTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCustomEntityTypesErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListCustomEntityTypesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCustomEntityTypesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListCustomEntityTypesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListCustomEntityTypesErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListCustomEntityTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCustomEntityTypesError {
+    fn code(&self) -> Option<&str> {
+        ListCustomEntityTypesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCustomEntityTypesError {
+    /// Creates a new `ListCustomEntityTypesError`.
+    pub fn new(kind: ListCustomEntityTypesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCustomEntityTypesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCustomEntityTypesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCustomEntityTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCustomEntityTypesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCustomEntityTypesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomEntityTypesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomEntityTypesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomEntityTypesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCustomEntityTypesErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomEntityTypesErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListCustomEntityTypesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCustomEntityTypesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListCustomEntityTypesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListCustomEntityTypesErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListCustomEntityTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

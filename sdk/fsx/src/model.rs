@@ -3067,9 +3067,14 @@ pub struct OntapFileSystemConfiguration {
     pub automatic_backup_retention_days: std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>The ONTAP file system deployment type.</p>
+    /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
+    /// <ul>
+    /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// </ul>
+    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     pub deployment_type: std::option::Option<crate::model::OntapDeploymentType>,
-    /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+    /// <p>(Multi-AZ only) The IP address range in which the endpoints to access your file system are created.</p> <important>
     /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
     /// </important>
     pub endpoint_ip_address_range: std::option::Option<std::string::String>,
@@ -3079,7 +3084,7 @@ pub struct OntapFileSystemConfiguration {
     pub disk_iops_configuration: std::option::Option<crate::model::DiskIopsConfiguration>,
     /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i> </p>
     pub preferred_subnet_id: std::option::Option<std::string::String>,
-    /// <p>The VPC route tables in which your file system's endpoints are created.</p>
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
     pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
     pub throughput_capacity: std::option::Option<i32>,
@@ -3098,11 +3103,16 @@ impl OntapFileSystemConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>The ONTAP file system deployment type.</p>
+    /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
+    /// <ul>
+    /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// </ul>
+    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+    /// <p>(Multi-AZ only) The IP address range in which the endpoints to access your file system are created.</p> <important>
     /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
     /// </important>
     pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
@@ -3122,7 +3132,7 @@ impl OntapFileSystemConfiguration {
     pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
         self.preferred_subnet_id.as_deref()
     }
-    /// <p>The VPC route tables in which your file system's endpoints are created.</p>
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
     pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.route_table_ids.as_deref()
     }
@@ -3211,12 +3221,22 @@ pub mod ontap_file_system_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>The ONTAP file system deployment type.</p>
+        /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
+        /// <ul>
+        /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+        /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+        /// </ul>
+        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
         pub fn deployment_type(mut self, input: crate::model::OntapDeploymentType) -> Self {
             self.deployment_type = Some(input);
             self
         }
-        /// <p>The ONTAP file system deployment type.</p>
+        /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
+        /// <ul>
+        /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+        /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+        /// </ul>
+        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OntapDeploymentType>,
@@ -3224,14 +3244,14 @@ pub mod ontap_file_system_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+        /// <p>(Multi-AZ only) The IP address range in which the endpoints to access your file system are created.</p> <important>
         /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
         /// </important>
         pub fn endpoint_ip_address_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
-        /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+        /// <p>(Multi-AZ only) The IP address range in which the endpoints to access your file system are created.</p> <important>
         /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
         /// </important>
         pub fn set_endpoint_ip_address_range(
@@ -3287,14 +3307,14 @@ pub mod ontap_file_system_configuration {
         ///
         /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
         ///
-        /// <p>The VPC route tables in which your file system's endpoints are created.</p>
+        /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
         pub fn route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.route_table_ids.unwrap_or_default();
             v.push(input.into());
             self.route_table_ids = Some(v);
             self
         }
-        /// <p>The VPC route tables in which your file system's endpoints are created.</p>
+        /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
         pub fn set_route_table_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3533,6 +3553,8 @@ impl FileSystemEndpoint {
 pub enum OntapDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     MultiAz1,
+    #[allow(missing_docs)] // documentation missing in model
+    SingleAz1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -3540,6 +3562,7 @@ impl std::convert::From<&str> for OntapDeploymentType {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_AZ_1" => OntapDeploymentType::MultiAz1,
+            "SINGLE_AZ_1" => OntapDeploymentType::SingleAz1,
             other => OntapDeploymentType::Unknown(other.to_owned()),
         }
     }
@@ -3556,12 +3579,13 @@ impl OntapDeploymentType {
     pub fn as_str(&self) -> &str {
         match self {
             OntapDeploymentType::MultiAz1 => "MULTI_AZ_1",
+            OntapDeploymentType::SingleAz1 => "SINGLE_AZ_1",
             OntapDeploymentType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["MULTI_AZ_1"]
+        &["MULTI_AZ_1", "SINGLE_AZ_1"]
     }
 }
 impl AsRef<str> for OntapDeploymentType {
@@ -16186,9 +16210,14 @@ pub struct CreateFileSystemOntapConfiguration {
     pub automatic_backup_retention_days: std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment type.</p>
+    /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. </p>
+    /// <ul>
+    /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// </ul>
+    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     pub deployment_type: std::option::Option<crate::model::OntapDeploymentType>,
-    /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
     /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
     /// </important>
     pub endpoint_ip_address_range: std::option::Option<std::string::String>,
@@ -16198,7 +16227,7 @@ pub struct CreateFileSystemOntapConfiguration {
     pub disk_iops_configuration: std::option::Option<crate::model::DiskIopsConfiguration>,
     /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
     pub preferred_subnet_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
     pub throughput_capacity: std::option::Option<i32>,
@@ -16217,11 +16246,16 @@ impl CreateFileSystemOntapConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment type.</p>
+    /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. </p>
+    /// <ul>
+    /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// </ul>
+    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
     /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
     /// </important>
     pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
@@ -16241,7 +16275,7 @@ impl CreateFileSystemOntapConfiguration {
     pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
         self.preferred_subnet_id.as_deref()
     }
-    /// <p>Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.route_table_ids.as_deref()
     }
@@ -16330,12 +16364,22 @@ pub mod create_file_system_ontap_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment type.</p>
+        /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. </p>
+        /// <ul>
+        /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+        /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+        /// </ul>
+        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
         pub fn deployment_type(mut self, input: crate::model::OntapDeploymentType) -> Self {
             self.deployment_type = Some(input);
             self
         }
-        /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment type.</p>
+        /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. </p>
+        /// <ul>
+        /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
+        /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+        /// </ul>
+        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OntapDeploymentType>,
@@ -16343,14 +16387,14 @@ pub mod create_file_system_ontap_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+        /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
         /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
         /// </important>
         pub fn endpoint_ip_address_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
-        /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+        /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
         /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
         /// </important>
         pub fn set_endpoint_ip_address_range(
@@ -16406,14 +16450,14 @@ pub mod create_file_system_ontap_configuration {
         ///
         /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
         ///
-        /// <p>Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+        /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
         pub fn route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.route_table_ids.unwrap_or_default();
             v.push(input.into());
             self.route_table_ids = Some(v);
             self
         }
-        /// <p>Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+        /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
         pub fn set_route_table_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

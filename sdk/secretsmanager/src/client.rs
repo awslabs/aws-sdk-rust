@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CancelRotateSecret`](crate::client::fluent_builders::CancelRotateSecret) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::CancelRotateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::CancelRotateSecret::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::CancelRotateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::CancelRotateSecret::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// - On success, responds with [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CancelRotateSecretOutput::arn): <p>The ARN of the secret.</p>
     ///   - [`name(Option<String>)`](crate::output::CancelRotateSecretOutput::name): <p>The name of the secret.</p>
@@ -127,7 +127,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_secret_id): <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_secret_id): <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteResourcePolicyOutput::arn): <p>The ARN of the secret that the resource-based policy was deleted for.</p>
     ///   - [`name(Option<String>)`](crate::output::DeleteResourcePolicyOutput::name): <p>The name of the secret that the resource-based policy was deleted for.</p>
@@ -138,7 +138,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteSecret`](crate::client::fluent_builders::DeleteSecret) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DeleteSecret::set_secret_id): <p>The ARN or name of the secret to delete.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DeleteSecret::set_secret_id): <p>The ARN or name of the secret to delete.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`recovery_window_in_days(i64)`](crate::client::fluent_builders::DeleteSecret::recovery_window_in_days) / [`set_recovery_window_in_days(Option<i64>)`](crate::client::fluent_builders::DeleteSecret::set_recovery_window_in_days): <p>The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
     ///   - [`force_delete_without_recovery(bool)`](crate::client::fluent_builders::DeleteSecret::force_delete_without_recovery) / [`set_force_delete_without_recovery(Option<bool>)`](crate::client::fluent_builders::DeleteSecret::set_force_delete_without_recovery): <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>  <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p> <important>   <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>  </important>
     /// - On success, responds with [`DeleteSecretOutput`](crate::output::DeleteSecretOutput) with field(s):
@@ -152,7 +152,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeSecret`](crate::client::fluent_builders::DescribeSecret) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DescribeSecret::set_secret_id): <p>The ARN or name of the secret. </p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DescribeSecret::set_secret_id): <p>The ARN or name of the secret. </p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// - On success, responds with [`DescribeSecretOutput`](crate::output::DescribeSecretOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeSecretOutput::arn): <p>The ARN of the secret.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeSecretOutput::name): <p>The name of the secret.</p>
@@ -195,7 +195,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::GetResourcePolicy::set_secret_id): <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::GetResourcePolicy::set_secret_id): <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetResourcePolicyOutput::arn): <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
     ///   - [`name(Option<String>)`](crate::output::GetResourcePolicyOutput::name): <p>The name of the secret that the resource-based policy was retrieved for.</p>
@@ -207,7 +207,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetSecretValue`](crate::client::fluent_builders::GetSecretValue) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_secret_id): <p>The ARN or name of the secret to retrieve.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_secret_id): <p>The ARN or name of the secret to retrieve.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_version_id): <p>The unique identifier of the version of the secret to retrieve. If you include both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then Secrets Manager returns the <code>AWSCURRENT</code> version.</p>  <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
     ///   - [`version_stage(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::version_stage) / [`set_version_stage(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_version_stage): <p>The staging label of the version of the secret to retrieve. </p>  <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
     /// - On success, responds with [`GetSecretValueOutput`](crate::output::GetSecretValueOutput) with field(s):
@@ -241,7 +241,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecretVersionIds::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::ListSecretVersionIds::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::ListSecretVersionIds::set_secret_id): <p>The ARN or name of the secret whose versions you want to list.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::ListSecretVersionIds::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::ListSecretVersionIds::set_secret_id): <p>The ARN or name of the secret whose versions you want to list.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecretVersionIds::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecretVersionIds::set_max_results): <p>The number of results to include in the response.</p>  <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecretVersionIds</code> again with the value from <code>NextToken</code>. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecretVersionIds::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecretVersionIds::set_next_token): <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecretVersionIds</code> again with this value.</p>
     ///   - [`include_deprecated(bool)`](crate::client::fluent_builders::ListSecretVersionIds::include_deprecated) / [`set_include_deprecated(Option<bool>)`](crate::client::fluent_builders::ListSecretVersionIds::set_include_deprecated): <p>Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager.</p>
@@ -257,7 +257,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_secret_id): <p>The ARN or name of the secret to attach the resource-based policy.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_secret_id): <p>The ARN or name of the secret to attach the resource-based policy.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_policy): <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     ///   - [`block_public_policy(bool)`](crate::client::fluent_builders::PutResourcePolicy::block_public_policy) / [`set_block_public_policy(Option<bool>)`](crate::client::fluent_builders::PutResourcePolicy::set_block_public_policy): <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
@@ -270,7 +270,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutSecretValue`](crate::client::fluent_builders::PutSecretValue) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_secret_id): <p>The ARN or name of the secret to add a new version to.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>  <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_secret_id): <p>The ARN or name of the secret to add a new version to.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>  <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_client_request_token): <p>A unique identifier for the new version of the secret. </p> <note>   <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty because they generate a random UUID for you. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>  </note>  <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>  <ul>   <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>   <li> <p>If a version with this value already exists and that version's <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in the request then the request is ignored. The operation is idempotent. </p> </li>   <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you can't modify a secret version. You can only create new versions to store new secret values.</p> </li>  </ul>  <p>This value becomes the <code>VersionId</code> of the new version.</p>
     ///   - [`secret_binary(Blob)`](crate::client::fluent_builders::PutSecretValue::secret_binary) / [`set_secret_binary(Option<Blob>)`](crate::client::fluent_builders::PutSecretValue::set_secret_binary): <p>The binary data to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then pass the contents of the file as a parameter. </p>  <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>  <p>You can't access this value from the Secrets Manager console.</p>
     ///   - [`secret_string(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::secret_string) / [`set_secret_string(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_secret_string): <p>The text to encrypt and store in the new version of the secret. </p>  <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>  <p>We recommend you create the secret string as JSON key/value pairs, as shown in the example.</p>
@@ -312,7 +312,7 @@ impl Client {
     /// Constructs a fluent builder for the [`RestoreSecret`](crate::client::fluent_builders::RestoreSecret) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RestoreSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RestoreSecret::set_secret_id): <p>The ARN or name of the secret to restore.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RestoreSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RestoreSecret::set_secret_id): <p>The ARN or name of the secret to restore.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// - On success, responds with [`RestoreSecretOutput`](crate::output::RestoreSecretOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::RestoreSecretOutput::arn): <p>The ARN of the secret that was restored.</p>
     ///   - [`name(Option<String>)`](crate::output::RestoreSecretOutput::name): <p>The name of the secret that was restored.</p>
@@ -323,7 +323,7 @@ impl Client {
     /// Constructs a fluent builder for the [`RotateSecret`](crate::client::fluent_builders::RotateSecret) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_secret_id): <p>The ARN or name of the secret to rotate.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_secret_id): <p>The ARN or name of the secret to rotate.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_client_request_token): <p>A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation. This value becomes the <code>VersionId</code> of the new version.</p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>  <p>You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
     ///   - [`rotation_lambda_arn(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::rotation_lambda_arn) / [`set_rotation_lambda_arn(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_rotation_lambda_arn): <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
     ///   - [`rotation_rules(RotationRulesType)`](crate::client::fluent_builders::RotateSecret::rotation_rules) / [`set_rotation_rules(Option<RotationRulesType>)`](crate::client::fluent_builders::RotateSecret::set_rotation_rules): <p>A structure that defines the rotation configuration for this secret.</p>
@@ -349,7 +349,7 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::TagResource::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::TagResource::set_secret_id): <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::TagResource::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::TagResource::set_secret_id): <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to attach to the secret as a JSON text string argument. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>  <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
@@ -360,7 +360,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UntagResource::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UntagResource::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UntagResource::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UntagResource::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>  <p>This parameter requires a JSON text string argument.</p>  <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
@@ -371,7 +371,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateSecret`](crate::client::fluent_builders::UpdateSecret) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_client_request_token): <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates a new version for the secret, and this parameter specifies the unique identifier for the new version.</p> <note>   <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>  </note>  <p>This value becomes the <code>VersionId</code> of the new version.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_description): <p>The description of the secret.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_kms_key_id): <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well as any existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts: Version</a>.</p> <important>   <p>You can only use the Amazon Web Services managed key <code>aws/secretsmanager</code> if you call this operation using credentials from the same Amazon Web Services account that owns the secret. If the secret is in a different account, then you must use a customer managed key and provide the ARN of that KMS key in this field. The user making the call must have permissions to both the secret and the KMS key in their respective accounts.</p>  </important>
@@ -388,7 +388,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateSecretVersionStage`](crate::client::fluent_builders::UpdateSecretVersionStage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_secret_id): <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_secret_id): <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`version_stage(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::version_stage) / [`set_version_stage(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_version_stage): <p>The staging label to add to this version.</p>
     ///   - [`remove_from_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::remove_from_version_id) / [`set_remove_from_version_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_remove_from_version_id): <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
     ///   - [`move_to_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::move_to_version_id) / [`set_move_to_version_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_move_to_version_id): <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>  <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
@@ -426,7 +426,7 @@ pub mod fluent_builders {
     /// <p>To turn on automatic rotation again, call <code>RotateSecret</code>.</p> <note>
     /// <p>If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels in an unexpected state. Depending on the step of the rotation in progress, you might need to remove the staging label <code>AWSPENDING</code> from the partially created version, specified by the <code>VersionId</code> response value. We recommend you also evaluate the partially rotated new version to see if it should be deleted. You can delete a version by removing all staging labels from it.</p>
     /// </note>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelRotateSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -467,13 +467,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -481,12 +481,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSecret`.
     ///
-    /// <p>Creates a new secret. A <i>secret</i> is a set of credentials, such as a user name and password, that you store in an encrypted form in Secrets Manager. The secret also includes the connection information to access a database or other service, which Secrets Manager doesn't encrypt. A secret in Secrets Manager consists of both the protected secret data and the important information needed to manage the secret.</p>
+    /// <p>Creates a new secret. A <i>secret</i> can be a password, a set of credentials such as a user name and password, an OAuth token, or other secret information that you store in an encrypted form in Secrets Manager. The secret also includes the connection information to access a database or other service, which Secrets Manager doesn't encrypt. A secret in Secrets Manager consists of both the protected secret data and the important information needed to manage the secret.</p>
     /// <p>For information about creating a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html">Create a secret</a>.</p>
     /// <p>To create a secret, you can provide the secret value to be encrypted in either the <code>SecretString</code> parameter or the <code>SecretBinary</code> parameter, but not both. If you include <code>SecretString</code> or <code>SecretBinary</code> then Secrets Manager creates an initial secret version and automatically attaches the staging label <code>AWSCURRENT</code> to it.</p>
+    /// <p>For database credentials you want to rotate, for Secrets Manager to be able to rotate the secret, you must make sure the JSON you store in the <code>SecretString</code> matches the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_secret_json_structure.html">JSON structure of a database secret</a>.</p>
     /// <p>If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant delay in returning the result.</p>
     /// <p>If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed KMS key. </p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. If you include tags in the secret, you also need <code>secretsmanager:TagResource</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p>To encrypt the secret with a KMS key other than <code>aws/secretsmanager</code>, you need <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permission to the key. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -708,7 +710,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Deletes the resource-based permission policy attached to the secret. To attach a policy to a secret, use <code>PutResourcePolicy</code>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -749,13 +751,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -768,7 +770,7 @@ pub mod fluent_builders {
     /// <p>Secrets Manager performs the permanent secret deletion at the end of the waiting period as a background task with low priority. There is no guarantee of a specific time after the recovery window for the permanent delete to occur.</p>
     /// <p>At any time before recovery window ends, you can use <code>RestoreSecret</code> to remove the <code>DeletionDate</code> and cancel the deletion of the secret.</p>
     /// <p>In a secret scheduled for deletion, you cannot access the encrypted secret value. To access that information, first cancel the deletion with <code>RestoreSecret</code> and then retrieve the information.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -809,13 +811,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to delete.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to delete.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -853,7 +855,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSecret`.
     ///
     /// <p>Retrieves the details of a secret. It does not include the encrypted secret value. Secrets Manager only returns fields that have a value in the response. </p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -894,13 +896,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret. </p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret. </p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -909,7 +911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRandomPassword`.
     ///
     /// <p>Generates a random password. We recommend that you specify the maximum length and include every character type that the system you are generating a password for can support.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRandomPassword {
         handle: std::sync::Arc<super::Handle>,
@@ -1036,7 +1038,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Retrieves the JSON text of the resource-based policy document attached to the secret. For more information about permissions policies attached to a secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions policies attached to a secret</a>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -1077,13 +1079,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -1093,7 +1095,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code> from the specified version of a secret, whichever contains content.</p>
     /// <p>We recommend that you cache your secret values by using client-side caching. Caching secrets improves speed and reduces your costs. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache secrets for your applications</a>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code> permissions for that key. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code> permissions for that key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSecretValue {
         handle: std::sync::Arc<super::Handle>,
@@ -1134,13 +1136,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to retrieve.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to retrieve.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -1179,7 +1181,7 @@ pub mod fluent_builders {
     /// <p>To list the versions of a secret, use <code>ListSecretVersionIds</code>.</p>
     /// <p>To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>, call <code>GetSecretValue</code>.</p>
     /// <p>For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced search capabilities for secrets in Secrets Manager</a>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecrets {
         handle: std::sync::Arc<super::Handle>,
@@ -1283,7 +1285,7 @@ pub mod fluent_builders {
     /// <p>Lists the versions for a secret. </p>
     /// <p>To list the secrets in the account, use <code>ListSecrets</code>.</p>
     /// <p>To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>, call <code>GetSecretValue</code>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecretVersionIds {
         handle: std::sync::Arc<super::Handle>,
@@ -1330,13 +1332,13 @@ pub mod fluent_builders {
             crate::paginator::ListSecretVersionIdsPaginator::new(self.handle, self.inner)
         }
         /// <p>The ARN or name of the secret whose versions you want to list.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret whose versions you want to list.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -1378,7 +1380,7 @@ pub mod fluent_builders {
     ///
     /// <p>Attaches a resource-based permission policy to a secret. A resource-based policy is optional. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a> </p>
     /// <p>For information about attaching a policy in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach a permissions policy to a secret</a>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -1419,13 +1421,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -1461,7 +1463,7 @@ pub mod fluent_builders {
     /// <p>You can specify the staging labels to attach to the new version in <code>VersionStages</code>. If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version. If this operation creates the first version for the secret, then Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code> to it .</p>
     /// <p>If this operation moves the staging label <code>AWSCURRENT</code> from another version to this version, then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>This operation is idempotent. If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code> parameter already exists, and you specify the same secret data, the operation succeeds but does nothing. However, if the secret data is different, then the operation fails because you can't modify an existing version; you can only create new ones.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSecretValue {
         handle: std::sync::Arc<super::Handle>,
@@ -1502,14 +1504,14 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to add a new version to.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to add a new version to.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
@@ -1605,7 +1607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveRegionsFromReplication`.
     ///
     /// <p>For a secret that is replicated to other Regions, deletes the secret replicas from the Regions you specify.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:RemoveRegionsFromReplication</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:RemoveRegionsFromReplication</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveRegionsFromReplication {
         handle: std::sync::Arc<super::Handle>,
@@ -1676,7 +1678,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReplicateSecretToRegions`.
     ///
     /// <p>Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region secrets</a>.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplicateSecretToRegions {
         handle: std::sync::Arc<super::Handle>,
@@ -1760,7 +1762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreSecret`.
     ///
     /// <p>Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code> time stamp. You can access a secret again after it has been restored.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -1801,13 +1803,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to restore.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to restore.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -1815,12 +1817,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RotateSecret`.
     ///
-    /// <p>Configures and starts the asynchronous process of rotating the secret.</p>
-    /// <p>If you include the configuration parameters, the operation sets the values for the secret and then immediately starts a rotation. If you don't include the configuration parameters, the operation starts a rotation with the values already stored in the secret. For more information about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate secrets</a>.</p>
-    /// <p>To configure rotation, you include the ARN of an Amazon Web Services Lambda function and the schedule for the rotation. The Lambda rotation function creates a new version of the secret and creates or updates the credentials on the database or service to match. After testing the new credentials, the function marks the new secret version with the staging label <code>AWSCURRENT</code>. Then anyone who retrieves the secret gets the new version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
-    /// <p>When rotation is successful, the <code>AWSPENDING</code> staging label might be attached to the same version as the <code>AWSCURRENT</code> version, or it might not be attached to any version.</p>
-    /// <p>If the <code>AWSPENDING</code> staging label is present but not attached to the same version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code> assumes that a previous rotation request is still in progress and returns an error.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code> permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html"> Permissions for rotation</a>.</p>
+    /// <p>Configures and starts the asynchronous process of rotating the secret. For more information about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate secrets</a>.</p>
+    /// <p>If you include the configuration parameters, the operation sets the values for the secret and then immediately starts a rotation. If you don't include the configuration parameters, the operation starts a rotation with the values already stored in the secret. </p>
+    /// <p>For database credentials you want to rotate, for Secrets Manager to be able to rotate the secret, you must make sure the secret value is in the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_secret_json_structure.html"> JSON structure of a database secret</a>. In particular, if you want to use the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets_strategies.html#rotating-secrets-two-users"> alternating users strategy</a>, your secret must contain the ARN of a superuser secret.</p>
+    /// <p>To configure rotation, you also need the ARN of an Amazon Web Services Lambda function and the schedule for the rotation. The Lambda rotation function creates a new version of the secret and creates or updates the credentials on the database or service to match. After testing the new credentials, the function marks the new secret version with the staging label <code>AWSCURRENT</code>. Then anyone who retrieves the secret gets the new version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
+    /// <p>You can create the Lambda rotation function based on the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_available-rotation-templates.html">rotation function templates</a> that Secrets Manager provides. Choose a template that matches your <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets_strategies.html">Rotation strategy</a>.</p>
+    /// <p>When rotation is successful, the <code>AWSPENDING</code> staging label might be attached to the same version as the <code>AWSCURRENT</code> version, or it might not be attached to any version. If the <code>AWSPENDING</code> staging label is present but not attached to the same version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code> assumes that a previous rotation request is still in progress and returns an error.</p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code> permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html"> Permissions for rotation</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RotateSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -1861,13 +1864,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret to rotate.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret to rotate.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -1934,7 +1937,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the link between the replica secret and the primary secret and promotes the replica to a primary secret in the replica Region.</p>
     /// <p>You must call this operation from the Region in which you want to promote the replica to a primary secret.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopReplicationToReplica {
         handle: std::sync::Arc<super::Handle>,
@@ -1999,7 +2002,7 @@ pub mod fluent_builders {
     /// </ul> <important>
     /// <p>If you use tags as part of your security strategy, then adding or removing a tag can change permissions. If successfully completing this operation would result in you losing your permissions for this secret, then the operation is blocked and returns an Access Denied error.</p>
     /// </important>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2040,13 +2043,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -2077,7 +2080,7 @@ pub mod fluent_builders {
     /// <p>This operation is idempotent. If a requested tag is not attached to the secret, no error is returned and the secret metadata is unchanged.</p> <important>
     /// <p>If you use tags as part of your security strategy, then removing a tag can change permissions. If successfully completing this operation would result in you losing your permissions for this secret, then the operation is blocked and returns an Access Denied error.</p>
     /// </important>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2118,13 +2121,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -2160,7 +2163,7 @@ pub mod fluent_builders {
     /// <p>If you call this operation with a <code>VersionId</code> that matches an existing version's <code>ClientRequestToken</code>, the operation results in an error. You can't modify an existing version, you can only create a new version. To remove a version, remove all staging labels from it. See <code>UpdateSecretVersionStage</code>.</p>
     /// <p>If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant delay in returning the result. </p>
     /// <p>If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed key. </p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. If you use a customer managed key, you must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions on the key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"> Secret encryption and decryption</a>.</p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. If you use a customer managed key, you must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions on the key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"> Secret encryption and decryption</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecret {
         handle: std::sync::Arc<super::Handle>,
@@ -2201,13 +2204,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -2296,7 +2299,7 @@ pub mod fluent_builders {
     /// <p>Whenever you move <code>AWSCURRENT</code>, Secrets Manager automatically moves the label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// </note>
     /// <p>If this action results in the last label being removed from a version, then the version is considered to be 'deprecated' and can be deleted by Secrets Manager.</p>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecretVersionStage {
         handle: std::sync::Arc<super::Handle>,
@@ -2337,13 +2340,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_id(input);
             self
@@ -2399,7 +2402,7 @@ pub mod fluent_builders {
     /// <li> <p>Checks for correct syntax in a policy.</p> </li>
     /// <li> <p>Verifies the policy does not lock out a caller.</p> </li>
     /// </ul>
-    /// <p> <b>Required permissions: </b> <code>secretsmanager:ValidateResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
+    /// <p> <b>Required permissions: </b> <code>secretsmanager:ValidateResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateResourcePolicy {
         handle: std::sync::Arc<super::Handle>,

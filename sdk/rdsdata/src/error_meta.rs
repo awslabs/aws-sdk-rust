@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -21,6 +23,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
@@ -41,6 +44,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::BatchExecuteStatementErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::BatchExecuteStatementErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -73,6 +79,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::BeginTransactionErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::BeginTransactionErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -105,6 +114,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CommitTransactionErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::CommitTransactionErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -138,6 +150,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ExecuteSqlError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ExecuteSqlErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::ExecuteSqlErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -165,6 +180,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ExecuteStatementErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::ExecuteStatementErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -197,6 +215,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RollbackTransactionErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::RollbackTransactionErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }

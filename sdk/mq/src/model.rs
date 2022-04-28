@@ -1895,6 +1895,8 @@ pub enum BrokerState {
     #[allow(missing_docs)] // documentation missing in model
     CreationInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    CriticalActionRequired,
+    #[allow(missing_docs)] // documentation missing in model
     DeletionInProgress,
     #[allow(missing_docs)] // documentation missing in model
     RebootInProgress,
@@ -1908,6 +1910,7 @@ impl std::convert::From<&str> for BrokerState {
         match s {
             "CREATION_FAILED" => BrokerState::CreationFailed,
             "CREATION_IN_PROGRESS" => BrokerState::CreationInProgress,
+            "CRITICAL_ACTION_REQUIRED" => BrokerState::CriticalActionRequired,
             "DELETION_IN_PROGRESS" => BrokerState::DeletionInProgress,
             "REBOOT_IN_PROGRESS" => BrokerState::RebootInProgress,
             "RUNNING" => BrokerState::Running,
@@ -1928,6 +1931,7 @@ impl BrokerState {
         match self {
             BrokerState::CreationFailed => "CREATION_FAILED",
             BrokerState::CreationInProgress => "CREATION_IN_PROGRESS",
+            BrokerState::CriticalActionRequired => "CRITICAL_ACTION_REQUIRED",
             BrokerState::DeletionInProgress => "DELETION_IN_PROGRESS",
             BrokerState::RebootInProgress => "REBOOT_IN_PROGRESS",
             BrokerState::Running => "RUNNING",
@@ -1939,6 +1943,7 @@ impl BrokerState {
         &[
             "CREATION_FAILED",
             "CREATION_IN_PROGRESS",
+            "CRITICAL_ACTION_REQUIRED",
             "DELETION_IN_PROGRESS",
             "REBOOT_IN_PROGRESS",
             "RUNNING",
@@ -2986,6 +2991,85 @@ impl BrokerInstance {
     /// Creates a new builder-style object to manufacture [`BrokerInstance`](crate::model::BrokerInstance)
     pub fn builder() -> crate::model::broker_instance::Builder {
         crate::model::broker_instance::Builder::default()
+    }
+}
+
+/// <p>The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ActionRequired {
+    /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
+    pub action_required_code: std::option::Option<std::string::String>,
+    /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
+    pub action_required_info: std::option::Option<std::string::String>,
+}
+impl ActionRequired {
+    /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
+    pub fn action_required_code(&self) -> std::option::Option<&str> {
+        self.action_required_code.as_deref()
+    }
+    /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
+    pub fn action_required_info(&self) -> std::option::Option<&str> {
+        self.action_required_info.as_deref()
+    }
+}
+impl std::fmt::Debug for ActionRequired {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ActionRequired");
+        formatter.field("action_required_code", &self.action_required_code);
+        formatter.field("action_required_info", &self.action_required_info);
+        formatter.finish()
+    }
+}
+/// See [`ActionRequired`](crate::model::ActionRequired)
+pub mod action_required {
+    /// A builder for [`ActionRequired`](crate::model::ActionRequired)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action_required_code: std::option::Option<std::string::String>,
+        pub(crate) action_required_info: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
+        pub fn action_required_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action_required_code = Some(input.into());
+            self
+        }
+        /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
+        pub fn set_action_required_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.action_required_code = input;
+            self
+        }
+        /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
+        pub fn action_required_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action_required_info = Some(input.into());
+            self
+        }
+        /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
+        pub fn set_action_required_info(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.action_required_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ActionRequired`](crate::model::ActionRequired)
+        pub fn build(self) -> crate::model::ActionRequired {
+            crate::model::ActionRequired {
+                action_required_code: self.action_required_code,
+                action_required_info: self.action_required_info,
+            }
+        }
+    }
+}
+impl ActionRequired {
+    /// Creates a new builder-style object to manufacture [`ActionRequired`](crate::model::ActionRequired)
+    pub fn builder() -> crate::model::action_required::Builder {
+        crate::model::action_required::Builder::default()
     }
 }
 

@@ -255,11 +255,11 @@ impl UpdateDomainEntryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionBundleOutput {
-    /// <p>Describes the API operation.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateDistributionBundleOutput {
-    /// <p>Describes the API operation.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -280,12 +280,12 @@ pub mod update_distribution_bundle_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>Describes the API operation.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>Describes the API operation.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -1419,11 +1419,11 @@ impl ReleaseStaticIpOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterContainerImageOutput {
-    /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
+    /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
     pub container_image: std::option::Option<crate::model::ContainerImage>,
 }
 impl RegisterContainerImageOutput {
-    /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
+    /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
     pub fn container_image(&self) -> std::option::Option<&crate::model::ContainerImage> {
         self.container_image.as_ref()
     }
@@ -1444,12 +1444,12 @@ pub mod register_container_image_output {
         pub(crate) container_image: std::option::Option<crate::model::ContainerImage>,
     }
     impl Builder {
-        /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
+        /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
         pub fn container_image(mut self, input: crate::model::ContainerImage) -> Self {
             self.container_image = Some(input);
             self
         }
-        /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
+        /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
         pub fn set_container_image(
             mut self,
             input: std::option::Option<crate::model::ContainerImage>,
@@ -3463,6 +3463,100 @@ impl GetOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput)
     pub fn builder() -> crate::output::get_operation_output::Builder {
         crate::output::get_operation_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLoadBalancerTlsPoliciesOutput {
+    /// <p>An array of objects that describe the TLS security policies that are available.</p>
+    pub tls_policies: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetLoadBalancerTlsPoliciesOutput {
+    /// <p>An array of objects that describe the TLS security policies that are available.</p>
+    pub fn tls_policies(&self) -> std::option::Option<&[crate::model::LoadBalancerTlsPolicy]> {
+        self.tls_policies.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetLoadBalancerTlsPoliciesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLoadBalancerTlsPoliciesOutput");
+        formatter.field("tls_policies", &self.tls_policies);
+        formatter.field("next_page_token", &self.next_page_token);
+        formatter.finish()
+    }
+}
+/// See [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput)
+pub mod get_load_balancer_tls_policies_output {
+    /// A builder for [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tls_policies:
+            std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
+        pub(crate) next_page_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `tls_policies`.
+        ///
+        /// To override the contents of this collection use [`set_tls_policies`](Self::set_tls_policies).
+        ///
+        /// <p>An array of objects that describe the TLS security policies that are available.</p>
+        pub fn tls_policies(mut self, input: crate::model::LoadBalancerTlsPolicy) -> Self {
+            let mut v = self.tls_policies.unwrap_or_default();
+            v.push(input);
+            self.tls_policies = Some(v);
+            self
+        }
+        /// <p>An array of objects that describe the TLS security policies that are available.</p>
+        pub fn set_tls_policies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
+        ) -> Self {
+            self.tls_policies = input;
+            self
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_page_token = Some(input.into());
+            self
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        pub fn set_next_page_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.next_page_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput)
+        pub fn build(self) -> crate::output::GetLoadBalancerTlsPoliciesOutput {
+            crate::output::GetLoadBalancerTlsPoliciesOutput {
+                tls_policies: self.tls_policies,
+                next_page_token: self.next_page_token,
+            }
+        }
+    }
+}
+impl GetLoadBalancerTlsPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput)
+    pub fn builder() -> crate::output::get_load_balancer_tls_policies_output::Builder {
+        crate::output::get_load_balancer_tls_policies_output::Builder::default()
     }
 }
 
@@ -6175,6 +6269,9 @@ pub struct GetBucketsOutput {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+    /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    pub account_level_bpa_sync: std::option::Option<crate::model::AccountLevelBpaSync>,
 }
 impl GetBucketsOutput {
     /// <p>An array of objects that describe buckets.</p>
@@ -6187,12 +6284,20 @@ impl GetBucketsOutput {
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
+    /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    pub fn account_level_bpa_sync(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountLevelBpaSync> {
+        self.account_level_bpa_sync.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBucketsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketsOutput");
         formatter.field("buckets", &self.buckets);
         formatter.field("next_page_token", &self.next_page_token);
+        formatter.field("account_level_bpa_sync", &self.account_level_bpa_sync);
         formatter.finish()
     }
 }
@@ -6204,6 +6309,7 @@ pub mod get_buckets_output {
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        pub(crate) account_level_bpa_sync: std::option::Option<crate::model::AccountLevelBpaSync>,
     }
     impl Builder {
         /// Appends an item to `buckets`.
@@ -6242,11 +6348,27 @@ pub mod get_buckets_output {
             self.next_page_token = input;
             self
         }
+        /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+        /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+        pub fn account_level_bpa_sync(mut self, input: crate::model::AccountLevelBpaSync) -> Self {
+            self.account_level_bpa_sync = Some(input);
+            self
+        }
+        /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+        /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+        pub fn set_account_level_bpa_sync(
+            mut self,
+            input: std::option::Option<crate::model::AccountLevelBpaSync>,
+        ) -> Self {
+            self.account_level_bpa_sync = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBucketsOutput`](crate::output::GetBucketsOutput)
         pub fn build(self) -> crate::output::GetBucketsOutput {
             crate::output::GetBucketsOutput {
                 buckets: self.buckets,
                 next_page_token: self.next_page_token,
+                account_level_bpa_sync: self.account_level_bpa_sync,
             }
         }
     }

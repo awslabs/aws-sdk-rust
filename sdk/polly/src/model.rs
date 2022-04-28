@@ -60,6 +60,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Gwyneth,
     #[allow(missing_docs)] // documentation missing in model
+    Hannah,
+    #[allow(missing_docs)] // documentation missing in model
     Hans,
     #[allow(missing_docs)] // documentation missing in model
     Ines,
@@ -173,6 +175,7 @@ impl std::convert::From<&str> for VoiceId {
             "Geraint" => VoiceId::Geraint,
             "Giorgio" => VoiceId::Giorgio,
             "Gwyneth" => VoiceId::Gwyneth,
+            "Hannah" => VoiceId::Hannah,
             "Hans" => VoiceId::Hans,
             "Ines" => VoiceId::Ines,
             "Ivy" => VoiceId::Ivy,
@@ -254,6 +257,7 @@ impl VoiceId {
             VoiceId::Geraint => "Geraint",
             VoiceId::Giorgio => "Giorgio",
             VoiceId::Gwyneth => "Gwyneth",
+            VoiceId::Hannah => "Hannah",
             VoiceId::Hans => "Hans",
             VoiceId::Ines => "Ines",
             VoiceId::Ivy => "Ivy",
@@ -326,6 +330,7 @@ impl VoiceId {
             "Geraint",
             "Giorgio",
             "Gwyneth",
+            "Hannah",
             "Hans",
             "Ines",
             "Ivy",
@@ -581,6 +586,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     DaDk,
     #[allow(missing_docs)] // documentation missing in model
+    DeAt,
+    #[allow(missing_docs)] // documentation missing in model
     DeDe,
     #[allow(missing_docs)] // documentation missing in model
     EnAu,
@@ -645,6 +652,7 @@ impl std::convert::From<&str> for LanguageCode {
             "cmn-CN" => LanguageCode::CmnCn,
             "cy-GB" => LanguageCode::CyGb,
             "da-DK" => LanguageCode::DaDk,
+            "de-AT" => LanguageCode::DeAt,
             "de-DE" => LanguageCode::DeDe,
             "en-AU" => LanguageCode::EnAu,
             "en-GB" => LanguageCode::EnGb,
@@ -692,6 +700,7 @@ impl LanguageCode {
             LanguageCode::CmnCn => "cmn-CN",
             LanguageCode::CyGb => "cy-GB",
             LanguageCode::DaDk => "da-DK",
+            LanguageCode::DeAt => "de-AT",
             LanguageCode::DeDe => "de-DE",
             LanguageCode::EnAu => "en-AU",
             LanguageCode::EnGb => "en-GB",
@@ -730,6 +739,7 @@ impl LanguageCode {
             "cmn-CN",
             "cy-GB",
             "da-DK",
+            "de-AT",
             "de-DE",
             "en-AU",
             "en-GB",

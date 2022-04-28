@@ -477,12 +477,12 @@ pub mod create_content_input {
         >,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1550,12 +1550,12 @@ pub mod delete_content_input {
         pub(crate) content_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2192,12 +2192,12 @@ pub mod get_content_input {
             self.content_id = input;
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2364,12 +2364,12 @@ pub mod get_content_summary_input {
             self.content_id = input;
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2525,12 +2525,12 @@ pub mod get_knowledge_base_input {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3411,12 +3411,12 @@ pub mod list_contents_input {
             self.max_results = input;
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4262,12 +4262,12 @@ pub mod remove_knowledge_base_template_uri_input {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4432,12 +4432,12 @@ pub mod search_content_input {
             self.max_results = input;
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4837,12 +4837,12 @@ pub mod start_content_upload_input {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5369,12 +5369,12 @@ pub mod update_content_input {
         pub(crate) upload_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5642,12 +5642,12 @@ pub mod update_knowledge_base_template_uri_input {
         pub(crate) template_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.knowledge_base_id = Some(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5808,13 +5808,13 @@ impl UpdateKnowledgeBaseTemplateUriInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKnowledgeBaseTemplateUriInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The template URI to update.</p>
     pub template_uri: std::option::Option<std::string::String>,
 }
 impl UpdateKnowledgeBaseTemplateUriInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -5836,13 +5836,13 @@ impl std::fmt::Debug for UpdateKnowledgeBaseTemplateUriInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentUploadInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The type of content to upload.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl StartContentUploadInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -5868,7 +5868,7 @@ pub struct SearchContentInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The search expression to filter results.</p>
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
@@ -5882,7 +5882,7 @@ impl SearchContentInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -5906,11 +5906,11 @@ impl std::fmt::Debug for SearchContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveKnowledgeBaseTemplateUriInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6058,11 +6058,11 @@ impl std::fmt::Debug for DeleteKnowledgeBaseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKnowledgeBaseInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetKnowledgeBaseInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6081,7 +6081,7 @@ impl std::fmt::Debug for GetKnowledgeBaseInput {
 pub struct GetContentSummaryInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: std::option::Option<std::string::String>,
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetContentSummaryInput {
@@ -6089,7 +6089,7 @@ impl GetContentSummaryInput {
     pub fn content_id(&self) -> std::option::Option<&str> {
         self.content_id.as_deref()
     }
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6111,7 +6111,7 @@ pub struct ListContentsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl ListContentsInput {
@@ -6123,7 +6123,7 @@ impl ListContentsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6142,7 +6142,7 @@ impl std::fmt::Debug for ListContentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContentInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
     pub name: std::option::Option<std::string::String>,
@@ -6162,7 +6162,7 @@ pub struct CreateContentInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateContentInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6220,13 +6220,13 @@ impl std::fmt::Debug for CreateContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContentInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: std::option::Option<std::string::String>,
 }
 impl DeleteContentInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6248,7 +6248,7 @@ impl std::fmt::Debug for DeleteContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContentInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: std::option::Option<std::string::String>,
@@ -6267,7 +6267,7 @@ pub struct UpdateContentInput {
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl UpdateContentInput {
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -6327,7 +6327,7 @@ impl std::fmt::Debug for UpdateContentInput {
 pub struct GetContentInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: std::option::Option<std::string::String>,
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetContentInput {
@@ -6335,7 +6335,7 @@ impl GetContentInput {
     pub fn content_id(&self) -> std::option::Option<&str> {
         self.content_id.as_deref()
     }
-    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }

@@ -29,6 +29,16 @@ pub(crate) fn reflens_structure_crate_output_list_channels_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_live_sources_output_next_token(
+    input: &crate::output::ListLiveSourcesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_playback_configurations_output_next_token(
     input: &crate::output::ListPlaybackConfigurationsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -92,6 +102,16 @@ pub(crate) fn lens_structure_crate_output_list_alerts_output_items(
 pub(crate) fn lens_structure_crate_output_list_channels_output_items(
     input: crate::output::ListChannelsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Channel>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_live_sources_output_items(
+    input: crate::output::ListLiveSourcesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LiveSource>> {
     let input = match input.items {
         None => return None,
         Some(t) => t,

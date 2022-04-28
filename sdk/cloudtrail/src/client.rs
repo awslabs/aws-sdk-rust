@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AddTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AddTags::set_resource_id): <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AddTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AddTags::set_resource_id): <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tags_list): <p>Contains a list of tags, up to a limit of 50</p>
     /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
 
@@ -363,7 +363,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id_list(Vec<String>)`](crate::client::fluent_builders::ListTags::resource_id_list) / [`set_resource_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::ListTags::set_resource_id_list): <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`resource_id_list(Vec<String>)`](crate::client::fluent_builders::ListTags::resource_id_list) / [`set_resource_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::ListTags::set_resource_id_list): <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p>Reserved for future use.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
     ///   - [`resource_tag_list(Option<Vec<ResourceTag>>)`](crate::output::ListTagsOutput::resource_tag_list): <p>A list of resource tags.</p>
@@ -430,7 +430,7 @@ impl Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_resource_id): <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_resource_id): <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>  <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>  <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::RemoveTags::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::RemoveTags::set_tags_list): <p>Specifies a list of tags to be removed.</p>
     /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
 
@@ -555,7 +555,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all Amazon Web Services Regions only from the Region in which the trail was created (also known as its home region).</p>
+    /// <p>Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web Services Regions only from the Region in which the trail or event data store was created (also known as its home region).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags {
         handle: std::sync::Arc<super::Handle>,
@@ -595,13 +595,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+        /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
         /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+        /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
         /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
@@ -1995,7 +1995,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Lists the tags for the trail in the current region.</p>
+    /// <p>Lists the tags for the trail or event data store in the current region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags {
         handle: std::sync::Arc<super::Handle>,
@@ -2045,14 +2045,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
         ///
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
         pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id_list(input.into());
             self
         }
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
         pub fn set_resource_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2466,7 +2464,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
-    /// <p>Removes the specified tags from a trail.</p>
+    /// <p>Removes the specified tags from a trail or event data store.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags {
         handle: std::sync::Arc<super::Handle>,
@@ -2506,14 +2504,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
+        /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
+        /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self

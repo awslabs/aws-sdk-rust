@@ -753,6 +753,101 @@ pub fn parse_batch_get_crawlers_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_custom_entity_types_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetCustomEntityTypesOutput,
+    crate::error::BatchGetCustomEntityTypesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetCustomEntityTypesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::BatchGetCustomEntityTypesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServiceException" => crate::error::BatchGetCustomEntityTypesError {
+            meta: generic,
+            kind: crate::error::BatchGetCustomEntityTypesErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetCustomEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::BatchGetCustomEntityTypesError {
+            meta: generic,
+            kind: crate::error::BatchGetCustomEntityTypesErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetCustomEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::BatchGetCustomEntityTypesError {
+            meta: generic,
+            kind: crate::error::BatchGetCustomEntityTypesErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetCustomEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::BatchGetCustomEntityTypesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_custom_entity_types_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetCustomEntityTypesOutput,
+    crate::error::BatchGetCustomEntityTypesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_get_custom_entity_types_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_custom_entity_types(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchGetCustomEntityTypesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_get_dev_endpoints_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2209,6 +2304,173 @@ pub fn parse_create_crawler_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_crawler_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_custom_entity_type_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCustomEntityTypeOutput,
+    crate::error::CreateCustomEntityTypeError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateCustomEntityTypeError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::CreateCustomEntityTypeErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "AlreadyExistsException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::CreateCustomEntityTypeErrorKind::AlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "IdempotentParameterMismatchException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind:
+                crate::error::CreateCustomEntityTypeErrorKind::IdempotentParameterMismatchException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InternalServiceException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::CreateCustomEntityTypeErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::CreateCustomEntityTypeErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::CreateCustomEntityTypeErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNumberLimitExceededException" => crate::error::CreateCustomEntityTypeError {
+            meta: generic,
+            kind:
+                crate::error::CreateCustomEntityTypeErrorKind::ResourceNumberLimitExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::resource_number_limit_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_resource_number_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::CreateCustomEntityTypeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_custom_entity_type_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCustomEntityTypeOutput,
+    crate::error::CreateCustomEntityTypeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_custom_entity_type_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_custom_entity_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateCustomEntityTypeError::unhandled)?;
         output.build()
     })
 }
@@ -5027,6 +5289,135 @@ pub fn parse_delete_crawler_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_crawler_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_custom_entity_type_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteCustomEntityTypeOutput,
+    crate::error::DeleteCustomEntityTypeError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteCustomEntityTypeError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::DeleteCustomEntityTypeErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EntityNotFoundException" => crate::error::DeleteCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::DeleteCustomEntityTypeErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceException" => crate::error::DeleteCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::DeleteCustomEntityTypeErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::DeleteCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::DeleteCustomEntityTypeErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::DeleteCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::DeleteCustomEntityTypeErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteCustomEntityTypeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_custom_entity_type_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteCustomEntityTypeOutput,
+    crate::error::DeleteCustomEntityTypeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_custom_entity_type_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_custom_entity_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteCustomEntityTypeError::unhandled)?;
         output.build()
     })
 }
@@ -8028,6 +8419,131 @@ pub fn parse_get_crawlers_response(
             output,
         )
         .map_err(crate::error::GetCrawlersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_custom_entity_type_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetCustomEntityTypeOutput,
+    crate::error::GetCustomEntityTypeError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetCustomEntityTypeError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::GetCustomEntityTypeErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EntityNotFoundException" => crate::error::GetCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::GetCustomEntityTypeErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceException" => crate::error::GetCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::GetCustomEntityTypeErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::GetCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::GetCustomEntityTypeErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::GetCustomEntityTypeError {
+            meta: generic,
+            kind: crate::error::GetCustomEntityTypeErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetCustomEntityTypeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_custom_entity_type_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetCustomEntityTypeOutput,
+    crate::error::GetCustomEntityTypeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_custom_entity_type_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_custom_entity_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetCustomEntityTypeError::unhandled)?;
         output.build()
     })
 }
@@ -13459,6 +13975,97 @@ pub fn parse_list_crawlers_response(
             output,
         )
         .map_err(crate::error::ListCrawlersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_custom_entity_types_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListCustomEntityTypesOutput,
+    crate::error::ListCustomEntityTypesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListCustomEntityTypesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListCustomEntityTypesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServiceException" => crate::error::ListCustomEntityTypesError {
+            meta: generic,
+            kind: crate::error::ListCustomEntityTypesErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::ListCustomEntityTypesError {
+            meta: generic,
+            kind: crate::error::ListCustomEntityTypesErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::ListCustomEntityTypesError {
+            meta: generic,
+            kind: crate::error::ListCustomEntityTypesErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListCustomEntityTypesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_custom_entity_types_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListCustomEntityTypesOutput,
+    crate::error::ListCustomEntityTypesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_custom_entity_types_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_custom_entity_types(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListCustomEntityTypesError::unhandled)?;
         output.build()
     })
 }

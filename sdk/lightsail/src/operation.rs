@@ -3471,6 +3471,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoadBalancerTlsCertif
     }
 }
 
+/// Operation shape for `GetLoadBalancerTlsPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_load_balancer_tls_policies`](crate::client::Client::get_load_balancer_tls_policies).
+///
+/// See [`crate::client::fluent_builders::GetLoadBalancerTlsPolicies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetLoadBalancerTlsPolicies {
+    _private: (),
+}
+impl GetLoadBalancerTlsPolicies {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesInput`](crate::input::GetLoadBalancerTlsPoliciesInput)
+    pub fn builder() -> crate::input::get_load_balancer_tls_policies_input::Builder {
+        crate::input::get_load_balancer_tls_policies_input::Builder::default()
+    }
+    /// Creates a new `GetLoadBalancerTlsPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLoadBalancerTlsPolicies {
+    type Output = std::result::Result<
+        crate::output::GetLoadBalancerTlsPoliciesOutput,
+        crate::error::GetLoadBalancerTlsPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_load_balancer_tls_policies_error(response)
+        } else {
+            crate::operation_deser::parse_get_load_balancer_tls_policies_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetOperation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

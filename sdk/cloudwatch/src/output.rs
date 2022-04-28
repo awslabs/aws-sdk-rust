@@ -819,8 +819,11 @@ pub struct GetMetricStreamOutput {
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p></p>
+    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
+    /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
+    pub statistics_configurations:
+        std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
 }
 impl GetMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
@@ -859,9 +862,15 @@ impl GetMetricStreamOutput {
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
-    /// <p></p>
+    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
     pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
         self.output_format.as_ref()
+    }
+    /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
+    pub fn statistics_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
+        self.statistics_configurations.as_deref()
     }
 }
 impl std::fmt::Debug for GetMetricStreamOutput {
@@ -877,6 +886,7 @@ impl std::fmt::Debug for GetMetricStreamOutput {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("last_update_date", &self.last_update_date);
         formatter.field("output_format", &self.output_format);
+        formatter.field("statistics_configurations", &self.statistics_configurations);
         formatter.finish()
     }
 }
@@ -898,6 +908,8 @@ pub mod get_metric_stream_output {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
+        pub(crate) statistics_configurations:
+            std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
     }
     impl Builder {
         /// <p>The ARN of the metric stream.</p>
@@ -1014,17 +1026,41 @@ pub mod get_metric_stream_output {
             self.last_update_date = input;
             self
         }
-        /// <p></p>
+        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
         pub fn output_format(mut self, input: crate::model::MetricStreamOutputFormat) -> Self {
             self.output_format = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::MetricStreamOutputFormat>,
         ) -> Self {
             self.output_format = input;
+            self
+        }
+        /// Appends an item to `statistics_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).
+        ///
+        /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
+        pub fn statistics_configurations(
+            mut self,
+            input: crate::model::MetricStreamStatisticsConfiguration,
+        ) -> Self {
+            let mut v = self.statistics_configurations.unwrap_or_default();
+            v.push(input);
+            self.statistics_configurations = Some(v);
+            self
+        }
+        /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
+        pub fn set_statistics_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>,
+            >,
+        ) -> Self {
+            self.statistics_configurations = input;
             self
         }
         /// Consumes the builder and constructs a [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput)
@@ -1040,6 +1076,7 @@ pub mod get_metric_stream_output {
                 creation_date: self.creation_date,
                 last_update_date: self.last_update_date,
                 output_format: self.output_format,
+                statistics_configurations: self.statistics_configurations,
             }
         }
     }

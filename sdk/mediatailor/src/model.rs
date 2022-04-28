@@ -146,21 +146,21 @@ impl AsRef<str> for Type {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SegmentDeliveryConfiguration {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
     pub base_url: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl SegmentDeliveryConfiguration {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
     pub fn base_url(&self) -> std::option::Option<&str> {
         self.base_url.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -183,22 +183,22 @@ pub mod segment_delivery_configuration {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
         pub fn base_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_url = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
         pub fn set_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_url = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2213,7 +2213,7 @@ pub struct SourceLocation {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The segment delivery configurations for the source location.</p>
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
@@ -2249,7 +2249,7 @@ impl SourceLocation {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The segment delivery configurations for the source location.</p>
     pub fn segment_delivery_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
@@ -2391,6 +2391,7 @@ pub mod source_location {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
+        /// <p>The segment delivery configurations for the source location.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -2400,7 +2401,7 @@ pub mod source_location {
             self.segment_delivery_configurations = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The segment delivery configurations for the source location.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -3526,6 +3527,226 @@ impl PlaybackConfiguration {
     }
 }
 
+/// <p>Live source configuration parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LiveSource {
+    /// <p>The ARN for the live source.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The HTTP package configurations for the live source.</p>
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the live source was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name that's used to refer to a live source.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the live source.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl LiveSource {
+    /// <p>The ARN for the live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations for the live source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name that's used to refer to a live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the live source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for LiveSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LiveSource");
+        formatter.field("arn", &self.arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field(
+            "http_package_configurations",
+            &self.http_package_configurations,
+        );
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`LiveSource`](crate::model::LiveSource)
+pub mod live_source {
+    /// A builder for [`LiveSource`](crate::model::LiveSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN for the live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>The HTTP package configurations for the live source.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>The HTTP package configurations for the live source.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name that's used to refer to a live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name that's used to refer to a live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name of the source location.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the live source.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the live source.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LiveSource`](crate::model::LiveSource)
+        pub fn build(self) -> crate::model::LiveSource {
+            crate::model::LiveSource {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl LiveSource {
+    /// Creates a new builder-style object to manufacture [`LiveSource`](crate::model::LiveSource)
+    pub fn builder() -> crate::model::live_source::Builder {
+        crate::model::live_source::Builder::default()
+    }
+}
+
 /// <p>The configuration parameters for a channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3551,6 +3772,8 @@ pub struct Channel {
     /// <p>The tags to assign to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
+    pub tier: std::option::Option<std::string::String>,
 }
 impl Channel {
     /// <p>The ARN of the channel.</p>
@@ -3594,6 +3817,10 @@ impl Channel {
     {
         self.tags.as_ref()
     }
+    /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3607,6 +3834,7 @@ impl std::fmt::Debug for Channel {
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
         formatter.field("tags", &self.tags);
+        formatter.field("tier", &self.tier);
         formatter.finish()
     }
 }
@@ -3627,6 +3855,7 @@ pub mod channel {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) tier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -3762,6 +3991,16 @@ pub mod channel {
             self.tags = input;
             self
         }
+        /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Channel`](crate::model::Channel)
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
@@ -3774,6 +4013,7 @@ pub mod channel {
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
                 tags: self.tags,
+                tier: self.tier,
             }
         }
     }
@@ -3942,6 +4182,8 @@ pub struct ScheduleEntry {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel that uses this schedule.</p>
     pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The name of the live source used for the program.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule's ad break properties.</p>
@@ -3970,6 +4212,10 @@ impl ScheduleEntry {
     /// <p>The name of the channel that uses this schedule.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
+    }
+    /// <p>The name of the live source used for the program.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
     }
     /// <p>The name of the program.</p>
     pub fn program_name(&self) -> std::option::Option<&str> {
@@ -4003,6 +4249,7 @@ impl std::fmt::Debug for ScheduleEntry {
         formatter.field("approximate_start_time", &self.approximate_start_time);
         formatter.field("arn", &self.arn);
         formatter.field("channel_name", &self.channel_name);
+        formatter.field("live_source_name", &self.live_source_name);
         formatter.field("program_name", &self.program_name);
         formatter.field("schedule_ad_breaks", &self.schedule_ad_breaks);
         formatter.field("schedule_entry_type", &self.schedule_entry_type);
@@ -4021,6 +4268,7 @@ pub mod schedule_entry {
         pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
         pub(crate) program_name: std::option::Option<std::string::String>,
         pub(crate) schedule_ad_breaks:
             std::option::Option<std::vec::Vec<crate::model::ScheduleAdBreak>>,
@@ -4070,6 +4318,19 @@ pub mod schedule_entry {
         /// <p>The name of the channel that uses this schedule.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
+            self
+        }
+        /// <p>The name of the live source used for the program.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the live source used for the program.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
             self
         }
         /// <p>The name of the program.</p>
@@ -4149,6 +4410,7 @@ pub mod schedule_entry {
                 approximate_start_time: self.approximate_start_time,
                 arn: self.arn,
                 channel_name: self.channel_name,
+                live_source_name: self.live_source_name,
                 program_name: self.program_name,
                 schedule_ad_breaks: self.schedule_ad_breaks,
                 schedule_entry_type: self.schedule_entry_type,
@@ -4683,6 +4945,8 @@ impl ScheduleConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transition {
+    /// <p>The duration of the live program in seconds.</p>
+    pub duration_millis: i64,
     /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
     pub relative_position: std::option::Option<crate::model::RelativePosition>,
     /// <p>The name of the program that this program will be inserted next to, as defined by RelativePosition.</p>
@@ -4698,6 +4962,10 @@ pub struct Transition {
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Transition {
+    /// <p>The duration of the live program in seconds.</p>
+    pub fn duration_millis(&self) -> i64 {
+        self.duration_millis
+    }
     /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
     pub fn relative_position(&self) -> std::option::Option<&crate::model::RelativePosition> {
         self.relative_position.as_ref()
@@ -4723,6 +4991,7 @@ impl Transition {
 impl std::fmt::Debug for Transition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Transition");
+        formatter.field("duration_millis", &self.duration_millis);
         formatter.field("relative_position", &self.relative_position);
         formatter.field("relative_program", &self.relative_program);
         formatter.field(
@@ -4739,12 +5008,23 @@ pub mod transition {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) duration_millis: std::option::Option<i64>,
         pub(crate) relative_position: std::option::Option<crate::model::RelativePosition>,
         pub(crate) relative_program: std::option::Option<std::string::String>,
         pub(crate) scheduled_start_time_millis: std::option::Option<i64>,
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The duration of the live program in seconds.</p>
+        pub fn duration_millis(mut self, input: i64) -> Self {
+            self.duration_millis = Some(input);
+            self
+        }
+        /// <p>The duration of the live program in seconds.</p>
+        pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.duration_millis = input;
+            self
+        }
         /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
         pub fn relative_position(mut self, input: crate::model::RelativePosition) -> Self {
             self.relative_position = Some(input);
@@ -4804,6 +5084,7 @@ pub mod transition {
         /// Consumes the builder and constructs a [`Transition`](crate::model::Transition)
         pub fn build(self) -> crate::model::Transition {
             crate::model::Transition {
+                duration_millis: self.duration_millis.unwrap_or_default(),
                 relative_position: self.relative_position,
                 relative_program: self.relative_program,
                 scheduled_start_time_millis: self.scheduled_start_time_millis.unwrap_or_default(),
@@ -4869,6 +5150,61 @@ impl RelativePosition {
     }
 }
 impl AsRef<str> for RelativePosition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Tier {
+    #[allow(missing_docs)] // documentation missing in model
+    Basic,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Tier {
+    fn from(s: &str) -> Self {
+        match s {
+            "BASIC" => Tier::Basic,
+            "STANDARD" => Tier::Standard,
+            other => Tier::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Tier {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Tier::from(s))
+    }
+}
+impl Tier {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Tier::Basic => "BASIC",
+            Tier::Standard => "STANDARD",
+            Tier::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BASIC", "STANDARD"]
+    }
+}
+impl AsRef<str> for Tier {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

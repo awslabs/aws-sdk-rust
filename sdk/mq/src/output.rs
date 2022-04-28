@@ -1740,6 +1740,8 @@ impl DescribeBrokerEngineTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerOutput {
+    /// <p>A list of actions required for a broker.</p>
+    pub actions_required: std::option::Option<std::vec::Vec<crate::model::ActionRequired>>,
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -1799,6 +1801,10 @@ pub struct DescribeBrokerOutput {
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
 }
 impl DescribeBrokerOutput {
+    /// <p>A list of actions required for a broker.</p>
+    pub fn actions_required(&self) -> std::option::Option<&[crate::model::ActionRequired]> {
+        self.actions_required.as_deref()
+    }
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn authentication_strategy(
         &self,
@@ -1928,6 +1934,7 @@ impl DescribeBrokerOutput {
 impl std::fmt::Debug for DescribeBrokerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBrokerOutput");
+        formatter.field("actions_required", &self.actions_required);
         formatter.field("authentication_strategy", &self.authentication_strategy);
         formatter.field(
             "auto_minor_version_upgrade",
@@ -1980,6 +1987,8 @@ pub mod describe_broker_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) actions_required:
+            std::option::Option<std::vec::Vec<crate::model::ActionRequired>>,
         pub(crate) authentication_strategy:
             std::option::Option<crate::model::AuthenticationStrategy>,
         pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
@@ -2018,6 +2027,25 @@ pub mod describe_broker_output {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
     }
     impl Builder {
+        /// Appends an item to `actions_required`.
+        ///
+        /// To override the contents of this collection use [`set_actions_required`](Self::set_actions_required).
+        ///
+        /// <p>A list of actions required for a broker.</p>
+        pub fn actions_required(mut self, input: crate::model::ActionRequired) -> Self {
+            let mut v = self.actions_required.unwrap_or_default();
+            v.push(input);
+            self.actions_required = Some(v);
+            self
+        }
+        /// <p>A list of actions required for a broker.</p>
+        pub fn set_actions_required(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ActionRequired>>,
+        ) -> Self {
+            self.actions_required = input;
+            self
+        }
         /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
@@ -2424,6 +2452,7 @@ pub mod describe_broker_output {
         /// Consumes the builder and constructs a [`DescribeBrokerOutput`](crate::output::DescribeBrokerOutput)
         pub fn build(self) -> crate::output::DescribeBrokerOutput {
             crate::output::DescribeBrokerOutput {
+                actions_required: self.actions_required,
                 authentication_strategy: self.authentication_strategy,
                 auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
                 broker_arn: self.broker_arn,

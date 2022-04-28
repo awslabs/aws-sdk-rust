@@ -135,6 +135,7 @@ impl Client {
     ///   - [`firewall_policy_change_protection(bool)`](crate::client::fluent_builders::CreateFirewall::firewall_policy_change_protection) / [`set_firewall_policy_change_protection(bool)`](crate::client::fluent_builders::CreateFirewall::set_firewall_policy_change_protection): <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFirewall::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFirewall::set_description): <p>A description of the firewall.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFirewall::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFirewall::set_tags): <p>The key:value pairs to associate with the resource.</p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateFirewall::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateFirewall::set_encryption_configuration): <p>A complex type that contains settings for encryption of your firewall resources.</p>
     /// - On success, responds with [`CreateFirewallOutput`](crate::output::CreateFirewallOutput) with field(s):
     ///   - [`firewall(Option<Firewall>)`](crate::output::CreateFirewallOutput::firewall): <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
     ///   - [`firewall_status(Option<FirewallStatus>)`](crate::output::CreateFirewallOutput::firewall_status): <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
@@ -150,6 +151,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFirewallPolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFirewallPolicy::set_description): <p>A description of the firewall policy.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFirewallPolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFirewallPolicy::set_tags): <p>The key:value pairs to associate with the resource.</p>
     ///   - [`dry_run(bool)`](crate::client::fluent_builders::CreateFirewallPolicy::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::CreateFirewallPolicy::set_dry_run): <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>  <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>  <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateFirewallPolicy::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateFirewallPolicy::set_encryption_configuration): <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     /// - On success, responds with [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput) with field(s):
     ///   - [`update_token(Option<String>)`](crate::output::CreateFirewallPolicyOutput::update_token): <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>  <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     ///   - [`firewall_policy_response(Option<FirewallPolicyResponse>)`](crate::output::CreateFirewallPolicyOutput::firewall_policy_response): <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
@@ -168,6 +170,8 @@ impl Client {
     ///   - [`capacity(i32)`](crate::client::fluent_builders::CreateRuleGroup::capacity) / [`set_capacity(Option<i32>)`](crate::client::fluent_builders::CreateRuleGroup::set_capacity): <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>  <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>   <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>  </note>  <p> <b>Capacity for a stateless rule group</b> </p>  <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>  <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>  <ul>   <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>   <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>   <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>  </ul>  <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>  <p> <b>Capacity for a stateful rule group</b> </p>  <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRuleGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRuleGroup::set_tags): <p>The key:value pairs to associate with the resource.</p>
     ///   - [`dry_run(bool)`](crate::client::fluent_builders::CreateRuleGroup::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::CreateRuleGroup::set_dry_run): <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>  <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>  <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateRuleGroup::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateRuleGroup::set_encryption_configuration): <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    ///   - [`source_metadata(SourceMetadata)`](crate::client::fluent_builders::CreateRuleGroup::source_metadata) / [`set_source_metadata(Option<SourceMetadata>)`](crate::client::fluent_builders::CreateRuleGroup::set_source_metadata): <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     /// - On success, responds with [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput) with field(s):
     ///   - [`update_token(Option<String>)`](crate::output::CreateRuleGroupOutput::update_token): <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>  <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     ///   - [`rule_group_response(Option<RuleGroupResponse>)`](crate::output::CreateRuleGroupOutput::rule_group_response): <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
@@ -181,7 +185,7 @@ impl Client {
     ///   - [`firewall_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFirewall::firewall_name) / [`set_firewall_name(Option<String>)`](crate::client::fluent_builders::DeleteFirewall::set_firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>  <p>You must specify the ARN or the name, and you can specify both. </p>
     ///   - [`firewall_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFirewall::firewall_arn) / [`set_firewall_arn(Option<String>)`](crate::client::fluent_builders::DeleteFirewall::set_firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>  <p>You must specify the ARN or the name, and you can specify both. </p>
     /// - On success, responds with [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput) with field(s):
-    ///   - [`firewall(Option<Firewall>)`](crate::output::DeleteFirewallOutput::firewall): <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>  <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
+    ///   - [`firewall(Option<Firewall>)`](crate::output::DeleteFirewallOutput::firewall): <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>  <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
     ///   - [`firewall_status(Option<FirewallStatus>)`](crate::output::DeleteFirewallOutput::firewall_status): <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     /// - On failure, responds with [`SdkError<DeleteFirewallError>`](crate::error::DeleteFirewallError)
     pub fn delete_firewall(&self) -> fluent_builders::DeleteFirewall {
@@ -253,7 +257,7 @@ impl Client {
     ///   - [`firewall_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLoggingConfiguration::firewall_name) / [`set_firewall_name(Option<String>)`](crate::client::fluent_builders::DescribeLoggingConfiguration::set_firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>  <p>You must specify the ARN or the name, and you can specify both. </p>
     /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput) with field(s):
     ///   - [`firewall_arn(Option<String>)`](crate::output::DescribeLoggingConfigurationOutput::firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::DescribeLoggingConfigurationOutput::logging_configuration): <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
+    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::DescribeLoggingConfigurationOutput::logging_configuration): <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::error::DescribeLoggingConfigurationError)
     pub fn describe_logging_configuration(&self) -> fluent_builders::DescribeLoggingConfiguration {
         fluent_builders::DescribeLoggingConfiguration::new(self.handle.clone())
@@ -263,7 +267,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::output::DescribeResourcePolicyOutput::policy): <p>The AWS Identity and Access Management policy for the resource. </p>
+    ///   - [`policy(Option<String>)`](crate::output::DescribeResourcePolicyOutput::policy): <p>The IAM policy for the resource. </p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::error::DescribeResourcePolicyError)
     pub fn describe_resource_policy(&self) -> fluent_builders::DescribeResourcePolicy {
         fluent_builders::DescribeResourcePolicy::new(self.handle.clone())
@@ -276,7 +280,7 @@ impl Client {
     ///   - [`r#type(RuleGroupType)`](crate::client::fluent_builders::DescribeRuleGroup::type) / [`set_type(Option<RuleGroupType>)`](crate::client::fluent_builders::DescribeRuleGroup::set_type): <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>   <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>  </note>
     /// - On success, responds with [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput) with field(s):
     ///   - [`update_token(Option<String>)`](crate::output::DescribeRuleGroupOutput::update_token): <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>  <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    ///   - [`rule_group(Option<RuleGroup>)`](crate::output::DescribeRuleGroupOutput::rule_group): <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>  <p>AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>  <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
+    ///   - [`rule_group(Option<RuleGroup>)`](crate::output::DescribeRuleGroupOutput::rule_group): <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>  <p>Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>  <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
     ///   - [`rule_group_response(Option<RuleGroupResponse>)`](crate::output::DescribeRuleGroupOutput::rule_group_response): <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeRuleGroupError>`](crate::error::DescribeRuleGroupError)
     pub fn describe_rule_group(&self) -> fluent_builders::DescribeRuleGroup {
@@ -295,6 +299,7 @@ impl Client {
     ///   - [`r#type(Option<RuleGroupType>)`](crate::output::DescribeRuleGroupMetadataOutput::type): <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>   <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>  </note>
     ///   - [`capacity(Option<i32>)`](crate::output::DescribeRuleGroupMetadataOutput::capacity): <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>  <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
     ///   - [`stateful_rule_options(Option<StatefulRuleOptions>)`](crate::output::DescribeRuleGroupMetadataOutput::stateful_rule_options): <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeRuleGroupMetadataOutput::last_modified_time): <p>The last time that the rule group was changed.</p>
     /// - On failure, responds with [`SdkError<DescribeRuleGroupMetadataError>`](crate::error::DescribeRuleGroupMetadataError)
     pub fn describe_rule_group_metadata(&self) -> fluent_builders::DescribeRuleGroupMetadata {
         fluent_builders::DescribeRuleGroupMetadata::new(self.handle.clone())
@@ -349,6 +354,8 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRuleGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRuleGroups::set_next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRuleGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRuleGroups::set_max_results): <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     ///   - [`scope(ResourceManagedStatus)`](crate::client::fluent_builders::ListRuleGroups::scope) / [`set_scope(Option<ResourceManagedStatus>)`](crate::client::fluent_builders::ListRuleGroups::set_scope): <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+    ///   - [`managed_type(ResourceManagedType)`](crate::client::fluent_builders::ListRuleGroups::managed_type) / [`set_managed_type(Option<ResourceManagedType>)`](crate::client::fluent_builders::ListRuleGroups::set_managed_type): <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+    ///   - [`r#type(RuleGroupType)`](crate::client::fluent_builders::ListRuleGroups::type) / [`set_type(Option<RuleGroupType>)`](crate::client::fluent_builders::ListRuleGroups::set_type): <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     /// - On success, responds with [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRuleGroupsOutput::next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     ///   - [`rule_groups(Option<Vec<RuleGroupMetadata>>)`](crate::output::ListRuleGroupsOutput::rule_groups): <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
@@ -374,7 +381,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>  <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>  <ul>   <li> <p>network-firewall:CreateFirewallPolicy</p> </li>   <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>   <li> <p>network-firewall:ListRuleGroups</p> </li>  </ul>  <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>  <ul>   <li> <p>network-firewall:CreateFirewall</p> </li>   <li> <p>network-firewall:UpdateFirewall</p> </li>   <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>   <li> <p>network-firewall:ListFirewallPolicies</p> </li>  </ul>  <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>  <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>  <ul>   <li> <p>network-firewall:CreateFirewallPolicy</p> </li>   <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>   <li> <p>network-firewall:ListRuleGroups</p> </li>  </ul>  <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>  <ul>   <li> <p>network-firewall:CreateFirewall</p> </li>   <li> <p>network-firewall:UpdateFirewall</p> </li>   <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>   <li> <p>network-firewall:ListFirewallPolicies</p> </li>  </ul>  <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
@@ -437,6 +444,24 @@ impl Client {
     pub fn update_firewall_description(&self) -> fluent_builders::UpdateFirewallDescription {
         fluent_builders::UpdateFirewallDescription::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateFirewallEncryptionConfiguration`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`update_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::update_token) / [`set_update_token(Option<String>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::set_update_token): <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>  <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>  <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    ///   - [`firewall_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::firewall_arn) / [`set_firewall_arn(Option<String>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::set_firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    ///   - [`firewall_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::firewall_name) / [`set_firewall_name(Option<String>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::set_firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration::set_encryption_configuration): <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// - On success, responds with [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput) with field(s):
+    ///   - [`firewall_arn(Option<String>)`](crate::output::UpdateFirewallEncryptionConfigurationOutput::firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    ///   - [`firewall_name(Option<String>)`](crate::output::UpdateFirewallEncryptionConfigurationOutput::firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    ///   - [`update_token(Option<String>)`](crate::output::UpdateFirewallEncryptionConfigurationOutput::update_token): <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>  <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>  <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    ///   - [`encryption_configuration(Option<EncryptionConfiguration>)`](crate::output::UpdateFirewallEncryptionConfigurationOutput::encryption_configuration): <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<UpdateFirewallEncryptionConfigurationError>`](crate::error::UpdateFirewallEncryptionConfigurationError)
+    pub fn update_firewall_encryption_configuration(
+        &self,
+    ) -> fluent_builders::UpdateFirewallEncryptionConfiguration {
+        fluent_builders::UpdateFirewallEncryptionConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateFirewallPolicy`](crate::client::fluent_builders::UpdateFirewallPolicy) operation.
     ///
     /// - The fluent builder is configurable:
@@ -446,6 +471,7 @@ impl Client {
     ///   - [`firewall_policy(FirewallPolicy)`](crate::client::fluent_builders::UpdateFirewallPolicy::firewall_policy) / [`set_firewall_policy(Option<FirewallPolicy>)`](crate::client::fluent_builders::UpdateFirewallPolicy::set_firewall_policy): <p>The updated firewall policy to use for the firewall. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFirewallPolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFirewallPolicy::set_description): <p>A description of the firewall policy.</p>
     ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateFirewallPolicy::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::UpdateFirewallPolicy::set_dry_run): <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>  <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>  <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::UpdateFirewallPolicy::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::UpdateFirewallPolicy::set_encryption_configuration): <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     /// - On success, responds with [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput) with field(s):
     ///   - [`update_token(Option<String>)`](crate::output::UpdateFirewallPolicyOutput::update_token): <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>  <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     ///   - [`firewall_policy_response(Option<FirewallPolicyResponse>)`](crate::output::UpdateFirewallPolicyOutput::firewall_policy_response): <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
@@ -480,7 +506,7 @@ impl Client {
     /// - On success, responds with [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput) with field(s):
     ///   - [`firewall_arn(Option<String>)`](crate::output::UpdateLoggingConfigurationOutput::firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>
     ///   - [`firewall_name(Option<String>)`](crate::output::UpdateLoggingConfigurationOutput::firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::UpdateLoggingConfigurationOutput::logging_configuration): <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
+    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::UpdateLoggingConfigurationOutput::logging_configuration): <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateLoggingConfigurationError>`](crate::error::UpdateLoggingConfigurationError)
     pub fn update_logging_configuration(&self) -> fluent_builders::UpdateLoggingConfiguration {
         fluent_builders::UpdateLoggingConfiguration::new(self.handle.clone())
@@ -496,6 +522,8 @@ impl Client {
     ///   - [`r#type(RuleGroupType)`](crate::client::fluent_builders::UpdateRuleGroup::type) / [`set_type(Option<RuleGroupType>)`](crate::client::fluent_builders::UpdateRuleGroup::set_type): <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>   <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>  </note>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_description): <p>A description of the rule group. </p>
     ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateRuleGroup::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::UpdateRuleGroup::set_dry_run): <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>  <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>  <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::UpdateRuleGroup::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::UpdateRuleGroup::set_encryption_configuration): <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    ///   - [`source_metadata(SourceMetadata)`](crate::client::fluent_builders::UpdateRuleGroup::source_metadata) / [`set_source_metadata(Option<SourceMetadata>)`](crate::client::fluent_builders::UpdateRuleGroup::set_source_metadata): <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     /// - On success, responds with [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput) with field(s):
     ///   - [`update_token(Option<String>)`](crate::output::UpdateRuleGroupOutput::update_token): <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>  <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     ///   - [`rule_group_response(Option<RuleGroupResponse>)`](crate::output::UpdateRuleGroupOutput::rule_group_response): <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
@@ -629,7 +657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateSubnets`.
     ///
     /// <p>Associates the specified subnets in the Amazon VPC to the firewall. You can specify one subnet for each of the Availability Zones that the VPC spans. </p>
-    /// <p>This request creates an AWS Network Firewall firewall endpoint in each of the subnets. To enable the firewall's protections, you must also modify the VPC's route tables for each subnet's Availability Zone, to redirect the traffic that's coming into and going out of the zone through the firewall endpoint. </p>
+    /// <p>This request creates an Network Firewall firewall endpoint in each of the subnets. To enable the firewall's protections, you must also modify the VPC's route tables for each subnet's Availability Zone, to redirect the traffic that's coming into and going out of the zone through the firewall endpoint. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSubnets {
         handle: std::sync::Arc<super::Handle>,
@@ -730,11 +758,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFirewall`.
     ///
-    /// <p>Creates an AWS Network Firewall <code>Firewall</code> and accompanying <code>FirewallStatus</code> for a VPC. </p>
-    /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. The settings that you can define at creation include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
+    /// <p>Creates an Network Firewall <code>Firewall</code> and accompanying <code>FirewallStatus</code> for a VPC. </p>
+    /// <p>The firewall defines the configuration settings for an Network Firewall firewall. The settings that you can define at creation include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>
     /// <p>After you create a firewall, you can provide additional settings, like the logging configuration. </p>
     /// <p>To update the settings for a firewall, you use the operations that apply to the settings themselves, for example <code>UpdateLoggingConfiguration</code>, <code>AssociateSubnets</code>, and <code>UpdateFirewallDeleteProtection</code>. </p>
-    /// <p>To manage a firewall's tags, use the standard AWS resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
+    /// <p>To manage a firewall's tags, use the standard Amazon Web Services resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
     /// <p>To retrieve information about firewalls, use <code>ListFirewalls</code> and <code>DescribeFirewall</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewall {
@@ -890,11 +918,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateFirewallPolicy`.
     ///
     /// <p>Creates the firewall policy for the firewall according to the specifications. </p>
-    /// <p>An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
+    /// <p>An Network Firewall firewall policy defines the behavior of a firewall, in a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -999,6 +1043,22 @@ pub mod fluent_builders {
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_configuration(input);
             self
         }
     }
@@ -1178,6 +1238,35 @@ pub mod fluent_builders {
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
+            self.inner = self.inner.source_metadata(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.inner = self.inner.set_source_metadata(input);
             self
         }
     }
@@ -2244,11 +2333,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scope(input);
             self
         }
+        /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+        pub fn managed_type(mut self, input: crate::model::ResourceManagedType) -> Self {
+            self.inner = self.inner.managed_type(input);
+            self
+        }
+        /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+        pub fn set_managed_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceManagedType>,
+        ) -> Self {
+            self.inner = self.inner.set_managed_type(input);
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieves the tags associated with the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-    /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall policies, and rule groups. </p>
+    /// <p>Retrieves the tags associated with the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    /// <p>You can tag the Amazon Web Services resources that you manage through Network Firewall: firewalls, firewall policies, and rule groups. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2327,14 +2439,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p>Creates or updates an AWS Identity and Access Management policy for your rule group or firewall policy. Use this to share rule groups and firewall policies between accounts. This operation works in conjunction with the AWS Resource Access Manager (RAM) service to manage resource sharing for Network Firewall. </p>
+    /// <p>Creates or updates an IAM policy for your rule group or firewall policy. Use this to share rule groups and firewall policies between accounts. This operation works in conjunction with the Amazon Web Services Resource Access Manager (RAM) service to manage resource sharing for Network Firewall. </p>
     /// <p>Use this operation to create or update a resource policy for your rule group or firewall policy. In the policy, you specify the accounts that you want to share the resource with and the operations that you want the accounts to be able to perform. </p>
     /// <p>When you add an account in the resource policy, you then run the following Resource Access Manager (RAM) operations to access and accept the shared rule group or firewall policy. </p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a> - Returns the Amazon Resource Names (ARNs) of the resource share invitations. </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a> - Accepts the share invitation for a specified resource share. </p> </li>
     /// </ul>
-    /// <p>For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS Resource Access Manager User Guide</a>.</p>
+    /// <p>For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource Access Manager User Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2384,7 +2496,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
         /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
@@ -2403,7 +2515,7 @@ pub mod fluent_builders {
             self.inner = self.inner.policy(input.into());
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
         /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
@@ -2425,8 +2537,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds the specified tags to the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-    /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall policies, and rule groups. </p>
+    /// <p>Adds the specified tags to the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    /// <p>You can tag the Amazon Web Services resources that you manage through Network Firewall: firewalls, firewall policies, and rule groups. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2496,8 +2608,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the tags with the specified keys from the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-    /// <p>You can manage tags for the AWS resources that you manage through AWS Network Firewall: firewalls, firewall policies, and rule groups. </p>
+    /// <p>Removes the tags with the specified keys from the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    /// <p>You can manage tags for the Amazon Web Services resources that you manage through Network Firewall: firewalls, firewall policies, and rule groups. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2753,6 +2865,104 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateFirewallEncryptionConfiguration`.
+    ///
+    /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateFirewallEncryptionConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_firewall_encryption_configuration_input::Builder,
+    }
+    impl UpdateFirewallEncryptionConfiguration {
+        /// Creates a new `UpdateFirewallEncryptionConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFirewallEncryptionConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateFirewallEncryptionConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+        /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
+            self
+        }
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+        /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+        pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_update_token(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+        pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_firewall_arn(input);
+            self
+        }
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
+            self
+        }
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_firewall_name(input);
+            self
+        }
+        /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_configuration(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFirewallPolicy`.
     ///
     /// <p>Updates the properties of the specified firewall policy.</p>
@@ -2872,6 +3082,22 @@ pub mod fluent_builders {
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_configuration(input);
             self
         }
     }
@@ -3219,6 +3445,35 @@ pub mod fluent_builders {
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_configuration(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
+            self.inner = self.inner.source_metadata(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.inner = self.inner.set_source_metadata(input);
             self
         }
     }

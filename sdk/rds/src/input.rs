@@ -2683,199 +2683,6 @@ impl CopyOptionGroupInput {
     }
 }
 
-/// See [`CreateCustomAvailabilityZoneInput`](crate::input::CreateCustomAvailabilityZoneInput)
-pub mod create_custom_availability_zone_input {
-    /// A builder for [`CreateCustomAvailabilityZoneInput`](crate::input::CreateCustomAvailabilityZoneInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) custom_availability_zone_name: std::option::Option<std::string::String>,
-        pub(crate) existing_vpn_id: std::option::Option<std::string::String>,
-        pub(crate) new_vpn_tunnel_name: std::option::Option<std::string::String>,
-        pub(crate) vpn_tunnel_originator_ip: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the custom Availability Zone (AZ).</p>
-        pub fn custom_availability_zone_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the custom Availability Zone (AZ).</p>
-        pub fn set_custom_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_name = input;
-            self
-        }
-        /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-        pub fn existing_vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.existing_vpn_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-        pub fn set_existing_vpn_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.existing_vpn_id = input;
-            self
-        }
-        /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn new_vpn_tunnel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.new_vpn_tunnel_name = Some(input.into());
-            self
-        }
-        /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn set_new_vpn_tunnel_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.new_vpn_tunnel_name = input;
-            self
-        }
-        /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpn_tunnel_originator_ip = Some(input.into());
-            self
-        }
-        /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn set_vpn_tunnel_originator_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpn_tunnel_originator_ip = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateCustomAvailabilityZoneInput`](crate::input::CreateCustomAvailabilityZoneInput)
-        pub fn build(
-            self,
-        ) -> std::result::Result<
-            crate::input::CreateCustomAvailabilityZoneInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::CreateCustomAvailabilityZoneInput {
-                custom_availability_zone_name: self.custom_availability_zone_name,
-                existing_vpn_id: self.existing_vpn_id,
-                new_vpn_tunnel_name: self.new_vpn_tunnel_name,
-                vpn_tunnel_originator_ip: self.vpn_tunnel_originator_ip,
-            })
-        }
-    }
-}
-#[doc(hidden)]
-pub type CreateCustomAvailabilityZoneInputOperationOutputAlias =
-    crate::operation::CreateCustomAvailabilityZone;
-#[doc(hidden)]
-pub type CreateCustomAvailabilityZoneInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
-impl CreateCustomAvailabilityZoneInput {
-    /// Consumes the builder and constructs an Operation<[`CreateCustomAvailabilityZone`](crate::operation::CreateCustomAvailabilityZone)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateCustomAvailabilityZone,
-            aws_http::retry::AwsErrorRetryPolicy,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
-        let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateCustomAvailabilityZoneInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/").expect("formatting should succeed");
-                Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::CreateCustomAvailabilityZoneInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
-                let mut uri = String::new();
-                uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
-            builder
-        };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_availability_zone(&self)?
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-        request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateCustomAvailabilityZone::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateCustomAvailabilityZone",
-            "rds",
-        ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
-        Ok(op)
-    }
-    /// Creates a new builder-style object to manufacture [`CreateCustomAvailabilityZoneInput`](crate::input::CreateCustomAvailabilityZoneInput)
-    pub fn builder() -> crate::input::create_custom_availability_zone_input::Builder {
-        crate::input::create_custom_availability_zone_input::Builder::default()
-    }
-}
-
 /// See [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput)
 pub mod create_custom_db_engine_version_input {
     /// A builder for [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput)
@@ -3246,6 +3053,8 @@ pub mod create_db_cluster_input {
         pub(crate) enable_performance_insights: std::option::Option<bool>,
         pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) performance_insights_retention_period: std::option::Option<i32>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -4193,6 +4002,24 @@ pub mod create_db_cluster_input {
             self.performance_insights_retention_period = input;
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::input::CreateDbClusterInput)
         pub fn build(
             self,
@@ -4245,6 +4072,7 @@ pub mod create_db_cluster_input {
                 enable_performance_insights: self.enable_performance_insights,
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
                 performance_insights_retention_period: self.performance_insights_retention_period,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -5571,7 +5399,7 @@ pub mod create_db_instance_input {
         }
         /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
         /// <p> <b>Amazon Aurora</b> </p>
-        /// <p>Not applicable. Availability Zones are managed by the DB cluster.</p>
+        /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
         /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
@@ -5584,7 +5412,7 @@ pub mod create_db_instance_input {
         }
         /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
         /// <p> <b>Amazon Aurora</b> </p>
-        /// <p>Not applicable. Availability Zones are managed by the DB cluster.</p>
+        /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
         /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
@@ -9531,150 +9359,6 @@ impl CreateOptionGroupInput {
     }
 }
 
-/// See [`DeleteCustomAvailabilityZoneInput`](crate::input::DeleteCustomAvailabilityZoneInput)
-pub mod delete_custom_availability_zone_input {
-    /// A builder for [`DeleteCustomAvailabilityZoneInput`](crate::input::DeleteCustomAvailabilityZoneInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) custom_availability_zone_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The custom AZ identifier.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = Some(input.into());
-            self
-        }
-        /// <p>The custom AZ identifier.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DeleteCustomAvailabilityZoneInput`](crate::input::DeleteCustomAvailabilityZoneInput)
-        pub fn build(
-            self,
-        ) -> std::result::Result<
-            crate::input::DeleteCustomAvailabilityZoneInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteCustomAvailabilityZoneInput {
-                custom_availability_zone_id: self.custom_availability_zone_id,
-            })
-        }
-    }
-}
-#[doc(hidden)]
-pub type DeleteCustomAvailabilityZoneInputOperationOutputAlias =
-    crate::operation::DeleteCustomAvailabilityZone;
-#[doc(hidden)]
-pub type DeleteCustomAvailabilityZoneInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
-impl DeleteCustomAvailabilityZoneInput {
-    /// Consumes the builder and constructs an Operation<[`DeleteCustomAvailabilityZone`](crate::operation::DeleteCustomAvailabilityZone)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteCustomAvailabilityZone,
-            aws_http::retry::AwsErrorRetryPolicy,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
-        let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteCustomAvailabilityZoneInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/").expect("formatting should succeed");
-                Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteCustomAvailabilityZoneInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
-                let mut uri = String::new();
-                uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
-            builder
-        };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_availability_zone(&self)?
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-        request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteCustomAvailabilityZone::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteCustomAvailabilityZone",
-            "rds",
-        ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
-        Ok(op)
-    }
-    /// Creates a new builder-style object to manufacture [`DeleteCustomAvailabilityZoneInput`](crate::input::DeleteCustomAvailabilityZoneInput)
-    pub fn builder() -> crate::input::delete_custom_availability_zone_input::Builder {
-        crate::input::delete_custom_availability_zone_input::Builder::default()
-    }
-}
-
 /// See [`DeleteCustomDbEngineVersionInput`](crate::input::DeleteCustomDbEngineVersionInput)
 pub mod delete_custom_db_engine_version_input {
     /// A builder for [`DeleteCustomDbEngineVersionInput`](crate::input::DeleteCustomDbEngineVersionInput)
@@ -12027,149 +11711,6 @@ impl DeleteGlobalClusterInput {
     }
 }
 
-/// See [`DeleteInstallationMediaInput`](crate::input::DeleteInstallationMediaInput)
-pub mod delete_installation_media_input {
-    /// A builder for [`DeleteInstallationMediaInput`](crate::input::DeleteInstallationMediaInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) installation_media_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(input.into());
-            self
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn set_installation_media_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.installation_media_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DeleteInstallationMediaInput`](crate::input::DeleteInstallationMediaInput)
-        pub fn build(
-            self,
-        ) -> std::result::Result<
-            crate::input::DeleteInstallationMediaInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DeleteInstallationMediaInput {
-                installation_media_id: self.installation_media_id,
-            })
-        }
-    }
-}
-#[doc(hidden)]
-pub type DeleteInstallationMediaInputOperationOutputAlias =
-    crate::operation::DeleteInstallationMedia;
-#[doc(hidden)]
-pub type DeleteInstallationMediaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
-impl DeleteInstallationMediaInput {
-    /// Consumes the builder and constructs an Operation<[`DeleteInstallationMedia`](crate::operation::DeleteInstallationMedia)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteInstallationMedia,
-            aws_http::retry::AwsErrorRetryPolicy,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
-        let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteInstallationMediaInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/").expect("formatting should succeed");
-                Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DeleteInstallationMediaInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
-                let mut uri = String::new();
-                uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
-            builder
-        };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_installation_media(
-                &self,
-            )?,
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-        request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteInstallationMedia::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteInstallationMedia",
-            "rds",
-        ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
-        Ok(op)
-    }
-    /// Creates a new builder-style object to manufacture [`DeleteInstallationMediaInput`](crate::input::DeleteInstallationMediaInput)
-    pub fn builder() -> crate::input::delete_installation_media_input::Builder {
-        crate::input::delete_installation_media_input::Builder::default()
-    }
-}
-
 /// See [`DeleteOptionGroupInput`](crate::input::DeleteOptionGroupInput)
 pub mod delete_option_group_input {
     /// A builder for [`DeleteOptionGroupInput`](crate::input::DeleteOptionGroupInput)
@@ -12827,199 +12368,6 @@ impl DescribeCertificatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput)
     pub fn builder() -> crate::input::describe_certificates_input::Builder {
         crate::input::describe_certificates_input::Builder::default()
-    }
-}
-
-/// See [`DescribeCustomAvailabilityZonesInput`](crate::input::DescribeCustomAvailabilityZonesInput)
-pub mod describe_custom_availability_zones_input {
-    /// A builder for [`DescribeCustomAvailabilityZonesInput`](crate::input::DescribeCustomAvailabilityZonesInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) custom_availability_zone_id: std::option::Option<std::string::String>,
-        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        pub(crate) max_records: std::option::Option<i32>,
-        pub(crate) marker: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = Some(input.into());
-            self
-        }
-        /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = input;
-            self
-        }
-        /// Appends an item to `filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>A filter that specifies one or more custom AZs to describe.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
-        }
-        /// <p>A filter that specifies one or more custom AZs to describe.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
-        }
-        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        /// <p>Default: 100</p>
-        /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, input: i32) -> Self {
-            self.max_records = Some(input);
-            self
-        }
-        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        /// <p>Default: 100</p>
-        /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_records = input;
-            self
-        }
-        /// <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.marker = Some(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DescribeCustomAvailabilityZonesInput`](crate::input::DescribeCustomAvailabilityZonesInput)
-        pub fn build(
-            self,
-        ) -> std::result::Result<
-            crate::input::DescribeCustomAvailabilityZonesInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeCustomAvailabilityZonesInput {
-                custom_availability_zone_id: self.custom_availability_zone_id,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            })
-        }
-    }
-}
-#[doc(hidden)]
-pub type DescribeCustomAvailabilityZonesInputOperationOutputAlias =
-    crate::operation::DescribeCustomAvailabilityZones;
-#[doc(hidden)]
-pub type DescribeCustomAvailabilityZonesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
-impl DescribeCustomAvailabilityZonesInput {
-    /// Consumes the builder and constructs an Operation<[`DescribeCustomAvailabilityZones`](crate::operation::DescribeCustomAvailabilityZones)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeCustomAvailabilityZones,
-            aws_http::retry::AwsErrorRetryPolicy,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
-        let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeCustomAvailabilityZonesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/").expect("formatting should succeed");
-                Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeCustomAvailabilityZonesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
-                let mut uri = String::new();
-                uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
-            builder
-        };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_availability_zones(&self)?
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-        request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeCustomAvailabilityZones::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeCustomAvailabilityZones",
-            "rds",
-        ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
-        Ok(op)
-    }
-    /// Creates a new builder-style object to manufacture [`DescribeCustomAvailabilityZonesInput`](crate::input::DescribeCustomAvailabilityZonesInput)
-    pub fn builder() -> crate::input::describe_custom_availability_zones_input::Builder {
-        crate::input::describe_custom_availability_zones_input::Builder::default()
     }
 }
 
@@ -17872,11 +17220,95 @@ pub mod describe_engine_default_parameters_input {
     }
     impl Builder {
         /// <p>The name of the DB parameter group family.</p>
+        /// <p>Valid Values:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora5.6</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>mariadb10.2</code> </p> </li>
+        /// <li> <p> <code>mariadb10.3</code> </p> </li>
+        /// <li> <p> <code>mariadb10.4</code> </p> </li>
+        /// <li> <p> <code>mariadb10.5</code> </p> </li>
+        /// <li> <p> <code>mariadb10.6</code> </p> </li>
+        /// <li> <p> <code>mysql5.7</code> </p> </li>
+        /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>postgres10</code> </p> </li>
+        /// <li> <p> <code>postgres11</code> </p> </li>
+        /// <li> <p> <code>postgres12</code> </p> </li>
+        /// <li> <p> <code>postgres13</code> </p> </li>
+        /// <li> <p> <code>postgres14</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+        /// </ul>
         pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_parameter_group_family = Some(input.into());
             self
         }
         /// <p>The name of the DB parameter group family.</p>
+        /// <p>Valid Values:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora5.6</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>mariadb10.2</code> </p> </li>
+        /// <li> <p> <code>mariadb10.3</code> </p> </li>
+        /// <li> <p> <code>mariadb10.4</code> </p> </li>
+        /// <li> <p> <code>mariadb10.5</code> </p> </li>
+        /// <li> <p> <code>mariadb10.6</code> </p> </li>
+        /// <li> <p> <code>mysql5.7</code> </p> </li>
+        /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>postgres10</code> </p> </li>
+        /// <li> <p> <code>postgres11</code> </p> </li>
+        /// <li> <p> <code>postgres12</code> </p> </li>
+        /// <li> <p> <code>postgres13</code> </p> </li>
+        /// <li> <p> <code>postgres14</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+        /// </ul>
         pub fn set_db_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19128,202 +18560,6 @@ impl DescribeGlobalClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
     pub fn builder() -> crate::input::describe_global_clusters_input::Builder {
         crate::input::describe_global_clusters_input::Builder::default()
-    }
-}
-
-/// See [`DescribeInstallationMediaInput`](crate::input::DescribeInstallationMediaInput)
-pub mod describe_installation_media_input {
-    /// A builder for [`DescribeInstallationMediaInput`](crate::input::DescribeInstallationMediaInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) installation_media_id: std::option::Option<std::string::String>,
-        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        pub(crate) max_records: std::option::Option<i32>,
-        pub(crate) marker: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(input.into());
-            self
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn set_installation_media_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.installation_media_id = input;
-            self
-        }
-        /// Appends an item to `filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>
-        /// </ul>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
-        }
-        /// <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>
-        /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
-        }
-        /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn max_records(mut self, input: i32) -> Self {
-            self.max_records = Some(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_records = input;
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.marker = Some(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DescribeInstallationMediaInput`](crate::input::DescribeInstallationMediaInput)
-        pub fn build(
-            self,
-        ) -> std::result::Result<
-            crate::input::DescribeInstallationMediaInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::DescribeInstallationMediaInput {
-                installation_media_id: self.installation_media_id,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            })
-        }
-    }
-}
-#[doc(hidden)]
-pub type DescribeInstallationMediaInputOperationOutputAlias =
-    crate::operation::DescribeInstallationMedia;
-#[doc(hidden)]
-pub type DescribeInstallationMediaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
-impl DescribeInstallationMediaInput {
-    /// Consumes the builder and constructs an Operation<[`DescribeInstallationMedia`](crate::operation::DescribeInstallationMedia)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeInstallationMedia,
-            aws_http::retry::AwsErrorRetryPolicy,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
-        let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeInstallationMediaInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/").expect("formatting should succeed");
-                Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::DescribeInstallationMediaInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
-                let mut uri = String::new();
-                uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
-            builder
-        };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_installation_media(
-                &self,
-            )?,
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-        request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeInstallationMedia::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeInstallationMedia",
-            "rds",
-        ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
-        Ok(op)
-    }
-    /// Creates a new builder-style object to manufacture [`DescribeInstallationMediaInput`](crate::input::DescribeInstallationMediaInput)
-    pub fn builder() -> crate::input::describe_installation_media_input::Builder {
-        crate::input::describe_installation_media_input::Builder::default()
     }
 }
 
@@ -21750,240 +20986,6 @@ impl FailoverGlobalClusterInput {
     }
 }
 
-/// See [`ImportInstallationMediaInput`](crate::input::ImportInstallationMediaInput)
-pub mod import_installation_media_input {
-    /// A builder for [`ImportInstallationMediaInput`](crate::input::ImportInstallationMediaInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) custom_availability_zone_id: std::option::Option<std::string::String>,
-        pub(crate) engine: std::option::Option<std::string::String>,
-        pub(crate) engine_version: std::option::Option<std::string::String>,
-        pub(crate) engine_installation_media_path: std::option::Option<std::string::String>,
-        pub(crate) os_installation_media_path: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_availability_zone_id = input;
-            self
-        }
-        /// <p>The name of the database engine to be used for this instance.</p>
-        /// <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>
-        /// <p>Valid Values:</p>
-        /// <ul>
-        /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-        /// <li> <p> <code>sqlserver-se</code> </p> </li>
-        /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-        /// <li> <p> <code>sqlserver-web</code> </p> </li>
-        /// </ul>
-        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-            self.engine = Some(input.into());
-            self
-        }
-        /// <p>The name of the database engine to be used for this instance.</p>
-        /// <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>
-        /// <p>Valid Values:</p>
-        /// <ul>
-        /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-        /// <li> <p> <code>sqlserver-se</code> </p> </li>
-        /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-        /// <li> <p> <code>sqlserver-web</code> </p> </li>
-        /// </ul>
-        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
-        }
-        /// <p>The version number of the database engine to use.</p>
-        /// <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>
-        /// <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>
-        /// <p> <b>Microsoft SQL Server</b> </p>
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(input.into());
-            self
-        }
-        /// <p>The version number of the database engine to use.</p>
-        /// <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>
-        /// <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>
-        /// <p> <b>Microsoft SQL Server</b> </p>
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
-        }
-        /// <p>The path to the installation medium for the specified DB engine.</p>
-        /// <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-        pub fn engine_installation_media_path(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.engine_installation_media_path = Some(input.into());
-            self
-        }
-        /// <p>The path to the installation medium for the specified DB engine.</p>
-        /// <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-        pub fn set_engine_installation_media_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_installation_media_path = input;
-            self
-        }
-        /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
-        /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.os_installation_media_path = Some(input.into());
-            self
-        }
-        /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
-        /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-        pub fn set_os_installation_media_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.os_installation_media_path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ImportInstallationMediaInput`](crate::input::ImportInstallationMediaInput)
-        pub fn build(
-            self,
-        ) -> std::result::Result<
-            crate::input::ImportInstallationMediaInput,
-            aws_smithy_http::operation::BuildError,
-        > {
-            Ok(crate::input::ImportInstallationMediaInput {
-                custom_availability_zone_id: self.custom_availability_zone_id,
-                engine: self.engine,
-                engine_version: self.engine_version,
-                engine_installation_media_path: self.engine_installation_media_path,
-                os_installation_media_path: self.os_installation_media_path,
-            })
-        }
-    }
-}
-#[doc(hidden)]
-pub type ImportInstallationMediaInputOperationOutputAlias =
-    crate::operation::ImportInstallationMedia;
-#[doc(hidden)]
-pub type ImportInstallationMediaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
-impl ImportInstallationMediaInput {
-    /// Consumes the builder and constructs an Operation<[`ImportInstallationMedia`](crate::operation::ImportInstallationMedia)>
-    #[allow(unused_mut)]
-    #[allow(clippy::let_and_return)]
-    #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ImportInstallationMedia,
-            aws_http::retry::AwsErrorRetryPolicy,
-        >,
-        aws_smithy_http::operation::BuildError,
-    > {
-        let mut request = {
-            fn uri_base(
-                _input: &crate::input::ImportInstallationMediaInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/").expect("formatting should succeed");
-                Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::input::ImportInstallationMediaInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
-                let mut uri = String::new();
-                uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
-            builder
-        };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_installation_media(
-                &self,
-            )?,
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-        request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_provider(
-            &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ImportInstallationMedia::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ImportInstallationMedia",
-            "rds",
-        ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
-        Ok(op)
-    }
-    /// Creates a new builder-style object to manufacture [`ImportInstallationMediaInput`](crate::input::ImportInstallationMediaInput)
-    pub fn builder() -> crate::input::import_installation_media_input::Builder {
-        crate::input::import_installation_media_input::Builder::default()
-    }
-}
-
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
 pub mod list_tags_for_resource_input {
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -22757,6 +21759,8 @@ pub mod modify_db_cluster_input {
         pub(crate) enable_performance_insights: std::option::Option<bool>,
         pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) performance_insights_retention_period: std::option::Option<i32>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -23409,6 +22413,24 @@ pub mod modify_db_cluster_input {
             self.performance_insights_retention_period = input;
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput)
         pub fn build(
             self,
@@ -23451,6 +22473,7 @@ pub mod modify_db_cluster_input {
                 enable_performance_insights: self.enable_performance_insights,
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
                 performance_insights_retention_period: self.performance_insights_retention_period,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -29633,6 +28656,8 @@ pub mod restore_db_cluster_from_s3_input {
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -30179,6 +29204,24 @@ pub mod restore_db_cluster_from_s3_input {
             self.domain_iam_role_name = input;
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input)
         pub fn build(
             self,
@@ -30218,6 +29261,7 @@ pub mod restore_db_cluster_from_s3_input {
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 domain: self.domain,
                 domain_iam_role_name: self.domain_iam_role_name,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -30362,6 +29406,8 @@ pub mod restore_db_cluster_from_snapshot_input {
         pub(crate) storage_type: std::option::Option<std::string::String>,
         pub(crate) iops: std::option::Option<i32>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -30927,6 +29973,24 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.publicly_accessible = input;
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput)
         pub fn build(
             self,
@@ -30961,6 +30025,7 @@ pub mod restore_db_cluster_from_snapshot_input {
                 storage_type: self.storage_type,
                 iops: self.iops,
                 publicly_accessible: self.publicly_accessible,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -31103,6 +30168,8 @@ pub mod restore_db_cluster_to_point_in_time_input {
         pub(crate) storage_type: std::option::Option<std::string::String>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) iops: std::option::Option<i32>,
+        pub(crate) serverless_v2_scaling_configuration:
+            std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
     }
     impl Builder {
         /// <p>The name of the new DB cluster to be created.</p>
@@ -31631,6 +30698,24 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.iops = input;
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.serverless_v2_scaling_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput)
         pub fn build(
             self,
@@ -31664,6 +30749,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
                 storage_type: self.storage_type,
                 publicly_accessible: self.publicly_accessible,
                 iops: self.iops,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             })
         }
     }
@@ -37931,6 +37017,10 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub iops: std::option::Option<i32>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -38140,6 +37230,13 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38184,6 +37281,10 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
         formatter.field("storage_type", &self.storage_type);
         formatter.field("publicly_accessible", &self.publicly_accessible);
         formatter.field("iops", &self.iops);
+        formatter.field(
+            "serverless_v2_scaling_configuration",
+            &self.serverless_v2_scaling_configuration,
+        );
         formatter.finish()
     }
 }
@@ -38358,6 +37459,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub publicly_accessible: std::option::Option<bool>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -38580,6 +37685,13 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38619,6 +37731,10 @@ impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
         formatter.field("storage_type", &self.storage_type);
         formatter.field("iops", &self.iops);
         formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field(
+            "serverless_v2_scaling_configuration",
+            &self.serverless_v2_scaling_configuration,
+        );
         formatter.finish()
     }
 }
@@ -38758,6 +37874,10 @@ pub struct RestoreDbClusterFromS3Input {
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -38953,6 +38073,13 @@ impl RestoreDbClusterFromS3Input {
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterFromS3Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39000,6 +38127,10 @@ impl std::fmt::Debug for RestoreDbClusterFromS3Input {
         formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.field("domain", &self.domain);
         formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field(
+            "serverless_v2_scaling_configuration",
+            &self.serverless_v2_scaling_configuration,
+        );
         formatter.finish()
     }
 }
@@ -41143,6 +40274,10 @@ pub struct ModifyDbClusterInput {
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -41401,6 +40536,13 @@ impl ModifyDbClusterInput {
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
     }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41471,6 +40613,10 @@ impl std::fmt::Debug for ModifyDbClusterInput {
         formatter.field(
             "performance_insights_retention_period",
             &self.performance_insights_retention_period,
+        );
+        formatter.field(
+            "serverless_v2_scaling_configuration",
+            &self.serverless_v2_scaling_configuration,
         );
         formatter.finish()
     }
@@ -41670,92 +40816,6 @@ impl std::fmt::Debug for ListTagsForResourceInput {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_name", &self.resource_name);
         formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportInstallationMediaInput {
-    /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-    pub custom_availability_zone_id: std::option::Option<std::string::String>,
-    /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
-    /// </ul>
-    pub engine: std::option::Option<std::string::String>,
-    /// <p>The version number of the database engine to use.</p>
-    /// <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>
-    /// <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>
-    /// <p> <b>Microsoft SQL Server</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The path to the installation medium for the specified DB engine.</p>
-    /// <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-    pub engine_installation_media_path: std::option::Option<std::string::String>,
-    /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
-    /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-    pub os_installation_media_path: std::option::Option<std::string::String>,
-}
-impl ImportInstallationMediaInput {
-    /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_id.as_deref()
-    }
-    /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
-    /// </ul>
-    pub fn engine(&self) -> std::option::Option<&str> {
-        self.engine.as_deref()
-    }
-    /// <p>The version number of the database engine to use.</p>
-    /// <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>
-    /// <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>
-    /// <p> <b>Microsoft SQL Server</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
-        self.engine_version.as_deref()
-    }
-    /// <p>The path to the installation medium for the specified DB engine.</p>
-    /// <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-    pub fn engine_installation_media_path(&self) -> std::option::Option<&str> {
-        self.engine_installation_media_path.as_deref()
-    }
-    /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
-    /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-    pub fn os_installation_media_path(&self) -> std::option::Option<&str> {
-        self.os_installation_media_path.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportInstallationMediaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportInstallationMediaInput");
-        formatter.field(
-            "custom_availability_zone_id",
-            &self.custom_availability_zone_id,
-        );
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "engine_installation_media_path",
-            &self.engine_installation_media_path,
-        );
-        formatter.field(
-            "os_installation_media_path",
-            &self.os_installation_media_path,
-        );
         formatter.finish()
     }
 }
@@ -42532,56 +41592,6 @@ impl std::fmt::Debug for DescribeOptionGroupOptionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeInstallationMediaInput {
-    /// <p>The installation medium ID.</p>
-    pub installation_media_id: std::option::Option<std::string::String>,
-    /// <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>
-    /// </ul>
-    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub max_records: std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub marker: std::option::Option<std::string::String>,
-}
-impl DescribeInstallationMediaInput {
-    /// <p>The installation medium ID.</p>
-    pub fn installation_media_id(&self) -> std::option::Option<&str> {
-        self.installation_media_id.as_deref()
-    }
-    /// <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>
-    /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
-        self.filters.as_deref()
-    }
-    /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
-        self.max_records
-    }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
-        self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInstallationMediaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstallationMediaInput");
-        formatter.field("installation_media_id", &self.installation_media_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -42908,6 +41918,48 @@ impl std::fmt::Debug for DescribeEventCategoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultParametersInput {
     /// <p>The name of the DB parameter group family.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora5.6</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+    /// <li> <p> <code>mariadb10.2</code> </p> </li>
+    /// <li> <p> <code>mariadb10.3</code> </p> </li>
+    /// <li> <p> <code>mariadb10.4</code> </p> </li>
+    /// <li> <p> <code>mariadb10.5</code> </p> </li>
+    /// <li> <p> <code>mariadb10.6</code> </p> </li>
+    /// <li> <p> <code>mysql5.7</code> </p> </li>
+    /// <li> <p> <code>mysql8.0</code> </p> </li>
+    /// <li> <p> <code>postgres10</code> </p> </li>
+    /// <li> <p> <code>postgres11</code> </p> </li>
+    /// <li> <p> <code>postgres12</code> </p> </li>
+    /// <li> <p> <code>postgres13</code> </p> </li>
+    /// <li> <p> <code>postgres14</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+    /// </ul>
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -42920,6 +41972,48 @@ pub struct DescribeEngineDefaultParametersInput {
 }
 impl DescribeEngineDefaultParametersInput {
     /// <p>The name of the DB parameter group family.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora5.6</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+    /// <li> <p> <code>mariadb10.2</code> </p> </li>
+    /// <li> <p> <code>mariadb10.3</code> </p> </li>
+    /// <li> <p> <code>mariadb10.4</code> </p> </li>
+    /// <li> <p> <code>mariadb10.5</code> </p> </li>
+    /// <li> <p> <code>mariadb10.6</code> </p> </li>
+    /// <li> <p> <code>mysql5.7</code> </p> </li>
+    /// <li> <p> <code>mysql8.0</code> </p> </li>
+    /// <li> <p> <code>postgres10</code> </p> </li>
+    /// <li> <p> <code>postgres11</code> </p> </li>
+    /// <li> <p> <code>postgres12</code> </p> </li>
+    /// <li> <p> <code>postgres13</code> </p> </li>
+    /// <li> <p> <code>postgres14</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+    /// </ul>
     pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
@@ -44482,55 +43576,6 @@ impl std::fmt::Debug for DescribeDbClusterBacktracksInput {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeCustomAvailabilityZonesInput {
-    /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-    pub custom_availability_zone_id: std::option::Option<std::string::String>,
-    /// <p>A filter that specifies one or more custom AZs to describe.</p>
-    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub max_records: std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub marker: std::option::Option<std::string::String>,
-}
-impl DescribeCustomAvailabilityZonesInput {
-    /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_id.as_deref()
-    }
-    /// <p>A filter that specifies one or more custom AZs to describe.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
-        self.filters.as_deref()
-    }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
-        self.max_records
-    }
-    /// <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
-        self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeCustomAvailabilityZonesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomAvailabilityZonesInput");
-        formatter.field(
-            "custom_availability_zone_id",
-            &self.custom_availability_zone_id,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
-
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -44659,27 +43704,6 @@ impl std::fmt::Debug for DeleteOptionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOptionGroupInput");
         formatter.field("option_group_name", &self.option_group_name);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteInstallationMediaInput {
-    /// <p>The installation medium ID.</p>
-    pub installation_media_id: std::option::Option<std::string::String>,
-}
-impl DeleteInstallationMediaInput {
-    /// <p>The installation medium ID.</p>
-    pub fn installation_media_id(&self) -> std::option::Option<&str> {
-        self.installation_media_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteInstallationMediaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInstallationMediaInput");
-        formatter.field("installation_media_id", &self.installation_media_id);
         formatter.finish()
     }
 }
@@ -45184,30 +44208,6 @@ impl std::fmt::Debug for DeleteCustomDbEngineVersionInput {
         let mut formatter = f.debug_struct("DeleteCustomDbEngineVersionInput");
         formatter.field("engine", &self.engine);
         formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteCustomAvailabilityZoneInput {
-    /// <p>The custom AZ identifier.</p>
-    pub custom_availability_zone_id: std::option::Option<std::string::String>,
-}
-impl DeleteCustomAvailabilityZoneInput {
-    /// <p>The custom AZ identifier.</p>
-    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteCustomAvailabilityZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomAvailabilityZoneInput");
-        formatter.field(
-            "custom_availability_zone_id",
-            &self.custom_availability_zone_id,
-        );
         formatter.finish()
     }
 }
@@ -46542,7 +45542,7 @@ pub struct CreateDbInstanceInput {
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
-    /// <p>Not applicable. Availability Zones are managed by the DB cluster.</p>
+    /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
@@ -47001,7 +46001,7 @@ impl CreateDbInstanceInput {
     }
     /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
-    /// <p>Not applicable. Availability Zones are managed by the DB cluster.</p>
+    /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
@@ -47924,6 +46924,10 @@ pub struct CreateDbClusterInput {
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration:
+        std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
@@ -48298,6 +47302,13 @@ impl CreateDbClusterInput {
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
     }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48375,6 +47386,10 @@ impl std::fmt::Debug for CreateDbClusterInput {
         formatter.field(
             "performance_insights_retention_period",
             &self.performance_insights_retention_period,
+        );
+        formatter.field(
+            "serverless_v2_scaling_configuration",
+            &self.serverless_v2_scaling_configuration,
         );
         formatter.finish()
     }
@@ -48524,55 +47539,6 @@ impl std::fmt::Debug for CreateCustomDbEngineVersionInput {
         formatter.field("description", &self.description);
         formatter.field("manifest", &self.manifest);
         formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-
-/// <p></p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateCustomAvailabilityZoneInput {
-    /// <p>The name of the custom Availability Zone (AZ).</p>
-    pub custom_availability_zone_name: std::option::Option<std::string::String>,
-    /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-    pub existing_vpn_id: std::option::Option<std::string::String>,
-    /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
-    /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-    pub new_vpn_tunnel_name: std::option::Option<std::string::String>,
-    /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-    /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-    pub vpn_tunnel_originator_ip: std::option::Option<std::string::String>,
-}
-impl CreateCustomAvailabilityZoneInput {
-    /// <p>The name of the custom Availability Zone (AZ).</p>
-    pub fn custom_availability_zone_name(&self) -> std::option::Option<&str> {
-        self.custom_availability_zone_name.as_deref()
-    }
-    /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-    pub fn existing_vpn_id(&self) -> std::option::Option<&str> {
-        self.existing_vpn_id.as_deref()
-    }
-    /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
-    /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-    pub fn new_vpn_tunnel_name(&self) -> std::option::Option<&str> {
-        self.new_vpn_tunnel_name.as_deref()
-    }
-    /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-    /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-    pub fn vpn_tunnel_originator_ip(&self) -> std::option::Option<&str> {
-        self.vpn_tunnel_originator_ip.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCustomAvailabilityZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomAvailabilityZoneInput");
-        formatter.field(
-            "custom_availability_zone_name",
-            &self.custom_availability_zone_name,
-        );
-        formatter.field("existing_vpn_id", &self.existing_vpn_id);
-        formatter.field("new_vpn_tunnel_name", &self.new_vpn_tunnel_name);
-        formatter.field("vpn_tunnel_originator_ip", &self.vpn_tunnel_originator_ip);
         formatter.finish()
     }
 }

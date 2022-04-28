@@ -5,6 +5,9 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 The Amazon Braket API Reference provides information about the operations and structures supported in Amazon Braket.
 
+Additional Resources:
+  - [Amazon Braket Developer Guide](https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html)
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -16,8 +19,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.10.1"
-aws-sdk-braket = "0.10.1"
+aws-config = "0.11.0"
+aws-sdk-braket = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

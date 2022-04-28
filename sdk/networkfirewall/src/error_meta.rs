@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
+    /// <p>Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
     /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
@@ -801,6 +801,36 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::UpdateFirewallEncryptionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateFirewallEncryptionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ResourceOwnerCheckException(inner) => Error::ResourceOwnerCheckException(inner),
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateFirewallEncryptionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

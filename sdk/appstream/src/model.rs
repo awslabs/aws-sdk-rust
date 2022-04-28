@@ -1437,6 +1437,8 @@ pub struct Fleet {
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings associated with the fleet.</p>
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    pub session_script_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -1589,6 +1591,10 @@ impl Fleet {
     pub fn usb_device_filter_strings(&self) -> std::option::Option<&[std::string::String]> {
         self.usb_device_filter_strings.as_deref()
     }
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    pub fn session_script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.session_script_s3_location.as_ref()
+    }
 }
 impl std::fmt::Debug for Fleet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1628,6 +1634,10 @@ impl std::fmt::Debug for Fleet {
         formatter.field("platform", &self.platform);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
+        formatter.field(
+            "session_script_s3_location",
+            &self.session_script_s3_location,
+        );
         formatter.finish()
     }
 }
@@ -1662,6 +1672,7 @@ pub mod fleet {
         pub(crate) max_concurrent_sessions: std::option::Option<i32>,
         pub(crate) usb_device_filter_strings:
             std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) session_script_s3_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -2060,6 +2071,19 @@ pub mod fleet {
             self.usb_device_filter_strings = input;
             self
         }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+        pub fn session_script_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.session_script_s3_location = Some(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+        pub fn set_session_script_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.session_script_s3_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Fleet`](crate::model::Fleet)
         pub fn build(self) -> crate::model::Fleet {
             crate::model::Fleet {
@@ -2086,6 +2110,7 @@ pub mod fleet {
                 platform: self.platform,
                 max_concurrent_sessions: self.max_concurrent_sessions,
                 usb_device_filter_strings: self.usb_device_filter_strings,
+                session_script_s3_location: self.session_script_s3_location,
             }
         }
     }
@@ -2094,6 +2119,79 @@ impl Fleet {
     /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet)
     pub fn builder() -> crate::model::fleet::Builder {
         crate::model::fleet::Builder::default()
+    }
+}
+
+/// <p>Describes the S3 location.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3Location {
+    /// <p>The S3 bucket of the S3 object.</p>
+    pub s3_bucket: std::option::Option<std::string::String>,
+    /// <p>The S3 key of the S3 object.</p>
+    pub s3_key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The S3 bucket of the S3 object.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The S3 key of the S3 object.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+}
+impl std::fmt::Debug for S3Location {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Location");
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key", &self.s3_key);
+        formatter.finish()
+    }
+}
+/// See [`S3Location`](crate::model::S3Location)
+pub mod s3_location {
+    /// A builder for [`S3Location`](crate::model::S3Location)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket: std::option::Option<std::string::String>,
+        pub(crate) s3_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The S3 bucket of the S3 object.</p>
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
+            self
+        }
+        /// <p>The S3 bucket of the S3 object.</p>
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
+            self
+        }
+        /// <p>The S3 key of the S3 object.</p>
+        pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key = Some(input.into());
+            self
+        }
+        /// <p>The S3 key of the S3 object.</p>
+        pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
+        pub fn build(self) -> crate::model::S3Location {
+            crate::model::S3Location {
+                s3_bucket: self.s3_bucket,
+                s3_key: self.s3_key,
+            }
+        }
+    }
+}
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -2967,6 +3065,8 @@ pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
     IamRoleArn,
     #[allow(missing_docs)] // documentation missing in model
+    SessionScriptS3Location,
+    #[allow(missing_docs)] // documentation missing in model
     UsbDeviceFilterStrings,
     #[allow(missing_docs)] // documentation missing in model
     VpcConfiguration,
@@ -2980,6 +3080,7 @@ impl std::convert::From<&str> for FleetAttribute {
         match s {
             "DOMAIN_JOIN_INFO" => FleetAttribute::DomainJoinInfo,
             "IAM_ROLE_ARN" => FleetAttribute::IamRoleArn,
+            "SESSION_SCRIPT_S3_LOCATION" => FleetAttribute::SessionScriptS3Location,
             "USB_DEVICE_FILTER_STRINGS" => FleetAttribute::UsbDeviceFilterStrings,
             "VPC_CONFIGURATION" => FleetAttribute::VpcConfiguration,
             "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => {
@@ -3002,6 +3103,7 @@ impl FleetAttribute {
         match self {
             FleetAttribute::DomainJoinInfo => "DOMAIN_JOIN_INFO",
             FleetAttribute::IamRoleArn => "IAM_ROLE_ARN",
+            FleetAttribute::SessionScriptS3Location => "SESSION_SCRIPT_S3_LOCATION",
             FleetAttribute::UsbDeviceFilterStrings => "USB_DEVICE_FILTER_STRINGS",
             FleetAttribute::VpcConfiguration => "VPC_CONFIGURATION",
             FleetAttribute::VpcConfigurationSecurityGroupIds => {
@@ -3015,6 +3117,7 @@ impl FleetAttribute {
         &[
             "DOMAIN_JOIN_INFO",
             "IAM_ROLE_ARN",
+            "SESSION_SCRIPT_S3_LOCATION",
             "USB_DEVICE_FILTER_STRINGS",
             "VPC_CONFIGURATION",
             "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
@@ -4038,79 +4141,6 @@ impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application)
     pub fn builder() -> crate::model::application::Builder {
         crate::model::application::Builder::default()
-    }
-}
-
-/// <p>Describes the S3 location.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct S3Location {
-    /// <p>The S3 bucket of the S3 object.</p>
-    pub s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The S3 key of the S3 object.</p>
-    pub s3_key: std::option::Option<std::string::String>,
-}
-impl S3Location {
-    /// <p>The S3 bucket of the S3 object.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
-        self.s3_bucket.as_deref()
-    }
-    /// <p>The S3 key of the S3 object.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
-        self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
-    }
-}
-/// See [`S3Location`](crate::model::S3Location)
-pub mod s3_location {
-    /// A builder for [`S3Location`](crate::model::S3Location)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) s3_bucket: std::option::Option<std::string::String>,
-        pub(crate) s3_key: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The S3 bucket of the S3 object.</p>
-        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-            self.s3_bucket = Some(input.into());
-            self
-        }
-        /// <p>The S3 bucket of the S3 object.</p>
-        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
-        }
-        /// <p>The S3 key of the S3 object.</p>
-        pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.s3_key = Some(input.into());
-            self
-        }
-        /// <p>The S3 key of the S3 object.</p>
-        pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
-        pub fn build(self) -> crate::model::S3Location {
-            crate::model::S3Location {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-            }
-        }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 

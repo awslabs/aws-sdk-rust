@@ -30,7 +30,7 @@ pub enum AnalyzeDocumentErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -218,7 +218,7 @@ pub enum AnalyzeExpenseErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -392,7 +392,7 @@ pub enum AnalyzeIDErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -552,7 +552,7 @@ pub enum DetectDocumentTextErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1265,7 +1265,7 @@ pub enum StartDocumentAnalysisErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1487,7 +1487,7 @@ pub enum StartDocumentTextDetectionErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1713,7 +1713,7 @@ pub enum StartExpenseAnalysisErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1900,7 +1900,7 @@ impl std::error::Error for StartExpenseAnalysisError {
     }
 }
 
-/// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+/// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedDocumentException {

@@ -244,6 +244,7 @@ impl Client {
     ///   - [`platform(PlatformType)`](crate::client::fluent_builders::CreateFleet::platform) / [`set_platform(Option<PlatformType>)`](crate::client::fluent_builders::CreateFleet::set_platform): <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     ///   - [`max_concurrent_sessions(i32)`](crate::client::fluent_builders::CreateFleet::max_concurrent_sessions) / [`set_max_concurrent_sessions(Option<i32>)`](crate::client::fluent_builders::CreateFleet::set_max_concurrent_sessions): <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
     ///   - [`usb_device_filter_strings(Vec<String>)`](crate::client::fluent_builders::CreateFleet::usb_device_filter_strings) / [`set_usb_device_filter_strings(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFleet::set_usb_device_filter_strings): <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    ///   - [`session_script_s3_location(S3Location)`](crate::client::fluent_builders::CreateFleet::session_script_s3_location) / [`set_session_script_s3_location(Option<S3Location>)`](crate::client::fluent_builders::CreateFleet::set_session_script_s3_location): <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
     ///   - [`fleet(Option<Fleet>)`](crate::output::CreateFleetOutput::fleet): <p>Information about the fleet.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
@@ -924,6 +925,7 @@ impl Client {
     ///   - [`platform(PlatformType)`](crate::client::fluent_builders::UpdateFleet::platform) / [`set_platform(Option<PlatformType>)`](crate::client::fluent_builders::UpdateFleet::set_platform): <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     ///   - [`max_concurrent_sessions(i32)`](crate::client::fluent_builders::UpdateFleet::max_concurrent_sessions) / [`set_max_concurrent_sessions(Option<i32>)`](crate::client::fluent_builders::UpdateFleet::set_max_concurrent_sessions): <p>The maximum number of concurrent sessions for a fleet.</p>
     ///   - [`usb_device_filter_strings(Vec<String>)`](crate::client::fluent_builders::UpdateFleet::usb_device_filter_strings) / [`set_usb_device_filter_strings(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFleet::set_usb_device_filter_strings): <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    ///   - [`session_script_s3_location(S3Location)`](crate::client::fluent_builders::UpdateFleet::session_script_s3_location) / [`set_session_script_s3_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateFleet::set_session_script_s3_location): <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
     /// - On success, responds with [`UpdateFleetOutput`](crate::output::UpdateFleetOutput) with field(s):
     ///   - [`fleet(Option<Fleet>)`](crate::output::UpdateFleetOutput::fleet): <p>Information about the fleet.</p>
     /// - On failure, responds with [`SdkError<UpdateFleetError>`](crate::error::UpdateFleetError)
@@ -2341,6 +2343,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_usb_device_filter_strings(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+        pub fn session_script_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.session_script_s3_location(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+        pub fn set_session_script_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.inner = self.inner.set_session_script_s3_location(input);
             self
         }
     }
@@ -6890,6 +6905,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_usb_device_filter_strings(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+        pub fn session_script_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.session_script_s3_location(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+        pub fn set_session_script_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.inner = self.inner.set_session_script_s3_location(input);
             self
         }
     }

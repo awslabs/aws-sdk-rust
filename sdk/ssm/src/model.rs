@@ -5287,6 +5287,8 @@ pub struct AssociationDescription {
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub schedule_offset: std::option::Option<i32>,
 }
 impl AssociationDescription {
     /// <p>The name of the SSM document.</p>
@@ -5399,6 +5401,10 @@ impl AssociationDescription {
     pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
         self.target_locations.as_deref()
     }
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
 }
 impl std::fmt::Debug for AssociationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5439,6 +5445,7 @@ impl std::fmt::Debug for AssociationDescription {
         );
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
+        formatter.field("schedule_offset", &self.schedule_offset);
         formatter.finish()
     }
 }
@@ -5477,6 +5484,7 @@ pub mod association_description {
         pub(crate) calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+        pub(crate) schedule_offset: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the SSM document.</p>
@@ -5823,6 +5831,16 @@ pub mod association_description {
             self.target_locations = input;
             self
         }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
+            self
+        }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociationDescription`](crate::model::AssociationDescription)
         pub fn build(self) -> crate::model::AssociationDescription {
             crate::model::AssociationDescription {
@@ -5850,6 +5868,7 @@ pub mod association_description {
                 apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
+                schedule_offset: self.schedule_offset,
             }
         }
     }
@@ -14517,6 +14536,8 @@ pub struct AssociationVersionInfo {
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you wanted to run the association when this association version was created.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub schedule_offset: std::option::Option<i32>,
 }
 impl AssociationVersionInfo {
     /// <p>The ID created by the system when the association was created.</p>
@@ -14599,6 +14620,10 @@ impl AssociationVersionInfo {
     pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
         self.target_locations.as_deref()
     }
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
 }
 impl std::fmt::Debug for AssociationVersionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14623,6 +14648,7 @@ impl std::fmt::Debug for AssociationVersionInfo {
         );
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
+        formatter.field("schedule_offset", &self.schedule_offset);
         formatter.finish()
     }
 }
@@ -14654,6 +14680,7 @@ pub mod association_version_info {
         pub(crate) calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+        pub(crate) schedule_offset: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The ID created by the system when the association was created.</p>
@@ -14912,6 +14939,16 @@ pub mod association_version_info {
             self.target_locations = input;
             self
         }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
+            self
+        }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociationVersionInfo`](crate::model::AssociationVersionInfo)
         pub fn build(self) -> crate::model::AssociationVersionInfo {
             crate::model::AssociationVersionInfo {
@@ -14932,6 +14969,7 @@ pub mod association_version_info {
                 apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
+                schedule_offset: self.schedule_offset,
             }
         }
     }
@@ -14969,6 +15007,8 @@ pub struct Association {
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The association name.</p>
     pub association_name: std::option::Option<std::string::String>,
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub schedule_offset: std::option::Option<i32>,
 }
 impl Association {
     /// <p>The name of the SSM document.</p>
@@ -15013,6 +15053,10 @@ impl Association {
     pub fn association_name(&self) -> std::option::Option<&str> {
         self.association_name.as_deref()
     }
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
 }
 impl std::fmt::Debug for Association {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15027,6 +15071,7 @@ impl std::fmt::Debug for Association {
         formatter.field("overview", &self.overview);
         formatter.field("schedule_expression", &self.schedule_expression);
         formatter.field("association_name", &self.association_name);
+        formatter.field("schedule_offset", &self.schedule_offset);
         formatter.finish()
     }
 }
@@ -15046,6 +15091,7 @@ pub mod association {
         pub(crate) overview: std::option::Option<crate::model::AssociationOverview>,
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) association_name: std::option::Option<std::string::String>,
+        pub(crate) schedule_offset: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the SSM document.</p>
@@ -15182,6 +15228,16 @@ pub mod association {
             self.association_name = input;
             self
         }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
+            self
+        }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Association`](crate::model::Association)
         pub fn build(self) -> crate::model::Association {
             crate::model::Association {
@@ -15195,6 +15251,7 @@ pub mod association {
                 overview: self.overview,
                 schedule_expression: self.schedule_expression,
                 association_name: self.association_name,
+                schedule_offset: self.schedule_offset,
             }
         }
     }
@@ -31406,6 +31463,8 @@ pub struct CreateAssociationBatchRequestEntry {
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub schedule_offset: std::option::Option<i32>,
 }
 impl CreateAssociationBatchRequestEntry {
     /// <p>The name of the SSM document that contains the configuration information for the managed node. You can specify Command or Automation runbooks.</p>
@@ -31492,6 +31551,10 @@ impl CreateAssociationBatchRequestEntry {
     pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
         self.target_locations.as_deref()
     }
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
 }
 impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31518,6 +31581,7 @@ impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
         );
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
+        formatter.field("schedule_offset", &self.schedule_offset);
         formatter.finish()
     }
 }
@@ -31548,6 +31612,7 @@ pub mod create_association_batch_request_entry {
         pub(crate) calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+        pub(crate) schedule_offset: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the SSM document that contains the configuration information for the managed node. You can specify Command or Automation runbooks.</p>
@@ -31809,6 +31874,16 @@ pub mod create_association_batch_request_entry {
             self.target_locations = input;
             self
         }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
+            self
+        }
+        /// <p>Number of days to wait after the scheduled day to run an association.</p>
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry)
         pub fn build(self) -> crate::model::CreateAssociationBatchRequestEntry {
             crate::model::CreateAssociationBatchRequestEntry {
@@ -31828,6 +31903,7 @@ pub mod create_association_batch_request_entry {
                 apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
+                schedule_offset: self.schedule_offset,
             }
         }
     }

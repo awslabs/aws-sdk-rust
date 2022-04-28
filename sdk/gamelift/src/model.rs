@@ -17,7 +17,7 @@ pub struct Script {
     pub size_on_disk: std::option::Option<i64>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
 impl Script {
@@ -45,7 +45,7 @@ impl Script {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
@@ -141,12 +141,12 @@ pub mod script {
             self.creation_time = input;
             self
         }
-        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -175,7 +175,7 @@ impl Script {
     }
 }
 
-/// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+/// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
@@ -185,9 +185,9 @@ pub struct S3Location {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the zip file that contains the build files or script files. </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -201,11 +201,11 @@ impl S3Location {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub fn object_version(&self) -> std::option::Option<&str> {
         self.object_version.as_deref()
     }
@@ -256,22 +256,22 @@ pub mod s3_location {
             self.key = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
         pub fn object_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_version = Some(input.into());
             self
         }
-        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
         pub fn set_object_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2587,7 +2587,7 @@ pub struct GameServerGroup {
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>A generated unique ID for the game server group.</p>
     pub game_server_group_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
     pub instance_definitions: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -2632,7 +2632,7 @@ impl GameServerGroup {
     pub fn game_server_group_arn(&self) -> std::option::Option<&str> {
         self.game_server_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2759,12 +2759,12 @@ pub mod game_server_group {
             self.game_server_group_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4235,10 +4235,10 @@ impl AsRef<str> for GameServerHealthCheck {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
-    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+    /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
     pub from_port: std::option::Option<i32>,
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
-    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+    /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
     pub to_port: std::option::Option<i32>,
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
     pub ip_range: std::option::Option<std::string::String>,
@@ -4247,12 +4247,12 @@ pub struct IpPermission {
 }
 impl IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
-    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+    /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
     pub fn from_port(&self) -> std::option::Option<i32> {
         self.from_port
     }
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
-    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+    /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
     pub fn to_port(&self) -> std::option::Option<i32> {
         self.to_port
     }
@@ -4288,25 +4288,25 @@ pub mod ip_permission {
     }
     impl Builder {
         /// <p>A starting value for a range of allowed port numbers.</p>
-        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+        /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
         pub fn from_port(mut self, input: i32) -> Self {
             self.from_port = Some(input);
             self
         }
         /// <p>A starting value for a range of allowed port numbers.</p>
-        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+        /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
         }
         /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
-        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+        /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
         pub fn to_port(mut self, input: i32) -> Self {
             self.to_port = Some(input);
             self
         }
         /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
-        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
+        /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -7157,23 +7157,23 @@ impl DesiredPlayerSession {
     }
 }
 
-/// <p>Temporary access credentials used for uploading game build files to Amazon Web Services. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <code>RequestUploadCredentials</code>.</p>
+/// <p>Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <code>RequestUploadCredentials</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCredentials {
-    /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
+    /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
     pub access_key_id: std::option::Option<std::string::String>,
-    /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
+    /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
     pub session_token: std::option::Option<std::string::String>,
 }
 impl AwsCredentials {
-    /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
+    /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
     pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
-    /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
+    /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
     pub fn secret_access_key(&self) -> std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
@@ -7202,12 +7202,12 @@ pub mod aws_credentials {
         pub(crate) session_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
+        /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
         }
-        /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
+        /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7215,12 +7215,12 @@ pub mod aws_credentials {
             self.access_key_id = input;
             self
         }
-        /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
+        /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
         pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_access_key = Some(input.into());
             self
         }
-        /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
+        /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7258,7 +7258,7 @@ impl AwsCredentials {
     }
 }
 
-/// <p>Settings for a target-based scaling policy (see <code>ScalingPolicy</code>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon Web Services to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
+/// <p>Settings for a target-based scaling policy (see <code>ScalingPolicy</code>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
@@ -7871,13 +7871,13 @@ impl InstanceCredentials {
     }
 }
 
-/// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon Web Services fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p>
+/// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcPeeringConnection {
-    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -7889,11 +7889,11 @@ pub struct VpcPeeringConnection {
     pub status: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
     /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
+    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
     pub game_lift_vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcPeeringConnection {
-    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -7917,7 +7917,7 @@ impl VpcPeeringConnection {
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
-    /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
+    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
     pub fn game_lift_vpc_id(&self) -> std::option::Option<&str> {
         self.game_lift_vpc_id.as_deref()
     }
@@ -7950,12 +7950,12 @@ pub mod vpc_peering_connection {
         pub(crate) game_lift_vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
+        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
+        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -8019,12 +8019,12 @@ pub mod vpc_peering_connection {
             self.peer_vpc_id = input;
             self
         }
-        /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
+        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
         pub fn game_lift_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_lift_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
+        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
         pub fn set_game_lift_vpc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8126,7 +8126,7 @@ impl VpcPeeringConnectionStatus {
     }
 }
 
-/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon Web Services fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p>
+/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
@@ -8311,7 +8311,7 @@ pub struct ScalingPolicy {
     pub threshold: f64,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: std::option::Option<i32>,
-    /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
     /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
     /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8393,7 +8393,7 @@ impl ScalingPolicy {
     pub fn evaluation_periods(&self) -> std::option::Option<i32> {
         self.evaluation_periods
     }
-    /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
     /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
     /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8606,7 +8606,7 @@ pub mod scaling_policy {
             self.evaluation_periods = input;
             self
         }
-        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8624,7 +8624,7 @@ pub mod scaling_policy {
             self.metric_name = Some(input);
             self
         }
-        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8903,7 +8903,7 @@ pub struct PlayerSession {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub dns_name: std::option::Option<std::string::String>,
-    /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
     pub port: std::option::Option<i32>,
     /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
     pub player_data: std::option::Option<std::string::String>,
@@ -8970,7 +8970,7 @@ impl PlayerSession {
     pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
@@ -9174,12 +9174,12 @@ pub mod player_session {
             self.dns_name = input;
             self
         }
-        /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
+        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
+        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -12594,7 +12594,6 @@ pub struct CertificateConfiguration {
     /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
-    /// <p> </p>
     pub certificate_type: std::option::Option<crate::model::CertificateType>,
 }
 impl CertificateConfiguration {
@@ -12604,7 +12603,6 @@ impl CertificateConfiguration {
     /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
-    /// <p> </p>
     pub fn certificate_type(&self) -> std::option::Option<&crate::model::CertificateType> {
         self.certificate_type.as_ref()
     }
@@ -12631,7 +12629,6 @@ pub mod certificate_configuration {
         /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
         /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
         /// </ul>
-        /// <p> </p>
         pub fn certificate_type(mut self, input: crate::model::CertificateType) -> Self {
             self.certificate_type = Some(input);
             self
@@ -12642,7 +12639,6 @@ pub mod certificate_configuration {
         /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
         /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
         /// </ul>
-        /// <p> </p>
         pub fn set_certificate_type(
             mut self,
             input: std::option::Option<crate::model::CertificateType>,
@@ -13093,7 +13089,7 @@ impl TargetTrackingConfiguration {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>An Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <code>CreateGameServerGroup</code>. </p>
+/// <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <code>CreateGameServerGroup</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateSpecification {
@@ -13101,7 +13097,7 @@ pub struct LaunchTemplateSpecification {
     pub launch_template_id: std::option::Option<std::string::String>,
     /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
     pub launch_template_name: std::option::Option<std::string::String>,
-    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
     pub version: std::option::Option<std::string::String>,
 }
 impl LaunchTemplateSpecification {
@@ -13113,7 +13109,7 @@ impl LaunchTemplateSpecification {
     pub fn launch_template_name(&self) -> std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
-    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -13164,12 +13160,12 @@ pub mod launch_template_specification {
             self.launch_template_name = input;
             self
         }
-        /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+        /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+        /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self

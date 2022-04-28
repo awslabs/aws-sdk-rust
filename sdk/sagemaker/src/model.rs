@@ -1858,7 +1858,9 @@ pub struct ResourceSpec {
     pub sage_maker_image_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the image version created on the instance.</p>
     pub sage_maker_image_version_arn: std::option::Option<std::string::String>,
-    /// <p>The instance type that the image version runs on.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+    /// </note>
     pub instance_type: std::option::Option<crate::model::AppInstanceType>,
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub lifecycle_config_arn: std::option::Option<std::string::String>,
@@ -1872,7 +1874,9 @@ impl ResourceSpec {
     pub fn sage_maker_image_version_arn(&self) -> std::option::Option<&str> {
         self.sage_maker_image_version_arn.as_deref()
     }
-    /// <p>The instance type that the image version runs on.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+    /// </note>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::AppInstanceType> {
         self.instance_type.as_ref()
     }
@@ -1935,12 +1939,16 @@ pub mod resource_spec {
             self.sage_maker_image_version_arn = input;
             self
         }
-        /// <p>The instance type that the image version runs on.</p>
+        /// <p>The instance type that the image version runs on.</p> <note>
+        /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+        /// </note>
         pub fn instance_type(mut self, input: crate::model::AppInstanceType) -> Self {
             self.instance_type = Some(input);
             self
         }
-        /// <p>The instance type that the image version runs on.</p>
+        /// <p>The instance type that the image version runs on.</p> <note>
+        /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+        /// </note>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::AppInstanceType>,
@@ -2276,15 +2284,21 @@ impl AsRef<str> for AppInstanceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KernelGatewayAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p> <note>
+    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web Services CloudFormation and the instance type parameter value is not passed.</p>
+    /// </note>
     pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
     pub custom_images: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+    /// </note>
     pub lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl KernelGatewayAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p> <note>
+    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web Services CloudFormation and the instance type parameter value is not passed.</p>
+    /// </note>
     pub fn default_resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
@@ -2292,7 +2306,9 @@ impl KernelGatewayAppSettings {
     pub fn custom_images(&self) -> std::option::Option<&[crate::model::CustomImage]> {
         self.custom_images.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+    /// </note>
     pub fn lifecycle_config_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.lifecycle_config_arns.as_deref()
     }
@@ -2317,12 +2333,16 @@ pub mod kernel_gateway_app_settings {
         pub(crate) lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p>
+        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p> <note>
+        /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web Services CloudFormation and the instance type parameter value is not passed.</p>
+        /// </note>
         pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
             self.default_resource_spec = Some(input);
             self
         }
-        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p>
+        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p> <note>
+        /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web Services CloudFormation and the instance type parameter value is not passed.</p>
+        /// </note>
         pub fn set_default_resource_spec(
             mut self,
             input: std::option::Option<crate::model::ResourceSpec>,
@@ -2353,14 +2373,18 @@ pub mod kernel_gateway_app_settings {
         ///
         /// To override the contents of this collection use [`set_lifecycle_config_arns`](Self::set_lifecycle_config_arns).
         ///
-        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+        /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+        /// </note>
         pub fn lifecycle_config_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lifecycle_config_arns.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_config_arns = Some(v);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+        /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+        /// </note>
         pub fn set_lifecycle_config_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2484,17 +2508,21 @@ impl CustomImage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JupyterServerAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
     pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+    /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+    /// </note>
     pub lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JupyterServerAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
     pub fn default_resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+    /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+    /// </note>
     pub fn lifecycle_config_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.lifecycle_config_arns.as_deref()
     }
@@ -2517,12 +2545,12 @@ pub mod jupyter_server_app_settings {
         pub(crate) lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app.</p>
+        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
         pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
             self.default_resource_spec = Some(input);
             self
         }
-        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app.</p>
+        /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
         pub fn set_default_resource_spec(
             mut self,
             input: std::option::Option<crate::model::ResourceSpec>,
@@ -2534,14 +2562,18 @@ pub mod jupyter_server_app_settings {
         ///
         /// To override the contents of this collection use [`set_lifecycle_config_arns`](Self::set_lifecycle_config_arns).
         ///
-        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+        /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+        /// </note>
         pub fn lifecycle_config_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lifecycle_config_arns.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_config_arns = Some(v);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+        /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+        /// </note>
         pub fn set_lifecycle_config_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7580,7 +7612,7 @@ pub struct ModelPackageContainerDefinition {
     /// <p>The DNS host name for the Docker container.</p>
     pub container_hostname: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub image: std::option::Option<std::string::String>,
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
     pub image_digest: std::option::Option<std::string::String>,
@@ -7608,7 +7640,7 @@ impl ModelPackageContainerDefinition {
         self.container_hostname.as_deref()
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn image(&self) -> std::option::Option<&str> {
         self.image.as_deref()
     }
@@ -7700,13 +7732,13 @@ pub mod model_package_container_definition {
             self
         }
         /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-        /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.image = Some(input.into());
             self
         }
         /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-        /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -13330,7 +13362,7 @@ pub struct ModelPackage {
     /// <p>A list of algorithms that were used to create a model package.</p>
     pub source_algorithm_specification:
         std::option::Option<crate::model::SourceAlgorithmSpecification>,
-    /// <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.</p>
+    /// <p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>
     pub validation_specification:
         std::option::Option<crate::model::ModelPackageValidationSpecification>,
     /// <p>The status of the model package. This can be one of the following values.</p>
@@ -13420,7 +13452,7 @@ impl ModelPackage {
     ) -> std::option::Option<&crate::model::SourceAlgorithmSpecification> {
         self.source_algorithm_specification.as_ref()
     }
-    /// <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.</p>
+    /// <p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>
     pub fn validation_specification(
         &self,
     ) -> std::option::Option<&crate::model::ModelPackageValidationSpecification> {
@@ -13707,7 +13739,7 @@ pub mod model_package {
             self.source_algorithm_specification = input;
             self
         }
-        /// <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.</p>
+        /// <p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>
         pub fn validation_specification(
             mut self,
             input: crate::model::ModelPackageValidationSpecification,
@@ -13715,7 +13747,7 @@ pub mod model_package {
             self.validation_specification = Some(input);
             self
         }
-        /// <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.</p>
+        /// <p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>
         pub fn set_validation_specification(
             mut self,
             input: std::option::Option<crate::model::ModelPackageValidationSpecification>,
@@ -15562,13 +15594,13 @@ impl AsRef<str> for ModelPackageStatus {
     }
 }
 
-/// <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.</p>
+/// <p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelPackageValidationSpecification {
     /// <p>The IAM roles to be used for the validation of the model package.</p>
     pub validation_role: std::option::Option<std::string::String>,
-    /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that Amazon SageMaker runs to validate your model package.</p>
+    /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
     pub validation_profiles:
         std::option::Option<std::vec::Vec<crate::model::ModelPackageValidationProfile>>,
 }
@@ -15577,7 +15609,7 @@ impl ModelPackageValidationSpecification {
     pub fn validation_role(&self) -> std::option::Option<&str> {
         self.validation_role.as_deref()
     }
-    /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that Amazon SageMaker runs to validate your model package.</p>
+    /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
     pub fn validation_profiles(
         &self,
     ) -> std::option::Option<&[crate::model::ModelPackageValidationProfile]> {
@@ -15620,7 +15652,7 @@ pub mod model_package_validation_specification {
         ///
         /// To override the contents of this collection use [`set_validation_profiles`](Self::set_validation_profiles).
         ///
-        /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that Amazon SageMaker runs to validate your model package.</p>
+        /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
         pub fn validation_profiles(
             mut self,
             input: crate::model::ModelPackageValidationProfile,
@@ -15630,7 +15662,7 @@ pub mod model_package_validation_specification {
             self.validation_profiles = Some(v);
             self
         }
-        /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that Amazon SageMaker runs to validate your model package.</p>
+        /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
         pub fn set_validation_profiles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ModelPackageValidationProfile>>,
@@ -16901,7 +16933,7 @@ impl SourceAlgorithmSpecification {
     }
 }
 
-/// <p>Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+/// <p>Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceAlgorithm {
@@ -16909,7 +16941,7 @@ pub struct SourceAlgorithm {
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the algorithm.</p>
     /// </note>
     pub model_data_url: std::option::Option<std::string::String>,
-    /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+    /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
 }
 impl SourceAlgorithm {
@@ -16919,7 +16951,7 @@ impl SourceAlgorithm {
     pub fn model_data_url(&self) -> std::option::Option<&str> {
         self.model_data_url.as_deref()
     }
-    /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+    /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub fn algorithm_name(&self) -> std::option::Option<&str> {
         self.algorithm_name.as_deref()
     }
@@ -16959,12 +16991,12 @@ pub mod source_algorithm {
             self.model_data_url = input;
             self
         }
-        /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+        /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
         pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.algorithm_name = Some(input.into());
             self
         }
-        /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+        /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
         pub fn set_algorithm_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18553,14 +18585,10 @@ pub struct ProductionVariantSummary {
     pub desired_instance_count: std::option::Option<i32>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     pub variant_status: std::option::Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
-    /// <p>The serverless configuration for the endpoint.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration for the endpoint.</p>
     pub current_serverless_config:
         std::option::Option<crate::model::ProductionVariantServerlessConfig>,
-    /// <p>The serverless configuration requested for the endpoint update.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration requested for the endpoint update.</p>
     pub desired_serverless_config:
         std::option::Option<crate::model::ProductionVariantServerlessConfig>,
 }
@@ -18593,17 +18621,13 @@ impl ProductionVariantSummary {
     pub fn variant_status(&self) -> std::option::Option<&[crate::model::ProductionVariantStatus]> {
         self.variant_status.as_deref()
     }
-    /// <p>The serverless configuration for the endpoint.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration for the endpoint.</p>
     pub fn current_serverless_config(
         &self,
     ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
         self.current_serverless_config.as_ref()
     }
-    /// <p>The serverless configuration requested for the endpoint update.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration requested for the endpoint update.</p>
     pub fn desired_serverless_config(
         &self,
     ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
@@ -18733,9 +18757,7 @@ pub mod production_variant_summary {
             self.variant_status = input;
             self
         }
-        /// <p>The serverless configuration for the endpoint.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration for the endpoint.</p>
         pub fn current_serverless_config(
             mut self,
             input: crate::model::ProductionVariantServerlessConfig,
@@ -18743,9 +18765,7 @@ pub mod production_variant_summary {
             self.current_serverless_config = Some(input);
             self
         }
-        /// <p>The serverless configuration for the endpoint.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration for the endpoint.</p>
         pub fn set_current_serverless_config(
             mut self,
             input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
@@ -18753,9 +18773,7 @@ pub mod production_variant_summary {
             self.current_serverless_config = input;
             self
         }
-        /// <p>The serverless configuration requested for the endpoint update.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration requested for the endpoint update.</p>
         pub fn desired_serverless_config(
             mut self,
             input: crate::model::ProductionVariantServerlessConfig,
@@ -18763,9 +18781,7 @@ pub mod production_variant_summary {
             self.desired_serverless_config = Some(input);
             self
         }
-        /// <p>The serverless configuration requested for the endpoint update.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration requested for the endpoint update.</p>
         pub fn set_desired_serverless_config(
             mut self,
             input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
@@ -18796,9 +18812,6 @@ impl ProductionVariantSummary {
     }
 }
 
-/// <important>
-/// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-/// </important>
 /// <p>Specifies the serverless configuration for an endpoint variant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20612,10 +20625,10 @@ impl ExperimentConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataProcessing {
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
     /// <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
     pub input_filter: std::option::Option<std::string::String>,
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
     /// <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code> </p>
     pub output_filter: std::option::Option<std::string::String>,
     /// <p>Specifies the source of the data to join with the transformed data. The valid values are <code>None</code> and <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with the transformed data. If you want the batch transform job to join the original input data with the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional filter to select a portion of the joined dataset and store it in the output file.</p>
@@ -20625,12 +20638,12 @@ pub struct DataProcessing {
     pub join_source: std::option::Option<crate::model::JoinSource>,
 }
 impl DataProcessing {
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
     /// <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
     pub fn input_filter(&self) -> std::option::Option<&str> {
         self.input_filter.as_deref()
     }
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
     /// <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code> </p>
     pub fn output_filter(&self) -> std::option::Option<&str> {
         self.output_filter.as_deref()
@@ -20663,25 +20676,25 @@ pub mod data_processing {
         pub(crate) join_source: std::option::Option<crate::model::JoinSource>,
     }
     impl Builder {
-        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
         /// <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
         pub fn input_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_filter = Some(input.into());
             self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.</p>
         /// <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
         pub fn set_input_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_filter = input;
             self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
         /// <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code> </p>
         pub fn output_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_filter = Some(input.into());
             self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
         /// <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code> </p>
         pub fn set_output_filter(
             mut self,
@@ -20785,17 +20798,17 @@ impl AsRef<str> for JoinSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelClientConfig {
-    /// <p>The timeout value in seconds for an invocation request.</p>
+    /// <p>The timeout value in seconds for an invocation request. The default value is 600.</p>
     pub invocations_timeout_in_seconds: std::option::Option<i32>,
-    /// <p>The maximum number of retries when invocation requests are failing.</p>
+    /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
     pub invocations_max_retries: std::option::Option<i32>,
 }
 impl ModelClientConfig {
-    /// <p>The timeout value in seconds for an invocation request.</p>
+    /// <p>The timeout value in seconds for an invocation request. The default value is 600.</p>
     pub fn invocations_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.invocations_timeout_in_seconds
     }
-    /// <p>The maximum number of retries when invocation requests are failing.</p>
+    /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
     pub fn invocations_max_retries(&self) -> std::option::Option<i32> {
         self.invocations_max_retries
     }
@@ -20821,12 +20834,12 @@ pub mod model_client_config {
         pub(crate) invocations_max_retries: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The timeout value in seconds for an invocation request.</p>
+        /// <p>The timeout value in seconds for an invocation request. The default value is 600.</p>
         pub fn invocations_timeout_in_seconds(mut self, input: i32) -> Self {
             self.invocations_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The timeout value in seconds for an invocation request.</p>
+        /// <p>The timeout value in seconds for an invocation request. The default value is 600.</p>
         pub fn set_invocations_timeout_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -20834,12 +20847,12 @@ pub mod model_client_config {
             self.invocations_timeout_in_seconds = input;
             self
         }
-        /// <p>The maximum number of retries when invocation requests are failing.</p>
+        /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
         pub fn invocations_max_retries(mut self, input: i32) -> Self {
             self.invocations_max_retries = Some(input);
             self
         }
-        /// <p>The maximum number of retries when invocation requests are failing.</p>
+        /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
         pub fn set_invocations_max_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.invocations_max_retries = input;
             self
@@ -23665,7 +23678,7 @@ pub struct TrainingJob {
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
     /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-    /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+    /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
     /// InProgress
@@ -23732,20 +23745,20 @@ pub struct TrainingJob {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>A <code>VpcConfig</code> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
     /// <p>A timestamp that indicates when the training job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
     pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -23830,7 +23843,7 @@ impl TrainingJob {
         self.training_job_status.as_ref()
     }
     /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-    /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+    /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
     /// InProgress
@@ -23913,7 +23926,7 @@ impl TrainingJob {
     pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.input_data_config.as_deref()
     }
-    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -23925,8 +23938,8 @@ impl TrainingJob {
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
         self.stopping_condition.as_ref()
     }
@@ -23938,7 +23951,7 @@ impl TrainingJob {
     pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
-    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
@@ -24250,7 +24263,7 @@ pub mod training_job {
             self
         }
         /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-        /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+        /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
         /// <dl>
         /// <dt>
         /// InProgress
@@ -24310,7 +24323,7 @@ pub mod training_job {
             self
         }
         /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-        /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+        /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
         /// <dl>
         /// <dt>
         /// InProgress
@@ -24455,12 +24468,12 @@ pub mod training_job {
             self.input_data_config = input;
             self
         }
-        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -24494,14 +24507,14 @@ pub mod training_job {
             self.vpc_config = input;
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.stopping_condition = Some(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -24535,12 +24548,12 @@ pub mod training_job {
             self.training_start_time = input;
             self
         }
-        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
         pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_end_time = Some(input);
             self
         }
-        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
         pub fn set_training_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25685,13 +25698,13 @@ impl CollectionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckpointConfig {
-    /// <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
     pub local_path: std::option::Option<std::string::String>,
 }
 impl CheckpointConfig {
-    /// <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -25718,12 +25731,12 @@ pub mod checkpoint_config {
         pub(crate) local_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -25849,7 +25862,7 @@ impl MetricData {
     }
 }
 
-/// <p>An array element of <code>DescribeTrainingJobResponse$SecondaryStatusTransitions</code>. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status. </p>
+/// <p>An array element of <code>DescribeTrainingJobResponse$SecondaryStatusTransitions</code>. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status. </p>
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -25914,7 +25927,7 @@ pub struct SecondaryStatusTransition {
     /// <p>A timestamp that shows when the training job transitioned out of this secondary status state into another secondary status state or when the training job has ended.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A detailed description of the progress within a secondary status. </p>
-    /// <p>Amazon SageMaker provides secondary statuses and status messages that apply to each of them:</p>
+    /// <p>SageMaker provides secondary statuses and status messages that apply to each of them:</p>
     /// <dl>
     /// <dt>
     /// Starting
@@ -26015,7 +26028,7 @@ impl SecondaryStatusTransition {
         self.end_time.as_ref()
     }
     /// <p>A detailed description of the progress within a secondary status. </p>
-    /// <p>Amazon SageMaker provides secondary statuses and status messages that apply to each of them:</p>
+    /// <p>SageMaker provides secondary statuses and status messages that apply to each of them:</p>
     /// <dl>
     /// <dt>
     /// Starting
@@ -26219,7 +26232,7 @@ pub mod secondary_status_transition {
             self
         }
         /// <p>A detailed description of the progress within a secondary status. </p>
-        /// <p>Amazon SageMaker provides secondary statuses and status messages that apply to each of them:</p>
+        /// <p>SageMaker provides secondary statuses and status messages that apply to each of them:</p>
         /// <dl>
         /// <dt>
         /// Starting
@@ -26256,7 +26269,7 @@ pub mod secondary_status_transition {
             self
         }
         /// <p>A detailed description of the progress within a secondary status. </p>
-        /// <p>Amazon SageMaker provides secondary statuses and status messages that apply to each of them:</p>
+        /// <p>SageMaker provides secondary statuses and status messages that apply to each of them:</p>
         /// <dl>
         /// <dt>
         /// Starting
@@ -26441,30 +26454,30 @@ impl AsRef<str> for SecondaryStatus {
     }
 }
 
-/// <p>Specifies a limit to how long a model training job or model compilation job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p>
-/// <p>To stop a training job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
-/// <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note>
+/// <p>Specifies a limit to how long a model training job or model compilation job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training or compilation job. Use this API to cap model training costs.</p>
+/// <p>To stop a training job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+/// <p>The training algorithms provided by SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note>
 /// <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StoppingCondition {
     /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-    /// <p>For compilation jobs, if the job does not complete during this time, you will receive a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase as necessary based on your model.</p>
-    /// <p>For all other jobs, if the job does not complete during this time, Amazon SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+    /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+    /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
     pub max_runtime_in_seconds: i32,
-    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.</p>
+    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
     /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
     pub max_wait_time_in_seconds: std::option::Option<i32>,
 }
 impl StoppingCondition {
     /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-    /// <p>For compilation jobs, if the job does not complete during this time, you will receive a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase as necessary based on your model.</p>
-    /// <p>For all other jobs, if the job does not complete during this time, Amazon SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+    /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+    /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
     pub fn max_runtime_in_seconds(&self) -> i32 {
         self.max_runtime_in_seconds
     }
-    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.</p>
+    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
     /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
     pub fn max_wait_time_in_seconds(&self) -> std::option::Option<i32> {
         self.max_wait_time_in_seconds
@@ -26489,26 +26502,26 @@ pub mod stopping_condition {
     }
     impl Builder {
         /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-        /// <p>For compilation jobs, if the job does not complete during this time, you will receive a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase as necessary based on your model.</p>
-        /// <p>For all other jobs, if the job does not complete during this time, Amazon SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+        /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+        /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
         pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
             self.max_runtime_in_seconds = Some(input);
             self
         }
         /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-        /// <p>For compilation jobs, if the job does not complete during this time, you will receive a <code>TimeOut</code> error. We recommend starting with 900 seconds and increase as necessary based on your model.</p>
-        /// <p>For all other jobs, if the job does not complete during this time, Amazon SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+        /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+        /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
         pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_runtime_in_seconds = input;
             self
         }
-        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.</p>
+        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
         /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
         pub fn max_wait_time_in_seconds(mut self, input: i32) -> Self {
             self.max_wait_time_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.</p>
+        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
         /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
         pub fn set_max_wait_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_wait_time_in_seconds = input;
@@ -26541,13 +26554,13 @@ pub struct ResourceConfig {
     /// <p>The size of the ML storage volume that you want to provision. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
     /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-    /// <p> Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
+    /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
     /// </note> <note>
-    /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
+    /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
     pub volume_size_in_gb: i32,
-    /// <p>The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
@@ -26571,15 +26584,15 @@ impl ResourceConfig {
     /// <p>The size of the ML storage volume that you want to provision. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
     /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-    /// <p> Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
+    /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
     /// </note> <note>
-    /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
+    /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
     pub fn volume_size_in_gb(&self) -> i32 {
         self.volume_size_in_gb
     }
-    /// <p>The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
@@ -26641,9 +26654,9 @@ pub mod resource_config {
         /// <p>The size of the ML storage volume that you want to provision. </p>
         /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
         /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-        /// <p> Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
+        /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
         /// </note> <note>
-        /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
+        /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
         /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
         /// </note>
         pub fn volume_size_in_gb(mut self, input: i32) -> Self {
@@ -26653,16 +26666,16 @@ pub mod resource_config {
         /// <p>The size of the ML storage volume that you want to provision. </p>
         /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
         /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-        /// <p> Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
+        /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
         /// </note> <note>
-        /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
+        /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
         /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
         /// </note>
         pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size_in_gb = input;
             self
         }
-        /// <p>The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+        /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
         /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
         /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
         /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
@@ -26676,7 +26689,7 @@ pub mod resource_config {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+        /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
         /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
         /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
         /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
@@ -26998,33 +27011,33 @@ impl AsRef<str> for TrainingInstanceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
     /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+    /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
     pub s3_output_path: std::option::Option<std::string::String>,
 }
 impl OutputDataConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
     /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+    /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
     pub fn s3_output_path(&self) -> std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
@@ -27047,38 +27060,38 @@ pub mod output_data_config {
         pub(crate) s3_output_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
         /// <ul>
         /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
         /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
         /// <ul>
         /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
         /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+        /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
         pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_output_path = Some(input.into());
             self
         }
-        /// <p>Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+        /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
         pub fn set_s3_output_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27115,10 +27128,10 @@ pub struct Channel {
     /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
     pub compression_type: std::option::Option<crate::model::CompressionType>,
     /// <p></p>
-    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
     /// <p>In File mode, leave this field unset or set it to None.</p>
     pub record_wrapper_type: std::option::Option<crate::model::RecordWrapper>,
-    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
     /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
     pub input_mode: std::option::Option<crate::model::TrainingInputMode>,
     /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
@@ -27143,12 +27156,12 @@ impl Channel {
         self.compression_type.as_ref()
     }
     /// <p></p>
-    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
     /// <p>In File mode, leave this field unset or set it to None.</p>
     pub fn record_wrapper_type(&self) -> std::option::Option<&crate::model::RecordWrapper> {
         self.record_wrapper_type.as_ref()
     }
-    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
     /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
     pub fn input_mode(&self) -> std::option::Option<&crate::model::TrainingInputMode> {
         self.input_mode.as_ref()
@@ -27234,14 +27247,14 @@ pub mod channel {
             self
         }
         /// <p></p>
-        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
         /// <p>In File mode, leave this field unset or set it to None.</p>
         pub fn record_wrapper_type(mut self, input: crate::model::RecordWrapper) -> Self {
             self.record_wrapper_type = Some(input);
             self
         }
         /// <p></p>
-        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
         /// <p>In File mode, leave this field unset or set it to None.</p>
         pub fn set_record_wrapper_type(
             mut self,
@@ -27250,13 +27263,13 @@ pub mod channel {
             self.record_wrapper_type = input;
             self
         }
-        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
         /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
         pub fn input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
             self.input_mode = Some(input);
             self
         }
-        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
         /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
         pub fn set_input_mode(
             mut self,
@@ -27832,18 +27845,18 @@ impl AsRef<str> for FileSystemAccessMode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DataSource {
-    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects that match the specified key name prefix for model training. </p>
-    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training. </p>
+    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
     /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
     pub s3_data_type: std::option::Option<crate::model::S3DataType>,
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
     /// <ul>
     /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf. </p> </li>
+    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
     /// </ul>
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-    /// <p>If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+    /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+    /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
     /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
     /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
     pub s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
@@ -27851,8 +27864,8 @@ pub struct S3DataSource {
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl S3DataSource {
-    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects that match the specified key name prefix for model training. </p>
-    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training. </p>
+    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
     /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
     pub fn s3_data_type(&self) -> std::option::Option<&crate::model::S3DataType> {
         self.s3_data_type.as_ref()
@@ -27860,13 +27873,13 @@ impl S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
     /// <ul>
     /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf. </p> </li>
+    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
     /// </ul>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-    /// <p>If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+    /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+    /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
     /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
     /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
     pub fn s3_data_distribution_type(
@@ -27901,15 +27914,15 @@ pub mod s3_data_source {
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects that match the specified key name prefix for model training. </p>
-        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training. </p>
+        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
         /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
         pub fn s3_data_type(mut self, input: crate::model::S3DataType) -> Self {
             self.s3_data_type = Some(input);
             self
         }
-        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects that match the specified key name prefix for model training. </p>
-        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training. </p>
+        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
         /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
         pub fn set_s3_data_type(
             mut self,
@@ -27921,7 +27934,7 @@ pub mod s3_data_source {
         /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
         /// <ul>
         /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf. </p> </li>
+        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
         /// </ul>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
@@ -27930,14 +27943,14 @@ pub mod s3_data_source {
         /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
         /// <ul>
         /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf. </p> </li>
+        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
         /// </ul>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
         }
-        /// <p>If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-        /// <p>If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+        /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+        /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
         /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
         /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
         pub fn s3_data_distribution_type(
@@ -27947,8 +27960,8 @@ pub mod s3_data_source {
             self.s3_data_distribution_type = Some(input);
             self
         }
-        /// <p>If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-        /// <p>If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+        /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+        /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
         /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
         /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
         pub fn set_s3_data_distribution_type(
@@ -28051,11 +28064,11 @@ impl AsRef<str> for S3DataDistribution {
 }
 
 /// <p>Specifies the training algorithm to use in a <code>CreateTrainingJob</code> request.</p>
-/// <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+/// <p>For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmSpecification {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub training_image: std::option::Option<std::string::String>,
     /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
@@ -28070,12 +28083,12 @@ pub struct AlgorithmSpecification {
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
     pub training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
-    /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.</p>
+    /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
     pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li> <p>You use one of the Amazon SageMaker built-in algorithms</p> </li>
-    /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt Amazon SageMaker Docker Images</a>:</p>
+    /// <li> <p>You use one of the SageMaker built-in algorithms</p> </li>
+    /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
     /// <li> <p>Tensorflow (version &gt;= 1.15)</p> </li>
     /// <li> <p>MXNet (version &gt;= 1.6)</p> </li>
@@ -28086,7 +28099,7 @@ pub struct AlgorithmSpecification {
     pub enable_sage_maker_metrics_time_series: bool,
 }
 impl AlgorithmSpecification {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn training_image(&self) -> std::option::Option<&str> {
         self.training_image.as_deref()
     }
@@ -28107,14 +28120,14 @@ impl AlgorithmSpecification {
     pub fn training_input_mode(&self) -> std::option::Option<&crate::model::TrainingInputMode> {
         self.training_input_mode.as_ref()
     }
-    /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.</p>
+    /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
     pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
         self.metric_definitions.as_deref()
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li> <p>You use one of the Amazon SageMaker built-in algorithms</p> </li>
-    /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt Amazon SageMaker Docker Images</a>:</p>
+    /// <li> <p>You use one of the SageMaker built-in algorithms</p> </li>
+    /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
     /// <li> <p>Tensorflow (version &gt;= 1.15)</p> </li>
     /// <li> <p>MXNet (version &gt;= 1.6)</p> </li>
@@ -28154,12 +28167,12 @@ pub mod algorithm_specification {
         pub(crate) enable_sage_maker_metrics_time_series: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
         pub fn training_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.training_image = Some(input.into());
             self
         }
-        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
         pub fn set_training_image(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28215,14 +28228,14 @@ pub mod algorithm_specification {
         ///
         /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
         ///
-        /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.</p>
+        /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
         pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
             let mut v = self.metric_definitions.unwrap_or_default();
             v.push(input);
             self.metric_definitions = Some(v);
             self
         }
-        /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.</p>
+        /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
         pub fn set_metric_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
@@ -28232,8 +28245,8 @@ pub mod algorithm_specification {
         }
         /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
         /// <ul>
-        /// <li> <p>You use one of the Amazon SageMaker built-in algorithms</p> </li>
-        /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt Amazon SageMaker Docker Images</a>:</p>
+        /// <li> <p>You use one of the SageMaker built-in algorithms</p> </li>
+        /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
         /// <ul>
         /// <li> <p>Tensorflow (version &gt;= 1.15)</p> </li>
         /// <li> <p>MXNet (version &gt;= 1.6)</p> </li>
@@ -28247,8 +28260,8 @@ pub mod algorithm_specification {
         }
         /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
         /// <ul>
-        /// <li> <p>You use one of the Amazon SageMaker built-in algorithms</p> </li>
-        /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt Amazon SageMaker Docker Images</a>:</p>
+        /// <li> <p>You use one of the SageMaker built-in algorithms</p> </li>
+        /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
         /// <ul>
         /// <li> <p>Tensorflow (version &gt;= 1.15)</p> </li>
         /// <li> <p>MXNet (version &gt;= 1.6)</p> </li>
@@ -28284,7 +28297,7 @@ impl AlgorithmSpecification {
     }
 }
 
-/// <p>Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.</p>
+/// <p>Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDefinition {
@@ -31122,7 +31135,7 @@ pub struct QueryFilters {
     pub modified_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
     pub modified_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -31151,7 +31164,7 @@ impl QueryFilters {
     pub fn modified_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_after.as_ref()
     }
-    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
     pub fn properties(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -31283,7 +31296,7 @@ pub mod query_filters {
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
-        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
         pub fn properties(
             mut self,
             k: impl Into<std::string::String>,
@@ -31294,7 +31307,7 @@ pub mod query_filters {
             self.properties = Some(hash_map);
             self
         }
-        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<
@@ -32641,7 +32654,7 @@ impl AsRef<str> for SortBy {
     }
 }
 
-/// <p>Specifies summary information about a training job.</p>
+/// <p>The container for the summary information about a training job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HyperParameterTrainingJobSummary {
@@ -32657,7 +32670,7 @@ pub struct HyperParameterTrainingJobSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the training job started.</p>
     pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the training job.</p>
     pub training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
@@ -32706,7 +32719,7 @@ impl HyperParameterTrainingJobSummary {
     pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
-    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
@@ -32874,12 +32887,12 @@ pub mod hyper_parameter_training_job_summary {
             self.training_start_time = input;
             self
         }
-        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
         pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_end_time = Some(input);
             self
         }
-        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
         pub fn set_training_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -36924,7 +36937,7 @@ impl AsRef<str> for SortPipelineExecutionsBy {
     }
 }
 
-/// <p>Provides summary information for an Amazon SageMaker notebook instance.</p>
+/// <p>Provides summary information for an SageMaker notebook instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotebookInstanceSummary {
@@ -36934,7 +36947,7 @@ pub struct NotebookInstanceSummary {
     pub notebook_instance_arn: std::option::Option<std::string::String>,
     /// <p>The status of the notebook instance.</p>
     pub notebook_instance_status: std::option::Option<crate::model::NotebookInstanceStatus>,
-    /// <p>The URL that you use to connect to the Jupyter instance running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The type of ML compute instance that the notebook instance is running on.</p>
     pub instance_type: std::option::Option<crate::model::InstanceType>,
@@ -36945,9 +36958,9 @@ pub struct NotebookInstanceSummary {
     /// <p>The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
-    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub default_code_repository: std::option::Option<std::string::String>,
-    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub additional_code_repositories: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NotebookInstanceSummary {
@@ -36965,7 +36978,7 @@ impl NotebookInstanceSummary {
     ) -> std::option::Option<&crate::model::NotebookInstanceStatus> {
         self.notebook_instance_status.as_ref()
     }
-    /// <p>The URL that you use to connect to the Jupyter instance running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -36986,11 +36999,11 @@ impl NotebookInstanceSummary {
     pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
-    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn default_code_repository(&self) -> std::option::Option<&str> {
         self.default_code_repository.as_deref()
     }
-    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn additional_code_repositories(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_code_repositories.as_deref()
     }
@@ -37080,12 +37093,12 @@ pub mod notebook_instance_summary {
             self.notebook_instance_status = input;
             self
         }
-        /// <p>The URL that you use to connect to the Jupyter instance running in your notebook instance. </p>
+        /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The URL that you use to connect to the Jupyter instance running in your notebook instance. </p>
+        /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -37147,12 +37160,12 @@ pub mod notebook_instance_summary {
             self.notebook_instance_lifecycle_config_name = input;
             self
         }
-        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_code_repository = Some(input.into());
             self
         }
-        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_default_code_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37164,7 +37177,7 @@ pub mod notebook_instance_summary {
         ///
         /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
         ///
-        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn additional_code_repositories(
             mut self,
             input: impl Into<std::string::String>,
@@ -37174,7 +37187,7 @@ pub mod notebook_instance_summary {
             self.additional_code_repositories = Some(v);
             self
         }
-        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_additional_code_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -40176,11 +40189,11 @@ impl LabelingJobInputConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelingJobDataAttributes {
-    /// <p>Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
+    /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
 }
 impl LabelingJobDataAttributes {
-    /// <p>Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
+    /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
     pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
         self.content_classifiers.as_deref()
     }
@@ -40206,14 +40219,14 @@ pub mod labeling_job_data_attributes {
         ///
         /// To override the contents of this collection use [`set_content_classifiers`](Self::set_content_classifiers).
         ///
-        /// <p>Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
+        /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
         pub fn content_classifiers(mut self, input: crate::model::ContentClassifier) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
             v.push(input);
             self.content_classifiers = Some(v);
             self
         }
-        /// <p>Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
+        /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
         pub fn set_content_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
@@ -40524,7 +40537,7 @@ impl LabelingJobS3DataSource {
 pub struct LabelingJobOutput {
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
     pub output_dataset_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model trained as part of automated data labeling. </p>
+    /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
     pub final_active_learning_model_arn: std::option::Option<std::string::String>,
 }
 impl LabelingJobOutput {
@@ -40532,7 +40545,7 @@ impl LabelingJobOutput {
     pub fn output_dataset_s3_uri(&self) -> std::option::Option<&str> {
         self.output_dataset_s3_uri.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model trained as part of automated data labeling. </p>
+    /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
     pub fn final_active_learning_model_arn(&self) -> std::option::Option<&str> {
         self.final_active_learning_model_arn.as_deref()
     }
@@ -40571,7 +40584,7 @@ pub mod labeling_job_output {
             self.output_dataset_s3_uri = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model trained as part of automated data labeling. </p>
+        /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
         pub fn final_active_learning_model_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -40579,7 +40592,7 @@ pub mod labeling_job_output {
             self.final_active_learning_model_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model trained as part of automated data labeling. </p>
+        /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
         pub fn set_final_active_learning_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -52603,17 +52616,17 @@ pub struct ContainerDefinition {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
     pub container_hostname: std::option::Option<std::string::String>,
-    /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
+    /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
     pub image: std::option::Option<std::string::String>,
     /// <p>Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a Private Docker Registry for Real-Time Inference Containers</a> </p>
     pub image_config: std::option::Option<crate::model::ImageConfig>,
     /// <p>Whether the container hosts a single model or multiple models.</p>
     pub mode: std::option::Option<crate::model::ContainerMode>,
-    /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
+    /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    /// <p>If you provide a value for this parameter, Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
-    /// <p>If you use a built-in algorithm to create a model, Amazon SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
+    /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
+    /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
     pub model_data_url: std::option::Option<std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
@@ -52632,7 +52645,7 @@ impl ContainerDefinition {
     pub fn container_hostname(&self) -> std::option::Option<&str> {
         self.container_hostname.as_deref()
     }
-    /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
+    /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
     pub fn image(&self) -> std::option::Option<&str> {
         self.image.as_deref()
     }
@@ -52644,11 +52657,11 @@ impl ContainerDefinition {
     pub fn mode(&self) -> std::option::Option<&crate::model::ContainerMode> {
         self.mode.as_ref()
     }
-    /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
+    /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    /// <p>If you provide a value for this parameter, Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
-    /// <p>If you use a built-in algorithm to create a model, Amazon SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
+    /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
+    /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
     pub fn model_data_url(&self) -> std::option::Option<&str> {
         self.model_data_url.as_deref()
@@ -52725,12 +52738,12 @@ pub mod container_definition {
             self.container_hostname = input;
             self
         }
-        /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
+        /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.image = Some(input.into());
             self
         }
-        /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
+        /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a> </p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -52758,21 +52771,21 @@ pub mod container_definition {
             self.mode = input;
             self
         }
-        /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
+        /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
         /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.</p>
         /// </note>
-        /// <p>If you provide a value for this parameter, Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
-        /// <p>If you use a built-in algorithm to create a model, Amazon SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
+        /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
+        /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
         /// </important>
         pub fn model_data_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_data_url = Some(input.into());
             self
         }
-        /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
+        /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
         /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.</p>
         /// </note>
-        /// <p>If you provide a value for this parameter, Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
-        /// <p>If you use a built-in algorithm to create a model, Amazon SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
+        /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
+        /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
         /// </important>
         pub fn set_model_data_url(
             mut self,
@@ -57930,6 +57943,35 @@ pub struct RecommendationJobInputConfig {
     /// <p>Specifies the endpoint configuration to use for a job.</p>
     pub endpoint_configurations:
         std::option::Option<std::vec::Vec<crate::model::EndpointInputConfiguration>>,
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
+    /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
+    /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :key/
+    /// <key-id-12ab-34cd-56ef-1234567890ab>
+    /// "
+    /// </key-id-12ab-34cd-56ef-1234567890ab>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :alias/
+    /// <examplealias>
+    /// "
+    /// </examplealias>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// </ul>
+    /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+    pub volume_kms_key_id: std::option::Option<std::string::String>,
 }
 impl RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -57956,6 +57998,37 @@ impl RecommendationJobInputConfig {
     ) -> std::option::Option<&[crate::model::EndpointInputConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
+    /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
+    /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :key/
+    /// <key-id-12ab-34cd-56ef-1234567890ab>
+    /// "
+    /// </key-id-12ab-34cd-56ef-1234567890ab>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :alias/
+    /// <examplealias>
+    /// "
+    /// </examplealias>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// </ul>
+    /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RecommendationJobInputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57965,6 +58038,7 @@ impl std::fmt::Debug for RecommendationJobInputConfig {
         formatter.field("traffic_pattern", &self.traffic_pattern);
         formatter.field("resource_limit", &self.resource_limit);
         formatter.field("endpoint_configurations", &self.endpoint_configurations);
+        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
         formatter.finish()
     }
 }
@@ -57981,6 +58055,7 @@ pub mod recommendation_job_input_config {
             std::option::Option<crate::model::RecommendationJobResourceLimit>,
         pub(crate) endpoint_configurations:
             std::option::Option<std::vec::Vec<crate::model::EndpointInputConfiguration>>,
+        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -58057,6 +58132,73 @@ pub mod recommendation_job_input_config {
             self.endpoint_configurations = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
+        /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
+        /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :key/
+        /// <key-id-12ab-34cd-56ef-1234567890ab>
+        /// "
+        /// </key-id-12ab-34cd-56ef-1234567890ab>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :alias/
+        /// <examplealias>
+        /// "
+        /// </examplealias>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// </ul>
+        /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
+        /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
+        /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :key/
+        /// <key-id-12ab-34cd-56ef-1234567890ab>
+        /// "
+        /// </key-id-12ab-34cd-56ef-1234567890ab>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :alias/
+        /// <examplealias>
+        /// "
+        /// </examplealias>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// </ul>
+        /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig)
         pub fn build(self) -> crate::model::RecommendationJobInputConfig {
             crate::model::RecommendationJobInputConfig {
@@ -58065,6 +58207,7 @@ pub mod recommendation_job_input_config {
                 traffic_pattern: self.traffic_pattern,
                 resource_limit: self.resource_limit,
                 endpoint_configurations: self.endpoint_configurations,
+                volume_kms_key_id: self.volume_kms_key_id,
             }
         }
     }
@@ -58963,11 +59106,11 @@ pub struct HyperParameterTrainingJobDefinition {
     /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
-    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
-    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub enable_network_isolation: bool,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
     pub enable_inter_container_traffic_encryption: bool,
@@ -59025,15 +59168,15 @@ impl HyperParameterTrainingJobDefinition {
         self.output_data_config.as_ref()
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
     pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
         self.resource_config.as_ref()
     }
-    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
         self.stopping_condition.as_ref()
     }
-    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub fn enable_network_isolation(&self) -> bool {
         self.enable_network_isolation
     }
@@ -59253,13 +59396,13 @@ pub mod hyper_parameter_training_job_definition {
             self
         }
         /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.resource_config = Some(input);
             self
         }
         /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -59267,12 +59410,12 @@ pub mod hyper_parameter_training_job_definition {
             self.resource_config = input;
             self
         }
-        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.stopping_condition = Some(input);
             self
         }
-        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -59280,12 +59423,12 @@ pub mod hyper_parameter_training_job_definition {
             self.stopping_condition = input;
             self
         }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn enable_network_isolation(mut self, input: bool) -> Self {
             self.enable_network_isolation = Some(input);
             self
         }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_network_isolation = input;
             self
@@ -59378,7 +59521,7 @@ impl HyperParameterTrainingJobDefinition {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HyperParameterAlgorithmSpecification {
-    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub training_image: std::option::Option<std::string::String>,
     /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
     /// <p> <b>Pipe mode</b> </p>
@@ -59397,7 +59540,7 @@ pub struct HyperParameterAlgorithmSpecification {
     pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
 }
 impl HyperParameterAlgorithmSpecification {
-    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn training_image(&self) -> std::option::Option<&str> {
         self.training_image.as_deref()
     }
@@ -59446,12 +59589,12 @@ pub mod hyper_parameter_algorithm_specification {
             std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
     }
     impl Builder {
-        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
         pub fn training_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.training_image = Some(input.into());
             self
         }
-        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
         pub fn set_training_image(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -59786,7 +59929,7 @@ pub struct ContinuousParameterRange {
     /// Auto
     /// </dt>
     /// <dd>
-    /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
     /// <dt>
     /// Linear
@@ -59830,7 +59973,7 @@ impl ContinuousParameterRange {
     /// Auto
     /// </dt>
     /// <dd>
-    /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
     /// <dt>
     /// Linear
@@ -59915,7 +60058,7 @@ pub mod continuous_parameter_range {
         /// Auto
         /// </dt>
         /// <dd>
-        /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
         /// <dt>
         /// Linear
@@ -59948,7 +60091,7 @@ pub mod continuous_parameter_range {
         /// Auto
         /// </dt>
         /// <dd>
-        /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
         /// <dt>
         /// Linear
@@ -60075,7 +60218,7 @@ pub struct IntegerParameterRange {
     /// Auto
     /// </dt>
     /// <dd>
-    /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
     /// <dt>
     /// Linear
@@ -60112,7 +60255,7 @@ impl IntegerParameterRange {
     /// Auto
     /// </dt>
     /// <dd>
-    /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
     /// <dt>
     /// Linear
@@ -60190,7 +60333,7 @@ pub mod integer_parameter_range {
         /// Auto
         /// </dt>
         /// <dd>
-        /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
         /// <dt>
         /// Linear
@@ -60216,7 +60359,7 @@ pub mod integer_parameter_range {
         /// Auto
         /// </dt>
         /// <dd>
-        /// <p>Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
         /// <dt>
         /// Linear
@@ -60360,7 +60503,7 @@ pub struct HyperParameterTuningJobConfig {
     /// AUTO
     /// </dt>
     /// <dd>
-    /// <p>Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+    /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
     /// </dd>
     /// </dl>
     pub training_job_early_stopping_type:
@@ -60402,7 +60545,7 @@ impl HyperParameterTuningJobConfig {
     /// AUTO
     /// </dt>
     /// <dd>
-    /// <p>Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+    /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
     /// </dd>
     /// </dl>
     pub fn training_job_early_stopping_type(
@@ -60525,7 +60668,7 @@ pub mod hyper_parameter_tuning_job_config {
         /// AUTO
         /// </dt>
         /// <dd>
-        /// <p>Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+        /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
         /// </dd>
         /// </dl>
         pub fn training_job_early_stopping_type(
@@ -60547,7 +60690,7 @@ pub mod hyper_parameter_tuning_job_config {
         /// AUTO
         /// </dt>
         /// <dd>
-        /// <p>Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+        /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_training_job_early_stopping_type(
@@ -61881,13 +62024,13 @@ impl AsRef<str> for AwsManagedHumanLoopRequestSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncInferenceConfig {
-    /// <p>Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.</p>
+    /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
     pub client_config: std::option::Option<crate::model::AsyncInferenceClientConfig>,
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
     pub output_config: std::option::Option<crate::model::AsyncInferenceOutputConfig>,
 }
 impl AsyncInferenceConfig {
-    /// <p>Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.</p>
+    /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
     pub fn client_config(&self) -> std::option::Option<&crate::model::AsyncInferenceClientConfig> {
         self.client_config.as_ref()
     }
@@ -61914,12 +62057,12 @@ pub mod async_inference_config {
         pub(crate) output_config: std::option::Option<crate::model::AsyncInferenceOutputConfig>,
     }
     impl Builder {
-        /// <p>Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.</p>
+        /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
         pub fn client_config(mut self, input: crate::model::AsyncInferenceClientConfig) -> Self {
             self.client_config = Some(input);
             self
         }
-        /// <p>Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.</p>
+        /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
         pub fn set_client_config(
             mut self,
             input: std::option::Option<crate::model::AsyncInferenceClientConfig>,
@@ -61960,7 +62103,7 @@ impl AsyncInferenceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncInferenceOutputConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location to upload inference responses to.</p>
@@ -61969,7 +62112,7 @@ pub struct AsyncInferenceOutputConfig {
     pub notification_config: std::option::Option<crate::model::AsyncInferenceNotificationConfig>,
 }
 impl AsyncInferenceOutputConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -62006,13 +62149,13 @@ pub mod async_inference_output_config {
             std::option::Option<crate::model::AsyncInferenceNotificationConfig>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
         /// <p></p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
         /// <p></p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -62140,15 +62283,15 @@ impl AsyncInferenceNotificationConfig {
     }
 }
 
-/// <p>Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.</p>
+/// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncInferenceClientConfig {
-    /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.</p>
+    /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub max_concurrent_invocations_per_instance: std::option::Option<i32>,
 }
 impl AsyncInferenceClientConfig {
-    /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.</p>
+    /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub fn max_concurrent_invocations_per_instance(&self) -> std::option::Option<i32> {
         self.max_concurrent_invocations_per_instance
     }
@@ -62172,12 +62315,12 @@ pub mod async_inference_client_config {
         pub(crate) max_concurrent_invocations_per_instance: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.</p>
+        /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
         pub fn max_concurrent_invocations_per_instance(mut self, input: i32) -> Self {
             self.max_concurrent_invocations_per_instance = Some(input);
             self
         }
-        /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.</p>
+        /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
         pub fn set_max_concurrent_invocations_per_instance(
             mut self,
             input: std::option::Option<i32>,
@@ -62580,7 +62723,7 @@ impl AsRef<str> for CaptureMode {
     }
 }
 
-/// <p>Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights. </p>
+/// <p>Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductionVariant {
@@ -62598,9 +62741,7 @@ pub struct ProductionVariant {
     pub accelerator_type: std::option::Option<crate::model::ProductionVariantAcceleratorType>,
     /// <p>Specifies configuration for a core dump from the model container when the process crashes.</p>
     pub core_dump_config: std::option::Option<crate::model::ProductionVariantCoreDumpConfig>,
-    /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
     pub serverless_config: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
 }
 impl ProductionVariant {
@@ -62638,9 +62779,7 @@ impl ProductionVariant {
     ) -> std::option::Option<&crate::model::ProductionVariantCoreDumpConfig> {
         self.core_dump_config.as_ref()
     }
-    /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
     pub fn serverless_config(
         &self,
     ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
@@ -62765,9 +62904,7 @@ pub mod production_variant {
             self.core_dump_config = input;
             self
         }
-        /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
         pub fn serverless_config(
             mut self,
             input: crate::model::ProductionVariantServerlessConfig,
@@ -62775,9 +62912,7 @@ pub mod production_variant {
             self.serverless_config = Some(input);
             self
         }
-        /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
         pub fn set_serverless_config(
             mut self,
             input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
@@ -62813,14 +62948,14 @@ impl ProductionVariant {
 pub struct ProductionVariantCoreDumpConfig {
     /// <p>The Amazon S3 bucket to send the core dump to.</p>
     pub destination_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
     /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -62829,14 +62964,14 @@ impl ProductionVariantCoreDumpConfig {
     pub fn destination_s3_uri(&self) -> std::option::Option<&str> {
         self.destination_s3_uri.as_deref()
     }
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
     /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -62873,27 +63008,27 @@ pub mod production_variant_core_dump_config {
             self.destination_s3_uri = input;
             self
         }
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
         /// <ul>
         /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
         /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
         /// <ul>
         /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
         /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
         /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -63131,14 +63266,10 @@ pub struct PendingProductionVariantSummary {
     pub accelerator_type: std::option::Option<crate::model::ProductionVariantAcceleratorType>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     pub variant_status: std::option::Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
-    /// <p>The serverless configuration for the endpoint.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration for the endpoint.</p>
     pub current_serverless_config:
         std::option::Option<crate::model::ProductionVariantServerlessConfig>,
-    /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
     pub desired_serverless_config:
         std::option::Option<crate::model::ProductionVariantServerlessConfig>,
 }
@@ -63183,17 +63314,13 @@ impl PendingProductionVariantSummary {
     pub fn variant_status(&self) -> std::option::Option<&[crate::model::ProductionVariantStatus]> {
         self.variant_status.as_deref()
     }
-    /// <p>The serverless configuration for the endpoint.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration for the endpoint.</p>
     pub fn current_serverless_config(
         &self,
     ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
         self.current_serverless_config.as_ref()
     }
-    /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p> <note>
-    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-    /// </note>
+    /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
     pub fn desired_serverless_config(
         &self,
     ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
@@ -63357,9 +63484,7 @@ pub mod pending_production_variant_summary {
             self.variant_status = input;
             self
         }
-        /// <p>The serverless configuration for the endpoint.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration for the endpoint.</p>
         pub fn current_serverless_config(
             mut self,
             input: crate::model::ProductionVariantServerlessConfig,
@@ -63367,9 +63492,7 @@ pub mod pending_production_variant_summary {
             self.current_serverless_config = Some(input);
             self
         }
-        /// <p>The serverless configuration for the endpoint.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration for the endpoint.</p>
         pub fn set_current_serverless_config(
             mut self,
             input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
@@ -63377,9 +63500,7 @@ pub mod pending_production_variant_summary {
             self.current_serverless_config = input;
             self
         }
-        /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
         pub fn desired_serverless_config(
             mut self,
             input: crate::model::ProductionVariantServerlessConfig,
@@ -63387,9 +63508,7 @@ pub mod pending_production_variant_summary {
             self.desired_serverless_config = Some(input);
             self
         }
-        /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p> <note>
-        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
-        /// </note>
+        /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
         pub fn set_desired_serverless_config(
             mut self,
             input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
@@ -66433,6 +66552,9 @@ pub struct AutoMlJobConfig {
     pub completion_criteria: std::option::Option<crate::model::AutoMlJobCompletionCriteria>,
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
     pub security_config: std::option::Option<crate::model::AutoMlSecurityConfig>,
+    /// <p>The configuration for splitting the input training dataset.</p>
+    /// <p>Type: AutoMLDataSplitConfig</p>
+    pub data_split_config: std::option::Option<crate::model::AutoMlDataSplitConfig>,
 }
 impl AutoMlJobConfig {
     /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -66445,12 +66567,18 @@ impl AutoMlJobConfig {
     pub fn security_config(&self) -> std::option::Option<&crate::model::AutoMlSecurityConfig> {
         self.security_config.as_ref()
     }
+    /// <p>The configuration for splitting the input training dataset.</p>
+    /// <p>Type: AutoMLDataSplitConfig</p>
+    pub fn data_split_config(&self) -> std::option::Option<&crate::model::AutoMlDataSplitConfig> {
+        self.data_split_config.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoMlJobConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoMlJobConfig");
         formatter.field("completion_criteria", &self.completion_criteria);
         formatter.field("security_config", &self.security_config);
+        formatter.field("data_split_config", &self.data_split_config);
         formatter.finish()
     }
 }
@@ -66463,6 +66591,7 @@ pub mod auto_ml_job_config {
         pub(crate) completion_criteria:
             std::option::Option<crate::model::AutoMlJobCompletionCriteria>,
         pub(crate) security_config: std::option::Option<crate::model::AutoMlSecurityConfig>,
+        pub(crate) data_split_config: std::option::Option<crate::model::AutoMlDataSplitConfig>,
     }
     impl Builder {
         /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -66494,11 +66623,27 @@ pub mod auto_ml_job_config {
             self.security_config = input;
             self
         }
+        /// <p>The configuration for splitting the input training dataset.</p>
+        /// <p>Type: AutoMLDataSplitConfig</p>
+        pub fn data_split_config(mut self, input: crate::model::AutoMlDataSplitConfig) -> Self {
+            self.data_split_config = Some(input);
+            self
+        }
+        /// <p>The configuration for splitting the input training dataset.</p>
+        /// <p>Type: AutoMLDataSplitConfig</p>
+        pub fn set_data_split_config(
+            mut self,
+            input: std::option::Option<crate::model::AutoMlDataSplitConfig>,
+        ) -> Self {
+            self.data_split_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoMlJobConfig`](crate::model::AutoMlJobConfig)
         pub fn build(self) -> crate::model::AutoMlJobConfig {
             crate::model::AutoMlJobConfig {
                 completion_criteria: self.completion_criteria,
                 security_config: self.security_config,
+                data_split_config: self.data_split_config,
             }
         }
     }
@@ -66507,6 +66652,60 @@ impl AutoMlJobConfig {
     /// Creates a new builder-style object to manufacture [`AutoMlJobConfig`](crate::model::AutoMlJobConfig)
     pub fn builder() -> crate::model::auto_ml_job_config::Builder {
         crate::model::auto_ml_job_config::Builder::default()
+    }
+}
+
+/// <p>This structure specifies how to split the data into train and test datasets. The validation and training datasets must contain the same headers. The validation dataset must be less than 2 GB in size.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoMlDataSplitConfig {
+    /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+    pub validation_fraction: std::option::Option<f32>,
+}
+impl AutoMlDataSplitConfig {
+    /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+    pub fn validation_fraction(&self) -> std::option::Option<f32> {
+        self.validation_fraction
+    }
+}
+impl std::fmt::Debug for AutoMlDataSplitConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoMlDataSplitConfig");
+        formatter.field("validation_fraction", &self.validation_fraction);
+        formatter.finish()
+    }
+}
+/// See [`AutoMlDataSplitConfig`](crate::model::AutoMlDataSplitConfig)
+pub mod auto_ml_data_split_config {
+    /// A builder for [`AutoMlDataSplitConfig`](crate::model::AutoMlDataSplitConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) validation_fraction: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+        pub fn validation_fraction(mut self, input: f32) -> Self {
+            self.validation_fraction = Some(input);
+            self
+        }
+        /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+        pub fn set_validation_fraction(mut self, input: std::option::Option<f32>) -> Self {
+            self.validation_fraction = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoMlDataSplitConfig`](crate::model::AutoMlDataSplitConfig)
+        pub fn build(self) -> crate::model::AutoMlDataSplitConfig {
+            crate::model::AutoMlDataSplitConfig {
+                validation_fraction: self.validation_fraction,
+            }
+        }
+    }
+}
+impl AutoMlDataSplitConfig {
+    /// Creates a new builder-style object to manufacture [`AutoMlDataSplitConfig`](crate::model::AutoMlDataSplitConfig)
+    pub fn builder() -> crate::model::auto_ml_data_split_config::Builder {
+        crate::model::auto_ml_data_split_config::Builder::default()
     }
 }
 
@@ -66692,7 +66891,10 @@ impl AutoMlOutputDataConfig {
     }
 }
 
-/// <p>A channel is a named input source that training algorithms can consume. For more information, see .</p>
+/// <p>A channel is a named input source that training algorithms can consume. The validation dataset size is limited to less than 2 GB. The training dataset size must be less than 100 GB. For more information, see .</p> <note>
+/// <p>A validation dataset must contain the same headers as the training dataset.</p>
+/// </note>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlChannel {
@@ -66704,6 +66906,8 @@ pub struct AutoMlChannel {
     pub target_attribute_name: std::option::Option<std::string::String>,
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+    pub channel_type: std::option::Option<crate::model::AutoMlChannelType>,
 }
 impl AutoMlChannel {
     /// <p>The data source for an AutoML channel.</p>
@@ -66722,6 +66926,10 @@ impl AutoMlChannel {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
+    /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::AutoMlChannelType> {
+        self.channel_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoMlChannel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -66730,6 +66938,7 @@ impl std::fmt::Debug for AutoMlChannel {
         formatter.field("compression_type", &self.compression_type);
         formatter.field("target_attribute_name", &self.target_attribute_name);
         formatter.field("content_type", &self.content_type);
+        formatter.field("channel_type", &self.channel_type);
         formatter.finish()
     }
 }
@@ -66743,6 +66952,7 @@ pub mod auto_ml_channel {
         pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
         pub(crate) target_attribute_name: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) channel_type: std::option::Option<crate::model::AutoMlChannelType>,
     }
     impl Builder {
         /// <p>The data source for an AutoML channel.</p>
@@ -66794,6 +67004,19 @@ pub mod auto_ml_channel {
             self.content_type = input;
             self
         }
+        /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+        pub fn channel_type(mut self, input: crate::model::AutoMlChannelType) -> Self {
+            self.channel_type = Some(input);
+            self
+        }
+        /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+        pub fn set_channel_type(
+            mut self,
+            input: std::option::Option<crate::model::AutoMlChannelType>,
+        ) -> Self {
+            self.channel_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoMlChannel`](crate::model::AutoMlChannel)
         pub fn build(self) -> crate::model::AutoMlChannel {
             crate::model::AutoMlChannel {
@@ -66801,6 +67024,7 @@ pub mod auto_ml_channel {
                 compression_type: self.compression_type,
                 target_attribute_name: self.target_attribute_name,
                 content_type: self.content_type,
+                channel_type: self.channel_type,
             }
         }
     }
@@ -66809,6 +67033,61 @@ impl AutoMlChannel {
     /// Creates a new builder-style object to manufacture [`AutoMlChannel`](crate::model::AutoMlChannel)
     pub fn builder() -> crate::model::auto_ml_channel::Builder {
         crate::model::auto_ml_channel::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutoMlChannelType {
+    #[allow(missing_docs)] // documentation missing in model
+    Training,
+    #[allow(missing_docs)] // documentation missing in model
+    Validation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AutoMlChannelType {
+    fn from(s: &str) -> Self {
+        match s {
+            "training" => AutoMlChannelType::Training,
+            "validation" => AutoMlChannelType::Validation,
+            other => AutoMlChannelType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AutoMlChannelType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoMlChannelType::from(s))
+    }
+}
+impl AutoMlChannelType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoMlChannelType::Training => "training",
+            AutoMlChannelType::Validation => "validation",
+            AutoMlChannelType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["training", "validation"]
+    }
+}
+impl AsRef<str> for AutoMlChannelType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -67262,22 +67541,22 @@ impl AsRef<str> for DetailedAlgorithmStatus {
     }
 }
 
-/// <p>Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+/// <p>Specifies configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmValidationSpecification {
-    /// <p>The IAM roles that Amazon SageMaker uses to run the training jobs.</p>
+    /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
     pub validation_role: std::option::Option<std::string::String>,
-    /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that Amazon SageMaker runs to validate your algorithm.</p>
+    /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
     pub validation_profiles:
         std::option::Option<std::vec::Vec<crate::model::AlgorithmValidationProfile>>,
 }
 impl AlgorithmValidationSpecification {
-    /// <p>The IAM roles that Amazon SageMaker uses to run the training jobs.</p>
+    /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
     pub fn validation_role(&self) -> std::option::Option<&str> {
         self.validation_role.as_deref()
     }
-    /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that Amazon SageMaker runs to validate your algorithm.</p>
+    /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
     pub fn validation_profiles(
         &self,
     ) -> std::option::Option<&[crate::model::AlgorithmValidationProfile]> {
@@ -67303,12 +67582,12 @@ pub mod algorithm_validation_specification {
             std::option::Option<std::vec::Vec<crate::model::AlgorithmValidationProfile>>,
     }
     impl Builder {
-        /// <p>The IAM roles that Amazon SageMaker uses to run the training jobs.</p>
+        /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
         pub fn validation_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.validation_role = Some(input.into());
             self
         }
-        /// <p>The IAM roles that Amazon SageMaker uses to run the training jobs.</p>
+        /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
         pub fn set_validation_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -67320,7 +67599,7 @@ pub mod algorithm_validation_specification {
         ///
         /// To override the contents of this collection use [`set_validation_profiles`](Self::set_validation_profiles).
         ///
-        /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that Amazon SageMaker runs to validate your algorithm.</p>
+        /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
         pub fn validation_profiles(
             mut self,
             input: crate::model::AlgorithmValidationProfile,
@@ -67330,7 +67609,7 @@ pub mod algorithm_validation_specification {
             self.validation_profiles = Some(v);
             self
         }
-        /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that Amazon SageMaker runs to validate your algorithm.</p>
+        /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
         pub fn set_validation_profiles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AlgorithmValidationProfile>>,
@@ -67354,16 +67633,16 @@ impl AlgorithmValidationSpecification {
     }
 }
 
-/// <p>Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.</p>
+/// <p>Defines a training job and a batch transform job that SageMaker runs to validate your algorithm.</p>
 /// <p>The data provided in the validation profile is made available to your buyers on Amazon Web Services Marketplace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmValidationProfile {
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub profile_name: std::option::Option<std::string::String>,
-    /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that Amazon SageMaker runs to validate your algorithm.</p>
+    /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
     pub training_job_definition: std::option::Option<crate::model::TrainingJobDefinition>,
-    /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that Amazon SageMaker runs to validate your algorithm.</p>
+    /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
     pub transform_job_definition: std::option::Option<crate::model::TransformJobDefinition>,
 }
 impl AlgorithmValidationProfile {
@@ -67371,13 +67650,13 @@ impl AlgorithmValidationProfile {
     pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
-    /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that Amazon SageMaker runs to validate your algorithm.</p>
+    /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
     pub fn training_job_definition(
         &self,
     ) -> std::option::Option<&crate::model::TrainingJobDefinition> {
         self.training_job_definition.as_ref()
     }
-    /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that Amazon SageMaker runs to validate your algorithm.</p>
+    /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
     pub fn transform_job_definition(
         &self,
     ) -> std::option::Option<&crate::model::TransformJobDefinition> {
@@ -67416,7 +67695,7 @@ pub mod algorithm_validation_profile {
             self.profile_name = input;
             self
         }
-        /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that Amazon SageMaker runs to validate your algorithm.</p>
+        /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
         pub fn training_job_definition(
             mut self,
             input: crate::model::TrainingJobDefinition,
@@ -67424,7 +67703,7 @@ pub mod algorithm_validation_profile {
             self.training_job_definition = Some(input);
             self
         }
-        /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that Amazon SageMaker runs to validate your algorithm.</p>
+        /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
         pub fn set_training_job_definition(
             mut self,
             input: std::option::Option<crate::model::TrainingJobDefinition>,
@@ -67432,7 +67711,7 @@ pub mod algorithm_validation_profile {
             self.training_job_definition = input;
             self
         }
-        /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that Amazon SageMaker runs to validate your algorithm.</p>
+        /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
         pub fn transform_job_definition(
             mut self,
             input: crate::model::TransformJobDefinition,
@@ -67440,7 +67719,7 @@ pub mod algorithm_validation_profile {
             self.transform_job_definition = Some(input);
             self
         }
-        /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that Amazon SageMaker runs to validate your algorithm.</p>
+        /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
         pub fn set_transform_job_definition(
             mut self,
             input: std::option::Option<crate::model::TransformJobDefinition>,
@@ -67485,12 +67764,12 @@ pub struct TrainingJobDefinition {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-    /// <p>the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts.</p>
+    /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
-    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
 }
 impl TrainingJobDefinition {
@@ -67518,7 +67797,7 @@ impl TrainingJobDefinition {
     pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.input_data_config.as_deref()
     }
-    /// <p>the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts.</p>
+    /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -67526,8 +67805,8 @@ impl TrainingJobDefinition {
     pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
         self.resource_config.as_ref()
     }
-    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
     pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
         self.stopping_condition.as_ref()
     }
@@ -67635,12 +67914,12 @@ pub mod training_job_definition {
             self.input_data_config = input;
             self
         }
-        /// <p>the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts.</p>
+        /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts.</p>
+        /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -67661,14 +67940,14 @@ pub mod training_job_definition {
             self.resource_config = input;
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.stopping_condition = Some(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -68862,6 +69141,250 @@ impl RetentionType {
 impl AsRef<str> for RetentionType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Provides information about the output configuration for the compiled model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobOutputConfig {
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
+    /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :key/
+    /// <key-id-12ab-34cd-56ef-1234567890ab>
+    /// "
+    /// </key-id-12ab-34cd-56ef-1234567890ab>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :alias/
+    /// <examplealias>
+    /// "
+    /// </examplealias>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// </ul>
+    /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Provides information about the output configuration for the compiled model.</p>
+    pub compiled_output_config:
+        std::option::Option<crate::model::RecommendationJobCompiledOutputConfig>,
+}
+impl RecommendationJobOutputConfig {
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
+    /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :key/
+    /// <key-id-12ab-34cd-56ef-1234567890ab>
+    /// "
+    /// </key-id-12ab-34cd-56ef-1234567890ab>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+    /// <region>
+    /// :
+    /// <account>
+    /// :alias/
+    /// <examplealias>
+    /// "
+    /// </examplealias>
+    /// </account>
+    /// </region></code> </p> </li>
+    /// </ul>
+    /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Provides information about the output configuration for the compiled model.</p>
+    pub fn compiled_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationJobCompiledOutputConfig> {
+        self.compiled_output_config.as_ref()
+    }
+}
+impl std::fmt::Debug for RecommendationJobOutputConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobOutputConfig");
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("compiled_output_config", &self.compiled_output_config);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobOutputConfig`](crate::model::RecommendationJobOutputConfig)
+pub mod recommendation_job_output_config {
+    /// A builder for [`RecommendationJobOutputConfig`](crate::model::RecommendationJobOutputConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) compiled_output_config:
+            std::option::Option<crate::model::RecommendationJobCompiledOutputConfig>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
+        /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :key/
+        /// <key-id-12ab-34cd-56ef-1234567890ab>
+        /// "
+        /// </key-id-12ab-34cd-56ef-1234567890ab>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :alias/
+        /// <examplealias>
+        /// "
+        /// </examplealias>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// </ul>
+        /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
+        /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :key/
+        /// <key-id-12ab-34cd-56ef-1234567890ab>
+        /// "
+        /// </key-id-12ab-34cd-56ef-1234567890ab>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:
+        /// <region>
+        /// :
+        /// <account>
+        /// :alias/
+        /// <examplealias>
+        /// "
+        /// </examplealias>
+        /// </account>
+        /// </region></code> </p> </li>
+        /// </ul>
+        /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>Provides information about the output configuration for the compiled model.</p>
+        pub fn compiled_output_config(
+            mut self,
+            input: crate::model::RecommendationJobCompiledOutputConfig,
+        ) -> Self {
+            self.compiled_output_config = Some(input);
+            self
+        }
+        /// <p>Provides information about the output configuration for the compiled model.</p>
+        pub fn set_compiled_output_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobCompiledOutputConfig>,
+        ) -> Self {
+            self.compiled_output_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobOutputConfig`](crate::model::RecommendationJobOutputConfig)
+        pub fn build(self) -> crate::model::RecommendationJobOutputConfig {
+            crate::model::RecommendationJobOutputConfig {
+                kms_key_id: self.kms_key_id,
+                compiled_output_config: self.compiled_output_config,
+            }
+        }
+    }
+}
+impl RecommendationJobOutputConfig {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobOutputConfig`](crate::model::RecommendationJobOutputConfig)
+    pub fn builder() -> crate::model::recommendation_job_output_config::Builder {
+        crate::model::recommendation_job_output_config::Builder::default()
+    }
+}
+
+/// <p>Provides information about the output configuration for the compiled model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobCompiledOutputConfig {
+    /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
+    pub s3_output_uri: std::option::Option<std::string::String>,
+}
+impl RecommendationJobCompiledOutputConfig {
+    /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
+    pub fn s3_output_uri(&self) -> std::option::Option<&str> {
+        self.s3_output_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for RecommendationJobCompiledOutputConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobCompiledOutputConfig");
+        formatter.field("s3_output_uri", &self.s3_output_uri);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobCompiledOutputConfig`](crate::model::RecommendationJobCompiledOutputConfig)
+pub mod recommendation_job_compiled_output_config {
+    /// A builder for [`RecommendationJobCompiledOutputConfig`](crate::model::RecommendationJobCompiledOutputConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_output_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
+        pub fn s3_output_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_output_uri = Some(input.into());
+            self
+        }
+        /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
+        pub fn set_s3_output_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_output_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobCompiledOutputConfig`](crate::model::RecommendationJobCompiledOutputConfig)
+        pub fn build(self) -> crate::model::RecommendationJobCompiledOutputConfig {
+            crate::model::RecommendationJobCompiledOutputConfig {
+                s3_output_uri: self.s3_output_uri,
+            }
+        }
+    }
+}
+impl RecommendationJobCompiledOutputConfig {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobCompiledOutputConfig`](crate::model::RecommendationJobCompiledOutputConfig)
+    pub fn builder() -> crate::model::recommendation_job_compiled_output_config::Builder {
+        crate::model::recommendation_job_compiled_output_config::Builder::default()
     }
 }
 

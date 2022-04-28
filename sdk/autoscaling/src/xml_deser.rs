@@ -3290,6 +3290,21 @@ pub fn deser_structure_crate_model_auto_scaling_group(
                 builder = builder.set_desired_capacity_type(var_114);
             }
             ,
+            s if s.matches("DefaultInstanceWarmup") /* DefaultInstanceWarmup com.amazonaws.autoscaling#AutoScalingGroup$DefaultInstanceWarmup */ =>  {
+                let var_115 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#DefaultInstanceWarmup`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_default_instance_warmup(var_115);
+            }
+            ,
             _ => {}
         }
     }
@@ -3304,19 +3319,6 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InstanceId") /* InstanceId com.amazonaws.autoscaling#AutoScalingInstanceDetails$InstanceId */ =>  {
-                let var_115 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_id(var_115);
-            }
-            ,
-            s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#AutoScalingInstanceDetails$InstanceType */ =>  {
                 let var_116 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3326,10 +3328,10 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_116);
+                builder = builder.set_instance_id(var_116);
             }
             ,
-            s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#AutoScalingInstanceDetails$AutoScalingGroupName */ =>  {
+            s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#AutoScalingInstanceDetails$InstanceType */ =>  {
                 let var_117 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3339,10 +3341,10 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_auto_scaling_group_name(var_117);
+                builder = builder.set_instance_type(var_117);
             }
             ,
-            s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.autoscaling#AutoScalingInstanceDetails$AvailabilityZone */ =>  {
+            s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#AutoScalingInstanceDetails$AutoScalingGroupName */ =>  {
                 let var_118 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3352,10 +3354,10 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_118);
+                builder = builder.set_auto_scaling_group_name(var_118);
             }
             ,
-            s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#AutoScalingInstanceDetails$LifecycleState */ =>  {
+            s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.autoscaling#AutoScalingInstanceDetails$AvailabilityZone */ =>  {
                 let var_119 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3365,10 +3367,10 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_lifecycle_state(var_119);
+                builder = builder.set_availability_zone(var_119);
             }
             ,
-            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.autoscaling#AutoScalingInstanceDetails$HealthStatus */ =>  {
+            s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#AutoScalingInstanceDetails$LifecycleState */ =>  {
                 let var_120 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3378,10 +3380,10 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_health_status(var_120);
+                builder = builder.set_lifecycle_state(var_120);
             }
             ,
-            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchConfigurationName */ =>  {
+            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.autoscaling#AutoScalingInstanceDetails$HealthStatus */ =>  {
                 let var_121 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3391,21 +3393,34 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_launch_configuration_name(var_121);
+                builder = builder.set_health_status(var_121);
+            }
+            ,
+            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchConfigurationName */ =>  {
+                let var_122 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_launch_configuration_name(var_122);
             }
             ,
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchTemplate */ =>  {
-                let var_122 =
+                let var_123 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template(var_122);
+                builder = builder.set_launch_template(var_123);
             }
             ,
             s if s.matches("ProtectedFromScaleIn") /* ProtectedFromScaleIn com.amazonaws.autoscaling#AutoScalingInstanceDetails$ProtectedFromScaleIn */ =>  {
-                let var_123 =
+                let var_124 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3416,11 +3431,11 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_protected_from_scale_in(var_123);
+                builder = builder.set_protected_from_scale_in(var_124);
             }
             ,
             s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#AutoScalingInstanceDetails$WeightedCapacity */ =>  {
-                let var_124 =
+                let var_125 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3429,7 +3444,7 @@ pub fn deser_structure_crate_model_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_124);
+                builder = builder.set_weighted_capacity(var_125);
             }
             ,
             _ => {}
@@ -3446,19 +3461,6 @@ pub fn deser_structure_crate_model_instance_refresh(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InstanceRefreshId") /* InstanceRefreshId com.amazonaws.autoscaling#InstanceRefresh$InstanceRefreshId */ =>  {
-                let var_125 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_refresh_id(var_125);
-            }
-            ,
-            s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#InstanceRefresh$AutoScalingGroupName */ =>  {
                 let var_126 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3468,11 +3470,24 @@ pub fn deser_structure_crate_model_instance_refresh(
                         ?
                     )
                 ;
-                builder = builder.set_auto_scaling_group_name(var_126);
+                builder = builder.set_instance_refresh_id(var_126);
+            }
+            ,
+            s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#InstanceRefresh$AutoScalingGroupName */ =>  {
+                let var_127 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_auto_scaling_group_name(var_127);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.autoscaling#InstanceRefresh$Status */ =>  {
-                let var_127 =
+                let var_128 =
                     Some(
                         Result::<crate::model::InstanceRefreshStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::InstanceRefreshStatus::from(
@@ -3482,11 +3497,11 @@ pub fn deser_structure_crate_model_instance_refresh(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_127);
+                builder = builder.set_status(var_128);
             }
             ,
             s if s.matches("StatusReason") /* StatusReason com.amazonaws.autoscaling#InstanceRefresh$StatusReason */ =>  {
-                let var_128 =
+                let var_129 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3495,24 +3510,10 @@ pub fn deser_structure_crate_model_instance_refresh(
                         ?
                     )
                 ;
-                builder = builder.set_status_reason(var_128);
+                builder = builder.set_status_reason(var_129);
             }
             ,
             s if s.matches("StartTime") /* StartTime com.amazonaws.autoscaling#InstanceRefresh$StartTime */ =>  {
-                let var_129 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_start_time(var_129);
-            }
-            ,
-            s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#InstanceRefresh$EndTime */ =>  {
                 let var_130 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
@@ -3523,11 +3524,25 @@ pub fn deser_structure_crate_model_instance_refresh(
                         ?
                     )
                 ;
-                builder = builder.set_end_time(var_130);
+                builder = builder.set_start_time(var_130);
+            }
+            ,
+            s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#InstanceRefresh$EndTime */ =>  {
+                let var_131 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_end_time(var_131);
             }
             ,
             s if s.matches("PercentageComplete") /* PercentageComplete com.amazonaws.autoscaling#InstanceRefresh$PercentageComplete */ =>  {
-                let var_131 =
+                let var_132 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3538,11 +3553,11 @@ pub fn deser_structure_crate_model_instance_refresh(
                         ?
                     )
                 ;
-                builder = builder.set_percentage_complete(var_131);
+                builder = builder.set_percentage_complete(var_132);
             }
             ,
             s if s.matches("InstancesToUpdate") /* InstancesToUpdate com.amazonaws.autoscaling#InstanceRefresh$InstancesToUpdate */ =>  {
-                let var_132 =
+                let var_133 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3553,37 +3568,37 @@ pub fn deser_structure_crate_model_instance_refresh(
                         ?
                     )
                 ;
-                builder = builder.set_instances_to_update(var_132);
+                builder = builder.set_instances_to_update(var_133);
             }
             ,
             s if s.matches("ProgressDetails") /* ProgressDetails com.amazonaws.autoscaling#InstanceRefresh$ProgressDetails */ =>  {
-                let var_133 =
+                let var_134 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_instance_refresh_progress_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_progress_details(var_133);
+                builder = builder.set_progress_details(var_134);
             }
             ,
             s if s.matches("Preferences") /* Preferences com.amazonaws.autoscaling#InstanceRefresh$Preferences */ =>  {
-                let var_134 =
+                let var_135 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_refresh_preferences(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_preferences(var_134);
+                builder = builder.set_preferences(var_135);
             }
             ,
             s if s.matches("DesiredConfiguration") /* DesiredConfiguration com.amazonaws.autoscaling#InstanceRefresh$DesiredConfiguration */ =>  {
-                let var_135 =
+                let var_136 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_desired_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_desired_configuration(var_135);
+                builder = builder.set_desired_configuration(var_136);
             }
             ,
             _ => {}
@@ -3600,19 +3615,6 @@ pub fn deser_structure_crate_model_launch_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#LaunchConfiguration$LaunchConfigurationName */ =>  {
-                let var_136 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_launch_configuration_name(var_136);
-            }
-            ,
-            s if s.matches("LaunchConfigurationARN") /* LaunchConfigurationARN com.amazonaws.autoscaling#LaunchConfiguration$LaunchConfigurationARN */ =>  {
                 let var_137 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3622,10 +3624,10 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_launch_configuration_arn(var_137);
+                builder = builder.set_launch_configuration_name(var_137);
             }
             ,
-            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#LaunchConfiguration$ImageId */ =>  {
+            s if s.matches("LaunchConfigurationARN") /* LaunchConfigurationARN com.amazonaws.autoscaling#LaunchConfiguration$LaunchConfigurationARN */ =>  {
                 let var_138 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3635,10 +3637,10 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_138);
+                builder = builder.set_launch_configuration_arn(var_138);
             }
             ,
-            s if s.matches("KeyName") /* KeyName com.amazonaws.autoscaling#LaunchConfiguration$KeyName */ =>  {
+            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#LaunchConfiguration$ImageId */ =>  {
                 let var_139 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3648,21 +3650,34 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_key_name(var_139);
+                builder = builder.set_image_id(var_139);
+            }
+            ,
+            s if s.matches("KeyName") /* KeyName com.amazonaws.autoscaling#LaunchConfiguration$KeyName */ =>  {
+                let var_140 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key_name(var_140);
             }
             ,
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.autoscaling#LaunchConfiguration$SecurityGroups */ =>  {
-                let var_140 =
+                let var_141 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_security_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_security_groups(var_140);
+                builder = builder.set_security_groups(var_141);
             }
             ,
             s if s.matches("ClassicLinkVPCId") /* ClassicLinkVPCId com.amazonaws.autoscaling#LaunchConfiguration$ClassicLinkVPCId */ =>  {
-                let var_141 =
+                let var_142 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3671,33 +3686,20 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_classic_link_vpc_id(var_141);
+                builder = builder.set_classic_link_vpc_id(var_142);
             }
             ,
             s if s.matches("ClassicLinkVPCSecurityGroups") /* ClassicLinkVPCSecurityGroups com.amazonaws.autoscaling#LaunchConfiguration$ClassicLinkVPCSecurityGroups */ =>  {
-                let var_142 =
+                let var_143 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_classic_link_vpc_security_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_classic_link_vpc_security_groups(var_142);
+                builder = builder.set_classic_link_vpc_security_groups(var_143);
             }
             ,
             s if s.matches("UserData") /* UserData com.amazonaws.autoscaling#LaunchConfiguration$UserData */ =>  {
-                let var_143 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_data(var_143);
-            }
-            ,
-            s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#LaunchConfiguration$InstanceType */ =>  {
                 let var_144 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3707,10 +3709,10 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_144);
+                builder = builder.set_user_data(var_144);
             }
             ,
-            s if s.matches("KernelId") /* KernelId com.amazonaws.autoscaling#LaunchConfiguration$KernelId */ =>  {
+            s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#LaunchConfiguration$InstanceType */ =>  {
                 let var_145 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3720,10 +3722,10 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_kernel_id(var_145);
+                builder = builder.set_instance_type(var_145);
             }
             ,
-            s if s.matches("RamdiskId") /* RamdiskId com.amazonaws.autoscaling#LaunchConfiguration$RamdiskId */ =>  {
+            s if s.matches("KernelId") /* KernelId com.amazonaws.autoscaling#LaunchConfiguration$KernelId */ =>  {
                 let var_146 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3733,31 +3735,11 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_ramdisk_id(var_146);
+                builder = builder.set_kernel_id(var_146);
             }
             ,
-            s if s.matches("BlockDeviceMappings") /* BlockDeviceMappings com.amazonaws.autoscaling#LaunchConfiguration$BlockDeviceMappings */ =>  {
+            s if s.matches("RamdiskId") /* RamdiskId com.amazonaws.autoscaling#LaunchConfiguration$RamdiskId */ =>  {
                 let var_147 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_block_device_mappings(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_block_device_mappings(var_147);
-            }
-            ,
-            s if s.matches("InstanceMonitoring") /* InstanceMonitoring com.amazonaws.autoscaling#LaunchConfiguration$InstanceMonitoring */ =>  {
-                let var_148 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_instance_monitoring(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_monitoring(var_148);
-            }
-            ,
-            s if s.matches("SpotPrice") /* SpotPrice com.amazonaws.autoscaling#LaunchConfiguration$SpotPrice */ =>  {
-                let var_149 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3766,10 +3748,30 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_spot_price(var_149);
+                builder = builder.set_ramdisk_id(var_147);
             }
             ,
-            s if s.matches("IamInstanceProfile") /* IamInstanceProfile com.amazonaws.autoscaling#LaunchConfiguration$IamInstanceProfile */ =>  {
+            s if s.matches("BlockDeviceMappings") /* BlockDeviceMappings com.amazonaws.autoscaling#LaunchConfiguration$BlockDeviceMappings */ =>  {
+                let var_148 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_block_device_mappings(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_block_device_mappings(var_148);
+            }
+            ,
+            s if s.matches("InstanceMonitoring") /* InstanceMonitoring com.amazonaws.autoscaling#LaunchConfiguration$InstanceMonitoring */ =>  {
+                let var_149 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_instance_monitoring(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_monitoring(var_149);
+            }
+            ,
+            s if s.matches("SpotPrice") /* SpotPrice com.amazonaws.autoscaling#LaunchConfiguration$SpotPrice */ =>  {
                 let var_150 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3779,11 +3781,24 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_iam_instance_profile(var_150);
+                builder = builder.set_spot_price(var_150);
+            }
+            ,
+            s if s.matches("IamInstanceProfile") /* IamInstanceProfile com.amazonaws.autoscaling#LaunchConfiguration$IamInstanceProfile */ =>  {
+                let var_151 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_iam_instance_profile(var_151);
             }
             ,
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.autoscaling#LaunchConfiguration$CreatedTime */ =>  {
-                let var_151 =
+                let var_152 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3793,11 +3808,11 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_created_time(var_151);
+                builder = builder.set_created_time(var_152);
             }
             ,
             s if s.matches("EbsOptimized") /* EbsOptimized com.amazonaws.autoscaling#LaunchConfiguration$EbsOptimized */ =>  {
-                let var_152 =
+                let var_153 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3808,11 +3823,11 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_ebs_optimized(var_152);
+                builder = builder.set_ebs_optimized(var_153);
             }
             ,
             s if s.matches("AssociatePublicIpAddress") /* AssociatePublicIpAddress com.amazonaws.autoscaling#LaunchConfiguration$AssociatePublicIpAddress */ =>  {
-                let var_153 =
+                let var_154 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3823,11 +3838,11 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_associate_public_ip_address(var_153);
+                builder = builder.set_associate_public_ip_address(var_154);
             }
             ,
             s if s.matches("PlacementTenancy") /* PlacementTenancy com.amazonaws.autoscaling#LaunchConfiguration$PlacementTenancy */ =>  {
-                let var_154 =
+                let var_155 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3836,17 +3851,17 @@ pub fn deser_structure_crate_model_launch_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_placement_tenancy(var_154);
+                builder = builder.set_placement_tenancy(var_155);
             }
             ,
             s if s.matches("MetadataOptions") /* MetadataOptions com.amazonaws.autoscaling#LaunchConfiguration$MetadataOptions */ =>  {
-                let var_155 =
+                let var_156 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_instance_metadata_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metadata_options(var_155);
+                builder = builder.set_metadata_options(var_156);
             }
             ,
             _ => {}
@@ -3863,19 +3878,6 @@ pub fn deser_structure_crate_model_lifecycle_hook(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LifecycleHookName") /* LifecycleHookName com.amazonaws.autoscaling#LifecycleHook$LifecycleHookName */ =>  {
-                let var_156 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_lifecycle_hook_name(var_156);
-            }
-            ,
-            s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#LifecycleHook$AutoScalingGroupName */ =>  {
                 let var_157 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3885,10 +3887,10 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_auto_scaling_group_name(var_157);
+                builder = builder.set_lifecycle_hook_name(var_157);
             }
             ,
-            s if s.matches("LifecycleTransition") /* LifecycleTransition com.amazonaws.autoscaling#LifecycleHook$LifecycleTransition */ =>  {
+            s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#LifecycleHook$AutoScalingGroupName */ =>  {
                 let var_158 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3898,10 +3900,10 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_lifecycle_transition(var_158);
+                builder = builder.set_auto_scaling_group_name(var_158);
             }
             ,
-            s if s.matches("NotificationTargetARN") /* NotificationTargetARN com.amazonaws.autoscaling#LifecycleHook$NotificationTargetARN */ =>  {
+            s if s.matches("LifecycleTransition") /* LifecycleTransition com.amazonaws.autoscaling#LifecycleHook$LifecycleTransition */ =>  {
                 let var_159 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3911,10 +3913,10 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_notification_target_arn(var_159);
+                builder = builder.set_lifecycle_transition(var_159);
             }
             ,
-            s if s.matches("RoleARN") /* RoleARN com.amazonaws.autoscaling#LifecycleHook$RoleARN */ =>  {
+            s if s.matches("NotificationTargetARN") /* NotificationTargetARN com.amazonaws.autoscaling#LifecycleHook$NotificationTargetARN */ =>  {
                 let var_160 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3924,10 +3926,10 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_160);
+                builder = builder.set_notification_target_arn(var_160);
             }
             ,
-            s if s.matches("NotificationMetadata") /* NotificationMetadata com.amazonaws.autoscaling#LifecycleHook$NotificationMetadata */ =>  {
+            s if s.matches("RoleARN") /* RoleARN com.amazonaws.autoscaling#LifecycleHook$RoleARN */ =>  {
                 let var_161 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3937,11 +3939,24 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_notification_metadata(var_161);
+                builder = builder.set_role_arn(var_161);
+            }
+            ,
+            s if s.matches("NotificationMetadata") /* NotificationMetadata com.amazonaws.autoscaling#LifecycleHook$NotificationMetadata */ =>  {
+                let var_162 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_notification_metadata(var_162);
             }
             ,
             s if s.matches("HeartbeatTimeout") /* HeartbeatTimeout com.amazonaws.autoscaling#LifecycleHook$HeartbeatTimeout */ =>  {
-                let var_162 =
+                let var_163 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3952,11 +3967,11 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_heartbeat_timeout(var_162);
+                builder = builder.set_heartbeat_timeout(var_163);
             }
             ,
             s if s.matches("GlobalTimeout") /* GlobalTimeout com.amazonaws.autoscaling#LifecycleHook$GlobalTimeout */ =>  {
-                let var_163 =
+                let var_164 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3967,11 +3982,11 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_global_timeout(var_163);
+                builder = builder.set_global_timeout(var_164);
             }
             ,
             s if s.matches("DefaultResult") /* DefaultResult com.amazonaws.autoscaling#LifecycleHook$DefaultResult */ =>  {
-                let var_164 =
+                let var_165 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3980,7 +3995,7 @@ pub fn deser_structure_crate_model_lifecycle_hook(
                         ?
                     )
                 ;
-                builder = builder.set_default_result(var_164);
+                builder = builder.set_default_result(var_165);
             }
             ,
             _ => {}
@@ -3997,19 +4012,6 @@ pub fn deser_structure_crate_model_load_balancer_state(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LoadBalancerName") /* LoadBalancerName com.amazonaws.autoscaling#LoadBalancerState$LoadBalancerName */ =>  {
-                let var_165 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_load_balancer_name(var_165);
-            }
-            ,
-            s if s.matches("State") /* State com.amazonaws.autoscaling#LoadBalancerState$State */ =>  {
                 let var_166 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4019,7 +4021,20 @@ pub fn deser_structure_crate_model_load_balancer_state(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_166);
+                builder = builder.set_load_balancer_name(var_166);
+            }
+            ,
+            s if s.matches("State") /* State com.amazonaws.autoscaling#LoadBalancerState$State */ =>  {
+                let var_167 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_167);
             }
             ,
             _ => {}
@@ -4036,19 +4051,6 @@ pub fn deser_structure_crate_model_load_balancer_target_group_state(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LoadBalancerTargetGroupARN") /* LoadBalancerTargetGroupARN com.amazonaws.autoscaling#LoadBalancerTargetGroupState$LoadBalancerTargetGroupARN */ =>  {
-                let var_167 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_load_balancer_target_group_arn(var_167);
-            }
-            ,
-            s if s.matches("State") /* State com.amazonaws.autoscaling#LoadBalancerTargetGroupState$State */ =>  {
                 let var_168 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4058,7 +4060,20 @@ pub fn deser_structure_crate_model_load_balancer_target_group_state(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_168);
+                builder = builder.set_load_balancer_target_group_arn(var_168);
+            }
+            ,
+            s if s.matches("State") /* State com.amazonaws.autoscaling#LoadBalancerTargetGroupState$State */ =>  {
+                let var_169 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_169);
             }
             ,
             _ => {}
@@ -4075,7 +4090,7 @@ pub fn deser_structure_crate_model_metric_collection_type(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.autoscaling#MetricCollectionType$Metric */ =>  {
-                let var_169 =
+                let var_170 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4084,7 +4099,7 @@ pub fn deser_structure_crate_model_metric_collection_type(
                         ?
                     )
                 ;
-                builder = builder.set_metric(var_169);
+                builder = builder.set_metric(var_170);
             }
             ,
             _ => {}
@@ -4101,7 +4116,7 @@ pub fn deser_structure_crate_model_metric_granularity_type(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Granularity") /* Granularity com.amazonaws.autoscaling#MetricGranularityType$Granularity */ =>  {
-                let var_170 =
+                let var_171 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4110,7 +4125,7 @@ pub fn deser_structure_crate_model_metric_granularity_type(
                         ?
                     )
                 ;
-                builder = builder.set_granularity(var_170);
+                builder = builder.set_granularity(var_171);
             }
             ,
             _ => {}
@@ -4127,19 +4142,6 @@ pub fn deser_structure_crate_model_notification_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#NotificationConfiguration$AutoScalingGroupName */ =>  {
-                let var_171 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_auto_scaling_group_name(var_171);
-            }
-            ,
-            s if s.matches("TopicARN") /* TopicARN com.amazonaws.autoscaling#NotificationConfiguration$TopicARN */ =>  {
                 let var_172 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4149,10 +4151,10 @@ pub fn deser_structure_crate_model_notification_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_172);
+                builder = builder.set_auto_scaling_group_name(var_172);
             }
             ,
-            s if s.matches("NotificationType") /* NotificationType com.amazonaws.autoscaling#NotificationConfiguration$NotificationType */ =>  {
+            s if s.matches("TopicARN") /* TopicARN com.amazonaws.autoscaling#NotificationConfiguration$TopicARN */ =>  {
                 let var_173 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4162,7 +4164,20 @@ pub fn deser_structure_crate_model_notification_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_notification_type(var_173);
+                builder = builder.set_topic_arn(var_173);
+            }
+            ,
+            s if s.matches("NotificationType") /* NotificationType com.amazonaws.autoscaling#NotificationConfiguration$NotificationType */ =>  {
+                let var_174 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_notification_type(var_174);
             }
             ,
             _ => {}
@@ -4179,19 +4194,6 @@ pub fn deser_structure_crate_model_scaling_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#ScalingPolicy$AutoScalingGroupName */ =>  {
-                let var_174 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_auto_scaling_group_name(var_174);
-            }
-            ,
-            s if s.matches("PolicyName") /* PolicyName com.amazonaws.autoscaling#ScalingPolicy$PolicyName */ =>  {
                 let var_175 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4201,10 +4203,10 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_policy_name(var_175);
+                builder = builder.set_auto_scaling_group_name(var_175);
             }
             ,
-            s if s.matches("PolicyARN") /* PolicyARN com.amazonaws.autoscaling#ScalingPolicy$PolicyARN */ =>  {
+            s if s.matches("PolicyName") /* PolicyName com.amazonaws.autoscaling#ScalingPolicy$PolicyName */ =>  {
                 let var_176 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4214,10 +4216,10 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_policy_arn(var_176);
+                builder = builder.set_policy_name(var_176);
             }
             ,
-            s if s.matches("PolicyType") /* PolicyType com.amazonaws.autoscaling#ScalingPolicy$PolicyType */ =>  {
+            s if s.matches("PolicyARN") /* PolicyARN com.amazonaws.autoscaling#ScalingPolicy$PolicyARN */ =>  {
                 let var_177 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4227,10 +4229,10 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_policy_type(var_177);
+                builder = builder.set_policy_arn(var_177);
             }
             ,
-            s if s.matches("AdjustmentType") /* AdjustmentType com.amazonaws.autoscaling#ScalingPolicy$AdjustmentType */ =>  {
+            s if s.matches("PolicyType") /* PolicyType com.amazonaws.autoscaling#ScalingPolicy$PolicyType */ =>  {
                 let var_178 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4240,11 +4242,24 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_adjustment_type(var_178);
+                builder = builder.set_policy_type(var_178);
+            }
+            ,
+            s if s.matches("AdjustmentType") /* AdjustmentType com.amazonaws.autoscaling#ScalingPolicy$AdjustmentType */ =>  {
+                let var_179 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_adjustment_type(var_179);
             }
             ,
             s if s.matches("MinAdjustmentStep") /* MinAdjustmentStep com.amazonaws.autoscaling#ScalingPolicy$MinAdjustmentStep */ =>  {
-                let var_179 =
+                let var_180 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4255,11 +4270,11 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_min_adjustment_step(var_179);
+                builder = builder.set_min_adjustment_step(var_180);
             }
             ,
             s if s.matches("MinAdjustmentMagnitude") /* MinAdjustmentMagnitude com.amazonaws.autoscaling#ScalingPolicy$MinAdjustmentMagnitude */ =>  {
-                let var_180 =
+                let var_181 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4270,11 +4285,11 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_min_adjustment_magnitude(var_180);
+                builder = builder.set_min_adjustment_magnitude(var_181);
             }
             ,
             s if s.matches("ScalingAdjustment") /* ScalingAdjustment com.amazonaws.autoscaling#ScalingPolicy$ScalingAdjustment */ =>  {
-                let var_181 =
+                let var_182 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4285,11 +4300,11 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_scaling_adjustment(var_181);
+                builder = builder.set_scaling_adjustment(var_182);
             }
             ,
             s if s.matches("Cooldown") /* Cooldown com.amazonaws.autoscaling#ScalingPolicy$Cooldown */ =>  {
-                let var_182 =
+                let var_183 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4300,21 +4315,21 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_cooldown(var_182);
+                builder = builder.set_cooldown(var_183);
             }
             ,
             s if s.matches("StepAdjustments") /* StepAdjustments com.amazonaws.autoscaling#ScalingPolicy$StepAdjustments */ =>  {
-                let var_183 =
+                let var_184 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_step_adjustments(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_step_adjustments(var_183);
+                builder = builder.set_step_adjustments(var_184);
             }
             ,
             s if s.matches("MetricAggregationType") /* MetricAggregationType com.amazonaws.autoscaling#ScalingPolicy$MetricAggregationType */ =>  {
-                let var_184 =
+                let var_185 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4323,11 +4338,11 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_metric_aggregation_type(var_184);
+                builder = builder.set_metric_aggregation_type(var_185);
             }
             ,
             s if s.matches("EstimatedInstanceWarmup") /* EstimatedInstanceWarmup com.amazonaws.autoscaling#ScalingPolicy$EstimatedInstanceWarmup */ =>  {
-                let var_185 =
+                let var_186 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4338,31 +4353,31 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_estimated_instance_warmup(var_185);
+                builder = builder.set_estimated_instance_warmup(var_186);
             }
             ,
             s if s.matches("Alarms") /* Alarms com.amazonaws.autoscaling#ScalingPolicy$Alarms */ =>  {
-                let var_186 =
+                let var_187 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_alarms(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alarms(var_186);
+                builder = builder.set_alarms(var_187);
             }
             ,
             s if s.matches("TargetTrackingConfiguration") /* TargetTrackingConfiguration com.amazonaws.autoscaling#ScalingPolicy$TargetTrackingConfiguration */ =>  {
-                let var_187 =
+                let var_188 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_target_tracking_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_target_tracking_configuration(var_187);
+                builder = builder.set_target_tracking_configuration(var_188);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.autoscaling#ScalingPolicy$Enabled */ =>  {
-                let var_188 =
+                let var_189 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4373,17 +4388,17 @@ pub fn deser_structure_crate_model_scaling_policy(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_188);
+                builder = builder.set_enabled(var_189);
             }
             ,
             s if s.matches("PredictiveScalingConfiguration") /* PredictiveScalingConfiguration com.amazonaws.autoscaling#ScalingPolicy$PredictiveScalingConfiguration */ =>  {
-                let var_189 =
+                let var_190 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_predictive_scaling_configuration(var_189);
+                builder = builder.set_predictive_scaling_configuration(var_190);
             }
             ,
             _ => {}
@@ -4400,7 +4415,7 @@ pub fn deser_structure_crate_model_process_type(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ProcessName") /* ProcessName com.amazonaws.autoscaling#ProcessType$ProcessName */ =>  {
-                let var_190 =
+                let var_191 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4409,7 +4424,7 @@ pub fn deser_structure_crate_model_process_type(
                         ?
                     )
                 ;
-                builder = builder.set_process_name(var_190);
+                builder = builder.set_process_name(var_191);
             }
             ,
             _ => {}
@@ -4426,19 +4441,6 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AutoScalingGroupName") /* AutoScalingGroupName com.amazonaws.autoscaling#ScheduledUpdateGroupAction$AutoScalingGroupName */ =>  {
-                let var_191 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_auto_scaling_group_name(var_191);
-            }
-            ,
-            s if s.matches("ScheduledActionName") /* ScheduledActionName com.amazonaws.autoscaling#ScheduledUpdateGroupAction$ScheduledActionName */ =>  {
                 let var_192 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4448,10 +4450,10 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_scheduled_action_name(var_192);
+                builder = builder.set_auto_scaling_group_name(var_192);
             }
             ,
-            s if s.matches("ScheduledActionARN") /* ScheduledActionARN com.amazonaws.autoscaling#ScheduledUpdateGroupAction$ScheduledActionARN */ =>  {
+            s if s.matches("ScheduledActionName") /* ScheduledActionName com.amazonaws.autoscaling#ScheduledUpdateGroupAction$ScheduledActionName */ =>  {
                 let var_193 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4461,24 +4463,23 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_scheduled_action_arn(var_193);
+                builder = builder.set_scheduled_action_name(var_193);
             }
             ,
-            s if s.matches("Time") /* Time com.amazonaws.autoscaling#ScheduledUpdateGroupAction$Time */ =>  {
+            s if s.matches("ScheduledActionARN") /* ScheduledActionARN com.amazonaws.autoscaling#ScheduledUpdateGroupAction$ScheduledActionARN */ =>  {
                 let var_194 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            .into()
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
                         ?
                     )
                 ;
-                builder = builder.set_time(var_194);
+                builder = builder.set_scheduled_action_arn(var_194);
             }
             ,
-            s if s.matches("StartTime") /* StartTime com.amazonaws.autoscaling#ScheduledUpdateGroupAction$StartTime */ =>  {
+            s if s.matches("Time") /* Time com.amazonaws.autoscaling#ScheduledUpdateGroupAction$Time */ =>  {
                 let var_195 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
@@ -4489,10 +4490,10 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_start_time(var_195);
+                builder = builder.set_time(var_195);
             }
             ,
-            s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#ScheduledUpdateGroupAction$EndTime */ =>  {
+            s if s.matches("StartTime") /* StartTime com.amazonaws.autoscaling#ScheduledUpdateGroupAction$StartTime */ =>  {
                 let var_196 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
@@ -4503,11 +4504,25 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_end_time(var_196);
+                builder = builder.set_start_time(var_196);
+            }
+            ,
+            s if s.matches("EndTime") /* EndTime com.amazonaws.autoscaling#ScheduledUpdateGroupAction$EndTime */ =>  {
+                let var_197 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.autoscaling#TimestampType`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_end_time(var_197);
             }
             ,
             s if s.matches("Recurrence") /* Recurrence com.amazonaws.autoscaling#ScheduledUpdateGroupAction$Recurrence */ =>  {
-                let var_197 =
+                let var_198 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4516,11 +4531,11 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_recurrence(var_197);
+                builder = builder.set_recurrence(var_198);
             }
             ,
             s if s.matches("MinSize") /* MinSize com.amazonaws.autoscaling#ScheduledUpdateGroupAction$MinSize */ =>  {
-                let var_198 =
+                let var_199 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4531,11 +4546,11 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_min_size(var_198);
+                builder = builder.set_min_size(var_199);
             }
             ,
             s if s.matches("MaxSize") /* MaxSize com.amazonaws.autoscaling#ScheduledUpdateGroupAction$MaxSize */ =>  {
-                let var_199 =
+                let var_200 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4546,11 +4561,11 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_max_size(var_199);
+                builder = builder.set_max_size(var_200);
             }
             ,
             s if s.matches("DesiredCapacity") /* DesiredCapacity com.amazonaws.autoscaling#ScheduledUpdateGroupAction$DesiredCapacity */ =>  {
-                let var_200 =
+                let var_201 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4561,11 +4576,11 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_desired_capacity(var_200);
+                builder = builder.set_desired_capacity(var_201);
             }
             ,
             s if s.matches("TimeZone") /* TimeZone com.amazonaws.autoscaling#ScheduledUpdateGroupAction$TimeZone */ =>  {
-                let var_201 =
+                let var_202 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4574,7 +4589,7 @@ pub fn deser_structure_crate_model_scheduled_update_group_action(
                         ?
                     )
                 ;
-                builder = builder.set_time_zone(var_201);
+                builder = builder.set_time_zone(var_202);
             }
             ,
             _ => {}
@@ -4591,19 +4606,6 @@ pub fn deser_structure_crate_model_tag_description(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ResourceId") /* ResourceId com.amazonaws.autoscaling#TagDescription$ResourceId */ =>  {
-                let var_202 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_resource_id(var_202);
-            }
-            ,
-            s if s.matches("ResourceType") /* ResourceType com.amazonaws.autoscaling#TagDescription$ResourceType */ =>  {
                 let var_203 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4613,10 +4615,10 @@ pub fn deser_structure_crate_model_tag_description(
                         ?
                     )
                 ;
-                builder = builder.set_resource_type(var_203);
+                builder = builder.set_resource_id(var_203);
             }
             ,
-            s if s.matches("Key") /* Key com.amazonaws.autoscaling#TagDescription$Key */ =>  {
+            s if s.matches("ResourceType") /* ResourceType com.amazonaws.autoscaling#TagDescription$ResourceType */ =>  {
                 let var_204 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4626,10 +4628,10 @@ pub fn deser_structure_crate_model_tag_description(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_204);
+                builder = builder.set_resource_type(var_204);
             }
             ,
-            s if s.matches("Value") /* Value com.amazonaws.autoscaling#TagDescription$Value */ =>  {
+            s if s.matches("Key") /* Key com.amazonaws.autoscaling#TagDescription$Key */ =>  {
                 let var_205 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4639,11 +4641,24 @@ pub fn deser_structure_crate_model_tag_description(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_205);
+                builder = builder.set_key(var_205);
+            }
+            ,
+            s if s.matches("Value") /* Value com.amazonaws.autoscaling#TagDescription$Value */ =>  {
+                let var_206 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_value(var_206);
             }
             ,
             s if s.matches("PropagateAtLaunch") /* PropagateAtLaunch com.amazonaws.autoscaling#TagDescription$PropagateAtLaunch */ =>  {
-                let var_206 =
+                let var_207 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4654,7 +4669,7 @@ pub fn deser_structure_crate_model_tag_description(
                         ?
                     )
                 ;
-                builder = builder.set_propagate_at_launch(var_206);
+                builder = builder.set_propagate_at_launch(var_207);
             }
             ,
             _ => {}
@@ -4671,7 +4686,7 @@ pub fn deser_structure_crate_model_instance_reuse_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReuseOnScaleIn") /* ReuseOnScaleIn com.amazonaws.autoscaling#InstanceReusePolicy$ReuseOnScaleIn */ =>  {
-                let var_207 =
+                let var_208 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4682,7 +4697,7 @@ pub fn deser_structure_crate_model_instance_reuse_policy(
                         ?
                     )
                 ;
-                builder = builder.set_reuse_on_scale_in(var_207);
+                builder = builder.set_reuse_on_scale_in(var_208);
             }
             ,
             _ => {}
@@ -4699,19 +4714,6 @@ pub fn deser_structure_crate_model_instance(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InstanceId") /* InstanceId com.amazonaws.autoscaling#Instance$InstanceId */ =>  {
-                let var_208 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_id(var_208);
-            }
-            ,
-            s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#Instance$InstanceType */ =>  {
                 let var_209 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4721,10 +4723,10 @@ pub fn deser_structure_crate_model_instance(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_209);
+                builder = builder.set_instance_id(var_209);
             }
             ,
-            s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.autoscaling#Instance$AvailabilityZone */ =>  {
+            s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#Instance$InstanceType */ =>  {
                 let var_210 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4734,11 +4736,24 @@ pub fn deser_structure_crate_model_instance(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_210);
+                builder = builder.set_instance_type(var_210);
+            }
+            ,
+            s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.autoscaling#Instance$AvailabilityZone */ =>  {
+                let var_211 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_211);
             }
             ,
             s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#Instance$LifecycleState */ =>  {
-                let var_211 =
+                let var_212 =
                     Some(
                         Result::<crate::model::LifecycleState, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LifecycleState::from(
@@ -4748,23 +4763,10 @@ pub fn deser_structure_crate_model_instance(
                         ?
                     )
                 ;
-                builder = builder.set_lifecycle_state(var_211);
+                builder = builder.set_lifecycle_state(var_212);
             }
             ,
             s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.autoscaling#Instance$HealthStatus */ =>  {
-                let var_212 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_health_status(var_212);
-            }
-            ,
-            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#Instance$LaunchConfigurationName */ =>  {
                 let var_213 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4774,21 +4776,34 @@ pub fn deser_structure_crate_model_instance(
                         ?
                     )
                 ;
-                builder = builder.set_launch_configuration_name(var_213);
+                builder = builder.set_health_status(var_213);
+            }
+            ,
+            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#Instance$LaunchConfigurationName */ =>  {
+                let var_214 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_launch_configuration_name(var_214);
             }
             ,
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#Instance$LaunchTemplate */ =>  {
-                let var_214 =
+                let var_215 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template(var_214);
+                builder = builder.set_launch_template(var_215);
             }
             ,
             s if s.matches("ProtectedFromScaleIn") /* ProtectedFromScaleIn com.amazonaws.autoscaling#Instance$ProtectedFromScaleIn */ =>  {
-                let var_215 =
+                let var_216 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4799,11 +4814,11 @@ pub fn deser_structure_crate_model_instance(
                         ?
                     )
                 ;
-                builder = builder.set_protected_from_scale_in(var_215);
+                builder = builder.set_protected_from_scale_in(var_216);
             }
             ,
             s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#Instance$WeightedCapacity */ =>  {
-                let var_216 =
+                let var_217 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4812,7 +4827,7 @@ pub fn deser_structure_crate_model_instance(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_216);
+                builder = builder.set_weighted_capacity(var_217);
             }
             ,
             _ => {}
@@ -4829,33 +4844,33 @@ pub fn deser_structure_crate_model_load_forecast(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Timestamps") /* Timestamps com.amazonaws.autoscaling#LoadForecast$Timestamps */ =>  {
-                let var_217 =
+                let var_218 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_timestamps(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_timestamps(var_217);
+                builder = builder.set_timestamps(var_218);
             }
             ,
             s if s.matches("Values") /* Values com.amazonaws.autoscaling#LoadForecast$Values */ =>  {
-                let var_218 =
+                let var_219 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_values(var_218);
+                builder = builder.set_values(var_219);
             }
             ,
             s if s.matches("MetricSpecification") /* MetricSpecification com.amazonaws.autoscaling#LoadForecast$MetricSpecification */ =>  {
-                let var_219 =
+                let var_220 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_metric_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_specification(var_219);
+                builder = builder.set_metric_specification(var_220);
             }
             ,
             _ => {}
@@ -4919,19 +4934,6 @@ pub fn deser_structure_crate_model_alarm(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AlarmName") /* AlarmName com.amazonaws.autoscaling#Alarm$AlarmName */ =>  {
-                let var_220 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_alarm_name(var_220);
-            }
-            ,
-            s if s.matches("AlarmARN") /* AlarmARN com.amazonaws.autoscaling#Alarm$AlarmARN */ =>  {
                 let var_221 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4941,7 +4943,20 @@ pub fn deser_structure_crate_model_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_arn(var_221);
+                builder = builder.set_alarm_name(var_221);
+            }
+            ,
+            s if s.matches("AlarmARN") /* AlarmARN com.amazonaws.autoscaling#Alarm$AlarmARN */ =>  {
+                let var_222 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_alarm_arn(var_222);
             }
             ,
             _ => {}
@@ -4958,19 +4973,6 @@ pub fn deser_structure_crate_model_launch_template_specification(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplateId") /* LaunchTemplateId com.amazonaws.autoscaling#LaunchTemplateSpecification$LaunchTemplateId */ =>  {
-                let var_222 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_launch_template_id(var_222);
-            }
-            ,
-            s if s.matches("LaunchTemplateName") /* LaunchTemplateName com.amazonaws.autoscaling#LaunchTemplateSpecification$LaunchTemplateName */ =>  {
                 let var_223 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4980,10 +4982,10 @@ pub fn deser_structure_crate_model_launch_template_specification(
                         ?
                     )
                 ;
-                builder = builder.set_launch_template_name(var_223);
+                builder = builder.set_launch_template_id(var_223);
             }
             ,
-            s if s.matches("Version") /* Version com.amazonaws.autoscaling#LaunchTemplateSpecification$Version */ =>  {
+            s if s.matches("LaunchTemplateName") /* LaunchTemplateName com.amazonaws.autoscaling#LaunchTemplateSpecification$LaunchTemplateName */ =>  {
                 let var_224 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4993,7 +4995,20 @@ pub fn deser_structure_crate_model_launch_template_specification(
                         ?
                     )
                 ;
-                builder = builder.set_version(var_224);
+                builder = builder.set_launch_template_name(var_224);
+            }
+            ,
+            s if s.matches("Version") /* Version com.amazonaws.autoscaling#LaunchTemplateSpecification$Version */ =>  {
+                let var_225 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_version(var_225);
             }
             ,
             _ => {}
@@ -5010,23 +5025,23 @@ pub fn deser_structure_crate_model_mixed_instances_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#MixedInstancesPolicy$LaunchTemplate */ =>  {
-                let var_225 =
+                let var_226 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_launch_template(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template(var_225);
+                builder = builder.set_launch_template(var_226);
             }
             ,
             s if s.matches("InstancesDistribution") /* InstancesDistribution com.amazonaws.autoscaling#MixedInstancesPolicy$InstancesDistribution */ =>  {
-                let var_226 =
+                let var_227 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_instances_distribution(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instances_distribution(var_226);
+                builder = builder.set_instances_distribution(var_227);
             }
             ,
             _ => {}
@@ -5147,23 +5162,23 @@ pub fn deser_structure_crate_model_instance_refresh_progress_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LivePoolProgress") /* LivePoolProgress com.amazonaws.autoscaling#InstanceRefreshProgressDetails$LivePoolProgress */ =>  {
-                let var_227 =
+                let var_228 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_instance_refresh_live_pool_progress(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_live_pool_progress(var_227);
+                builder = builder.set_live_pool_progress(var_228);
             }
             ,
             s if s.matches("WarmPoolProgress") /* WarmPoolProgress com.amazonaws.autoscaling#InstanceRefreshProgressDetails$WarmPoolProgress */ =>  {
-                let var_228 =
+                let var_229 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_instance_refresh_warm_pool_progress(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_warm_pool_progress(var_228);
+                builder = builder.set_warm_pool_progress(var_229);
             }
             ,
             _ => {}
@@ -5180,7 +5195,7 @@ pub fn deser_structure_crate_model_refresh_preferences(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MinHealthyPercentage") /* MinHealthyPercentage com.amazonaws.autoscaling#RefreshPreferences$MinHealthyPercentage */ =>  {
-                let var_229 =
+                let var_230 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5191,11 +5206,11 @@ pub fn deser_structure_crate_model_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_min_healthy_percentage(var_229);
+                builder = builder.set_min_healthy_percentage(var_230);
             }
             ,
             s if s.matches("InstanceWarmup") /* InstanceWarmup com.amazonaws.autoscaling#RefreshPreferences$InstanceWarmup */ =>  {
-                let var_230 =
+                let var_231 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5206,21 +5221,21 @@ pub fn deser_structure_crate_model_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_instance_warmup(var_230);
+                builder = builder.set_instance_warmup(var_231);
             }
             ,
             s if s.matches("CheckpointPercentages") /* CheckpointPercentages com.amazonaws.autoscaling#RefreshPreferences$CheckpointPercentages */ =>  {
-                let var_231 =
+                let var_232 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_checkpoint_percentages(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_checkpoint_percentages(var_231);
+                builder = builder.set_checkpoint_percentages(var_232);
             }
             ,
             s if s.matches("CheckpointDelay") /* CheckpointDelay com.amazonaws.autoscaling#RefreshPreferences$CheckpointDelay */ =>  {
-                let var_232 =
+                let var_233 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5231,11 +5246,11 @@ pub fn deser_structure_crate_model_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_checkpoint_delay(var_232);
+                builder = builder.set_checkpoint_delay(var_233);
             }
             ,
             s if s.matches("SkipMatching") /* SkipMatching com.amazonaws.autoscaling#RefreshPreferences$SkipMatching */ =>  {
-                let var_233 =
+                let var_234 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5246,7 +5261,7 @@ pub fn deser_structure_crate_model_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_skip_matching(var_233);
+                builder = builder.set_skip_matching(var_234);
             }
             ,
             _ => {}
@@ -5263,23 +5278,23 @@ pub fn deser_structure_crate_model_desired_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#DesiredConfiguration$LaunchTemplate */ =>  {
-                let var_234 =
+                let var_235 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template(var_234);
+                builder = builder.set_launch_template(var_235);
             }
             ,
             s if s.matches("MixedInstancesPolicy") /* MixedInstancesPolicy com.amazonaws.autoscaling#DesiredConfiguration$MixedInstancesPolicy */ =>  {
-                let var_235 =
+                let var_236 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_mixed_instances_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_mixed_instances_policy(var_235);
+                builder = builder.set_mixed_instances_policy(var_236);
             }
             ,
             _ => {}
@@ -5359,7 +5374,7 @@ pub fn deser_structure_crate_model_instance_monitoring(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.autoscaling#InstanceMonitoring$Enabled */ =>  {
-                let var_236 =
+                let var_237 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5370,7 +5385,7 @@ pub fn deser_structure_crate_model_instance_monitoring(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_236);
+                builder = builder.set_enabled(var_237);
             }
             ,
             _ => {}
@@ -5387,7 +5402,7 @@ pub fn deser_structure_crate_model_instance_metadata_options(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HttpTokens") /* HttpTokens com.amazonaws.autoscaling#InstanceMetadataOptions$HttpTokens */ =>  {
-                let var_237 =
+                let var_238 =
                     Some(
                         Result::<crate::model::InstanceMetadataHttpTokensState, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::InstanceMetadataHttpTokensState::from(
@@ -5397,11 +5412,11 @@ pub fn deser_structure_crate_model_instance_metadata_options(
                         ?
                     )
                 ;
-                builder = builder.set_http_tokens(var_237);
+                builder = builder.set_http_tokens(var_238);
             }
             ,
             s if s.matches("HttpPutResponseHopLimit") /* HttpPutResponseHopLimit com.amazonaws.autoscaling#InstanceMetadataOptions$HttpPutResponseHopLimit */ =>  {
-                let var_238 =
+                let var_239 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5412,11 +5427,11 @@ pub fn deser_structure_crate_model_instance_metadata_options(
                         ?
                     )
                 ;
-                builder = builder.set_http_put_response_hop_limit(var_238);
+                builder = builder.set_http_put_response_hop_limit(var_239);
             }
             ,
             s if s.matches("HttpEndpoint") /* HttpEndpoint com.amazonaws.autoscaling#InstanceMetadataOptions$HttpEndpoint */ =>  {
-                let var_239 =
+                let var_240 =
                     Some(
                         Result::<crate::model::InstanceMetadataEndpointState, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::InstanceMetadataEndpointState::from(
@@ -5426,7 +5441,7 @@ pub fn deser_structure_crate_model_instance_metadata_options(
                         ?
                     )
                 ;
-                builder = builder.set_http_endpoint(var_239);
+                builder = builder.set_http_endpoint(var_240);
             }
             ,
             _ => {}
@@ -5462,27 +5477,27 @@ pub fn deser_structure_crate_model_target_tracking_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricSpecification") /* PredefinedMetricSpecification com.amazonaws.autoscaling#TargetTrackingConfiguration$PredefinedMetricSpecification */ =>  {
-                let var_240 =
+                let var_241 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predefined_metric_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_predefined_metric_specification(var_240);
+                builder = builder.set_predefined_metric_specification(var_241);
             }
             ,
             s if s.matches("CustomizedMetricSpecification") /* CustomizedMetricSpecification com.amazonaws.autoscaling#TargetTrackingConfiguration$CustomizedMetricSpecification */ =>  {
-                let var_241 =
+                let var_242 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_customized_metric_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_customized_metric_specification(var_241);
+                builder = builder.set_customized_metric_specification(var_242);
             }
             ,
             s if s.matches("TargetValue") /* TargetValue com.amazonaws.autoscaling#TargetTrackingConfiguration$TargetValue */ =>  {
-                let var_242 =
+                let var_243 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5493,11 +5508,11 @@ pub fn deser_structure_crate_model_target_tracking_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_target_value(var_242);
+                builder = builder.set_target_value(var_243);
             }
             ,
             s if s.matches("DisableScaleIn") /* DisableScaleIn com.amazonaws.autoscaling#TargetTrackingConfiguration$DisableScaleIn */ =>  {
-                let var_243 =
+                let var_244 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5508,7 +5523,7 @@ pub fn deser_structure_crate_model_target_tracking_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_disable_scale_in(var_243);
+                builder = builder.set_disable_scale_in(var_244);
             }
             ,
             _ => {}
@@ -5525,17 +5540,17 @@ pub fn deser_structure_crate_model_predictive_scaling_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricSpecifications") /* MetricSpecifications com.amazonaws.autoscaling#PredictiveScalingConfiguration$MetricSpecifications */ =>  {
-                let var_244 =
+                let var_245 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_metric_specifications(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_specifications(var_244);
+                builder = builder.set_metric_specifications(var_245);
             }
             ,
             s if s.matches("Mode") /* Mode com.amazonaws.autoscaling#PredictiveScalingConfiguration$Mode */ =>  {
-                let var_245 =
+                let var_246 =
                     Some(
                         Result::<crate::model::PredictiveScalingMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::PredictiveScalingMode::from(
@@ -5545,11 +5560,11 @@ pub fn deser_structure_crate_model_predictive_scaling_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_mode(var_245);
+                builder = builder.set_mode(var_246);
             }
             ,
             s if s.matches("SchedulingBufferTime") /* SchedulingBufferTime com.amazonaws.autoscaling#PredictiveScalingConfiguration$SchedulingBufferTime */ =>  {
-                let var_246 =
+                let var_247 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5560,11 +5575,11 @@ pub fn deser_structure_crate_model_predictive_scaling_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_scheduling_buffer_time(var_246);
+                builder = builder.set_scheduling_buffer_time(var_247);
             }
             ,
             s if s.matches("MaxCapacityBreachBehavior") /* MaxCapacityBreachBehavior com.amazonaws.autoscaling#PredictiveScalingConfiguration$MaxCapacityBreachBehavior */ =>  {
-                let var_247 =
+                let var_248 =
                     Some(
                         Result::<crate::model::PredictiveScalingMaxCapacityBreachBehavior, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::PredictiveScalingMaxCapacityBreachBehavior::from(
@@ -5574,11 +5589,11 @@ pub fn deser_structure_crate_model_predictive_scaling_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_max_capacity_breach_behavior(var_247);
+                builder = builder.set_max_capacity_breach_behavior(var_248);
             }
             ,
             s if s.matches("MaxCapacityBuffer") /* MaxCapacityBuffer com.amazonaws.autoscaling#PredictiveScalingConfiguration$MaxCapacityBuffer */ =>  {
-                let var_248 =
+                let var_249 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5589,7 +5604,7 @@ pub fn deser_structure_crate_model_predictive_scaling_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_max_capacity_buffer(var_248);
+                builder = builder.set_max_capacity_buffer(var_249);
             }
             ,
             _ => {}
@@ -5606,7 +5621,7 @@ pub fn deser_structure_crate_model_predictive_scaling_metric_specification(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetValue") /* TargetValue com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$TargetValue */ =>  {
-                let var_249 =
+                let var_250 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5617,67 +5632,67 @@ pub fn deser_structure_crate_model_predictive_scaling_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_target_value(var_249);
+                builder = builder.set_target_value(var_250);
             }
             ,
             s if s.matches("PredefinedMetricPairSpecification") /* PredefinedMetricPairSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedMetricPairSpecification */ =>  {
-                let var_250 =
+                let var_251 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_predefined_metric_pair(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_predefined_metric_pair_specification(var_250);
+                builder = builder.set_predefined_metric_pair_specification(var_251);
             }
             ,
             s if s.matches("PredefinedScalingMetricSpecification") /* PredefinedScalingMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedScalingMetricSpecification */ =>  {
-                let var_251 =
+                let var_252 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_predefined_scaling_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_predefined_scaling_metric_specification(var_251);
+                builder = builder.set_predefined_scaling_metric_specification(var_252);
             }
             ,
             s if s.matches("PredefinedLoadMetricSpecification") /* PredefinedLoadMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedLoadMetricSpecification */ =>  {
-                let var_252 =
+                let var_253 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_predefined_load_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_predefined_load_metric_specification(var_252);
+                builder = builder.set_predefined_load_metric_specification(var_253);
             }
             ,
             s if s.matches("CustomizedScalingMetricSpecification") /* CustomizedScalingMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$CustomizedScalingMetricSpecification */ =>  {
-                let var_253 =
+                let var_254 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_customized_scaling_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_customized_scaling_metric_specification(var_253);
+                builder = builder.set_customized_scaling_metric_specification(var_254);
             }
             ,
             s if s.matches("CustomizedLoadMetricSpecification") /* CustomizedLoadMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$CustomizedLoadMetricSpecification */ =>  {
-                let var_254 =
+                let var_255 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_customized_load_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_customized_load_metric_specification(var_254);
+                builder = builder.set_customized_load_metric_specification(var_255);
             }
             ,
             s if s.matches("CustomizedCapacityMetricSpecification") /* CustomizedCapacityMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$CustomizedCapacityMetricSpecification */ =>  {
-                let var_255 =
+                let var_256 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_predictive_scaling_customized_capacity_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_customized_capacity_metric_specification(var_255);
+                builder = builder.set_customized_capacity_metric_specification(var_256);
             }
             ,
             _ => {}
@@ -5694,23 +5709,23 @@ pub fn deser_structure_crate_model_launch_template(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplateSpecification") /* LaunchTemplateSpecification com.amazonaws.autoscaling#LaunchTemplate$LaunchTemplateSpecification */ =>  {
-                let var_256 =
+                let var_257 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template_specification(var_256);
+                builder = builder.set_launch_template_specification(var_257);
             }
             ,
             s if s.matches("Overrides") /* Overrides com.amazonaws.autoscaling#LaunchTemplate$Overrides */ =>  {
-                let var_257 =
+                let var_258 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_overrides(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_overrides(var_257);
+                builder = builder.set_overrides(var_258);
             }
             ,
             _ => {}
@@ -5727,7 +5742,7 @@ pub fn deser_structure_crate_model_instances_distribution(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OnDemandAllocationStrategy") /* OnDemandAllocationStrategy com.amazonaws.autoscaling#InstancesDistribution$OnDemandAllocationStrategy */ =>  {
-                let var_258 =
+                let var_259 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5736,11 +5751,11 @@ pub fn deser_structure_crate_model_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_allocation_strategy(var_258);
+                builder = builder.set_on_demand_allocation_strategy(var_259);
             }
             ,
             s if s.matches("OnDemandBaseCapacity") /* OnDemandBaseCapacity com.amazonaws.autoscaling#InstancesDistribution$OnDemandBaseCapacity */ =>  {
-                let var_259 =
+                let var_260 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5751,11 +5766,11 @@ pub fn deser_structure_crate_model_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_base_capacity(var_259);
+                builder = builder.set_on_demand_base_capacity(var_260);
             }
             ,
             s if s.matches("OnDemandPercentageAboveBaseCapacity") /* OnDemandPercentageAboveBaseCapacity com.amazonaws.autoscaling#InstancesDistribution$OnDemandPercentageAboveBaseCapacity */ =>  {
-                let var_260 =
+                let var_261 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5766,11 +5781,11 @@ pub fn deser_structure_crate_model_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_percentage_above_base_capacity(var_260);
+                builder = builder.set_on_demand_percentage_above_base_capacity(var_261);
             }
             ,
             s if s.matches("SpotAllocationStrategy") /* SpotAllocationStrategy com.amazonaws.autoscaling#InstancesDistribution$SpotAllocationStrategy */ =>  {
-                let var_261 =
+                let var_262 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5779,11 +5794,11 @@ pub fn deser_structure_crate_model_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_spot_allocation_strategy(var_261);
+                builder = builder.set_spot_allocation_strategy(var_262);
             }
             ,
             s if s.matches("SpotInstancePools") /* SpotInstancePools com.amazonaws.autoscaling#InstancesDistribution$SpotInstancePools */ =>  {
-                let var_262 =
+                let var_263 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5794,11 +5809,11 @@ pub fn deser_structure_crate_model_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_spot_instance_pools(var_262);
+                builder = builder.set_spot_instance_pools(var_263);
             }
             ,
             s if s.matches("SpotMaxPrice") /* SpotMaxPrice com.amazonaws.autoscaling#InstancesDistribution$SpotMaxPrice */ =>  {
-                let var_263 =
+                let var_264 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5807,7 +5822,7 @@ pub fn deser_structure_crate_model_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_spot_max_price(var_263);
+                builder = builder.set_spot_max_price(var_264);
             }
             ,
             _ => {}
@@ -5824,19 +5839,6 @@ pub fn deser_structure_crate_model_suspended_process(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ProcessName") /* ProcessName com.amazonaws.autoscaling#SuspendedProcess$ProcessName */ =>  {
-                let var_264 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_process_name(var_264);
-            }
-            ,
-            s if s.matches("SuspensionReason") /* SuspensionReason com.amazonaws.autoscaling#SuspendedProcess$SuspensionReason */ =>  {
                 let var_265 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5846,7 +5848,20 @@ pub fn deser_structure_crate_model_suspended_process(
                         ?
                     )
                 ;
-                builder = builder.set_suspension_reason(var_265);
+                builder = builder.set_process_name(var_265);
+            }
+            ,
+            s if s.matches("SuspensionReason") /* SuspensionReason com.amazonaws.autoscaling#SuspendedProcess$SuspensionReason */ =>  {
+                let var_266 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_suspension_reason(var_266);
             }
             ,
             _ => {}
@@ -5863,19 +5878,6 @@ pub fn deser_structure_crate_model_enabled_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.autoscaling#EnabledMetric$Metric */ =>  {
-                let var_266 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_metric(var_266);
-            }
-            ,
-            s if s.matches("Granularity") /* Granularity com.amazonaws.autoscaling#EnabledMetric$Granularity */ =>  {
                 let var_267 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5885,7 +5887,20 @@ pub fn deser_structure_crate_model_enabled_metric(
                         ?
                     )
                 ;
-                builder = builder.set_granularity(var_267);
+                builder = builder.set_metric(var_267);
+            }
+            ,
+            s if s.matches("Granularity") /* Granularity com.amazonaws.autoscaling#EnabledMetric$Granularity */ =>  {
+                let var_268 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_granularity(var_268);
             }
             ,
             _ => {}
@@ -5902,7 +5917,7 @@ pub fn deser_structure_crate_model_instance_refresh_live_pool_progress(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PercentageComplete") /* PercentageComplete com.amazonaws.autoscaling#InstanceRefreshLivePoolProgress$PercentageComplete */ =>  {
-                let var_268 =
+                let var_269 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5913,11 +5928,11 @@ pub fn deser_structure_crate_model_instance_refresh_live_pool_progress(
                         ?
                     )
                 ;
-                builder = builder.set_percentage_complete(var_268);
+                builder = builder.set_percentage_complete(var_269);
             }
             ,
             s if s.matches("InstancesToUpdate") /* InstancesToUpdate com.amazonaws.autoscaling#InstanceRefreshLivePoolProgress$InstancesToUpdate */ =>  {
-                let var_269 =
+                let var_270 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5928,7 +5943,7 @@ pub fn deser_structure_crate_model_instance_refresh_live_pool_progress(
                         ?
                     )
                 ;
-                builder = builder.set_instances_to_update(var_269);
+                builder = builder.set_instances_to_update(var_270);
             }
             ,
             _ => {}
@@ -5945,7 +5960,7 @@ pub fn deser_structure_crate_model_instance_refresh_warm_pool_progress(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PercentageComplete") /* PercentageComplete com.amazonaws.autoscaling#InstanceRefreshWarmPoolProgress$PercentageComplete */ =>  {
-                let var_270 =
+                let var_271 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5956,11 +5971,11 @@ pub fn deser_structure_crate_model_instance_refresh_warm_pool_progress(
                         ?
                     )
                 ;
-                builder = builder.set_percentage_complete(var_270);
+                builder = builder.set_percentage_complete(var_271);
             }
             ,
             s if s.matches("InstancesToUpdate") /* InstancesToUpdate com.amazonaws.autoscaling#InstanceRefreshWarmPoolProgress$InstancesToUpdate */ =>  {
-                let var_271 =
+                let var_272 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5971,7 +5986,7 @@ pub fn deser_structure_crate_model_instance_refresh_warm_pool_progress(
                         ?
                     )
                 ;
-                builder = builder.set_instances_to_update(var_271);
+                builder = builder.set_instances_to_update(var_272);
             }
             ,
             _ => {}
@@ -6012,19 +6027,6 @@ pub fn deser_structure_crate_model_block_device_mapping(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VirtualName") /* VirtualName com.amazonaws.autoscaling#BlockDeviceMapping$VirtualName */ =>  {
-                let var_272 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_virtual_name(var_272);
-            }
-            ,
-            s if s.matches("DeviceName") /* DeviceName com.amazonaws.autoscaling#BlockDeviceMapping$DeviceName */ =>  {
                 let var_273 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6034,21 +6036,34 @@ pub fn deser_structure_crate_model_block_device_mapping(
                         ?
                     )
                 ;
-                builder = builder.set_device_name(var_273);
+                builder = builder.set_virtual_name(var_273);
+            }
+            ,
+            s if s.matches("DeviceName") /* DeviceName com.amazonaws.autoscaling#BlockDeviceMapping$DeviceName */ =>  {
+                let var_274 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_device_name(var_274);
             }
             ,
             s if s.matches("Ebs") /* Ebs com.amazonaws.autoscaling#BlockDeviceMapping$Ebs */ =>  {
-                let var_274 =
+                let var_275 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_ebs(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ebs(var_274);
+                builder = builder.set_ebs(var_275);
             }
             ,
             s if s.matches("NoDevice") /* NoDevice com.amazonaws.autoscaling#BlockDeviceMapping$NoDevice */ =>  {
-                let var_275 =
+                let var_276 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6059,7 +6074,7 @@ pub fn deser_structure_crate_model_block_device_mapping(
                         ?
                     )
                 ;
-                builder = builder.set_no_device(var_275);
+                builder = builder.set_no_device(var_276);
             }
             ,
             _ => {}
@@ -6076,21 +6091,6 @@ pub fn deser_structure_crate_model_step_adjustment(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricIntervalLowerBound") /* MetricIntervalLowerBound com.amazonaws.autoscaling#StepAdjustment$MetricIntervalLowerBound */ =>  {
-                let var_276 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_metric_interval_lower_bound(var_276);
-            }
-            ,
-            s if s.matches("MetricIntervalUpperBound") /* MetricIntervalUpperBound com.amazonaws.autoscaling#StepAdjustment$MetricIntervalUpperBound */ =>  {
                 let var_277 =
                     Some(
                          {
@@ -6102,11 +6102,26 @@ pub fn deser_structure_crate_model_step_adjustment(
                         ?
                     )
                 ;
-                builder = builder.set_metric_interval_upper_bound(var_277);
+                builder = builder.set_metric_interval_lower_bound(var_277);
+            }
+            ,
+            s if s.matches("MetricIntervalUpperBound") /* MetricIntervalUpperBound com.amazonaws.autoscaling#StepAdjustment$MetricIntervalUpperBound */ =>  {
+                let var_278 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_interval_upper_bound(var_278);
             }
             ,
             s if s.matches("ScalingAdjustment") /* ScalingAdjustment com.amazonaws.autoscaling#StepAdjustment$ScalingAdjustment */ =>  {
-                let var_278 =
+                let var_279 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6117,7 +6132,7 @@ pub fn deser_structure_crate_model_step_adjustment(
                         ?
                     )
                 ;
-                builder = builder.set_scaling_adjustment(var_278);
+                builder = builder.set_scaling_adjustment(var_279);
             }
             ,
             _ => {}
@@ -6134,7 +6149,7 @@ pub fn deser_structure_crate_model_predefined_metric_specification(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricType") /* PredefinedMetricType com.amazonaws.autoscaling#PredefinedMetricSpecification$PredefinedMetricType */ =>  {
-                let var_279 =
+                let var_280 =
                     Some(
                         Result::<crate::model::MetricType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::MetricType::from(
@@ -6144,11 +6159,11 @@ pub fn deser_structure_crate_model_predefined_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_predefined_metric_type(var_279);
+                builder = builder.set_predefined_metric_type(var_280);
             }
             ,
             s if s.matches("ResourceLabel") /* ResourceLabel com.amazonaws.autoscaling#PredefinedMetricSpecification$ResourceLabel */ =>  {
-                let var_280 =
+                let var_281 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6157,7 +6172,7 @@ pub fn deser_structure_crate_model_predefined_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_resource_label(var_280);
+                builder = builder.set_resource_label(var_281);
             }
             ,
             _ => {}
@@ -6174,19 +6189,6 @@ pub fn deser_structure_crate_model_customized_metric_specification(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricName") /* MetricName com.amazonaws.autoscaling#CustomizedMetricSpecification$MetricName */ =>  {
-                let var_281 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_metric_name(var_281);
-            }
-            ,
-            s if s.matches("Namespace") /* Namespace com.amazonaws.autoscaling#CustomizedMetricSpecification$Namespace */ =>  {
                 let var_282 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6196,21 +6198,34 @@ pub fn deser_structure_crate_model_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_282);
+                builder = builder.set_metric_name(var_282);
+            }
+            ,
+            s if s.matches("Namespace") /* Namespace com.amazonaws.autoscaling#CustomizedMetricSpecification$Namespace */ =>  {
+                let var_283 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_namespace(var_283);
             }
             ,
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.autoscaling#CustomizedMetricSpecification$Dimensions */ =>  {
-                let var_283 =
+                let var_284 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_dimensions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimensions(var_283);
+                builder = builder.set_dimensions(var_284);
             }
             ,
             s if s.matches("Statistic") /* Statistic com.amazonaws.autoscaling#CustomizedMetricSpecification$Statistic */ =>  {
-                let var_284 =
+                let var_285 =
                     Some(
                         Result::<crate::model::MetricStatistic, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::MetricStatistic::from(
@@ -6220,11 +6235,11 @@ pub fn deser_structure_crate_model_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_statistic(var_284);
+                builder = builder.set_statistic(var_285);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.autoscaling#CustomizedMetricSpecification$Unit */ =>  {
-                let var_285 =
+                let var_286 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6233,7 +6248,7 @@ pub fn deser_structure_crate_model_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_285);
+                builder = builder.set_unit(var_286);
             }
             ,
             _ => {}
@@ -6272,7 +6287,7 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_metric_pair(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricType") /* PredefinedMetricType com.amazonaws.autoscaling#PredictiveScalingPredefinedMetricPair$PredefinedMetricType */ =>  {
-                let var_286 =
+                let var_287 =
                     Some(
                         Result::<crate::model::PredefinedMetricPairType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::PredefinedMetricPairType::from(
@@ -6282,11 +6297,11 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_metric_pair(
                         ?
                     )
                 ;
-                builder = builder.set_predefined_metric_type(var_286);
+                builder = builder.set_predefined_metric_type(var_287);
             }
             ,
             s if s.matches("ResourceLabel") /* ResourceLabel com.amazonaws.autoscaling#PredictiveScalingPredefinedMetricPair$ResourceLabel */ =>  {
-                let var_287 =
+                let var_288 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6295,7 +6310,7 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_metric_pair(
                         ?
                     )
                 ;
-                builder = builder.set_resource_label(var_287);
+                builder = builder.set_resource_label(var_288);
             }
             ,
             _ => {}
@@ -6313,7 +6328,7 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_scaling_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricType") /* PredefinedMetricType com.amazonaws.autoscaling#PredictiveScalingPredefinedScalingMetric$PredefinedMetricType */ =>  {
-                let var_288 =
+                let var_289 =
                     Some(
                         Result::<crate::model::PredefinedScalingMetricType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::PredefinedScalingMetricType::from(
@@ -6323,11 +6338,11 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_scaling_metric(
                         ?
                     )
                 ;
-                builder = builder.set_predefined_metric_type(var_288);
+                builder = builder.set_predefined_metric_type(var_289);
             }
             ,
             s if s.matches("ResourceLabel") /* ResourceLabel com.amazonaws.autoscaling#PredictiveScalingPredefinedScalingMetric$ResourceLabel */ =>  {
-                let var_289 =
+                let var_290 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6336,7 +6351,7 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_scaling_metric(
                         ?
                     )
                 ;
-                builder = builder.set_resource_label(var_289);
+                builder = builder.set_resource_label(var_290);
             }
             ,
             _ => {}
@@ -6353,7 +6368,7 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_load_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricType") /* PredefinedMetricType com.amazonaws.autoscaling#PredictiveScalingPredefinedLoadMetric$PredefinedMetricType */ =>  {
-                let var_290 =
+                let var_291 =
                     Some(
                         Result::<crate::model::PredefinedLoadMetricType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::PredefinedLoadMetricType::from(
@@ -6363,11 +6378,11 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_load_metric(
                         ?
                     )
                 ;
-                builder = builder.set_predefined_metric_type(var_290);
+                builder = builder.set_predefined_metric_type(var_291);
             }
             ,
             s if s.matches("ResourceLabel") /* ResourceLabel com.amazonaws.autoscaling#PredictiveScalingPredefinedLoadMetric$ResourceLabel */ =>  {
-                let var_291 =
+                let var_292 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6376,7 +6391,7 @@ pub fn deser_structure_crate_model_predictive_scaling_predefined_load_metric(
                         ?
                     )
                 ;
-                builder = builder.set_resource_label(var_291);
+                builder = builder.set_resource_label(var_292);
             }
             ,
             _ => {}
@@ -6394,13 +6409,13 @@ pub fn deser_structure_crate_model_predictive_scaling_customized_scaling_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricDataQueries") /* MetricDataQueries com.amazonaws.autoscaling#PredictiveScalingCustomizedScalingMetric$MetricDataQueries */ =>  {
-                let var_292 =
+                let var_293 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_data_queries(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_data_queries(var_292);
+                builder = builder.set_metric_data_queries(var_293);
             }
             ,
             _ => {}
@@ -6417,13 +6432,13 @@ pub fn deser_structure_crate_model_predictive_scaling_customized_load_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricDataQueries") /* MetricDataQueries com.amazonaws.autoscaling#PredictiveScalingCustomizedLoadMetric$MetricDataQueries */ =>  {
-                let var_293 =
+                let var_294 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_data_queries(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_data_queries(var_293);
+                builder = builder.set_metric_data_queries(var_294);
             }
             ,
             _ => {}
@@ -6441,13 +6456,13 @@ pub fn deser_structure_crate_model_predictive_scaling_customized_capacity_metric
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricDataQueries") /* MetricDataQueries com.amazonaws.autoscaling#PredictiveScalingCustomizedCapacityMetric$MetricDataQueries */ =>  {
-                let var_294 =
+                let var_295 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_data_queries(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_data_queries(var_294);
+                builder = builder.set_metric_data_queries(var_295);
             }
             ,
             _ => {}
@@ -6484,7 +6499,7 @@ pub fn deser_structure_crate_model_ebs(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SnapshotId") /* SnapshotId com.amazonaws.autoscaling#Ebs$SnapshotId */ =>  {
-                let var_295 =
+                let var_296 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6493,11 +6508,11 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_id(var_295);
+                builder = builder.set_snapshot_id(var_296);
             }
             ,
             s if s.matches("VolumeSize") /* VolumeSize com.amazonaws.autoscaling#Ebs$VolumeSize */ =>  {
-                let var_296 =
+                let var_297 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6508,11 +6523,11 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_volume_size(var_296);
+                builder = builder.set_volume_size(var_297);
             }
             ,
             s if s.matches("VolumeType") /* VolumeType com.amazonaws.autoscaling#Ebs$VolumeType */ =>  {
-                let var_297 =
+                let var_298 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6521,11 +6536,11 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_volume_type(var_297);
+                builder = builder.set_volume_type(var_298);
             }
             ,
             s if s.matches("DeleteOnTermination") /* DeleteOnTermination com.amazonaws.autoscaling#Ebs$DeleteOnTermination */ =>  {
-                let var_298 =
+                let var_299 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6536,11 +6551,11 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_delete_on_termination(var_298);
+                builder = builder.set_delete_on_termination(var_299);
             }
             ,
             s if s.matches("Iops") /* Iops com.amazonaws.autoscaling#Ebs$Iops */ =>  {
-                let var_299 =
+                let var_300 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6551,11 +6566,11 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_299);
+                builder = builder.set_iops(var_300);
             }
             ,
             s if s.matches("Encrypted") /* Encrypted com.amazonaws.autoscaling#Ebs$Encrypted */ =>  {
-                let var_300 =
+                let var_301 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6566,11 +6581,11 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_encrypted(var_300);
+                builder = builder.set_encrypted(var_301);
             }
             ,
             s if s.matches("Throughput") /* Throughput com.amazonaws.autoscaling#Ebs$Throughput */ =>  {
-                let var_301 =
+                let var_302 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6581,7 +6596,7 @@ pub fn deser_structure_crate_model_ebs(
                         ?
                     )
                 ;
-                builder = builder.set_throughput(var_301);
+                builder = builder.set_throughput(var_302);
             }
             ,
             _ => {}
@@ -6636,19 +6651,6 @@ pub fn deser_structure_crate_model_launch_template_overrides(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#LaunchTemplateOverrides$InstanceType */ =>  {
-                let var_302 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_type(var_302);
-            }
-            ,
-            s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#LaunchTemplateOverrides$WeightedCapacity */ =>  {
                 let var_303 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6658,27 +6660,40 @@ pub fn deser_structure_crate_model_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_303);
+                builder = builder.set_instance_type(var_303);
+            }
+            ,
+            s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#LaunchTemplateOverrides$WeightedCapacity */ =>  {
+                let var_304 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_weighted_capacity(var_304);
             }
             ,
             s if s.matches("LaunchTemplateSpecification") /* LaunchTemplateSpecification com.amazonaws.autoscaling#LaunchTemplateOverrides$LaunchTemplateSpecification */ =>  {
-                let var_304 =
+                let var_305 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template_specification(var_304);
+                builder = builder.set_launch_template_specification(var_305);
             }
             ,
             s if s.matches("InstanceRequirements") /* InstanceRequirements com.amazonaws.autoscaling#LaunchTemplateOverrides$InstanceRequirements */ =>  {
-                let var_305 =
+                let var_306 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_instance_requirements(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_requirements(var_305);
+                builder = builder.set_instance_requirements(var_306);
             }
             ,
             _ => {}
@@ -6695,19 +6710,6 @@ pub fn deser_structure_crate_model_metric_dimension(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.autoscaling#MetricDimension$Name */ =>  {
-                let var_306 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_306);
-            }
-            ,
-            s if s.matches("Value") /* Value com.amazonaws.autoscaling#MetricDimension$Value */ =>  {
                 let var_307 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6717,7 +6719,20 @@ pub fn deser_structure_crate_model_metric_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_307);
+                builder = builder.set_name(var_307);
+            }
+            ,
+            s if s.matches("Value") /* Value com.amazonaws.autoscaling#MetricDimension$Value */ =>  {
+                let var_308 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_value(var_308);
             }
             ,
             _ => {}
@@ -6734,19 +6749,6 @@ pub fn deser_structure_crate_model_metric_data_query(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.autoscaling#MetricDataQuery$Id */ =>  {
-                let var_308 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_id(var_308);
-            }
-            ,
-            s if s.matches("Expression") /* Expression com.amazonaws.autoscaling#MetricDataQuery$Expression */ =>  {
                 let var_309 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6756,21 +6758,11 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_expression(var_309);
+                builder = builder.set_id(var_309);
             }
             ,
-            s if s.matches("MetricStat") /* MetricStat com.amazonaws.autoscaling#MetricDataQuery$MetricStat */ =>  {
+            s if s.matches("Expression") /* Expression com.amazonaws.autoscaling#MetricDataQuery$Expression */ =>  {
                 let var_310 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_metric_stat(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_metric_stat(var_310);
-            }
-            ,
-            s if s.matches("Label") /* Label com.amazonaws.autoscaling#MetricDataQuery$Label */ =>  {
-                let var_311 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6779,11 +6771,34 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_label(var_311);
+                builder = builder.set_expression(var_310);
+            }
+            ,
+            s if s.matches("MetricStat") /* MetricStat com.amazonaws.autoscaling#MetricDataQuery$MetricStat */ =>  {
+                let var_311 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_metric_stat(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_stat(var_311);
+            }
+            ,
+            s if s.matches("Label") /* Label com.amazonaws.autoscaling#MetricDataQuery$Label */ =>  {
+                let var_312 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_label(var_312);
             }
             ,
             s if s.matches("ReturnData") /* ReturnData com.amazonaws.autoscaling#MetricDataQuery$ReturnData */ =>  {
-                let var_312 =
+                let var_313 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6794,7 +6809,7 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_return_data(var_312);
+                builder = builder.set_return_data(var_313);
             }
             ,
             _ => {}
@@ -6811,81 +6826,66 @@ pub fn deser_structure_crate_model_instance_requirements(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VCpuCount") /* VCpuCount com.amazonaws.autoscaling#InstanceRequirements$VCpuCount */ =>  {
-                let var_313 =
+                let var_314 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_v_cpu_count_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_v_cpu_count(var_313);
+                builder = builder.set_v_cpu_count(var_314);
             }
             ,
             s if s.matches("MemoryMiB") /* MemoryMiB com.amazonaws.autoscaling#InstanceRequirements$MemoryMiB */ =>  {
-                let var_314 =
+                let var_315 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_memory_mi_b_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_mi_b(var_314);
+                builder = builder.set_memory_mi_b(var_315);
             }
             ,
             s if s.matches("CpuManufacturers") /* CpuManufacturers com.amazonaws.autoscaling#InstanceRequirements$CpuManufacturers */ =>  {
-                let var_315 =
+                let var_316 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_cpu_manufacturers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cpu_manufacturers(var_315);
+                builder = builder.set_cpu_manufacturers(var_316);
             }
             ,
             s if s.matches("MemoryGiBPerVCpu") /* MemoryGiBPerVCpu com.amazonaws.autoscaling#InstanceRequirements$MemoryGiBPerVCpu */ =>  {
-                let var_316 =
+                let var_317 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_memory_gi_b_per_v_cpu_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_gi_b_per_v_cpu(var_316);
+                builder = builder.set_memory_gi_b_per_v_cpu(var_317);
             }
             ,
             s if s.matches("ExcludedInstanceTypes") /* ExcludedInstanceTypes com.amazonaws.autoscaling#InstanceRequirements$ExcludedInstanceTypes */ =>  {
-                let var_317 =
+                let var_318 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_excluded_instance_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_excluded_instance_types(var_317);
+                builder = builder.set_excluded_instance_types(var_318);
             }
             ,
             s if s.matches("InstanceGenerations") /* InstanceGenerations com.amazonaws.autoscaling#InstanceRequirements$InstanceGenerations */ =>  {
-                let var_318 =
+                let var_319 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_instance_generations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_generations(var_318);
+                builder = builder.set_instance_generations(var_319);
             }
             ,
             s if s.matches("SpotMaxPricePercentageOverLowestPrice") /* SpotMaxPricePercentageOverLowestPrice com.amazonaws.autoscaling#InstanceRequirements$SpotMaxPricePercentageOverLowestPrice */ =>  {
-                let var_319 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_spot_max_price_percentage_over_lowest_price(var_319);
-            }
-            ,
-            s if s.matches("OnDemandMaxPricePercentageOverLowestPrice") /* OnDemandMaxPricePercentageOverLowestPrice com.amazonaws.autoscaling#InstanceRequirements$OnDemandMaxPricePercentageOverLowestPrice */ =>  {
                 let var_320 =
                     Some(
                          {
@@ -6897,11 +6897,26 @@ pub fn deser_structure_crate_model_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_max_price_percentage_over_lowest_price(var_320);
+                builder = builder.set_spot_max_price_percentage_over_lowest_price(var_320);
+            }
+            ,
+            s if s.matches("OnDemandMaxPricePercentageOverLowestPrice") /* OnDemandMaxPricePercentageOverLowestPrice com.amazonaws.autoscaling#InstanceRequirements$OnDemandMaxPricePercentageOverLowestPrice */ =>  {
+                let var_321 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_on_demand_max_price_percentage_over_lowest_price(var_321);
             }
             ,
             s if s.matches("BareMetal") /* BareMetal com.amazonaws.autoscaling#InstanceRequirements$BareMetal */ =>  {
-                let var_321 =
+                let var_322 =
                     Some(
                         Result::<crate::model::BareMetal, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::BareMetal::from(
@@ -6911,11 +6926,11 @@ pub fn deser_structure_crate_model_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_bare_metal(var_321);
+                builder = builder.set_bare_metal(var_322);
             }
             ,
             s if s.matches("BurstablePerformance") /* BurstablePerformance com.amazonaws.autoscaling#InstanceRequirements$BurstablePerformance */ =>  {
-                let var_322 =
+                let var_323 =
                     Some(
                         Result::<crate::model::BurstablePerformance, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::BurstablePerformance::from(
@@ -6925,11 +6940,11 @@ pub fn deser_structure_crate_model_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_burstable_performance(var_322);
+                builder = builder.set_burstable_performance(var_323);
             }
             ,
             s if s.matches("RequireHibernateSupport") /* RequireHibernateSupport com.amazonaws.autoscaling#InstanceRequirements$RequireHibernateSupport */ =>  {
-                let var_323 =
+                let var_324 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6940,21 +6955,21 @@ pub fn deser_structure_crate_model_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_require_hibernate_support(var_323);
+                builder = builder.set_require_hibernate_support(var_324);
             }
             ,
             s if s.matches("NetworkInterfaceCount") /* NetworkInterfaceCount com.amazonaws.autoscaling#InstanceRequirements$NetworkInterfaceCount */ =>  {
-                let var_324 =
+                let var_325 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_network_interface_count_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_count(var_324);
+                builder = builder.set_network_interface_count(var_325);
             }
             ,
             s if s.matches("LocalStorage") /* LocalStorage com.amazonaws.autoscaling#InstanceRequirements$LocalStorage */ =>  {
-                let var_325 =
+                let var_326 =
                     Some(
                         Result::<crate::model::LocalStorage, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LocalStorage::from(
@@ -6964,87 +6979,87 @@ pub fn deser_structure_crate_model_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_local_storage(var_325);
+                builder = builder.set_local_storage(var_326);
             }
             ,
             s if s.matches("LocalStorageTypes") /* LocalStorageTypes com.amazonaws.autoscaling#InstanceRequirements$LocalStorageTypes */ =>  {
-                let var_326 =
+                let var_327 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_local_storage_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_local_storage_types(var_326);
+                builder = builder.set_local_storage_types(var_327);
             }
             ,
             s if s.matches("TotalLocalStorageGB") /* TotalLocalStorageGB com.amazonaws.autoscaling#InstanceRequirements$TotalLocalStorageGB */ =>  {
-                let var_327 =
+                let var_328 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_total_local_storage_gb_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_total_local_storage_gb(var_327);
+                builder = builder.set_total_local_storage_gb(var_328);
             }
             ,
             s if s.matches("BaselineEbsBandwidthMbps") /* BaselineEbsBandwidthMbps com.amazonaws.autoscaling#InstanceRequirements$BaselineEbsBandwidthMbps */ =>  {
-                let var_328 =
+                let var_329 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_baseline_ebs_bandwidth_mbps_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_baseline_ebs_bandwidth_mbps(var_328);
+                builder = builder.set_baseline_ebs_bandwidth_mbps(var_329);
             }
             ,
             s if s.matches("AcceleratorTypes") /* AcceleratorTypes com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTypes */ =>  {
-                let var_329 =
+                let var_330 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_accelerator_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_types(var_329);
+                builder = builder.set_accelerator_types(var_330);
             }
             ,
             s if s.matches("AcceleratorCount") /* AcceleratorCount com.amazonaws.autoscaling#InstanceRequirements$AcceleratorCount */ =>  {
-                let var_330 =
+                let var_331 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_accelerator_count_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_count(var_330);
+                builder = builder.set_accelerator_count(var_331);
             }
             ,
             s if s.matches("AcceleratorManufacturers") /* AcceleratorManufacturers com.amazonaws.autoscaling#InstanceRequirements$AcceleratorManufacturers */ =>  {
-                let var_331 =
+                let var_332 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_accelerator_manufacturers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_manufacturers(var_331);
+                builder = builder.set_accelerator_manufacturers(var_332);
             }
             ,
             s if s.matches("AcceleratorNames") /* AcceleratorNames com.amazonaws.autoscaling#InstanceRequirements$AcceleratorNames */ =>  {
-                let var_332 =
+                let var_333 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_accelerator_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_names(var_332);
+                builder = builder.set_accelerator_names(var_333);
             }
             ,
             s if s.matches("AcceleratorTotalMemoryMiB") /* AcceleratorTotalMemoryMiB com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTotalMemoryMiB */ =>  {
-                let var_333 =
+                let var_334 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_accelerator_total_memory_mi_b_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_total_memory_mi_b(var_333);
+                builder = builder.set_accelerator_total_memory_mi_b(var_334);
             }
             ,
             _ => {}
@@ -7061,29 +7076,16 @@ pub fn deser_structure_crate_model_metric_stat(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.autoscaling#MetricStat$Metric */ =>  {
-                let var_334 =
+                let var_335 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric(var_334);
+                builder = builder.set_metric(var_335);
             }
             ,
             s if s.matches("Stat") /* Stat com.amazonaws.autoscaling#MetricStat$Stat */ =>  {
-                let var_335 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_stat(var_335);
-            }
-            ,
-            s if s.matches("Unit") /* Unit com.amazonaws.autoscaling#MetricStat$Unit */ =>  {
                 let var_336 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -7093,7 +7095,20 @@ pub fn deser_structure_crate_model_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_336);
+                builder = builder.set_stat(var_336);
+            }
+            ,
+            s if s.matches("Unit") /* Unit com.amazonaws.autoscaling#MetricStat$Unit */ =>  {
+                let var_337 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_unit(var_337);
             }
             ,
             _ => {}
@@ -7110,21 +7125,6 @@ pub fn deser_structure_crate_model_v_cpu_count_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#VCpuCountRequest$Min */ =>  {
-                let var_337 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_337);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#VCpuCountRequest$Max */ =>  {
                 let var_338 =
                     Some(
                          {
@@ -7136,7 +7136,22 @@ pub fn deser_structure_crate_model_v_cpu_count_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_338);
+                builder = builder.set_min(var_338);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#VCpuCountRequest$Max */ =>  {
+                let var_339 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_339);
             }
             ,
             _ => {}
@@ -7153,21 +7168,6 @@ pub fn deser_structure_crate_model_memory_mi_b_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#MemoryMiBRequest$Min */ =>  {
-                let var_339 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_339);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#MemoryMiBRequest$Max */ =>  {
                 let var_340 =
                     Some(
                          {
@@ -7179,7 +7179,22 @@ pub fn deser_structure_crate_model_memory_mi_b_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_340);
+                builder = builder.set_min(var_340);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#MemoryMiBRequest$Max */ =>  {
+                let var_341 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_341);
             }
             ,
             _ => {}
@@ -7219,21 +7234,6 @@ pub fn deser_structure_crate_model_memory_gi_b_per_v_cpu_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#MemoryGiBPerVCpuRequest$Min */ =>  {
-                let var_341 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#NullablePositiveDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_341);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#MemoryGiBPerVCpuRequest$Max */ =>  {
                 let var_342 =
                     Some(
                          {
@@ -7245,7 +7245,22 @@ pub fn deser_structure_crate_model_memory_gi_b_per_v_cpu_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_342);
+                builder = builder.set_min(var_342);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#MemoryGiBPerVCpuRequest$Max */ =>  {
+                let var_343 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#NullablePositiveDouble`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_343);
             }
             ,
             _ => {}
@@ -7307,21 +7322,6 @@ pub fn deser_structure_crate_model_network_interface_count_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#NetworkInterfaceCountRequest$Min */ =>  {
-                let var_343 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_343);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#NetworkInterfaceCountRequest$Max */ =>  {
                 let var_344 =
                     Some(
                          {
@@ -7333,7 +7333,22 @@ pub fn deser_structure_crate_model_network_interface_count_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_344);
+                builder = builder.set_min(var_344);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#NetworkInterfaceCountRequest$Max */ =>  {
+                let var_345 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_345);
             }
             ,
             _ => {}
@@ -7373,21 +7388,6 @@ pub fn deser_structure_crate_model_total_local_storage_gb_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#TotalLocalStorageGBRequest$Min */ =>  {
-                let var_345 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#NullablePositiveDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_345);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#TotalLocalStorageGBRequest$Max */ =>  {
                 let var_346 =
                     Some(
                          {
@@ -7399,7 +7399,22 @@ pub fn deser_structure_crate_model_total_local_storage_gb_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_346);
+                builder = builder.set_min(var_346);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#TotalLocalStorageGBRequest$Max */ =>  {
+                let var_347 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#NullablePositiveDouble`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_347);
             }
             ,
             _ => {}
@@ -7416,21 +7431,6 @@ pub fn deser_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#BaselineEbsBandwidthMbpsRequest$Min */ =>  {
-                let var_347 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_347);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#BaselineEbsBandwidthMbpsRequest$Max */ =>  {
                 let var_348 =
                     Some(
                          {
@@ -7442,7 +7442,22 @@ pub fn deser_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_348);
+                builder = builder.set_min(var_348);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#BaselineEbsBandwidthMbpsRequest$Max */ =>  {
+                let var_349 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_349);
             }
             ,
             _ => {}
@@ -7482,21 +7497,6 @@ pub fn deser_structure_crate_model_accelerator_count_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#AcceleratorCountRequest$Min */ =>  {
-                let var_349 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_349);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#AcceleratorCountRequest$Max */ =>  {
                 let var_350 =
                     Some(
                          {
@@ -7508,7 +7508,22 @@ pub fn deser_structure_crate_model_accelerator_count_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_350);
+                builder = builder.set_min(var_350);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#AcceleratorCountRequest$Max */ =>  {
+                let var_351 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_351);
             }
             ,
             _ => {}
@@ -7572,21 +7587,6 @@ pub fn deser_structure_crate_model_accelerator_total_memory_mi_b_request(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#AcceleratorTotalMemoryMiBRequest$Min */ =>  {
-                let var_351 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min(var_351);
-            }
-            ,
-            s if s.matches("Max") /* Max com.amazonaws.autoscaling#AcceleratorTotalMemoryMiBRequest$Max */ =>  {
                 let var_352 =
                     Some(
                          {
@@ -7598,7 +7598,22 @@ pub fn deser_structure_crate_model_accelerator_total_memory_mi_b_request(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_352);
+                builder = builder.set_min(var_352);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.autoscaling#AcceleratorTotalMemoryMiBRequest$Max */ =>  {
+                let var_353 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_353);
             }
             ,
             _ => {}
@@ -7615,19 +7630,6 @@ pub fn deser_structure_crate_model_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.autoscaling#Metric$Namespace */ =>  {
-                let var_353 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_namespace(var_353);
-            }
-            ,
-            s if s.matches("MetricName") /* MetricName com.amazonaws.autoscaling#Metric$MetricName */ =>  {
                 let var_354 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -7637,17 +7639,30 @@ pub fn deser_structure_crate_model_metric(
                         ?
                     )
                 ;
-                builder = builder.set_metric_name(var_354);
+                builder = builder.set_namespace(var_354);
+            }
+            ,
+            s if s.matches("MetricName") /* MetricName com.amazonaws.autoscaling#Metric$MetricName */ =>  {
+                let var_355 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_name(var_355);
             }
             ,
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.autoscaling#Metric$Dimensions */ =>  {
-                let var_355 =
+                let var_356 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_dimensions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimensions(var_355);
+                builder = builder.set_dimensions(var_356);
             }
             ,
             _ => {}

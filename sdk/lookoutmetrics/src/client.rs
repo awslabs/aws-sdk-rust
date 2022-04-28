@@ -258,6 +258,17 @@ impl Client {
     pub fn describe_metric_set(&self) -> fluent_builders::DescribeMetricSet {
         fluent_builders::DescribeMetricSet::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DetectMetricSetConfig`](crate::client::fluent_builders::DetectMetricSetConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::DetectMetricSetConfig::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::DetectMetricSetConfig::set_anomaly_detector_arn): <p>An anomaly detector ARN.</p>
+    ///   - [`auto_detection_metric_source(AutoDetectionMetricSource)`](crate::client::fluent_builders::DetectMetricSetConfig::auto_detection_metric_source) / [`set_auto_detection_metric_source(Option<AutoDetectionMetricSource>)`](crate::client::fluent_builders::DetectMetricSetConfig::set_auto_detection_metric_source): <p>A data source.</p>
+    /// - On success, responds with [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput) with field(s):
+    ///   - [`detected_metric_set_config(Option<DetectedMetricSetConfig>)`](crate::output::DetectMetricSetConfigOutput::detected_metric_set_config): <p>The inferred dataset configuration for the datasource.</p>
+    /// - On failure, responds with [`SdkError<DetectMetricSetConfigError>`](crate::error::DetectMetricSetConfigError)
+    pub fn detect_metric_set_config(&self) -> fluent_builders::DetectMetricSetConfig {
+        fluent_builders::DetectMetricSetConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetAnomalyGroup`](crate::client::fluent_builders::GetAnomalyGroup) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1453,6 +1464,78 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_metric_set_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DetectMetricSetConfig`.
+    ///
+    /// <p>Detects an Amazon S3 dataset's file format, interval, and offset.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DetectMetricSetConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::detect_metric_set_config_input::Builder,
+    }
+    impl DetectMetricSetConfig {
+        /// Creates a new `DetectMetricSetConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DetectMetricSetConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::DetectMetricSetConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An anomaly detector ARN.</p>
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
+            self
+        }
+        /// <p>An anomaly detector ARN.</p>
+        pub fn set_anomaly_detector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_anomaly_detector_arn(input);
+            self
+        }
+        /// <p>A data source.</p>
+        pub fn auto_detection_metric_source(
+            mut self,
+            input: crate::model::AutoDetectionMetricSource,
+        ) -> Self {
+            self.inner = self.inner.auto_detection_metric_source(input);
+            self
+        }
+        /// <p>A data source.</p>
+        pub fn set_auto_detection_metric_source(
+            mut self,
+            input: std::option::Option<crate::model::AutoDetectionMetricSource>,
+        ) -> Self {
+            self.inner = self.inner.set_auto_detection_metric_source(input);
             self
         }
     }

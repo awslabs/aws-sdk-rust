@@ -4286,6 +4286,1051 @@ impl DimensionValueContribution {
     }
 }
 
+/// <p>An inferred dataset configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedMetricSetConfig {
+    /// <p>The dataset's offset.</p>
+    pub offset: std::option::Option<crate::model::DetectedField>,
+    /// <p>The dataset's interval.</p>
+    pub metric_set_frequency: std::option::Option<crate::model::DetectedField>,
+    /// <p>The dataset's data source.</p>
+    pub metric_source: std::option::Option<crate::model::DetectedMetricSource>,
+}
+impl DetectedMetricSetConfig {
+    /// <p>The dataset's offset.</p>
+    pub fn offset(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.offset.as_ref()
+    }
+    /// <p>The dataset's interval.</p>
+    pub fn metric_set_frequency(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.metric_set_frequency.as_ref()
+    }
+    /// <p>The dataset's data source.</p>
+    pub fn metric_source(&self) -> std::option::Option<&crate::model::DetectedMetricSource> {
+        self.metric_source.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectedMetricSetConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedMetricSetConfig");
+        formatter.field("offset", &self.offset);
+        formatter.field("metric_set_frequency", &self.metric_set_frequency);
+        formatter.field("metric_source", &self.metric_source);
+        formatter.finish()
+    }
+}
+/// See [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig)
+pub mod detected_metric_set_config {
+    /// A builder for [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) offset: std::option::Option<crate::model::DetectedField>,
+        pub(crate) metric_set_frequency: std::option::Option<crate::model::DetectedField>,
+        pub(crate) metric_source: std::option::Option<crate::model::DetectedMetricSource>,
+    }
+    impl Builder {
+        /// <p>The dataset's offset.</p>
+        pub fn offset(mut self, input: crate::model::DetectedField) -> Self {
+            self.offset = Some(input);
+            self
+        }
+        /// <p>The dataset's offset.</p>
+        pub fn set_offset(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.offset = input;
+            self
+        }
+        /// <p>The dataset's interval.</p>
+        pub fn metric_set_frequency(mut self, input: crate::model::DetectedField) -> Self {
+            self.metric_set_frequency = Some(input);
+            self
+        }
+        /// <p>The dataset's interval.</p>
+        pub fn set_metric_set_frequency(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.metric_set_frequency = input;
+            self
+        }
+        /// <p>The dataset's data source.</p>
+        pub fn metric_source(mut self, input: crate::model::DetectedMetricSource) -> Self {
+            self.metric_source = Some(input);
+            self
+        }
+        /// <p>The dataset's data source.</p>
+        pub fn set_metric_source(
+            mut self,
+            input: std::option::Option<crate::model::DetectedMetricSource>,
+        ) -> Self {
+            self.metric_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig)
+        pub fn build(self) -> crate::model::DetectedMetricSetConfig {
+            crate::model::DetectedMetricSetConfig {
+                offset: self.offset,
+                metric_set_frequency: self.metric_set_frequency,
+                metric_source: self.metric_source,
+            }
+        }
+    }
+}
+impl DetectedMetricSetConfig {
+    /// Creates a new builder-style object to manufacture [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig)
+    pub fn builder() -> crate::model::detected_metric_set_config::Builder {
+        crate::model::detected_metric_set_config::Builder::default()
+    }
+}
+
+/// <p>An inferred data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedMetricSource {
+    /// <p>The data source's source configuration.</p>
+    pub s3_source_config: std::option::Option<crate::model::DetectedS3SourceConfig>,
+}
+impl DetectedMetricSource {
+    /// <p>The data source's source configuration.</p>
+    pub fn s3_source_config(&self) -> std::option::Option<&crate::model::DetectedS3SourceConfig> {
+        self.s3_source_config.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectedMetricSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedMetricSource");
+        formatter.field("s3_source_config", &self.s3_source_config);
+        formatter.finish()
+    }
+}
+/// See [`DetectedMetricSource`](crate::model::DetectedMetricSource)
+pub mod detected_metric_source {
+    /// A builder for [`DetectedMetricSource`](crate::model::DetectedMetricSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_source_config: std::option::Option<crate::model::DetectedS3SourceConfig>,
+    }
+    impl Builder {
+        /// <p>The data source's source configuration.</p>
+        pub fn s3_source_config(mut self, input: crate::model::DetectedS3SourceConfig) -> Self {
+            self.s3_source_config = Some(input);
+            self
+        }
+        /// <p>The data source's source configuration.</p>
+        pub fn set_s3_source_config(
+            mut self,
+            input: std::option::Option<crate::model::DetectedS3SourceConfig>,
+        ) -> Self {
+            self.s3_source_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedMetricSource`](crate::model::DetectedMetricSource)
+        pub fn build(self) -> crate::model::DetectedMetricSource {
+            crate::model::DetectedMetricSource {
+                s3_source_config: self.s3_source_config,
+            }
+        }
+    }
+}
+impl DetectedMetricSource {
+    /// Creates a new builder-style object to manufacture [`DetectedMetricSource`](crate::model::DetectedMetricSource)
+    pub fn builder() -> crate::model::detected_metric_source::Builder {
+        crate::model::detected_metric_source::Builder::default()
+    }
+}
+
+/// <p>An inferred source configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedS3SourceConfig {
+    /// <p>The source's file format descriptor.</p>
+    pub file_format_descriptor: std::option::Option<crate::model::DetectedFileFormatDescriptor>,
+}
+impl DetectedS3SourceConfig {
+    /// <p>The source's file format descriptor.</p>
+    pub fn file_format_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectedFileFormatDescriptor> {
+        self.file_format_descriptor.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectedS3SourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedS3SourceConfig");
+        formatter.field("file_format_descriptor", &self.file_format_descriptor);
+        formatter.finish()
+    }
+}
+/// See [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig)
+pub mod detected_s3_source_config {
+    /// A builder for [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_format_descriptor:
+            std::option::Option<crate::model::DetectedFileFormatDescriptor>,
+    }
+    impl Builder {
+        /// <p>The source's file format descriptor.</p>
+        pub fn file_format_descriptor(
+            mut self,
+            input: crate::model::DetectedFileFormatDescriptor,
+        ) -> Self {
+            self.file_format_descriptor = Some(input);
+            self
+        }
+        /// <p>The source's file format descriptor.</p>
+        pub fn set_file_format_descriptor(
+            mut self,
+            input: std::option::Option<crate::model::DetectedFileFormatDescriptor>,
+        ) -> Self {
+            self.file_format_descriptor = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig)
+        pub fn build(self) -> crate::model::DetectedS3SourceConfig {
+            crate::model::DetectedS3SourceConfig {
+                file_format_descriptor: self.file_format_descriptor,
+            }
+        }
+    }
+}
+impl DetectedS3SourceConfig {
+    /// Creates a new builder-style object to manufacture [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig)
+    pub fn builder() -> crate::model::detected_s3_source_config::Builder {
+        crate::model::detected_s3_source_config::Builder::default()
+    }
+}
+
+/// <p>Properties of an inferred data format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedFileFormatDescriptor {
+    /// <p>Details about a CSV format.</p>
+    pub csv_format_descriptor: std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
+    /// <p>Details about a JSON format.</p>
+    pub json_format_descriptor: std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
+}
+impl DetectedFileFormatDescriptor {
+    /// <p>Details about a CSV format.</p>
+    pub fn csv_format_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectedCsvFormatDescriptor> {
+        self.csv_format_descriptor.as_ref()
+    }
+    /// <p>Details about a JSON format.</p>
+    pub fn json_format_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectedJsonFormatDescriptor> {
+        self.json_format_descriptor.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectedFileFormatDescriptor {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedFileFormatDescriptor");
+        formatter.field("csv_format_descriptor", &self.csv_format_descriptor);
+        formatter.field("json_format_descriptor", &self.json_format_descriptor);
+        formatter.finish()
+    }
+}
+/// See [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor)
+pub mod detected_file_format_descriptor {
+    /// A builder for [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) csv_format_descriptor:
+            std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
+        pub(crate) json_format_descriptor:
+            std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
+    }
+    impl Builder {
+        /// <p>Details about a CSV format.</p>
+        pub fn csv_format_descriptor(
+            mut self,
+            input: crate::model::DetectedCsvFormatDescriptor,
+        ) -> Self {
+            self.csv_format_descriptor = Some(input);
+            self
+        }
+        /// <p>Details about a CSV format.</p>
+        pub fn set_csv_format_descriptor(
+            mut self,
+            input: std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
+        ) -> Self {
+            self.csv_format_descriptor = input;
+            self
+        }
+        /// <p>Details about a JSON format.</p>
+        pub fn json_format_descriptor(
+            mut self,
+            input: crate::model::DetectedJsonFormatDescriptor,
+        ) -> Self {
+            self.json_format_descriptor = Some(input);
+            self
+        }
+        /// <p>Details about a JSON format.</p>
+        pub fn set_json_format_descriptor(
+            mut self,
+            input: std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
+        ) -> Self {
+            self.json_format_descriptor = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor)
+        pub fn build(self) -> crate::model::DetectedFileFormatDescriptor {
+            crate::model::DetectedFileFormatDescriptor {
+                csv_format_descriptor: self.csv_format_descriptor,
+                json_format_descriptor: self.json_format_descriptor,
+            }
+        }
+    }
+}
+impl DetectedFileFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor)
+    pub fn builder() -> crate::model::detected_file_format_descriptor::Builder {
+        crate::model::detected_file_format_descriptor::Builder::default()
+    }
+}
+
+/// <p>A detected JSON format descriptor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedJsonFormatDescriptor {
+    /// <p>The format's file compression.</p>
+    pub file_compression: std::option::Option<crate::model::DetectedField>,
+    /// <p>The format's character set.</p>
+    pub charset: std::option::Option<crate::model::DetectedField>,
+}
+impl DetectedJsonFormatDescriptor {
+    /// <p>The format's file compression.</p>
+    pub fn file_compression(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.file_compression.as_ref()
+    }
+    /// <p>The format's character set.</p>
+    pub fn charset(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.charset.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectedJsonFormatDescriptor {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedJsonFormatDescriptor");
+        formatter.field("file_compression", &self.file_compression);
+        formatter.field("charset", &self.charset);
+        formatter.finish()
+    }
+}
+/// See [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor)
+pub mod detected_json_format_descriptor {
+    /// A builder for [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_compression: std::option::Option<crate::model::DetectedField>,
+        pub(crate) charset: std::option::Option<crate::model::DetectedField>,
+    }
+    impl Builder {
+        /// <p>The format's file compression.</p>
+        pub fn file_compression(mut self, input: crate::model::DetectedField) -> Self {
+            self.file_compression = Some(input);
+            self
+        }
+        /// <p>The format's file compression.</p>
+        pub fn set_file_compression(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.file_compression = input;
+            self
+        }
+        /// <p>The format's character set.</p>
+        pub fn charset(mut self, input: crate::model::DetectedField) -> Self {
+            self.charset = Some(input);
+            self
+        }
+        /// <p>The format's character set.</p>
+        pub fn set_charset(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.charset = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor)
+        pub fn build(self) -> crate::model::DetectedJsonFormatDescriptor {
+            crate::model::DetectedJsonFormatDescriptor {
+                file_compression: self.file_compression,
+                charset: self.charset,
+            }
+        }
+    }
+}
+impl DetectedJsonFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor)
+    pub fn builder() -> crate::model::detected_json_format_descriptor::Builder {
+        crate::model::detected_json_format_descriptor::Builder::default()
+    }
+}
+
+/// <p>An inferred field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedField {
+    /// <p>The field's value.</p>
+    pub value: std::option::Option<crate::model::AttributeValue>,
+    /// <p>The field's confidence.</p>
+    pub confidence: std::option::Option<crate::model::Confidence>,
+    /// <p>The field's message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl DetectedField {
+    /// <p>The field's value.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.value.as_ref()
+    }
+    /// <p>The field's confidence.</p>
+    pub fn confidence(&self) -> std::option::Option<&crate::model::Confidence> {
+        self.confidence.as_ref()
+    }
+    /// <p>The field's message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for DetectedField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedField");
+        formatter.field("value", &self.value);
+        formatter.field("confidence", &self.confidence);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`DetectedField`](crate::model::DetectedField)
+pub mod detected_field {
+    /// A builder for [`DetectedField`](crate::model::DetectedField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<crate::model::AttributeValue>,
+        pub(crate) confidence: std::option::Option<crate::model::Confidence>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The field's value.</p>
+        pub fn value(mut self, input: crate::model::AttributeValue) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The field's value.</p>
+        pub fn set_value(
+            mut self,
+            input: std::option::Option<crate::model::AttributeValue>,
+        ) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The field's confidence.</p>
+        pub fn confidence(mut self, input: crate::model::Confidence) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        /// <p>The field's confidence.</p>
+        pub fn set_confidence(
+            mut self,
+            input: std::option::Option<crate::model::Confidence>,
+        ) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// <p>The field's message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The field's message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedField`](crate::model::DetectedField)
+        pub fn build(self) -> crate::model::DetectedField {
+            crate::model::DetectedField {
+                value: self.value,
+                confidence: self.confidence,
+                message: self.message,
+            }
+        }
+    }
+}
+impl DetectedField {
+    /// Creates a new builder-style object to manufacture [`DetectedField`](crate::model::DetectedField)
+    pub fn builder() -> crate::model::detected_field::Builder {
+        crate::model::detected_field::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Confidence {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Confidence {
+    fn from(s: &str) -> Self {
+        match s {
+            "HIGH" => Confidence::High,
+            "LOW" => Confidence::Low,
+            "NONE" => Confidence::None,
+            other => Confidence::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Confidence {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Confidence::from(s))
+    }
+}
+impl Confidence {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Confidence::High => "HIGH",
+            Confidence::Low => "LOW",
+            Confidence::None => "NONE",
+            Confidence::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW", "NONE"]
+    }
+}
+impl AsRef<str> for Confidence {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An attribute value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AttributeValue {
+    /// <p>A string.</p>
+    pub s: std::option::Option<std::string::String>,
+    /// <p>A number.</p>
+    pub n: std::option::Option<std::string::String>,
+    /// <p>A binary value.</p>
+    pub b: std::option::Option<std::string::String>,
+    /// <p>A list of strings.</p>
+    pub ss: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of numbers.</p>
+    pub ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of binary values.</p>
+    pub bs: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AttributeValue {
+    /// <p>A string.</p>
+    pub fn s(&self) -> std::option::Option<&str> {
+        self.s.as_deref()
+    }
+    /// <p>A number.</p>
+    pub fn n(&self) -> std::option::Option<&str> {
+        self.n.as_deref()
+    }
+    /// <p>A binary value.</p>
+    pub fn b(&self) -> std::option::Option<&str> {
+        self.b.as_deref()
+    }
+    /// <p>A list of strings.</p>
+    pub fn ss(&self) -> std::option::Option<&[std::string::String]> {
+        self.ss.as_deref()
+    }
+    /// <p>A list of numbers.</p>
+    pub fn ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.ns.as_deref()
+    }
+    /// <p>A list of binary values.</p>
+    pub fn bs(&self) -> std::option::Option<&[std::string::String]> {
+        self.bs.as_deref()
+    }
+}
+impl std::fmt::Debug for AttributeValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AttributeValue");
+        formatter.field("s", &self.s);
+        formatter.field("n", &self.n);
+        formatter.field("b", &self.b);
+        formatter.field("ss", &self.ss);
+        formatter.field("ns", &self.ns);
+        formatter.field("bs", &self.bs);
+        formatter.finish()
+    }
+}
+/// See [`AttributeValue`](crate::model::AttributeValue)
+pub mod attribute_value {
+    /// A builder for [`AttributeValue`](crate::model::AttributeValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s: std::option::Option<std::string::String>,
+        pub(crate) n: std::option::Option<std::string::String>,
+        pub(crate) b: std::option::Option<std::string::String>,
+        pub(crate) ss: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) ns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) bs: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A string.</p>
+        pub fn s(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s = Some(input.into());
+            self
+        }
+        /// <p>A string.</p>
+        pub fn set_s(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s = input;
+            self
+        }
+        /// <p>A number.</p>
+        pub fn n(mut self, input: impl Into<std::string::String>) -> Self {
+            self.n = Some(input.into());
+            self
+        }
+        /// <p>A number.</p>
+        pub fn set_n(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.n = input;
+            self
+        }
+        /// <p>A binary value.</p>
+        pub fn b(mut self, input: impl Into<std::string::String>) -> Self {
+            self.b = Some(input.into());
+            self
+        }
+        /// <p>A binary value.</p>
+        pub fn set_b(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.b = input;
+            self
+        }
+        /// Appends an item to `ss`.
+        ///
+        /// To override the contents of this collection use [`set_ss`](Self::set_ss).
+        ///
+        /// <p>A list of strings.</p>
+        pub fn ss(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ss.unwrap_or_default();
+            v.push(input.into());
+            self.ss = Some(v);
+            self
+        }
+        /// <p>A list of strings.</p>
+        pub fn set_ss(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ss = input;
+            self
+        }
+        /// Appends an item to `ns`.
+        ///
+        /// To override the contents of this collection use [`set_ns`](Self::set_ns).
+        ///
+        /// <p>A list of numbers.</p>
+        pub fn ns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ns.unwrap_or_default();
+            v.push(input.into());
+            self.ns = Some(v);
+            self
+        }
+        /// <p>A list of numbers.</p>
+        pub fn set_ns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ns = input;
+            self
+        }
+        /// Appends an item to `bs`.
+        ///
+        /// To override the contents of this collection use [`set_bs`](Self::set_bs).
+        ///
+        /// <p>A list of binary values.</p>
+        pub fn bs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.bs.unwrap_or_default();
+            v.push(input.into());
+            self.bs = Some(v);
+            self
+        }
+        /// <p>A list of binary values.</p>
+        pub fn set_bs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.bs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AttributeValue`](crate::model::AttributeValue)
+        pub fn build(self) -> crate::model::AttributeValue {
+            crate::model::AttributeValue {
+                s: self.s,
+                n: self.n,
+                b: self.b,
+                ss: self.ss,
+                ns: self.ns,
+                bs: self.bs,
+            }
+        }
+    }
+}
+impl AttributeValue {
+    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue)
+    pub fn builder() -> crate::model::attribute_value::Builder {
+        crate::model::attribute_value::Builder::default()
+    }
+}
+
+/// <p>Properties of an inferred CSV format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectedCsvFormatDescriptor {
+    /// <p>The format's file compression.</p>
+    pub file_compression: std::option::Option<crate::model::DetectedField>,
+    /// <p>The format's charset.</p>
+    pub charset: std::option::Option<crate::model::DetectedField>,
+    /// <p>Whether the format includes a header.</p>
+    pub contains_header: std::option::Option<crate::model::DetectedField>,
+    /// <p>The format's delimiter.</p>
+    pub delimiter: std::option::Option<crate::model::DetectedField>,
+    /// <p>The format's header list.</p>
+    pub header_list: std::option::Option<crate::model::DetectedField>,
+    /// <p>The format's quote symbol.</p>
+    pub quote_symbol: std::option::Option<crate::model::DetectedField>,
+}
+impl DetectedCsvFormatDescriptor {
+    /// <p>The format's file compression.</p>
+    pub fn file_compression(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.file_compression.as_ref()
+    }
+    /// <p>The format's charset.</p>
+    pub fn charset(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.charset.as_ref()
+    }
+    /// <p>Whether the format includes a header.</p>
+    pub fn contains_header(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.contains_header.as_ref()
+    }
+    /// <p>The format's delimiter.</p>
+    pub fn delimiter(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.delimiter.as_ref()
+    }
+    /// <p>The format's header list.</p>
+    pub fn header_list(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.header_list.as_ref()
+    }
+    /// <p>The format's quote symbol.</p>
+    pub fn quote_symbol(&self) -> std::option::Option<&crate::model::DetectedField> {
+        self.quote_symbol.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectedCsvFormatDescriptor {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectedCsvFormatDescriptor");
+        formatter.field("file_compression", &self.file_compression);
+        formatter.field("charset", &self.charset);
+        formatter.field("contains_header", &self.contains_header);
+        formatter.field("delimiter", &self.delimiter);
+        formatter.field("header_list", &self.header_list);
+        formatter.field("quote_symbol", &self.quote_symbol);
+        formatter.finish()
+    }
+}
+/// See [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor)
+pub mod detected_csv_format_descriptor {
+    /// A builder for [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_compression: std::option::Option<crate::model::DetectedField>,
+        pub(crate) charset: std::option::Option<crate::model::DetectedField>,
+        pub(crate) contains_header: std::option::Option<crate::model::DetectedField>,
+        pub(crate) delimiter: std::option::Option<crate::model::DetectedField>,
+        pub(crate) header_list: std::option::Option<crate::model::DetectedField>,
+        pub(crate) quote_symbol: std::option::Option<crate::model::DetectedField>,
+    }
+    impl Builder {
+        /// <p>The format's file compression.</p>
+        pub fn file_compression(mut self, input: crate::model::DetectedField) -> Self {
+            self.file_compression = Some(input);
+            self
+        }
+        /// <p>The format's file compression.</p>
+        pub fn set_file_compression(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.file_compression = input;
+            self
+        }
+        /// <p>The format's charset.</p>
+        pub fn charset(mut self, input: crate::model::DetectedField) -> Self {
+            self.charset = Some(input);
+            self
+        }
+        /// <p>The format's charset.</p>
+        pub fn set_charset(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.charset = input;
+            self
+        }
+        /// <p>Whether the format includes a header.</p>
+        pub fn contains_header(mut self, input: crate::model::DetectedField) -> Self {
+            self.contains_header = Some(input);
+            self
+        }
+        /// <p>Whether the format includes a header.</p>
+        pub fn set_contains_header(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.contains_header = input;
+            self
+        }
+        /// <p>The format's delimiter.</p>
+        pub fn delimiter(mut self, input: crate::model::DetectedField) -> Self {
+            self.delimiter = Some(input);
+            self
+        }
+        /// <p>The format's delimiter.</p>
+        pub fn set_delimiter(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.delimiter = input;
+            self
+        }
+        /// <p>The format's header list.</p>
+        pub fn header_list(mut self, input: crate::model::DetectedField) -> Self {
+            self.header_list = Some(input);
+            self
+        }
+        /// <p>The format's header list.</p>
+        pub fn set_header_list(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.header_list = input;
+            self
+        }
+        /// <p>The format's quote symbol.</p>
+        pub fn quote_symbol(mut self, input: crate::model::DetectedField) -> Self {
+            self.quote_symbol = Some(input);
+            self
+        }
+        /// <p>The format's quote symbol.</p>
+        pub fn set_quote_symbol(
+            mut self,
+            input: std::option::Option<crate::model::DetectedField>,
+        ) -> Self {
+            self.quote_symbol = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor)
+        pub fn build(self) -> crate::model::DetectedCsvFormatDescriptor {
+            crate::model::DetectedCsvFormatDescriptor {
+                file_compression: self.file_compression,
+                charset: self.charset,
+                contains_header: self.contains_header,
+                delimiter: self.delimiter,
+                header_list: self.header_list,
+                quote_symbol: self.quote_symbol,
+            }
+        }
+    }
+}
+impl DetectedCsvFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor)
+    pub fn builder() -> crate::model::detected_csv_format_descriptor::Builder {
+        crate::model::detected_csv_format_descriptor::Builder::default()
+    }
+}
+
+/// <p>An auto detection metric source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoDetectionMetricSource {
+    /// <p>The source's source config.</p>
+    pub s3_source_config: std::option::Option<crate::model::AutoDetectionS3SourceConfig>,
+}
+impl AutoDetectionMetricSource {
+    /// <p>The source's source config.</p>
+    pub fn s3_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoDetectionS3SourceConfig> {
+        self.s3_source_config.as_ref()
+    }
+}
+impl std::fmt::Debug for AutoDetectionMetricSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoDetectionMetricSource");
+        formatter.field("s3_source_config", &self.s3_source_config);
+        formatter.finish()
+    }
+}
+/// See [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource)
+pub mod auto_detection_metric_source {
+    /// A builder for [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_source_config: std::option::Option<crate::model::AutoDetectionS3SourceConfig>,
+    }
+    impl Builder {
+        /// <p>The source's source config.</p>
+        pub fn s3_source_config(
+            mut self,
+            input: crate::model::AutoDetectionS3SourceConfig,
+        ) -> Self {
+            self.s3_source_config = Some(input);
+            self
+        }
+        /// <p>The source's source config.</p>
+        pub fn set_s3_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AutoDetectionS3SourceConfig>,
+        ) -> Self {
+            self.s3_source_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource)
+        pub fn build(self) -> crate::model::AutoDetectionMetricSource {
+            crate::model::AutoDetectionMetricSource {
+                s3_source_config: self.s3_source_config,
+            }
+        }
+    }
+}
+impl AutoDetectionMetricSource {
+    /// Creates a new builder-style object to manufacture [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource)
+    pub fn builder() -> crate::model::auto_detection_metric_source::Builder {
+        crate::model::auto_detection_metric_source::Builder::default()
+    }
+}
+
+/// <p>An auto detection source config.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoDetectionS3SourceConfig {
+    /// <p>The config's templated path list.</p>
+    pub templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The config's historical data path list.</p>
+    pub historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AutoDetectionS3SourceConfig {
+    /// <p>The config's templated path list.</p>
+    pub fn templated_path_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.templated_path_list.as_deref()
+    }
+    /// <p>The config's historical data path list.</p>
+    pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.historical_data_path_list.as_deref()
+    }
+}
+impl std::fmt::Debug for AutoDetectionS3SourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoDetectionS3SourceConfig");
+        formatter.field("templated_path_list", &self.templated_path_list);
+        formatter.field("historical_data_path_list", &self.historical_data_path_list);
+        formatter.finish()
+    }
+}
+/// See [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig)
+pub mod auto_detection_s3_source_config {
+    /// A builder for [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) historical_data_path_list:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `templated_path_list`.
+        ///
+        /// To override the contents of this collection use [`set_templated_path_list`](Self::set_templated_path_list).
+        ///
+        /// <p>The config's templated path list.</p>
+        pub fn templated_path_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.templated_path_list.unwrap_or_default();
+            v.push(input.into());
+            self.templated_path_list = Some(v);
+            self
+        }
+        /// <p>The config's templated path list.</p>
+        pub fn set_templated_path_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.templated_path_list = input;
+            self
+        }
+        /// Appends an item to `historical_data_path_list`.
+        ///
+        /// To override the contents of this collection use [`set_historical_data_path_list`](Self::set_historical_data_path_list).
+        ///
+        /// <p>The config's historical data path list.</p>
+        pub fn historical_data_path_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.historical_data_path_list.unwrap_or_default();
+            v.push(input.into());
+            self.historical_data_path_list = Some(v);
+            self
+        }
+        /// <p>The config's historical data path list.</p>
+        pub fn set_historical_data_path_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.historical_data_path_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig)
+        pub fn build(self) -> crate::model::AutoDetectionS3SourceConfig {
+            crate::model::AutoDetectionS3SourceConfig {
+                templated_path_list: self.templated_path_list,
+                historical_data_path_list: self.historical_data_path_list,
+            }
+        }
+    }
+}
+impl AutoDetectionS3SourceConfig {
+    /// Creates a new builder-style object to manufacture [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig)
+    pub fn builder() -> crate::model::auto_detection_s3_source_config::Builder {
+        crate::model::auto_detection_s3_source_config::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(

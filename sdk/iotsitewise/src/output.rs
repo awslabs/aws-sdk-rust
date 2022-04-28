@@ -5858,6 +5858,514 @@ impl BatchPutAssetPropertyValueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistoryOutput {
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub error_entries: std::option::Option<
+        std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
+    >,
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub success_entries: std::option::Option<
+        std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
+    >,
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub skipped_entries: std::option::Option<
+        std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
+    >,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyValueHistoryOutput {
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistoryErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub fn success_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistorySuccessEntry]> {
+        self.success_entries.as_deref()
+    }
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub fn skipped_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistorySkippedEntry]> {
+        self.skipped_entries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryOutput");
+        formatter.field("error_entries", &self.error_entries);
+        formatter.field("success_entries", &self.success_entries);
+        formatter.field("skipped_entries", &self.skipped_entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput)
+pub mod batch_get_asset_property_value_history_output {
+    /// A builder for [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
+        >,
+        pub(crate) success_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
+        >,
+        pub(crate) skipped_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `error_entries`.
+        ///
+        /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
+        ///
+        /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+        pub fn error_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistoryErrorEntry,
+        ) -> Self {
+            let mut v = self.error_entries.unwrap_or_default();
+            v.push(input);
+            self.error_entries = Some(v);
+            self
+        }
+        /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+        pub fn set_error_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
+            >,
+        ) -> Self {
+            self.error_entries = input;
+            self
+        }
+        /// Appends an item to `success_entries`.
+        ///
+        /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
+        ///
+        /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+        pub fn success_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistorySuccessEntry,
+        ) -> Self {
+            let mut v = self.success_entries.unwrap_or_default();
+            v.push(input);
+            self.success_entries = Some(v);
+            self
+        }
+        /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+        pub fn set_success_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
+            >,
+        ) -> Self {
+            self.success_entries = input;
+            self
+        }
+        /// Appends an item to `skipped_entries`.
+        ///
+        /// To override the contents of this collection use [`set_skipped_entries`](Self::set_skipped_entries).
+        ///
+        /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+        pub fn skipped_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistorySkippedEntry,
+        ) -> Self {
+            let mut v = self.skipped_entries.unwrap_or_default();
+            v.push(input);
+            self.skipped_entries = Some(v);
+            self
+        }
+        /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+        pub fn set_skipped_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
+            >,
+        ) -> Self {
+            self.skipped_entries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput)
+        pub fn build(self) -> crate::output::BatchGetAssetPropertyValueHistoryOutput {
+            crate::output::BatchGetAssetPropertyValueHistoryOutput {
+                error_entries: self.error_entries,
+                success_entries: self.success_entries,
+                skipped_entries: self.skipped_entries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput)
+    pub fn builder() -> crate::output::batch_get_asset_property_value_history_output::Builder {
+        crate::output::batch_get_asset_property_value_history_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueOutput {
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub error_entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub success_entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>>,
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub skipped_entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>>,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyValueOutput {
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub fn success_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueSuccessEntry]> {
+        self.success_entries.as_deref()
+    }
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub fn skipped_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueSkippedEntry]> {
+        self.skipped_entries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueOutput");
+        formatter.field("error_entries", &self.error_entries);
+        formatter.field("success_entries", &self.success_entries);
+        formatter.field("skipped_entries", &self.skipped_entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput)
+pub mod batch_get_asset_property_value_output {
+    /// A builder for [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_entries:
+            std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
+        pub(crate) success_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>,
+        >,
+        pub(crate) skipped_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `error_entries`.
+        ///
+        /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
+        ///
+        /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+        pub fn error_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueErrorEntry,
+        ) -> Self {
+            let mut v = self.error_entries.unwrap_or_default();
+            v.push(input);
+            self.error_entries = Some(v);
+            self
+        }
+        /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+        pub fn set_error_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>,
+            >,
+        ) -> Self {
+            self.error_entries = input;
+            self
+        }
+        /// Appends an item to `success_entries`.
+        ///
+        /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
+        ///
+        /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+        pub fn success_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueSuccessEntry,
+        ) -> Self {
+            let mut v = self.success_entries.unwrap_or_default();
+            v.push(input);
+            self.success_entries = Some(v);
+            self
+        }
+        /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+        pub fn set_success_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>,
+            >,
+        ) -> Self {
+            self.success_entries = input;
+            self
+        }
+        /// Appends an item to `skipped_entries`.
+        ///
+        /// To override the contents of this collection use [`set_skipped_entries`](Self::set_skipped_entries).
+        ///
+        /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+        pub fn skipped_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueSkippedEntry,
+        ) -> Self {
+            let mut v = self.skipped_entries.unwrap_or_default();
+            v.push(input);
+            self.skipped_entries = Some(v);
+            self
+        }
+        /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+        pub fn set_skipped_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>,
+            >,
+        ) -> Self {
+            self.skipped_entries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput)
+        pub fn build(self) -> crate::output::BatchGetAssetPropertyValueOutput {
+            crate::output::BatchGetAssetPropertyValueOutput {
+                error_entries: self.error_entries,
+                success_entries: self.success_entries,
+                skipped_entries: self.skipped_entries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput)
+    pub fn builder() -> crate::output::batch_get_asset_property_value_output::Builder {
+        crate::output::batch_get_asset_property_value_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesOutput {
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub error_entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>>,
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub success_entries: std::option::Option<
+        std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
+    >,
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub skipped_entries: std::option::Option<
+        std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
+    >,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyAggregatesOutput {
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub fn success_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesSuccessEntry]> {
+        self.success_entries.as_deref()
+    }
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub fn skipped_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesSkippedEntry]> {
+        self.skipped_entries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesOutput");
+        formatter.field("error_entries", &self.error_entries);
+        formatter.field("success_entries", &self.success_entries);
+        formatter.field("skipped_entries", &self.skipped_entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput)
+pub mod batch_get_asset_property_aggregates_output {
+    /// A builder for [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>,
+        >,
+        pub(crate) success_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
+        >,
+        pub(crate) skipped_entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `error_entries`.
+        ///
+        /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
+        ///
+        /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+        pub fn error_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesErrorEntry,
+        ) -> Self {
+            let mut v = self.error_entries.unwrap_or_default();
+            v.push(input);
+            self.error_entries = Some(v);
+            self
+        }
+        /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+        pub fn set_error_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>,
+            >,
+        ) -> Self {
+            self.error_entries = input;
+            self
+        }
+        /// Appends an item to `success_entries`.
+        ///
+        /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
+        ///
+        /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+        pub fn success_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesSuccessEntry,
+        ) -> Self {
+            let mut v = self.success_entries.unwrap_or_default();
+            v.push(input);
+            self.success_entries = Some(v);
+            self
+        }
+        /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+        pub fn set_success_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
+            >,
+        ) -> Self {
+            self.success_entries = input;
+            self
+        }
+        /// Appends an item to `skipped_entries`.
+        ///
+        /// To override the contents of this collection use [`set_skipped_entries`](Self::set_skipped_entries).
+        ///
+        /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+        pub fn skipped_entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesSkippedEntry,
+        ) -> Self {
+            let mut v = self.skipped_entries.unwrap_or_default();
+            v.push(input);
+            self.skipped_entries = Some(v);
+            self
+        }
+        /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+        pub fn set_skipped_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
+            >,
+        ) -> Self {
+            self.skipped_entries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput)
+        pub fn build(self) -> crate::output::BatchGetAssetPropertyAggregatesOutput {
+            crate::output::BatchGetAssetPropertyAggregatesOutput {
+                error_entries: self.error_entries,
+                success_entries: self.success_entries,
+                skipped_entries: self.skipped_entries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyAggregatesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput)
+    pub fn builder() -> crate::output::batch_get_asset_property_aggregates_output::Builder {
+        crate::output::batch_get_asset_property_aggregates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateProjectAssetsOutput {
     /// <p>A list of associated error information, if any.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,

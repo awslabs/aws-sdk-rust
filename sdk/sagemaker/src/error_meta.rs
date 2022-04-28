@@ -7,7 +7,7 @@ pub enum Error {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),

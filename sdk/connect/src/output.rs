@@ -573,6 +573,85 @@ impl UpdateQueueHoursOfOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePhoneNumberOutput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub phone_number_arn: std::option::Option<std::string::String>,
+}
+impl UpdatePhoneNumberOutput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+        self.phone_number_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdatePhoneNumberOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePhoneNumberOutput");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("phone_number_arn", &self.phone_number_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput)
+pub mod update_phone_number_output {
+    /// A builder for [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) phone_number_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn phone_number_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn set_phone_number_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput)
+        pub fn build(self) -> crate::output::UpdatePhoneNumberOutput {
+            crate::output::UpdatePhoneNumberOutput {
+                phone_number_id: self.phone_number_id,
+                phone_number_arn: self.phone_number_arn,
+            }
+        }
+    }
+}
+impl UpdatePhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput)
+    pub fn builder() -> crate::output::update_phone_number_output::Builder {
+        crate::output::update_phone_number_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceStorageConfigOutput {}
 impl std::fmt::Debug for UpdateInstanceStorageConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1489,6 +1568,196 @@ impl SearchVocabulariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchUsersOutput {
+    /// <p>Information about the users.</p>
+    pub users: std::option::Option<std::vec::Vec<crate::model::UserSearchSummary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The total number of users who matched your search query.</p>
+    pub approximate_total_count: std::option::Option<i64>,
+}
+impl SearchUsersOutput {
+    /// <p>Information about the users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserSearchSummary]> {
+        self.users.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of users who matched your search query.</p>
+    pub fn approximate_total_count(&self) -> std::option::Option<i64> {
+        self.approximate_total_count
+    }
+}
+impl std::fmt::Debug for SearchUsersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchUsersOutput");
+        formatter.field("users", &self.users);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("approximate_total_count", &self.approximate_total_count);
+        formatter.finish()
+    }
+}
+/// See [`SearchUsersOutput`](crate::output::SearchUsersOutput)
+pub mod search_users_output {
+    /// A builder for [`SearchUsersOutput`](crate::output::SearchUsersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserSearchSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) approximate_total_count: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>Information about the users.</p>
+        pub fn users(mut self, input: crate::model::UserSearchSummary) -> Self {
+            let mut v = self.users.unwrap_or_default();
+            v.push(input);
+            self.users = Some(v);
+            self
+        }
+        /// <p>Information about the users.</p>
+        pub fn set_users(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UserSearchSummary>>,
+        ) -> Self {
+            self.users = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The total number of users who matched your search query.</p>
+        pub fn approximate_total_count(mut self, input: i64) -> Self {
+            self.approximate_total_count = Some(input);
+            self
+        }
+        /// <p>The total number of users who matched your search query.</p>
+        pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.approximate_total_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchUsersOutput`](crate::output::SearchUsersOutput)
+        pub fn build(self) -> crate::output::SearchUsersOutput {
+            crate::output::SearchUsersOutput {
+                users: self.users,
+                next_token: self.next_token,
+                approximate_total_count: self.approximate_total_count,
+            }
+        }
+    }
+}
+impl SearchUsersOutput {
+    /// Creates a new builder-style object to manufacture [`SearchUsersOutput`](crate::output::SearchUsersOutput)
+    pub fn builder() -> crate::output::search_users_output::Builder {
+        crate::output::search_users_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchAvailablePhoneNumbersOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    pub available_numbers_list:
+        std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
+}
+impl SearchAvailablePhoneNumbersOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    pub fn available_numbers_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AvailableNumberSummary]> {
+        self.available_numbers_list.as_deref()
+    }
+}
+impl std::fmt::Debug for SearchAvailablePhoneNumbersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchAvailablePhoneNumbersOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("available_numbers_list", &self.available_numbers_list);
+        formatter.finish()
+    }
+}
+/// See [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput)
+pub mod search_available_phone_numbers_output {
+    /// A builder for [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) available_numbers_list:
+            std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
+    }
+    impl Builder {
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `available_numbers_list`.
+        ///
+        /// To override the contents of this collection use [`set_available_numbers_list`](Self::set_available_numbers_list).
+        ///
+        /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+        pub fn available_numbers_list(
+            mut self,
+            input: crate::model::AvailableNumberSummary,
+        ) -> Self {
+            let mut v = self.available_numbers_list.unwrap_or_default();
+            v.push(input);
+            self.available_numbers_list = Some(v);
+            self
+        }
+        /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+        pub fn set_available_numbers_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
+        ) -> Self {
+            self.available_numbers_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput)
+        pub fn build(self) -> crate::output::SearchAvailablePhoneNumbersOutput {
+            crate::output::SearchAvailablePhoneNumbersOutput {
+                next_token: self.next_token,
+                available_numbers_list: self.available_numbers_list,
+            }
+        }
+    }
+}
+impl SearchAvailablePhoneNumbersOutput {
+    /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput)
+    pub fn builder() -> crate::output::search_available_phone_numbers_output::Builder {
+        crate::output::search_available_phone_numbers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeContactRecordingOutput {}
 impl std::fmt::Debug for ResumeContactRecordingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1513,6 +1782,66 @@ impl ResumeContactRecordingOutput {
     /// Creates a new builder-style object to manufacture [`ResumeContactRecordingOutput`](crate::output::ResumeContactRecordingOutput)
     pub fn builder() -> crate::output::resume_contact_recording_output::Builder {
         crate::output::resume_contact_recording_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReleasePhoneNumberOutput {}
+impl std::fmt::Debug for ReleasePhoneNumberOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReleasePhoneNumberOutput");
+        formatter.finish()
+    }
+}
+/// See [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
+pub mod release_phone_number_output {
+    /// A builder for [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
+        pub fn build(self) -> crate::output::ReleasePhoneNumberOutput {
+            crate::output::ReleasePhoneNumberOutput {}
+        }
+    }
+}
+impl ReleasePhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
+    pub fn builder() -> crate::output::release_phone_number_output::Builder {
+        crate::output::release_phone_number_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutUserStatusOutput {}
+impl std::fmt::Debug for PutUserStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutUserStatusOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
+pub mod put_user_status_output {
+    /// A builder for [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
+        pub fn build(self) -> crate::output::PutUserStatusOutput {
+            crate::output::PutUserStatusOutput {}
+        }
+    }
+}
+impl PutUserStatusOutput {
+    /// Creates a new builder-style object to manufacture [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
+    pub fn builder() -> crate::output::put_user_status_output::Builder {
+        crate::output::put_user_status_output::Builder::default()
     }
 }
 
@@ -2637,6 +2966,98 @@ impl ListPromptsOutput {
     /// Creates a new builder-style object to manufacture [`ListPromptsOutput`](crate::output::ListPromptsOutput)
     pub fn builder() -> crate::output::list_prompts_output::Builder {
         crate::output::list_prompts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPhoneNumbersV2Output {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    pub list_phone_numbers_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>>,
+}
+impl ListPhoneNumbersV2Output {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    pub fn list_phone_numbers_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ListPhoneNumbersSummary]> {
+        self.list_phone_numbers_summary_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPhoneNumbersV2Output {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPhoneNumbersV2Output");
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "list_phone_numbers_summary_list",
+            &self.list_phone_numbers_summary_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output)
+pub mod list_phone_numbers_v2_output {
+    /// A builder for [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) list_phone_numbers_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>>,
+    }
+    impl Builder {
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `list_phone_numbers_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_list_phone_numbers_summary_list`](Self::set_list_phone_numbers_summary_list).
+        ///
+        /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+        pub fn list_phone_numbers_summary_list(
+            mut self,
+            input: crate::model::ListPhoneNumbersSummary,
+        ) -> Self {
+            let mut v = self.list_phone_numbers_summary_list.unwrap_or_default();
+            v.push(input);
+            self.list_phone_numbers_summary_list = Some(v);
+            self
+        }
+        /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+        pub fn set_list_phone_numbers_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>>,
+        ) -> Self {
+            self.list_phone_numbers_summary_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output)
+        pub fn build(self) -> crate::output::ListPhoneNumbersV2Output {
+            crate::output::ListPhoneNumbersV2Output {
+                next_token: self.next_token,
+                list_phone_numbers_summary_list: self.list_phone_numbers_summary_list,
+            }
+        }
+    }
+}
+impl ListPhoneNumbersV2Output {
+    /// Creates a new builder-style object to manufacture [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output)
+    pub fn builder() -> crate::output::list_phone_numbers_v2_output::Builder {
+        crate::output::list_phone_numbers_v2_output::Builder::default()
     }
 }
 
@@ -4363,6 +4784,36 @@ impl DisassociateQueueQuickConnectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociatePhoneNumberContactFlowOutput {}
+impl std::fmt::Debug for DisassociatePhoneNumberContactFlowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociatePhoneNumberContactFlowOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
+pub mod disassociate_phone_number_contact_flow_output {
+    /// A builder for [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
+        pub fn build(self) -> crate::output::DisassociatePhoneNumberContactFlowOutput {
+            crate::output::DisassociatePhoneNumberContactFlowOutput {}
+        }
+    }
+}
+impl DisassociatePhoneNumberContactFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
+    pub fn builder() -> crate::output::disassociate_phone_number_contact_flow_output::Builder {
+        crate::output::disassociate_phone_number_contact_flow_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLexBotOutput {}
 impl std::fmt::Debug for DisassociateLexBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4953,6 +5404,72 @@ impl DescribeQueueOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQueueOutput`](crate::output::DescribeQueueOutput)
     pub fn builder() -> crate::output::describe_queue_output::Builder {
         crate::output::describe_queue_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePhoneNumberOutput {
+    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    pub claimed_phone_number_summary: std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
+}
+impl DescribePhoneNumberOutput {
+    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    pub fn claimed_phone_number_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ClaimedPhoneNumberSummary> {
+        self.claimed_phone_number_summary.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribePhoneNumberOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePhoneNumberOutput");
+        formatter.field(
+            "claimed_phone_number_summary",
+            &self.claimed_phone_number_summary,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput)
+pub mod describe_phone_number_output {
+    /// A builder for [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) claimed_phone_number_summary:
+            std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
+    }
+    impl Builder {
+        /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+        pub fn claimed_phone_number_summary(
+            mut self,
+            input: crate::model::ClaimedPhoneNumberSummary,
+        ) -> Self {
+            self.claimed_phone_number_summary = Some(input);
+            self
+        }
+        /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+        pub fn set_claimed_phone_number_summary(
+            mut self,
+            input: std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
+        ) -> Self {
+            self.claimed_phone_number_summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput)
+        pub fn build(self) -> crate::output::DescribePhoneNumberOutput {
+            crate::output::DescribePhoneNumberOutput {
+                claimed_phone_number_summary: self.claimed_phone_number_summary,
+            }
+        }
+    }
+}
+impl DescribePhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput)
+    pub fn builder() -> crate::output::describe_phone_number_output::Builder {
+        crate::output::describe_phone_number_output::Builder::default()
     }
 }
 
@@ -6917,6 +7434,85 @@ impl CreateAgentStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClaimPhoneNumberOutput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub phone_number_arn: std::option::Option<std::string::String>,
+}
+impl ClaimPhoneNumberOutput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+        self.phone_number_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ClaimPhoneNumberOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClaimPhoneNumberOutput");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("phone_number_arn", &self.phone_number_arn);
+        formatter.finish()
+    }
+}
+/// See [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput)
+pub mod claim_phone_number_output {
+    /// A builder for [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) phone_number_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn phone_number_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn set_phone_number_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput)
+        pub fn build(self) -> crate::output::ClaimPhoneNumberOutput {
+            crate::output::ClaimPhoneNumberOutput {
+                phone_number_id: self.phone_number_id,
+                phone_number_arn: self.phone_number_arn,
+            }
+        }
+    }
+}
+impl ClaimPhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput)
+    pub fn builder() -> crate::output::claim_phone_number_output::Builder {
+        crate::output::claim_phone_number_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSecurityKeyOutput {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub association_id: std::option::Option<std::string::String>,
@@ -7028,6 +7624,36 @@ impl AssociateQueueQuickConnectsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateQueueQuickConnectsOutput`](crate::output::AssociateQueueQuickConnectsOutput)
     pub fn builder() -> crate::output::associate_queue_quick_connects_output::Builder {
         crate::output::associate_queue_quick_connects_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociatePhoneNumberContactFlowOutput {}
+impl std::fmt::Debug for AssociatePhoneNumberContactFlowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociatePhoneNumberContactFlowOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
+pub mod associate_phone_number_contact_flow_output {
+    /// A builder for [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
+        pub fn build(self) -> crate::output::AssociatePhoneNumberContactFlowOutput {
+            crate::output::AssociatePhoneNumberContactFlowOutput {}
+        }
+    }
+}
+impl AssociatePhoneNumberContactFlowOutput {
+    /// Creates a new builder-style object to manufacture [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
+    pub fn builder() -> crate::output::associate_phone_number_contact_flow_output::Builder {
+        crate::output::associate_phone_number_contact_flow_output::Builder::default()
     }
 }
 

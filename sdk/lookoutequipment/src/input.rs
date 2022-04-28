@@ -2804,6 +2804,189 @@ impl ListModelsInput {
     }
 }
 
+/// See [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput)
+pub mod list_sensor_statistics_input {
+    /// A builder for [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_name: std::option::Option<std::string::String>,
+        pub(crate) ingestion_job_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+        pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_name = input;
+            self
+        }
+        /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+        pub fn ingestion_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ingestion_job_id = Some(input.into());
+            self
+        }
+        /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+        pub fn set_ingestion_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ingestion_job_id = input;
+            self
+        }
+        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListSensorStatisticsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSensorStatisticsInput {
+                dataset_name: self.dataset_name,
+                ingestion_job_id: self.ingestion_job_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSensorStatisticsInputOperationOutputAlias = crate::operation::ListSensorStatistics;
+#[doc(hidden)]
+pub type ListSensorStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListSensorStatisticsInput {
+    /// Consumes the builder and constructs an Operation<[`ListSensorStatistics`](crate::operation::ListSensorStatistics)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSensorStatistics,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSensorStatisticsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSensorStatisticsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListSensorStatistics",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_sensor_statistics(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSensorStatistics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSensorStatistics",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput)
+    pub fn builder() -> crate::input::list_sensor_statistics_input::Builder {
+        crate::input::list_sensor_statistics_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
 pub mod list_tags_for_resource_input {
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -4210,6 +4393,48 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSensorStatisticsInput {
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+    pub dataset_name: std::option::Option<std::string::String>,
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+    pub ingestion_job_id: std::option::Option<std::string::String>,
+    /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    pub max_results: std::option::Option<i32>,
+    /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSensorStatisticsInput {
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+    pub fn ingestion_job_id(&self) -> std::option::Option<&str> {
+        self.ingestion_job_id.as_deref()
+    }
+    /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSensorStatisticsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSensorStatisticsInput");
+        formatter.field("dataset_name", &self.dataset_name);
+        formatter.field("ingestion_job_id", &self.ingestion_job_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }

@@ -1251,12 +1251,12 @@ pub mod copy_snapshot_input {
             self.target_snapshot_name = input;
             self
         }
-        /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+        /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
         pub fn source_region(mut self, input: crate::model::RegionName) -> Self {
             self.source_region = Some(input);
             self
         }
-        /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+        /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<crate::model::RegionName>,
@@ -2106,7 +2106,7 @@ pub mod create_contact_method_input {
     }
     impl Builder {
         /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-        /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+        /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
         /// <ul>
         /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
         /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
@@ -2115,14 +2115,14 @@ pub mod create_contact_method_input {
         /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
         /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
         /// </ul>
-        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
         pub fn protocol(mut self, input: crate::model::ContactProtocol) -> Self {
             self.protocol = Some(input);
             self
         }
         /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-        /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+        /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
         /// <ul>
         /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
         /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
@@ -2131,7 +2131,7 @@ pub mod create_contact_method_input {
         /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
         /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
         /// </ul>
-        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
         pub fn set_protocol(
             mut self,
@@ -2308,7 +2308,7 @@ pub mod create_container_service_input {
         /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
-        /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+        /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
         /// <li> <p>Must contain 1 to 63 characters.</p> </li>
         /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
         /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
@@ -2330,7 +2330,7 @@ pub mod create_container_service_input {
         /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
-        /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+        /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
         /// <li> <p>Must contain 1 to 63 characters.</p> </li>
         /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
         /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
@@ -5286,6 +5286,7 @@ pub mod create_load_balancer_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) ip_address_type: std::option::Option<crate::model::IpAddressType>,
+        pub(crate) tls_policy_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of your load balancer.</p>
@@ -5416,6 +5417,23 @@ pub mod create_load_balancer_input {
             self.ip_address_type = input;
             self
         }
+        /// <p>The name of the TLS policy to apply to the load balancer.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+        /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn tls_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tls_policy_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the TLS policy to apply to the load balancer.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+        /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn set_tls_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tls_policy_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput)
         pub fn build(
             self,
@@ -5432,6 +5450,7 @@ pub mod create_load_balancer_input {
                 certificate_alternative_names: self.certificate_alternative_names,
                 tags: self.tags,
                 ip_address_type: self.ip_address_type,
+                tls_policy_name: self.tls_policy_name,
             })
         }
     }
@@ -12351,13 +12370,13 @@ pub mod get_buckets_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to return information.</p>
-        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_name = Some(input.into());
             self
         }
         /// <p>The name of the bucket for which to return information.</p>
-        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -12683,7 +12702,7 @@ pub mod get_certificates_input {
         ///
         /// <p>The status of the certificates for which to return information.</p>
         /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
         pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
             let mut v = self.certificate_statuses.unwrap_or_default();
             v.push(input);
@@ -12692,7 +12711,7 @@ pub mod get_certificates_input {
         }
         /// <p>The status of the certificates for which to return information.</p>
         /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
         pub fn set_certificate_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -12713,13 +12732,13 @@ pub mod get_certificates_input {
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_name = Some(input.into());
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14273,13 +14292,13 @@ pub mod get_container_services_input {
     }
     impl Builder {
         /// <p>The name of the container service for which to return information.</p>
-        /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
         /// <p>The name of the container service for which to return information.</p>
-        /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -15574,13 +15593,13 @@ pub mod get_distributions_input {
     }
     impl Builder {
         /// <p>The name of the distribution for which to return information.</p>
-        /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_name = Some(input.into());
             self
         }
         /// <p>The name of the distribution for which to return information.</p>
-        /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18479,6 +18498,150 @@ impl GetLoadBalancerTlsCertificatesInput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesInput`](crate::input::GetLoadBalancerTlsCertificatesInput)
     pub fn builder() -> crate::input::get_load_balancer_tls_certificates_input::Builder {
         crate::input::get_load_balancer_tls_certificates_input::Builder::default()
+    }
+}
+
+/// See [`GetLoadBalancerTlsPoliciesInput`](crate::input::GetLoadBalancerTlsPoliciesInput)
+pub mod get_load_balancer_tls_policies_input {
+    /// A builder for [`GetLoadBalancerTlsPoliciesInput`](crate::input::GetLoadBalancerTlsPoliciesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) page_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.page_token = Some(input.into());
+            self
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+        pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.page_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLoadBalancerTlsPoliciesInput`](crate::input::GetLoadBalancerTlsPoliciesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetLoadBalancerTlsPoliciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetLoadBalancerTlsPoliciesInput {
+                page_token: self.page_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetLoadBalancerTlsPoliciesInputOperationOutputAlias =
+    crate::operation::GetLoadBalancerTlsPolicies;
+#[doc(hidden)]
+pub type GetLoadBalancerTlsPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetLoadBalancerTlsPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`GetLoadBalancerTlsPolicies`](crate::operation::GetLoadBalancerTlsPolicies)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetLoadBalancerTlsPolicies,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetLoadBalancerTlsPoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetLoadBalancerTlsPoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Lightsail_20161128.GetLoadBalancerTlsPolicies",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_tls_policies(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLoadBalancerTlsPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetLoadBalancerTlsPolicies",
+            "lightsail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesInput`](crate::input::GetLoadBalancerTlsPoliciesInput)
+    pub fn builder() -> crate::input::get_load_balancer_tls_policies_input::Builder {
+        crate::input::get_load_balancer_tls_policies_input::Builder::default()
     }
 }
 
@@ -22156,8 +22319,8 @@ pub mod put_alarm_input {
         ///
         /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
         /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
-        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
-        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
         pub fn contact_protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             let mut v = self.contact_protocols.unwrap_or_default();
             v.push(input);
@@ -22166,8 +22329,8 @@ pub mod put_alarm_input {
         }
         /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
         /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
-        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
-        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
         pub fn set_contact_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
@@ -23463,7 +23626,7 @@ pub mod set_ip_address_type_input {
     impl Builder {
         /// <p>The resource type.</p>
         /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
-        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
@@ -23471,7 +23634,7 @@ pub mod set_ip_address_type_input {
         }
         /// <p>The resource type.</p>
         /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
-        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
         /// </note>
         pub fn set_resource_type(
             mut self,
@@ -25130,16 +25293,16 @@ pub mod update_bucket_input {
         ///
         /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
         ///
-        /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-        /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+        /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+        /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
         pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.readonly_access_accounts.unwrap_or_default();
             v.push(input.into());
             self.readonly_access_accounts = Some(v);
             self
         }
-        /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-        /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+        /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+        /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
         pub fn set_readonly_access_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -26245,12 +26408,12 @@ pub mod update_load_balancer_attribute_input {
             self.load_balancer_name = input;
             self
         }
-        /// <p>The name of the attribute you want to update. Valid values are below.</p>
+        /// <p>The name of the attribute you want to update.</p>
         pub fn attribute_name(mut self, input: crate::model::LoadBalancerAttributeName) -> Self {
             self.attribute_name = Some(input);
             self
         }
-        /// <p>The name of the attribute you want to update. Valid values are below.</p>
+        /// <p>The name of the attribute you want to update.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerAttributeName>,
@@ -26259,11 +26422,27 @@ pub mod update_load_balancer_attribute_input {
             self
         }
         /// <p>The value that you want to specify for the attribute name.</p>
+        /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+        /// <ul>
+        /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+        /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+        /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>
+        /// </ul>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_value = Some(input.into());
             self
         }
         /// <p>The value that you want to specify for the attribute name.</p>
+        /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+        /// <ul>
+        /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+        /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+        /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>
+        /// </ul>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27059,9 +27238,17 @@ impl std::fmt::Debug for UpdateRelationalDatabaseInput {
 pub struct UpdateLoadBalancerAttributeInput {
     /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
-    /// <p>The name of the attribute you want to update. Valid values are below.</p>
+    /// <p>The name of the attribute you want to update.</p>
     pub attribute_name: std::option::Option<crate::model::LoadBalancerAttributeName>,
     /// <p>The value that you want to specify for the attribute name.</p>
+    /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+    /// <ul>
+    /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+    /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+    /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>
+    /// </ul>
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl UpdateLoadBalancerAttributeInput {
@@ -27069,11 +27256,19 @@ impl UpdateLoadBalancerAttributeInput {
     pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
-    /// <p>The name of the attribute you want to update. Valid values are below.</p>
+    /// <p>The name of the attribute you want to update.</p>
     pub fn attribute_name(&self) -> std::option::Option<&crate::model::LoadBalancerAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The value that you want to specify for the attribute name.</p>
+    /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+    /// <ul>
+    /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+    /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+    /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>
+    /// </ul>
     pub fn attribute_value(&self) -> std::option::Option<&str> {
         self.attribute_value.as_deref()
     }
@@ -27328,8 +27523,8 @@ pub struct UpdateBucketInput {
     /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
     /// </ul>
     pub versioning: std::option::Option<std::string::String>,
-    /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-    /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+    /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+    /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
     pub readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub access_log_config: std::option::Option<crate::model::BucketAccessLogConfig>,
@@ -27352,8 +27547,8 @@ impl UpdateBucketInput {
     pub fn versioning(&self) -> std::option::Option<&str> {
         self.versioning.as_deref()
     }
-    /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-    /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+    /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+    /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
     pub fn readonly_access_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.readonly_access_accounts.as_deref()
     }
@@ -27651,7 +27846,7 @@ impl std::fmt::Debug for SetResourceAccessForBucketInput {
 pub struct SetIpAddressTypeInput {
     /// <p>The resource type.</p>
     /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
-    /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+    /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name of the resource for which to set the IP address type.</p>
@@ -27663,7 +27858,7 @@ pub struct SetIpAddressTypeInput {
 impl SetIpAddressTypeInput {
     /// <p>The resource type.</p>
     /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
-    /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+    /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
@@ -27924,8 +28119,8 @@ pub struct PutAlarmInput {
     pub treat_missing_data: std::option::Option<crate::model::TreatMissingData>,
     /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
-    /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
-    /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+    /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+    /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
     pub contact_protocols: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -28000,8 +28195,8 @@ impl PutAlarmInput {
     }
     /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
-    /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
-    /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+    /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+    /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
     pub fn contact_protocols(&self) -> std::option::Option<&[crate::model::ContactProtocol]> {
         self.contact_protocols.as_deref()
     }
@@ -28744,6 +28939,29 @@ impl std::fmt::Debug for GetOperationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLoadBalancerTlsPoliciesInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub page_token: std::option::Option<std::string::String>,
+}
+impl GetLoadBalancerTlsPoliciesInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetLoadBalancerTlsPoliciesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLoadBalancerTlsPoliciesInput");
+        formatter.field("page_token", &self.page_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancerTlsCertificatesInput {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -29299,7 +29517,7 @@ impl std::fmt::Debug for GetDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionsInput {
     /// <p>The name of the distribution for which to return information.</p>
-    /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
     pub distribution_name: std::option::Option<std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -29307,7 +29525,7 @@ pub struct GetDistributionsInput {
 }
 impl GetDistributionsInput {
     /// <p>The name of the distribution for which to return information.</p>
-    /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
     pub fn distribution_name(&self) -> std::option::Option<&str> {
         self.distribution_name.as_deref()
     }
@@ -29580,12 +29798,12 @@ impl std::fmt::Debug for GetDiskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerServicesInput {
     /// <p>The name of the container service for which to return information.</p>
-    /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
     pub service_name: std::option::Option<std::string::String>,
 }
 impl GetContainerServicesInput {
     /// <p>The name of the container service for which to return information.</p>
-    /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -29896,19 +30114,19 @@ impl std::fmt::Debug for GetCloudFormationStackRecordsInput {
 pub struct GetCertificatesInput {
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
-    /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
     pub certificate_statuses: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     pub include_certificate_details: bool,
     /// <p>The name for the certificate for which to return information.</p>
-    /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     pub certificate_name: std::option::Option<std::string::String>,
 }
 impl GetCertificatesInput {
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
-    /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
     pub fn certificate_statuses(&self) -> std::option::Option<&[crate::model::CertificateStatus]> {
         self.certificate_statuses.as_deref()
     }
@@ -29918,7 +30136,7 @@ impl GetCertificatesInput {
         self.include_certificate_details
     }
     /// <p>The name for the certificate for which to return information.</p>
-    /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     pub fn certificate_name(&self) -> std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
@@ -29971,7 +30189,7 @@ impl std::fmt::Debug for GetBundlesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketsInput {
     /// <p>The name of the bucket for which to return information.</p>
-    /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -29981,7 +30199,7 @@ pub struct GetBucketsInput {
 }
 impl GetBucketsInput {
     /// <p>The name of the bucket for which to return information.</p>
-    /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+    /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
@@ -31517,6 +31735,10 @@ pub struct CreateLoadBalancerInput {
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
+    /// <p>The name of the TLS policy to apply to the load balancer.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+    /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub tls_policy_name: std::option::Option<std::string::String>,
 }
 impl CreateLoadBalancerInput {
     /// <p>The name of your load balancer.</p>
@@ -31557,6 +31779,12 @@ impl CreateLoadBalancerInput {
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The name of the TLS policy to apply to the load balancer.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+    /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn tls_policy_name(&self) -> std::option::Option<&str> {
+        self.tls_policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31572,6 +31800,7 @@ impl std::fmt::Debug for CreateLoadBalancerInput {
         );
         formatter.field("tags", &self.tags);
         formatter.field("ip_address_type", &self.ip_address_type);
+        formatter.field("tls_policy_name", &self.tls_policy_name);
         formatter.finish()
     }
 }
@@ -32350,7 +32579,7 @@ pub struct CreateContainerServiceInput {
     /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
     /// <li> <p>Must contain 1 to 63 characters.</p> </li>
     /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
@@ -32394,7 +32623,7 @@ impl CreateContainerServiceInput {
     /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
     /// <li> <p>Must contain 1 to 63 characters.</p> </li>
     /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
@@ -32458,7 +32687,7 @@ impl std::fmt::Debug for CreateContainerServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactMethodInput {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+    /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
     /// <ul>
     /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
     /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
@@ -32467,7 +32696,7 @@ pub struct CreateContactMethodInput {
     /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
     /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
     /// </ul>
-    /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     pub protocol: std::option::Option<crate::model::ContactProtocol>,
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
@@ -32476,7 +32705,7 @@ pub struct CreateContactMethodInput {
 }
 impl CreateContactMethodInput {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+    /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
     /// <ul>
     /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
     /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
@@ -32485,7 +32714,7 @@ impl CreateContactMethodInput {
     /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
     /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
     /// </ul>
-    /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::ContactProtocol> {
         self.protocol.as_ref()
@@ -32682,7 +32911,7 @@ pub struct CopySnapshotInput {
     pub use_latest_restorable_auto_snapshot: std::option::Option<bool>,
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
     pub target_snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+    /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
     pub source_region: std::option::Option<crate::model::RegionName>,
 }
 impl CopySnapshotInput {
@@ -32725,7 +32954,7 @@ impl CopySnapshotInput {
     pub fn target_snapshot_name(&self) -> std::option::Option<&str> {
         self.target_snapshot_name.as_deref()
     }
-    /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+    /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
     pub fn source_region(&self) -> std::option::Option<&crate::model::RegionName> {
         self.source_region.as_ref()
     }

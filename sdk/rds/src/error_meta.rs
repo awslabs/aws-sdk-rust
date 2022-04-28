@@ -14,16 +14,8 @@ pub enum Error {
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
-    /// <p> <code>CustomAvailabilityZoneName</code> is already used by an existing custom Availability Zone.</p>
-    CustomAvailabilityZoneAlreadyExistsFault(
-        crate::error::CustomAvailabilityZoneAlreadyExistsFault,
-    ),
     /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
-    /// <p>You have exceeded the maximum number of custom Availability Zones.</p>
-    CustomAvailabilityZoneQuotaExceededFault(
-        crate::error::CustomAvailabilityZoneQuotaExceededFault,
-    ),
     /// <p>A CEV with the specified name already exists.</p>
     CustomDbEngineVersionAlreadyExistsFault(crate::error::CustomDbEngineVersionAlreadyExistsFault),
     /// <p>The specified CEV was not found.</p>
@@ -142,10 +134,6 @@ pub enum Error {
     IamRoleMissingPermissionsFault(crate::error::IamRoleMissingPermissionsFault),
     /// <p>The IAM role is missing for exporting to an Amazon S3 bucket.</p>
     IamRoleNotFoundFault(crate::error::IamRoleNotFoundFault),
-    /// <p>The specified installation medium has already been imported.</p>
-    InstallationMediaAlreadyExistsFault(crate::error::InstallationMediaAlreadyExistsFault),
-    /// <p> <code>InstallationMediaID</code> doesn't refer to an existing installation medium.</p>
-    InstallationMediaNotFoundFault(crate::error::InstallationMediaNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
     /// <p>The requested operation can't be performed because there aren't enough available IP addresses in the proxy's subnets. Add more CIDR blocks to the VPC or remove IP address that aren't required from the subnets.</p>
@@ -267,9 +255,7 @@ impl std::fmt::Display for Error {
             Error::AuthorizationQuotaExceededFault(inner) => inner.fmt(f),
             Error::BackupPolicyNotFoundFault(inner) => inner.fmt(f),
             Error::CertificateNotFoundFault(inner) => inner.fmt(f),
-            Error::CustomAvailabilityZoneAlreadyExistsFault(inner) => inner.fmt(f),
             Error::CustomAvailabilityZoneNotFoundFault(inner) => inner.fmt(f),
-            Error::CustomAvailabilityZoneQuotaExceededFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionNotFoundFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionQuotaExceededFault(inner) => inner.fmt(f),
@@ -328,8 +314,6 @@ impl std::fmt::Display for Error {
             Error::GlobalClusterQuotaExceededFault(inner) => inner.fmt(f),
             Error::IamRoleMissingPermissionsFault(inner) => inner.fmt(f),
             Error::IamRoleNotFoundFault(inner) => inner.fmt(f),
-            Error::InstallationMediaAlreadyExistsFault(inner) => inner.fmt(f),
-            Error::InstallationMediaNotFoundFault(inner) => inner.fmt(f),
             Error::InstanceQuotaExceededFault(inner) => inner.fmt(f),
             Error::InsufficientAvailableIPsInSubnetFault(inner) => inner.fmt(f),
             Error::InsufficientDbClusterCapacityFault(inner) => inner.fmt(f),
@@ -705,25 +689,6 @@ where
                 }
                 crate::error::CopyOptionGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCustomAvailabilityZoneError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCustomAvailabilityZoneError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneAlreadyExistsFault(inner) => Error::CustomAvailabilityZoneAlreadyExistsFault(inner),
-                crate::error::CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault(inner) => Error::CustomAvailabilityZoneQuotaExceededFault(inner),
-                crate::error::CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
-                crate::error::CreateCustomAvailabilityZoneErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1220,24 +1185,6 @@ where
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomAvailabilityZoneError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomAvailabilityZoneError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault(inner) => Error::CustomAvailabilityZoneNotFoundFault(inner),
-                crate::error::DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
-                crate::error::DeleteCustomAvailabilityZoneErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            }
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomDBEngineVersionError, R>>
     for Error
 where
@@ -1557,27 +1504,6 @@ where
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstallationMediaError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteInstallationMediaError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteInstallationMediaErrorKind::InstallationMediaNotFoundFault(
-                    inner,
-                ) => Error::InstallationMediaNotFoundFault(inner),
-                crate::error::DeleteInstallationMediaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOptionGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1656,27 +1582,6 @@ where
                     Error::Unhandled(inner)
                 }
             },
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeCustomAvailabilityZonesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeCustomAvailabilityZonesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeCustomAvailabilityZonesErrorKind::CustomAvailabilityZoneNotFoundFault(inner) => Error::CustomAvailabilityZoneNotFoundFault(inner),
-                crate::error::DescribeCustomAvailabilityZonesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2259,23 +2164,6 @@ where
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInstallationMediaError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeInstallationMediaError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeInstallationMediaErrorKind::InstallationMediaNotFoundFault(inner) => Error::InstallationMediaNotFoundFault(inner),
-                crate::error::DescribeInstallationMediaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            }
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOptionGroupOptionsError, R>>
     for Error
 where
@@ -2525,24 +2413,6 @@ where
                     Error::Unhandled(inner)
                 }
             },
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportInstallationMediaError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ImportInstallationMediaError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ImportInstallationMediaErrorKind::CustomAvailabilityZoneNotFoundFault(inner) => Error::CustomAvailabilityZoneNotFoundFault(inner),
-                crate::error::ImportInstallationMediaErrorKind::InstallationMediaAlreadyExistsFault(inner) => Error::InstallationMediaAlreadyExistsFault(inner),
-                crate::error::ImportInstallationMediaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            }
             _ => Error::Unhandled(err.into()),
         }
     }

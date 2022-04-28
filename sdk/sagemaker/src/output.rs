@@ -2925,7 +2925,7 @@ pub struct ListTrainingJobsOutput {
     /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
     pub training_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::TrainingJobSummary>>,
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrainingJobsOutput {
@@ -2935,7 +2935,7 @@ impl ListTrainingJobsOutput {
     ) -> std::option::Option<&[crate::model::TrainingJobSummary]> {
         self.training_job_summaries.as_deref()
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2978,12 +2978,12 @@ pub mod list_training_jobs_output {
             self.training_job_summaries = input;
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3010,7 +3010,7 @@ impl ListTrainingJobsOutput {
 pub struct ListTagsOutput {
     /// <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
+    /// <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -3018,7 +3018,7 @@ impl ListTagsOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
+    /// <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3060,12 +3060,12 @@ pub mod list_tags_output {
             self.tags = input;
             self
         }
-        /// <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
+        /// <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
+        /// <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3780,14 +3780,14 @@ impl ListPipelineExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotebookInstancesOutput {
-    /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
+    /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
     pub notebook_instances:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceSummary>>,
 }
 impl ListNotebookInstancesOutput {
-    /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
+    /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3817,12 +3817,12 @@ pub mod list_notebook_instances_output {
             std::option::Option<std::vec::Vec<crate::model::NotebookInstanceSummary>>,
     }
     impl Builder {
-        /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
+        /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
+        /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3866,14 +3866,14 @@ impl ListNotebookInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotebookInstanceLifecycleConfigsOutput {
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     pub notebook_instance_lifecycle_configs:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleConfigSummary>>,
 }
 impl ListNotebookInstanceLifecycleConfigsOutput {
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3907,12 +3907,12 @@ pub mod list_notebook_instance_lifecycle_configs_output {
         >,
     }
     impl Builder {
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
+        /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
+        /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4147,7 +4147,7 @@ impl ListMonitoringExecutionsOutput {
 pub struct ListModelsOutput {
     /// <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
     pub models: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>,
-    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListModelsOutput {
@@ -4155,7 +4155,7 @@ impl ListModelsOutput {
     pub fn models(&self) -> std::option::Option<&[crate::model::ModelSummary]> {
         self.models.as_deref()
     }
-    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4197,12 +4197,12 @@ pub mod list_models_output {
             self.models = input;
             self
         }
-        /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
+        /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
+        /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4319,7 +4319,7 @@ pub struct ListModelPackagesOutput {
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
     pub model_package_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ModelPackageSummary>>,
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListModelPackagesOutput {
@@ -4329,7 +4329,7 @@ impl ListModelPackagesOutput {
     ) -> std::option::Option<&[crate::model::ModelPackageSummary]> {
         self.model_package_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4378,12 +4378,12 @@ pub mod list_model_packages_output {
             self.model_package_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4856,7 +4856,7 @@ pub struct ListLabelingJobsForWorkteamOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     pub labeling_job_summary_list:
         std::option::Option<std::vec::Vec<crate::model::LabelingJobForWorkteamSummary>>,
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLabelingJobsForWorkteamOutput {
@@ -4866,7 +4866,7 @@ impl ListLabelingJobsForWorkteamOutput {
     ) -> std::option::Option<&[crate::model::LabelingJobForWorkteamSummary]> {
         self.labeling_job_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4912,12 +4912,12 @@ pub mod list_labeling_jobs_for_workteam_output {
             self.labeling_job_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4945,7 +4945,7 @@ pub struct ListLabelingJobsOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     pub labeling_job_summary_list:
         std::option::Option<std::vec::Vec<crate::model::LabelingJobSummary>>,
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLabelingJobsOutput {
@@ -4955,7 +4955,7 @@ impl ListLabelingJobsOutput {
     ) -> std::option::Option<&[crate::model::LabelingJobSummary]> {
         self.labeling_job_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5001,12 +5001,12 @@ pub mod list_labeling_jobs_output {
             self.labeling_job_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5727,7 +5727,7 @@ impl ListExperimentsOutput {
 pub struct ListEndpointsOutput {
     /// <p> An array or endpoint objects. </p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::EndpointSummary>>,
-    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointsOutput {
@@ -5735,7 +5735,7 @@ impl ListEndpointsOutput {
     pub fn endpoints(&self) -> std::option::Option<&[crate::model::EndpointSummary]> {
         self.endpoints.as_deref()
     }
-    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5777,12 +5777,12 @@ pub mod list_endpoints_output {
             self.endpoints = input;
             self
         }
-        /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+        /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+        /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5809,7 +5809,7 @@ impl ListEndpointsOutput {
 pub struct ListEndpointConfigsOutput {
     /// <p>An array of endpoint configurations.</p>
     pub endpoint_configs: std::option::Option<std::vec::Vec<crate::model::EndpointConfigSummary>>,
-    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointConfigsOutput {
@@ -5817,7 +5817,7 @@ impl ListEndpointConfigsOutput {
     pub fn endpoint_configs(&self) -> std::option::Option<&[crate::model::EndpointConfigSummary]> {
         self.endpoint_configs.as_deref()
     }
-    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5860,12 +5860,12 @@ pub mod list_endpoint_configs_output {
             self.endpoint_configs = input;
             self
         }
-        /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
+        /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
+        /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7114,7 +7114,7 @@ impl ListAppImageConfigsOutput {
 pub struct ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     pub algorithm_summary_list: std::option::Option<std::vec::Vec<crate::model::AlgorithmSummary>>,
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlgorithmsOutput {
@@ -7122,7 +7122,7 @@ impl ListAlgorithmsOutput {
     pub fn algorithm_summary_list(&self) -> std::option::Option<&[crate::model::AlgorithmSummary]> {
         self.algorithm_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7165,12 +7165,12 @@ pub mod list_algorithms_output {
             self.algorithm_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9551,14 +9551,14 @@ pub struct DescribeTrainingJobOutput {
     pub training_job_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
     pub tuning_job_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training job.</p>
     pub labeling_job_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts. </p>
     pub model_artifacts: std::option::Option<crate::model::ModelArtifacts>,
     /// <p>The status of the training job.</p>
-    /// <p>Amazon SageMaker provides the following training job statuses:</p>
+    /// <p>SageMaker provides the following training job statuses:</p>
     /// <ul>
     /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
     /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
@@ -9569,7 +9569,7 @@ pub struct DescribeTrainingJobOutput {
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
     /// <p> Provides detailed information about the state of the training job. For detailed information on the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-    /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+    /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
     /// InProgress
@@ -9638,20 +9638,20 @@ pub struct DescribeTrainingJobOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input channel. </p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts. </p>
+    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts. </p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training. </p>
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>A <code>VpcConfig</code> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
     /// <p>A timestamp that indicates when the training job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
     pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9660,7 +9660,7 @@ pub struct DescribeTrainingJobOutput {
         std::option::Option<std::vec::Vec<crate::model::SecondaryStatusTransition>>,
     /// <p>A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the training algorithm emitted to Amazon CloudWatch.</p>
     pub final_metric_data_list: std::option::Option<std::vec::Vec<crate::model::MetricData>>,
-    /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub enable_network_isolation: bool,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithms in distributed training.</p>
     pub enable_inter_container_traffic_encryption: bool,
@@ -9671,7 +9671,7 @@ pub struct DescribeTrainingJobOutput {
     /// <p>The training time in seconds.</p>
     pub training_time_in_seconds: std::option::Option<i32>,
     /// <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
-    /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker will bill you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+    /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
     /// <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
     pub billable_time_in_seconds: std::option::Option<i32>,
     /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
@@ -9720,7 +9720,7 @@ impl DescribeTrainingJobOutput {
     pub fn tuning_job_arn(&self) -> std::option::Option<&str> {
         self.tuning_job_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training job.</p>
     pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
         self.labeling_job_arn.as_deref()
     }
@@ -9733,7 +9733,7 @@ impl DescribeTrainingJobOutput {
         self.model_artifacts.as_ref()
     }
     /// <p>The status of the training job.</p>
-    /// <p>Amazon SageMaker provides the following training job statuses:</p>
+    /// <p>SageMaker provides the following training job statuses:</p>
     /// <ul>
     /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
     /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
@@ -9746,7 +9746,7 @@ impl DescribeTrainingJobOutput {
         self.training_job_status.as_ref()
     }
     /// <p> Provides detailed information about the state of the training job. For detailed information on the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-    /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+    /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
     /// InProgress
@@ -9831,7 +9831,7 @@ impl DescribeTrainingJobOutput {
     pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.input_data_config.as_deref()
     }
-    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts. </p>
+    /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts. </p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -9843,8 +9843,8 @@ impl DescribeTrainingJobOutput {
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
         self.stopping_condition.as_ref()
     }
@@ -9856,7 +9856,7 @@ impl DescribeTrainingJobOutput {
     pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
-    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
@@ -9874,7 +9874,7 @@ impl DescribeTrainingJobOutput {
     pub fn final_metric_data_list(&self) -> std::option::Option<&[crate::model::MetricData]> {
         self.final_metric_data_list.as_deref()
     }
-    /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub fn enable_network_isolation(&self) -> bool {
         self.enable_network_isolation
     }
@@ -9895,7 +9895,7 @@ impl DescribeTrainingJobOutput {
         self.training_time_in_seconds
     }
     /// <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
-    /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker will bill you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+    /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
     /// <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
     pub fn billable_time_in_seconds(&self) -> std::option::Option<i32> {
         self.billable_time_in_seconds
@@ -10129,12 +10129,12 @@ pub mod describe_training_job_output {
             self.tuning_job_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training job.</p>
         pub fn labeling_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.labeling_job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training job.</p>
         pub fn set_labeling_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10169,7 +10169,7 @@ pub mod describe_training_job_output {
             self
         }
         /// <p>The status of the training job.</p>
-        /// <p>Amazon SageMaker provides the following training job statuses:</p>
+        /// <p>SageMaker provides the following training job statuses:</p>
         /// <ul>
         /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
         /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
@@ -10183,7 +10183,7 @@ pub mod describe_training_job_output {
             self
         }
         /// <p>The status of the training job.</p>
-        /// <p>Amazon SageMaker provides the following training job statuses:</p>
+        /// <p>SageMaker provides the following training job statuses:</p>
         /// <ul>
         /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
         /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
@@ -10200,7 +10200,7 @@ pub mod describe_training_job_output {
             self
         }
         /// <p> Provides detailed information about the state of the training job. For detailed information on the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-        /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+        /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
         /// <dl>
         /// <dt>
         /// InProgress
@@ -10262,7 +10262,7 @@ pub mod describe_training_job_output {
             self
         }
         /// <p> Provides detailed information about the state of the training job. For detailed information on the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>
-        /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
+        /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
         /// <dl>
         /// <dt>
         /// InProgress
@@ -10409,12 +10409,12 @@ pub mod describe_training_job_output {
             self.input_data_config = input;
             self
         }
-        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts. </p>
+        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts. </p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts. </p>
+        /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts. </p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -10448,14 +10448,14 @@ pub mod describe_training_job_output {
             self.vpc_config = input;
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.stopping_condition = Some(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -10489,12 +10489,12 @@ pub mod describe_training_job_output {
             self.training_start_time = input;
             self
         }
-        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
         pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.training_end_time = Some(input);
             self
         }
-        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+        /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
         pub fn set_training_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10556,12 +10556,12 @@ pub mod describe_training_job_output {
             self.final_metric_data_list = input;
             self
         }
-        /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn enable_network_isolation(mut self, input: bool) -> Self {
             self.enable_network_isolation = Some(input);
             self
         }
-        /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_network_isolation = input;
             self
@@ -10616,14 +10616,14 @@ pub mod describe_training_job_output {
             self
         }
         /// <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
-        /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker will bill you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+        /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
         /// <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
         pub fn billable_time_in_seconds(mut self, input: i32) -> Self {
             self.billable_time_in_seconds = Some(input);
             self
         }
         /// <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
-        /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker will bill you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+        /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
         /// <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
         pub fn set_billable_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.billable_time_in_seconds = input;
@@ -12888,7 +12888,7 @@ impl DescribeNotebookInstanceLifecycleConfigOutput {
 pub struct DescribeNotebookInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
     pub notebook_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon SageMaker notebook instance. </p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub notebook_instance_name: std::option::Option<std::string::String>,
     /// <p>The status of the notebook instance.</p>
     pub notebook_instance_status: std::option::Option<crate::model::NotebookInstanceStatus>,
@@ -12904,9 +12904,9 @@ pub struct DescribeNotebookInstanceOutput {
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance. </p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -12915,7 +12915,7 @@ pub struct DescribeNotebookInstanceOutput {
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
-    /// <p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services.</p>
+    /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
     pub direct_internet_access: std::option::Option<crate::model::DirectInternetAccess>,
     /// <p>The size, in GB, of the ML storage volume attached to the notebook instance.</p>
@@ -12923,9 +12923,9 @@ pub struct DescribeNotebookInstanceOutput {
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
     pub accelerator_types:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>>,
-    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub default_code_repository: std::option::Option<std::string::String>,
-    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub additional_code_repositories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
@@ -12939,7 +12939,7 @@ impl DescribeNotebookInstanceOutput {
     pub fn notebook_instance_arn(&self) -> std::option::Option<&str> {
         self.notebook_instance_arn.as_deref()
     }
-    /// <p>The name of the Amazon SageMaker notebook instance. </p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
         self.notebook_instance_name.as_deref()
     }
@@ -12973,11 +12973,11 @@ impl DescribeNotebookInstanceOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance. </p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
@@ -12994,7 +12994,7 @@ impl DescribeNotebookInstanceOutput {
     pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
-    /// <p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services.</p>
+    /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
     pub fn direct_internet_access(
         &self,
@@ -13011,11 +13011,11 @@ impl DescribeNotebookInstanceOutput {
     ) -> std::option::Option<&[crate::model::NotebookInstanceAcceleratorType]> {
         self.accelerator_types.as_deref()
     }
-    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn default_code_repository(&self) -> std::option::Option<&str> {
         self.default_code_repository.as_deref()
     }
-    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn additional_code_repositories(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_code_repositories.as_deref()
     }
@@ -13109,12 +13109,12 @@ pub mod describe_notebook_instance_output {
             self.notebook_instance_arn = input;
             self
         }
-        /// <p>The name of the Amazon SageMaker notebook instance. </p>
+        /// <p>The name of the SageMaker notebook instance. </p>
         pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.notebook_instance_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon SageMaker notebook instance. </p>
+        /// <p>The name of the SageMaker notebook instance. </p>
         pub fn set_notebook_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13213,22 +13213,22 @@ pub mod describe_notebook_instance_output {
             self.role_arn = input;
             self
         }
-        /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
+        /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
+        /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance. </p>
+        /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
         pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_interface_id = Some(input.into());
             self
         }
-        /// <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance. </p>
+        /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
         pub fn set_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13280,13 +13280,13 @@ pub mod describe_notebook_instance_output {
             self.notebook_instance_lifecycle_config_name = input;
             self
         }
-        /// <p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services.</p>
+        /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
         pub fn direct_internet_access(mut self, input: crate::model::DirectInternetAccess) -> Self {
             self.direct_internet_access = Some(input);
             self
         }
-        /// <p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services.</p>
+        /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
         pub fn set_direct_internet_access(
             mut self,
@@ -13329,12 +13329,12 @@ pub mod describe_notebook_instance_output {
             self.accelerator_types = input;
             self
         }
-        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_code_repository = Some(input.into());
             self
         }
-        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_default_code_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13346,7 +13346,7 @@ pub mod describe_notebook_instance_output {
         ///
         /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
         ///
-        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn additional_code_repositories(
             mut self,
             input: impl Into<std::string::String>,
@@ -13356,7 +13356,7 @@ pub mod describe_notebook_instance_output {
             self.additional_code_repositories = Some(v);
             self
         }
-        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_additional_code_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14265,7 +14265,7 @@ pub struct DescribeModelPackageOutput {
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>Metrics for the model.</p>
     pub model_metrics: std::option::Option<crate::model::ModelMetrics>,
-    /// <p>The last time the model package was modified.</p>
+    /// <p>The last time that the model package was modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
@@ -14360,7 +14360,7 @@ impl DescribeModelPackageOutput {
     pub fn model_metrics(&self) -> std::option::Option<&crate::model::ModelMetrics> {
         self.model_metrics.as_ref()
     }
-    /// <p>The last time the model package was modified.</p>
+    /// <p>The last time that the model package was modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -14700,12 +14700,12 @@ pub mod describe_model_package_output {
             self.model_metrics = input;
             self
         }
-        /// <p>The last time the model package was modified.</p>
+        /// <p>The last time that the model package was modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The last time the model package was modified.</p>
+        /// <p>The last time that the model package was modified.</p>
         pub fn set_last_modified_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -15505,7 +15505,7 @@ impl DescribeModelBiasJobDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelOutput {
-    /// <p>Name of the Amazon SageMaker model.</p>
+    /// <p>Name of the SageMaker model.</p>
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
     pub primary_container: std::option::Option<crate::model::ContainerDefinition>,
@@ -15525,7 +15525,7 @@ pub struct DescribeModelOutput {
     pub enable_network_isolation: bool,
 }
 impl DescribeModelOutput {
-    /// <p>Name of the Amazon SageMaker model.</p>
+    /// <p>Name of the SageMaker model.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -15601,12 +15601,12 @@ pub mod describe_model_output {
         pub(crate) enable_network_isolation: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Name of the Amazon SageMaker model.</p>
+        /// <p>Name of the SageMaker model.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>Name of the Amazon SageMaker model.</p>
+        /// <p>Name of the SageMaker model.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -15972,7 +15972,7 @@ pub struct DescribeLabelingJobOutput {
     pub input_config: std::option::Option<crate::model::LabelingJobInputConfig>,
     /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
     pub output_config: std::option::Option<crate::model::LabelingJobOutputConfig>,
-    /// <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+    /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
@@ -16053,7 +16053,7 @@ impl DescribeLabelingJobOutput {
     pub fn output_config(&self) -> std::option::Option<&crate::model::LabelingJobOutputConfig> {
         self.output_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+    /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -16307,12 +16307,12 @@ pub mod describe_labeling_job_output {
             self.output_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+        /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+        /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -18729,7 +18729,7 @@ impl DescribeExperimentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointConfigOutput {
-    /// <p>Name of the Amazon SageMaker endpoint configuration.</p>
+    /// <p>Name of the SageMaker endpoint configuration.</p>
     pub endpoint_config_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     pub endpoint_config_arn: std::option::Option<std::string::String>,
@@ -18745,7 +18745,7 @@ pub struct DescribeEndpointConfigOutput {
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
 impl DescribeEndpointConfigOutput {
-    /// <p>Name of the Amazon SageMaker endpoint configuration.</p>
+    /// <p>Name of the SageMaker endpoint configuration.</p>
     pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
         self.endpoint_config_name.as_deref()
     }
@@ -18805,12 +18805,12 @@ pub mod describe_endpoint_config_output {
         pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
     }
     impl Builder {
-        /// <p>Name of the Amazon SageMaker endpoint configuration.</p>
+        /// <p>Name of the SageMaker endpoint configuration.</p>
         pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_config_name = Some(input.into());
             self
         }
-        /// <p>Name of the Amazon SageMaker endpoint configuration.</p>
+        /// <p>Name of the SageMaker endpoint configuration.</p>
         pub fn set_endpoint_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23052,7 +23052,7 @@ pub struct DescribeAlgorithmOutput {
     pub training_specification: std::option::Option<crate::model::TrainingSpecification>,
     /// <p>Details about inference jobs that the algorithm runs.</p>
     pub inference_specification: std::option::Option<crate::model::InferenceSpecification>,
-    /// <p>Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+    /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
     pub validation_specification:
         std::option::Option<crate::model::AlgorithmValidationSpecification>,
     /// <p>The current status of the algorithm.</p>
@@ -23093,7 +23093,7 @@ impl DescribeAlgorithmOutput {
     ) -> std::option::Option<&crate::model::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
-    /// <p>Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+    /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
     pub fn validation_specification(
         &self,
     ) -> std::option::Option<&crate::model::AlgorithmValidationSpecification> {
@@ -23241,7 +23241,7 @@ pub mod describe_algorithm_output {
             self.inference_specification = input;
             self
         }
-        /// <p>Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+        /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
         pub fn validation_specification(
             mut self,
             input: crate::model::AlgorithmValidationSpecification,
@@ -23249,7 +23249,7 @@ pub mod describe_algorithm_output {
             self.validation_specification = Some(input);
             self
         }
-        /// <p>Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+        /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
         pub fn set_validation_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmValidationSpecification>,
@@ -26292,11 +26292,11 @@ impl CreateModelBiasJobDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelOutput {
-    /// <p>The ARN of the model created in Amazon SageMaker.</p>
+    /// <p>The ARN of the model created in SageMaker.</p>
     pub model_arn: std::option::Option<std::string::String>,
 }
 impl CreateModelOutput {
-    /// <p>The ARN of the model created in Amazon SageMaker.</p>
+    /// <p>The ARN of the model created in SageMaker.</p>
     pub fn model_arn(&self) -> std::option::Option<&str> {
         self.model_arn.as_deref()
     }
@@ -26317,12 +26317,12 @@ pub mod create_model_output {
         pub(crate) model_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the model created in Amazon SageMaker.</p>
+        /// <p>The ARN of the model created in SageMaker.</p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the model created in Amazon SageMaker.</p>
+        /// <p>The ARN of the model created in SageMaker.</p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
@@ -26568,11 +26568,11 @@ impl CreateImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHyperParameterTuningJobOutput {
-    /// <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
     pub hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateHyperParameterTuningJobOutput {
-    /// <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
     pub fn hyper_parameter_tuning_job_arn(&self) -> std::option::Option<&str> {
         self.hyper_parameter_tuning_job_arn.as_deref()
     }
@@ -26596,7 +26596,7 @@ pub mod create_hyper_parameter_tuning_job_output {
         pub(crate) hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
+        /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
         pub fn hyper_parameter_tuning_job_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -26604,7 +26604,7 @@ pub mod create_hyper_parameter_tuning_job_output {
             self.hyper_parameter_tuning_job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
+        /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
         pub fn set_hyper_parameter_tuning_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27897,11 +27897,11 @@ impl AssociateTrialComponentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsOutput {
-    /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
+    /// <p>A list of tags associated with the SageMaker resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsOutput {
-    /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
+    /// <p>A list of tags associated with the SageMaker resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -27926,14 +27926,14 @@ pub mod add_tags_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
+        /// <p>A list of tags associated with the SageMaker resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
+        /// <p>A list of tags associated with the SageMaker resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

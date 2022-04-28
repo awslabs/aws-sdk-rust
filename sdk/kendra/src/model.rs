@@ -2454,6 +2454,8 @@ pub struct DataSourceConfiguration {
     pub slack_configuration: std::option::Option<crate::model::SlackConfiguration>,
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
     pub box_configuration: std::option::Option<crate::model::BoxConfiguration>,
+    /// <p>Provides the configuration information to connect to Quip as your data source.</p>
+    pub quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2528,6 +2530,10 @@ impl DataSourceConfiguration {
     pub fn box_configuration(&self) -> std::option::Option<&crate::model::BoxConfiguration> {
         self.box_configuration.as_ref()
     }
+    /// <p>Provides the configuration information to connect to Quip as your data source.</p>
+    pub fn quip_configuration(&self) -> std::option::Option<&crate::model::QuipConfiguration> {
+        self.quip_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2548,6 +2554,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
         formatter.field("fsx_configuration", &self.fsx_configuration);
         formatter.field("slack_configuration", &self.slack_configuration);
         formatter.field("box_configuration", &self.box_configuration);
+        formatter.field("quip_configuration", &self.quip_configuration);
         formatter.finish()
     }
 }
@@ -2578,6 +2585,7 @@ pub mod data_source_configuration {
         pub(crate) fsx_configuration: std::option::Option<crate::model::FsxConfiguration>,
         pub(crate) slack_configuration: std::option::Option<crate::model::SlackConfiguration>,
         pub(crate) box_configuration: std::option::Option<crate::model::BoxConfiguration>,
+        pub(crate) quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
     }
     impl Builder {
         /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2776,6 +2784,19 @@ pub mod data_source_configuration {
             self.box_configuration = input;
             self
         }
+        /// <p>Provides the configuration information to connect to Quip as your data source.</p>
+        pub fn quip_configuration(mut self, input: crate::model::QuipConfiguration) -> Self {
+            self.quip_configuration = Some(input);
+            self
+        }
+        /// <p>Provides the configuration information to connect to Quip as your data source.</p>
+        pub fn set_quip_configuration(
+            mut self,
+            input: std::option::Option<crate::model::QuipConfiguration>,
+        ) -> Self {
+            self.quip_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
@@ -2792,6 +2813,7 @@ pub mod data_source_configuration {
                 fsx_configuration: self.fsx_configuration,
                 slack_configuration: self.slack_configuration,
                 box_configuration: self.box_configuration,
+                quip_configuration: self.quip_configuration,
             }
         }
     }
@@ -2800,6 +2822,560 @@ impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to Quip as your data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QuipConfiguration {
+    /// <p>The configuration information to connect to your Quip data source domain.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+    /// </ul>
+    pub secret_arn: std::option::Option<std::string::String>,
+    /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+    pub crawl_file_comments: bool,
+    /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+    pub crawl_chat_rooms: bool,
+    /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+    pub crawl_attachments: bool,
+    /// <p>The identifier of the Quip folder IDs to index.</p>
+    pub folder_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+    pub thread_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+    pub message_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+    pub attachment_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+}
+impl QuipConfiguration {
+    /// <p>The configuration information to connect to your Quip data source domain.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+    /// </ul>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+    pub fn crawl_file_comments(&self) -> bool {
+        self.crawl_file_comments
+    }
+    /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+    pub fn crawl_chat_rooms(&self) -> bool {
+        self.crawl_chat_rooms
+    }
+    /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+    pub fn crawl_attachments(&self) -> bool {
+        self.crawl_attachments
+    }
+    /// <p>The identifier of the Quip folder IDs to index.</p>
+    pub fn folder_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.folder_ids.as_deref()
+    }
+    /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+    pub fn thread_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.thread_field_mappings.as_deref()
+    }
+    /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+    pub fn message_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.message_field_mappings.as_deref()
+    }
+    /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+    pub fn attachment_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.attachment_field_mappings.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_patterns.as_deref()
+    }
+    /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for QuipConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QuipConfiguration");
+        formatter.field("domain", &self.domain);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("crawl_file_comments", &self.crawl_file_comments);
+        formatter.field("crawl_chat_rooms", &self.crawl_chat_rooms);
+        formatter.field("crawl_attachments", &self.crawl_attachments);
+        formatter.field("folder_ids", &self.folder_ids);
+        formatter.field("thread_field_mappings", &self.thread_field_mappings);
+        formatter.field("message_field_mappings", &self.message_field_mappings);
+        formatter.field("attachment_field_mappings", &self.attachment_field_mappings);
+        formatter.field("inclusion_patterns", &self.inclusion_patterns);
+        formatter.field("exclusion_patterns", &self.exclusion_patterns);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.finish()
+    }
+}
+/// See [`QuipConfiguration`](crate::model::QuipConfiguration)
+pub mod quip_configuration {
+    /// A builder for [`QuipConfiguration`](crate::model::QuipConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) secret_arn: std::option::Option<std::string::String>,
+        pub(crate) crawl_file_comments: std::option::Option<bool>,
+        pub(crate) crawl_chat_rooms: std::option::Option<bool>,
+        pub(crate) crawl_attachments: std::option::Option<bool>,
+        pub(crate) folder_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) thread_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) message_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) attachment_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+    }
+    impl Builder {
+        /// <p>The configuration information to connect to your Quip data source domain.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The configuration information to connect to your Quip data source domain.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
+        /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+        /// </ul>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
+        /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+        /// </ul>
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
+            self
+        }
+        /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+        pub fn crawl_file_comments(mut self, input: bool) -> Self {
+            self.crawl_file_comments = Some(input);
+            self
+        }
+        /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+        pub fn set_crawl_file_comments(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_file_comments = input;
+            self
+        }
+        /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+        pub fn crawl_chat_rooms(mut self, input: bool) -> Self {
+            self.crawl_chat_rooms = Some(input);
+            self
+        }
+        /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+        pub fn set_crawl_chat_rooms(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_chat_rooms = input;
+            self
+        }
+        /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+        pub fn crawl_attachments(mut self, input: bool) -> Self {
+            self.crawl_attachments = Some(input);
+            self
+        }
+        /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+        pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_attachments = input;
+            self
+        }
+        /// Appends an item to `folder_ids`.
+        ///
+        /// To override the contents of this collection use [`set_folder_ids`](Self::set_folder_ids).
+        ///
+        /// <p>The identifier of the Quip folder IDs to index.</p>
+        pub fn folder_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.folder_ids.unwrap_or_default();
+            v.push(input.into());
+            self.folder_ids = Some(v);
+            self
+        }
+        /// <p>The identifier of the Quip folder IDs to index.</p>
+        pub fn set_folder_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.folder_ids = input;
+            self
+        }
+        /// Appends an item to `thread_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_thread_field_mappings`](Self::set_thread_field_mappings).
+        ///
+        /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+        pub fn thread_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.thread_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.thread_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+        pub fn set_thread_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.thread_field_mappings = input;
+            self
+        }
+        /// Appends an item to `message_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_message_field_mappings`](Self::set_message_field_mappings).
+        ///
+        /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+        pub fn message_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.message_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.message_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+        pub fn set_message_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.message_field_mappings = input;
+            self
+        }
+        /// Appends an item to `attachment_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_attachment_field_mappings`](Self::set_attachment_field_mappings).
+        ///
+        /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+        pub fn attachment_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.attachment_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.attachment_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+        pub fn set_attachment_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.attachment_field_mappings = input;
+            self
+        }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+        pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+        pub fn set_inclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+        pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+        pub fn set_exclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_patterns = input;
+            self
+        }
+        /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QuipConfiguration`](crate::model::QuipConfiguration)
+        pub fn build(self) -> crate::model::QuipConfiguration {
+            crate::model::QuipConfiguration {
+                domain: self.domain,
+                secret_arn: self.secret_arn,
+                crawl_file_comments: self.crawl_file_comments.unwrap_or_default(),
+                crawl_chat_rooms: self.crawl_chat_rooms.unwrap_or_default(),
+                crawl_attachments: self.crawl_attachments.unwrap_or_default(),
+                folder_ids: self.folder_ids,
+                thread_field_mappings: self.thread_field_mappings,
+                message_field_mappings: self.message_field_mappings,
+                attachment_field_mappings: self.attachment_field_mappings,
+                inclusion_patterns: self.inclusion_patterns,
+                exclusion_patterns: self.exclusion_patterns,
+                vpc_configuration: self.vpc_configuration,
+            }
+        }
+    }
+}
+impl QuipConfiguration {
+    /// Creates a new builder-style object to manufacture [`QuipConfiguration`](crate::model::QuipConfiguration)
+    pub fn builder() -> crate::model::quip_configuration::Builder {
+        crate::model::quip_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceVpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+pub mod data_source_vpc_configuration {
+    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
+            crate::model::DataSourceVpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
+/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub data_source_field_name: std::option::Option<std::string::String>,
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub date_field_format: std::option::Option<std::string::String>,
+    /// <p>The name of the field in the index.</p>
+    pub index_field_name: std::option::Option<std::string::String>,
+}
+impl DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
+        self.data_source_field_name.as_deref()
+    }
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub fn date_field_format(&self) -> std::option::Option<&str> {
+        self.date_field_format.as_deref()
+    }
+    /// <p>The name of the field in the index.</p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceToIndexFieldMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
+        formatter.field("data_source_field_name", &self.data_source_field_name);
+        formatter.field("date_field_format", &self.date_field_format);
+        formatter.field("index_field_name", &self.index_field_name);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+pub mod data_source_to_index_field_mapping {
+    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
+        pub(crate) date_field_format: std::option::Option<std::string::String>,
+        pub(crate) index_field_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn set_data_source_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_field_name = input;
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_field_format = Some(input.into());
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn set_date_field_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_field_format = input;
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn set_index_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_field_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
+            crate::model::DataSourceToIndexFieldMapping {
+                data_source_field_name: self.data_source_field_name,
+                date_field_format: self.date_field_format,
+                index_field_name: self.index_field_name,
+            }
+        }
+    }
+}
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
     }
 }
 
@@ -2843,7 +3419,7 @@ pub struct BoxConfiguration {
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl BoxConfiguration {
@@ -2911,7 +3487,7 @@ impl BoxConfiguration {
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
-    /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
@@ -3167,7 +3743,7 @@ pub mod box_configuration {
             self.exclusion_patterns = input;
             self
         }
-        /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn vpc_configuration(
             mut self,
             input: crate::model::DataSourceVpcConfiguration,
@@ -3175,7 +3751,7 @@ pub mod box_configuration {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -3207,198 +3783,6 @@ impl BoxConfiguration {
     /// Creates a new builder-style object to manufacture [`BoxConfiguration`](crate::model::BoxConfiguration)
     pub fn builder() -> crate::model::box_configuration::Builder {
         crate::model::box_configuration::Builder::default()
-    }
-}
-
-/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-pub mod data_source_vpc_configuration {
-    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
-            crate::model::DataSourceVpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
-    }
-}
-
-/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub data_source_field_name: std::option::Option<std::string::String>,
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub date_field_format: std::option::Option<std::string::String>,
-    /// <p>The name of the field in the index.</p>
-    pub index_field_name: std::option::Option<std::string::String>,
-}
-impl DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
-        self.data_source_field_name.as_deref()
-    }
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(&self) -> std::option::Option<&str> {
-        self.date_field_format.as_deref()
-    }
-    /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
-        self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-pub mod data_source_to_index_field_mapping {
-    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-        pub(crate) date_field_format: std::option::Option<std::string::String>,
-        pub(crate) index_field_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn set_data_source_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_field_name = input;
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.date_field_format = Some(input.into());
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn set_date_field_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_field_format = input;
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.index_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
-            crate::model::DataSourceToIndexFieldMapping {
-                data_source_field_name: self.data_source_field_name,
-                date_field_format: self.date_field_format,
-                index_field_name: self.index_field_name,
-            }
-        }
-    }
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
     }
 }
 
@@ -16713,6 +17097,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Onedrive,
     #[allow(missing_docs)] // documentation missing in model
+    Quip,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     #[allow(missing_docs)] // documentation missing in model
     Salesforce,
@@ -16739,6 +17125,7 @@ impl std::convert::From<&str> for DataSourceType {
             "FSX" => DataSourceType::Fsx,
             "GOOGLEDRIVE" => DataSourceType::Googledrive,
             "ONEDRIVE" => DataSourceType::Onedrive,
+            "QUIP" => DataSourceType::Quip,
             "S3" => DataSourceType::S3,
             "SALESFORCE" => DataSourceType::Salesforce,
             "SERVICENOW" => DataSourceType::Servicenow,
@@ -16768,6 +17155,7 @@ impl DataSourceType {
             DataSourceType::Fsx => "FSX",
             DataSourceType::Googledrive => "GOOGLEDRIVE",
             DataSourceType::Onedrive => "ONEDRIVE",
+            DataSourceType::Quip => "QUIP",
             DataSourceType::S3 => "S3",
             DataSourceType::Salesforce => "SALESFORCE",
             DataSourceType::Servicenow => "SERVICENOW",
@@ -16788,6 +17176,7 @@ impl DataSourceType {
             "FSX",
             "GOOGLEDRIVE",
             "ONEDRIVE",
+            "QUIP",
             "S3",
             "SALESFORCE",
             "SERVICENOW",

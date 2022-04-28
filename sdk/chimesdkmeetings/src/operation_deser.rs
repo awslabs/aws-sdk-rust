@@ -83,6 +83,23 @@ pub fn parse_batch_create_attendee_error(
                 tmp
             }),
         },
+        "ServiceFailureException" => crate::error::BatchCreateAttendeeError {
+            meta: generic,
+            kind: crate::error::BatchCreateAttendeeErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableException" => crate::error::BatchCreateAttendeeError {
             meta: generic,
             kind: crate::error::BatchCreateAttendeeErrorKind::ServiceUnavailableException({
@@ -105,6 +122,23 @@ pub fn parse_batch_create_attendee_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::BatchCreateAttendeeError {
+            meta: generic,
+            kind: crate::error::BatchCreateAttendeeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::BatchCreateAttendeeError {
             meta: generic,
             kind: crate::error::BatchCreateAttendeeErrorKind::UnauthorizedException({
@@ -114,6 +148,24 @@ pub fn parse_batch_create_attendee_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnprocessableEntityException" => crate::error::BatchCreateAttendeeError {
+            meta: generic,
+            kind: crate::error::BatchCreateAttendeeErrorKind::UnprocessableEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unprocessable_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateAttendeeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -227,6 +279,23 @@ pub fn parse_create_attendee_error(
                 tmp
             }),
         },
+        "ServiceFailureException" => crate::error::CreateAttendeeError {
+            meta: generic,
+            kind: crate::error::CreateAttendeeErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableException" => crate::error::CreateAttendeeError {
             meta: generic,
             kind: crate::error::CreateAttendeeErrorKind::ServiceUnavailableException({
@@ -241,6 +310,23 @@ pub fn parse_create_attendee_error(
                         crate::http_serde::deser_header_create_attendee_service_unavailable_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateAttendeeError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CreateAttendeeError {
+            meta: generic,
+            kind: crate::error::CreateAttendeeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAttendeeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -335,6 +421,23 @@ pub fn parse_create_meeting_error(
                 tmp
             }),
         },
+        "ForbiddenException" => crate::error::CreateMeetingError {
+            meta: generic,
+            kind: crate::error::CreateMeetingErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitExceededException" => crate::error::CreateMeetingError {
             meta: generic,
             kind: crate::error::CreateMeetingErrorKind::LimitExceededException({
@@ -344,6 +447,23 @@ pub fn parse_create_meeting_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::CreateMeetingError {
+            meta: generic,
+            kind: crate::error::CreateMeetingErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -366,6 +486,23 @@ pub fn parse_create_meeting_error(
                         crate::http_serde::deser_header_create_meeting_service_unavailable_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateMeetingError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CreateMeetingError {
+            meta: generic,
+            kind: crate::error::CreateMeetingErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -449,6 +586,23 @@ pub fn parse_create_meeting_with_attendees_error(
                 tmp
             }),
         },
+        "ForbiddenException" => crate::error::CreateMeetingWithAttendeesError {
+            meta: generic,
+            kind: crate::error::CreateMeetingWithAttendeesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingWithAttendeesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitExceededException" => crate::error::CreateMeetingWithAttendeesError {
             meta: generic,
             kind: crate::error::CreateMeetingWithAttendeesErrorKind::LimitExceededException({
@@ -458,6 +612,23 @@ pub fn parse_create_meeting_with_attendees_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingWithAttendeesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::CreateMeetingWithAttendeesError {
+            meta: generic,
+            kind: crate::error::CreateMeetingWithAttendeesErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingWithAttendeesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -480,6 +651,23 @@ pub fn parse_create_meeting_with_attendees_error(
                         crate::http_serde::deser_header_create_meeting_with_attendees_service_unavailable_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateMeetingWithAttendeesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CreateMeetingWithAttendeesError {
+            meta: generic,
+            kind: crate::error::CreateMeetingWithAttendeesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingWithAttendeesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -542,6 +730,23 @@ pub fn parse_delete_attendee_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BadRequestException" => crate::error::DeleteAttendeeError {
+            meta: generic,
+            kind: crate::error::DeleteAttendeeErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ForbiddenException" => crate::error::DeleteAttendeeError {
             meta: generic,
             kind: crate::error::DeleteAttendeeErrorKind::ForbiddenException({
@@ -568,6 +773,79 @@ pub fn parse_delete_attendee_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::DeleteAttendeeError {
+            meta: generic,
+            kind: crate::error::DeleteAttendeeErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::DeleteAttendeeError {
+            meta: generic,
+            kind: crate::error::DeleteAttendeeErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAttendeeError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_delete_attendee_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DeleteAttendeeError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteAttendeeError {
+            meta: generic,
+            kind: crate::error::DeleteAttendeeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::DeleteAttendeeError {
+            meta: generic,
+            kind: crate::error::DeleteAttendeeErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAttendeeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -631,6 +909,96 @@ pub fn parse_delete_meeting_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::DeleteMeetingError {
+            meta: generic,
+            kind: crate::error::DeleteMeetingErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::DeleteMeetingError {
+            meta: generic,
+            kind: crate::error::DeleteMeetingErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::DeleteMeetingError {
+            meta: generic,
+            kind: crate::error::DeleteMeetingErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMeetingError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_delete_meeting_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DeleteMeetingError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteMeetingError {
+            meta: generic,
+            kind: crate::error::DeleteMeetingErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::DeleteMeetingError {
+            meta: generic,
+            kind: crate::error::DeleteMeetingErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMeetingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -711,6 +1079,79 @@ pub fn parse_get_attendee_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::GetAttendeeError {
+            meta: generic,
+            kind: crate::error::GetAttendeeErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::GetAttendeeError {
+            meta: generic,
+            kind: crate::error::GetAttendeeErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAttendeeError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_attendee_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetAttendeeError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::GetAttendeeError {
+            meta: generic,
+            kind: crate::error::GetAttendeeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAttendeeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::GetAttendeeError {
+            meta: generic,
+            kind: crate::error::GetAttendeeErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAttendeeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -804,6 +1245,79 @@ pub fn parse_get_meeting_error(
                 tmp
             }),
         },
+        "ServiceFailureException" => crate::error::GetMeetingError {
+            meta: generic,
+            kind: crate::error::GetMeetingErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::GetMeetingError {
+            meta: generic,
+            kind: crate::error::GetMeetingErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMeetingError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_meeting_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetMeetingError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::GetMeetingError {
+            meta: generic,
+            kind: crate::error::GetMeetingErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::GetMeetingError {
+            meta: generic,
+            kind: crate::error::GetMeetingErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMeetingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetMeetingError::generic(generic),
     })
 }
@@ -881,6 +1395,79 @@ pub fn parse_list_attendees_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttendeesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::ListAttendeesError {
+            meta: generic,
+            kind: crate::error::ListAttendeesErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttendeesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::ListAttendeesError {
+            meta: generic,
+            kind: crate::error::ListAttendeesErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttendeesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_attendees_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListAttendeesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListAttendeesError {
+            meta: generic,
+            kind: crate::error::ListAttendeesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttendeesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::ListAttendeesError {
+            meta: generic,
+            kind: crate::error::ListAttendeesErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttendeesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -998,6 +1585,23 @@ pub fn parse_start_meeting_transcription_error(
                 tmp
             }),
         },
+        "ServiceFailureException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableException" => crate::error::StartMeetingTranscriptionError {
             meta: generic,
             kind: crate::error::StartMeetingTranscriptionErrorKind::ServiceUnavailableException({
@@ -1012,6 +1616,23 @@ pub fn parse_start_meeting_transcription_error(
                         crate::http_serde::deser_header_start_meeting_transcription_service_unavailable_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::StartMeetingTranscriptionError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1145,6 +1766,23 @@ pub fn parse_stop_meeting_transcription_error(
                 tmp
             }),
         },
+        "ServiceFailureException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableException" => crate::error::StopMeetingTranscriptionError {
             meta: generic,
             kind: crate::error::StopMeetingTranscriptionErrorKind::ServiceUnavailableException({
@@ -1159,6 +1797,23 @@ pub fn parse_stop_meeting_transcription_error(
                         crate::http_serde::deser_header_stop_meeting_transcription_service_unavailable_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::StopMeetingTranscriptionError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

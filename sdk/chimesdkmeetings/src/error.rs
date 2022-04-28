@@ -20,10 +20,16 @@ pub enum BatchCreateAttendeeErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
+    /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -34,8 +40,11 @@ impl std::fmt::Display for BatchCreateAttendeeError {
             BatchCreateAttendeeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             BatchCreateAttendeeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             BatchCreateAttendeeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchCreateAttendeeErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             BatchCreateAttendeeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            BatchCreateAttendeeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             BatchCreateAttendeeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            BatchCreateAttendeeErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             BatchCreateAttendeeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -118,6 +127,13 @@ impl BatchCreateAttendeeError {
             BatchCreateAttendeeErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateAttendeeErrorKind::ServiceFailureException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -125,11 +141,25 @@ impl BatchCreateAttendeeError {
             BatchCreateAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateAttendeeErrorKind::ThrottlingException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::UnprocessableEntityException`.
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateAttendeeErrorKind::UnprocessableEntityException(_)
         )
     }
 }
@@ -140,8 +170,11 @@ impl std::error::Error for BatchCreateAttendeeError {
             BatchCreateAttendeeErrorKind::ForbiddenException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::LimitExceededException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchCreateAttendeeErrorKind::ServiceFailureException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            BatchCreateAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            BatchCreateAttendeeErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -168,8 +201,12 @@ pub enum CreateAttendeeErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
@@ -184,7 +221,9 @@ impl std::fmt::Display for CreateAttendeeError {
             CreateAttendeeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             CreateAttendeeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateAttendeeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateAttendeeErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateAttendeeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateAttendeeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateAttendeeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateAttendeeErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateAttendeeErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -260,12 +299,23 @@ impl CreateAttendeeError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAttendeeErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAttendeeErrorKind::ServiceFailureException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAttendeeErrorKind::ServiceUnavailableException(_)
         )
+    }
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateAttendeeErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateAttendeeErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
@@ -289,7 +339,9 @@ impl std::error::Error for CreateAttendeeError {
             CreateAttendeeErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateAttendeeErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -312,10 +364,16 @@ pub struct CreateMeetingError {
 pub enum CreateMeetingErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -325,8 +383,11 @@ impl std::fmt::Display for CreateMeetingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateMeetingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMeetingErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             CreateMeetingErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateMeetingErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateMeetingErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateMeetingErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateMeetingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateMeetingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -386,11 +447,22 @@ impl CreateMeetingError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateMeetingErrorKind::BadRequestException(_))
     }
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateMeetingErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `CreateMeetingErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMeetingErrorKind::ServiceFailureException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateMeetingErrorKind::ServiceUnavailableException`.
@@ -399,6 +471,10 @@ impl CreateMeetingError {
             &self.kind,
             CreateMeetingErrorKind::ServiceUnavailableException(_)
         )
+    }
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateMeetingErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateMeetingErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
@@ -409,8 +485,11 @@ impl std::error::Error for CreateMeetingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateMeetingErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMeetingErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateMeetingErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateMeetingErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateMeetingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateMeetingErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMeetingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateMeetingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -432,10 +511,16 @@ pub struct CreateMeetingWithAttendeesError {
 pub enum CreateMeetingWithAttendeesErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -445,10 +530,13 @@ impl std::fmt::Display for CreateMeetingWithAttendeesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateMeetingWithAttendeesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMeetingWithAttendeesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             CreateMeetingWithAttendeesErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateMeetingWithAttendeesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
+            CreateMeetingWithAttendeesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateMeetingWithAttendeesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateMeetingWithAttendeesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -511,6 +599,13 @@ impl CreateMeetingWithAttendeesError {
             CreateMeetingWithAttendeesErrorKind::BadRequestException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMeetingWithAttendeesErrorKind::ForbiddenException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -518,11 +613,25 @@ impl CreateMeetingWithAttendeesError {
             CreateMeetingWithAttendeesErrorKind::LimitExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMeetingWithAttendeesErrorKind::ServiceFailureException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMeetingWithAttendeesErrorKind::ThrottlingException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::UnauthorizedException`.
@@ -537,10 +646,13 @@ impl std::error::Error for CreateMeetingWithAttendeesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateMeetingWithAttendeesErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMeetingWithAttendeesErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateMeetingWithAttendeesErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateMeetingWithAttendeesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
+            CreateMeetingWithAttendeesErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMeetingWithAttendeesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateMeetingWithAttendeesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -560,18 +672,33 @@ pub struct DeleteAttendeeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAttendeeErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAttendeeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteAttendeeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             DeleteAttendeeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             DeleteAttendeeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteAttendeeErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DeleteAttendeeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteAttendeeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteAttendeeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteAttendeeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -626,6 +753,10 @@ impl DeleteAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAttendeeErrorKind::BadRequestException(_))
+    }
     /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteAttendeeErrorKind::ForbiddenException(_))
@@ -634,12 +765,42 @@ impl DeleteAttendeeError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAttendeeErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAttendeeErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAttendeeErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAttendeeErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAttendeeErrorKind::UnauthorizedException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteAttendeeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteAttendeeErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteAttendeeErrorKind::ForbiddenException(_inner) => Some(_inner),
             DeleteAttendeeErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteAttendeeErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteAttendeeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -662,6 +823,16 @@ pub enum DeleteMeetingErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -670,6 +841,11 @@ impl std::fmt::Display for DeleteMeetingError {
         match &self.kind {
             DeleteMeetingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             DeleteMeetingErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteMeetingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMeetingErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DeleteMeetingErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteMeetingErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteMeetingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteMeetingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -732,12 +908,43 @@ impl DeleteMeetingError {
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeetingErrorKind::ForbiddenException(_))
     }
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMeetingErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMeetingErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMeetingErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMeetingErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMeetingErrorKind::UnauthorizedException(_))
+    }
 }
 impl std::error::Error for DeleteMeetingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteMeetingErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteMeetingErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteMeetingErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMeetingErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteMeetingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteMeetingErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteMeetingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteMeetingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -762,6 +969,14 @@ pub enum GetAttendeeErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -771,6 +986,10 @@ impl std::fmt::Display for GetAttendeeError {
             GetAttendeeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetAttendeeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             GetAttendeeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetAttendeeErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            GetAttendeeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetAttendeeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetAttendeeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetAttendeeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -837,6 +1056,25 @@ impl GetAttendeeError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAttendeeErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetAttendeeErrorKind::ServiceFailureException(_))
+    }
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAttendeeErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetAttendeeErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetAttendeeErrorKind::UnauthorizedException(_))
+    }
 }
 impl std::error::Error for GetAttendeeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -844,6 +1082,10 @@ impl std::error::Error for GetAttendeeError {
             GetAttendeeErrorKind::BadRequestException(_inner) => Some(_inner),
             GetAttendeeErrorKind::ForbiddenException(_inner) => Some(_inner),
             GetAttendeeErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetAttendeeErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            GetAttendeeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -868,6 +1110,14 @@ pub enum GetMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -877,6 +1127,10 @@ impl std::fmt::Display for GetMeetingError {
             GetMeetingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetMeetingErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             GetMeetingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetMeetingErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            GetMeetingErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetMeetingErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetMeetingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetMeetingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -943,6 +1197,25 @@ impl GetMeetingError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetMeetingErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetMeetingErrorKind::ServiceFailureException(_))
+    }
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMeetingErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetMeetingErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetMeetingErrorKind::UnauthorizedException(_))
+    }
 }
 impl std::error::Error for GetMeetingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -950,6 +1223,10 @@ impl std::error::Error for GetMeetingError {
             GetMeetingErrorKind::BadRequestException(_inner) => Some(_inner),
             GetMeetingErrorKind::ForbiddenException(_inner) => Some(_inner),
             GetMeetingErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetMeetingErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            GetMeetingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetMeetingErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetMeetingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetMeetingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -974,6 +1251,14 @@ pub enum ListAttendeesErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -983,6 +1268,10 @@ impl std::fmt::Display for ListAttendeesError {
             ListAttendeesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             ListAttendeesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ListAttendeesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListAttendeesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            ListAttendeesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListAttendeesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListAttendeesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             ListAttendeesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1049,6 +1338,28 @@ impl ListAttendeesError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAttendeesErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttendeesErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttendeesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListAttendeesErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, ListAttendeesErrorKind::UnauthorizedException(_))
+    }
 }
 impl std::error::Error for ListAttendeesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1056,6 +1367,10 @@ impl std::error::Error for ListAttendeesError {
             ListAttendeesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListAttendeesErrorKind::ForbiddenException(_inner) => Some(_inner),
             ListAttendeesErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListAttendeesErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            ListAttendeesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListAttendeesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListAttendeesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ListAttendeesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1082,8 +1397,12 @@ pub enum StartMeetingTranscriptionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
@@ -1098,9 +1417,11 @@ impl std::fmt::Display for StartMeetingTranscriptionError {
             StartMeetingTranscriptionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             StartMeetingTranscriptionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             StartMeetingTranscriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StartMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
+            StartMeetingTranscriptionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             StartMeetingTranscriptionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             StartMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
                 _inner.fmt(f)
@@ -1187,11 +1508,25 @@ impl StartMeetingTranscriptionError {
             StartMeetingTranscriptionErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ServiceFailureException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ThrottlingException(_)
         )
     }
     /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::UnauthorizedException`.
@@ -1216,7 +1551,9 @@ impl std::error::Error for StartMeetingTranscriptionError {
             StartMeetingTranscriptionErrorKind::ForbiddenException(_inner) => Some(_inner),
             StartMeetingTranscriptionErrorKind::LimitExceededException(_inner) => Some(_inner),
             StartMeetingTranscriptionErrorKind::NotFoundException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => Some(_inner),
             StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartMeetingTranscriptionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             StartMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
@@ -1245,8 +1582,12 @@ pub enum StopMeetingTranscriptionErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
@@ -1260,7 +1601,9 @@ impl std::fmt::Display for StopMeetingTranscriptionError {
             StopMeetingTranscriptionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             StopMeetingTranscriptionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             StopMeetingTranscriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             StopMeetingTranscriptionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
                 _inner.fmt(f)
@@ -1340,11 +1683,25 @@ impl StopMeetingTranscriptionError {
             StopMeetingTranscriptionErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::ServiceFailureException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::ThrottlingException(_)
         )
     }
     /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::UnauthorizedException`.
@@ -1368,7 +1725,9 @@ impl std::error::Error for StopMeetingTranscriptionError {
             StopMeetingTranscriptionErrorKind::BadRequestException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::ForbiddenException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::NotFoundException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1584,6 +1943,110 @@ impl UnauthorizedException {
     }
 }
 
+/// <p>The number of customer requests exceeds the request rate limit.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
+    }
+}
+
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1630,8 +2093,8 @@ impl ServiceUnavailableException {
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -1710,6 +2173,110 @@ impl ServiceUnavailableException {
     }
 }
 
+/// <p>The service encountered an unexpected error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl ServiceFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceFailureException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceFailureException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+impl ServiceFailureException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceFailureException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceFailureException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceFailureException {}
+/// See [`ServiceFailureException`](crate::error::ServiceFailureException)
+pub mod service_failure_exception {
+    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException)
+        pub fn build(self) -> crate::error::ServiceFailureException {
+            crate::error::ServiceFailureException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl ServiceFailureException {
+    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException)
+    pub fn builder() -> crate::error::service_failure_exception::Builder {
+        crate::error::service_failure_exception::Builder::default()
+    }
+}
+
 /// <p>One or more of the resources in the request does not exist in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1749,8 +2316,8 @@ impl NotFoundException {
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -1853,8 +2420,8 @@ impl ForbiddenException {
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -1957,8 +2524,8 @@ impl BadRequestException {
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -2061,8 +2628,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }

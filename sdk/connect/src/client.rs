@@ -162,6 +162,20 @@ impl Client {
     pub fn associate_lex_bot(&self) -> fluent_builders::AssociateLexBot {
         fluent_builders::AssociateLexBot::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AssociatePhoneNumberContactFlow`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_phone_number_id): <p>A unique identifier for the phone number.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    /// - On success, responds with [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
+
+    /// - On failure, responds with [`SdkError<AssociatePhoneNumberContactFlowError>`](crate::error::AssociatePhoneNumberContactFlowError)
+    pub fn associate_phone_number_contact_flow(
+        &self,
+    ) -> fluent_builders::AssociatePhoneNumberContactFlow {
+        fluent_builders::AssociatePhoneNumberContactFlow::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`AssociateQueueQuickConnects`](crate::client::fluent_builders::AssociateQueueQuickConnects) operation.
     ///
     /// - The fluent builder is configurable:
@@ -198,6 +212,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<AssociateSecurityKeyError>`](crate::error::AssociateSecurityKeyError)
     pub fn associate_security_key(&self) -> fluent_builders::AssociateSecurityKey {
         fluent_builders::AssociateSecurityKey::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ClaimPhoneNumber`](crate::client::fluent_builders::ClaimPhoneNumber) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_phone_number): <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    ///   - [`phone_number_description(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::phone_number_description) / [`set_phone_number_description(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_phone_number_description): <p>The description of the phone number.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ClaimPhoneNumber::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput) with field(s):
+    ///   - [`phone_number_id(Option<String>)`](crate::output::ClaimPhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
+    ///   - [`phone_number_arn(Option<String>)`](crate::output::ClaimPhoneNumberOutput::phone_number_arn): <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    /// - On failure, responds with [`SdkError<ClaimPhoneNumberError>`](crate::error::ClaimPhoneNumberError)
+    pub fn claim_phone_number(&self) -> fluent_builders::ClaimPhoneNumber {
+        fluent_builders::ClaimPhoneNumber::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateAgentStatus`](crate::client::fluent_builders::CreateAgentStatus) operation.
     ///
@@ -639,6 +668,16 @@ impl Client {
     ) -> fluent_builders::DescribeInstanceStorageConfig {
         fluent_builders::DescribeInstanceStorageConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribePhoneNumber`](crate::client::fluent_builders::DescribePhoneNumber) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::DescribePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::DescribePhoneNumber::set_phone_number_id): <p>A unique identifier for the phone number.</p>
+    /// - On success, responds with [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput) with field(s):
+    ///   - [`claimed_phone_number_summary(Option<ClaimedPhoneNumberSummary>)`](crate::output::DescribePhoneNumberOutput::claimed_phone_number_summary): <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    /// - On failure, responds with [`SdkError<DescribePhoneNumberError>`](crate::error::DescribePhoneNumberError)
+    pub fn describe_phone_number(&self) -> fluent_builders::DescribePhoneNumber {
+        fluent_builders::DescribePhoneNumber::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeQueue`](crate::client::fluent_builders::DescribeQueue) operation.
     ///
     /// - The fluent builder is configurable:
@@ -787,6 +826,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<DisassociateLexBotError>`](crate::error::DisassociateLexBotError)
     pub fn disassociate_lex_bot(&self) -> fluent_builders::DisassociateLexBot {
         fluent_builders::DisassociateLexBot::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DisassociatePhoneNumberContactFlow`](crate::client::fluent_builders::DisassociatePhoneNumberContactFlow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberContactFlow::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberContactFlow::set_phone_number_id): <p>A unique identifier for the phone number.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociatePhoneNumberContactFlowError>`](crate::error::DisassociatePhoneNumberContactFlowError)
+    pub fn disassociate_phone_number_contact_flow(
+        &self,
+    ) -> fluent_builders::DisassociatePhoneNumberContactFlow {
+        fluent_builders::DisassociatePhoneNumberContactFlow::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DisassociateQueueQuickConnects`](crate::client::fluent_builders::DisassociateQueueQuickConnects) operation.
     ///
@@ -1104,6 +1156,23 @@ impl Client {
     pub fn list_phone_numbers(&self) -> fluent_builders::ListPhoneNumbers {
         fluent_builders::ListPhoneNumbers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListPhoneNumbersV2`](crate::client::fluent_builders::ListPhoneNumbersV2) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbersV2::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbersV2::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`phone_number_country_codes(Vec<PhoneNumberCountryCode>)`](crate::client::fluent_builders::ListPhoneNumbersV2::phone_number_country_codes) / [`set_phone_number_country_codes(Option<Vec<PhoneNumberCountryCode>>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_phone_number_country_codes): <p>The ISO country code.</p>
+    ///   - [`phone_number_types(Vec<PhoneNumberType>)`](crate::client::fluent_builders::ListPhoneNumbersV2::phone_number_types) / [`set_phone_number_types(Option<Vec<PhoneNumberType>>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_phone_number_types): <p>The type of phone number.</p>
+    ///   - [`phone_number_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::phone_number_prefix) / [`set_phone_number_prefix(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersV2::set_phone_number_prefix): <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    /// - On success, responds with [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumbersV2Output::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`list_phone_numbers_summary_list(Option<Vec<ListPhoneNumbersSummary>>)`](crate::output::ListPhoneNumbersV2Output::list_phone_numbers_summary_list): <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    /// - On failure, responds with [`SdkError<ListPhoneNumbersV2Error>`](crate::error::ListPhoneNumbersV2Error)
+    pub fn list_phone_numbers_v2(&self) -> fluent_builders::ListPhoneNumbersV2 {
+        fluent_builders::ListPhoneNumbersV2::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListPrompts`](crate::client::fluent_builders::ListPrompts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrompts::into_paginator).
     ///
@@ -1290,6 +1359,29 @@ impl Client {
     pub fn list_users(&self) -> fluent_builders::ListUsers {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutUserStatus`](crate::client::fluent_builders::PutUserStatus) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::PutUserStatus::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::PutUserStatus::set_user_id): <p>The identifier of the user.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::PutUserStatus::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::PutUserStatus::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`agent_status_id(impl Into<String>)`](crate::client::fluent_builders::PutUserStatus::agent_status_id) / [`set_agent_status_id(Option<String>)`](crate::client::fluent_builders::PutUserStatus::set_agent_status_id): <p>The identifier of the agent status.</p>
+    /// - On success, responds with [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
+
+    /// - On failure, responds with [`SdkError<PutUserStatusError>`](crate::error::PutUserStatusError)
+    pub fn put_user_status(&self) -> fluent_builders::PutUserStatus {
+        fluent_builders::PutUserStatus::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ReleasePhoneNumber`](crate::client::fluent_builders::ReleasePhoneNumber) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::set_phone_number_id): <p>A unique identifier for the phone number.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ReleasePhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
+
+    /// - On failure, responds with [`SdkError<ReleasePhoneNumberError>`](crate::error::ReleasePhoneNumberError)
+    pub fn release_phone_number(&self) -> fluent_builders::ReleasePhoneNumber {
+        fluent_builders::ReleasePhoneNumber::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ResumeContactRecording`](crate::client::fluent_builders::ResumeContactRecording) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1301,6 +1393,40 @@ impl Client {
     /// - On failure, responds with [`SdkError<ResumeContactRecordingError>`](crate::error::ResumeContactRecordingError)
     pub fn resume_contact_recording(&self) -> fluent_builders::ResumeContactRecording {
         fluent_builders::ResumeContactRecording::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SearchAvailablePhoneNumbers`](crate::client::fluent_builders::SearchAvailablePhoneNumbers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    ///   - [`phone_number_country_code(PhoneNumberCountryCode)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_country_code) / [`set_phone_number_country_code(Option<PhoneNumberCountryCode>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_country_code): <p>The ISO country code.</p>
+    ///   - [`phone_number_type(PhoneNumberType)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_type) / [`set_phone_number_type(Option<PhoneNumberType>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_type): <p>The type of phone number.</p>
+    ///   - [`phone_number_prefix(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_prefix) / [`set_phone_number_prefix(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_prefix): <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::SearchAvailablePhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`available_numbers_list(Option<Vec<AvailableNumberSummary>>)`](crate::output::SearchAvailablePhoneNumbersOutput::available_numbers_list): <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::error::SearchAvailablePhoneNumbersError)
+    pub fn search_available_phone_numbers(&self) -> fluent_builders::SearchAvailablePhoneNumbers {
+        fluent_builders::SearchAvailablePhoneNumbers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SearchUsers`](crate::client::fluent_builders::SearchUsers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchUsers::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SearchUsers::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SearchUsers::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchUsers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchUsers::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`search_filter(UserSearchFilter)`](crate::client::fluent_builders::SearchUsers::search_filter) / [`set_search_filter(Option<UserSearchFilter>)`](crate::client::fluent_builders::SearchUsers::set_search_filter): <p>Filters to be applied to search results.</p>
+    ///   - [`search_criteria(UserSearchCriteria)`](crate::client::fluent_builders::SearchUsers::search_criteria) / [`set_search_criteria(Option<UserSearchCriteria>)`](crate::client::fluent_builders::SearchUsers::set_search_criteria): <p>The search criteria to be used to return users.</p>
+    /// - On success, responds with [`SearchUsersOutput`](crate::output::SearchUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<UserSearchSummary>>)`](crate::output::SearchUsersOutput::users): <p>Information about the users.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::output::SearchUsersOutput::approximate_total_count): <p>The total number of users who matched your search query.</p>
+    /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::error::SearchUsersError)
+    pub fn search_users(&self) -> fluent_builders::SearchUsers {
+        fluent_builders::SearchUsers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchVocabularies`](crate::client::fluent_builders::SearchVocabularies) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchVocabularies::into_paginator).
@@ -1632,6 +1758,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateInstanceStorageConfigError>`](crate::error::UpdateInstanceStorageConfigError)
     pub fn update_instance_storage_config(&self) -> fluent_builders::UpdateInstanceStorageConfig {
         fluent_builders::UpdateInstanceStorageConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdatePhoneNumber`](crate::client::fluent_builders::UpdatePhoneNumber) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_phone_number_id): <p>A unique identifier for the phone number.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput) with field(s):
+    ///   - [`phone_number_id(Option<String>)`](crate::output::UpdatePhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
+    ///   - [`phone_number_arn(Option<String>)`](crate::output::UpdatePhoneNumberOutput::phone_number_arn): <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    /// - On failure, responds with [`SdkError<UpdatePhoneNumberError>`](crate::error::UpdatePhoneNumberError)
+    pub fn update_phone_number(&self) -> fluent_builders::UpdatePhoneNumber {
+        fluent_builders::UpdatePhoneNumber::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateQueueHoursOfOperation`](crate::client::fluent_builders::UpdateQueueHoursOfOperation) operation.
     ///
@@ -2310,6 +2449,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AssociatePhoneNumberContactFlow`.
+    ///
+    /// <p>Associates a contact flow with a phone number claimed to your Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociatePhoneNumberContactFlow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_phone_number_contact_flow_input::Builder,
+    }
+    impl AssociatePhoneNumberContactFlow {
+        /// Creates a new `AssociatePhoneNumberContactFlow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociatePhoneNumberContactFlowOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumberContactFlowError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `AssociateQueueQuickConnects`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -2535,6 +2753,115 @@ pub mod fluent_builders {
         /// <p>A valid security key in PEM format.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ClaimPhoneNumber`.
+    ///
+    /// <p>Claims an available phone number to your Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ClaimPhoneNumber {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::claim_phone_number_input::Builder,
+    }
+    impl ClaimPhoneNumber {
+        /// Creates a new `ClaimPhoneNumber`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ClaimPhoneNumberOutput,
+            aws_smithy_http::result::SdkError<crate::error::ClaimPhoneNumberError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
+            self
+        }
+        /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
+            self
+        }
+        /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
+            self
+        }
+        /// <p>The description of the phone number.</p>
+        pub fn phone_number_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_description(input.into());
+            self
+        }
+        /// <p>The description of the phone number.</p>
+        pub fn set_phone_number_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_description(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -5553,6 +5880,62 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribePhoneNumber`.
+    ///
+    /// <p>Gets details and status of a phone number that’s claimed to your Amazon Connect instance</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribePhoneNumber {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_phone_number_input::Builder,
+    }
+    impl DescribePhoneNumber {
+        /// Creates a new `DescribePhoneNumber`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribePhoneNumberOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribePhoneNumberError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeQueue`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -6420,6 +6803,74 @@ pub mod fluent_builders {
         /// <p>The Region in which the Amazon Lex bot has been created.</p>
         pub fn set_lex_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lex_region(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociatePhoneNumberContactFlow`.
+    ///
+    /// <p>Removes the contact flow association from a phone number claimed to your Amazon Connect instance, if a contact flow association exists.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociatePhoneNumberContactFlow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_phone_number_contact_flow_input::Builder,
+    }
+    impl DisassociatePhoneNumberContactFlow {
+        /// Creates a new `DisassociatePhoneNumberContactFlow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociatePhoneNumberContactFlowOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociatePhoneNumberContactFlowError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
             self
         }
     }
@@ -8971,6 +9422,136 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListPhoneNumbersV2`.
+    ///
+    /// <p>Lists phone numbers claimed to your Amazon Connect instance. </p>
+    /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListPhoneNumbersV2 {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_phone_numbers_v2_input::Builder,
+    }
+    impl ListPhoneNumbersV2 {
+        /// Creates a new `ListPhoneNumbersV2`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListPhoneNumbersV2Output,
+            aws_smithy_http::result::SdkError<crate::error::ListPhoneNumbersV2Error>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPhoneNumbersV2Paginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPhoneNumbersV2Paginator {
+            crate::paginator::ListPhoneNumbersV2Paginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Appends an item to `PhoneNumberCountryCodes`.
+        ///
+        /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
+        ///
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_codes(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            self.inner = self.inner.phone_number_country_codes(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_country_codes(input);
+            self
+        }
+        /// Appends an item to `PhoneNumberTypes`.
+        ///
+        /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
+        ///
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_types(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.inner = self.inner.phone_number_types(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_types(input);
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn phone_number_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_prefix(input.into());
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn set_phone_number_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_prefix(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListPrompts`.
     ///
     /// <p>Provides information about the prompts for the specified Amazon Connect instance.</p>
@@ -10064,6 +10645,149 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutUserStatus`.
+    ///
+    /// <p>Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact, this sets the agent's next status.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent status</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set your next status</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutUserStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_user_status_input::Builder,
+    }
+    impl PutUserStatus {
+        /// Creates a new `PutUserStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutUserStatusOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutUserStatusError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The identifier of the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input.into());
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn set_agent_status_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_status_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ReleasePhoneNumber`.
+    ///
+    /// <p>Releases a phone number previously claimed to an Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ReleasePhoneNumber {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::release_phone_number_input::Builder,
+    }
+    impl ReleasePhoneNumber {
+        /// Creates a new `ReleasePhoneNumber`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ReleasePhoneNumberOutput,
+            aws_smithy_http::result::SdkError<crate::error::ReleasePhoneNumberError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_id(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ResumeContactRecording`.
     ///
     /// <p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording the call.</p>
@@ -10138,6 +10862,232 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_initial_contact_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchAvailablePhoneNumbers`.
+    ///
+    /// <p>Searches for available phone numbers that you can claim to your Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchAvailablePhoneNumbers {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_available_phone_numbers_input::Builder,
+    }
+    impl SearchAvailablePhoneNumbers {
+        /// Creates a new `SearchAvailablePhoneNumbers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchAvailablePhoneNumbersOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchAvailablePhoneNumbersError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchAvailablePhoneNumbersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchAvailablePhoneNumbersPaginator {
+            crate::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_code(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            self.inner = self.inner.phone_number_country_code(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_code(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberCountryCode>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_country_code(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_type(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.inner = self.inner.phone_number_type(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_type(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberType>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_type(input);
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn phone_number_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_prefix(input.into());
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn set_phone_number_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_prefix(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchUsers`.
+    ///
+    /// <p>Searches users in an Amazon Connect instance, with optional filtering.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchUsers {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_users_input::Builder,
+    }
+    impl SearchUsers {
+        /// Creates a new `SearchUsers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchUsersOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchUsersError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchUsersPaginator {
+            crate::paginator::SearchUsersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::UserSearchFilter) -> Self {
+            self.inner = self.inner.search_filter(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::UserSearchFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_search_filter(input);
+            self
+        }
+        /// <p>The search criteria to be used to return users.</p>
+        pub fn search_criteria(mut self, input: crate::model::UserSearchCriteria) -> Self {
+            self.inner = self.inner.search_criteria(input);
+            self
+        }
+        /// <p>The search criteria to be used to return users.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::UserSearchCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_search_criteria(input);
             self
         }
     }
@@ -11270,7 +12220,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    /// <p>The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status, and hours of operation.</p>
+    /// <p>The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status, hours of operation, and phone number.</p>
     /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
@@ -12537,6 +13487,82 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::InstanceStorageConfig>,
         ) -> Self {
             self.inner = self.inner.set_storage_config(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdatePhoneNumber`.
+    ///
+    /// <p>Updates your claimed phone number from its current Amazon Connect instance to another Amazon Connect instance in the same Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdatePhoneNumber {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_phone_number_input::Builder,
+    }
+    impl UpdatePhoneNumber {
+        /// Creates a new `UpdatePhoneNumber`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdatePhoneNumberOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_number_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }

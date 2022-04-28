@@ -2668,22 +2668,26 @@ pub mod get_property_value_history_input {
             self.order_by_time = input;
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_time = Some(input.into());
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_time = Some(input.into());
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -3384,14 +3388,18 @@ pub mod list_entities_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>A list of objects that filter the request.</p>
+        /// <p>A list of objects that filter the request.</p> <note>
+        /// <p>Only one object is accepted as a valid input.</p>
+        /// </note>
         pub fn filters(mut self, input: crate::model::ListEntitiesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>A list of objects that filter the request.</p>
+        /// <p>A list of objects that filter the request.</p> <note>
+        /// <p>Only one object is accepted as a valid input.</p>
+        /// </note>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListEntitiesFilter>>,
@@ -5748,7 +5756,9 @@ impl std::fmt::Debug for ListScenesInput {
 pub struct ListEntitiesInput {
     /// <p>The ID of the workspace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>A list of objects that filter the request.</p>
+    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>Only one object is accepted as a valid input.</p>
+    /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ListEntitiesFilter>>,
     /// <p>The maximum number of results to display.</p>
     pub max_results: std::option::Option<i32>,
@@ -5760,7 +5770,9 @@ impl ListEntitiesInput {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>A list of objects that filter the request.</p>
+    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>Only one object is accepted as a valid input.</p>
+    /// </note>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ListEntitiesFilter]> {
         self.filters.as_deref()
     }
@@ -5903,9 +5915,11 @@ pub struct GetPropertyValueHistoryInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The time direction to use in the result order.</p>
     pub order_by_time: std::option::Option<crate::model::OrderByTime>,
-    /// Timestamp represented in ISO 8601 format
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+    /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
     pub start_time: std::option::Option<std::string::String>,
-    /// Timestamp represented in ISO 8601 format
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+    /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
     pub end_time: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueHistoryInput {
@@ -5957,11 +5971,13 @@ impl GetPropertyValueHistoryInput {
     pub fn order_by_time(&self) -> std::option::Option<&crate::model::OrderByTime> {
         self.order_by_time.as_ref()
     }
-    /// Timestamp represented in ISO 8601 format
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+    /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn start_time(&self) -> std::option::Option<&str> {
         self.start_time.as_deref()
     }
-    /// Timestamp represented in ISO 8601 format
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+    /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
     }

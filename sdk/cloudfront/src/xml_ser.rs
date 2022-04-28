@@ -1005,6 +1005,10 @@ pub fn serialize_structure_crate_model_response_headers_policy_config(
         let inner_writer = scope.start_el("CustomHeadersConfig");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_headers_config(var_88, inner_writer)?
     }
+    if let Some(var_89) = &input.server_timing_headers_config {
+        let inner_writer = scope.start_el("ServerTimingHeadersConfig");
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_server_timing_headers_config(var_89, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -1015,40 +1019,40 @@ pub fn serialize_structure_crate_model_streaming_distribution_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_89) = &input.caller_reference {
+    if let Some(var_90) = &input.caller_reference {
         let mut inner_writer = scope.start_el("CallerReference").finish();
-        inner_writer.data(var_89.as_ref());
+        inner_writer.data(var_90.as_ref());
     }
-    if let Some(var_90) = &input.s3_origin {
+    if let Some(var_91) = &input.s3_origin {
         let inner_writer = scope.start_el("S3Origin");
-        crate::xml_ser::serialize_structure_crate_model_s3_origin(var_90, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_origin(var_91, inner_writer)?
     }
-    if let Some(var_91) = &input.aliases {
+    if let Some(var_92) = &input.aliases {
         let inner_writer = scope.start_el("Aliases");
-        crate::xml_ser::serialize_structure_crate_model_aliases(var_91, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_aliases(var_92, inner_writer)?
     }
-    if let Some(var_92) = &input.comment {
+    if let Some(var_93) = &input.comment {
         let mut inner_writer = scope.start_el("Comment").finish();
-        inner_writer.data(var_92.as_ref());
+        inner_writer.data(var_93.as_ref());
     }
-    if let Some(var_93) = &input.logging {
+    if let Some(var_94) = &input.logging {
         let inner_writer = scope.start_el("Logging");
         crate::xml_ser::serialize_structure_crate_model_streaming_logging_config(
-            var_93,
+            var_94,
             inner_writer,
         )?
     }
-    if let Some(var_94) = &input.trusted_signers {
+    if let Some(var_95) = &input.trusted_signers {
         let inner_writer = scope.start_el("TrustedSigners");
-        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_94, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_95, inner_writer)?
     }
-    if let Some(var_95) = &input.price_class {
+    if let Some(var_96) = &input.price_class {
         let mut inner_writer = scope.start_el("PriceClass").finish();
-        inner_writer.data(var_95.as_str());
+        inner_writer.data(var_96.as_str());
     }
-    if let Some(var_96) = &input.enabled {
+    if let Some(var_97) = &input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_96).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_97).encode());
     }
     scope.finish();
     Ok(())
@@ -1060,16 +1064,16 @@ pub fn serialize_structure_crate_model_streaming_distribution_config_with_tags(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_97) = &input.streaming_distribution_config {
+    if let Some(var_98) = &input.streaming_distribution_config {
         let inner_writer = scope.start_el("StreamingDistributionConfig");
         crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(
-            var_97,
+            var_98,
             inner_writer,
         )?
     }
-    if let Some(var_98) = &input.tags {
+    if let Some(var_99) = &input.tags {
         let inner_writer = scope.start_el("Tags");
-        crate::xml_ser::serialize_structure_crate_model_tags(var_98, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tags(var_99, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1081,12 +1085,12 @@ pub fn serialize_structure_crate_model_tags(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_99) = &input.items {
+    if let Some(var_100) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_100 in var_99 {
+        for list_item_101 in var_100 {
             {
                 let inner_writer = inner_writer.start_el("Tag");
-                crate::xml_ser::serialize_structure_crate_model_tag(list_item_100, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_101, inner_writer)?
             }
         }
     }
@@ -1100,12 +1104,12 @@ pub fn serialize_structure_crate_model_tag_keys(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_101) = &input.items {
+    if let Some(var_102) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_102 in var_101 {
+        for list_item_103 in var_102 {
             {
                 let mut inner_writer = inner_writer.start_el("Key").finish();
-                inner_writer.data(list_item_102.as_ref());
+                inner_writer.data(list_item_103.as_ref());
             }
         }
     }
@@ -1119,32 +1123,32 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_103) = &input.enable_accept_encoding_gzip {
+    if let Some(var_104) = &input.enable_accept_encoding_gzip {
         let mut inner_writer = scope.start_el("EnableAcceptEncodingGzip").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_103).encode());
-    }
-    if let Some(var_104) = &input.enable_accept_encoding_brotli {
-        let mut inner_writer = scope.start_el("EnableAcceptEncodingBrotli").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_104).encode());
     }
-    if let Some(var_105) = &input.headers_config {
+    if let Some(var_105) = &input.enable_accept_encoding_brotli {
+        let mut inner_writer = scope.start_el("EnableAcceptEncodingBrotli").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_105).encode());
+    }
+    if let Some(var_106) = &input.headers_config {
         let inner_writer = scope.start_el("HeadersConfig");
         crate::xml_ser::serialize_structure_crate_model_cache_policy_headers_config(
-            var_105,
-            inner_writer,
-        )?
-    }
-    if let Some(var_106) = &input.cookies_config {
-        let inner_writer = scope.start_el("CookiesConfig");
-        crate::xml_ser::serialize_structure_crate_model_cache_policy_cookies_config(
             var_106,
             inner_writer,
         )?
     }
-    if let Some(var_107) = &input.query_strings_config {
+    if let Some(var_107) = &input.cookies_config {
+        let inner_writer = scope.start_el("CookiesConfig");
+        crate::xml_ser::serialize_structure_crate_model_cache_policy_cookies_config(
+            var_107,
+            inner_writer,
+        )?
+    }
+    if let Some(var_108) = &input.query_strings_config {
         let inner_writer = scope.start_el("QueryStringsConfig");
         crate::xml_ser::serialize_structure_crate_model_cache_policy_query_strings_config(
-            var_107,
+            var_108,
             inner_writer,
         )?
     }
@@ -1158,16 +1162,16 @@ pub fn serialize_structure_crate_model_aliases(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_108) = &input.quantity {
+    if let Some(var_109) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_108).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_109).encode());
     }
-    if let Some(var_109) = &input.items {
+    if let Some(var_110) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_110 in var_109 {
+        for list_item_111 in var_110 {
             {
                 let mut inner_writer = inner_writer.start_el("CNAME").finish();
-                inner_writer.data(list_item_110.as_ref());
+                inner_writer.data(list_item_111.as_ref());
             }
         }
     }
@@ -1181,16 +1185,16 @@ pub fn serialize_structure_crate_model_origins(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_111) = &input.quantity {
+    if let Some(var_112) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_111).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_112).encode());
     }
-    if let Some(var_112) = &input.items {
+    if let Some(var_113) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_113 in var_112 {
+        for list_item_114 in var_113 {
             {
                 let inner_writer = inner_writer.start_el("Origin");
-                crate::xml_ser::serialize_structure_crate_model_origin(list_item_113, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_origin(list_item_114, inner_writer)?
             }
         }
     }
@@ -1204,17 +1208,17 @@ pub fn serialize_structure_crate_model_origin_groups(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_114) = &input.quantity {
+    if let Some(var_115) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_114).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_115).encode());
     }
-    if let Some(var_115) = &input.items {
+    if let Some(var_116) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_116 in var_115 {
+        for list_item_117 in var_116 {
             {
                 let inner_writer = inner_writer.start_el("OriginGroup");
                 crate::xml_ser::serialize_structure_crate_model_origin_group(
-                    list_item_116,
+                    list_item_117,
                     inner_writer,
                 )?
             }
@@ -1230,83 +1234,83 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_117) = &input.target_origin_id {
+    if let Some(var_118) = &input.target_origin_id {
         let mut inner_writer = scope.start_el("TargetOriginId").finish();
-        inner_writer.data(var_117.as_ref());
+        inner_writer.data(var_118.as_ref());
     }
-    if let Some(var_118) = &input.trusted_signers {
+    if let Some(var_119) = &input.trusted_signers {
         let inner_writer = scope.start_el("TrustedSigners");
-        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_118, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_119, inner_writer)?
     }
-    if let Some(var_119) = &input.trusted_key_groups {
+    if let Some(var_120) = &input.trusted_key_groups {
         let inner_writer = scope.start_el("TrustedKeyGroups");
-        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_119, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_120, inner_writer)?
     }
-    if let Some(var_120) = &input.viewer_protocol_policy {
+    if let Some(var_121) = &input.viewer_protocol_policy {
         let mut inner_writer = scope.start_el("ViewerProtocolPolicy").finish();
-        inner_writer.data(var_120.as_str());
+        inner_writer.data(var_121.as_str());
     }
-    if let Some(var_121) = &input.allowed_methods {
+    if let Some(var_122) = &input.allowed_methods {
         let inner_writer = scope.start_el("AllowedMethods");
-        crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_121, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_122, inner_writer)?
     }
-    if let Some(var_122) = &input.smooth_streaming {
+    if let Some(var_123) = &input.smooth_streaming {
         let mut inner_writer = scope.start_el("SmoothStreaming").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_122).encode());
-    }
-    if let Some(var_123) = &input.compress {
-        let mut inner_writer = scope.start_el("Compress").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_123).encode());
     }
-    if let Some(var_124) = &input.lambda_function_associations {
+    if let Some(var_124) = &input.compress {
+        let mut inner_writer = scope.start_el("Compress").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_124).encode());
+    }
+    if let Some(var_125) = &input.lambda_function_associations {
         let inner_writer = scope.start_el("LambdaFunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_lambda_function_associations(
-            var_124,
-            inner_writer,
-        )?
-    }
-    if let Some(var_125) = &input.function_associations {
-        let inner_writer = scope.start_el("FunctionAssociations");
-        crate::xml_ser::serialize_structure_crate_model_function_associations(
             var_125,
             inner_writer,
         )?
     }
-    if let Some(var_126) = &input.field_level_encryption_id {
-        let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();
-        inner_writer.data(var_126.as_ref());
+    if let Some(var_126) = &input.function_associations {
+        let inner_writer = scope.start_el("FunctionAssociations");
+        crate::xml_ser::serialize_structure_crate_model_function_associations(
+            var_126,
+            inner_writer,
+        )?
     }
-    if let Some(var_127) = &input.realtime_log_config_arn {
-        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
+    if let Some(var_127) = &input.field_level_encryption_id {
+        let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();
         inner_writer.data(var_127.as_ref());
     }
-    if let Some(var_128) = &input.cache_policy_id {
-        let mut inner_writer = scope.start_el("CachePolicyId").finish();
+    if let Some(var_128) = &input.realtime_log_config_arn {
+        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
         inner_writer.data(var_128.as_ref());
     }
-    if let Some(var_129) = &input.origin_request_policy_id {
-        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
+    if let Some(var_129) = &input.cache_policy_id {
+        let mut inner_writer = scope.start_el("CachePolicyId").finish();
         inner_writer.data(var_129.as_ref());
     }
-    if let Some(var_130) = &input.response_headers_policy_id {
-        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
+    if let Some(var_130) = &input.origin_request_policy_id {
+        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
         inner_writer.data(var_130.as_ref());
     }
-    if let Some(var_131) = &input.forwarded_values {
+    if let Some(var_131) = &input.response_headers_policy_id {
+        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
+        inner_writer.data(var_131.as_ref());
+    }
+    if let Some(var_132) = &input.forwarded_values {
         let inner_writer = scope.start_el("ForwardedValues");
-        crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_131, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_132, inner_writer)?
     }
-    if let Some(var_132) = &input.min_ttl {
+    if let Some(var_133) = &input.min_ttl {
         let mut inner_writer = scope.start_el("MinTTL").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_132).encode());
-    }
-    if let Some(var_133) = &input.default_ttl {
-        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_133).encode());
     }
-    if let Some(var_134) = &input.max_ttl {
-        let mut inner_writer = scope.start_el("MaxTTL").finish();
+    if let Some(var_134) = &input.default_ttl {
+        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_134).encode());
+    }
+    if let Some(var_135) = &input.max_ttl {
+        let mut inner_writer = scope.start_el("MaxTTL").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_135).encode());
     }
     scope.finish();
     Ok(())
@@ -1318,17 +1322,17 @@ pub fn serialize_structure_crate_model_cache_behaviors(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_135) = &input.quantity {
+    if let Some(var_136) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_135).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_136).encode());
     }
-    if let Some(var_136) = &input.items {
+    if let Some(var_137) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_137 in var_136 {
+        for list_item_138 in var_137 {
             {
                 let inner_writer = inner_writer.start_el("CacheBehavior");
                 crate::xml_ser::serialize_structure_crate_model_cache_behavior(
-                    list_item_137,
+                    list_item_138,
                     inner_writer,
                 )?
             }
@@ -1344,17 +1348,17 @@ pub fn serialize_structure_crate_model_custom_error_responses(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_138) = &input.quantity {
+    if let Some(var_139) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_138).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_139).encode());
     }
-    if let Some(var_139) = &input.items {
+    if let Some(var_140) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_140 in var_139 {
+        for list_item_141 in var_140 {
             {
                 let inner_writer = inner_writer.start_el("CustomErrorResponse");
                 crate::xml_ser::serialize_structure_crate_model_custom_error_response(
-                    list_item_140,
+                    list_item_141,
                     inner_writer,
                 )?
             }
@@ -1370,21 +1374,21 @@ pub fn serialize_structure_crate_model_logging_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_141) = &input.enabled {
+    if let Some(var_142) = &input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_141).encode());
-    }
-    if let Some(var_142) = &input.include_cookies {
-        let mut inner_writer = scope.start_el("IncludeCookies").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_142).encode());
     }
-    if let Some(var_143) = &input.bucket {
-        let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_143.as_ref());
+    if let Some(var_143) = &input.include_cookies {
+        let mut inner_writer = scope.start_el("IncludeCookies").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_143).encode());
     }
-    if let Some(var_144) = &input.prefix {
-        let mut inner_writer = scope.start_el("Prefix").finish();
+    if let Some(var_144) = &input.bucket {
+        let mut inner_writer = scope.start_el("Bucket").finish();
         inner_writer.data(var_144.as_ref());
+    }
+    if let Some(var_145) = &input.prefix {
+        let mut inner_writer = scope.start_el("Prefix").finish();
+        inner_writer.data(var_145.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1396,33 +1400,33 @@ pub fn serialize_structure_crate_model_viewer_certificate(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_145) = &input.cloud_front_default_certificate {
+    if let Some(var_146) = &input.cloud_front_default_certificate {
         let mut inner_writer = scope.start_el("CloudFrontDefaultCertificate").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_145).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_146).encode());
     }
-    if let Some(var_146) = &input.iam_certificate_id {
+    if let Some(var_147) = &input.iam_certificate_id {
         let mut inner_writer = scope.start_el("IAMCertificateId").finish();
-        inner_writer.data(var_146.as_ref());
-    }
-    if let Some(var_147) = &input.acm_certificate_arn {
-        let mut inner_writer = scope.start_el("ACMCertificateArn").finish();
         inner_writer.data(var_147.as_ref());
     }
-    if let Some(var_148) = &input.ssl_support_method {
-        let mut inner_writer = scope.start_el("SSLSupportMethod").finish();
-        inner_writer.data(var_148.as_str());
+    if let Some(var_148) = &input.acm_certificate_arn {
+        let mut inner_writer = scope.start_el("ACMCertificateArn").finish();
+        inner_writer.data(var_148.as_ref());
     }
-    if let Some(var_149) = &input.minimum_protocol_version {
-        let mut inner_writer = scope.start_el("MinimumProtocolVersion").finish();
+    if let Some(var_149) = &input.ssl_support_method {
+        let mut inner_writer = scope.start_el("SSLSupportMethod").finish();
         inner_writer.data(var_149.as_str());
     }
-    if let Some(var_150) = &input.certificate {
-        let mut inner_writer = scope.start_el("Certificate").finish();
-        inner_writer.data(var_150.as_ref());
+    if let Some(var_150) = &input.minimum_protocol_version {
+        let mut inner_writer = scope.start_el("MinimumProtocolVersion").finish();
+        inner_writer.data(var_150.as_str());
     }
-    if let Some(var_151) = &input.certificate_source {
+    if let Some(var_151) = &input.certificate {
+        let mut inner_writer = scope.start_el("Certificate").finish();
+        inner_writer.data(var_151.as_ref());
+    }
+    if let Some(var_152) = &input.certificate_source {
         let mut inner_writer = scope.start_el("CertificateSource").finish();
-        inner_writer.data(var_151.as_str());
+        inner_writer.data(var_152.as_str());
     }
     scope.finish();
     Ok(())
@@ -1434,9 +1438,9 @@ pub fn serialize_structure_crate_model_restrictions(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_152) = &input.geo_restriction {
+    if let Some(var_153) = &input.geo_restriction {
         let inner_writer = scope.start_el("GeoRestriction");
-        crate::xml_ser::serialize_structure_crate_model_geo_restriction(var_152, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_geo_restriction(var_153, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1448,15 +1452,15 @@ pub fn serialize_structure_crate_model_query_arg_profile_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_153) = &input.forward_when_query_arg_profile_is_unknown {
+    if let Some(var_154) = &input.forward_when_query_arg_profile_is_unknown {
         let mut inner_writer = scope
             .start_el("ForwardWhenQueryArgProfileIsUnknown")
             .finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_153).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_154).encode());
     }
-    if let Some(var_154) = &input.query_arg_profiles {
+    if let Some(var_155) = &input.query_arg_profiles {
         let inner_writer = scope.start_el("QueryArgProfiles");
-        crate::xml_ser::serialize_structure_crate_model_query_arg_profiles(var_154, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_query_arg_profiles(var_155, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1468,14 +1472,14 @@ pub fn serialize_structure_crate_model_content_type_profile_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_155) = &input.forward_when_content_type_is_unknown {
+    if let Some(var_156) = &input.forward_when_content_type_is_unknown {
         let mut inner_writer = scope.start_el("ForwardWhenContentTypeIsUnknown").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_155).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_156).encode());
     }
-    if let Some(var_156) = &input.content_type_profiles {
+    if let Some(var_157) = &input.content_type_profiles {
         let inner_writer = scope.start_el("ContentTypeProfiles");
         crate::xml_ser::serialize_structure_crate_model_content_type_profiles(
-            var_156,
+            var_157,
             inner_writer,
         )?
     }
@@ -1489,17 +1493,17 @@ pub fn serialize_structure_crate_model_encryption_entities(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_157) = &input.quantity {
+    if let Some(var_158) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_157).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_158).encode());
     }
-    if let Some(var_158) = &input.items {
+    if let Some(var_159) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_159 in var_158 {
+        for list_item_160 in var_159 {
             {
                 let inner_writer = inner_writer.start_el("EncryptionEntity");
                 crate::xml_ser::serialize_structure_crate_model_encryption_entity(
-                    list_item_159,
+                    list_item_160,
                     inner_writer,
                 )?
             }
@@ -1515,16 +1519,16 @@ pub fn serialize_structure_crate_model_paths(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_160) = &input.quantity {
+    if let Some(var_161) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_160).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_161).encode());
     }
-    if let Some(var_161) = &input.items {
+    if let Some(var_162) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_162 in var_161 {
+        for list_item_163 in var_162 {
             {
                 let mut inner_writer = inner_writer.start_el("Path").finish();
-                inner_writer.data(list_item_162.as_ref());
+                inner_writer.data(list_item_163.as_ref());
             }
         }
     }
@@ -1538,9 +1542,9 @@ pub fn serialize_structure_crate_model_realtime_metrics_subscription_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_163) = &input.realtime_metrics_subscription_status {
+    if let Some(var_164) = &input.realtime_metrics_subscription_status {
         let mut inner_writer = scope.start_el("RealtimeMetricsSubscriptionStatus").finish();
-        inner_writer.data(var_163.as_str());
+        inner_writer.data(var_164.as_str());
     }
     scope.finish();
     Ok(())
@@ -1552,13 +1556,13 @@ pub fn serialize_structure_crate_model_origin_request_policy_headers_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_164) = &input.header_behavior {
+    if let Some(var_165) = &input.header_behavior {
         let mut inner_writer = scope.start_el("HeaderBehavior").finish();
-        inner_writer.data(var_164.as_str());
+        inner_writer.data(var_165.as_str());
     }
-    if let Some(var_165) = &input.headers {
+    if let Some(var_166) = &input.headers {
         let inner_writer = scope.start_el("Headers");
-        crate::xml_ser::serialize_structure_crate_model_headers(var_165, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_headers(var_166, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1570,13 +1574,13 @@ pub fn serialize_structure_crate_model_origin_request_policy_cookies_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_166) = &input.cookie_behavior {
+    if let Some(var_167) = &input.cookie_behavior {
         let mut inner_writer = scope.start_el("CookieBehavior").finish();
-        inner_writer.data(var_166.as_str());
+        inner_writer.data(var_167.as_str());
     }
-    if let Some(var_167) = &input.cookies {
+    if let Some(var_168) = &input.cookies {
         let inner_writer = scope.start_el("Cookies");
-        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_167, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_168, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1588,13 +1592,13 @@ pub fn serialize_structure_crate_model_origin_request_policy_query_strings_confi
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_168) = &input.query_string_behavior {
+    if let Some(var_169) = &input.query_string_behavior {
         let mut inner_writer = scope.start_el("QueryStringBehavior").finish();
-        inner_writer.data(var_168.as_str());
+        inner_writer.data(var_169.as_str());
     }
-    if let Some(var_169) = &input.query_strings {
+    if let Some(var_170) = &input.query_strings {
         let inner_writer = scope.start_el("QueryStrings");
-        crate::xml_ser::serialize_structure_crate_model_query_string_names(var_169, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_query_string_names(var_170, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1606,13 +1610,13 @@ pub fn serialize_structure_crate_model_kinesis_stream_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_170) = &input.role_arn {
+    if let Some(var_171) = &input.role_arn {
         let mut inner_writer = scope.start_el("RoleARN").finish();
-        inner_writer.data(var_170.as_ref());
-    }
-    if let Some(var_171) = &input.stream_arn {
-        let mut inner_writer = scope.start_el("StreamARN").finish();
         inner_writer.data(var_171.as_ref());
+    }
+    if let Some(var_172) = &input.stream_arn {
+        let mut inner_writer = scope.start_el("StreamARN").finish();
+        inner_writer.data(var_172.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1624,33 +1628,33 @@ pub fn serialize_structure_crate_model_response_headers_policy_cors_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_172) = &input.access_control_allow_origins {
+    if let Some(var_173) = &input.access_control_allow_origins {
         let inner_writer = scope.start_el("AccessControlAllowOrigins");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(var_172, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(var_173, inner_writer)?
     }
-    if let Some(var_173) = &input.access_control_allow_headers {
+    if let Some(var_174) = &input.access_control_allow_headers {
         let inner_writer = scope.start_el("AccessControlAllowHeaders");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_headers(var_173, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_headers(var_174, inner_writer)?
     }
-    if let Some(var_174) = &input.access_control_allow_methods {
+    if let Some(var_175) = &input.access_control_allow_methods {
         let inner_writer = scope.start_el("AccessControlAllowMethods");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_methods(var_174, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_methods(var_175, inner_writer)?
     }
-    if let Some(var_175) = &input.access_control_allow_credentials {
+    if let Some(var_176) = &input.access_control_allow_credentials {
         let mut inner_writer = scope.start_el("AccessControlAllowCredentials").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_175).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_176).encode());
     }
-    if let Some(var_176) = &input.access_control_expose_headers {
+    if let Some(var_177) = &input.access_control_expose_headers {
         let inner_writer = scope.start_el("AccessControlExposeHeaders");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_expose_headers(var_176, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_expose_headers(var_177, inner_writer)?
     }
-    if let Some(var_177) = &input.access_control_max_age_sec {
+    if let Some(var_178) = &input.access_control_max_age_sec {
         let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_177).encode());
-    }
-    if let Some(var_178) = &input.origin_override {
-        let mut inner_writer = scope.start_el("OriginOverride").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_178).encode());
+    }
+    if let Some(var_179) = &input.origin_override {
+        let mut inner_writer = scope.start_el("OriginOverride").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_179).encode());
     }
     scope.finish();
     Ok(())
@@ -1662,38 +1666,38 @@ pub fn serialize_structure_crate_model_response_headers_policy_security_headers_
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_179) = &input.xss_protection {
+    if let Some(var_180) = &input.xss_protection {
         let inner_writer = scope.start_el("XSSProtection");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_xss_protection(
-            var_179,
-            inner_writer,
-        )?
-    }
-    if let Some(var_180) = &input.frame_options {
-        let inner_writer = scope.start_el("FrameOptions");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_frame_options(
             var_180,
             inner_writer,
         )?
     }
-    if let Some(var_181) = &input.referrer_policy {
-        let inner_writer = scope.start_el("ReferrerPolicy");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_referrer_policy(
+    if let Some(var_181) = &input.frame_options {
+        let inner_writer = scope.start_el("FrameOptions");
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_frame_options(
             var_181,
             inner_writer,
         )?
     }
-    if let Some(var_182) = &input.content_security_policy {
+    if let Some(var_182) = &input.referrer_policy {
+        let inner_writer = scope.start_el("ReferrerPolicy");
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_referrer_policy(
+            var_182,
+            inner_writer,
+        )?
+    }
+    if let Some(var_183) = &input.content_security_policy {
         let inner_writer = scope.start_el("ContentSecurityPolicy");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_security_policy(var_182, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_security_policy(var_183, inner_writer)?
     }
-    if let Some(var_183) = &input.content_type_options {
+    if let Some(var_184) = &input.content_type_options {
         let inner_writer = scope.start_el("ContentTypeOptions");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_type_options(var_183, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_type_options(var_184, inner_writer)?
     }
-    if let Some(var_184) = &input.strict_transport_security {
+    if let Some(var_185) = &input.strict_transport_security {
         let inner_writer = scope.start_el("StrictTransportSecurity");
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_strict_transport_security(var_184, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_strict_transport_security(var_185, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1705,18 +1709,36 @@ pub fn serialize_structure_crate_model_response_headers_policy_custom_headers_co
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_185) = &input.quantity {
+    if let Some(var_186) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_185).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_186).encode());
     }
-    if let Some(var_186) = &input.items {
+    if let Some(var_187) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_187 in var_186 {
+        for list_item_188 in var_187 {
             {
                 let inner_writer = inner_writer.start_el("ResponseHeadersPolicyCustomHeader");
-                crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_header(list_item_187, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_header(list_item_188, inner_writer)?
             }
         }
+    }
+    scope.finish();
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_response_headers_policy_server_timing_headers_config(
+    input: &crate::model::ResponseHeadersPolicyServerTimingHeadersConfig,
+    writer: aws_smithy_xml::encode::ElWriter,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope = writer.finish();
+    if let Some(var_189) = &input.enabled {
+        let mut inner_writer = scope.start_el("Enabled").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_189).encode());
+    }
+    if let Some(var_190) = &input.sampling_rate {
+        let mut inner_writer = scope.start_el("SamplingRate").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_190).encode());
     }
     scope.finish();
     Ok(())
@@ -1728,13 +1750,13 @@ pub fn serialize_structure_crate_model_s3_origin(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_188) = &input.domain_name {
+    if let Some(var_191) = &input.domain_name {
         let mut inner_writer = scope.start_el("DomainName").finish();
-        inner_writer.data(var_188.as_ref());
+        inner_writer.data(var_191.as_ref());
     }
-    if let Some(var_189) = &input.origin_access_identity {
+    if let Some(var_192) = &input.origin_access_identity {
         let mut inner_writer = scope.start_el("OriginAccessIdentity").finish();
-        inner_writer.data(var_189.as_ref());
+        inner_writer.data(var_192.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1746,17 +1768,17 @@ pub fn serialize_structure_crate_model_streaming_logging_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_190) = &input.enabled {
+    if let Some(var_193) = &input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_190).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_193).encode());
     }
-    if let Some(var_191) = &input.bucket {
+    if let Some(var_194) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_191.as_ref());
+        inner_writer.data(var_194.as_ref());
     }
-    if let Some(var_192) = &input.prefix {
+    if let Some(var_195) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_192.as_ref());
+        inner_writer.data(var_195.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1768,20 +1790,20 @@ pub fn serialize_structure_crate_model_trusted_signers(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_193) = &input.enabled {
+    if let Some(var_196) = &input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_193).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_196).encode());
     }
-    if let Some(var_194) = &input.quantity {
+    if let Some(var_197) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_194).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_197).encode());
     }
-    if let Some(var_195) = &input.items {
+    if let Some(var_198) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_196 in var_195 {
+        for list_item_199 in var_198 {
             {
                 let mut inner_writer = inner_writer.start_el("AwsAccountNumber").finish();
-                inner_writer.data(list_item_196.as_ref());
+                inner_writer.data(list_item_199.as_ref());
             }
         }
     }
@@ -1795,13 +1817,13 @@ pub fn serialize_structure_crate_model_tag(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_197) = &input.key {
+    if let Some(var_200) = &input.key {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_197.as_ref());
+        inner_writer.data(var_200.as_ref());
     }
-    if let Some(var_198) = &input.value {
+    if let Some(var_201) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_198.as_ref());
+        inner_writer.data(var_201.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1813,13 +1835,13 @@ pub fn serialize_structure_crate_model_cache_policy_headers_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_199) = &input.header_behavior {
+    if let Some(var_202) = &input.header_behavior {
         let mut inner_writer = scope.start_el("HeaderBehavior").finish();
-        inner_writer.data(var_199.as_str());
+        inner_writer.data(var_202.as_str());
     }
-    if let Some(var_200) = &input.headers {
+    if let Some(var_203) = &input.headers {
         let inner_writer = scope.start_el("Headers");
-        crate::xml_ser::serialize_structure_crate_model_headers(var_200, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_headers(var_203, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1831,13 +1853,13 @@ pub fn serialize_structure_crate_model_cache_policy_cookies_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_201) = &input.cookie_behavior {
+    if let Some(var_204) = &input.cookie_behavior {
         let mut inner_writer = scope.start_el("CookieBehavior").finish();
-        inner_writer.data(var_201.as_str());
+        inner_writer.data(var_204.as_str());
     }
-    if let Some(var_202) = &input.cookies {
+    if let Some(var_205) = &input.cookies {
         let inner_writer = scope.start_el("Cookies");
-        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_202, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_205, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1849,13 +1871,13 @@ pub fn serialize_structure_crate_model_cache_policy_query_strings_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_203) = &input.query_string_behavior {
+    if let Some(var_206) = &input.query_string_behavior {
         let mut inner_writer = scope.start_el("QueryStringBehavior").finish();
-        inner_writer.data(var_203.as_str());
+        inner_writer.data(var_206.as_str());
     }
-    if let Some(var_204) = &input.query_strings {
+    if let Some(var_207) = &input.query_strings {
         let inner_writer = scope.start_el("QueryStrings");
-        crate::xml_ser::serialize_structure_crate_model_query_string_names(var_204, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_query_string_names(var_207, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1867,41 +1889,41 @@ pub fn serialize_structure_crate_model_origin(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_205) = &input.id {
+    if let Some(var_208) = &input.id {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_205.as_ref());
+        inner_writer.data(var_208.as_ref());
     }
-    if let Some(var_206) = &input.domain_name {
+    if let Some(var_209) = &input.domain_name {
         let mut inner_writer = scope.start_el("DomainName").finish();
-        inner_writer.data(var_206.as_ref());
+        inner_writer.data(var_209.as_ref());
     }
-    if let Some(var_207) = &input.origin_path {
+    if let Some(var_210) = &input.origin_path {
         let mut inner_writer = scope.start_el("OriginPath").finish();
-        inner_writer.data(var_207.as_ref());
+        inner_writer.data(var_210.as_ref());
     }
-    if let Some(var_208) = &input.custom_headers {
+    if let Some(var_211) = &input.custom_headers {
         let inner_writer = scope.start_el("CustomHeaders");
-        crate::xml_ser::serialize_structure_crate_model_custom_headers(var_208, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_custom_headers(var_211, inner_writer)?
     }
-    if let Some(var_209) = &input.s3_origin_config {
+    if let Some(var_212) = &input.s3_origin_config {
         let inner_writer = scope.start_el("S3OriginConfig");
-        crate::xml_ser::serialize_structure_crate_model_s3_origin_config(var_209, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_origin_config(var_212, inner_writer)?
     }
-    if let Some(var_210) = &input.custom_origin_config {
+    if let Some(var_213) = &input.custom_origin_config {
         let inner_writer = scope.start_el("CustomOriginConfig");
-        crate::xml_ser::serialize_structure_crate_model_custom_origin_config(var_210, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_custom_origin_config(var_213, inner_writer)?
     }
-    if let Some(var_211) = &input.connection_attempts {
+    if let Some(var_214) = &input.connection_attempts {
         let mut inner_writer = scope.start_el("ConnectionAttempts").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_211).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_214).encode());
     }
-    if let Some(var_212) = &input.connection_timeout {
+    if let Some(var_215) = &input.connection_timeout {
         let mut inner_writer = scope.start_el("ConnectionTimeout").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_212).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_215).encode());
     }
-    if let Some(var_213) = &input.origin_shield {
+    if let Some(var_216) = &input.origin_shield {
         let inner_writer = scope.start_el("OriginShield");
-        crate::xml_ser::serialize_structure_crate_model_origin_shield(var_213, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_origin_shield(var_216, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1913,20 +1935,20 @@ pub fn serialize_structure_crate_model_origin_group(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_214) = &input.id {
+    if let Some(var_217) = &input.id {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_214.as_ref());
+        inner_writer.data(var_217.as_ref());
     }
-    if let Some(var_215) = &input.failover_criteria {
+    if let Some(var_218) = &input.failover_criteria {
         let inner_writer = scope.start_el("FailoverCriteria");
         crate::xml_ser::serialize_structure_crate_model_origin_group_failover_criteria(
-            var_215,
+            var_218,
             inner_writer,
         )?
     }
-    if let Some(var_216) = &input.members {
+    if let Some(var_219) = &input.members {
         let inner_writer = scope.start_el("Members");
-        crate::xml_ser::serialize_structure_crate_model_origin_group_members(var_216, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_origin_group_members(var_219, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1938,20 +1960,20 @@ pub fn serialize_structure_crate_model_trusted_key_groups(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_217) = &input.enabled {
+    if let Some(var_220) = &input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_217).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_220).encode());
     }
-    if let Some(var_218) = &input.quantity {
+    if let Some(var_221) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_218).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_221).encode());
     }
-    if let Some(var_219) = &input.items {
+    if let Some(var_222) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_220 in var_219 {
+        for list_item_223 in var_222 {
             {
                 let mut inner_writer = inner_writer.start_el("KeyGroup").finish();
-                inner_writer.data(list_item_220.as_ref());
+                inner_writer.data(list_item_223.as_ref());
             }
         }
     }
@@ -1965,22 +1987,22 @@ pub fn serialize_structure_crate_model_allowed_methods(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_221) = &input.quantity {
+    if let Some(var_224) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_221).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_224).encode());
     }
-    if let Some(var_222) = &input.items {
+    if let Some(var_225) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_223 in var_222 {
+        for list_item_226 in var_225 {
             {
                 let mut inner_writer = inner_writer.start_el("Method").finish();
-                inner_writer.data(list_item_223.as_str());
+                inner_writer.data(list_item_226.as_str());
             }
         }
     }
-    if let Some(var_224) = &input.cached_methods {
+    if let Some(var_227) = &input.cached_methods {
         let inner_writer = scope.start_el("CachedMethods");
-        crate::xml_ser::serialize_structure_crate_model_cached_methods(var_224, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cached_methods(var_227, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1992,17 +2014,17 @@ pub fn serialize_structure_crate_model_lambda_function_associations(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_225) = &input.quantity {
+    if let Some(var_228) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_225).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_228).encode());
     }
-    if let Some(var_226) = &input.items {
+    if let Some(var_229) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_227 in var_226 {
+        for list_item_230 in var_229 {
             {
                 let inner_writer = inner_writer.start_el("LambdaFunctionAssociation");
                 crate::xml_ser::serialize_structure_crate_model_lambda_function_association(
-                    list_item_227,
+                    list_item_230,
                     inner_writer,
                 )?
             }
@@ -2018,17 +2040,17 @@ pub fn serialize_structure_crate_model_function_associations(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_228) = &input.quantity {
+    if let Some(var_231) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_228).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_231).encode());
     }
-    if let Some(var_229) = &input.items {
+    if let Some(var_232) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_230 in var_229 {
+        for list_item_233 in var_232 {
             {
                 let inner_writer = inner_writer.start_el("FunctionAssociation");
                 crate::xml_ser::serialize_structure_crate_model_function_association(
-                    list_item_230,
+                    list_item_233,
                     inner_writer,
                 )?
             }
@@ -2044,22 +2066,22 @@ pub fn serialize_structure_crate_model_forwarded_values(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_231) = &input.query_string {
+    if let Some(var_234) = &input.query_string {
         let mut inner_writer = scope.start_el("QueryString").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_231).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_234).encode());
     }
-    if let Some(var_232) = &input.cookies {
+    if let Some(var_235) = &input.cookies {
         let inner_writer = scope.start_el("Cookies");
-        crate::xml_ser::serialize_structure_crate_model_cookie_preference(var_232, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_preference(var_235, inner_writer)?
     }
-    if let Some(var_233) = &input.headers {
+    if let Some(var_236) = &input.headers {
         let inner_writer = scope.start_el("Headers");
-        crate::xml_ser::serialize_structure_crate_model_headers(var_233, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_headers(var_236, inner_writer)?
     }
-    if let Some(var_234) = &input.query_string_cache_keys {
+    if let Some(var_237) = &input.query_string_cache_keys {
         let inner_writer = scope.start_el("QueryStringCacheKeys");
         crate::xml_ser::serialize_structure_crate_model_query_string_cache_keys(
-            var_234,
+            var_237,
             inner_writer,
         )?
     }
@@ -2073,87 +2095,87 @@ pub fn serialize_structure_crate_model_cache_behavior(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_235) = &input.path_pattern {
+    if let Some(var_238) = &input.path_pattern {
         let mut inner_writer = scope.start_el("PathPattern").finish();
-        inner_writer.data(var_235.as_ref());
+        inner_writer.data(var_238.as_ref());
     }
-    if let Some(var_236) = &input.target_origin_id {
+    if let Some(var_239) = &input.target_origin_id {
         let mut inner_writer = scope.start_el("TargetOriginId").finish();
-        inner_writer.data(var_236.as_ref());
+        inner_writer.data(var_239.as_ref());
     }
-    if let Some(var_237) = &input.trusted_signers {
+    if let Some(var_240) = &input.trusted_signers {
         let inner_writer = scope.start_el("TrustedSigners");
-        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_237, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_240, inner_writer)?
     }
-    if let Some(var_238) = &input.trusted_key_groups {
+    if let Some(var_241) = &input.trusted_key_groups {
         let inner_writer = scope.start_el("TrustedKeyGroups");
-        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_238, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_241, inner_writer)?
     }
-    if let Some(var_239) = &input.viewer_protocol_policy {
+    if let Some(var_242) = &input.viewer_protocol_policy {
         let mut inner_writer = scope.start_el("ViewerProtocolPolicy").finish();
-        inner_writer.data(var_239.as_str());
+        inner_writer.data(var_242.as_str());
     }
-    if let Some(var_240) = &input.allowed_methods {
+    if let Some(var_243) = &input.allowed_methods {
         let inner_writer = scope.start_el("AllowedMethods");
-        crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_240, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_243, inner_writer)?
     }
-    if let Some(var_241) = &input.smooth_streaming {
+    if let Some(var_244) = &input.smooth_streaming {
         let mut inner_writer = scope.start_el("SmoothStreaming").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_241).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_244).encode());
     }
-    if let Some(var_242) = &input.compress {
+    if let Some(var_245) = &input.compress {
         let mut inner_writer = scope.start_el("Compress").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_242).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_245).encode());
     }
-    if let Some(var_243) = &input.lambda_function_associations {
+    if let Some(var_246) = &input.lambda_function_associations {
         let inner_writer = scope.start_el("LambdaFunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_lambda_function_associations(
-            var_243,
+            var_246,
             inner_writer,
         )?
     }
-    if let Some(var_244) = &input.function_associations {
+    if let Some(var_247) = &input.function_associations {
         let inner_writer = scope.start_el("FunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_function_associations(
-            var_244,
+            var_247,
             inner_writer,
         )?
     }
-    if let Some(var_245) = &input.field_level_encryption_id {
+    if let Some(var_248) = &input.field_level_encryption_id {
         let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();
-        inner_writer.data(var_245.as_ref());
-    }
-    if let Some(var_246) = &input.realtime_log_config_arn {
-        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
-        inner_writer.data(var_246.as_ref());
-    }
-    if let Some(var_247) = &input.cache_policy_id {
-        let mut inner_writer = scope.start_el("CachePolicyId").finish();
-        inner_writer.data(var_247.as_ref());
-    }
-    if let Some(var_248) = &input.origin_request_policy_id {
-        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
         inner_writer.data(var_248.as_ref());
     }
-    if let Some(var_249) = &input.response_headers_policy_id {
-        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
+    if let Some(var_249) = &input.realtime_log_config_arn {
+        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
         inner_writer.data(var_249.as_ref());
     }
-    if let Some(var_250) = &input.forwarded_values {
+    if let Some(var_250) = &input.cache_policy_id {
+        let mut inner_writer = scope.start_el("CachePolicyId").finish();
+        inner_writer.data(var_250.as_ref());
+    }
+    if let Some(var_251) = &input.origin_request_policy_id {
+        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
+        inner_writer.data(var_251.as_ref());
+    }
+    if let Some(var_252) = &input.response_headers_policy_id {
+        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
+        inner_writer.data(var_252.as_ref());
+    }
+    if let Some(var_253) = &input.forwarded_values {
         let inner_writer = scope.start_el("ForwardedValues");
-        crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_250, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_253, inner_writer)?
     }
-    if let Some(var_251) = &input.min_ttl {
+    if let Some(var_254) = &input.min_ttl {
         let mut inner_writer = scope.start_el("MinTTL").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_251).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_254).encode());
     }
-    if let Some(var_252) = &input.default_ttl {
+    if let Some(var_255) = &input.default_ttl {
         let mut inner_writer = scope.start_el("DefaultTTL").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_252).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_255).encode());
     }
-    if let Some(var_253) = &input.max_ttl {
+    if let Some(var_256) = &input.max_ttl {
         let mut inner_writer = scope.start_el("MaxTTL").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_253).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_256).encode());
     }
     scope.finish();
     Ok(())
@@ -2165,21 +2187,21 @@ pub fn serialize_structure_crate_model_custom_error_response(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_254) = &input.error_code {
+    if let Some(var_257) = &input.error_code {
         let mut inner_writer = scope.start_el("ErrorCode").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_254).encode());
-    }
-    if let Some(var_255) = &input.response_page_path {
-        let mut inner_writer = scope.start_el("ResponsePagePath").finish();
-        inner_writer.data(var_255.as_ref());
-    }
-    if let Some(var_256) = &input.response_code {
-        let mut inner_writer = scope.start_el("ResponseCode").finish();
-        inner_writer.data(var_256.as_ref());
-    }
-    if let Some(var_257) = &input.error_caching_min_ttl {
-        let mut inner_writer = scope.start_el("ErrorCachingMinTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_257).encode());
+    }
+    if let Some(var_258) = &input.response_page_path {
+        let mut inner_writer = scope.start_el("ResponsePagePath").finish();
+        inner_writer.data(var_258.as_ref());
+    }
+    if let Some(var_259) = &input.response_code {
+        let mut inner_writer = scope.start_el("ResponseCode").finish();
+        inner_writer.data(var_259.as_ref());
+    }
+    if let Some(var_260) = &input.error_caching_min_ttl {
+        let mut inner_writer = scope.start_el("ErrorCachingMinTTL").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_260).encode());
     }
     scope.finish();
     Ok(())
@@ -2191,20 +2213,20 @@ pub fn serialize_structure_crate_model_geo_restriction(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_258) = &input.restriction_type {
+    if let Some(var_261) = &input.restriction_type {
         let mut inner_writer = scope.start_el("RestrictionType").finish();
-        inner_writer.data(var_258.as_str());
+        inner_writer.data(var_261.as_str());
     }
-    if let Some(var_259) = &input.quantity {
+    if let Some(var_262) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_259).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_262).encode());
     }
-    if let Some(var_260) = &input.items {
+    if let Some(var_263) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_261 in var_260 {
+        for list_item_264 in var_263 {
             {
                 let mut inner_writer = inner_writer.start_el("Location").finish();
-                inner_writer.data(list_item_261.as_ref());
+                inner_writer.data(list_item_264.as_ref());
             }
         }
     }
@@ -2218,17 +2240,17 @@ pub fn serialize_structure_crate_model_query_arg_profiles(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_262) = &input.quantity {
+    if let Some(var_265) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_262).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_265).encode());
     }
-    if let Some(var_263) = &input.items {
+    if let Some(var_266) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_264 in var_263 {
+        for list_item_267 in var_266 {
             {
                 let inner_writer = inner_writer.start_el("QueryArgProfile");
                 crate::xml_ser::serialize_structure_crate_model_query_arg_profile(
-                    list_item_264,
+                    list_item_267,
                     inner_writer,
                 )?
             }
@@ -2244,17 +2266,17 @@ pub fn serialize_structure_crate_model_content_type_profiles(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_265) = &input.quantity {
+    if let Some(var_268) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_265).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_268).encode());
     }
-    if let Some(var_266) = &input.items {
+    if let Some(var_269) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_267 in var_266 {
+        for list_item_270 in var_269 {
             {
                 let inner_writer = inner_writer.start_el("ContentTypeProfile");
                 crate::xml_ser::serialize_structure_crate_model_content_type_profile(
-                    list_item_267,
+                    list_item_270,
                     inner_writer,
                 )?
             }
@@ -2270,17 +2292,17 @@ pub fn serialize_structure_crate_model_encryption_entity(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_268) = &input.public_key_id {
+    if let Some(var_271) = &input.public_key_id {
         let mut inner_writer = scope.start_el("PublicKeyId").finish();
-        inner_writer.data(var_268.as_ref());
+        inner_writer.data(var_271.as_ref());
     }
-    if let Some(var_269) = &input.provider_id {
+    if let Some(var_272) = &input.provider_id {
         let mut inner_writer = scope.start_el("ProviderId").finish();
-        inner_writer.data(var_269.as_ref());
+        inner_writer.data(var_272.as_ref());
     }
-    if let Some(var_270) = &input.field_patterns {
+    if let Some(var_273) = &input.field_patterns {
         let inner_writer = scope.start_el("FieldPatterns");
-        crate::xml_ser::serialize_structure_crate_model_field_patterns(var_270, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_field_patterns(var_273, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2288,29 +2310,6 @@ pub fn serialize_structure_crate_model_encryption_entity(
 
 pub fn serialize_structure_crate_model_headers(
     input: &crate::model::Headers,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
-    if let Some(var_271) = &input.quantity {
-        let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_271).encode());
-    }
-    if let Some(var_272) = &input.items {
-        let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_273 in var_272 {
-            {
-                let mut inner_writer = inner_writer.start_el("Name").finish();
-                inner_writer.data(list_item_273.as_ref());
-            }
-        }
-    }
-    scope.finish();
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_cookie_names(
-    input: &crate::model::CookieNames,
     writer: aws_smithy_xml::encode::ElWriter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
@@ -2332,8 +2331,8 @@ pub fn serialize_structure_crate_model_cookie_names(
     Ok(())
 }
 
-pub fn serialize_structure_crate_model_query_string_names(
-    input: &crate::model::QueryStringNames,
+pub fn serialize_structure_crate_model_cookie_names(
+    input: &crate::model::CookieNames,
     writer: aws_smithy_xml::encode::ElWriter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
@@ -2355,8 +2354,8 @@ pub fn serialize_structure_crate_model_query_string_names(
     Ok(())
 }
 
-pub fn serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(
-    input: &crate::model::ResponseHeadersPolicyAccessControlAllowOrigins,
+pub fn serialize_structure_crate_model_query_string_names(
+    input: &crate::model::QueryStringNames,
     writer: aws_smithy_xml::encode::ElWriter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
@@ -2369,8 +2368,31 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_al
         let mut inner_writer = scope.start_el("Items").finish();
         for list_item_282 in var_281 {
             {
-                let mut inner_writer = inner_writer.start_el("Origin").finish();
+                let mut inner_writer = inner_writer.start_el("Name").finish();
                 inner_writer.data(list_item_282.as_ref());
+            }
+        }
+    }
+    scope.finish();
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(
+    input: &crate::model::ResponseHeadersPolicyAccessControlAllowOrigins,
+    writer: aws_smithy_xml::encode::ElWriter,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope = writer.finish();
+    if let Some(var_283) = &input.quantity {
+        let mut inner_writer = scope.start_el("Quantity").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_283).encode());
+    }
+    if let Some(var_284) = &input.items {
+        let mut inner_writer = scope.start_el("Items").finish();
+        for list_item_285 in var_284 {
+            {
+                let mut inner_writer = inner_writer.start_el("Origin").finish();
+                inner_writer.data(list_item_285.as_ref());
             }
         }
     }
@@ -2384,16 +2406,16 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_al
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_283) = &input.quantity {
+    if let Some(var_286) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_283).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_286).encode());
     }
-    if let Some(var_284) = &input.items {
+    if let Some(var_287) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_285 in var_284 {
+        for list_item_288 in var_287 {
             {
                 let mut inner_writer = inner_writer.start_el("Header").finish();
-                inner_writer.data(list_item_285.as_ref());
+                inner_writer.data(list_item_288.as_ref());
             }
         }
     }
@@ -2407,16 +2429,16 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_al
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_286) = &input.quantity {
+    if let Some(var_289) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_286).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_289).encode());
     }
-    if let Some(var_287) = &input.items {
+    if let Some(var_290) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_288 in var_287 {
+        for list_item_291 in var_290 {
             {
                 let mut inner_writer = inner_writer.start_el("Method").finish();
-                inner_writer.data(list_item_288.as_str());
+                inner_writer.data(list_item_291.as_str());
             }
         }
     }
@@ -2430,16 +2452,16 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_ex
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_289) = &input.quantity {
+    if let Some(var_292) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_289).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_292).encode());
     }
-    if let Some(var_290) = &input.items {
+    if let Some(var_293) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_291 in var_290 {
+        for list_item_294 in var_293 {
             {
                 let mut inner_writer = inner_writer.start_el("Header").finish();
-                inner_writer.data(list_item_291.as_ref());
+                inner_writer.data(list_item_294.as_ref());
             }
         }
     }
@@ -2453,21 +2475,21 @@ pub fn serialize_structure_crate_model_response_headers_policy_xss_protection(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_292) = &input.r#override {
+    if let Some(var_295) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_292).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_295).encode());
     }
-    if let Some(var_293) = &input.protection {
+    if let Some(var_296) = &input.protection {
         let mut inner_writer = scope.start_el("Protection").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_293).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_296).encode());
     }
-    if let Some(var_294) = &input.mode_block {
+    if let Some(var_297) = &input.mode_block {
         let mut inner_writer = scope.start_el("ModeBlock").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_294).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_297).encode());
     }
-    if let Some(var_295) = &input.report_uri {
+    if let Some(var_298) = &input.report_uri {
         let mut inner_writer = scope.start_el("ReportUri").finish();
-        inner_writer.data(var_295.as_ref());
+        inner_writer.data(var_298.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2479,13 +2501,13 @@ pub fn serialize_structure_crate_model_response_headers_policy_frame_options(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_296) = &input.r#override {
+    if let Some(var_299) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_296).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_299).encode());
     }
-    if let Some(var_297) = &input.frame_option {
+    if let Some(var_300) = &input.frame_option {
         let mut inner_writer = scope.start_el("FrameOption").finish();
-        inner_writer.data(var_297.as_str());
+        inner_writer.data(var_300.as_str());
     }
     scope.finish();
     Ok(())
@@ -2497,13 +2519,13 @@ pub fn serialize_structure_crate_model_response_headers_policy_referrer_policy(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_298) = &input.r#override {
+    if let Some(var_301) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_298).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_301).encode());
     }
-    if let Some(var_299) = &input.referrer_policy {
+    if let Some(var_302) = &input.referrer_policy {
         let mut inner_writer = scope.start_el("ReferrerPolicy").finish();
-        inner_writer.data(var_299.as_str());
+        inner_writer.data(var_302.as_str());
     }
     scope.finish();
     Ok(())
@@ -2515,13 +2537,13 @@ pub fn serialize_structure_crate_model_response_headers_policy_content_security_
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_300) = &input.r#override {
+    if let Some(var_303) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_300).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_303).encode());
     }
-    if let Some(var_301) = &input.content_security_policy {
+    if let Some(var_304) = &input.content_security_policy {
         let mut inner_writer = scope.start_el("ContentSecurityPolicy").finish();
-        inner_writer.data(var_301.as_ref());
+        inner_writer.data(var_304.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2533,9 +2555,9 @@ pub fn serialize_structure_crate_model_response_headers_policy_content_type_opti
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_302) = &input.r#override {
+    if let Some(var_305) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_302).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_305).encode());
     }
     scope.finish();
     Ok(())
@@ -2547,21 +2569,21 @@ pub fn serialize_structure_crate_model_response_headers_policy_strict_transport_
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_303) = &input.r#override {
+    if let Some(var_306) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_303).encode());
-    }
-    if let Some(var_304) = &input.include_subdomains {
-        let mut inner_writer = scope.start_el("IncludeSubdomains").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_304).encode());
-    }
-    if let Some(var_305) = &input.preload {
-        let mut inner_writer = scope.start_el("Preload").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_305).encode());
-    }
-    if let Some(var_306) = &input.access_control_max_age_sec {
-        let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_306).encode());
+    }
+    if let Some(var_307) = &input.include_subdomains {
+        let mut inner_writer = scope.start_el("IncludeSubdomains").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_307).encode());
+    }
+    if let Some(var_308) = &input.preload {
+        let mut inner_writer = scope.start_el("Preload").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_308).encode());
+    }
+    if let Some(var_309) = &input.access_control_max_age_sec {
+        let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_309).encode());
     }
     scope.finish();
     Ok(())
@@ -2573,17 +2595,17 @@ pub fn serialize_structure_crate_model_response_headers_policy_custom_header(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_307) = &input.header {
+    if let Some(var_310) = &input.header {
         let mut inner_writer = scope.start_el("Header").finish();
-        inner_writer.data(var_307.as_ref());
+        inner_writer.data(var_310.as_ref());
     }
-    if let Some(var_308) = &input.value {
+    if let Some(var_311) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_308.as_ref());
+        inner_writer.data(var_311.as_ref());
     }
-    if let Some(var_309) = &input.r#override {
+    if let Some(var_312) = &input.r#override {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_309).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_312).encode());
     }
     scope.finish();
     Ok(())
@@ -2595,17 +2617,17 @@ pub fn serialize_structure_crate_model_custom_headers(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_310) = &input.quantity {
+    if let Some(var_313) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_310).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_313).encode());
     }
-    if let Some(var_311) = &input.items {
+    if let Some(var_314) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_312 in var_311 {
+        for list_item_315 in var_314 {
             {
                 let inner_writer = inner_writer.start_el("OriginCustomHeader");
                 crate::xml_ser::serialize_structure_crate_model_origin_custom_header(
-                    list_item_312,
+                    list_item_315,
                     inner_writer,
                 )?
             }
@@ -2621,9 +2643,9 @@ pub fn serialize_structure_crate_model_s3_origin_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_313) = &input.origin_access_identity {
+    if let Some(var_316) = &input.origin_access_identity {
         let mut inner_writer = scope.start_el("OriginAccessIdentity").finish();
-        inner_writer.data(var_313.as_ref());
+        inner_writer.data(var_316.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2635,29 +2657,29 @@ pub fn serialize_structure_crate_model_custom_origin_config(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_314) = &input.http_port {
+    if let Some(var_317) = &input.http_port {
         let mut inner_writer = scope.start_el("HTTPPort").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_314).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_317).encode());
     }
-    if let Some(var_315) = &input.https_port {
+    if let Some(var_318) = &input.https_port {
         let mut inner_writer = scope.start_el("HTTPSPort").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_315).encode());
-    }
-    if let Some(var_316) = &input.origin_protocol_policy {
-        let mut inner_writer = scope.start_el("OriginProtocolPolicy").finish();
-        inner_writer.data(var_316.as_str());
-    }
-    if let Some(var_317) = &input.origin_ssl_protocols {
-        let inner_writer = scope.start_el("OriginSslProtocols");
-        crate::xml_ser::serialize_structure_crate_model_origin_ssl_protocols(var_317, inner_writer)?
-    }
-    if let Some(var_318) = &input.origin_read_timeout {
-        let mut inner_writer = scope.start_el("OriginReadTimeout").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_318).encode());
     }
-    if let Some(var_319) = &input.origin_keepalive_timeout {
+    if let Some(var_319) = &input.origin_protocol_policy {
+        let mut inner_writer = scope.start_el("OriginProtocolPolicy").finish();
+        inner_writer.data(var_319.as_str());
+    }
+    if let Some(var_320) = &input.origin_ssl_protocols {
+        let inner_writer = scope.start_el("OriginSslProtocols");
+        crate::xml_ser::serialize_structure_crate_model_origin_ssl_protocols(var_320, inner_writer)?
+    }
+    if let Some(var_321) = &input.origin_read_timeout {
+        let mut inner_writer = scope.start_el("OriginReadTimeout").finish();
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_321).encode());
+    }
+    if let Some(var_322) = &input.origin_keepalive_timeout {
         let mut inner_writer = scope.start_el("OriginKeepaliveTimeout").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_319).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_322).encode());
     }
     scope.finish();
     Ok(())
@@ -2669,13 +2691,13 @@ pub fn serialize_structure_crate_model_origin_shield(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_320) = &input.enabled {
+    if let Some(var_323) = &input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_320).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_323).encode());
     }
-    if let Some(var_321) = &input.origin_shield_region {
+    if let Some(var_324) = &input.origin_shield_region {
         let mut inner_writer = scope.start_el("OriginShieldRegion").finish();
-        inner_writer.data(var_321.as_ref());
+        inner_writer.data(var_324.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2687,9 +2709,9 @@ pub fn serialize_structure_crate_model_origin_group_failover_criteria(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_322) = &input.status_codes {
+    if let Some(var_325) = &input.status_codes {
         let inner_writer = scope.start_el("StatusCodes");
-        crate::xml_ser::serialize_structure_crate_model_status_codes(var_322, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_status_codes(var_325, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2701,17 +2723,17 @@ pub fn serialize_structure_crate_model_origin_group_members(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_323) = &input.quantity {
+    if let Some(var_326) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_323).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_326).encode());
     }
-    if let Some(var_324) = &input.items {
+    if let Some(var_327) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_325 in var_324 {
+        for list_item_328 in var_327 {
             {
                 let inner_writer = inner_writer.start_el("OriginGroupMember");
                 crate::xml_ser::serialize_structure_crate_model_origin_group_member(
-                    list_item_325,
+                    list_item_328,
                     inner_writer,
                 )?
             }
@@ -2727,16 +2749,16 @@ pub fn serialize_structure_crate_model_cached_methods(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_326) = &input.quantity {
+    if let Some(var_329) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_326).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_329).encode());
     }
-    if let Some(var_327) = &input.items {
+    if let Some(var_330) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_328 in var_327 {
+        for list_item_331 in var_330 {
             {
                 let mut inner_writer = inner_writer.start_el("Method").finish();
-                inner_writer.data(list_item_328.as_str());
+                inner_writer.data(list_item_331.as_str());
             }
         }
     }
@@ -2750,17 +2772,17 @@ pub fn serialize_structure_crate_model_lambda_function_association(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_329) = &input.lambda_function_arn {
+    if let Some(var_332) = &input.lambda_function_arn {
         let mut inner_writer = scope.start_el("LambdaFunctionARN").finish();
-        inner_writer.data(var_329.as_ref());
+        inner_writer.data(var_332.as_ref());
     }
-    if let Some(var_330) = &input.event_type {
+    if let Some(var_333) = &input.event_type {
         let mut inner_writer = scope.start_el("EventType").finish();
-        inner_writer.data(var_330.as_str());
+        inner_writer.data(var_333.as_str());
     }
-    if let Some(var_331) = &input.include_body {
+    if let Some(var_334) = &input.include_body {
         let mut inner_writer = scope.start_el("IncludeBody").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_331).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_334).encode());
     }
     scope.finish();
     Ok(())
@@ -2772,13 +2794,13 @@ pub fn serialize_structure_crate_model_function_association(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_332) = &input.function_arn {
+    if let Some(var_335) = &input.function_arn {
         let mut inner_writer = scope.start_el("FunctionARN").finish();
-        inner_writer.data(var_332.as_ref());
+        inner_writer.data(var_335.as_ref());
     }
-    if let Some(var_333) = &input.event_type {
+    if let Some(var_336) = &input.event_type {
         let mut inner_writer = scope.start_el("EventType").finish();
-        inner_writer.data(var_333.as_str());
+        inner_writer.data(var_336.as_str());
     }
     scope.finish();
     Ok(())
@@ -2790,13 +2812,13 @@ pub fn serialize_structure_crate_model_cookie_preference(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_334) = &input.forward {
+    if let Some(var_337) = &input.forward {
         let mut inner_writer = scope.start_el("Forward").finish();
-        inner_writer.data(var_334.as_str());
+        inner_writer.data(var_337.as_str());
     }
-    if let Some(var_335) = &input.whitelisted_names {
+    if let Some(var_338) = &input.whitelisted_names {
         let inner_writer = scope.start_el("WhitelistedNames");
-        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_335, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_338, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2808,16 +2830,16 @@ pub fn serialize_structure_crate_model_query_string_cache_keys(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_336) = &input.quantity {
+    if let Some(var_339) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_336).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_339).encode());
     }
-    if let Some(var_337) = &input.items {
+    if let Some(var_340) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_338 in var_337 {
+        for list_item_341 in var_340 {
             {
                 let mut inner_writer = inner_writer.start_el("Name").finish();
-                inner_writer.data(list_item_338.as_ref());
+                inner_writer.data(list_item_341.as_ref());
             }
         }
     }
@@ -2831,13 +2853,13 @@ pub fn serialize_structure_crate_model_query_arg_profile(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_339) = &input.query_arg {
+    if let Some(var_342) = &input.query_arg {
         let mut inner_writer = scope.start_el("QueryArg").finish();
-        inner_writer.data(var_339.as_ref());
+        inner_writer.data(var_342.as_ref());
     }
-    if let Some(var_340) = &input.profile_id {
+    if let Some(var_343) = &input.profile_id {
         let mut inner_writer = scope.start_el("ProfileId").finish();
-        inner_writer.data(var_340.as_ref());
+        inner_writer.data(var_343.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2849,17 +2871,17 @@ pub fn serialize_structure_crate_model_content_type_profile(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_341) = &input.format {
+    if let Some(var_344) = &input.format {
         let mut inner_writer = scope.start_el("Format").finish();
-        inner_writer.data(var_341.as_str());
+        inner_writer.data(var_344.as_str());
     }
-    if let Some(var_342) = &input.profile_id {
+    if let Some(var_345) = &input.profile_id {
         let mut inner_writer = scope.start_el("ProfileId").finish();
-        inner_writer.data(var_342.as_ref());
+        inner_writer.data(var_345.as_ref());
     }
-    if let Some(var_343) = &input.content_type {
+    if let Some(var_346) = &input.content_type {
         let mut inner_writer = scope.start_el("ContentType").finish();
-        inner_writer.data(var_343.as_ref());
+        inner_writer.data(var_346.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2871,16 +2893,16 @@ pub fn serialize_structure_crate_model_field_patterns(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_344) = &input.quantity {
+    if let Some(var_347) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_344).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_347).encode());
     }
-    if let Some(var_345) = &input.items {
+    if let Some(var_348) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_346 in var_345 {
+        for list_item_349 in var_348 {
             {
                 let mut inner_writer = inner_writer.start_el("FieldPattern").finish();
-                inner_writer.data(list_item_346.as_ref());
+                inner_writer.data(list_item_349.as_ref());
             }
         }
     }
@@ -2894,13 +2916,13 @@ pub fn serialize_structure_crate_model_origin_custom_header(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_347) = &input.header_name {
+    if let Some(var_350) = &input.header_name {
         let mut inner_writer = scope.start_el("HeaderName").finish();
-        inner_writer.data(var_347.as_ref());
+        inner_writer.data(var_350.as_ref());
     }
-    if let Some(var_348) = &input.header_value {
+    if let Some(var_351) = &input.header_value {
         let mut inner_writer = scope.start_el("HeaderValue").finish();
-        inner_writer.data(var_348.as_ref());
+        inner_writer.data(var_351.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2912,16 +2934,16 @@ pub fn serialize_structure_crate_model_origin_ssl_protocols(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_349) = &input.quantity {
+    if let Some(var_352) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_349).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_352).encode());
     }
-    if let Some(var_350) = &input.items {
+    if let Some(var_353) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_351 in var_350 {
+        for list_item_354 in var_353 {
             {
                 let mut inner_writer = inner_writer.start_el("SslProtocol").finish();
-                inner_writer.data(list_item_351.as_str());
+                inner_writer.data(list_item_354.as_str());
             }
         }
     }
@@ -2935,17 +2957,17 @@ pub fn serialize_structure_crate_model_status_codes(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_352) = &input.quantity {
+    if let Some(var_355) = &input.quantity {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_352).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_355).encode());
     }
-    if let Some(var_353) = &input.items {
+    if let Some(var_356) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_354 in var_353 {
+        for list_item_357 in var_356 {
             {
                 let mut inner_writer = inner_writer.start_el("StatusCode").finish();
                 inner_writer
-                    .data(aws_smithy_types::primitive::Encoder::from(*list_item_354).encode());
+                    .data(aws_smithy_types::primitive::Encoder::from(*list_item_357).encode());
             }
         }
     }
@@ -2959,9 +2981,9 @@ pub fn serialize_structure_crate_model_origin_group_member(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_355) = &input.origin_id {
+    if let Some(var_358) = &input.origin_id {
         let mut inner_writer = scope.start_el("OriginId").finish();
-        inner_writer.data(var_355.as_ref());
+        inner_writer.data(var_358.as_ref());
     }
     scope.finish();
     Ok(())

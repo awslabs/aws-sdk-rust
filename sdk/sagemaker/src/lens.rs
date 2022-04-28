@@ -578,3 +578,563 @@ pub(crate) fn reflens_structure_crate_output_search_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_actions_output_action_summaries(
+    input: crate::output::ListActionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ActionSummary>> {
+    let input = match input.action_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_algorithms_output_algorithm_summary_list(
+    input: crate::output::ListAlgorithmsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AlgorithmSummary>> {
+    let input = match input.algorithm_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_app_image_configs_output_app_image_configs(
+    input: crate::output::ListAppImageConfigsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AppImageConfigDetails>> {
+    let input = match input.app_image_configs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_apps_output_apps(
+    input: crate::output::ListAppsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AppDetails>> {
+    let input = match input.apps {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_artifacts_output_artifact_summaries(
+    input: crate::output::ListArtifactsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ArtifactSummary>> {
+    let input = match input.artifact_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_associations_output_association_summaries(
+    input: crate::output::ListAssociationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AssociationSummary>> {
+    let input = match input.association_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_auto_ml_jobs_output_auto_ml_job_summaries(
+    input: crate::output::ListAutoMlJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AutoMlJobSummary>> {
+    let input = match input.auto_ml_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_candidates_for_auto_ml_job_output_candidates(
+    input: crate::output::ListCandidatesForAutoMlJobOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AutoMlCandidate>> {
+    let input = match input.candidates {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_code_repositories_output_code_repository_summary_list(
+    input: crate::output::ListCodeRepositoriesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::CodeRepositorySummary>> {
+    let input = match input.code_repository_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_compilation_jobs_output_compilation_job_summaries(
+    input: crate::output::ListCompilationJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::CompilationJobSummary>> {
+    let input = match input.compilation_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_contexts_output_context_summaries(
+    input: crate::output::ListContextsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ContextSummary>> {
+    let input = match input.context_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_data_quality_job_definitions_output_job_definition_summaries(
+    input: crate::output::ListDataQualityJobDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringJobDefinitionSummary>> {
+    let input = match input.job_definition_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_device_fleets_output_device_fleet_summaries(
+    input: crate::output::ListDeviceFleetsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DeviceFleetSummary>> {
+    let input = match input.device_fleet_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_devices_output_device_summaries(
+    input: crate::output::ListDevicesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DeviceSummary>> {
+    let input = match input.device_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_domains_output_domains(
+    input: crate::output::ListDomainsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DomainDetails>> {
+    let input = match input.domains {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_edge_packaging_jobs_output_edge_packaging_job_summaries(
+    input: crate::output::ListEdgePackagingJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::EdgePackagingJobSummary>> {
+    let input = match input.edge_packaging_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_endpoint_configs_output_endpoint_configs(
+    input: crate::output::ListEndpointConfigsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::EndpointConfigSummary>> {
+    let input = match input.endpoint_configs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_endpoints_output_endpoints(
+    input: crate::output::ListEndpointsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::EndpointSummary>> {
+    let input = match input.endpoints {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_experiments_output_experiment_summaries(
+    input: crate::output::ListExperimentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ExperimentSummary>> {
+    let input = match input.experiment_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_flow_definitions_output_flow_definition_summaries(
+    input: crate::output::ListFlowDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::FlowDefinitionSummary>> {
+    let input = match input.flow_definition_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_human_task_uis_output_human_task_ui_summaries(
+    input: crate::output::ListHumanTaskUisOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::HumanTaskUiSummary>> {
+    let input = match input.human_task_ui_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_hyper_parameter_tuning_jobs_output_hyper_parameter_tuning_job_summaries(
+    input: crate::output::ListHyperParameterTuningJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningJobSummary>> {
+    let input = match input.hyper_parameter_tuning_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_images_output_images(
+    input: crate::output::ListImagesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Image>> {
+    let input = match input.images {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_image_versions_output_image_versions(
+    input: crate::output::ListImageVersionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ImageVersion>> {
+    let input = match input.image_versions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_inference_recommendations_jobs_output_inference_recommendations_jobs(
+    input: crate::output::ListInferenceRecommendationsJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJob>> {
+    let input = match input.inference_recommendations_jobs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_labeling_jobs_output_labeling_job_summary_list(
+    input: crate::output::ListLabelingJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LabelingJobSummary>> {
+    let input = match input.labeling_job_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_labeling_jobs_for_workteam_output_labeling_job_summary_list(
+    input: crate::output::ListLabelingJobsForWorkteamOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LabelingJobForWorkteamSummary>> {
+    let input = match input.labeling_job_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_lineage_groups_output_lineage_group_summaries(
+    input: crate::output::ListLineageGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LineageGroupSummary>> {
+    let input = match input.lineage_group_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_bias_job_definitions_output_job_definition_summaries(
+    input: crate::output::ListModelBiasJobDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringJobDefinitionSummary>> {
+    let input = match input.job_definition_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_explainability_job_definitions_output_job_definition_summaries(
+    input: crate::output::ListModelExplainabilityJobDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringJobDefinitionSummary>> {
+    let input = match input.job_definition_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_metadata_output_model_metadata_summaries(
+    input: crate::output::ListModelMetadataOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelMetadataSummary>> {
+    let input = match input.model_metadata_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_package_groups_output_model_package_group_summary_list(
+    input: crate::output::ListModelPackageGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelPackageGroupSummary>> {
+    let input = match input.model_package_group_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_packages_output_model_package_summary_list(
+    input: crate::output::ListModelPackagesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelPackageSummary>> {
+    let input = match input.model_package_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_model_quality_job_definitions_output_job_definition_summaries(
+    input: crate::output::ListModelQualityJobDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringJobDefinitionSummary>> {
+    let input = match input.job_definition_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_models_output_models(
+    input: crate::output::ListModelsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ModelSummary>> {
+    let input = match input.models {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_monitoring_executions_output_monitoring_execution_summaries(
+    input: crate::output::ListMonitoringExecutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringExecutionSummary>> {
+    let input = match input.monitoring_execution_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_monitoring_schedules_output_monitoring_schedule_summaries(
+    input: crate::output::ListMonitoringSchedulesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitoringScheduleSummary>> {
+    let input = match input.monitoring_schedule_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_notebook_instance_lifecycle_configs_output_notebook_instance_lifecycle_configs(
+    input: crate::output::ListNotebookInstanceLifecycleConfigsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleConfigSummary>> {
+    let input = match input.notebook_instance_lifecycle_configs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_notebook_instances_output_notebook_instances(
+    input: crate::output::ListNotebookInstancesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::NotebookInstanceSummary>> {
+    let input = match input.notebook_instances {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_pipeline_executions_output_pipeline_execution_summaries(
+    input: crate::output::ListPipelineExecutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PipelineExecutionSummary>> {
+    let input = match input.pipeline_execution_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_pipeline_execution_steps_output_pipeline_execution_steps(
+    input: crate::output::ListPipelineExecutionStepsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PipelineExecutionStep>> {
+    let input = match input.pipeline_execution_steps {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_pipeline_parameters_for_execution_output_pipeline_parameters(
+    input: crate::output::ListPipelineParametersForExecutionOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Parameter>> {
+    let input = match input.pipeline_parameters {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_pipelines_output_pipeline_summaries(
+    input: crate::output::ListPipelinesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PipelineSummary>> {
+    let input = match input.pipeline_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_processing_jobs_output_processing_job_summaries(
+    input: crate::output::ListProcessingJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ProcessingJobSummary>> {
+    let input = match input.processing_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_studio_lifecycle_configs_output_studio_lifecycle_configs(
+    input: crate::output::ListStudioLifecycleConfigsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::StudioLifecycleConfigDetails>> {
+    let input = match input.studio_lifecycle_configs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_subscribed_workteams_output_subscribed_workteams(
+    input: crate::output::ListSubscribedWorkteamsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::SubscribedWorkteam>> {
+    let input = match input.subscribed_workteams {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_tags_output_tags(
+    input: crate::output::ListTagsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Tag>> {
+    let input = match input.tags {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_training_jobs_output_training_job_summaries(
+    input: crate::output::ListTrainingJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TrainingJobSummary>> {
+    let input = match input.training_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_training_jobs_for_hyper_parameter_tuning_job_output_training_job_summaries(
+    input: crate::output::ListTrainingJobsForHyperParameterTuningJobOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::HyperParameterTrainingJobSummary>> {
+    let input = match input.training_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_transform_jobs_output_transform_job_summaries(
+    input: crate::output::ListTransformJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TransformJobSummary>> {
+    let input = match input.transform_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_trial_components_output_trial_component_summaries(
+    input: crate::output::ListTrialComponentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TrialComponentSummary>> {
+    let input = match input.trial_component_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_trials_output_trial_summaries(
+    input: crate::output::ListTrialsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TrialSummary>> {
+    let input = match input.trial_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_user_profiles_output_user_profiles(
+    input: crate::output::ListUserProfilesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::UserProfileDetails>> {
+    let input = match input.user_profiles {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_workforces_output_workforces(
+    input: crate::output::ListWorkforcesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Workforce>> {
+    let input = match input.workforces {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_workteams_output_workteams(
+    input: crate::output::ListWorkteamsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Workteam>> {
+    let input = match input.workteams {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_output_results(
+    input: crate::output::SearchOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::SearchRecord>> {
+    let input = match input.results {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

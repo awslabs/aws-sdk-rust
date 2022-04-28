@@ -55,6 +55,34 @@ pub fn parse_create_channel_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_live_source_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateLiveSourceOutput, crate::error::CreateLiveSourceError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLiveSourceError::unhandled)?;
+    Err(crate::error::CreateLiveSourceError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_live_source_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateLiveSourceOutput, crate::error::CreateLiveSourceError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_live_source_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_live_source(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateLiveSourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_prefetch_schedule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -219,6 +247,29 @@ pub fn parse_delete_channel_policy_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_live_source_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteLiveSourceOutput, crate::error::DeleteLiveSourceError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteLiveSourceError::unhandled)?;
+    Err(crate::error::DeleteLiveSourceError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_live_source_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteLiveSourceOutput, crate::error::DeleteLiveSourceError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_live_source_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_playback_configuration_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -365,6 +416,38 @@ pub fn parse_describe_channel_response(
             output,
         )
         .map_err(crate::error::DescribeChannelError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_live_source_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLiveSourceOutput,
+    crate::error::DescribeLiveSourceError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeLiveSourceError::unhandled)?;
+    Err(crate::error::DescribeLiveSourceError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_live_source_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLiveSourceOutput,
+    crate::error::DescribeLiveSourceError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_live_source_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_live_source(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeLiveSourceError::unhandled)?;
         output.build()
     })
 }
@@ -629,6 +712,32 @@ pub fn parse_list_channels_response(
             output,
         )
         .map_err(crate::error::ListChannelsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_live_sources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListLiveSourcesOutput, crate::error::ListLiveSourcesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListLiveSourcesError::unhandled)?;
+    Err(crate::error::ListLiveSourcesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_live_sources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListLiveSourcesOutput, crate::error::ListLiveSourcesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_live_sources_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_live_sources(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLiveSourcesError::unhandled)?;
         output.build()
     })
 }
@@ -1027,6 +1136,34 @@ pub fn parse_update_channel_response(
             output,
         )
         .map_err(crate::error::UpdateChannelError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_live_source_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateLiveSourceOutput, crate::error::UpdateLiveSourceError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateLiveSourceError::unhandled)?;
+    Err(crate::error::UpdateLiveSourceError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_live_source_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateLiveSourceOutput, crate::error::UpdateLiveSourceError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_live_source_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_live_source(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateLiveSourceError::unhandled)?;
         output.build()
     })
 }

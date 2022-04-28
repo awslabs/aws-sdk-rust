@@ -2981,6 +2981,131 @@ pub fn parse_update_firewall_description_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_firewall_encryption_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateFirewallEncryptionConfigurationOutput,
+    crate::error::UpdateFirewallEncryptionConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::UpdateFirewallEncryptionConfigurationError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerError" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InternalServerError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequestException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InvalidRequestException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidTokenException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InvalidTokenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceOwnerCheckException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ResourceOwnerCheckException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_owner_check_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_owner_check_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateFirewallEncryptionConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_firewall_encryption_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateFirewallEncryptionConfigurationOutput,
+    crate::error::UpdateFirewallEncryptionConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_firewall_encryption_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_firewall_encryption_configuration(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_firewall_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

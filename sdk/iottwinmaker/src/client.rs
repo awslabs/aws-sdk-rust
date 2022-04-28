@@ -289,8 +289,8 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_next_token): <p>The string that specifies the next page of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPropertyValueHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_max_results): <p>The maximum number of results to return.</p>
     ///   - [`order_by_time(OrderByTime)`](crate::client::fluent_builders::GetPropertyValueHistory::order_by_time) / [`set_order_by_time(Option<OrderByTime>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_order_by_time): <p>The time direction to use in the result order.</p>
-    ///   - [`start_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::start_time) / [`set_start_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_start_time): Timestamp represented in ISO 8601 format
-    ///   - [`end_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::end_time) / [`set_end_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_end_time): Timestamp represented in ISO 8601 format
+    ///   - [`start_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::start_time) / [`set_start_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_start_time): <p>The ISO8601 DateTime of the earliest property value to return.</p>  <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+    ///   - [`end_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::end_time) / [`set_end_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_end_time): <p>The ISO8601 DateTime of the latest property value to return.</p>  <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
     /// - On success, responds with [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput) with field(s):
     ///   - [`property_values(Option<Vec<PropertyValueHistory>>)`](crate::output::GetPropertyValueHistoryOutput::property_values): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetPropertyValueHistoryOutput::next_token): <p>The string that specifies the next page of results.</p>
@@ -354,7 +354,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListEntities::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListEntities::set_workspace_id): <p>The ID of the workspace.</p>
-    ///   - [`filters(Vec<ListEntitiesFilter>)`](crate::client::fluent_builders::ListEntities::filters) / [`set_filters(Option<Vec<ListEntitiesFilter>>)`](crate::client::fluent_builders::ListEntities::set_filters): <p>A list of objects that filter the request.</p>
+    ///   - [`filters(Vec<ListEntitiesFilter>)`](crate::client::fluent_builders::ListEntities::filters) / [`set_filters(Option<Vec<ListEntitiesFilter>>)`](crate::client::fluent_builders::ListEntities::set_filters): <p>A list of objects that filter the request.</p> <note>   <p>Only one object is accepted as a valid input.</p>  </note>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntities::set_max_results): <p>The maximum number of results to display.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntities::set_next_token): <p>The string that specifies the next page of results.</p>
     /// - On success, responds with [`ListEntitiesOutput`](crate::output::ListEntitiesOutput) with field(s):
@@ -1807,22 +1807,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_order_by_time(input);
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.start_time(input.into());
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.end_time(input.into());
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+        /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -2102,12 +2106,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>A list of objects that filter the request.</p>
+        /// <p>A list of objects that filter the request.</p> <note>
+        /// <p>Only one object is accepted as a valid input.</p>
+        /// </note>
         pub fn filters(mut self, input: crate::model::ListEntitiesFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>A list of objects that filter the request.</p>
+        /// <p>A list of objects that filter the request.</p> <note>
+        /// <p>Only one object is accepted as a valid input.</p>
+        /// </note>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListEntitiesFilter>>,

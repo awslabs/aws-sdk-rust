@@ -72,17 +72,19 @@ pub enum Error {
     /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
     /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
+    /// <p>The request was rejected because the HMAC verification failed. HMAC verification fails when the HMAC computed by using the specified message, HMAC KMS key, and MAC algorithm does not match the HMAC specified in the request.</p>
+    KmsInvalidMacException(crate::error::KmsInvalidMacException),
     /// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
     KmsInvalidSignatureException(crate::error::KmsInvalidSignatureException),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
@@ -127,6 +129,7 @@ impl std::fmt::Display for Error {
             Error::InvalidKeyUsageException(inner) => inner.fmt(f),
             Error::InvalidMarkerException(inner) => inner.fmt(f),
             Error::KmsInternalException(inner) => inner.fmt(f),
+            Error::KmsInvalidMacException(inner) => inner.fmt(f),
             Error::KmsInvalidSignatureException(inner) => inner.fmt(f),
             Error::KmsInvalidStateException(inner) => inner.fmt(f),
             Error::KeyUnavailableException(inner) => inner.fmt(f),
@@ -832,6 +835,40 @@ where
                 crate::error::GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateMacError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GenerateMacError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GenerateMacErrorKind::DisabledException(inner) => {
+                    Error::DisabledException(inner)
+                }
+                crate::error::GenerateMacErrorKind::InvalidGrantTokenException(inner) => {
+                    Error::InvalidGrantTokenException(inner)
+                }
+                crate::error::GenerateMacErrorKind::InvalidKeyUsageException(inner) => {
+                    Error::InvalidKeyUsageException(inner)
+                }
+                crate::error::GenerateMacErrorKind::KeyUnavailableException(inner) => {
+                    Error::KeyUnavailableException(inner)
+                }
+                crate::error::GenerateMacErrorKind::KmsInternalException(inner) => {
+                    Error::KmsInternalException(inner)
+                }
+                crate::error::GenerateMacErrorKind::KmsInvalidStateException(inner) => {
+                    Error::KmsInvalidStateException(inner)
+                }
+                crate::error::GenerateMacErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GenerateMacErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1695,6 +1732,43 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::VerifyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::VerifyMacError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::VerifyMacError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::VerifyMacErrorKind::DisabledException(inner) => {
+                    Error::DisabledException(inner)
+                }
+                crate::error::VerifyMacErrorKind::InvalidGrantTokenException(inner) => {
+                    Error::InvalidGrantTokenException(inner)
+                }
+                crate::error::VerifyMacErrorKind::InvalidKeyUsageException(inner) => {
+                    Error::InvalidKeyUsageException(inner)
+                }
+                crate::error::VerifyMacErrorKind::KeyUnavailableException(inner) => {
+                    Error::KeyUnavailableException(inner)
+                }
+                crate::error::VerifyMacErrorKind::KmsInternalException(inner) => {
+                    Error::KmsInternalException(inner)
+                }
+                crate::error::VerifyMacErrorKind::KmsInvalidMacException(inner) => {
+                    Error::KmsInvalidMacException(inner)
+                }
+                crate::error::VerifyMacErrorKind::KmsInvalidStateException(inner) => {
+                    Error::KmsInvalidStateException(inner)
+                }
+                crate::error::VerifyMacErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::VerifyMacErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

@@ -938,6 +938,160 @@ impl std::error::Error for AssociateLexBotError {
     }
 }
 
+/// Error type for the `AssociatePhoneNumberContactFlow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociatePhoneNumberContactFlowError {
+    /// Kind of error that occurred.
+    pub kind: AssociatePhoneNumberContactFlowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociatePhoneNumberContactFlow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociatePhoneNumberContactFlowErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociatePhoneNumberContactFlowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociatePhoneNumberContactFlowErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            AssociatePhoneNumberContactFlowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociatePhoneNumberContactFlowError {
+    fn code(&self) -> Option<&str> {
+        AssociatePhoneNumberContactFlowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociatePhoneNumberContactFlowError {
+    /// Creates a new `AssociatePhoneNumberContactFlowError`.
+    pub fn new(
+        kind: AssociatePhoneNumberContactFlowErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociatePhoneNumberContactFlowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociatePhoneNumberContactFlowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociatePhoneNumberContactFlowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociatePhoneNumberContactFlowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociatePhoneNumberContactFlowErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociatePhoneNumberContactFlowErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociatePhoneNumberContactFlowErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociatePhoneNumberContactFlowErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociatePhoneNumberContactFlowErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociatePhoneNumberContactFlowErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociatePhoneNumberContactFlowErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociatePhoneNumberContactFlowErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for AssociatePhoneNumberContactFlowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociatePhoneNumberContactFlowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            AssociatePhoneNumberContactFlowErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociatePhoneNumberContactFlowErrorKind::ThrottlingException(_inner) => Some(_inner),
+            AssociatePhoneNumberContactFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `AssociateQueueQuickConnects` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1399,6 +1553,154 @@ impl std::error::Error for AssociateSecurityKeyError {
             AssociateSecurityKeyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             AssociateSecurityKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateSecurityKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ClaimPhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ClaimPhoneNumberError {
+    /// Kind of error that occurred.
+    pub kind: ClaimPhoneNumberErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ClaimPhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ClaimPhoneNumberErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An entity with the same name already exists.</p>
+    IdempotencyException(crate::error::IdempotencyException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ClaimPhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ClaimPhoneNumberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ClaimPhoneNumberErrorKind::IdempotencyException(_inner) => _inner.fmt(f),
+            ClaimPhoneNumberErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ClaimPhoneNumberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ClaimPhoneNumberErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ClaimPhoneNumberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ClaimPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ClaimPhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        ClaimPhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ClaimPhoneNumberError {
+    /// Creates a new `ClaimPhoneNumberError`.
+    pub fn new(kind: ClaimPhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ClaimPhoneNumberError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ClaimPhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ClaimPhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ClaimPhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ClaimPhoneNumberErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimPhoneNumberErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ClaimPhoneNumberErrorKind::IdempotencyException`.
+    pub fn is_idempotency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimPhoneNumberErrorKind::IdempotencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ClaimPhoneNumberErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimPhoneNumberErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ClaimPhoneNumberErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimPhoneNumberErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ClaimPhoneNumberErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimPhoneNumberErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ClaimPhoneNumberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimPhoneNumberErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ClaimPhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ClaimPhoneNumberErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ClaimPhoneNumberErrorKind::IdempotencyException(_inner) => Some(_inner),
+            ClaimPhoneNumberErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ClaimPhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ClaimPhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ClaimPhoneNumberErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ClaimPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6227,6 +6529,143 @@ impl std::error::Error for DescribeInstanceStorageConfigError {
     }
 }
 
+/// Error type for the `DescribePhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribePhoneNumberError {
+    /// Kind of error that occurred.
+    pub kind: DescribePhoneNumberErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribePhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribePhoneNumberErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribePhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribePhoneNumberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribePhoneNumberErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DescribePhoneNumberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribePhoneNumberErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribePhoneNumberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribePhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        DescribePhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribePhoneNumberError {
+    /// Creates a new `DescribePhoneNumberError`.
+    pub fn new(kind: DescribePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribePhoneNumberError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribePhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribePhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribePhoneNumberErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePhoneNumberErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePhoneNumberErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePhoneNumberErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePhoneNumberErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePhoneNumberErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePhoneNumberErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePhoneNumberErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePhoneNumberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePhoneNumberErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribePhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribePhoneNumberErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribePhoneNumberErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DescribePhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribePhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribePhoneNumberErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeQueue` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8024,6 +8463,166 @@ impl std::error::Error for DisassociateLexBotError {
             DisassociateLexBotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateLexBotErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateLexBotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DisassociatePhoneNumberContactFlow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociatePhoneNumberContactFlowError {
+    /// Kind of error that occurred.
+    pub kind: DisassociatePhoneNumberContactFlowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociatePhoneNumberContactFlow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociatePhoneNumberContactFlowErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociatePhoneNumberContactFlowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociatePhoneNumberContactFlowErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociatePhoneNumberContactFlowError {
+    fn code(&self) -> Option<&str> {
+        DisassociatePhoneNumberContactFlowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociatePhoneNumberContactFlowError {
+    /// Creates a new `DisassociatePhoneNumberContactFlowError`.
+    pub fn new(
+        kind: DisassociatePhoneNumberContactFlowErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociatePhoneNumberContactFlowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociatePhoneNumberContactFlowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociatePhoneNumberContactFlowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociatePhoneNumberContactFlowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberContactFlowErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociatePhoneNumberContactFlowErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberContactFlowErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociatePhoneNumberContactFlowErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberContactFlowErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociatePhoneNumberContactFlowErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberContactFlowErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociatePhoneNumberContactFlowErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociatePhoneNumberContactFlowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociatePhoneNumberContactFlowErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DisassociatePhoneNumberContactFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -10995,6 +11594,143 @@ impl std::error::Error for ListPhoneNumbersError {
     }
 }
 
+/// Error type for the `ListPhoneNumbersV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListPhoneNumbersV2Error {
+    /// Kind of error that occurred.
+    pub kind: ListPhoneNumbersV2ErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListPhoneNumbersV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListPhoneNumbersV2ErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListPhoneNumbersV2Error {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListPhoneNumbersV2ErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersV2ErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersV2ErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersV2ErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersV2ErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersV2ErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListPhoneNumbersV2Error {
+    fn code(&self) -> Option<&str> {
+        ListPhoneNumbersV2Error::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListPhoneNumbersV2Error {
+    /// Creates a new `ListPhoneNumbersV2Error`.
+    pub fn new(kind: ListPhoneNumbersV2ErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListPhoneNumbersV2Error::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListPhoneNumbersV2ErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListPhoneNumbersV2Error::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListPhoneNumbersV2ErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListPhoneNumbersV2ErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersV2ErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPhoneNumbersV2ErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersV2ErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPhoneNumbersV2ErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersV2ErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPhoneNumbersV2ErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersV2ErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPhoneNumbersV2ErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersV2ErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListPhoneNumbersV2Error {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListPhoneNumbersV2ErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListPhoneNumbersV2ErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListPhoneNumbersV2ErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListPhoneNumbersV2ErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListPhoneNumbersV2ErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListPhoneNumbersV2ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListPrompts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12751,6 +13487,307 @@ impl std::error::Error for ListUsersError {
     }
 }
 
+/// Error type for the `PutUserStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutUserStatusError {
+    /// Kind of error that occurred.
+    pub kind: PutUserStatusErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutUserStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutUserStatusErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutUserStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutUserStatusErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutUserStatusErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            PutUserStatusErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutUserStatusErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            PutUserStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutUserStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            PutUserStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutUserStatusError {
+    fn code(&self) -> Option<&str> {
+        PutUserStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutUserStatusError {
+    /// Creates a new `PutUserStatusError`.
+    pub fn new(kind: PutUserStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutUserStatusError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutUserStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutUserStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutUserStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutUserStatusErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, PutUserStatusErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `PutUserStatusErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserStatusErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutUserStatusErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserStatusErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutUserStatusErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserStatusErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutUserStatusErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutUserStatusErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PutUserStatusErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for PutUserStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutUserStatusErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutUserStatusErrorKind::InternalServiceException(_inner) => Some(_inner),
+            PutUserStatusErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutUserStatusErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            PutUserStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutUserStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
+            PutUserStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ReleasePhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ReleasePhoneNumberError {
+    /// Kind of error that occurred.
+    pub kind: ReleasePhoneNumberErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ReleasePhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ReleasePhoneNumberErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An entity with the same name already exists.</p>
+    IdempotencyException(crate::error::IdempotencyException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>That resource is already in use. Please try another.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ReleasePhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ReleasePhoneNumberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::IdempotencyException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ReleasePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ReleasePhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        ReleasePhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ReleasePhoneNumberError {
+    /// Creates a new `ReleasePhoneNumberError`.
+    pub fn new(kind: ReleasePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ReleasePhoneNumberError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ReleasePhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ReleasePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ReleasePhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::IdempotencyException`.
+    pub fn is_idempotency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::IdempotencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ReleasePhoneNumberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReleasePhoneNumberErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ReleasePhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ReleasePhoneNumberErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::IdempotencyException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ReleasePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ResumeContactRecording` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12862,6 +13899,265 @@ impl std::error::Error for ResumeContactRecordingError {
             ResumeContactRecordingErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ResumeContactRecordingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ResumeContactRecordingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchAvailablePhoneNumbers` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchAvailablePhoneNumbersError {
+    /// Kind of error that occurred.
+    pub kind: SearchAvailablePhoneNumbersErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchAvailablePhoneNumbers` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchAvailablePhoneNumbersErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchAvailablePhoneNumbersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchAvailablePhoneNumbersErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            SearchAvailablePhoneNumbersErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            SearchAvailablePhoneNumbersErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchAvailablePhoneNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchAvailablePhoneNumbersError {
+    fn code(&self) -> Option<&str> {
+        SearchAvailablePhoneNumbersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchAvailablePhoneNumbersError {
+    /// Creates a new `SearchAvailablePhoneNumbersError`.
+    pub fn new(kind: SearchAvailablePhoneNumbersErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchAvailablePhoneNumbersError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchAvailablePhoneNumbersError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAvailablePhoneNumbersErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAvailablePhoneNumbersErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAvailablePhoneNumbersErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for SearchAvailablePhoneNumbersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchAvailablePhoneNumbersErrorKind::InternalServiceException(_inner) => Some(_inner),
+            SearchAvailablePhoneNumbersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SearchAvailablePhoneNumbersErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchAvailablePhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchUsers` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchUsersError {
+    /// Kind of error that occurred.
+    pub kind: SearchUsersErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchUsers` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchUsersErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchUsersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchUsersErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            SearchUsersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SearchUsersErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            SearchUsersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchUsersErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchUsersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchUsersError {
+    fn code(&self) -> Option<&str> {
+        SearchUsersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchUsersError {
+    /// Creates a new `SearchUsersError`.
+    pub fn new(kind: SearchUsersErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchUsersError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchUsersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchUsersError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchUsersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchUsersErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchUsersErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchUsersErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchUsersErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchUsersErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(&self.kind, SearchUsersErrorKind::InvalidRequestException(_))
+    }
+    /// Returns `true` if the error kind is `SearchUsersErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchUsersErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchUsersErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, SearchUsersErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for SearchUsersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchUsersErrorKind::InternalServiceException(_inner) => Some(_inner),
+            SearchUsersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SearchUsersErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            SearchUsersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchUsersErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -16250,6 +17546,165 @@ impl std::error::Error for UpdateInstanceStorageConfigError {
     }
 }
 
+/// Error type for the `UpdatePhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdatePhoneNumberError {
+    /// Kind of error that occurred.
+    pub kind: UpdatePhoneNumberErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdatePhoneNumber` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdatePhoneNumberErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An entity with the same name already exists.</p>
+    IdempotencyException(crate::error::IdempotencyException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>That resource is already in use. Please try another.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdatePhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdatePhoneNumberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::IdempotencyException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdatePhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        UpdatePhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdatePhoneNumberError {
+    /// Creates a new `UpdatePhoneNumberError`.
+    pub fn new(kind: UpdatePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdatePhoneNumberError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdatePhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdatePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdatePhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::IdempotencyException`.
+    pub fn is_idempotency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::IdempotencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePhoneNumberErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdatePhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdatePhoneNumberErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::IdempotencyException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateQueueHoursOfOperation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19476,67 +20931,67 @@ impl DuplicateResourceException {
     }
 }
 
-/// <p>The allowed limit for the resource has been exceeded.</p>
+/// <p>An entity with the same name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    /// <p>The message about the limit.</p>
+pub struct IdempotencyException {
+    #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededException {
+impl std::fmt::Debug for IdempotencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
+        let mut formatter = f.debug_struct("IdempotencyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededException {
+impl IdempotencyException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededException {
+impl std::fmt::Display for IdempotencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
+        write!(f, "IdempotencyException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
-pub mod limit_exceeded_exception {
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+impl std::error::Error for IdempotencyException {}
+/// See [`IdempotencyException`](crate::error::IdempotencyException)
+pub mod idempotency_exception {
+    /// A builder for [`IdempotencyException`](crate::error::IdempotencyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message about the limit.</p>
+        #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message about the limit.</p>
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
+        /// Consumes the builder and constructs a [`IdempotencyException`](crate::error::IdempotencyException)
+        pub fn build(self) -> crate::error::IdempotencyException {
+            crate::error::IdempotencyException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
+impl IdempotencyException {
+    /// Creates a new builder-style object to manufacture [`IdempotencyException`](crate::error::IdempotencyException)
+    pub fn builder() -> crate::error::idempotency_exception::Builder {
+        crate::error::idempotency_exception::Builder::default()
     }
 }
 
@@ -19604,6 +21059,70 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>The allowed limit for the resource has been exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    /// <p>The message about the limit.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The message about the limit.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message about the limit.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The problems with the module. Please fix before trying again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19636,8 +21155,8 @@ impl InvalidContactFlowModuleException {
 impl std::fmt::Display for InvalidContactFlowModuleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContactFlowModuleException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -19729,8 +21248,8 @@ impl InvalidContactFlowException {
 impl std::fmt::Display for InvalidContactFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContactFlowException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -19814,8 +21333,8 @@ impl ContactNotFoundException {
 impl std::fmt::Display for ContactNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactNotFoundException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -19878,8 +21397,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -19942,8 +21461,8 @@ impl OutboundContactNotPermittedException {
 impl std::fmt::Display for OutboundContactNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OutboundContactNotPermittedException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -20006,8 +21525,8 @@ impl DestinationNotAllowedException {
 impl std::fmt::Display for DestinationNotAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DestinationNotAllowedException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -20070,8 +21589,8 @@ impl UserNotFoundException {
 impl std::fmt::Display for UserNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserNotFoundException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -20134,8 +21653,8 @@ impl ContactFlowNotPublishedException {
 impl std::fmt::Display for ContactFlowNotPublishedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactFlowNotPublishedException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -20198,8 +21717,8 @@ impl ResourceConflictException {
 impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceConflictException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -20236,69 +21755,5 @@ impl ResourceConflictException {
     /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException)
     pub fn builder() -> crate::error::resource_conflict_exception::Builder {
         crate::error::resource_conflict_exception::Builder::default()
-    }
-}
-
-/// <p>An entity with the same name already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IdempotencyException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IdempotencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotencyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl IdempotencyException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IdempotencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IdempotencyException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IdempotencyException {}
-/// See [`IdempotencyException`](crate::error::IdempotencyException)
-pub mod idempotency_exception {
-    /// A builder for [`IdempotencyException`](crate::error::IdempotencyException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IdempotencyException`](crate::error::IdempotencyException)
-        pub fn build(self) -> crate::error::IdempotencyException {
-            crate::error::IdempotencyException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl IdempotencyException {
-    /// Creates a new builder-style object to manufacture [`IdempotencyException`](crate::error::IdempotencyException)
-    pub fn builder() -> crate::error::idempotency_exception::Builder {
-        crate::error::idempotency_exception::Builder::default()
     }
 }

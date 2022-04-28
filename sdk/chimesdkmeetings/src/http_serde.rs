@@ -39,6 +39,56 @@ pub fn deser_header_create_meeting_with_attendees_service_unavailable_exception_
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_delete_attendee_service_unavailable_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_delete_meeting_service_unavailable_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_get_attendee_service_unavailable_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_get_meeting_service_unavailable_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_list_attendees_service_unavailable_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_start_meeting_transcription_service_unavailable_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<

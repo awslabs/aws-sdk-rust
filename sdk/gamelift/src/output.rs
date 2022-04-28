@@ -55,11 +55,11 @@ impl ValidateMatchmakingRuleSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScriptOutput {
-    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub script: std::option::Option<crate::model::Script>,
 }
 impl UpdateScriptOutput {
-    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub fn script(&self) -> std::option::Option<&crate::model::Script> {
         self.script.as_ref()
     }
@@ -80,12 +80,12 @@ pub mod update_script_output {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
     impl Builder {
-        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
         pub fn script(mut self, input: crate::model::Script) -> Self {
             self.script = Some(input);
             self
         }
-        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -5128,11 +5128,11 @@ impl CreateVpcPeeringAuthorizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptOutput {
-    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub script: std::option::Option<crate::model::Script>,
 }
 impl CreateScriptOutput {
-    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub fn script(&self) -> std::option::Option<&crate::model::Script> {
         self.script.as_ref()
     }
@@ -5153,12 +5153,12 @@ pub mod create_script_output {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
     impl Builder {
-        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
         pub fn script(mut self, input: crate::model::Script) -> Self {
             self.script = Some(input);
             self
         }
-        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
+        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -5789,7 +5789,7 @@ pub struct CreateBuildOutput {
     ///
     /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
     pub upload_credentials: std::option::Option<crate::model::AwsCredentials>,
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
@@ -5801,7 +5801,7 @@ impl CreateBuildOutput {
     pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
         self.build_value.as_ref()
     }
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
     pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
@@ -5840,12 +5840,12 @@ pub mod create_build_output {
             self.build_value = input;
             self
         }
-        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
         pub fn upload_credentials(mut self, input: crate::model::AwsCredentials) -> Self {
             self.upload_credentials = Some(input);
             self
         }
-        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
         pub fn set_upload_credentials(
             mut self,
             input: std::option::Option<crate::model::AwsCredentials>,

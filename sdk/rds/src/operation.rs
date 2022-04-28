@@ -439,40 +439,6 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyOptionGroup {
     }
 }
 
-/// Operation shape for `CreateCustomAvailabilityZone`.
-///
-/// This is usually constructed for you using the the fluent builder returned by
-/// [`create_custom_availability_zone`](crate::client::Client::create_custom_availability_zone).
-///
-/// See [`crate::client::fluent_builders::CreateCustomAvailabilityZone`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
-pub struct CreateCustomAvailabilityZone {
-    _private: (),
-}
-impl CreateCustomAvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`CreateCustomAvailabilityZoneInput`](crate::input::CreateCustomAvailabilityZoneInput)
-    pub fn builder() -> crate::input::create_custom_availability_zone_input::Builder {
-        crate::input::create_custom_availability_zone_input::Builder::default()
-    }
-    /// Creates a new `CreateCustomAvailabilityZone` operation.
-    pub fn new() -> Self {
-        Self { _private: () }
-    }
-}
-impl aws_smithy_http::response::ParseStrictResponse for CreateCustomAvailabilityZone {
-    type Output = std::result::Result<
-        crate::output::CreateCustomAvailabilityZoneOutput,
-        crate::error::CreateCustomAvailabilityZoneError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_availability_zone_error(response)
-        } else {
-            crate::operation_deser::parse_create_custom_availability_zone_response(response)
-        }
-    }
-}
-
 /// Operation shape for `CreateCustomDBEngineVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1015,40 +981,6 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOptionGroup {
     }
 }
 
-/// Operation shape for `DeleteCustomAvailabilityZone`.
-///
-/// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_custom_availability_zone`](crate::client::Client::delete_custom_availability_zone).
-///
-/// See [`crate::client::fluent_builders::DeleteCustomAvailabilityZone`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
-pub struct DeleteCustomAvailabilityZone {
-    _private: (),
-}
-impl DeleteCustomAvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomAvailabilityZoneInput`](crate::input::DeleteCustomAvailabilityZoneInput)
-    pub fn builder() -> crate::input::delete_custom_availability_zone_input::Builder {
-        crate::input::delete_custom_availability_zone_input::Builder::default()
-    }
-    /// Creates a new `DeleteCustomAvailabilityZone` operation.
-    pub fn new() -> Self {
-        Self { _private: () }
-    }
-}
-impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomAvailabilityZone {
-    type Output = std::result::Result<
-        crate::output::DeleteCustomAvailabilityZoneOutput,
-        crate::error::DeleteCustomAvailabilityZoneError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_availability_zone_error(response)
-        } else {
-            crate::operation_deser::parse_delete_custom_availability_zone_response(response)
-        }
-    }
-}
-
 /// Operation shape for `DeleteCustomDBEngineVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1557,40 +1489,6 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGlobalCluster {
     }
 }
 
-/// Operation shape for `DeleteInstallationMedia`.
-///
-/// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_installation_media`](crate::client::Client::delete_installation_media).
-///
-/// See [`crate::client::fluent_builders::DeleteInstallationMedia`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
-pub struct DeleteInstallationMedia {
-    _private: (),
-}
-impl DeleteInstallationMedia {
-    /// Creates a new builder-style object to manufacture [`DeleteInstallationMediaInput`](crate::input::DeleteInstallationMediaInput)
-    pub fn builder() -> crate::input::delete_installation_media_input::Builder {
-        crate::input::delete_installation_media_input::Builder::default()
-    }
-    /// Creates a new `DeleteInstallationMedia` operation.
-    pub fn new() -> Self {
-        Self { _private: () }
-    }
-}
-impl aws_smithy_http::response::ParseStrictResponse for DeleteInstallationMedia {
-    type Output = std::result::Result<
-        crate::output::DeleteInstallationMediaOutput,
-        crate::error::DeleteInstallationMediaError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_installation_media_error(response)
-        } else {
-            crate::operation_deser::parse_delete_installation_media_response(response)
-        }
-    }
-}
-
 /// Operation shape for `DeleteOptionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1723,40 +1621,6 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificates {
             crate::operation_deser::parse_describe_certificates_error(response)
         } else {
             crate::operation_deser::parse_describe_certificates_response(response)
-        }
-    }
-}
-
-/// Operation shape for `DescribeCustomAvailabilityZones`.
-///
-/// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_custom_availability_zones`](crate::client::Client::describe_custom_availability_zones).
-///
-/// See [`crate::client::fluent_builders::DescribeCustomAvailabilityZones`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
-pub struct DescribeCustomAvailabilityZones {
-    _private: (),
-}
-impl DescribeCustomAvailabilityZones {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomAvailabilityZonesInput`](crate::input::DescribeCustomAvailabilityZonesInput)
-    pub fn builder() -> crate::input::describe_custom_availability_zones_input::Builder {
-        crate::input::describe_custom_availability_zones_input::Builder::default()
-    }
-    /// Creates a new `DescribeCustomAvailabilityZones` operation.
-    pub fn new() -> Self {
-        Self { _private: () }
-    }
-}
-impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomAvailabilityZones {
-    type Output = std::result::Result<
-        crate::output::DescribeCustomAvailabilityZonesOutput,
-        crate::error::DescribeCustomAvailabilityZonesError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_custom_availability_zones_error(response)
-        } else {
-            crate::operation_deser::parse_describe_custom_availability_zones_response(response)
         }
     }
 }
@@ -2713,40 +2577,6 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalClusters {
     }
 }
 
-/// Operation shape for `DescribeInstallationMedia`.
-///
-/// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_installation_media`](crate::client::Client::describe_installation_media).
-///
-/// See [`crate::client::fluent_builders::DescribeInstallationMedia`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
-pub struct DescribeInstallationMedia {
-    _private: (),
-}
-impl DescribeInstallationMedia {
-    /// Creates a new builder-style object to manufacture [`DescribeInstallationMediaInput`](crate::input::DescribeInstallationMediaInput)
-    pub fn builder() -> crate::input::describe_installation_media_input::Builder {
-        crate::input::describe_installation_media_input::Builder::default()
-    }
-    /// Creates a new `DescribeInstallationMedia` operation.
-    pub fn new() -> Self {
-        Self { _private: () }
-    }
-}
-impl aws_smithy_http::response::ParseStrictResponse for DescribeInstallationMedia {
-    type Output = std::result::Result<
-        crate::output::DescribeInstallationMediaOutput,
-        crate::error::DescribeInstallationMediaError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_installation_media_error(response)
-        } else {
-            crate::operation_deser::parse_describe_installation_media_response(response)
-        }
-    }
-}
-
 /// Operation shape for `DescribeOptionGroupOptions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3121,40 +2951,6 @@ impl aws_smithy_http::response::ParseStrictResponse for FailoverGlobalCluster {
             crate::operation_deser::parse_failover_global_cluster_error(response)
         } else {
             crate::operation_deser::parse_failover_global_cluster_response(response)
-        }
-    }
-}
-
-/// Operation shape for `ImportInstallationMedia`.
-///
-/// This is usually constructed for you using the the fluent builder returned by
-/// [`import_installation_media`](crate::client::Client::import_installation_media).
-///
-/// See [`crate::client::fluent_builders::ImportInstallationMedia`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
-pub struct ImportInstallationMedia {
-    _private: (),
-}
-impl ImportInstallationMedia {
-    /// Creates a new builder-style object to manufacture [`ImportInstallationMediaInput`](crate::input::ImportInstallationMediaInput)
-    pub fn builder() -> crate::input::import_installation_media_input::Builder {
-        crate::input::import_installation_media_input::Builder::default()
-    }
-    /// Creates a new `ImportInstallationMedia` operation.
-    pub fn new() -> Self {
-        Self { _private: () }
-    }
-}
-impl aws_smithy_http::response::ParseStrictResponse for ImportInstallationMedia {
-    type Output = std::result::Result<
-        crate::output::ImportInstallationMediaOutput,
-        crate::error::ImportInstallationMediaError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_import_installation_media_error(response)
-        } else {
-            crate::operation_deser::parse_import_installation_media_response(response)
         }
     }
 }

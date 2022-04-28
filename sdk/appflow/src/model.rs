@@ -11453,6 +11453,9 @@ pub struct OAuth2Properties {
     pub token_url: std::option::Option<std::string::String>,
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
     pub o_auth2_grant_type: std::option::Option<crate::model::OAuth2GrantType>,
+    /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
+    pub token_url_custom_properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
@@ -11463,12 +11466,23 @@ impl OAuth2Properties {
     pub fn o_auth2_grant_type(&self) -> std::option::Option<&crate::model::OAuth2GrantType> {
         self.o_auth2_grant_type.as_ref()
     }
+    /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
+    pub fn token_url_custom_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.token_url_custom_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for OAuth2Properties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OAuth2Properties");
         formatter.field("token_url", &self.token_url);
         formatter.field("o_auth2_grant_type", &self.o_auth2_grant_type);
+        formatter.field(
+            "token_url_custom_properties",
+            &self.token_url_custom_properties,
+        );
         formatter.finish()
     }
 }
@@ -11480,6 +11494,9 @@ pub mod o_auth2_properties {
     pub struct Builder {
         pub(crate) token_url: std::option::Option<std::string::String>,
         pub(crate) o_auth2_grant_type: std::option::Option<crate::model::OAuth2GrantType>,
+        pub(crate) token_url_custom_properties: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The token URL required for OAuth 2.0 authentication.</p>
@@ -11505,11 +11522,37 @@ pub mod o_auth2_properties {
             self.o_auth2_grant_type = input;
             self
         }
+        /// Adds a key-value pair to `token_url_custom_properties`.
+        ///
+        /// To override the contents of this collection use [`set_token_url_custom_properties`](Self::set_token_url_custom_properties).
+        ///
+        /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
+        pub fn token_url_custom_properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.token_url_custom_properties.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.token_url_custom_properties = Some(hash_map);
+            self
+        }
+        /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
+        pub fn set_token_url_custom_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.token_url_custom_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OAuth2Properties`](crate::model::OAuth2Properties)
         pub fn build(self) -> crate::model::OAuth2Properties {
             crate::model::OAuth2Properties {
                 token_url: self.token_url,
                 o_auth2_grant_type: self.o_auth2_grant_type,
+                token_url_custom_properties: self.token_url_custom_properties,
             }
         }
     }
@@ -15825,6 +15868,9 @@ pub struct OAuth2Defaults {
     /// <p>OAuth 2.0 grant types supported by the connector.</p>
     pub oauth2_grant_types_supported:
         std::option::Option<std::vec::Vec<crate::model::OAuth2GrantType>>,
+    /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+    pub oauth2_custom_properties:
+        std::option::Option<std::vec::Vec<crate::model::OAuth2CustomParameter>>,
 }
 impl OAuth2Defaults {
     /// <p>OAuth 2.0 scopes that the connector supports.</p>
@@ -15845,6 +15891,12 @@ impl OAuth2Defaults {
     ) -> std::option::Option<&[crate::model::OAuth2GrantType]> {
         self.oauth2_grant_types_supported.as_deref()
     }
+    /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+    pub fn oauth2_custom_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::OAuth2CustomParameter]> {
+        self.oauth2_custom_properties.as_deref()
+    }
 }
 impl std::fmt::Debug for OAuth2Defaults {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15856,6 +15908,7 @@ impl std::fmt::Debug for OAuth2Defaults {
             "oauth2_grant_types_supported",
             &self.oauth2_grant_types_supported,
         );
+        formatter.field("oauth2_custom_properties", &self.oauth2_custom_properties);
         formatter.finish()
     }
 }
@@ -15870,6 +15923,8 @@ pub mod o_auth2_defaults {
         pub(crate) auth_code_urls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) oauth2_grant_types_supported:
             std::option::Option<std::vec::Vec<crate::model::OAuth2GrantType>>,
+        pub(crate) oauth2_custom_properties:
+            std::option::Option<std::vec::Vec<crate::model::OAuth2CustomParameter>>,
     }
     impl Builder {
         /// Appends an item to `oauth_scopes`.
@@ -15951,6 +16006,28 @@ pub mod o_auth2_defaults {
             self.oauth2_grant_types_supported = input;
             self
         }
+        /// Appends an item to `oauth2_custom_properties`.
+        ///
+        /// To override the contents of this collection use [`set_oauth2_custom_properties`](Self::set_oauth2_custom_properties).
+        ///
+        /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+        pub fn oauth2_custom_properties(
+            mut self,
+            input: crate::model::OAuth2CustomParameter,
+        ) -> Self {
+            let mut v = self.oauth2_custom_properties.unwrap_or_default();
+            v.push(input);
+            self.oauth2_custom_properties = Some(v);
+            self
+        }
+        /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+        pub fn set_oauth2_custom_properties(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OAuth2CustomParameter>>,
+        ) -> Self {
+            self.oauth2_custom_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OAuth2Defaults`](crate::model::OAuth2Defaults)
         pub fn build(self) -> crate::model::OAuth2Defaults {
             crate::model::OAuth2Defaults {
@@ -15958,6 +16035,7 @@ pub mod o_auth2_defaults {
                 token_urls: self.token_urls,
                 auth_code_urls: self.auth_code_urls,
                 oauth2_grant_types_supported: self.oauth2_grant_types_supported,
+                oauth2_custom_properties: self.oauth2_custom_properties,
             }
         }
     }
@@ -15966,6 +16044,242 @@ impl OAuth2Defaults {
     /// Creates a new builder-style object to manufacture [`OAuth2Defaults`](crate::model::OAuth2Defaults)
     pub fn builder() -> crate::model::o_auth2_defaults::Builder {
         crate::model::o_auth2_defaults::Builder::default()
+    }
+}
+
+/// <p>Custom parameter required for OAuth 2.0 authentication.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OAuth2CustomParameter {
+    /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
+    pub is_required: bool,
+    /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
+    pub label: std::option::Option<std::string::String>,
+    /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
+    pub is_sensitive_field: bool,
+    /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+    pub connector_supplied_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
+    pub r#type: std::option::Option<crate::model::OAuth2CustomPropType>,
+}
+impl OAuth2CustomParameter {
+    /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
+    pub fn is_required(&self) -> bool {
+        self.is_required
+    }
+    /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
+    pub fn is_sensitive_field(&self) -> bool {
+        self.is_sensitive_field
+    }
+    /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+    pub fn connector_supplied_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.connector_supplied_values.as_deref()
+    }
+    /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OAuth2CustomPropType> {
+        self.r#type.as_ref()
+    }
+}
+impl std::fmt::Debug for OAuth2CustomParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OAuth2CustomParameter");
+        formatter.field("key", &self.key);
+        formatter.field("is_required", &self.is_required);
+        formatter.field("label", &self.label);
+        formatter.field("description", &self.description);
+        formatter.field("is_sensitive_field", &self.is_sensitive_field);
+        formatter.field("connector_supplied_values", &self.connector_supplied_values);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter)
+pub mod o_auth2_custom_parameter {
+    /// A builder for [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) is_required: std::option::Option<bool>,
+        pub(crate) label: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) is_sensitive_field: std::option::Option<bool>,
+        pub(crate) connector_supplied_values:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) r#type: std::option::Option<crate::model::OAuth2CustomPropType>,
+    }
+    impl Builder {
+        /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
+        pub fn is_required(mut self, input: bool) -> Self {
+            self.is_required = Some(input);
+            self
+        }
+        /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
+        pub fn set_is_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_required = input;
+            self
+        }
+        /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
+            self
+        }
+        /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
+            self
+        }
+        /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
+        pub fn is_sensitive_field(mut self, input: bool) -> Self {
+            self.is_sensitive_field = Some(input);
+            self
+        }
+        /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
+        pub fn set_is_sensitive_field(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_sensitive_field = input;
+            self
+        }
+        /// Appends an item to `connector_supplied_values`.
+        ///
+        /// To override the contents of this collection use [`set_connector_supplied_values`](Self::set_connector_supplied_values).
+        ///
+        /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+        pub fn connector_supplied_values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.connector_supplied_values.unwrap_or_default();
+            v.push(input.into());
+            self.connector_supplied_values = Some(v);
+            self
+        }
+        /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+        pub fn set_connector_supplied_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.connector_supplied_values = input;
+            self
+        }
+        /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
+        pub fn r#type(mut self, input: crate::model::OAuth2CustomPropType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::OAuth2CustomPropType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter)
+        pub fn build(self) -> crate::model::OAuth2CustomParameter {
+            crate::model::OAuth2CustomParameter {
+                key: self.key,
+                is_required: self.is_required.unwrap_or_default(),
+                label: self.label,
+                description: self.description,
+                is_sensitive_field: self.is_sensitive_field.unwrap_or_default(),
+                connector_supplied_values: self.connector_supplied_values,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl OAuth2CustomParameter {
+    /// Creates a new builder-style object to manufacture [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter)
+    pub fn builder() -> crate::model::o_auth2_custom_parameter::Builder {
+        crate::model::o_auth2_custom_parameter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OAuth2CustomPropType {
+    #[allow(missing_docs)] // documentation missing in model
+    AuthUrl,
+    #[allow(missing_docs)] // documentation missing in model
+    TokenUrl,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OAuth2CustomPropType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTH_URL" => OAuth2CustomPropType::AuthUrl,
+            "TOKEN_URL" => OAuth2CustomPropType::TokenUrl,
+            other => OAuth2CustomPropType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OAuth2CustomPropType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OAuth2CustomPropType::from(s))
+    }
+}
+impl OAuth2CustomPropType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OAuth2CustomPropType::AuthUrl => "AUTH_URL",
+            OAuth2CustomPropType::TokenUrl => "TOKEN_URL",
+            OAuth2CustomPropType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTH_URL", "TOKEN_URL"]
+    }
+}
+impl AsRef<str> for OAuth2CustomPropType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -102,7 +102,7 @@ impl PosixProfile {
 
 /// <p>Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.</p>
 /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-/// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+/// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HomeDirectoryMapEntry {
@@ -2747,10 +2747,10 @@ impl DescribedWorkflow {
 pub struct WorkflowStep {
     /// <p> Currently, the following step types are supported. </p>
     /// <ul>
-    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::WorkflowStepType>,
     /// <p>Details for a step that performs a file copy.</p>
@@ -2773,10 +2773,10 @@ pub struct WorkflowStep {
 impl WorkflowStep {
     /// <p> Currently, the following step types are supported. </p>
     /// <ul>
-    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::WorkflowStepType> {
         self.r#type.as_ref()
@@ -2832,10 +2832,10 @@ pub mod workflow_step {
     impl Builder {
         /// <p> Currently, the following step types are supported. </p>
         /// <ul>
-        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::WorkflowStepType) -> Self {
             self.r#type = Some(input);
@@ -2843,10 +2843,10 @@ pub mod workflow_step {
         }
         /// <p> Currently, the following step types are supported. </p>
         /// <ul>
-        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -5157,10 +5157,10 @@ impl ExecutionResults {
 pub struct ExecutionStepResult {
     /// <p>One of the available step types.</p>
     /// <ul>
-    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
     /// </ul>
     pub step_type: std::option::Option<crate::model::WorkflowStepType>,
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
@@ -5171,10 +5171,10 @@ pub struct ExecutionStepResult {
 impl ExecutionStepResult {
     /// <p>One of the available step types.</p>
     /// <ul>
-    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
     /// </ul>
     pub fn step_type(&self) -> std::option::Option<&crate::model::WorkflowStepType> {
         self.step_type.as_ref()
@@ -5210,10 +5210,10 @@ pub mod execution_step_result {
     impl Builder {
         /// <p>One of the available step types.</p>
         /// <ul>
-        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
         /// </ul>
         pub fn step_type(mut self, input: crate::model::WorkflowStepType) -> Self {
             self.step_type = Some(input);
@@ -5221,10 +5221,10 @@ pub mod execution_step_result {
         }
         /// <p>One of the available step types.</p>
         /// <ul>
-        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
         /// </ul>
         pub fn set_step_type(
             mut self,

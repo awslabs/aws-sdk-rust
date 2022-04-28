@@ -131,6 +131,189 @@ impl AsRef<str> for StateValue {
     }
 }
 
+/// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure contains information for one metric that includes additional statistics in the stream. For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricStreamStatisticsConfiguration {
+    /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
+    /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
+    pub include_metrics:
+        std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsMetric>>,
+    /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
+    pub additional_statistics: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl MetricStreamStatisticsConfiguration {
+    /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
+    /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
+    pub fn include_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricStreamStatisticsMetric]> {
+        self.include_metrics.as_deref()
+    }
+    /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
+    pub fn additional_statistics(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_statistics.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricStreamStatisticsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricStreamStatisticsConfiguration");
+        formatter.field("include_metrics", &self.include_metrics);
+        formatter.field("additional_statistics", &self.additional_statistics);
+        formatter.finish()
+    }
+}
+/// See [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration)
+pub mod metric_stream_statistics_configuration {
+    /// A builder for [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) include_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsMetric>>,
+        pub(crate) additional_statistics: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `include_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_include_metrics`](Self::set_include_metrics).
+        ///
+        /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
+        /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
+        pub fn include_metrics(
+            mut self,
+            input: crate::model::MetricStreamStatisticsMetric,
+        ) -> Self {
+            let mut v = self.include_metrics.unwrap_or_default();
+            v.push(input);
+            self.include_metrics = Some(v);
+            self
+        }
+        /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
+        /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
+        pub fn set_include_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsMetric>>,
+        ) -> Self {
+            self.include_metrics = input;
+            self
+        }
+        /// Appends an item to `additional_statistics`.
+        ///
+        /// To override the contents of this collection use [`set_additional_statistics`](Self::set_additional_statistics).
+        ///
+        /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
+        /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+        /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
+        pub fn additional_statistics(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.additional_statistics.unwrap_or_default();
+            v.push(input.into());
+            self.additional_statistics = Some(v);
+            self
+        }
+        /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
+        /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+        /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
+        pub fn set_additional_statistics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.additional_statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration)
+        pub fn build(self) -> crate::model::MetricStreamStatisticsConfiguration {
+            crate::model::MetricStreamStatisticsConfiguration {
+                include_metrics: self.include_metrics,
+                additional_statistics: self.additional_statistics,
+            }
+        }
+    }
+}
+impl MetricStreamStatisticsConfiguration {
+    /// Creates a new builder-style object to manufacture [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration)
+    pub fn builder() -> crate::model::metric_stream_statistics_configuration::Builder {
+        crate::model::metric_stream_statistics_configuration::Builder::default()
+    }
+}
+
+/// <p>This object contains the information for one metric that is to be streamed with additional statistics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricStreamStatisticsMetric {
+    /// <p>The namespace of the metric.</p>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The name of the metric.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+}
+impl MetricStreamStatisticsMetric {
+    /// <p>The namespace of the metric.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricStreamStatisticsMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricStreamStatisticsMetric");
+        formatter.field("namespace", &self.namespace);
+        formatter.field("metric_name", &self.metric_name);
+        formatter.finish()
+    }
+}
+/// See [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric)
+pub mod metric_stream_statistics_metric {
+    /// A builder for [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The namespace of the metric.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the metric.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>The name of the metric.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric)
+        pub fn build(self) -> crate::model::MetricStreamStatisticsMetric {
+            crate::model::MetricStreamStatisticsMetric {
+                namespace: self.namespace,
+                metric_name: self.metric_name,
+            }
+        }
+    }
+}
+impl MetricStreamStatisticsMetric {
+    /// Creates a new builder-style object to manufacture [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric)
+    pub fn builder() -> crate::model::metric_stream_statistics_metric::Builder {
+        crate::model::metric_stream_statistics_metric::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -787,17 +970,18 @@ impl StatisticSet {
     }
 }
 
-/// <p>A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. </p>
+/// <p>A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension name, and the actual instance ID as the value for that dimension.</p>
+/// <p>You can assign up to 10 dimensions to a metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
-    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
+    /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Dimension {
-    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
+    /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -824,12 +1008,12 @@ pub mod dimension {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
+        /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
+        /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -861,7 +1045,7 @@ impl Dimension {
 }
 
 /// <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p>
-/// <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.</p>
+/// <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a Metrics Insights query or a math expression. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.</p>
 /// <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p>
 /// <p>Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
@@ -873,7 +1057,8 @@ pub struct MetricDataQuery {
     /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.</p>
     /// <p>Within one MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub metric_stat: std::option::Option<crate::model::MetricStat>,
-    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>This field can contain either a Metrics Insights query, or a metric math expression to be performed on the returned data. For more information about Metrics Insights queries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics Insights query components and syntax</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>A math expression can use the <code>Id</code> of the other metrics or queries to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub expression: std::option::Option<std::string::String>,
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
@@ -898,7 +1083,8 @@ impl MetricDataQuery {
     pub fn metric_stat(&self) -> std::option::Option<&crate::model::MetricStat> {
         self.metric_stat.as_ref()
     }
-    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>This field can contain either a Metrics Insights query, or a metric math expression to be performed on the returned data. For more information about Metrics Insights queries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics Insights query components and syntax</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>A math expression can use the <code>Id</code> of the other metrics or queries to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
@@ -976,13 +1162,15 @@ pub mod metric_data_query {
             self.metric_stat = input;
             self
         }
-        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>This field can contain either a Metrics Insights query, or a metric math expression to be performed on the returned data. For more information about Metrics Insights queries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics Insights query components and syntax</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>A math expression can use the <code>Id</code> of the other metrics or queries to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>This field can contain either a Metrics Insights query, or a metric math expression to be performed on the returned data. For more information about Metrics Insights queries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics Insights query components and syntax</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>A math expression can use the <code>Id</code> of the other metrics or queries to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
@@ -3958,7 +4146,8 @@ pub struct MetricAlarm {
     pub threshold: std::option::Option<f64>,
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
-    /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
     pub treat_missing_data: std::option::Option<std::string::String>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
     pub evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
@@ -4062,7 +4251,8 @@ impl MetricAlarm {
     pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
-    /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
     pub fn treat_missing_data(&self) -> std::option::Option<&str> {
         self.treat_missing_data.as_deref()
     }
@@ -4448,12 +4638,14 @@ pub mod metric_alarm {
             self.comparison_operator = input;
             self
         }
-        /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+        /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
+        /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
         pub fn treat_missing_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.treat_missing_data = Some(input.into());
             self
         }
-        /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+        /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
+        /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
         pub fn set_treat_missing_data(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -8237,6 +8237,7 @@ pub mod update_organization_configuration_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<bool>,
+        pub(crate) auto_enable_standards: std::option::Option<crate::model::AutoEnableStandards>,
     }
     impl Builder {
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
@@ -8253,6 +8254,23 @@ pub mod update_organization_configuration_input {
             self.auto_enable = input;
             self
         }
+        /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+        /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
+        /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+        pub fn auto_enable_standards(mut self, input: crate::model::AutoEnableStandards) -> Self {
+            self.auto_enable_standards = Some(input);
+            self
+        }
+        /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+        /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
+        /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+        pub fn set_auto_enable_standards(
+            mut self,
+            input: std::option::Option<crate::model::AutoEnableStandards>,
+        ) -> Self {
+            self.auto_enable_standards = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput)
         pub fn build(
             self,
@@ -8262,6 +8280,7 @@ pub mod update_organization_configuration_input {
         > {
             Ok(crate::input::UpdateOrganizationConfigurationInput {
                 auto_enable: self.auto_enable.unwrap_or_default(),
+                auto_enable_standards: self.auto_enable_standards,
             })
         }
     }
@@ -8769,6 +8788,10 @@ pub struct UpdateOrganizationConfigurationInput {
     /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     pub auto_enable: bool,
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+    /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
+    /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+    pub auto_enable_standards: std::option::Option<crate::model::AutoEnableStandards>,
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
@@ -8777,11 +8800,18 @@ impl UpdateOrganizationConfigurationInput {
     pub fn auto_enable(&self) -> bool {
         self.auto_enable
     }
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+    /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
+    /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+    pub fn auto_enable_standards(&self) -> std::option::Option<&crate::model::AutoEnableStandards> {
+        self.auto_enable_standards.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
         formatter.field("auto_enable", &self.auto_enable);
+        formatter.field("auto_enable_standards", &self.auto_enable_standards);
         formatter.finish()
     }
 }

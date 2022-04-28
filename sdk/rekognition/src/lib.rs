@@ -7,7 +7,208 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>This is the Amazon Rekognition API reference.</p>
+//! <p>This is the API Reference for <a href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon Rekognition Image</a>,
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon Rekognition Custom Labels</a>,
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/dg/video.html">Amazon Rekognition Stored Video</a>,      
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon Rekognition Streaming Video</a>.
+//! It provides descriptions of actions, data types, common parameters,
+//! and common errors.</p>
+//!
+//! <p>    
+//! <b>Amazon Rekognition Image</b>
+//! </p>
+//!
+//! <ul>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! </ul>
+//!
+//!
+//!
+//!
+//!
+//! <p>
+//! <b>Amazon Rekognition Custom Labels</b>
+//! </p>
+//! <ul>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! </ul>
+//!
+//! <p>
+//! <b>Amazon Rekognition Video Stored Video</b>
+//! </p>
+//!
+//! <ul>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! </ul>
+//!
+//! <p>
+//! <b>Amazon Rekognition Video Streaming Video</b>
+//! </p>
+//!
+//! <ul>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! <li>
+//! <p></p>
+//! </li>
+//! </ul>
 //!
 //! # Crate Organization
 //!

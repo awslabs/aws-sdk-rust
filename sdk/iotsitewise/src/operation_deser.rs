@@ -485,6 +485,334 @@ pub fn parse_batch_disassociate_project_assets_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_asset_property_aggregates_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetAssetPropertyAggregatesOutput,
+    crate::error::BatchGetAssetPropertyAggregatesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::BatchGetAssetPropertyAggregatesError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyAggregatesErrorKind::InternalFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_failure_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InvalidRequestException" => crate::error::BatchGetAssetPropertyAggregatesError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyAggregatesErrorKind::InvalidRequestException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_request_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ServiceUnavailableException" => crate::error::BatchGetAssetPropertyAggregatesError {
+            meta: generic,
+            kind:
+                crate::error::BatchGetAssetPropertyAggregatesErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ThrottlingException" => crate::error::BatchGetAssetPropertyAggregatesError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::BatchGetAssetPropertyAggregatesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_asset_property_aggregates_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetAssetPropertyAggregatesOutput,
+    crate::error::BatchGetAssetPropertyAggregatesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::batch_get_asset_property_aggregates_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_batch_get_asset_property_aggregates(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::BatchGetAssetPropertyAggregatesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_asset_property_value_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetAssetPropertyValueOutput,
+    crate::error::BatchGetAssetPropertyValueError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetAssetPropertyValueError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::BatchGetAssetPropertyValueError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::BatchGetAssetPropertyValueError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyValueErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::BatchGetAssetPropertyValueError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyValueErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::BatchGetAssetPropertyValueError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyValueErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::BatchGetAssetPropertyValueError {
+            meta: generic,
+            kind: crate::error::BatchGetAssetPropertyValueErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::BatchGetAssetPropertyValueError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_asset_property_value_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetAssetPropertyValueOutput,
+    crate::error::BatchGetAssetPropertyValueError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_get_asset_property_value_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_asset_property_value(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchGetAssetPropertyValueError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_asset_property_value_history_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetAssetPropertyValueHistoryOutput,
+    crate::error::BatchGetAssetPropertyValueHistoryError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequestException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceUnavailableException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::BatchGetAssetPropertyValueHistoryError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_asset_property_value_history_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetAssetPropertyValueHistoryOutput,
+    crate::error::BatchGetAssetPropertyValueHistoryError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::batch_get_asset_property_value_history_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_asset_property_value_history(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_put_asset_property_value_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

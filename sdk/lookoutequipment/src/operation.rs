@@ -495,6 +495,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModels {
     }
 }
 
+/// Operation shape for `ListSensorStatistics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sensor_statistics`](crate::client::Client::list_sensor_statistics).
+///
+/// See [`crate::client::fluent_builders::ListSensorStatistics`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSensorStatistics {
+    _private: (),
+}
+impl ListSensorStatistics {
+    /// Creates a new builder-style object to manufacture [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput)
+    pub fn builder() -> crate::input::list_sensor_statistics_input::Builder {
+        crate::input::list_sensor_statistics_input::Builder::default()
+    }
+    /// Creates a new `ListSensorStatistics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSensorStatistics {
+    type Output = std::result::Result<
+        crate::output::ListSensorStatisticsOutput,
+        crate::error::ListSensorStatisticsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sensor_statistics_error(response)
+        } else {
+            crate::operation_deser::parse_list_sensor_statistics_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

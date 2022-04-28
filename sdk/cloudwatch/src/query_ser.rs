@@ -286,32 +286,64 @@ pub fn serialize_structure_crate_model_metric_stream_filter(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_crate_model_metric_stream_statistics_configuration(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::MetricStreamStatisticsConfiguration,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope_81 = writer.prefix("IncludeMetrics");
+    if let Some(var_82) = &input.include_metrics {
+        let mut list_84 = scope_81.start_list(false, None);
+        for item_83 in var_82 {
+            #[allow(unused_mut)]
+            let mut entry_85 = list_84.entry();
+            crate::query_ser::serialize_structure_crate_model_metric_stream_statistics_metric(
+                entry_85, item_83,
+            )?;
+        }
+        list_84.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_86 = writer.prefix("AdditionalStatistics");
+    if let Some(var_87) = &input.additional_statistics {
+        let mut list_89 = scope_86.start_list(false, None);
+        for item_88 in var_87 {
+            #[allow(unused_mut)]
+            let mut entry_90 = list_89.entry();
+            entry_90.string(item_88);
+        }
+        list_89.finish();
+    }
+    Ok(())
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_stat(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricStat,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("Metric");
-    if let Some(var_82) = &input.metric {
-        crate::query_ser::serialize_structure_crate_model_metric(scope_81, var_82)?;
+    let mut scope_91 = writer.prefix("Metric");
+    if let Some(var_92) = &input.metric {
+        crate::query_ser::serialize_structure_crate_model_metric(scope_91, var_92)?;
     }
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("Period");
-    if let Some(var_84) = &input.period {
-        scope_83.number(
+    let mut scope_93 = writer.prefix("Period");
+    if let Some(var_94) = &input.period {
+        scope_93.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_84).into()),
+            aws_smithy_types::Number::NegInt((*var_94).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("Stat");
-    if let Some(var_86) = &input.stat {
-        scope_85.string(var_86);
+    let mut scope_95 = writer.prefix("Stat");
+    if let Some(var_96) = &input.stat {
+        scope_95.string(var_96);
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("Unit");
-    if let Some(var_88) = &input.unit {
-        scope_87.string(var_88.as_str());
+    let mut scope_97 = writer.prefix("Unit");
+    if let Some(var_98) = &input.unit {
+        scope_97.string(var_98.as_str());
     }
     Ok(())
 }
@@ -322,14 +354,14 @@ pub fn serialize_structure_crate_model_range(
     input: &crate::model::Range,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("StartTime");
-    if let Some(var_90) = &input.start_time {
-        scope_89.date_time(var_90, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_99 = writer.prefix("StartTime");
+    if let Some(var_100) = &input.start_time {
+        scope_99.date_time(var_100, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("EndTime");
-    if let Some(var_92) = &input.end_time {
-        scope_91.date_time(var_92, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_101 = writer.prefix("EndTime");
+    if let Some(var_102) = &input.end_time {
+        scope_101.date_time(var_102, aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }
@@ -340,36 +372,54 @@ pub fn serialize_structure_crate_model_statistic_set(
     input: &crate::model::StatisticSet,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("SampleCount");
-    if let Some(var_94) = &input.sample_count {
-        scope_93.number(
+    let mut scope_103 = writer.prefix("SampleCount");
+    if let Some(var_104) = &input.sample_count {
+        scope_103.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_94).into()),
+            aws_smithy_types::Number::Float((*var_104).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("Sum");
-    if let Some(var_96) = &input.sum {
-        scope_95.number(
+    let mut scope_105 = writer.prefix("Sum");
+    if let Some(var_106) = &input.sum {
+        scope_105.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_96).into()),
+            aws_smithy_types::Number::Float((*var_106).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("Minimum");
-    if let Some(var_98) = &input.minimum {
-        scope_97.number(
+    let mut scope_107 = writer.prefix("Minimum");
+    if let Some(var_108) = &input.minimum {
+        scope_107.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_98).into()),
+            aws_smithy_types::Number::Float((*var_108).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("Maximum");
-    if let Some(var_100) = &input.maximum {
-        scope_99.number(
+    let mut scope_109 = writer.prefix("Maximum");
+    if let Some(var_110) = &input.maximum {
+        scope_109.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_100).into()),
+            aws_smithy_types::Number::Float((*var_110).into()),
         );
+    }
+    Ok(())
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_metric_stream_statistics_metric(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::MetricStreamStatisticsMetric,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope_111 = writer.prefix("Namespace");
+    if let Some(var_112) = &input.namespace {
+        scope_111.string(var_112);
+    }
+    #[allow(unused_mut)]
+    let mut scope_113 = writer.prefix("MetricName");
+    if let Some(var_114) = &input.metric_name {
+        scope_113.string(var_114);
     }
     Ok(())
 }
@@ -380,25 +430,25 @@ pub fn serialize_structure_crate_model_metric(
     input: &crate::model::Metric,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("Namespace");
-    if let Some(var_102) = &input.namespace {
-        scope_101.string(var_102);
+    let mut scope_115 = writer.prefix("Namespace");
+    if let Some(var_116) = &input.namespace {
+        scope_115.string(var_116);
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("MetricName");
-    if let Some(var_104) = &input.metric_name {
-        scope_103.string(var_104);
+    let mut scope_117 = writer.prefix("MetricName");
+    if let Some(var_118) = &input.metric_name {
+        scope_117.string(var_118);
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("Dimensions");
-    if let Some(var_106) = &input.dimensions {
-        let mut list_108 = scope_105.start_list(false, None);
-        for item_107 in var_106 {
+    let mut scope_119 = writer.prefix("Dimensions");
+    if let Some(var_120) = &input.dimensions {
+        let mut list_122 = scope_119.start_list(false, None);
+        for item_121 in var_120 {
             #[allow(unused_mut)]
-            let mut entry_109 = list_108.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_109, item_107)?;
+            let mut entry_123 = list_122.entry();
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_123, item_121)?;
         }
-        list_108.finish();
+        list_122.finish();
     }
     Ok(())
 }

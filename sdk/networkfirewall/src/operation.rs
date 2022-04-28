@@ -837,6 +837,42 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDescriptio
     }
 }
 
+/// Operation shape for `UpdateFirewallEncryptionConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_firewall_encryption_configuration`](crate::client::Client::update_firewall_encryption_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFirewallEncryptionConfiguration {
+    _private: (),
+}
+impl UpdateFirewallEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput)
+    pub fn builder() -> crate::input::update_firewall_encryption_configuration_input::Builder {
+        crate::input::update_firewall_encryption_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateFirewallEncryptionConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallEncryptionConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateFirewallEncryptionConfigurationOutput,
+        crate::error::UpdateFirewallEncryptionConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_firewall_encryption_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_firewall_encryption_configuration_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `UpdateFirewallPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

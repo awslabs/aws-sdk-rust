@@ -781,6 +781,544 @@ impl BatchDisassociateProjectAssetsInput {
     }
 }
 
+/// See [`BatchGetAssetPropertyAggregatesInput`](crate::input::BatchGetAssetPropertyAggregatesInput)
+pub mod batch_get_asset_property_aggregates_input {
+    /// A builder for [`BatchGetAssetPropertyAggregatesInput`](crate::input::BatchGetAssetPropertyAggregatesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entries:
+            std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesEntry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesEntry,
+        ) -> Self {
+            let mut v = self.entries.unwrap_or_default();
+            v.push(input);
+            self.entries = Some(v);
+            self
+        }
+        /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn set_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesEntry>,
+            >,
+        ) -> Self {
+            self.entries = input;
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesInput`](crate::input::BatchGetAssetPropertyAggregatesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::BatchGetAssetPropertyAggregatesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetAssetPropertyAggregatesInput {
+                entries: self.entries,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetAssetPropertyAggregatesInputOperationOutputAlias =
+    crate::operation::BatchGetAssetPropertyAggregates;
+#[doc(hidden)]
+pub type BatchGetAssetPropertyAggregatesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetAssetPropertyAggregatesInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetAssetPropertyAggregates`](crate::operation::BatchGetAssetPropertyAggregates)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetAssetPropertyAggregates,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetAssetPropertyAggregatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/properties/batch/aggregates").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetAssetPropertyAggregatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_asset_property_aggregates(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetAssetPropertyAggregates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetAssetPropertyAggregates",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesInput`](crate::input::BatchGetAssetPropertyAggregatesInput)
+    pub fn builder() -> crate::input::batch_get_asset_property_aggregates_input::Builder {
+        crate::input::batch_get_asset_property_aggregates_input::Builder::default()
+    }
+}
+
+/// See [`BatchGetAssetPropertyValueInput`](crate::input::BatchGetAssetPropertyValueInput)
+pub mod batch_get_asset_property_value_input {
+    /// A builder for [`BatchGetAssetPropertyValueInput`](crate::input::BatchGetAssetPropertyValueInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entries:
+            std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueEntry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn entries(mut self, input: crate::model::BatchGetAssetPropertyValueEntry) -> Self {
+            let mut v = self.entries.unwrap_or_default();
+            v.push(input);
+            self.entries = Some(v);
+            self
+        }
+        /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn set_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueEntry>,
+            >,
+        ) -> Self {
+            self.entries = input;
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueInput`](crate::input::BatchGetAssetPropertyValueInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::BatchGetAssetPropertyValueInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetAssetPropertyValueInput {
+                entries: self.entries,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetAssetPropertyValueInputOperationOutputAlias =
+    crate::operation::BatchGetAssetPropertyValue;
+#[doc(hidden)]
+pub type BatchGetAssetPropertyValueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetAssetPropertyValueInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetAssetPropertyValue`](crate::operation::BatchGetAssetPropertyValue)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetAssetPropertyValue,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetAssetPropertyValueInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/properties/batch/latest").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetAssetPropertyValueInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_asset_property_value(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetAssetPropertyValue::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetAssetPropertyValue",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueInput`](crate::input::BatchGetAssetPropertyValueInput)
+    pub fn builder() -> crate::input::batch_get_asset_property_value_input::Builder {
+        crate::input::batch_get_asset_property_value_input::Builder::default()
+    }
+}
+
+/// See [`BatchGetAssetPropertyValueHistoryInput`](crate::input::BatchGetAssetPropertyValueHistoryInput)
+pub mod batch_get_asset_property_value_history_input {
+    /// A builder for [`BatchGetAssetPropertyValueHistoryInput`](crate::input::BatchGetAssetPropertyValueHistoryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entries: std::option::Option<
+            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryEntry>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn entries(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistoryEntry,
+        ) -> Self {
+            let mut v = self.entries.unwrap_or_default();
+            v.push(input);
+            self.entries = Some(v);
+            self
+        }
+        /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+        pub fn set_entries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryEntry>,
+            >,
+        ) -> Self {
+            self.entries = input;
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+        /// <ul>
+        /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+        /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+        /// </ul>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryInput`](crate::input::BatchGetAssetPropertyValueHistoryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::BatchGetAssetPropertyValueHistoryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetAssetPropertyValueHistoryInput {
+                entries: self.entries,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetAssetPropertyValueHistoryInputOperationOutputAlias =
+    crate::operation::BatchGetAssetPropertyValueHistory;
+#[doc(hidden)]
+pub type BatchGetAssetPropertyValueHistoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetAssetPropertyValueHistoryInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetAssetPropertyValueHistory`](crate::operation::BatchGetAssetPropertyValueHistory)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetAssetPropertyValueHistory,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetAssetPropertyValueHistoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/properties/batch/history").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetAssetPropertyValueHistoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_asset_property_value_history(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetAssetPropertyValueHistory::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetAssetPropertyValueHistory",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryInput`](crate::input::BatchGetAssetPropertyValueHistoryInput)
+    pub fn builder() -> crate::input::batch_get_asset_property_value_history_input::Builder {
+        crate::input::batch_get_asset_property_value_history_input::Builder::default()
+    }
+}
+
 /// See [`BatchPutAssetPropertyValueInput`](crate::input::BatchPutAssetPropertyValueInput)
 pub mod batch_put_asset_property_value_input {
     /// A builder for [`BatchPutAssetPropertyValueInput`](crate::input::BatchPutAssetPropertyValueInput)
@@ -14959,6 +15497,126 @@ impl std::fmt::Debug for BatchPutAssetPropertyValueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutAssetPropertyValueInput");
         formatter.field("entries", &self.entries);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistoryInput {
+    /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryEntry>>,
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+    /// </ul>
+    pub max_results: std::option::Option<i32>,
+}
+impl BatchGetAssetPropertyValueHistoryInput {
+    /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistoryEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+    /// </ul>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryInput");
+        formatter.field("entries", &self.entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueInput {
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueEntry>>,
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyValueInput {
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueInput");
+        formatter.field("entries", &self.entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesInput {
+    /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesEntry>>,
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+    /// </ul>
+    pub max_results: std::option::Option<i32>,
+}
+impl BatchGetAssetPropertyAggregatesInput {
+    /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+    /// </ul>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesInput");
+        formatter.field("entries", &self.entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }

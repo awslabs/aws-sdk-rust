@@ -182,7 +182,7 @@ impl Client {
     ///   - [`restore_date(impl Into<String>)`](crate::client::fluent_builders::CopySnapshot::restore_date) / [`set_restore_date(Option<String>)`](crate::client::fluent_builders::CopySnapshot::set_restore_date): <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>   <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
     ///   - [`use_latest_restorable_auto_snapshot(bool)`](crate::client::fluent_builders::CopySnapshot::use_latest_restorable_auto_snapshot) / [`set_use_latest_restorable_auto_snapshot(Option<bool>)`](crate::client::fluent_builders::CopySnapshot::set_use_latest_restorable_auto_snapshot): <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>  <p>Constraints:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
     ///   - [`target_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CopySnapshot::target_snapshot_name) / [`set_target_snapshot_name(Option<String>)`](crate::client::fluent_builders::CopySnapshot::set_target_snapshot_name): <p>The name of the new manual snapshot to be created as a copy.</p>
-    ///   - [`source_region(RegionName)`](crate::client::fluent_builders::CopySnapshot::source_region) / [`set_source_region(Option<RegionName>)`](crate::client::fluent_builders::CopySnapshot::set_source_region): <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+    ///   - [`source_region(RegionName)`](crate::client::fluent_builders::CopySnapshot::source_region) / [`set_source_region(Option<RegionName>)`](crate::client::fluent_builders::CopySnapshot::set_source_region): <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
     /// - On success, responds with [`CopySnapshotOutput`](crate::output::CopySnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CopySnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::error::CopySnapshotError)
@@ -241,7 +241,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateContactMethod`](crate::client::fluent_builders::CreateContactMethod) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`protocol(ContactProtocol)`](crate::client::fluent_builders::CreateContactMethod::protocol) / [`set_protocol(Option<ContactProtocol>)`](crate::client::fluent_builders::CreateContactMethod::set_protocol): <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>  <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>  <ul>   <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>   <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>   <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>   <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>   <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>   <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>  </ul>  <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>  <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    ///   - [`protocol(ContactProtocol)`](crate::client::fluent_builders::CreateContactMethod::protocol) / [`set_protocol(Option<ContactProtocol>)`](crate::client::fluent_builders::CreateContactMethod::set_protocol): <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>  <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>  <ul>   <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>   <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>   <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>   <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>   <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>   <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>  </ul>  <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>  <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     ///   - [`contact_endpoint(impl Into<String>)`](crate::client::fluent_builders::CreateContactMethod::contact_endpoint) / [`set_contact_endpoint(Option<String>)`](crate::client::fluent_builders::CreateContactMethod::set_contact_endpoint): <p>The destination of the contact method, such as an email address or a mobile phone number.</p>  <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
     /// - On success, responds with [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateContactMethodOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
@@ -252,7 +252,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateContainerService`](crate::client::fluent_builders::CreateContainerService) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateContainerService::set_service_name): <p>The name for the container service.</p>  <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://   <servicename>    .    <randomguid>     .     <awsregion>      .cs.amazonlightsail.com     </awsregion>    </randomguid>   </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>  <p>The following are the requirements for container service names:</p>  <ul>   <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>   <li> <p>Must contain 1 to 63 characters.</p> </li>   <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>   <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>  </ul>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateContainerService::set_service_name): <p>The name for the container service.</p>  <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://   <servicename>    .    <randomguid>     .     <awsregion>      .cs.amazonlightsail.com     </awsregion>    </randomguid>   </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>  <p>The following are the requirements for container service names:</p>  <ul>   <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>   <li> <p>Must contain 1 to 63 characters.</p> </li>   <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>   <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>  </ul>
     ///   - [`power(ContainerServicePowerName)`](crate::client::fluent_builders::CreateContainerService::power) / [`set_power(Option<ContainerServicePowerName>)`](crate::client::fluent_builders::CreateContainerService::set_power): <p>The power specification for the container service.</p>  <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>  <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
     ///   - [`scale(i32)`](crate::client::fluent_builders::CreateContainerService::scale) / [`set_scale(Option<i32>)`](crate::client::fluent_builders::CreateContainerService::set_scale): <p>The scale specification for the container service.</p>  <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContainerService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContainerService::set_tags): <p>The tag keys and optional values to add to the container service during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>  <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
@@ -453,6 +453,7 @@ impl Client {
     ///   - [`certificate_alternative_names(Vec<String>)`](crate::client::fluent_builders::CreateLoadBalancer::certificate_alternative_names) / [`set_certificate_alternative_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_certificate_alternative_names): <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLoadBalancer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateLoadBalancer::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateLoadBalancer::set_ip_address_type): <p>The IP address type for the load balancer.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>  <p>The default value is <code>dualstack</code>.</p>
+    ///   - [`tls_policy_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancer::tls_policy_name) / [`set_tls_policy_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancer::set_tls_policy_name): <p>The name of the TLS policy to apply to the load balancer.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>  <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// - On success, responds with [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateLoadBalancerError>`](crate::error::CreateLoadBalancerError)
@@ -932,12 +933,13 @@ impl Client {
     /// Constructs a fluent builder for the [`GetBuckets`](crate::client::fluent_builders::GetBuckets) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_bucket_name): <p>The name of the bucket for which to return information.</p>  <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_bucket_name): <p>The name of the bucket for which to return information.</p>  <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     ///   - [`include_connected_resources(bool)`](crate::client::fluent_builders::GetBuckets::include_connected_resources) / [`set_include_connected_resources(Option<bool>)`](crate::client::fluent_builders::GetBuckets::set_include_connected_resources): <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     /// - On success, responds with [`GetBucketsOutput`](crate::output::GetBucketsOutput) with field(s):
     ///   - [`buckets(Option<Vec<Bucket>>)`](crate::output::GetBucketsOutput::buckets): <p>An array of objects that describe buckets.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::GetBucketsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    ///   - [`account_level_bpa_sync(Option<AccountLevelBpaSync>)`](crate::output::GetBucketsOutput::account_level_bpa_sync): <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>  <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     /// - On failure, responds with [`SdkError<GetBucketsError>`](crate::error::GetBucketsError)
     pub fn get_buckets(&self) -> fluent_builders::GetBuckets {
         fluent_builders::GetBuckets::new(self.handle.clone())
@@ -957,9 +959,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetCertificates`](crate::client::fluent_builders::GetCertificates) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_statuses(Vec<CertificateStatus>)`](crate::client::fluent_builders::GetCertificates::certificate_statuses) / [`set_certificate_statuses(Option<Vec<CertificateStatus>>)`](crate::client::fluent_builders::GetCertificates::set_certificate_statuses): <p>The status of the certificates for which to return information.</p>  <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>  <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+    ///   - [`certificate_statuses(Vec<CertificateStatus>)`](crate::client::fluent_builders::GetCertificates::certificate_statuses) / [`set_certificate_statuses(Option<Vec<CertificateStatus>>)`](crate::client::fluent_builders::GetCertificates::set_certificate_statuses): <p>The status of the certificates for which to return information.</p>  <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>  <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
     ///   - [`include_certificate_details(bool)`](crate::client::fluent_builders::GetCertificates::include_certificate_details) / [`set_include_certificate_details(bool)`](crate::client::fluent_builders::GetCertificates::set_include_certificate_details): <p>Indicates whether to include detailed information about the certificates in the response.</p>  <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
-    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::GetCertificates::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::GetCertificates::set_certificate_name): <p>The name for the certificate for which to return information.</p>  <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::GetCertificates::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::GetCertificates::set_certificate_name): <p>The name for the certificate for which to return information.</p>  <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     /// - On success, responds with [`GetCertificatesOutput`](crate::output::GetCertificatesOutput) with field(s):
     ///   - [`certificates(Option<Vec<CertificateSummary>>)`](crate::output::GetCertificatesOutput::certificates): <p>An object that describes certificates.</p>
     /// - On failure, responds with [`SdkError<GetCertificatesError>`](crate::error::GetCertificatesError)
@@ -1068,7 +1070,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetContainerServices`](crate::client::fluent_builders::GetContainerServices) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerServices::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerServices::set_service_name): <p>The name of the container service for which to return information.</p>  <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerServices::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerServices::set_service_name): <p>The name of the container service for which to return information.</p>  <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
     /// - On success, responds with [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput) with field(s):
     ///   - [`container_services(Option<Vec<ContainerService>>)`](crate::output::GetContainerServicesOutput::container_services): <p>An array of objects that describe one or more container services.</p>
     /// - On failure, responds with [`SdkError<GetContainerServicesError>`](crate::error::GetContainerServicesError)
@@ -1160,7 +1162,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetDistributions`](crate::client::fluent_builders::GetDistributions) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::GetDistributions::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::GetDistributions::set_distribution_name): <p>The name of the distribution for which to return information.</p>  <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::GetDistributions::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::GetDistributions::set_distribution_name): <p>The name of the distribution for which to return information.</p>  <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetDistributions::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetDistributions::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     /// - On success, responds with [`GetDistributionsOutput`](crate::output::GetDistributionsOutput) with field(s):
     ///   - [`distributions(Option<Vec<LightsailDistribution>>)`](crate::output::GetDistributionsOutput::distributions): <p>An array of objects that describe your distributions.</p>
@@ -1362,6 +1364,17 @@ impl Client {
         &self,
     ) -> fluent_builders::GetLoadBalancerTlsCertificates {
         fluent_builders::GetLoadBalancerTlsCertificates::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetLoadBalancerTlsPolicies`](crate::client::fluent_builders::GetLoadBalancerTlsPolicies) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetLoadBalancerTlsPolicies::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetLoadBalancerTlsPolicies::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput) with field(s):
+    ///   - [`tls_policies(Option<Vec<LoadBalancerTlsPolicy>>)`](crate::output::GetLoadBalancerTlsPoliciesOutput::tls_policies): <p>An array of objects that describe the TLS security policies that are available.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetLoadBalancerTlsPoliciesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetLoadBalancerTlsPoliciesError>`](crate::error::GetLoadBalancerTlsPoliciesError)
+    pub fn get_load_balancer_tls_policies(&self) -> fluent_builders::GetLoadBalancerTlsPolicies {
+        fluent_builders::GetLoadBalancerTlsPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetOperation`](crate::client::fluent_builders::GetOperation) operation.
     ///
@@ -1643,7 +1656,7 @@ impl Client {
     ///   - [`evaluation_periods(i32)`](crate::client::fluent_builders::PutAlarm::evaluation_periods) / [`set_evaluation_periods(Option<i32>)`](crate::client::fluent_builders::PutAlarm::set_evaluation_periods): <p>The number of most recent periods over which data is compared to the specified threshold. If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the N.</p>  <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>  <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>  <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
     ///   - [`datapoints_to_alarm(i32)`](crate::client::fluent_builders::PutAlarm::datapoints_to_alarm) / [`set_datapoints_to_alarm(Option<i32>)`](crate::client::fluent_builders::PutAlarm::set_datapoints_to_alarm): <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
     ///   - [`treat_missing_data(TreatMissingData)`](crate::client::fluent_builders::PutAlarm::treat_missing_data) / [`set_treat_missing_data(Option<TreatMissingData>)`](crate::client::fluent_builders::PutAlarm::set_treat_missing_data): <p>Sets how this alarm will handle missing data points.</p>  <p>An alarm can treat missing data in the following ways:</p>  <ul>   <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>   <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>   <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>   <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>  </ul>  <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
-    ///   - [`contact_protocols(Vec<ContactProtocol>)`](crate::client::fluent_builders::PutAlarm::contact_protocols) / [`set_contact_protocols(Option<Vec<ContactProtocol>>)`](crate::client::fluent_builders::PutAlarm::set_contact_protocols): <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>  <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>  <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>  <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+    ///   - [`contact_protocols(Vec<ContactProtocol>)`](crate::client::fluent_builders::PutAlarm::contact_protocols) / [`set_contact_protocols(Option<Vec<ContactProtocol>>)`](crate::client::fluent_builders::PutAlarm::set_contact_protocols): <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>  <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>  <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>  <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
     ///   - [`notification_triggers(Vec<AlarmState>)`](crate::client::fluent_builders::PutAlarm::notification_triggers) / [`set_notification_triggers(Option<Vec<AlarmState>>)`](crate::client::fluent_builders::PutAlarm::set_notification_triggers): <p>The alarm states that trigger a notification.</p>  <p>An alarm has the following possible states:</p>  <ul>   <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>   <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>   <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>  </ul>  <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>  <ul>   <li> <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p> </li>   <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>  </ul>  <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
     ///   - [`notification_enabled(bool)`](crate::client::fluent_builders::PutAlarm::notification_enabled) / [`set_notification_enabled(Option<bool>)`](crate::client::fluent_builders::PutAlarm::set_notification_enabled): <p>Indicates whether the alarm is enabled.</p>  <p>Notifications are enabled by default if you don't specify this parameter.</p>
     /// - On success, responds with [`PutAlarmOutput`](crate::output::PutAlarmOutput) with field(s):
@@ -1690,7 +1703,7 @@ impl Client {
     ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::RegisterContainerImage::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::RegisterContainerImage::set_label): <p>The label for the container image when it's registered to the container service.</p>  <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>  <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>   <imagelabel></imagelabel></code> portion of the following image name example:</p>  <ul>   <li> <p> <code>:container-service-1.     <imagelabel>      .1     </imagelabel></code> </p> </li>  </ul>  <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>  <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
     ///   - [`digest(impl Into<String>)`](crate::client::fluent_builders::RegisterContainerImage::digest) / [`set_digest(Option<String>)`](crate::client::fluent_builders::RegisterContainerImage::set_digest): <p>The digest of the container image to be registered.</p>
     /// - On success, responds with [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput) with field(s):
-    ///   - [`container_image(Option<ContainerImage>)`](crate::output::RegisterContainerImageOutput::container_image): <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
+    ///   - [`container_image(Option<ContainerImage>)`](crate::output::RegisterContainerImageOutput::container_image): <p>An object that describes a container image that is registered to a Lightsail container service</p>
     /// - On failure, responds with [`SdkError<RegisterContainerImageError>`](crate::error::RegisterContainerImageError)
     pub fn register_container_image(&self) -> fluent_builders::RegisterContainerImage {
         fluent_builders::RegisterContainerImage::new(self.handle.clone())
@@ -1732,7 +1745,7 @@ impl Client {
     /// Constructs a fluent builder for the [`SetIpAddressType`](crate::client::fluent_builders::SetIpAddressType) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::SetIpAddressType::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::SetIpAddressType::set_resource_type): <p>The resource type.</p>  <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>   <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>  </note>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::SetIpAddressType::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::SetIpAddressType::set_resource_type): <p>The resource type.</p>  <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>   <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>  </note>
     ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::SetIpAddressType::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::SetIpAddressType::set_resource_name): <p>The name of the resource for which to set the IP address type.</p>
     ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::SetIpAddressType::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::SetIpAddressType::set_ip_address_type): <p>The IP address type to set for the specified resource.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// - On success, responds with [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput) with field(s):
@@ -1846,7 +1859,7 @@ impl Client {
     ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::UpdateBucket::set_bucket_name): <p>The name of the bucket to update.</p>
     ///   - [`access_rules(AccessRules)`](crate::client::fluent_builders::UpdateBucket::access_rules) / [`set_access_rules(Option<AccessRules>)`](crate::client::fluent_builders::UpdateBucket::set_access_rules): <p>An object that sets the public accessibility of objects in the specified bucket.</p>
     ///   - [`versioning(impl Into<String>)`](crate::client::fluent_builders::UpdateBucket::versioning) / [`set_versioning(Option<String>)`](crate::client::fluent_builders::UpdateBucket::set_versioning): <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>  <p>The following options can be specified:</p>  <ul>   <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>   <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>  </ul>
-    ///   - [`readonly_access_accounts(Vec<String>)`](crate::client::fluent_builders::UpdateBucket::readonly_access_accounts) / [`set_readonly_access_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateBucket::set_readonly_access_accounts): <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>  <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+    ///   - [`readonly_access_accounts(Vec<String>)`](crate::client::fluent_builders::UpdateBucket::readonly_access_accounts) / [`set_readonly_access_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateBucket::set_readonly_access_accounts): <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>  <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
     ///   - [`access_log_config(BucketAccessLogConfig)`](crate::client::fluent_builders::UpdateBucket::access_log_config) / [`set_access_log_config(Option<BucketAccessLogConfig>)`](crate::client::fluent_builders::UpdateBucket::set_access_log_config): <p>An object that describes the access log configuration for the bucket.</p>
     /// - On success, responds with [`UpdateBucketOutput`](crate::output::UpdateBucketOutput) with field(s):
     ///   - [`bucket(Option<Bucket>)`](crate::output::UpdateBucketOutput::bucket): <p>An object that describes the bucket that is updated.</p>
@@ -1901,7 +1914,7 @@ impl Client {
     ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::set_distribution_name): <p>The name of the distribution for which to update the bundle.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::set_bundle_id): <p>The bundle ID of the new bundle to apply to your distribution.</p>  <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
     /// - On success, responds with [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput) with field(s):
-    ///   - [`operation(Option<Operation>)`](crate::output::UpdateDistributionBundleOutput::operation): <p>Describes the API operation.</p>
+    ///   - [`operation(Option<Operation>)`](crate::output::UpdateDistributionBundleOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDistributionBundleError>`](crate::error::UpdateDistributionBundleError)
     pub fn update_distribution_bundle(&self) -> fluent_builders::UpdateDistributionBundle {
         fluent_builders::UpdateDistributionBundle::new(self.handle.clone())
@@ -1921,8 +1934,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_load_balancer_name): <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
-    ///   - [`attribute_name(LoadBalancerAttributeName)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::attribute_name) / [`set_attribute_name(Option<LoadBalancerAttributeName>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_attribute_name): <p>The name of the attribute you want to update. Valid values are below.</p>
-    ///   - [`attribute_value(impl Into<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::attribute_value) / [`set_attribute_value(Option<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_attribute_value): <p>The value that you want to specify for the attribute name.</p>
+    ///   - [`attribute_name(LoadBalancerAttributeName)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::attribute_name) / [`set_attribute_name(Option<LoadBalancerAttributeName>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_attribute_name): <p>The name of the attribute you want to update.</p>
+    ///   - [`attribute_value(impl Into<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::attribute_value) / [`set_attribute_value(Option<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_attribute_value): <p>The value that you want to specify for the attribute name.</p>  <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>  <ul>   <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>   <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>   <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>   <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>   <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>  </ul>
     /// - On success, responds with [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateLoadBalancerAttributeOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateLoadBalancerAttributeError>`](crate::error::UpdateLoadBalancerAttributeError)
@@ -2031,7 +2044,7 @@ pub mod fluent_builders {
     /// <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.</p>
     /// <p>After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are associated with the certificate.</p>
     /// <p>Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.</p> <important>
-    /// <p>Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
+    /// <p>Only certificates created in the <code>us-east-1</code> Amazon Web Services Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachCertificateToDistribution {
@@ -2474,7 +2487,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CopySnapshot`.
     ///
-    /// <p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic snapshot of an instance or disk as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of an instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
+    /// <p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic snapshot of an instance or disk as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of an instance or a disk from one Amazon Web Services Region to another in Amazon Lightsail.</p>
     /// <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source region</code>, <code>source snapshot name</code>, and <code>target snapshot name</code> parameters.</p>
     /// <p>When copying an <i>automatic snapshot</i>, be sure to define the <code>source region</code>, <code>source resource name</code>, <code>target snapshot name</code>, and either the <code>restore date</code> or the <code>use latest restorable auto snapshot</code> parameters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2616,12 +2629,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_snapshot_name(input);
             self
         }
-        /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+        /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
         pub fn source_region(mut self, input: crate::model::RegionName) -> Self {
             self.inner = self.inner.source_region(input);
             self
         }
-        /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+        /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<crate::model::RegionName>,
@@ -2793,7 +2806,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network (CDN) distribution and a container service.</p>
     /// <p>After the certificate is valid, use the <code>AttachCertificateToDistribution</code> action to use the certificate and its domains with your distribution. Or use the <code>UpdateContainerService</code> action to use the certificate and its domains with your container service.</p> <important>
-    /// <p>Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
+    /// <p>Only certificates created in the <code>us-east-1</code> Amazon Web Services Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCertificate {
@@ -2963,7 +2976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactMethod`.
     ///
     /// <p>Creates an email or SMS text message contact method.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactMethod {
         handle: std::sync::Arc<super::Handle>,
@@ -3004,7 +3017,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-        /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+        /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
         /// <ul>
         /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
         /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
@@ -3013,14 +3026,14 @@ pub mod fluent_builders {
         /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
         /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
         /// </ul>
-        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
         pub fn protocol(mut self, input: crate::model::ContactProtocol) -> Self {
             self.inner = self.inner.protocol(input);
             self
         }
         /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-        /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+        /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
         /// <ul>
         /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
         /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
@@ -3029,7 +3042,7 @@ pub mod fluent_builders {
         /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
         /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
         /// </ul>
-        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
         pub fn set_protocol(
             mut self,
@@ -3110,7 +3123,7 @@ pub mod fluent_builders {
         /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
-        /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+        /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
         /// <li> <p>Must contain 1 to 63 characters.</p> </li>
         /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
         /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
@@ -3132,7 +3145,7 @@ pub mod fluent_builders {
         /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
         /// <ul>
-        /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+        /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
         /// <li> <p>Must contain 1 to 63 characters.</p> </li>
         /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
         /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
@@ -3247,7 +3260,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a deployment for your Amazon Lightsail container service.</p>
     /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
-    /// <p>You can deploy containers to your container service using container images from a public registry like Docker Hub, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// <p>You can deploy containers to your container service using container images from a public registry such as Amazon ECR Public, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerServiceDeployment {
         handle: std::sync::Arc<super::Handle>,
@@ -4927,6 +4940,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_address_type(input);
             self
         }
+        /// <p>The name of the TLS policy to apply to the load balancer.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+        /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn tls_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tls_policy_name(input.into());
+            self
+        }
+        /// <p>The name of the TLS policy to apply to the load balancer.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+        /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn set_tls_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_tls_policy_name(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateLoadBalancerTlsCertificate`.
     ///
@@ -5806,7 +5836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBucket`.
     ///
     /// <p>Deletes a Amazon Lightsail bucket.</p> <note>
-    /// <p>When you delete your bucket, the bucket name is released and can be reused for a new bucket in your account or another AWS account.</p>
+    /// <p>When you delete your bucket, the bucket name is released and can be reused for a new bucket in your account or another Amazon Web Services account.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBucket {
@@ -6020,7 +6050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactMethod`.
     ///
     /// <p>Deletes a contact method.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactMethod {
         handle: std::sync::Arc<super::Handle>,
@@ -8090,8 +8120,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBuckets`.
     ///
-    /// <p>Returns information about one or more Amazon Lightsail buckets.</p>
-    /// <p>For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..</p>
+    /// <p>Returns information about one or more Amazon Lightsail buckets. The information returned includes the synchronization status of the Amazon Simple Storage Service (Amazon S3) account-level block public access feature for your Lightsail buckets.</p>
+    /// <p>For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuckets {
         handle: std::sync::Arc<super::Handle>,
@@ -8132,13 +8162,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to return information.</p>
-        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the bucket for which to return information.</p>
-        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket_name(input);
             self
@@ -8281,14 +8311,14 @@ pub mod fluent_builders {
         ///
         /// <p>The status of the certificates for which to return information.</p>
         /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
         pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
             self.inner = self.inner.certificate_statuses(input);
             self
         }
         /// <p>The status of the certificates for which to return information.</p>
         /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
         pub fn set_certificate_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -8309,13 +8339,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8383,7 +8413,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContactMethods`.
     ///
     /// <p>Returns information about the configured contact methods. Specify a protocol in your request to return information about a specific contact method.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactMethods {
         handle: std::sync::Arc<super::Handle>,
@@ -8993,13 +9023,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to return information.</p>
-        /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the container service for which to return information.</p>
-        /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
@@ -9227,7 +9257,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDistributionBundles`.
     ///
     /// <p>Returns the bundles that can be applied to your Amazon Lightsail content delivery network (CDN) distributions.</p>
-    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.</p>
+    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionBundles {
         handle: std::sync::Arc<super::Handle>,
@@ -9566,13 +9596,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution for which to return information.</p>
-        /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution for which to return information.</p>
-        /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+        /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10800,6 +10830,62 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_load_balancer_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetLoadBalancerTlsPolicies`.
+    ///
+    /// <p>Returns a list of TLS security policies that you can apply to Lightsail load balancers.</p>
+    /// <p>For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetLoadBalancerTlsPolicies {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_load_balancer_tls_policies_input::Builder,
+    }
+    impl GetLoadBalancerTlsPolicies {
+        /// Creates a new `GetLoadBalancerTlsPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLoadBalancerTlsPoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsPoliciesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
+            self
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+        pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_page_token(input);
             self
         }
     }
@@ -12521,16 +12607,16 @@ pub mod fluent_builders {
         ///
         /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
         /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
-        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
-        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
         pub fn contact_protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             self.inner = self.inner.contact_protocols(input);
             self
         }
         /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
         /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
-        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
-        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
         pub fn set_contact_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
@@ -12995,7 +13081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendContactMethodVerification`.
     ///
     /// <p>Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact methods don't need to be verified.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     /// <p>A verification request is sent to the contact method when you initially create it. Use this action to send another verification request if a previous verification request was deleted, or has expired.</p> <important>
     /// <p>Notifications are not sent to an email contact method until after it is verified, and confirmed as valid.</p>
     /// </important>
@@ -13097,7 +13183,7 @@ pub mod fluent_builders {
         }
         /// <p>The resource type.</p>
         /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
-        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
@@ -13105,7 +13191,7 @@ pub mod fluent_builders {
         }
         /// <p>The resource type.</p>
         /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
-        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
         /// </note>
         pub fn set_resource_type(
             mut self,
@@ -13146,7 +13232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetResourceAccessForBucket`.
     ///
     /// <p>Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.</p>
-    /// <p>Lightsail buckets currently support setting access for Lightsail instances in the same AWS Region.</p>
+    /// <p>Lightsail buckets currently support setting access for Lightsail instances in the same Amazon Web Services Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetResourceAccessForBucket {
         handle: std::sync::Arc<super::Handle>,
@@ -13785,7 +13871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBucket`.
     ///
     /// <p>Updates an existing Amazon Lightsail bucket.</p>
-    /// <p>Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and the AWS accounts that can access the bucket.</p>
+    /// <p>Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and the Amazon Web Services accounts that can access the bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucket {
         handle: std::sync::Arc<super::Handle>,
@@ -13872,14 +13958,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
         ///
-        /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-        /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+        /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+        /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
         pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readonly_access_accounts(input.into());
             self
         }
-        /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-        /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+        /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+        /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
         pub fn set_readonly_access_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14224,7 +14310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDistributionBundle`.
     ///
     /// <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.</p>
-    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.</p>
+    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your distribution.</p>
     /// <p>Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is incurring an overage fee.</p>
     /// <p>You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your distribution's bundle.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -14417,12 +14503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_name(input);
             self
         }
-        /// <p>The name of the attribute you want to update. Valid values are below.</p>
+        /// <p>The name of the attribute you want to update.</p>
         pub fn attribute_name(mut self, input: crate::model::LoadBalancerAttributeName) -> Self {
             self.inner = self.inner.attribute_name(input);
             self
         }
-        /// <p>The name of the attribute you want to update. Valid values are below.</p>
+        /// <p>The name of the attribute you want to update.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerAttributeName>,
@@ -14431,11 +14517,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that you want to specify for the attribute name.</p>
+        /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+        /// <ul>
+        /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+        /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+        /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>
+        /// </ul>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.attribute_value(input.into());
             self
         }
         /// <p>The value that you want to specify for the attribute name.</p>
+        /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+        /// <ul>
+        /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+        /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+        /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.</p> </li>
+        /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li>
+        /// </ul>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.10.1"
-aws-sdk-ec2 = "0.10.1"
+aws-config = "0.11.0"
+aws-sdk-ec2 = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

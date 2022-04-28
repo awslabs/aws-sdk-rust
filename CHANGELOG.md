@@ -1,4 +1,16 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.11.0 (April 28th, 2022)
+=========================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1318](https://github.com/awslabs/smithy-rs/issues/1318)) Bump [MSRV](https://github.com/awslabs/aws-sdk-rust#supported-rust-versions-msrv) from 1.56.1 to 1.58.1 per our "two versions behind" policy.
+
+**New this release:**
+- 🐛 ([smithy-rs#1344](https://github.com/awslabs/smithy-rs/issues/1344), @ryansb) Suppress irrelevant `$HOME` expansion warning when running in a Lambda Extension
+
+**Contributors**
+Thank you for your contributions! ❤
+- @ryansb ([smithy-rs#1344](https://github.com/awslabs/smithy-rs/issues/1344))
+
 0.10.1 (April 14th, 2022)
 =========================
 

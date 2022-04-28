@@ -38,3 +38,43 @@ pub(crate) fn reflens_structure_crate_output_list_tags_for_resource_output_next_
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_firewall_policies_output_firewall_policies(
+    input: crate::output::ListFirewallPoliciesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>> {
+    let input = match input.firewall_policies {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_firewalls_output_firewalls(
+    input: crate::output::ListFirewallsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>> {
+    let input = match input.firewalls {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_rule_groups_output_rule_groups(
+    input: crate::output::ListRuleGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>> {
+    let input = match input.rule_groups {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_tags_for_resource_output_tags(
+    input: crate::output::ListTagsForResourceOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Tag>> {
+    let input = match input.tags {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

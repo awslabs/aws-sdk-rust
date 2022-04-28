@@ -257,6 +257,25 @@ impl Client {
     pub fn create_multicast_group(&self) -> fluent_builders::CreateMulticastGroup {
         fluent_builders::CreateMulticastGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateNetworkAnalyzerConfiguration`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_name): <p>Name of the network analyzer configuration.</p>
+    ///   - [`trace_content(TraceContent)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::trace_content) / [`set_trace_content(Option<TraceContent>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_trace_content): <p>Trace content for your wireless gateway and wireless device resources.</p>
+    ///   - [`wireless_devices(Vec<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::wireless_devices) / [`set_wireless_devices(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_wireless_devices): <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+    ///   - [`wireless_gateways(Vec<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::wireless_gateways) / [`set_wireless_gateways(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_wireless_gateways): <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_description): <p>The description of the new resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    /// - On success, responds with [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateNetworkAnalyzerConfigurationOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateNetworkAnalyzerConfigurationOutput::name): <p>Name of the network analyzer configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateNetworkAnalyzerConfigurationError>`](crate::error::CreateNetworkAnalyzerConfigurationError)
+    pub fn create_network_analyzer_configuration(
+        &self,
+    ) -> fluent_builders::CreateNetworkAnalyzerConfiguration {
+        fluent_builders::CreateNetworkAnalyzerConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateServiceProfile`](crate::client::fluent_builders::CreateServiceProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -372,12 +391,24 @@ impl Client {
     pub fn delete_multicast_group(&self) -> fluent_builders::DeleteMulticastGroup {
         fluent_builders::DeleteMulticastGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteNetworkAnalyzerConfiguration`](crate::client::fluent_builders::DeleteNetworkAnalyzerConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::DeleteNetworkAnalyzerConfiguration::set_configuration_name): <p>Name of the network analyzer configuration.</p>
+    /// - On success, responds with [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNetworkAnalyzerConfigurationError>`](crate::error::DeleteNetworkAnalyzerConfigurationError)
+    pub fn delete_network_analyzer_configuration(
+        &self,
+    ) -> fluent_builders::DeleteNetworkAnalyzerConfiguration {
+        fluent_builders::DeleteNetworkAnalyzerConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteQueuedMessages`](crate::client::fluent_builders::DeleteQueuedMessages) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_id): <p>Id of a given wireless device which messages will be deleted </p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_message_id): <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
-    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::DeleteQueuedMessages::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_wireless_device_type): <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_id): <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_message_id): <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
+    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::DeleteQueuedMessages::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_wireless_device_type): <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
     /// - On success, responds with [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
 
     /// - On failure, responds with [`SdkError<DeleteQueuedMessagesError>`](crate::error::DeleteQueuedMessagesError)
@@ -552,6 +583,21 @@ impl Client {
     pub fn get_device_profile(&self) -> fluent_builders::GetDeviceProfile {
         fluent_builders::GetDeviceProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetEventConfigurationByResourceTypes`](crate::client::fluent_builders::GetEventConfigurationByResourceTypes) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetEventConfigurationByResourceTypes::send) it.
+
+    /// - On success, responds with [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput) with field(s):
+    ///   - [`device_registration_state(Option<DeviceRegistrationStateResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::device_registration_state): <p>Resource type event configuration for the device registration state event</p>
+    ///   - [`proximity(Option<ProximityResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::proximity): <p>Resource type event configuration for the proximity event</p>
+    ///   - [`join(Option<JoinResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::join): <p>Resource type event configuration for the join event</p>
+    ///   - [`connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::connection_status): <p>Resource type event configuration for the connection status event</p>
+    /// - On failure, responds with [`SdkError<GetEventConfigurationByResourceTypesError>`](crate::error::GetEventConfigurationByResourceTypesError)
+    pub fn get_event_configuration_by_resource_types(
+        &self,
+    ) -> fluent_builders::GetEventConfigurationByResourceTypes {
+        fluent_builders::GetEventConfigurationByResourceTypes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetFuotaTask`](crate::client::fluent_builders::GetFuotaTask) operation.
     ///
     /// - The fluent builder is configurable:
@@ -575,7 +621,7 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetLogLevelsByResourceTypes::send) it.
 
     /// - On success, responds with [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput) with field(s):
-    ///   - [`default_log_level(Option<LogLevel>)`](crate::output::GetLogLevelsByResourceTypesOutput::default_log_level): <p>The log level for a log message.</p>
+    ///   - [`default_log_level(Option<LogLevel>)`](crate::output::GetLogLevelsByResourceTypesOutput::default_log_level): <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     ///   - [`wireless_gateway_log_options(Option<Vec<WirelessGatewayLogOption>>)`](crate::output::GetLogLevelsByResourceTypesOutput::wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
     ///   - [`wireless_device_log_options(Option<Vec<WirelessDeviceLogOption>>)`](crate::output::GetLogLevelsByResourceTypesOutput::wireless_device_log_options): <p>The list of wireless device log options.</p>
     /// - On failure, responds with [`SdkError<GetLogLevelsByResourceTypesError>`](crate::error::GetLogLevelsByResourceTypesError)
@@ -611,11 +657,14 @@ impl Client {
     /// Constructs a fluent builder for the [`GetNetworkAnalyzerConfiguration`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration::set_configuration_name): <p>NetworkAnalyzer configuration name.</p>
+    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration::set_configuration_name): <p>Name of the network analyzer configuration.</p>
     /// - On success, responds with [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput) with field(s):
-    ///   - [`trace_content(Option<TraceContent>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::trace_content): <p>Trace Content for resources.</p>
-    ///   - [`wireless_devices(Option<Vec<String>>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::wireless_devices): <p>List of WirelessDevices in the NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_gateways(Option<Vec<String>>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::wireless_gateways): <p>List of WirelessGateways in the NetworkAnalyzerConfiguration.</p>
+    ///   - [`trace_content(Option<TraceContent>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::trace_content): <p>Trace content for your wireless gateway and wireless device resources.</p>
+    ///   - [`wireless_devices(Option<Vec<String>>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::wireless_devices): <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
+    ///   - [`wireless_gateways(Option<Vec<String>>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::wireless_gateways): <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::description): <p>The description of the new resource.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::name): <p>Name of the network analyzer configuration.</p>
     /// - On failure, responds with [`SdkError<GetNetworkAnalyzerConfigurationError>`](crate::error::GetNetworkAnalyzerConfigurationError)
     pub fn get_network_analyzer_configuration(
         &self,
@@ -643,6 +692,8 @@ impl Client {
     /// - On success, responds with [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput) with field(s):
     ///   - [`device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::device_registration_state): <p>Event configuration for the device registration state event</p>
     ///   - [`proximity(Option<ProximityEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::proximity): <p>Event configuration for the Proximity event</p>
+    ///   - [`join(Option<JoinEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::join): <p>Event configuration for the join event.</p>
+    ///   - [`connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::connection_status): <p>Event configuration for the connection status event.</p>
     /// - On failure, responds with [`SdkError<GetResourceEventConfigurationError>`](crate::error::GetResourceEventConfigurationError)
     pub fn get_resource_event_configuration(
         &self,
@@ -655,7 +706,7 @@ impl Client {
     ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceLogLevel::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceLogLevel::set_resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::GetResourceLogLevel::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::GetResourceLogLevel::set_resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     /// - On success, responds with [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput) with field(s):
-    ///   - [`log_level(Option<LogLevel>)`](crate::output::GetResourceLogLevelOutput::log_level): <p>The log level for a log message.</p>
+    ///   - [`log_level(Option<LogLevel>)`](crate::output::GetResourceLogLevelOutput::log_level): <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     /// - On failure, responds with [`SdkError<GetResourceLogLevelError>`](crate::error::GetResourceLogLevelError)
     pub fn get_resource_log_level(&self) -> fluent_builders::GetResourceLogLevel {
         fluent_builders::GetResourceLogLevel::new(self.handle.clone())
@@ -663,7 +714,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetServiceEndpoint`](crate::client::fluent_builders::GetServiceEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_type(WirelessGatewayServiceType)`](crate::client::fluent_builders::GetServiceEndpoint::service_type) / [`set_service_type(Option<WirelessGatewayServiceType>)`](crate::client::fluent_builders::GetServiceEndpoint::set_service_type): <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
+    ///   - [`service_type(WirelessGatewayServiceType)`](crate::client::fluent_builders::GetServiceEndpoint::service_type) / [`set_service_type(Option<WirelessGatewayServiceType>)`](crate::client::fluent_builders::GetServiceEndpoint::set_service_type): <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     /// - On success, responds with [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput) with field(s):
     ///   - [`service_type(Option<WirelessGatewayServiceType>)`](crate::output::GetServiceEndpointOutput::service_type): <p>The endpoint's service type.</p>
     ///   - [`service_endpoint(Option<String>)`](crate::output::GetServiceEndpointOutput::service_endpoint): <p>The service endpoint value.</p>
@@ -827,6 +878,19 @@ impl Client {
     pub fn list_device_profiles(&self) -> fluent_builders::ListDeviceProfiles {
         fluent_builders::ListDeviceProfiles::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListEventConfigurations`](crate::client::fluent_builders::ListEventConfigurations) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(EventNotificationResourceType)`](crate::client::fluent_builders::ListEventConfigurations::resource_type) / [`set_resource_type(Option<EventNotificationResourceType>)`](crate::client::fluent_builders::ListEventConfigurations::set_resource_type): <p>Resource type to filter event configurations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEventConfigurations::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventConfigurations::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    /// - On success, responds with [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventConfigurationsOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`event_configurations_list(Option<Vec<EventConfigurationItem>>)`](crate::output::ListEventConfigurationsOutput::event_configurations_list): <p>Event configurations of all events for a single resource.</p>
+    /// - On failure, responds with [`SdkError<ListEventConfigurationsError>`](crate::error::ListEventConfigurationsError)
+    pub fn list_event_configurations(&self) -> fluent_builders::ListEventConfigurations {
+        fluent_builders::ListEventConfigurations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListFuotaTasks`](crate::client::fluent_builders::ListFuotaTasks) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFuotaTasks::into_paginator).
     ///
@@ -869,6 +933,21 @@ impl Client {
     ) -> fluent_builders::ListMulticastGroupsByFuotaTask {
         fluent_builders::ListMulticastGroupsByFuotaTask::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListNetworkAnalyzerConfigurations`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    /// - On success, responds with [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListNetworkAnalyzerConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    ///   - [`network_analyzer_configuration_list(Option<Vec<NetworkAnalyzerConfigurations>>)`](crate::output::ListNetworkAnalyzerConfigurationsOutput::network_analyzer_configuration_list): <p>The list of network analyzer configurations.</p>
+    /// - On failure, responds with [`SdkError<ListNetworkAnalyzerConfigurationsError>`](crate::error::ListNetworkAnalyzerConfigurationsError)
+    pub fn list_network_analyzer_configurations(
+        &self,
+    ) -> fluent_builders::ListNetworkAnalyzerConfigurations {
+        fluent_builders::ListNetworkAnalyzerConfigurations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListPartnerAccounts`](crate::client::fluent_builders::ListPartnerAccounts) operation.
     ///
     /// - The fluent builder is configurable:
@@ -885,13 +964,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueuedMessages::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListQueuedMessages::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListQueuedMessages::set_id): <p>Id of a given wireless device which the downlink packets are targeted </p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListQueuedMessages::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListQueuedMessages::set_id): <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueuedMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueuedMessages::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueuedMessages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListQueuedMessages::set_max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::ListQueuedMessages::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::ListQueuedMessages::set_wireless_device_type): <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::ListQueuedMessages::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::ListQueuedMessages::set_wireless_device_type): <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
     /// - On success, responds with [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListQueuedMessagesOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`downlink_queue_messages_list(Option<Vec<DownlinkQueueMessage>>)`](crate::output::ListQueuedMessagesOutput::downlink_queue_messages_list): <p>The messages in downlink queue.</p>
+    ///   - [`downlink_queue_messages_list(Option<Vec<DownlinkQueueMessage>>)`](crate::output::ListQueuedMessagesOutput::downlink_queue_messages_list): <p>The messages in the downlink queue.</p>
     /// - On failure, responds with [`SdkError<ListQueuedMessagesError>`](crate::error::ListQueuedMessagesError)
     pub fn list_queued_messages(&self) -> fluent_builders::ListQueuedMessages {
         fluent_builders::ListQueuedMessages::new(self.handle.clone())
@@ -971,7 +1050,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::PutResourceLogLevel::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::PutResourceLogLevel::set_resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::PutResourceLogLevel::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::PutResourceLogLevel::set_resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::PutResourceLogLevel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::PutResourceLogLevel::set_log_level): <p>The log level for a log message.</p>
+    ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::PutResourceLogLevel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::PutResourceLogLevel::set_log_level): <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     /// - On success, responds with [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
 
     /// - On failure, responds with [`SdkError<PutResourceLogLevelError>`](crate::error::PutResourceLogLevelError)
@@ -1124,6 +1203,21 @@ impl Client {
     pub fn update_destination(&self) -> fluent_builders::UpdateDestination {
         fluent_builders::UpdateDestination::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateEventConfigurationByResourceTypes`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`device_registration_state(DeviceRegistrationStateResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::device_registration_state) / [`set_device_registration_state(Option<DeviceRegistrationStateResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_device_registration_state): <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    ///   - [`proximity(ProximityResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::proximity) / [`set_proximity(Option<ProximityResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_proximity): <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    ///   - [`join(JoinResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::join) / [`set_join(Option<JoinResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_join): <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
+    ///   - [`connection_status(ConnectionStatusResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::connection_status) / [`set_connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_connection_status): <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    /// - On success, responds with [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateEventConfigurationByResourceTypesError>`](crate::error::UpdateEventConfigurationByResourceTypesError)
+    pub fn update_event_configuration_by_resource_types(
+        &self,
+    ) -> fluent_builders::UpdateEventConfigurationByResourceTypes {
+        fluent_builders::UpdateEventConfigurationByResourceTypes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateFuotaTask`](crate::client::fluent_builders::UpdateFuotaTask) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1142,7 +1236,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateLogLevelsByResourceTypes`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`default_log_level(LogLevel)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::default_log_level) / [`set_default_log_level(Option<LogLevel>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_default_log_level): <p>The log level for a log message.</p>
+    ///   - [`default_log_level(LogLevel)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::default_log_level) / [`set_default_log_level(Option<LogLevel>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_default_log_level): <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     ///   - [`wireless_device_log_options(Vec<WirelessDeviceLogOption>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::wireless_device_log_options) / [`set_wireless_device_log_options(Option<Vec<WirelessDeviceLogOption>>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_wireless_device_log_options): <p>The list of wireless device log options.</p>
     ///   - [`wireless_gateway_log_options(Vec<WirelessGatewayLogOption>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::wireless_gateway_log_options) / [`set_wireless_gateway_log_options(Option<Vec<WirelessGatewayLogOption>>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
     /// - On success, responds with [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
@@ -1169,12 +1263,13 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateNetworkAnalyzerConfiguration`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_configuration_name): <p>NetworkAnalyzer configuration name.</p>
-    ///   - [`trace_content(TraceContent)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::trace_content) / [`set_trace_content(Option<TraceContent>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_trace_content): <p>Trace Content for resources.</p>
-    ///   - [`wireless_devices_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_devices_to_add) / [`set_wireless_devices_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_devices_to_add): <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_devices_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_devices_to_remove) / [`set_wireless_devices_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_devices_to_remove): <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_gateways_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_gateways_to_add) / [`set_wireless_gateways_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_gateways_to_add): <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_gateways_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_gateways_to_remove) / [`set_wireless_gateways_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_gateways_to_remove): <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_configuration_name): <p>Name of the network analyzer configuration.</p>
+    ///   - [`trace_content(TraceContent)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::trace_content) / [`set_trace_content(Option<TraceContent>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_trace_content): <p>Trace content for your wireless gateway and wireless device resources.</p>
+    ///   - [`wireless_devices_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_devices_to_add) / [`set_wireless_devices_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_devices_to_add): <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+    ///   - [`wireless_devices_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_devices_to_remove) / [`set_wireless_devices_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_devices_to_remove): <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
+    ///   - [`wireless_gateways_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_gateways_to_add) / [`set_wireless_gateways_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_gateways_to_add): <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+    ///   - [`wireless_gateways_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_gateways_to_remove) / [`set_wireless_gateways_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_gateways_to_remove): <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_description): <p>The description of the new resource.</p>
     /// - On success, responds with [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNetworkAnalyzerConfigurationError>`](crate::error::UpdateNetworkAnalyzerConfigurationError)
@@ -1203,6 +1298,8 @@ impl Client {
     ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
     ///   - [`device_registration_state(DeviceRegistrationStateEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::device_registration_state) / [`set_device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_device_registration_state): <p>Event configuration for the device registration state event</p>
     ///   - [`proximity(ProximityEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::proximity) / [`set_proximity(Option<ProximityEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_proximity): <p>Event configuration for the Proximity event</p>
+    ///   - [`join(JoinEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::join) / [`set_join(Option<JoinEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_join): <p>Event configuration for the join event</p>
+    ///   - [`connection_status(ConnectionStatusEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::connection_status) / [`set_connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_connection_status): <p>Event configuration for the connection status event</p>
     /// - On success, responds with [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResourceEventConfigurationError>`](crate::error::UpdateResourceEventConfigurationError)
@@ -2247,6 +2344,148 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateNetworkAnalyzerConfiguration`.
+    ///
+    /// <p>Creates a new network analyzer configuration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateNetworkAnalyzerConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_network_analyzer_configuration_input::Builder,
+    }
+    impl CreateNetworkAnalyzerConfiguration {
+        /// Creates a new `CreateNetworkAnalyzerConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateNetworkAnalyzerConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::CreateNetworkAnalyzerConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Name of the network analyzer configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>Name of the network analyzer configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+        pub fn trace_content(mut self, input: crate::model::TraceContent) -> Self {
+            self.inner = self.inner.trace_content(input);
+            self
+        }
+        /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+        pub fn set_trace_content(
+            mut self,
+            input: std::option::Option<crate::model::TraceContent>,
+        ) -> Self {
+            self.inner = self.inner.set_trace_content(input);
+            self
+        }
+        /// Appends an item to `WirelessDevices`.
+        ///
+        /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
+        ///
+        /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+        pub fn wireless_devices(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_devices(input.into());
+            self
+        }
+        /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+        pub fn set_wireless_devices(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_devices(input);
+            self
+        }
+        /// Appends an item to `WirelessGateways`.
+        ///
+        /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
+        ///
+        /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+        pub fn wireless_gateways(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_gateways(input.into());
+            self
+        }
+        /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+        pub fn set_wireless_gateways(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_gateways(input);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateServiceProfile`.
     ///
     /// <p>Creates a new service profile.</p>
@@ -2970,9 +3209,67 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteNetworkAnalyzerConfiguration`.
+    ///
+    /// <p>Deletes a network analyzer configuration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteNetworkAnalyzerConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_network_analyzer_configuration_input::Builder,
+    }
+    impl DeleteNetworkAnalyzerConfiguration {
+        /// Creates a new `DeleteNetworkAnalyzerConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteNetworkAnalyzerConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DeleteNetworkAnalyzerConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Name of the network analyzer configuration.</p>
+        pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(input.into());
+            self
+        }
+        /// <p>Name of the network analyzer configuration.</p>
+        pub fn set_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteQueuedMessages`.
     ///
-    /// <p> The operation to delete queued messages. </p>
+    /// <p>Remove queued messages from the downlink queue.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQueuedMessages {
         handle: std::sync::Arc<super::Handle>,
@@ -3012,32 +3309,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Id of a given wireless device which messages will be deleted </p>
+        /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>Id of a given wireless device which messages will be deleted </p>
+        /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+        /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.message_id(input.into());
             self
         }
-        /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+        /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message_id(input);
             self
         }
-        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+        /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
         pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
             self.inner = self.inner.wireless_device_type(input);
             self
         }
-        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+        /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
         pub fn set_wireless_device_type(
             mut self,
             input: std::option::Option<crate::model::WirelessDeviceType>,
@@ -3859,6 +4156,51 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetEventConfigurationByResourceTypes`.
+    ///
+    /// <p>Get the event configuration by resource types.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetEventConfigurationByResourceTypes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_event_configuration_by_resource_types_input::Builder,
+    }
+    impl GetEventConfigurationByResourceTypes {
+        /// Creates a new `GetEventConfigurationByResourceTypes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEventConfigurationByResourceTypesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetEventConfigurationByResourceTypesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `GetFuotaTask`.
     ///
     /// <p>Gets information about a FUOTA task.</p>
@@ -4063,7 +4405,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetNetworkAnalyzerConfiguration`.
     ///
-    /// <p>Get NetworkAnalyzer configuration.</p>
+    /// <p>Get network analyzer configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkAnalyzerConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -4103,12 +4445,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>NetworkAnalyzer configuration name.</p>
+        /// <p>Name of the network analyzer configuration.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_name(input.into());
             self
         }
-        /// <p>NetworkAnalyzer configuration name.</p>
+        /// <p>Name of the network analyzer configuration.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4376,12 +4718,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
+        /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
         pub fn service_type(mut self, input: crate::model::WirelessGatewayServiceType) -> Self {
             self.inner = self.inner.service_type(input);
             self
         }
-        /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
+        /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::WirelessGatewayServiceType>,
@@ -5039,6 +5381,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListEventConfigurations`.
+    ///
+    /// <p>List event configurations where at least one event topic has been enabled.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListEventConfigurations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_event_configurations_input::Builder,
+    }
+    impl ListEventConfigurations {
+        /// Creates a new `ListEventConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEventConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEventConfigurationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource type to filter event configurations.</p>
+        pub fn resource_type(mut self, input: crate::model::EventNotificationResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>Resource type to filter event configurations.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListFuotaTasks`.
     ///
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
@@ -5256,6 +5674,80 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListNetworkAnalyzerConfigurations`.
+    ///
+    /// <p>Lists the network analyzer configurations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListNetworkAnalyzerConfigurations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_network_analyzer_configurations_input::Builder,
+    }
+    impl ListNetworkAnalyzerConfigurations {
+        /// Creates a new `ListNetworkAnalyzerConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListNetworkAnalyzerConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListNetworkAnalyzerConfigurationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNetworkAnalyzerConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListNetworkAnalyzerConfigurationsPaginator {
+            crate::paginator::ListNetworkAnalyzerConfigurationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListPartnerAccounts`.
     ///
     /// <p>Lists the partner accounts associated with your AWS account.</p>
@@ -5321,7 +5813,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListQueuedMessages`.
     ///
-    /// <p>The operation to list queued messages. </p>
+    /// <p>List queued messages in the downlink queue.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueuedMessages {
         handle: std::sync::Arc<super::Handle>,
@@ -5367,12 +5859,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListQueuedMessagesPaginator {
             crate::paginator::ListQueuedMessagesPaginator::new(self.handle, self.inner)
         }
-        /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+        /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+        /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5397,12 +5889,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+        /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
         pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
             self.inner = self.inner.wireless_device_type(input);
             self
         }
-        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+        /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
         pub fn set_wireless_device_type(
             mut self,
             input: std::option::Option<crate::model::WirelessDeviceType>,
@@ -5898,12 +6390,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The log level for a log message.</p>
+        /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
             self.inner = self.inner.log_level(input);
             self
         }
-        /// <p>The log level for a log message.</p>
+        /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.inner = self.inner.set_log_level(input);
             self
@@ -6769,6 +7261,116 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateEventConfigurationByResourceTypes`.
+    ///
+    /// <p>Update the event configuration by resource types.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateEventConfigurationByResourceTypes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_event_configuration_by_resource_types_input::Builder,
+    }
+    impl UpdateEventConfigurationByResourceTypes {
+        /// Creates a new `UpdateEventConfigurationByResourceTypes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEventConfigurationByResourceTypesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateEventConfigurationByResourceTypesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+        pub fn device_registration_state(
+            mut self,
+            input: crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.device_registration_state(input);
+            self
+        }
+        /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+        pub fn set_device_registration_state(
+            mut self,
+            input: std::option::Option<
+                crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_device_registration_state(input);
+            self
+        }
+        /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+        pub fn proximity(
+            mut self,
+            input: crate::model::ProximityResourceTypeEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.proximity(input);
+            self
+        }
+        /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+        pub fn set_proximity(
+            mut self,
+            input: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_proximity(input);
+            self
+        }
+        /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
+        pub fn join(mut self, input: crate::model::JoinResourceTypeEventConfiguration) -> Self {
+            self.inner = self.inner.join(input);
+            self
+        }
+        /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
+        pub fn set_join(
+            mut self,
+            input: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_join(input);
+            self
+        }
+        /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+        pub fn connection_status(
+            mut self,
+            input: crate::model::ConnectionStatusResourceTypeEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.connection_status(input);
+            self
+        }
+        /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+        pub fn set_connection_status(
+            mut self,
+            input: std::option::Option<
+                crate::model::ConnectionStatusResourceTypeEventConfiguration,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_connection_status(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFuotaTask`.
     ///
     /// <p>Updates properties of a FUOTA task.</p>
@@ -6923,12 +7525,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The log level for a log message.</p>
+        /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn default_log_level(mut self, input: crate::model::LogLevel) -> Self {
             self.inner = self.inner.default_log_level(input);
             self
         }
-        /// <p>The log level for a log message.</p>
+        /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_default_log_level(
             mut self,
             input: std::option::Option<crate::model::LogLevel>,
@@ -7065,7 +7667,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateNetworkAnalyzerConfiguration`.
     ///
-    /// <p>Update NetworkAnalyzer configuration.</p>
+    /// <p>Update network analyzer configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkAnalyzerConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -7107,12 +7709,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>NetworkAnalyzer configuration name.</p>
+        /// <p>Name of the network analyzer configuration.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_name(input.into());
             self
         }
-        /// <p>NetworkAnalyzer configuration name.</p>
+        /// <p>Name of the network analyzer configuration.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7120,12 +7722,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_name(input);
             self
         }
-        /// <p>Trace Content for resources.</p>
+        /// <p>Trace content for your wireless gateway and wireless device resources.</p>
         pub fn trace_content(mut self, input: crate::model::TraceContent) -> Self {
             self.inner = self.inner.trace_content(input);
             self
         }
-        /// <p>Trace Content for resources.</p>
+        /// <p>Trace content for your wireless gateway and wireless device resources.</p>
         pub fn set_trace_content(
             mut self,
             input: std::option::Option<crate::model::TraceContent>,
@@ -7137,12 +7739,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_wireless_devices_to_add`](Self::set_wireless_devices_to_add).
         ///
-        /// <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
         pub fn wireless_devices_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.wireless_devices_to_add(input.into());
             self
         }
-        /// <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
         pub fn set_wireless_devices_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7154,12 +7756,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_wireless_devices_to_remove`](Self::set_wireless_devices_to_remove).
         ///
-        /// <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
         pub fn wireless_devices_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.wireless_devices_to_remove(input.into());
             self
         }
-        /// <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
         pub fn set_wireless_devices_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7171,12 +7773,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_wireless_gateways_to_add`](Self::set_wireless_gateways_to_add).
         ///
-        /// <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
         pub fn wireless_gateways_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.wireless_gateways_to_add(input.into());
             self
         }
-        /// <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
         pub fn set_wireless_gateways_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7188,7 +7790,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_wireless_gateways_to_remove`](Self::set_wireless_gateways_to_remove).
         ///
-        /// <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
         pub fn wireless_gateways_to_remove(
             mut self,
             input: impl Into<std::string::String>,
@@ -7196,12 +7798,22 @@ pub mod fluent_builders {
             self.inner = self.inner.wireless_gateways_to_remove(input.into());
             self
         }
-        /// <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+        /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
         pub fn set_wireless_gateways_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_wireless_gateways_to_remove(input);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -7392,6 +8004,35 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ProximityEventConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_proximity(input);
+            self
+        }
+        /// <p>Event configuration for the join event</p>
+        pub fn join(mut self, input: crate::model::JoinEventConfiguration) -> Self {
+            self.inner = self.inner.join(input);
+            self
+        }
+        /// <p>Event configuration for the join event</p>
+        pub fn set_join(
+            mut self,
+            input: std::option::Option<crate::model::JoinEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_join(input);
+            self
+        }
+        /// <p>Event configuration for the connection status event</p>
+        pub fn connection_status(
+            mut self,
+            input: crate::model::ConnectionStatusEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.connection_status(input);
+            self
+        }
+        /// <p>Event configuration for the connection status event</p>
+        pub fn set_connection_status(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_connection_status(input);
             self
         }
     }

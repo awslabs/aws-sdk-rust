@@ -300,6 +300,198 @@ impl S3Object {
     }
 }
 
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueriesConfig {
+    /// <p></p>
+    pub queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
+}
+impl QueriesConfig {
+    /// <p></p>
+    pub fn queries(&self) -> std::option::Option<&[crate::model::Query]> {
+        self.queries.as_deref()
+    }
+}
+impl std::fmt::Debug for QueriesConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueriesConfig");
+        formatter.field("queries", &self.queries);
+        formatter.finish()
+    }
+}
+/// See [`QueriesConfig`](crate::model::QueriesConfig)
+pub mod queries_config {
+    /// A builder for [`QueriesConfig`](crate::model::QueriesConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
+    }
+    impl Builder {
+        /// Appends an item to `queries`.
+        ///
+        /// To override the contents of this collection use [`set_queries`](Self::set_queries).
+        ///
+        /// <p></p>
+        pub fn queries(mut self, input: crate::model::Query) -> Self {
+            let mut v = self.queries.unwrap_or_default();
+            v.push(input);
+            self.queries = Some(v);
+            self
+        }
+        /// <p></p>
+        pub fn set_queries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Query>>,
+        ) -> Self {
+            self.queries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueriesConfig`](crate::model::QueriesConfig)
+        pub fn build(self) -> crate::model::QueriesConfig {
+            crate::model::QueriesConfig {
+                queries: self.queries,
+            }
+        }
+    }
+}
+impl QueriesConfig {
+    /// Creates a new builder-style object to manufacture [`QueriesConfig`](crate::model::QueriesConfig)
+    pub fn builder() -> crate::model::queries_config::Builder {
+        crate::model::queries_config::Builder::default()
+    }
+}
+
+/// <p>Each query contains the question you want to ask in the Text and the alias you want to associate.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Query {
+    /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+    pub text: std::option::Option<std::string::String>,
+    /// <p>Alias attached to the query, for ease of location.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+    /// <ul>
+    /// <li> <p>If a page is not specified, it is set to <code>["1"]</code> by default.</p> </li>
+    /// <li> <p>The following characters are allowed in the parameter's string: <code>0 1 2 3 4 5 6 7 8 9 - *</code>. No whitespace is allowed.</p> </li>
+    /// <li> <p>When using <code>*</code> to indicate all pages, it must be the only element in the string.</p> </li>
+    /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
+    /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
+    /// </ul>
+    pub pages: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Query {
+    /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Alias attached to the query, for ease of location.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+    /// <ul>
+    /// <li> <p>If a page is not specified, it is set to <code>["1"]</code> by default.</p> </li>
+    /// <li> <p>The following characters are allowed in the parameter's string: <code>0 1 2 3 4 5 6 7 8 9 - *</code>. No whitespace is allowed.</p> </li>
+    /// <li> <p>When using <code>*</code> to indicate all pages, it must be the only element in the string.</p> </li>
+    /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
+    /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
+    /// </ul>
+    pub fn pages(&self) -> std::option::Option<&[std::string::String]> {
+        self.pages.as_deref()
+    }
+}
+impl std::fmt::Debug for Query {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Query");
+        formatter.field("text", &self.text);
+        formatter.field("alias", &self.alias);
+        formatter.field("pages", &self.pages);
+        formatter.finish()
+    }
+}
+/// See [`Query`](crate::model::Query)
+pub mod query {
+    /// A builder for [`Query`](crate::model::Query)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) pages: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>Alias attached to the query, for ease of location.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>Alias attached to the query, for ease of location.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// Appends an item to `pages`.
+        ///
+        /// To override the contents of this collection use [`set_pages`](Self::set_pages).
+        ///
+        /// <p>List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+        /// <ul>
+        /// <li> <p>If a page is not specified, it is set to <code>["1"]</code> by default.</p> </li>
+        /// <li> <p>The following characters are allowed in the parameter's string: <code>0 1 2 3 4 5 6 7 8 9 - *</code>. No whitespace is allowed.</p> </li>
+        /// <li> <p>When using <code>*</code> to indicate all pages, it must be the only element in the string.</p> </li>
+        /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
+        /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
+        /// </ul>
+        pub fn pages(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.pages.unwrap_or_default();
+            v.push(input.into());
+            self.pages = Some(v);
+            self
+        }
+        /// <p>List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+        /// <ul>
+        /// <li> <p>If a page is not specified, it is set to <code>["1"]</code> by default.</p> </li>
+        /// <li> <p>The following characters are allowed in the parameter's string: <code>0 1 2 3 4 5 6 7 8 9 - *</code>. No whitespace is allowed.</p> </li>
+        /// <li> <p>When using <code>*</code> to indicate all pages, it must be the only element in the string.</p> </li>
+        /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
+        /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
+        /// </ul>
+        pub fn set_pages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.pages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Query`](crate::model::Query)
+        pub fn build(self) -> crate::model::Query {
+            crate::model::Query {
+                text: self.text,
+                alias: self.alias,
+                pages: self.pages,
+            }
+        }
+    }
+}
+impl Query {
+    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query)
+    pub fn builder() -> crate::model::query::Builder {
+        crate::model::query::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -315,6 +507,8 @@ pub enum FeatureType {
     #[allow(missing_docs)] // documentation missing in model
     Forms,
     #[allow(missing_docs)] // documentation missing in model
+    Queries,
+    #[allow(missing_docs)] // documentation missing in model
     Tables,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -323,6 +517,7 @@ impl std::convert::From<&str> for FeatureType {
     fn from(s: &str) -> Self {
         match s {
             "FORMS" => FeatureType::Forms,
+            "QUERIES" => FeatureType::Queries,
             "TABLES" => FeatureType::Tables,
             other => FeatureType::Unknown(other.to_owned()),
         }
@@ -340,13 +535,14 @@ impl FeatureType {
     pub fn as_str(&self) -> &str {
         match self {
             FeatureType::Forms => "FORMS",
+            FeatureType::Queries => "QUERIES",
             FeatureType::Tables => "TABLES",
             FeatureType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["FORMS", "TABLES"]
+        &["FORMS", "QUERIES", "TABLES"]
     }
 }
 impl AsRef<str> for FeatureType {
@@ -1381,6 +1577,8 @@ pub struct Block {
     /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
     /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
     /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
+    /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p> </li>
+    /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
     pub block_type: std::option::Option<crate::model::BlockType>,
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
@@ -1418,6 +1616,8 @@ pub struct Block {
     pub selection_status: std::option::Option<crate::model::SelectionStatus>,
     /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is considered to be a single-page document. The value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because every input document is considered to be a single-page document.</p>
     pub page: std::option::Option<i32>,
+    /// <p></p>
+    pub query: std::option::Option<crate::model::Query>,
 }
 impl Block {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
@@ -1435,6 +1635,8 @@ impl Block {
     /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
     /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
     /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
+    /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p> </li>
+    /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
     pub fn block_type(&self) -> std::option::Option<&crate::model::BlockType> {
         self.block_type.as_ref()
@@ -1500,6 +1702,10 @@ impl Block {
     pub fn page(&self) -> std::option::Option<i32> {
         self.page
     }
+    /// <p></p>
+    pub fn query(&self) -> std::option::Option<&crate::model::Query> {
+        self.query.as_ref()
+    }
 }
 impl std::fmt::Debug for Block {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1518,6 +1724,7 @@ impl std::fmt::Debug for Block {
         formatter.field("entity_types", &self.entity_types);
         formatter.field("selection_status", &self.selection_status);
         formatter.field("page", &self.page);
+        formatter.field("query", &self.query);
         formatter.finish()
     }
 }
@@ -1541,6 +1748,7 @@ pub mod block {
         pub(crate) entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
         pub(crate) selection_status: std::option::Option<crate::model::SelectionStatus>,
         pub(crate) page: std::option::Option<i32>,
+        pub(crate) query: std::option::Option<crate::model::Query>,
     }
     impl Builder {
         /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
@@ -1558,6 +1766,8 @@ pub mod block {
         /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
         /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
         /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
+        /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p> </li>
+        /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
         /// </ul>
         pub fn block_type(mut self, input: crate::model::BlockType) -> Self {
             self.block_type = Some(input);
@@ -1578,6 +1788,8 @@ pub mod block {
         /// <li> <p> <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each. </p> </li>
         /// <li> <p> <i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p> </li>
         /// <li> <p> <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p> </li>
+        /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p> </li>
+        /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
         /// </ul>
         pub fn set_block_type(
             mut self,
@@ -1755,6 +1967,16 @@ pub mod block {
             self.page = input;
             self
         }
+        /// <p></p>
+        pub fn query(mut self, input: crate::model::Query) -> Self {
+            self.query = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_query(mut self, input: std::option::Option<crate::model::Query>) -> Self {
+            self.query = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Block`](crate::model::Block)
         pub fn build(self) -> crate::model::Block {
             crate::model::Block {
@@ -1772,6 +1994,7 @@ pub mod block {
                 entity_types: self.entity_types,
                 selection_status: self.selection_status,
                 page: self.page,
+                query: self.query,
             }
         }
     }
@@ -1996,6 +2219,8 @@ impl Relationship {
 )]
 pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
+    Answer,
+    #[allow(missing_docs)] // documentation missing in model
     Child,
     #[allow(missing_docs)] // documentation missing in model
     ComplexFeatures,
@@ -2011,6 +2236,7 @@ pub enum RelationshipType {
 impl std::convert::From<&str> for RelationshipType {
     fn from(s: &str) -> Self {
         match s {
+            "ANSWER" => RelationshipType::Answer,
             "CHILD" => RelationshipType::Child,
             "COMPLEX_FEATURES" => RelationshipType::ComplexFeatures,
             "MERGED_CELL" => RelationshipType::MergedCell,
@@ -2031,6 +2257,7 @@ impl RelationshipType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RelationshipType::Answer => "ANSWER",
             RelationshipType::Child => "CHILD",
             RelationshipType::ComplexFeatures => "COMPLEX_FEATURES",
             RelationshipType::MergedCell => "MERGED_CELL",
@@ -2041,7 +2268,14 @@ impl RelationshipType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CHILD", "COMPLEX_FEATURES", "MERGED_CELL", "TITLE", "VALUE"]
+        &[
+            "ANSWER",
+            "CHILD",
+            "COMPLEX_FEATURES",
+            "MERGED_CELL",
+            "TITLE",
+            "VALUE",
+        ]
     }
 }
 impl AsRef<str> for RelationshipType {
@@ -2128,6 +2362,10 @@ pub enum BlockType {
     #[allow(missing_docs)] // documentation missing in model
     Page,
     #[allow(missing_docs)] // documentation missing in model
+    Query,
+    #[allow(missing_docs)] // documentation missing in model
+    QueryResult,
+    #[allow(missing_docs)] // documentation missing in model
     SelectionElement,
     #[allow(missing_docs)] // documentation missing in model
     Table,
@@ -2146,6 +2384,8 @@ impl std::convert::From<&str> for BlockType {
             "LINE" => BlockType::Line,
             "MERGED_CELL" => BlockType::MergedCell,
             "PAGE" => BlockType::Page,
+            "QUERY" => BlockType::Query,
+            "QUERY_RESULT" => BlockType::QueryResult,
             "SELECTION_ELEMENT" => BlockType::SelectionElement,
             "TABLE" => BlockType::Table,
             "TITLE" => BlockType::Title,
@@ -2170,6 +2410,8 @@ impl BlockType {
             BlockType::Line => "LINE",
             BlockType::MergedCell => "MERGED_CELL",
             BlockType::Page => "PAGE",
+            BlockType::Query => "QUERY",
+            BlockType::QueryResult => "QUERY_RESULT",
             BlockType::SelectionElement => "SELECTION_ELEMENT",
             BlockType::Table => "TABLE",
             BlockType::Title => "TITLE",
@@ -2185,6 +2427,8 @@ impl BlockType {
             "LINE",
             "MERGED_CELL",
             "PAGE",
+            "QUERY",
+            "QUERY_RESULT",
             "SELECTION_ELEMENT",
             "TABLE",
             "TITLE",

@@ -6052,6 +6052,236 @@ impl std::error::Error for ListTagsForResourceError {
     }
 }
 
+/// Error type for the `StartRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartRecommenderError {
+    /// Kind of error that occurred.
+    pub kind: StartRecommenderErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartRecommenderErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartRecommenderError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            StartRecommenderErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            StartRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartRecommenderError {
+    fn code(&self) -> Option<&str> {
+        StartRecommenderError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartRecommenderError {
+    /// Creates a new `StartRecommenderError`.
+    pub fn new(kind: StartRecommenderErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartRecommenderError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartRecommenderErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartRecommenderError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartRecommenderErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartRecommenderErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRecommenderErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRecommenderErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRecommenderErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRecommenderErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRecommenderErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for StartRecommenderError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            StartRecommenderErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            StartRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StopRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopRecommenderError {
+    /// Kind of error that occurred.
+    pub kind: StopRecommenderErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopRecommenderErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopRecommenderError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            StopRecommenderErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            StopRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StopRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopRecommenderError {
+    fn code(&self) -> Option<&str> {
+        StopRecommenderError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopRecommenderError {
+    /// Creates a new `StopRecommenderError`.
+    pub fn new(kind: StopRecommenderErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopRecommenderError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopRecommenderErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopRecommenderError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopRecommenderErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopRecommenderErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopRecommenderErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopRecommenderErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopRecommenderErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopRecommenderErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopRecommenderErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for StopRecommenderError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            StopRecommenderErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            StopRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StopRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StopSolutionVersionCreation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

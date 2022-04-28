@@ -11,8 +11,12 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
@@ -27,7 +31,9 @@ impl std::fmt::Display for Error {
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ServiceFailureException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::UnprocessableEntityException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -55,11 +61,20 @@ where
                 crate::error::BatchCreateAttendeeErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::BatchCreateAttendeeErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
                 crate::error::BatchCreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
+                crate::error::BatchCreateAttendeeErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::BatchCreateAttendeeErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::BatchCreateAttendeeErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::BatchCreateAttendeeErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -88,8 +103,14 @@ where
                 crate::error::CreateAttendeeErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::CreateAttendeeErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
                 crate::error::CreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
+                }
+                crate::error::CreateAttendeeErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::CreateAttendeeErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
@@ -113,11 +134,20 @@ where
                 crate::error::CreateMeetingErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
+                crate::error::CreateMeetingErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::CreateMeetingErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
+                crate::error::CreateMeetingErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
                 crate::error::CreateMeetingErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
+                }
+                crate::error::CreateMeetingErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::CreateMeetingErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
@@ -141,12 +171,21 @@ where
                 crate::error::CreateMeetingWithAttendeesErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
+                crate::error::CreateMeetingWithAttendeesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::CreateMeetingWithAttendeesErrorKind::LimitExceededException(
                     inner,
                 ) => Error::LimitExceededException(inner),
+                crate::error::CreateMeetingWithAttendeesErrorKind::ServiceFailureException(
+                    inner,
+                ) => Error::ServiceFailureException(inner),
                 crate::error::CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
+                crate::error::CreateMeetingWithAttendeesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::CreateMeetingWithAttendeesErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
@@ -165,11 +204,26 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteAttendeeErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
                 crate::error::DeleteAttendeeErrorKind::ForbiddenException(inner) => {
                     Error::ForbiddenException(inner)
                 }
                 crate::error::DeleteAttendeeErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::DeleteAttendeeErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::DeleteAttendeeErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DeleteAttendeeErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteAttendeeErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -189,6 +243,21 @@ where
                 }
                 crate::error::DeleteMeetingErrorKind::ForbiddenException(inner) => {
                     Error::ForbiddenException(inner)
+                }
+                crate::error::DeleteMeetingErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteMeetingErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::DeleteMeetingErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DeleteMeetingErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteMeetingErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteMeetingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -212,6 +281,18 @@ where
                 crate::error::GetAttendeeErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::GetAttendeeErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::GetAttendeeErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::GetAttendeeErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetAttendeeErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
                 crate::error::GetAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -234,6 +315,18 @@ where
                 crate::error::GetMeetingErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::GetMeetingErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::GetMeetingErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::GetMeetingErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetMeetingErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
                 crate::error::GetMeetingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -255,6 +348,18 @@ where
                 }
                 crate::error::ListAttendeesErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::ListAttendeesErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::ListAttendeesErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListAttendeesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListAttendeesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::ListAttendeesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -284,9 +389,15 @@ where
                 crate::error::StartMeetingTranscriptionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::StartMeetingTranscriptionErrorKind::ServiceFailureException(
+                    inner,
+                ) => Error::ServiceFailureException(inner),
                 crate::error::StartMeetingTranscriptionErrorKind::ServiceUnavailableException(
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::StartMeetingTranscriptionErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
@@ -320,9 +431,15 @@ where
                 crate::error::StopMeetingTranscriptionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::StopMeetingTranscriptionErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
                 crate::error::StopMeetingTranscriptionErrorKind::ServiceUnavailableException(
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
+                crate::error::StopMeetingTranscriptionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::StopMeetingTranscriptionErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }

@@ -1084,6 +1084,193 @@ impl AssociateLexBotInput {
     }
 }
 
+/// See [`AssociatePhoneNumberContactFlowInput`](crate::input::AssociatePhoneNumberContactFlowInput)
+pub mod associate_phone_number_contact_flow_input {
+    /// A builder for [`AssociatePhoneNumberContactFlowInput`](crate::input::AssociatePhoneNumberContactFlowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) contact_flow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_flow_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_flow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociatePhoneNumberContactFlowInput`](crate::input::AssociatePhoneNumberContactFlowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociatePhoneNumberContactFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociatePhoneNumberContactFlowInput {
+                phone_number_id: self.phone_number_id,
+                instance_id: self.instance_id,
+                contact_flow_id: self.contact_flow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociatePhoneNumberContactFlowInputOperationOutputAlias =
+    crate::operation::AssociatePhoneNumberContactFlow;
+#[doc(hidden)]
+pub type AssociatePhoneNumberContactFlowInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl AssociatePhoneNumberContactFlowInput {
+    /// Consumes the builder and constructs an Operation<[`AssociatePhoneNumberContactFlow`](crate::operation::AssociatePhoneNumberContactFlow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociatePhoneNumberContactFlow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssociatePhoneNumberContactFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_8 = &_input.phone_number_id;
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let phone_number_id = aws_smithy_http::label::fmt_string(input_8, false);
+                if phone_number_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/phone-number/{PhoneNumberId}/contact-flow",
+                    PhoneNumberId = phone_number_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociatePhoneNumberContactFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_associate_phone_number_contact_flow(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociatePhoneNumberContactFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociatePhoneNumberContactFlow",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AssociatePhoneNumberContactFlowInput`](crate::input::AssociatePhoneNumberContactFlowInput)
+    pub fn builder() -> crate::input::associate_phone_number_contact_flow_input::Builder {
+        crate::input::associate_phone_number_contact_flow_input::Builder::default()
+    }
+}
+
 /// See [`AssociateQueueQuickConnectsInput`](crate::input::AssociateQueueQuickConnectsInput)
 pub mod associate_queue_quick_connects_input {
     /// A builder for [`AssociateQueueQuickConnectsInput`](crate::input::AssociateQueueQuickConnectsInput)
@@ -1174,28 +1361,28 @@ impl AssociateQueueQuickConnectsInput {
                 _input: &crate::input::AssociateQueueQuickConnectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.instance_id;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_9 = &_input.instance_id;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_9 = &_input.queue_id;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_10 = &_input.queue_id;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_10, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -1383,28 +1570,28 @@ impl AssociateRoutingProfileQueuesInput {
                 _input: &crate::input::AssociateRoutingProfileQueuesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.instance_id;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_11 = &_input.instance_id;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_11 = &_input.routing_profile_id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_12 = &_input.routing_profile_id;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_12, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -1565,14 +1752,14 @@ impl AssociateSecurityKeyInput {
                 _input: &crate::input::AssociateSecurityKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.instance_id;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_13 = &_input.instance_id;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_13, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -1664,6 +1851,214 @@ impl AssociateSecurityKeyInput {
     /// Creates a new builder-style object to manufacture [`AssociateSecurityKeyInput`](crate::input::AssociateSecurityKeyInput)
     pub fn builder() -> crate::input::associate_security_key_input::Builder {
         crate::input::associate_security_key_input::Builder::default()
+    }
+}
+
+/// See [`ClaimPhoneNumberInput`](crate::input::ClaimPhoneNumberInput)
+pub mod claim_phone_number_input {
+    /// A builder for [`ClaimPhoneNumberInput`](crate::input::ClaimPhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) phone_number_description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
+            self
+        }
+        /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
+            self
+        }
+        /// <p>The description of the phone number.</p>
+        pub fn phone_number_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_description = Some(input.into());
+            self
+        }
+        /// <p>The description of the phone number.</p>
+        pub fn set_phone_number_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_description = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClaimPhoneNumberInput`](crate::input::ClaimPhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ClaimPhoneNumberInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ClaimPhoneNumberInput {
+                target_arn: self.target_arn,
+                phone_number: self.phone_number,
+                phone_number_description: self.phone_number_description,
+                tags: self.tags,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ClaimPhoneNumberInputOperationOutputAlias = crate::operation::ClaimPhoneNumber;
+#[doc(hidden)]
+pub type ClaimPhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ClaimPhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`ClaimPhoneNumber`](crate::operation::ClaimPhoneNumber)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ClaimPhoneNumber,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ClaimPhoneNumberInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/phone-number/claim").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ClaimPhoneNumberInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_claim_phone_number(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ClaimPhoneNumber::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ClaimPhoneNumber",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ClaimPhoneNumberInput`](crate::input::ClaimPhoneNumberInput)
+    pub fn builder() -> crate::input::claim_phone_number_input::Builder {
+        crate::input::claim_phone_number_input::Builder::default()
     }
 }
 
@@ -1803,14 +2198,14 @@ impl CreateAgentStatusInput {
                 _input: &crate::input::CreateAgentStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.instance_id;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_14 = &_input.instance_id;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -2039,14 +2434,14 @@ impl CreateContactFlowInput {
                 _input: &crate::input::CreateContactFlowInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.instance_id;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_15 = &_input.instance_id;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -2276,14 +2671,14 @@ impl CreateContactFlowModuleInput {
                 _input: &crate::input::CreateContactFlowModuleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_15 = &_input.instance_id;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_16 = &_input.instance_id;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -2520,14 +2915,14 @@ impl CreateHoursOfOperationInput {
                 _input: &crate::input::CreateHoursOfOperationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.instance_id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_17 = &_input.instance_id;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -2987,14 +3382,14 @@ impl CreateIntegrationAssociationInput {
                 _input: &crate::input::CreateIntegrationAssociationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.instance_id;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_18 = &_input.instance_id;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_18, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -3258,14 +3653,14 @@ impl CreateQueueInput {
                 _input: &crate::input::CreateQueueInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.instance_id;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_19 = &_input.instance_id;
+                let input_19 = input_19.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_19, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -3478,14 +3873,14 @@ impl CreateQuickConnectInput {
                 _input: &crate::input::CreateQuickConnectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.instance_id;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_20 = &_input.instance_id;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_20, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -3746,14 +4141,14 @@ impl CreateRoutingProfileInput {
                 _input: &crate::input::CreateRoutingProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.instance_id;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_21 = &_input.instance_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -3981,14 +4376,14 @@ impl CreateSecurityProfileInput {
                 _input: &crate::input::CreateSecurityProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.instance_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_22 = &_input.instance_id;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_22, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -4198,29 +4593,29 @@ impl CreateUseCaseInput {
                 _input: &crate::input::CreateUseCaseInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.instance_id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_23 = &_input.instance_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_23 = &_input.integration_association_id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_24 = &_input.integration_association_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let integration_association_id =
-                    aws_smithy_http::label::fmt_string(input_23, false);
+                    aws_smithy_http::label::fmt_string(input_24, false);
                 if integration_association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
@@ -4515,14 +4910,14 @@ impl CreateUserInput {
                 _input: &crate::input::CreateUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.instance_id;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_25 = &_input.instance_id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_25, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -4724,14 +5119,14 @@ impl CreateUserHierarchyGroupInput {
                 _input: &crate::input::CreateUserHierarchyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.instance_id;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_26 = &_input.instance_id;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_26, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -4968,14 +5363,14 @@ impl CreateVocabularyInput {
                 _input: &crate::input::CreateVocabularyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_26 = &_input.instance_id;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_27 = &_input.instance_id;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_27, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -5135,28 +5530,28 @@ impl DeleteContactFlowInput {
                 _input: &crate::input::DeleteContactFlowInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_27 = &_input.instance_id;
-                let input_27 = input_27.as_ref().ok_or(
+                let input_28 = &_input.instance_id;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_28, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_28 = &_input.contact_flow_id;
-                let input_28 = input_28.as_ref().ok_or(
+                let input_29 = &_input.contact_flow_id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let contact_flow_id = aws_smithy_http::label::fmt_string(input_29, false);
                 if contact_flow_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
@@ -5308,28 +5703,28 @@ impl DeleteContactFlowModuleInput {
                 _input: &crate::input::DeleteContactFlowModuleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_29 = &_input.instance_id;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_30 = &_input.instance_id;
+                let input_30 = input_30.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_30, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_30 = &_input.contact_flow_module_id;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_31 = &_input.contact_flow_module_id;
+                let input_31 = input_31.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_31, false);
                 if contact_flow_module_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
@@ -5480,28 +5875,28 @@ impl DeleteHoursOfOperationInput {
                 _input: &crate::input::DeleteHoursOfOperationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.instance_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_32 = &_input.instance_id;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_32, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_32 = &_input.hours_of_operation_id;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_33 = &_input.hours_of_operation_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if hours_of_operation_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
@@ -5637,14 +6032,14 @@ impl DeleteInstanceInput {
                 _input: &crate::input::DeleteInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.instance_id;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_34 = &_input.instance_id;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_34, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -5792,29 +6187,29 @@ impl DeleteIntegrationAssociationInput {
                 _input: &crate::input::DeleteIntegrationAssociationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_34 = &_input.instance_id;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_35 = &_input.instance_id;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_35, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_35 = &_input.integration_association_id;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_36 = &_input.integration_association_id;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let integration_association_id =
-                    aws_smithy_http::label::fmt_string(input_35, false);
+                    aws_smithy_http::label::fmt_string(input_36, false);
                 if integration_association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
@@ -5965,28 +6360,28 @@ impl DeleteQuickConnectInput {
                 _input: &crate::input::DeleteQuickConnectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.instance_id;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_37 = &_input.instance_id;
+                let input_37 = input_37.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_37, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_37 = &_input.quick_connect_id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_38 = &_input.quick_connect_id;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let quick_connect_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let quick_connect_id = aws_smithy_http::label::fmt_string(input_38, false);
                 if quick_connect_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
@@ -6137,28 +6532,28 @@ impl DeleteSecurityProfileInput {
                 _input: &crate::input::DeleteSecurityProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.instance_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_39 = &_input.instance_id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_39, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_39 = &_input.security_profile_id;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_40 = &_input.security_profile_id;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let security_profile_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let security_profile_id = aws_smithy_http::label::fmt_string(input_40, false);
                 if security_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
@@ -6321,43 +6716,43 @@ impl DeleteUseCaseInput {
                 _input: &crate::input::DeleteUseCaseInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.instance_id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_41 = &_input.instance_id;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_41, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_41 = &_input.integration_association_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_42 = &_input.integration_association_id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let integration_association_id =
-                    aws_smithy_http::label::fmt_string(input_41, false);
+                    aws_smithy_http::label::fmt_string(input_42, false);
                 if integration_association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_42 = &_input.use_case_id;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_43 = &_input.use_case_id;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "use_case_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let use_case_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let use_case_id = aws_smithy_http::label::fmt_string(input_43, false);
                 if use_case_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "use_case_id",
@@ -6499,28 +6894,28 @@ impl DeleteUserInput {
                 _input: &crate::input::DeleteUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.instance_id;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_44 = &_input.instance_id;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_44, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_44 = &_input.user_id;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_45 = &_input.user_id;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_45, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -6672,28 +7067,28 @@ impl DeleteUserHierarchyGroupInput {
                 _input: &crate::input::DeleteUserHierarchyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.instance_id;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_46 = &_input.instance_id;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_46, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_46 = &_input.hierarchy_group_id;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_47 = &_input.hierarchy_group_id;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_47, false);
                 if hierarchy_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
@@ -6844,28 +7239,28 @@ impl DeleteVocabularyInput {
                 _input: &crate::input::DeleteVocabularyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.instance_id;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_48 = &_input.instance_id;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_48, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_48 = &_input.vocabulary_id;
-                let input_48 = input_48.as_ref().ok_or(
+                let input_49 = &_input.vocabulary_id;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "vocabulary_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let vocabulary_id = aws_smithy_http::label::fmt_string(input_48, false);
+                let vocabulary_id = aws_smithy_http::label::fmt_string(input_49, false);
                 if vocabulary_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vocabulary_id",
@@ -7016,28 +7411,28 @@ impl DescribeAgentStatusInput {
                 _input: &crate::input::DescribeAgentStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.instance_id;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_50 = &_input.instance_id;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_50, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_50 = &_input.agent_status_id;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_51 = &_input.agent_status_id;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "agent_status_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let agent_status_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let agent_status_id = aws_smithy_http::label::fmt_string(input_51, false);
                 if agent_status_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "agent_status_id",
@@ -7185,28 +7580,28 @@ impl DescribeContactInput {
                 _input: &crate::input::DescribeContactInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_51 = &_input.instance_id;
-                let input_51 = input_51.as_ref().ok_or(
+                let input_52 = &_input.instance_id;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_52, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_52 = &_input.contact_id;
-                let input_52 = input_52.as_ref().ok_or(
+                let input_53 = &_input.contact_id;
+                let input_53 = input_53.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let contact_id = aws_smithy_http::label::fmt_string(input_53, false);
                 if contact_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_id",
@@ -7357,28 +7752,28 @@ impl DescribeContactFlowInput {
                 _input: &crate::input::DescribeContactFlowInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_53 = &_input.instance_id;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_54 = &_input.instance_id;
+                let input_54 = input_54.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_54, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_54 = &_input.contact_flow_id;
-                let input_54 = input_54.as_ref().ok_or(
+                let input_55 = &_input.contact_flow_id;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_id = aws_smithy_http::label::fmt_string(input_54, false);
+                let contact_flow_id = aws_smithy_http::label::fmt_string(input_55, false);
                 if contact_flow_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
@@ -7530,28 +7925,28 @@ impl DescribeContactFlowModuleInput {
                 _input: &crate::input::DescribeContactFlowModuleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_55 = &_input.instance_id;
-                let input_55 = input_55.as_ref().ok_or(
+                let input_56 = &_input.instance_id;
+                let input_56 = input_56.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_55, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_56, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_56 = &_input.contact_flow_module_id;
-                let input_56 = input_56.as_ref().ok_or(
+                let input_57 = &_input.contact_flow_module_id;
+                let input_57 = input_57.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_57, false);
                 if contact_flow_module_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
@@ -7703,28 +8098,28 @@ impl DescribeHoursOfOperationInput {
                 _input: &crate::input::DescribeHoursOfOperationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_57 = &_input.instance_id;
-                let input_57 = input_57.as_ref().ok_or(
+                let input_58 = &_input.instance_id;
+                let input_58 = input_58.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_57, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_58, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_58 = &_input.hours_of_operation_id;
-                let input_58 = input_58.as_ref().ok_or(
+                let input_59 = &_input.hours_of_operation_id;
+                let input_59 = input_59.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_58, false);
+                let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_59, false);
                 if hours_of_operation_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
@@ -7860,14 +8255,14 @@ impl DescribeInstanceInput {
                 _input: &crate::input::DescribeInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_59 = &_input.instance_id;
-                let input_59 = input_59.as_ref().ok_or(
+                let input_60 = &_input.instance_id;
+                let input_60 = input_60.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_59, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_60, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -8014,28 +8409,28 @@ impl DescribeInstanceAttributeInput {
                 _input: &crate::input::DescribeInstanceAttributeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_60 = &_input.instance_id;
-                let input_60 = input_60.as_ref().ok_or(
+                let input_61 = &_input.instance_id;
+                let input_61 = input_61.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_60, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_61, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_61 = &_input.attribute_type;
-                let input_61 = input_61.as_ref().ok_or(
+                let input_62 = &_input.attribute_type;
+                let input_62 = input_62.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attribute_type = aws_smithy_http::label::fmt_string(input_61, false);
+                let attribute_type = aws_smithy_http::label::fmt_string(input_62, false);
                 if attribute_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_type",
@@ -8203,28 +8598,28 @@ impl DescribeInstanceStorageConfigInput {
                 _input: &crate::input::DescribeInstanceStorageConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_62 = &_input.instance_id;
-                let input_62 = input_62.as_ref().ok_or(
+                let input_63 = &_input.instance_id;
+                let input_63 = input_63.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_62, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_63, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_63 = &_input.association_id;
-                let input_63 = input_63.as_ref().ok_or(
+                let input_64 = &_input.association_id;
+                let input_64 = input_64.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let association_id = aws_smithy_http::label::fmt_string(input_63, false);
+                let association_id = aws_smithy_http::label::fmt_string(input_64, false);
                 if association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
@@ -8245,10 +8640,10 @@ impl DescribeInstanceStorageConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_64) = &_input.resource_type {
+                if let Some(inner_65) = &_input.resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_64),
+                        &aws_smithy_http::query::fmt_string(&inner_65),
                     );
                 }
                 Ok(())
@@ -8315,6 +8710,151 @@ impl DescribeInstanceStorageConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceStorageConfigInput`](crate::input::DescribeInstanceStorageConfigInput)
     pub fn builder() -> crate::input::describe_instance_storage_config_input::Builder {
         crate::input::describe_instance_storage_config_input::Builder::default()
+    }
+}
+
+/// See [`DescribePhoneNumberInput`](crate::input::DescribePhoneNumberInput)
+pub mod describe_phone_number_input {
+    /// A builder for [`DescribePhoneNumberInput`](crate::input::DescribePhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePhoneNumberInput`](crate::input::DescribePhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribePhoneNumberInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribePhoneNumberInput {
+                phone_number_id: self.phone_number_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribePhoneNumberInputOperationOutputAlias = crate::operation::DescribePhoneNumber;
+#[doc(hidden)]
+pub type DescribePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribePhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`DescribePhoneNumber`](crate::operation::DescribePhoneNumber)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribePhoneNumber,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribePhoneNumberInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_66 = &_input.phone_number_id;
+                let input_66 = input_66.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let phone_number_id = aws_smithy_http::label::fmt_string(input_66, false);
+                if phone_number_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/phone-number/{PhoneNumberId}",
+                    PhoneNumberId = phone_number_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribePhoneNumberInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePhoneNumber::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribePhoneNumber",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribePhoneNumberInput`](crate::input::DescribePhoneNumberInput)
+    pub fn builder() -> crate::input::describe_phone_number_input::Builder {
+        crate::input::describe_phone_number_input::Builder::default()
     }
 }
 
@@ -8386,28 +8926,28 @@ impl DescribeQueueInput {
                 _input: &crate::input::DescribeQueueInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_65 = &_input.instance_id;
-                let input_65 = input_65.as_ref().ok_or(
+                let input_67 = &_input.instance_id;
+                let input_67 = input_67.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_65, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_67, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_66 = &_input.queue_id;
-                let input_66 = input_66.as_ref().ok_or(
+                let input_68 = &_input.queue_id;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_66, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_68, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -8558,28 +9098,28 @@ impl DescribeQuickConnectInput {
                 _input: &crate::input::DescribeQuickConnectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_67 = &_input.instance_id;
-                let input_67 = input_67.as_ref().ok_or(
+                let input_69 = &_input.instance_id;
+                let input_69 = input_69.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_67, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_69, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_68 = &_input.quick_connect_id;
-                let input_68 = input_68.as_ref().ok_or(
+                let input_70 = &_input.quick_connect_id;
+                let input_70 = input_70.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let quick_connect_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let quick_connect_id = aws_smithy_http::label::fmt_string(input_70, false);
                 if quick_connect_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
@@ -8730,28 +9270,28 @@ impl DescribeRoutingProfileInput {
                 _input: &crate::input::DescribeRoutingProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_69 = &_input.instance_id;
-                let input_69 = input_69.as_ref().ok_or(
+                let input_71 = &_input.instance_id;
+                let input_71 = input_71.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_69, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_71, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_70 = &_input.routing_profile_id;
-                let input_70 = input_70.as_ref().ok_or(
+                let input_72 = &_input.routing_profile_id;
+                let input_72 = input_72.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_72, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -8903,28 +9443,28 @@ impl DescribeSecurityProfileInput {
                 _input: &crate::input::DescribeSecurityProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_71 = &_input.instance_id;
-                let input_71 = input_71.as_ref().ok_or(
+                let input_73 = &_input.instance_id;
+                let input_73 = input_73.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_73, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_72 = &_input.security_profile_id;
-                let input_72 = input_72.as_ref().ok_or(
+                let input_74 = &_input.security_profile_id;
+                let input_74 = input_74.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let security_profile_id = aws_smithy_http::label::fmt_string(input_72, false);
+                let security_profile_id = aws_smithy_http::label::fmt_string(input_74, false);
                 if security_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
@@ -9072,28 +9612,28 @@ impl DescribeUserInput {
                 _input: &crate::input::DescribeUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_73 = &_input.instance_id;
-                let input_73 = input_73.as_ref().ok_or(
+                let input_75 = &_input.instance_id;
+                let input_75 = input_75.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_75, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_74 = &_input.user_id;
-                let input_74 = input_74.as_ref().ok_or(
+                let input_76 = &_input.user_id;
+                let input_76 = input_76.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_74, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_76, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -9245,28 +9785,28 @@ impl DescribeUserHierarchyGroupInput {
                 _input: &crate::input::DescribeUserHierarchyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_75 = &_input.instance_id;
-                let input_75 = input_75.as_ref().ok_or(
+                let input_77 = &_input.instance_id;
+                let input_77 = input_77.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_77, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_76 = &_input.hierarchy_group_id;
-                let input_76 = input_76.as_ref().ok_or(
+                let input_78 = &_input.hierarchy_group_id;
+                let input_78 = input_78.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_76, false);
+                let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_78, false);
                 if hierarchy_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
@@ -9404,14 +9944,14 @@ impl DescribeUserHierarchyStructureInput {
                 _input: &crate::input::DescribeUserHierarchyStructureInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_77 = &_input.instance_id;
-                let input_77 = input_77.as_ref().ok_or(
+                let input_79 = &_input.instance_id;
+                let input_79 = input_79.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_77, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_79, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -9561,28 +10101,28 @@ impl DescribeVocabularyInput {
                 _input: &crate::input::DescribeVocabularyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_78 = &_input.instance_id;
-                let input_78 = input_78.as_ref().ok_or(
+                let input_80 = &_input.instance_id;
+                let input_80 = input_80.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_78, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_80, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_79 = &_input.vocabulary_id;
-                let input_79 = input_79.as_ref().ok_or(
+                let input_81 = &_input.vocabulary_id;
+                let input_81 = input_81.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "vocabulary_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let vocabulary_id = aws_smithy_http::label::fmt_string(input_79, false);
+                let vocabulary_id = aws_smithy_http::label::fmt_string(input_81, false);
                 if vocabulary_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vocabulary_id",
@@ -9731,14 +10271,14 @@ impl DisassociateApprovedOriginInput {
                 _input: &crate::input::DisassociateApprovedOriginInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_80 = &_input.instance_id;
-                let input_80 = input_80.as_ref().ok_or(
+                let input_82 = &_input.instance_id;
+                let input_82 = input_82.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_80, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_82, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -9758,8 +10298,8 @@ impl DisassociateApprovedOriginInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_81) = &_input.origin {
-                    query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_81));
+                if let Some(inner_83) = &_input.origin {
+                    query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_83));
                 }
                 Ok(())
             }
@@ -9911,14 +10451,14 @@ impl DisassociateBotInput {
                 _input: &crate::input::DisassociateBotInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_82 = &_input.instance_id;
-                let input_82 = input_82.as_ref().ok_or(
+                let input_84 = &_input.instance_id;
+                let input_84 = input_84.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_82, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_84, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -10099,28 +10639,28 @@ impl DisassociateInstanceStorageConfigInput {
                 _input: &crate::input::DisassociateInstanceStorageConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_83 = &_input.instance_id;
-                let input_83 = input_83.as_ref().ok_or(
+                let input_85 = &_input.instance_id;
+                let input_85 = input_85.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_83, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_85, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_84 = &_input.association_id;
-                let input_84 = input_84.as_ref().ok_or(
+                let input_86 = &_input.association_id;
+                let input_86 = input_86.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let association_id = aws_smithy_http::label::fmt_string(input_84, false);
+                let association_id = aws_smithy_http::label::fmt_string(input_86, false);
                 if association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
@@ -10141,10 +10681,10 @@ impl DisassociateInstanceStorageConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_85) = &_input.resource_type {
+                if let Some(inner_87) = &_input.resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_85),
+                        &aws_smithy_http::query::fmt_string(&inner_87),
                     );
                 }
                 Ok(())
@@ -10283,14 +10823,14 @@ impl DisassociateLambdaFunctionInput {
                 _input: &crate::input::DisassociateLambdaFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_86 = &_input.instance_id;
-                let input_86 = input_86.as_ref().ok_or(
+                let input_88 = &_input.instance_id;
+                let input_88 = input_88.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_86, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_88, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -10310,10 +10850,10 @@ impl DisassociateLambdaFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_87) = &_input.function_arn {
+                if let Some(inner_89) = &_input.function_arn {
                     query.push_kv(
                         "functionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_87),
+                        &aws_smithy_http::query::fmt_string(&inner_89),
                     );
                 }
                 Ok(())
@@ -10463,14 +11003,14 @@ impl DisassociateLexBotInput {
                 _input: &crate::input::DisassociateLexBotInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_88 = &_input.instance_id;
-                let input_88 = input_88.as_ref().ok_or(
+                let input_90 = &_input.instance_id;
+                let input_90 = input_90.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_88, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_90, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -10490,11 +11030,11 @@ impl DisassociateLexBotInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_89) = &_input.bot_name {
-                    query.push_kv("botName", &aws_smithy_http::query::fmt_string(&inner_89));
+                if let Some(inner_91) = &_input.bot_name {
+                    query.push_kv("botName", &aws_smithy_http::query::fmt_string(&inner_91));
                 }
-                if let Some(inner_90) = &_input.lex_region {
-                    query.push_kv("lexRegion", &aws_smithy_http::query::fmt_string(&inner_90));
+                if let Some(inner_92) = &_input.lex_region {
+                    query.push_kv("lexRegion", &aws_smithy_http::query::fmt_string(&inner_92));
                 }
                 Ok(())
             }
@@ -10560,6 +11100,176 @@ impl DisassociateLexBotInput {
     /// Creates a new builder-style object to manufacture [`DisassociateLexBotInput`](crate::input::DisassociateLexBotInput)
     pub fn builder() -> crate::input::disassociate_lex_bot_input::Builder {
         crate::input::disassociate_lex_bot_input::Builder::default()
+    }
+}
+
+/// See [`DisassociatePhoneNumberContactFlowInput`](crate::input::DisassociatePhoneNumberContactFlowInput)
+pub mod disassociate_phone_number_contact_flow_input {
+    /// A builder for [`DisassociatePhoneNumberContactFlowInput`](crate::input::DisassociatePhoneNumberContactFlowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociatePhoneNumberContactFlowInput`](crate::input::DisassociatePhoneNumberContactFlowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociatePhoneNumberContactFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociatePhoneNumberContactFlowInput {
+                phone_number_id: self.phone_number_id,
+                instance_id: self.instance_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociatePhoneNumberContactFlowInputOperationOutputAlias =
+    crate::operation::DisassociatePhoneNumberContactFlow;
+#[doc(hidden)]
+pub type DisassociatePhoneNumberContactFlowInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DisassociatePhoneNumberContactFlowInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociatePhoneNumberContactFlow`](crate::operation::DisassociatePhoneNumberContactFlow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociatePhoneNumberContactFlow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DisassociatePhoneNumberContactFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_93 = &_input.phone_number_id;
+                let input_93 = input_93.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let phone_number_id = aws_smithy_http::label::fmt_string(input_93, false);
+                if phone_number_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/phone-number/{PhoneNumberId}/contact-flow",
+                    PhoneNumberId = phone_number_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DisassociatePhoneNumberContactFlowInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_94) = &_input.instance_id {
+                    query.push_kv("instanceId", &aws_smithy_http::query::fmt_string(&inner_94));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociatePhoneNumberContactFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociatePhoneNumberContactFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociatePhoneNumberContactFlow",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberContactFlowInput`](crate::input::DisassociatePhoneNumberContactFlowInput)
+    pub fn builder() -> crate::input::disassociate_phone_number_contact_flow_input::Builder {
+        crate::input::disassociate_phone_number_contact_flow_input::Builder::default()
     }
 }
 
@@ -10654,28 +11364,28 @@ impl DisassociateQueueQuickConnectsInput {
                 _input: &crate::input::DisassociateQueueQuickConnectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_91 = &_input.instance_id;
-                let input_91 = input_91.as_ref().ok_or(
+                let input_95 = &_input.instance_id;
+                let input_95 = input_95.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_91, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_95, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_92 = &_input.queue_id;
-                let input_92 = input_92.as_ref().ok_or(
+                let input_96 = &_input.queue_id;
+                let input_96 = input_96.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_92, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_96, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -10866,28 +11576,28 @@ impl DisassociateRoutingProfileQueuesInput {
                 _input: &crate::input::DisassociateRoutingProfileQueuesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_93 = &_input.instance_id;
-                let input_93 = input_93.as_ref().ok_or(
+                let input_97 = &_input.instance_id;
+                let input_97 = input_97.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_93, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_97, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_94 = &_input.routing_profile_id;
-                let input_94 = input_94.as_ref().ok_or(
+                let input_98 = &_input.routing_profile_id;
+                let input_98 = input_98.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_94, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_98, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -11052,28 +11762,28 @@ impl DisassociateSecurityKeyInput {
                 _input: &crate::input::DisassociateSecurityKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_95 = &_input.instance_id;
-                let input_95 = input_95.as_ref().ok_or(
+                let input_99 = &_input.instance_id;
+                let input_99 = input_99.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_95, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_99, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_96 = &_input.association_id;
-                let input_96 = input_96.as_ref().ok_or(
+                let input_100 = &_input.association_id;
+                let input_100 = input_100.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let association_id = aws_smithy_http::label::fmt_string(input_96, false);
+                let association_id = aws_smithy_http::label::fmt_string(input_100, false);
                 if association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
@@ -11224,28 +11934,28 @@ impl GetContactAttributesInput {
                 _input: &crate::input::GetContactAttributesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_97 = &_input.instance_id;
-                let input_97 = input_97.as_ref().ok_or(
+                let input_101 = &_input.instance_id;
+                let input_101 = input_101.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_97, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_101, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_98 = &_input.initial_contact_id;
-                let input_98 = input_98.as_ref().ok_or(
+                let input_102 = &_input.initial_contact_id;
+                let input_102 = input_102.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "initial_contact_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let initial_contact_id = aws_smithy_http::label::fmt_string(input_98, false);
+                let initial_contact_id = aws_smithy_http::label::fmt_string(input_102, false);
                 if initial_contact_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "initial_contact_id",
@@ -11657,14 +12367,14 @@ impl GetCurrentMetricDataInput {
                 _input: &crate::input::GetCurrentMetricDataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_99 = &_input.instance_id;
-                let input_99 = input_99.as_ref().ok_or(
+                let input_103 = &_input.instance_id;
+                let input_103 = input_103.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_99, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_103, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -11815,14 +12525,14 @@ impl GetFederationTokenInput {
                 _input: &crate::input::GetFederationTokenInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_100 = &_input.instance_id;
-                let input_100 = input_100.as_ref().ok_or(
+                let input_104 = &_input.instance_id;
+                let input_104 = input_104.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_100, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_104, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -12438,14 +13148,14 @@ impl GetMetricDataInput {
                 _input: &crate::input::GetMetricDataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_101 = &_input.instance_id;
-                let input_101 = input_101.as_ref().ok_or(
+                let input_105 = &_input.instance_id;
+                let input_105 = input_105.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_101, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_105, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -12640,14 +13350,14 @@ impl ListAgentStatusesInput {
                 _input: &crate::input::ListAgentStatusesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_102 = &_input.instance_id;
-                let input_102 = input_102.as_ref().ok_or(
+                let input_106 = &_input.instance_id;
+                let input_106 = input_106.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_102, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_106, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -12667,20 +13377,20 @@ impl ListAgentStatusesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_103) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
+                if let Some(inner_107) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_107));
                 }
-                if let Some(inner_104) = &_input.max_results {
+                if let Some(inner_108) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_108).encode(),
                     );
                 }
-                if let Some(inner_105) = &_input.agent_status_types {
-                    for inner_106 in inner_105 {
+                if let Some(inner_109) = &_input.agent_status_types {
+                    for inner_110 in inner_109 {
                         query.push_kv(
                             "AgentStatusTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_106),
+                            &aws_smithy_http::query::fmt_string(&inner_110),
                         );
                     }
                 }
@@ -12831,14 +13541,14 @@ impl ListApprovedOriginsInput {
                 _input: &crate::input::ListApprovedOriginsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_107 = &_input.instance_id;
-                let input_107 = input_107.as_ref().ok_or(
+                let input_111 = &_input.instance_id;
+                let input_111 = input_111.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_107, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_111, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -12858,13 +13568,13 @@ impl ListApprovedOriginsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_108) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_108));
+                if let Some(inner_112) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_112));
                 }
-                if let Some(inner_109) = &_input.max_results {
+                if let Some(inner_113) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_109).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_113).encode(),
                     );
                 }
                 Ok(())
@@ -13027,14 +13737,14 @@ impl ListBotsInput {
                 _input: &crate::input::ListBotsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_110 = &_input.instance_id;
-                let input_110 = input_110.as_ref().ok_or(
+                let input_114 = &_input.instance_id;
+                let input_114 = input_114.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_110, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_114, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -13054,19 +13764,19 @@ impl ListBotsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_111) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_111));
+                if let Some(inner_115) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_115));
                 }
-                if let Some(inner_112) = &_input.max_results {
+                if let Some(inner_116) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_112).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_116).encode(),
                     );
                 }
-                if let Some(inner_113) = &_input.lex_version {
+                if let Some(inner_117) = &_input.lex_version {
                     query.push_kv(
                         "lexVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_113),
+                        &aws_smithy_http::query::fmt_string(&inner_117),
                     );
                 }
                 Ok(())
@@ -13232,14 +13942,14 @@ impl ListContactFlowModulesInput {
                 _input: &crate::input::ListContactFlowModulesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_114 = &_input.instance_id;
-                let input_114 = input_114.as_ref().ok_or(
+                let input_118 = &_input.instance_id;
+                let input_118 = input_118.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_114, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_118, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -13259,17 +13969,17 @@ impl ListContactFlowModulesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_115) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_115));
+                if let Some(inner_119) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_119));
                 }
-                if let Some(inner_116) = &_input.max_results {
+                if let Some(inner_120) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_116).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_120).encode(),
                     );
                 }
-                if let Some(inner_117) = &_input.contact_flow_module_state {
-                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_117));
+                if let Some(inner_121) = &_input.contact_flow_module_state {
+                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_121));
                 }
                 Ok(())
             }
@@ -13440,14 +14150,14 @@ impl ListContactFlowsInput {
                 _input: &crate::input::ListContactFlowsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_118 = &_input.instance_id;
-                let input_118 = input_118.as_ref().ok_or(
+                let input_122 = &_input.instance_id;
+                let input_122 = input_122.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_118, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_122, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -13467,16 +14177,16 @@ impl ListContactFlowsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_119) = &_input.contact_flow_types {
-                    for inner_120 in inner_119 {
+                if let Some(inner_123) = &_input.contact_flow_types {
+                    for inner_124 in inner_123 {
                         query.push_kv(
                             "contactFlowTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_120),
+                            &aws_smithy_http::query::fmt_string(&inner_124),
                         );
                     }
                 }
-                if let Some(inner_121) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_121));
+                if let Some(inner_125) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_125));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -13656,28 +14366,28 @@ impl ListContactReferencesInput {
                 _input: &crate::input::ListContactReferencesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_122 = &_input.instance_id;
-                let input_122 = input_122.as_ref().ok_or(
+                let input_126 = &_input.instance_id;
+                let input_126 = input_126.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_122, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_126, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_123 = &_input.contact_id;
-                let input_123 = input_123.as_ref().ok_or(
+                let input_127 = &_input.contact_id;
+                let input_127 = input_127.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_id = aws_smithy_http::label::fmt_string(input_123, false);
+                let contact_id = aws_smithy_http::label::fmt_string(input_127, false);
                 if contact_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_id",
@@ -13698,16 +14408,16 @@ impl ListContactReferencesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_124) = &_input.reference_types {
-                    for inner_125 in inner_124 {
+                if let Some(inner_128) = &_input.reference_types {
+                    for inner_129 in inner_128 {
                         query.push_kv(
                             "referenceTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_125),
+                            &aws_smithy_http::query::fmt_string(&inner_129),
                         );
                     }
                 }
-                if let Some(inner_126) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_126));
+                if let Some(inner_130) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_130));
                 }
                 Ok(())
             }
@@ -13872,14 +14582,14 @@ impl ListDefaultVocabulariesInput {
                 _input: &crate::input::ListDefaultVocabulariesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_127 = &_input.instance_id;
-                let input_127 = input_127.as_ref().ok_or(
+                let input_131 = &_input.instance_id;
+                let input_131 = input_131.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_127, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_131, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -14054,14 +14764,14 @@ impl ListHoursOfOperationsInput {
                 _input: &crate::input::ListHoursOfOperationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_128 = &_input.instance_id;
-                let input_128 = input_128.as_ref().ok_or(
+                let input_132 = &_input.instance_id;
+                let input_132 = input_132.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_128, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_132, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -14081,8 +14791,8 @@ impl ListHoursOfOperationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_129) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_129));
+                if let Some(inner_133) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_133));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -14237,14 +14947,14 @@ impl ListInstanceAttributesInput {
                 _input: &crate::input::ListInstanceAttributesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_130 = &_input.instance_id;
-                let input_130 = input_130.as_ref().ok_or(
+                let input_134 = &_input.instance_id;
+                let input_134 = input_134.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_130, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_134, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -14264,13 +14974,13 @@ impl ListInstanceAttributesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_131) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_131));
+                if let Some(inner_135) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_135));
                 }
-                if let Some(inner_132) = &_input.max_results {
+                if let Some(inner_136) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_132).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_136).encode(),
                     );
                 }
                 Ok(())
@@ -14416,13 +15126,13 @@ impl ListInstancesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_133) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_133));
+                if let Some(inner_137) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_137));
                 }
-                if let Some(inner_134) = &_input.max_results {
+                if let Some(inner_138) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_134).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_138).encode(),
                     );
                 }
                 Ok(())
@@ -14588,14 +15298,14 @@ impl ListInstanceStorageConfigsInput {
                 _input: &crate::input::ListInstanceStorageConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_135 = &_input.instance_id;
-                let input_135 = input_135.as_ref().ok_or(
+                let input_139 = &_input.instance_id;
+                let input_139 = input_139.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_135, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_139, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -14615,19 +15325,19 @@ impl ListInstanceStorageConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_136) = &_input.resource_type {
+                if let Some(inner_140) = &_input.resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_136),
+                        &aws_smithy_http::query::fmt_string(&inner_140),
                     );
                 }
-                if let Some(inner_137) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_137));
+                if let Some(inner_141) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_141));
                 }
-                if let Some(inner_138) = &_input.max_results {
+                if let Some(inner_142) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_138).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_142).encode(),
                     );
                 }
                 Ok(())
@@ -14793,14 +15503,14 @@ impl ListIntegrationAssociationsInput {
                 _input: &crate::input::ListIntegrationAssociationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_139 = &_input.instance_id;
-                let input_139 = input_139.as_ref().ok_or(
+                let input_143 = &_input.instance_id;
+                let input_143 = input_143.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_139, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_143, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -14820,19 +15530,19 @@ impl ListIntegrationAssociationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_140) = &_input.integration_type {
+                if let Some(inner_144) = &_input.integration_type {
                     query.push_kv(
                         "integrationType",
-                        &aws_smithy_http::query::fmt_string(&inner_140),
+                        &aws_smithy_http::query::fmt_string(&inner_144),
                     );
                 }
-                if let Some(inner_141) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_141));
+                if let Some(inner_145) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_145));
                 }
-                if let Some(inner_142) = &_input.max_results {
+                if let Some(inner_146) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_142).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_146).encode(),
                     );
                 }
                 Ok(())
@@ -14982,14 +15692,14 @@ impl ListLambdaFunctionsInput {
                 _input: &crate::input::ListLambdaFunctionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_143 = &_input.instance_id;
-                let input_143 = input_143.as_ref().ok_or(
+                let input_147 = &_input.instance_id;
+                let input_147 = input_147.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_143, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_147, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -15009,13 +15719,13 @@ impl ListLambdaFunctionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_144) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_144));
+                if let Some(inner_148) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_148));
                 }
-                if let Some(inner_145) = &_input.max_results {
+                if let Some(inner_149) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_145).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_149).encode(),
                     );
                 }
                 Ok(())
@@ -15165,14 +15875,14 @@ impl ListLexBotsInput {
                 _input: &crate::input::ListLexBotsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_146 = &_input.instance_id;
-                let input_146 = input_146.as_ref().ok_or(
+                let input_150 = &_input.instance_id;
+                let input_150 = input_150.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_146, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_150, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -15192,13 +15902,13 @@ impl ListLexBotsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_147) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_147));
+                if let Some(inner_151) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_151));
                 }
-                if let Some(inner_148) = &_input.max_results {
+                if let Some(inner_152) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_148).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_152).encode(),
                     );
                 }
                 Ok(())
@@ -15395,14 +16105,14 @@ impl ListPhoneNumbersInput {
                 _input: &crate::input::ListPhoneNumbersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_149 = &_input.instance_id;
-                let input_149 = input_149.as_ref().ok_or(
+                let input_153 = &_input.instance_id;
+                let input_153 = input_153.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_149, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_153, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -15422,24 +16132,24 @@ impl ListPhoneNumbersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_150) = &_input.phone_number_types {
-                    for inner_151 in inner_150 {
+                if let Some(inner_154) = &_input.phone_number_types {
+                    for inner_155 in inner_154 {
                         query.push_kv(
                             "phoneNumberTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_151),
+                            &aws_smithy_http::query::fmt_string(&inner_155),
                         );
                     }
                 }
-                if let Some(inner_152) = &_input.phone_number_country_codes {
-                    for inner_153 in inner_152 {
+                if let Some(inner_156) = &_input.phone_number_country_codes {
+                    for inner_157 in inner_156 {
                         query.push_kv(
                             "phoneNumberCountryCodes",
-                            &aws_smithy_http::query::fmt_string(&inner_153),
+                            &aws_smithy_http::query::fmt_string(&inner_157),
                         );
                     }
                 }
-                if let Some(inner_154) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_154));
+                if let Some(inner_158) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_158));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -15511,6 +16221,229 @@ impl ListPhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersInput`](crate::input::ListPhoneNumbersInput)
     pub fn builder() -> crate::input::list_phone_numbers_input::Builder {
         crate::input::list_phone_numbers_input::Builder::default()
+    }
+}
+
+/// See [`ListPhoneNumbersV2Input`](crate::input::ListPhoneNumbersV2Input)
+pub mod list_phone_numbers_v2_input {
+    /// A builder for [`ListPhoneNumbersV2Input`](crate::input::ListPhoneNumbersV2Input)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) phone_number_country_codes:
+            std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
+        pub(crate) phone_number_types:
+            std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+        pub(crate) phone_number_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `phone_number_country_codes`.
+        ///
+        /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
+        ///
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_codes(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            let mut v = self.phone_number_country_codes.unwrap_or_default();
+            v.push(input);
+            self.phone_number_country_codes = Some(v);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
+        ) -> Self {
+            self.phone_number_country_codes = input;
+            self
+        }
+        /// Appends an item to `phone_number_types`.
+        ///
+        /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
+        ///
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_types(mut self, input: crate::model::PhoneNumberType) -> Self {
+            let mut v = self.phone_number_types.unwrap_or_default();
+            v.push(input);
+            self.phone_number_types = Some(v);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+        ) -> Self {
+            self.phone_number_types = input;
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn phone_number_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_prefix = Some(input.into());
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn set_phone_number_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPhoneNumbersV2Input`](crate::input::ListPhoneNumbersV2Input)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListPhoneNumbersV2Input,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListPhoneNumbersV2Input {
+                target_arn: self.target_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                phone_number_country_codes: self.phone_number_country_codes,
+                phone_number_types: self.phone_number_types,
+                phone_number_prefix: self.phone_number_prefix,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListPhoneNumbersV2InputOperationOutputAlias = crate::operation::ListPhoneNumbersV2;
+#[doc(hidden)]
+pub type ListPhoneNumbersV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListPhoneNumbersV2Input {
+    /// Consumes the builder and constructs an Operation<[`ListPhoneNumbersV2`](crate::operation::ListPhoneNumbersV2)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPhoneNumbersV2,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListPhoneNumbersV2Input,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/phone-number/list").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPhoneNumbersV2Input,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_phone_numbers_v2(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPhoneNumbersV2::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPhoneNumbersV2",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListPhoneNumbersV2Input`](crate::input::ListPhoneNumbersV2Input)
+    pub fn builder() -> crate::input::list_phone_numbers_v2_input::Builder {
+        crate::input::list_phone_numbers_v2_input::Builder::default()
     }
 }
 
@@ -15594,14 +16527,14 @@ impl ListPromptsInput {
                 _input: &crate::input::ListPromptsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_155 = &_input.instance_id;
-                let input_155 = input_155.as_ref().ok_or(
+                let input_159 = &_input.instance_id;
+                let input_159 = input_159.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_155, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_159, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -15621,13 +16554,13 @@ impl ListPromptsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_156) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_156));
+                if let Some(inner_160) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_160));
                 }
-                if let Some(inner_157) = &_input.max_results {
+                if let Some(inner_161) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_157).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_161).encode(),
                     );
                 }
                 Ok(())
@@ -15789,28 +16722,28 @@ impl ListQueueQuickConnectsInput {
                 _input: &crate::input::ListQueueQuickConnectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_158 = &_input.instance_id;
-                let input_158 = input_158.as_ref().ok_or(
+                let input_162 = &_input.instance_id;
+                let input_162 = input_162.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_158, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_162, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_159 = &_input.queue_id;
-                let input_159 = input_159.as_ref().ok_or(
+                let input_163 = &_input.queue_id;
+                let input_163 = input_163.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_159, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_163, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -15831,13 +16764,13 @@ impl ListQueueQuickConnectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_160) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_160));
+                if let Some(inner_164) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_164));
                 }
-                if let Some(inner_161) = &_input.max_results {
+                if let Some(inner_165) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_161).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_165).encode(),
                     );
                 }
                 Ok(())
@@ -16008,14 +16941,14 @@ impl ListQueuesInput {
                 _input: &crate::input::ListQueuesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_162 = &_input.instance_id;
-                let input_162 = input_162.as_ref().ok_or(
+                let input_166 = &_input.instance_id;
+                let input_166 = input_166.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_162, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_166, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -16035,16 +16968,16 @@ impl ListQueuesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_163) = &_input.queue_types {
-                    for inner_164 in inner_163 {
+                if let Some(inner_167) = &_input.queue_types {
+                    for inner_168 in inner_167 {
                         query.push_kv(
                             "queueTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_164),
+                            &aws_smithy_http::query::fmt_string(&inner_168),
                         );
                     }
                 }
-                if let Some(inner_165) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_165));
+                if let Some(inner_169) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_169));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -16221,14 +17154,14 @@ impl ListQuickConnectsInput {
                 _input: &crate::input::ListQuickConnectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_166 = &_input.instance_id;
-                let input_166 = input_166.as_ref().ok_or(
+                let input_170 = &_input.instance_id;
+                let input_170 = input_170.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_166, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_170, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -16248,20 +17181,20 @@ impl ListQuickConnectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_167) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_167));
+                if let Some(inner_171) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_171));
                 }
-                if let Some(inner_168) = &_input.max_results {
+                if let Some(inner_172) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_168).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_172).encode(),
                     );
                 }
-                if let Some(inner_169) = &_input.quick_connect_types {
-                    for inner_170 in inner_169 {
+                if let Some(inner_173) = &_input.quick_connect_types {
+                    for inner_174 in inner_173 {
                         query.push_kv(
                             "QuickConnectTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_170),
+                            &aws_smithy_http::query::fmt_string(&inner_174),
                         );
                     }
                 }
@@ -16428,28 +17361,28 @@ impl ListRoutingProfileQueuesInput {
                 _input: &crate::input::ListRoutingProfileQueuesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_171 = &_input.instance_id;
-                let input_171 = input_171.as_ref().ok_or(
+                let input_175 = &_input.instance_id;
+                let input_175 = input_175.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_171, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_175, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_172 = &_input.routing_profile_id;
-                let input_172 = input_172.as_ref().ok_or(
+                let input_176 = &_input.routing_profile_id;
+                let input_176 = input_176.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_172, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_176, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -16470,13 +17403,13 @@ impl ListRoutingProfileQueuesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_173) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_173));
+                if let Some(inner_177) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_177));
                 }
-                if let Some(inner_174) = &_input.max_results {
+                if let Some(inner_178) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_174).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_178).encode(),
                     );
                 }
                 Ok(())
@@ -16626,14 +17559,14 @@ impl ListRoutingProfilesInput {
                 _input: &crate::input::ListRoutingProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_175 = &_input.instance_id;
-                let input_175 = input_175.as_ref().ok_or(
+                let input_179 = &_input.instance_id;
+                let input_179 = input_179.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_175, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_179, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -16653,13 +17586,13 @@ impl ListRoutingProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_176) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_176));
+                if let Some(inner_180) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_180));
                 }
-                if let Some(inner_177) = &_input.max_results {
+                if let Some(inner_181) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_177).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_181).encode(),
                     );
                 }
                 Ok(())
@@ -16809,14 +17742,14 @@ impl ListSecurityKeysInput {
                 _input: &crate::input::ListSecurityKeysInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_178 = &_input.instance_id;
-                let input_178 = input_178.as_ref().ok_or(
+                let input_182 = &_input.instance_id;
+                let input_182 = input_182.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_178, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_182, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -16836,13 +17769,13 @@ impl ListSecurityKeysInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_179) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_179));
+                if let Some(inner_183) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_183));
                 }
-                if let Some(inner_180) = &_input.max_results {
+                if let Some(inner_184) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_180).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_184).encode(),
                     );
                 }
                 Ok(())
@@ -17009,28 +17942,28 @@ impl ListSecurityProfilePermissionsInput {
                 _input: &crate::input::ListSecurityProfilePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_181 = &_input.instance_id;
-                let input_181 = input_181.as_ref().ok_or(
+                let input_185 = &_input.instance_id;
+                let input_185 = input_185.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_181, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_185, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_182 = &_input.security_profile_id;
-                let input_182 = input_182.as_ref().ok_or(
+                let input_186 = &_input.security_profile_id;
+                let input_186 = input_186.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let security_profile_id = aws_smithy_http::label::fmt_string(input_182, false);
+                let security_profile_id = aws_smithy_http::label::fmt_string(input_186, false);
                 if security_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
@@ -17051,13 +17984,13 @@ impl ListSecurityProfilePermissionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_183) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_183));
+                if let Some(inner_187) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_187));
                 }
-                if let Some(inner_184) = &_input.max_results {
+                if let Some(inner_188) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_184).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_188).encode(),
                     );
                 }
                 Ok(())
@@ -17207,14 +18140,14 @@ impl ListSecurityProfilesInput {
                 _input: &crate::input::ListSecurityProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_185 = &_input.instance_id;
-                let input_185 = input_185.as_ref().ok_or(
+                let input_189 = &_input.instance_id;
+                let input_189 = input_189.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_185, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_189, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -17234,13 +18167,13 @@ impl ListSecurityProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_186) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_186));
+                if let Some(inner_190) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_190));
                 }
-                if let Some(inner_187) = &_input.max_results {
+                if let Some(inner_191) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_187).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_191).encode(),
                     );
                 }
                 Ok(())
@@ -17366,14 +18299,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_188 = &_input.resource_arn;
-                let input_188 = input_188.as_ref().ok_or(
+                let input_192 = &_input.resource_arn;
+                let input_192 = input_192.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_188, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_192, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -17543,29 +18476,29 @@ impl ListUseCasesInput {
                 _input: &crate::input::ListUseCasesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_189 = &_input.instance_id;
-                let input_189 = input_189.as_ref().ok_or(
+                let input_193 = &_input.instance_id;
+                let input_193 = input_193.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_189, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_193, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_190 = &_input.integration_association_id;
-                let input_190 = input_190.as_ref().ok_or(
+                let input_194 = &_input.integration_association_id;
+                let input_194 = input_194.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let integration_association_id =
-                    aws_smithy_http::label::fmt_string(input_190, false);
+                    aws_smithy_http::label::fmt_string(input_194, false);
                 if integration_association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
@@ -17580,13 +18513,13 @@ impl ListUseCasesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_191) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_191));
+                if let Some(inner_195) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_195));
                 }
-                if let Some(inner_192) = &_input.max_results {
+                if let Some(inner_196) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_192).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_196).encode(),
                     );
                 }
                 Ok(())
@@ -17737,14 +18670,14 @@ impl ListUserHierarchyGroupsInput {
                 _input: &crate::input::ListUserHierarchyGroupsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_193 = &_input.instance_id;
-                let input_193 = input_193.as_ref().ok_or(
+                let input_197 = &_input.instance_id;
+                let input_197 = input_197.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_193, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_197, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -17764,13 +18697,13 @@ impl ListUserHierarchyGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_194) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_194));
+                if let Some(inner_198) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_198));
                 }
-                if let Some(inner_195) = &_input.max_results {
+                if let Some(inner_199) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_199).encode(),
                     );
                 }
                 Ok(())
@@ -17918,14 +18851,14 @@ impl ListUsersInput {
                 _input: &crate::input::ListUsersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_196 = &_input.instance_id;
-                let input_196 = input_196.as_ref().ok_or(
+                let input_200 = &_input.instance_id;
+                let input_200 = input_200.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_196, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_200, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -17945,13 +18878,13 @@ impl ListUsersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_197) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_197));
+                if let Some(inner_201) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_201));
                 }
-                if let Some(inner_198) = &_input.max_results {
+                if let Some(inner_202) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_198).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_202).encode(),
                     );
                 }
                 Ok(())
@@ -18016,6 +18949,378 @@ impl ListUsersInput {
     /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
     pub fn builder() -> crate::input::list_users_input::Builder {
         crate::input::list_users_input::Builder::default()
+    }
+}
+
+/// See [`PutUserStatusInput`](crate::input::PutUserStatusInput)
+pub mod put_user_status_input {
+    /// A builder for [`PutUserStatusInput`](crate::input::PutUserStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) agent_status_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_status_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn set_agent_status_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_status_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutUserStatusInput`](crate::input::PutUserStatusInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutUserStatusInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutUserStatusInput {
+                user_id: self.user_id,
+                instance_id: self.instance_id,
+                agent_status_id: self.agent_status_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutUserStatusInputOperationOutputAlias = crate::operation::PutUserStatus;
+#[doc(hidden)]
+pub type PutUserStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl PutUserStatusInput {
+    /// Consumes the builder and constructs an Operation<[`PutUserStatus`](crate::operation::PutUserStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutUserStatus,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutUserStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_203 = &_input.instance_id;
+                let input_203 = input_203.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let instance_id = aws_smithy_http::label::fmt_string(input_203, false);
+                if instance_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_204 = &_input.user_id;
+                let input_204 = input_204.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let user_id = aws_smithy_http::label::fmt_string(input_204, false);
+                if user_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/users/{InstanceId}/{UserId}/status",
+                    InstanceId = instance_id,
+                    UserId = user_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutUserStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_user_status(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutUserStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutUserStatus",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutUserStatusInput`](crate::input::PutUserStatusInput)
+    pub fn builder() -> crate::input::put_user_status_input::Builder {
+        crate::input::put_user_status_input::Builder::default()
+    }
+}
+
+/// See [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput)
+pub mod release_phone_number_input {
+    /// A builder for [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ReleasePhoneNumberInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ReleasePhoneNumberInput {
+                phone_number_id: self.phone_number_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ReleasePhoneNumberInputOperationOutputAlias = crate::operation::ReleasePhoneNumber;
+#[doc(hidden)]
+pub type ReleasePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ReleasePhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`ReleasePhoneNumber`](crate::operation::ReleasePhoneNumber)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ReleasePhoneNumber,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ReleasePhoneNumberInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_205 = &_input.phone_number_id;
+                let input_205 = input_205.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let phone_number_id = aws_smithy_http::label::fmt_string(input_205, false);
+                if phone_number_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/phone-number/{PhoneNumberId}",
+                    PhoneNumberId = phone_number_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ReleasePhoneNumberInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_206) = &_input.client_token {
+                    query.push_kv(
+                        "clientToken",
+                        &aws_smithy_http::query::fmt_string(&inner_206),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ReleasePhoneNumberInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReleasePhoneNumber::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReleasePhoneNumber",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput)
+    pub fn builder() -> crate::input::release_phone_number_input::Builder {
+        crate::input::release_phone_number_input::Builder::default()
     }
 }
 
@@ -18185,6 +19490,408 @@ impl ResumeContactRecordingInput {
     }
 }
 
+/// See [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput)
+pub mod search_available_phone_numbers_input {
+    /// A builder for [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) phone_number_country_code:
+            std::option::Option<crate::model::PhoneNumberCountryCode>,
+        pub(crate) phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+        pub(crate) phone_number_prefix: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_code(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            self.phone_number_country_code = Some(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_code(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberCountryCode>,
+        ) -> Self {
+            self.phone_number_country_code = input;
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_type(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.phone_number_type = Some(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_type(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberType>,
+        ) -> Self {
+            self.phone_number_type = input;
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn phone_number_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_prefix = Some(input.into());
+            self
+        }
+        /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+        pub fn set_phone_number_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_prefix = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SearchAvailablePhoneNumbersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SearchAvailablePhoneNumbersInput {
+                target_arn: self.target_arn,
+                phone_number_country_code: self.phone_number_country_code,
+                phone_number_type: self.phone_number_type,
+                phone_number_prefix: self.phone_number_prefix,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SearchAvailablePhoneNumbersInputOperationOutputAlias =
+    crate::operation::SearchAvailablePhoneNumbers;
+#[doc(hidden)]
+pub type SearchAvailablePhoneNumbersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl SearchAvailablePhoneNumbersInput {
+    /// Consumes the builder and constructs an Operation<[`SearchAvailablePhoneNumbers`](crate::operation::SearchAvailablePhoneNumbers)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchAvailablePhoneNumbers,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SearchAvailablePhoneNumbersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/phone-number/search-available")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SearchAvailablePhoneNumbersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_search_available_phone_numbers(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchAvailablePhoneNumbers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchAvailablePhoneNumbers",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput)
+    pub fn builder() -> crate::input::search_available_phone_numbers_input::Builder {
+        crate::input::search_available_phone_numbers_input::Builder::default()
+    }
+}
+
+/// See [`SearchUsersInput`](crate::input::SearchUsersInput)
+pub mod search_users_input {
+    /// A builder for [`SearchUsersInput`](crate::input::SearchUsersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) search_filter: std::option::Option<crate::model::UserSearchFilter>,
+        pub(crate) search_criteria: std::option::Option<crate::model::UserSearchCriteria>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::UserSearchFilter) -> Self {
+            self.search_filter = Some(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::UserSearchFilter>,
+        ) -> Self {
+            self.search_filter = input;
+            self
+        }
+        /// <p>The search criteria to be used to return users.</p>
+        pub fn search_criteria(mut self, input: crate::model::UserSearchCriteria) -> Self {
+            self.search_criteria = Some(input);
+            self
+        }
+        /// <p>The search criteria to be used to return users.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::UserSearchCriteria>,
+        ) -> Self {
+            self.search_criteria = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchUsersInput`](crate::input::SearchUsersInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SearchUsersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SearchUsersInput {
+                instance_id: self.instance_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                search_filter: self.search_filter,
+                search_criteria: self.search_criteria,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SearchUsersInputOperationOutputAlias = crate::operation::SearchUsers;
+#[doc(hidden)]
+pub type SearchUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl SearchUsersInput {
+    /// Consumes the builder and constructs an Operation<[`SearchUsers`](crate::operation::SearchUsers)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchUsers,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SearchUsersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/search-users").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SearchUsersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_search_users(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchUsers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchUsers",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SearchUsersInput`](crate::input::SearchUsersInput)
+    pub fn builder() -> crate::input::search_users_input::Builder {
+        crate::input::search_users_input::Builder::default()
+    }
+}
+
 /// See [`SearchVocabulariesInput`](crate::input::SearchVocabulariesInput)
 pub mod search_vocabularies_input {
     /// A builder for [`SearchVocabulariesInput`](crate::input::SearchVocabulariesInput)
@@ -18310,14 +20017,14 @@ impl SearchVocabulariesInput {
                 _input: &crate::input::SearchVocabulariesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_199 = &_input.instance_id;
-                let input_199 = input_199.as_ref().ok_or(
+                let input_207 = &_input.instance_id;
+                let input_207 = input_207.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_199, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_207, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -20351,14 +22058,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_200 = &_input.resource_arn;
-                let input_200 = input_200.as_ref().ok_or(
+                let input_208 = &_input.resource_arn;
+                let input_208 = input_208.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_200, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_208, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -20524,14 +22231,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_201 = &_input.resource_arn;
-                let input_201 = input_201.as_ref().ok_or(
+                let input_209 = &_input.resource_arn;
+                let input_209 = input_209.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_201, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_209, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -20547,9 +22254,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_202) = &_input.tag_keys {
-                    for inner_203 in inner_202 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_203));
+                if let Some(inner_210) = &_input.tag_keys {
+                    for inner_211 in inner_210 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_211));
                     }
                 }
                 Ok(())
@@ -20753,28 +22460,28 @@ impl UpdateAgentStatusInput {
                 _input: &crate::input::UpdateAgentStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_204 = &_input.instance_id;
-                let input_204 = input_204.as_ref().ok_or(
+                let input_212 = &_input.instance_id;
+                let input_212 = input_212.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_204, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_212, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_205 = &_input.agent_status_id;
-                let input_205 = input_205.as_ref().ok_or(
+                let input_213 = &_input.agent_status_id;
+                let input_213 = input_213.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "agent_status_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let agent_status_id = aws_smithy_http::label::fmt_string(input_205, false);
+                let agent_status_id = aws_smithy_http::label::fmt_string(input_213, false);
                 if agent_status_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "agent_status_id",
@@ -20989,28 +22696,28 @@ impl UpdateContactInput {
                 _input: &crate::input::UpdateContactInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_206 = &_input.instance_id;
-                let input_206 = input_206.as_ref().ok_or(
+                let input_214 = &_input.instance_id;
+                let input_214 = input_214.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_206, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_214, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_207 = &_input.contact_id;
-                let input_207 = input_207.as_ref().ok_or(
+                let input_215 = &_input.contact_id;
+                let input_215 = input_215.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_id = aws_smithy_http::label::fmt_string(input_207, false);
+                let contact_id = aws_smithy_http::label::fmt_string(input_215, false);
                 if contact_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_id",
@@ -21374,28 +23081,28 @@ impl UpdateContactFlowContentInput {
                 _input: &crate::input::UpdateContactFlowContentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_208 = &_input.instance_id;
-                let input_208 = input_208.as_ref().ok_or(
+                let input_216 = &_input.instance_id;
+                let input_216 = input_216.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_208, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_216, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_209 = &_input.contact_flow_id;
-                let input_209 = input_209.as_ref().ok_or(
+                let input_217 = &_input.contact_flow_id;
+                let input_217 = input_217.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_id = aws_smithy_http::label::fmt_string(input_209, false);
+                let contact_flow_id = aws_smithy_http::label::fmt_string(input_217, false);
                 if contact_flow_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
@@ -21602,28 +23309,28 @@ impl UpdateContactFlowMetadataInput {
                 _input: &crate::input::UpdateContactFlowMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_210 = &_input.instance_id;
-                let input_210 = input_210.as_ref().ok_or(
+                let input_218 = &_input.instance_id;
+                let input_218 = input_218.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_210, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_218, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_211 = &_input.contact_flow_id;
-                let input_211 = input_211.as_ref().ok_or(
+                let input_219 = &_input.contact_flow_id;
+                let input_219 = input_219.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_id = aws_smithy_http::label::fmt_string(input_211, false);
+                let contact_flow_id = aws_smithy_http::label::fmt_string(input_219, false);
                 if contact_flow_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
@@ -21804,28 +23511,28 @@ impl UpdateContactFlowModuleContentInput {
                 _input: &crate::input::UpdateContactFlowModuleContentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_212 = &_input.instance_id;
-                let input_212 = input_212.as_ref().ok_or(
+                let input_220 = &_input.instance_id;
+                let input_220 = input_220.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_212, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_220, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_213 = &_input.contact_flow_module_id;
-                let input_213 = input_213.as_ref().ok_or(
+                let input_221 = &_input.contact_flow_module_id;
+                let input_221 = input_221.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_213, false);
+                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_221, false);
                 if contact_flow_module_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
@@ -22030,28 +23737,28 @@ impl UpdateContactFlowModuleMetadataInput {
                 _input: &crate::input::UpdateContactFlowModuleMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_214 = &_input.instance_id;
-                let input_214 = input_214.as_ref().ok_or(
+                let input_222 = &_input.instance_id;
+                let input_222 = input_222.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_214, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_222, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_215 = &_input.contact_flow_module_id;
-                let input_215 = input_215.as_ref().ok_or(
+                let input_223 = &_input.contact_flow_module_id;
+                let input_223 = input_223.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_215, false);
+                let contact_flow_module_id = aws_smithy_http::label::fmt_string(input_223, false);
                 if contact_flow_module_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_module_id",
@@ -22239,28 +23946,28 @@ impl UpdateContactFlowNameInput {
                 _input: &crate::input::UpdateContactFlowNameInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_216 = &_input.instance_id;
-                let input_216 = input_216.as_ref().ok_or(
+                let input_224 = &_input.instance_id;
+                let input_224 = input_224.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_216, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_224, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_217 = &_input.contact_flow_id;
-                let input_217 = input_217.as_ref().ok_or(
+                let input_225 = &_input.contact_flow_id;
+                let input_225 = input_225.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let contact_flow_id = aws_smithy_http::label::fmt_string(input_217, false);
+                let contact_flow_id = aws_smithy_http::label::fmt_string(input_225, false);
                 if contact_flow_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
@@ -22650,28 +24357,28 @@ impl UpdateHoursOfOperationInput {
                 _input: &crate::input::UpdateHoursOfOperationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_218 = &_input.instance_id;
-                let input_218 = input_218.as_ref().ok_or(
+                let input_226 = &_input.instance_id;
+                let input_226 = input_226.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_218, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_226, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_219 = &_input.hours_of_operation_id;
-                let input_219 = input_219.as_ref().ok_or(
+                let input_227 = &_input.hours_of_operation_id;
+                let input_227 = input_227.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_219, false);
+                let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_227, false);
                 if hours_of_operation_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
@@ -22855,28 +24562,28 @@ impl UpdateInstanceAttributeInput {
                 _input: &crate::input::UpdateInstanceAttributeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_220 = &_input.instance_id;
-                let input_220 = input_220.as_ref().ok_or(
+                let input_228 = &_input.instance_id;
+                let input_228 = input_228.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_220, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_228, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_221 = &_input.attribute_type;
-                let input_221 = input_221.as_ref().ok_or(
+                let input_229 = &_input.attribute_type;
+                let input_229 = input_229.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attribute_type = aws_smithy_http::label::fmt_string(input_221, false);
+                let attribute_type = aws_smithy_http::label::fmt_string(input_229, false);
                 if attribute_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_type",
@@ -23074,28 +24781,28 @@ impl UpdateInstanceStorageConfigInput {
                 _input: &crate::input::UpdateInstanceStorageConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_222 = &_input.instance_id;
-                let input_222 = input_222.as_ref().ok_or(
+                let input_230 = &_input.instance_id;
+                let input_230 = input_230.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_222, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_230, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_223 = &_input.association_id;
-                let input_223 = input_223.as_ref().ok_or(
+                let input_231 = &_input.association_id;
+                let input_231 = input_231.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let association_id = aws_smithy_http::label::fmt_string(input_223, false);
+                let association_id = aws_smithy_http::label::fmt_string(input_231, false);
                 if association_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
@@ -23116,10 +24823,10 @@ impl UpdateInstanceStorageConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_224) = &_input.resource_type {
+                if let Some(inner_232) = &_input.resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_224),
+                        &aws_smithy_http::query::fmt_string(&inner_232),
                     );
                 }
                 Ok(())
@@ -23199,6 +24906,192 @@ impl UpdateInstanceStorageConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceStorageConfigInput`](crate::input::UpdateInstanceStorageConfigInput)
     pub fn builder() -> crate::input::update_instance_storage_config_input::Builder {
         crate::input::update_instance_storage_config_input::Builder::default()
+    }
+}
+
+/// See [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput)
+pub mod update_phone_number_input {
+    /// A builder for [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdatePhoneNumberInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdatePhoneNumberInput {
+                phone_number_id: self.phone_number_id,
+                target_arn: self.target_arn,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdatePhoneNumberInputOperationOutputAlias = crate::operation::UpdatePhoneNumber;
+#[doc(hidden)]
+pub type UpdatePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdatePhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`UpdatePhoneNumber`](crate::operation::UpdatePhoneNumber)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdatePhoneNumber,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdatePhoneNumberInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_233 = &_input.phone_number_id;
+                let input_233 = input_233.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let phone_number_id = aws_smithy_http::label::fmt_string(input_233, false);
+                if phone_number_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "phone_number_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/phone-number/{PhoneNumberId}",
+                    PhoneNumberId = phone_number_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdatePhoneNumberInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_phone_number(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdatePhoneNumber::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdatePhoneNumber",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput)
+    pub fn builder() -> crate::input::update_phone_number_input::Builder {
+        crate::input::update_phone_number_input::Builder::default()
     }
 }
 
@@ -23286,28 +25179,28 @@ impl UpdateQueueHoursOfOperationInput {
                 _input: &crate::input::UpdateQueueHoursOfOperationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_225 = &_input.instance_id;
-                let input_225 = input_225.as_ref().ok_or(
+                let input_234 = &_input.instance_id;
+                let input_234 = input_234.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_225, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_234, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_226 = &_input.queue_id;
-                let input_226 = input_226.as_ref().ok_or(
+                let input_235 = &_input.queue_id;
+                let input_235 = input_235.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_226, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_235, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -23480,28 +25373,28 @@ impl UpdateQueueMaxContactsInput {
                 _input: &crate::input::UpdateQueueMaxContactsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_227 = &_input.instance_id;
-                let input_227 = input_227.as_ref().ok_or(
+                let input_236 = &_input.instance_id;
+                let input_236 = input_236.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_227, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_236, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_228 = &_input.queue_id;
-                let input_228 = input_228.as_ref().ok_or(
+                let input_237 = &_input.queue_id;
+                let input_237 = input_237.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_228, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_237, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -23689,28 +25582,28 @@ impl UpdateQueueNameInput {
                 _input: &crate::input::UpdateQueueNameInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_229 = &_input.instance_id;
-                let input_229 = input_229.as_ref().ok_or(
+                let input_238 = &_input.instance_id;
+                let input_238 = input_238.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_229, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_238, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_230 = &_input.queue_id;
-                let input_230 = input_230.as_ref().ok_or(
+                let input_239 = &_input.queue_id;
+                let input_239 = input_239.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_230, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_239, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -23889,28 +25782,28 @@ impl UpdateQueueOutboundCallerConfigInput {
                 _input: &crate::input::UpdateQueueOutboundCallerConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_231 = &_input.instance_id;
-                let input_231 = input_231.as_ref().ok_or(
+                let input_240 = &_input.instance_id;
+                let input_240 = input_240.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_231, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_240, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_232 = &_input.queue_id;
-                let input_232 = input_232.as_ref().ok_or(
+                let input_241 = &_input.queue_id;
+                let input_241 = input_241.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_232, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_241, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -24083,28 +25976,28 @@ impl UpdateQueueStatusInput {
                 _input: &crate::input::UpdateQueueStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_233 = &_input.instance_id;
-                let input_233 = input_233.as_ref().ok_or(
+                let input_242 = &_input.instance_id;
+                let input_242 = input_242.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_233, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_242, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_234 = &_input.queue_id;
-                let input_234 = input_234.as_ref().ok_or(
+                let input_243 = &_input.queue_id;
+                let input_243 = input_243.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let queue_id = aws_smithy_http::label::fmt_string(input_234, false);
+                let queue_id = aws_smithy_http::label::fmt_string(input_243, false);
                 if queue_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
@@ -24285,28 +26178,28 @@ impl UpdateQuickConnectConfigInput {
                 _input: &crate::input::UpdateQuickConnectConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_235 = &_input.instance_id;
-                let input_235 = input_235.as_ref().ok_or(
+                let input_244 = &_input.instance_id;
+                let input_244 = input_244.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_235, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_244, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_236 = &_input.quick_connect_id;
-                let input_236 = input_236.as_ref().ok_or(
+                let input_245 = &_input.quick_connect_id;
+                let input_245 = input_245.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let quick_connect_id = aws_smithy_http::label::fmt_string(input_236, false);
+                let quick_connect_id = aws_smithy_http::label::fmt_string(input_245, false);
                 if quick_connect_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
@@ -24497,28 +26390,28 @@ impl UpdateQuickConnectNameInput {
                 _input: &crate::input::UpdateQuickConnectNameInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_237 = &_input.instance_id;
-                let input_237 = input_237.as_ref().ok_or(
+                let input_246 = &_input.instance_id;
+                let input_246 = input_246.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_237, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_246, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_238 = &_input.quick_connect_id;
-                let input_238 = input_238.as_ref().ok_or(
+                let input_247 = &_input.quick_connect_id;
+                let input_247 = input_247.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let quick_connect_id = aws_smithy_http::label::fmt_string(input_238, false);
+                let quick_connect_id = aws_smithy_http::label::fmt_string(input_247, false);
                 if quick_connect_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
@@ -24709,28 +26602,28 @@ impl UpdateRoutingProfileConcurrencyInput {
                 _input: &crate::input::UpdateRoutingProfileConcurrencyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_239 = &_input.instance_id;
-                let input_239 = input_239.as_ref().ok_or(
+                let input_248 = &_input.instance_id;
+                let input_248 = input_248.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_239, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_248, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_240 = &_input.routing_profile_id;
-                let input_240 = input_240.as_ref().ok_or(
+                let input_249 = &_input.routing_profile_id;
+                let input_249 = input_249.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_240, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_249, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -24913,28 +26806,28 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
                 _input: &crate::input::UpdateRoutingProfileDefaultOutboundQueueInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_241 = &_input.instance_id;
-                let input_241 = input_241.as_ref().ok_or(
+                let input_250 = &_input.instance_id;
+                let input_250 = input_250.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_241, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_250, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_242 = &_input.routing_profile_id;
-                let input_242 = input_242.as_ref().ok_or(
+                let input_251 = &_input.routing_profile_id;
+                let input_251 = input_251.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_242, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_251, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -25123,28 +27016,28 @@ impl UpdateRoutingProfileNameInput {
                 _input: &crate::input::UpdateRoutingProfileNameInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_243 = &_input.instance_id;
-                let input_243 = input_243.as_ref().ok_or(
+                let input_252 = &_input.instance_id;
+                let input_252 = input_252.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_243, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_252, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_244 = &_input.routing_profile_id;
-                let input_244 = input_244.as_ref().ok_or(
+                let input_253 = &_input.routing_profile_id;
+                let input_253 = input_253.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_244, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_253, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -25334,28 +27227,28 @@ impl UpdateRoutingProfileQueuesInput {
                 _input: &crate::input::UpdateRoutingProfileQueuesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_245 = &_input.instance_id;
-                let input_245 = input_245.as_ref().ok_or(
+                let input_254 = &_input.instance_id;
+                let input_254 = input_254.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_245, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_254, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_246 = &_input.routing_profile_id;
-                let input_246 = input_246.as_ref().ok_or(
+                let input_255 = &_input.routing_profile_id;
+                let input_255 = input_255.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let routing_profile_id = aws_smithy_http::label::fmt_string(input_246, false);
+                let routing_profile_id = aws_smithy_http::label::fmt_string(input_255, false);
                 if routing_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
@@ -25552,28 +27445,28 @@ impl UpdateSecurityProfileInput {
                 _input: &crate::input::UpdateSecurityProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_247 = &_input.instance_id;
-                let input_247 = input_247.as_ref().ok_or(
+                let input_256 = &_input.instance_id;
+                let input_256 = input_256.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_247, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_256, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_248 = &_input.security_profile_id;
-                let input_248 = input_248.as_ref().ok_or(
+                let input_257 = &_input.security_profile_id;
+                let input_257 = input_257.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let security_profile_id = aws_smithy_http::label::fmt_string(input_248, false);
+                let security_profile_id = aws_smithy_http::label::fmt_string(input_257, false);
                 if security_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_id",
@@ -25752,28 +27645,28 @@ impl UpdateUserHierarchyInput {
                 _input: &crate::input::UpdateUserHierarchyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_249 = &_input.instance_id;
-                let input_249 = input_249.as_ref().ok_or(
+                let input_258 = &_input.instance_id;
+                let input_258 = input_258.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_249, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_258, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_250 = &_input.user_id;
-                let input_250 = input_250.as_ref().ok_or(
+                let input_259 = &_input.user_id;
+                let input_259 = input_259.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_250, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_259, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -25952,28 +27845,28 @@ impl UpdateUserHierarchyGroupNameInput {
                 _input: &crate::input::UpdateUserHierarchyGroupNameInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_251 = &_input.instance_id;
-                let input_251 = input_251.as_ref().ok_or(
+                let input_260 = &_input.instance_id;
+                let input_260 = input_260.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_251, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_260, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_252 = &_input.hierarchy_group_id;
-                let input_252 = input_252.as_ref().ok_or(
+                let input_261 = &_input.hierarchy_group_id;
+                let input_261 = input_261.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_252, false);
+                let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_261, false);
                 if hierarchy_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
@@ -26142,14 +28035,14 @@ impl UpdateUserHierarchyStructureInput {
                 _input: &crate::input::UpdateUserHierarchyStructureInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_253 = &_input.instance_id;
-                let input_253 = input_253.as_ref().ok_or(
+                let input_262 = &_input.instance_id;
+                let input_262 = input_262.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_253, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_262, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
@@ -26324,28 +28217,28 @@ impl UpdateUserIdentityInfoInput {
                 _input: &crate::input::UpdateUserIdentityInfoInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_254 = &_input.instance_id;
-                let input_254 = input_254.as_ref().ok_or(
+                let input_263 = &_input.instance_id;
+                let input_263 = input_263.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_254, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_263, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_255 = &_input.user_id;
-                let input_255 = input_255.as_ref().ok_or(
+                let input_264 = &_input.user_id;
+                let input_264 = input_264.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_255, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_264, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -26524,28 +28417,28 @@ impl UpdateUserPhoneConfigInput {
                 _input: &crate::input::UpdateUserPhoneConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_256 = &_input.instance_id;
-                let input_256 = input_256.as_ref().ok_or(
+                let input_265 = &_input.instance_id;
+                let input_265 = input_265.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_256, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_265, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_257 = &_input.user_id;
-                let input_257 = input_257.as_ref().ok_or(
+                let input_266 = &_input.user_id;
+                let input_266 = input_266.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_257, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_266, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -26725,28 +28618,28 @@ impl UpdateUserRoutingProfileInput {
                 _input: &crate::input::UpdateUserRoutingProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_258 = &_input.instance_id;
-                let input_258 = input_258.as_ref().ok_or(
+                let input_267 = &_input.instance_id;
+                let input_267 = input_267.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_258, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_267, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_259 = &_input.user_id;
-                let input_259 = input_259.as_ref().ok_or(
+                let input_268 = &_input.user_id;
+                let input_268 = input_268.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_259, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_268, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -26932,28 +28825,28 @@ impl UpdateUserSecurityProfilesInput {
                 _input: &crate::input::UpdateUserSecurityProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_260 = &_input.instance_id;
-                let input_260 = input_260.as_ref().ok_or(
+                let input_269 = &_input.instance_id;
+                let input_269 = input_269.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let instance_id = aws_smithy_http::label::fmt_string(input_260, false);
+                let instance_id = aws_smithy_http::label::fmt_string(input_269, false);
                 if instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_261 = &_input.user_id;
-                let input_261 = input_261.as_ref().ok_or(
+                let input_270 = &_input.user_id;
+                let input_270 = input_270.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_261, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_270, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -27732,6 +29625,41 @@ impl std::fmt::Debug for UpdateQueueHoursOfOperationInput {
         formatter.field("instance_id", &self.instance_id);
         formatter.field("queue_id", &self.queue_id);
         formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePhoneNumberInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl UpdatePhoneNumberInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdatePhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePhoneNumberInput");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -28892,6 +30820,113 @@ impl std::fmt::Debug for SearchVocabulariesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchUsersInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Filters to be applied to search results.</p>
+    pub search_filter: std::option::Option<crate::model::UserSearchFilter>,
+    /// <p>The search criteria to be used to return users.</p>
+    pub search_criteria: std::option::Option<crate::model::UserSearchCriteria>,
+}
+impl SearchUsersInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filters to be applied to search results.</p>
+    pub fn search_filter(&self) -> std::option::Option<&crate::model::UserSearchFilter> {
+        self.search_filter.as_ref()
+    }
+    /// <p>The search criteria to be used to return users.</p>
+    pub fn search_criteria(&self) -> std::option::Option<&crate::model::UserSearchCriteria> {
+        self.search_criteria.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchUsersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchUsersInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("search_filter", &self.search_filter);
+        formatter.field("search_criteria", &self.search_criteria);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchAvailablePhoneNumbersInput {
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>The ISO country code.</p>
+    pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
+    /// <p>The type of phone number.</p>
+    pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+    /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    pub phone_number_prefix: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchAvailablePhoneNumbersInput {
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_code(
+        &self,
+    ) -> std::option::Option<&crate::model::PhoneNumberCountryCode> {
+        self.phone_number_country_code.as_ref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.phone_number_type.as_ref()
+    }
+    /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    pub fn phone_number_prefix(&self) -> std::option::Option<&str> {
+        self.phone_number_prefix.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for SearchAvailablePhoneNumbersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchAvailablePhoneNumbersInput");
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("phone_number_country_code", &self.phone_number_country_code);
+        formatter.field("phone_number_type", &self.phone_number_type);
+        formatter.field("phone_number_prefix", &self.phone_number_prefix);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -28920,6 +30955,69 @@ impl std::fmt::Debug for ResumeContactRecordingInput {
         formatter.field("instance_id", &self.instance_id);
         formatter.field("contact_id", &self.contact_id);
         formatter.field("initial_contact_id", &self.initial_contact_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReleasePhoneNumberInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl ReleasePhoneNumberInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ReleasePhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReleasePhoneNumberInput");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutUserStatusInput {
+    /// <p>The identifier of the user.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the agent status.</p>
+    pub agent_status_id: std::option::Option<std::string::String>,
+}
+impl PutUserStatusInput {
+    /// <p>The identifier of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the agent status.</p>
+    pub fn agent_status_id(&self) -> std::option::Option<&str> {
+        self.agent_status_id.as_deref()
+    }
+}
+impl std::fmt::Debug for PutUserStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutUserStatusInput");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("agent_status_id", &self.agent_status_id);
         formatter.finish()
     }
 }
@@ -29406,6 +31504,68 @@ impl std::fmt::Debug for ListPromptsInput {
         formatter.field("instance_id", &self.instance_id);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPhoneNumbersV2Input {
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The ISO country code.</p>
+    pub phone_number_country_codes:
+        std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
+    /// <p>The type of phone number.</p>
+    pub phone_number_types: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+    /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    pub phone_number_prefix: std::option::Option<std::string::String>,
+}
+impl ListPhoneNumbersV2Input {
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_codes(
+        &self,
+    ) -> std::option::Option<&[crate::model::PhoneNumberCountryCode]> {
+        self.phone_number_country_codes.as_deref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_types(&self) -> std::option::Option<&[crate::model::PhoneNumberType]> {
+        self.phone_number_types.as_deref()
+    }
+    /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    pub fn phone_number_prefix(&self) -> std::option::Option<&str> {
+        self.phone_number_prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPhoneNumbersV2Input {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPhoneNumbersV2Input");
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "phone_number_country_codes",
+            &self.phone_number_country_codes,
+        );
+        formatter.field("phone_number_types", &self.phone_number_types);
+        formatter.field("phone_number_prefix", &self.phone_number_prefix);
         formatter.finish()
     }
 }
@@ -30859,6 +33019,34 @@ impl std::fmt::Debug for DisassociateQueueQuickConnectsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociatePhoneNumberContactFlowInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+}
+impl DisassociatePhoneNumberContactFlowInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociatePhoneNumberContactFlowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociatePhoneNumberContactFlowInput");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLexBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -31230,6 +33418,27 @@ impl std::fmt::Debug for DescribeQueueInput {
         let mut formatter = f.debug_struct("DescribeQueueInput");
         formatter.field("instance_id", &self.instance_id);
         formatter.field("queue_id", &self.queue_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePhoneNumberInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+}
+impl DescribePhoneNumberInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribePhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePhoneNumberInput");
+        formatter.field("phone_number_id", &self.phone_number_id);
         formatter.finish()
     }
 }
@@ -32632,6 +34841,59 @@ impl std::fmt::Debug for CreateAgentStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClaimPhoneNumberInput {
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The description of the phone number.</p>
+    pub phone_number_description: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl ClaimPhoneNumberInput {
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The description of the phone number.</p>
+    pub fn phone_number_description(&self) -> std::option::Option<&str> {
+        self.phone_number_description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ClaimPhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClaimPhoneNumberInput");
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("phone_number_description", &self.phone_number_description);
+        formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -32723,6 +34985,41 @@ impl std::fmt::Debug for AssociateQueueQuickConnectsInput {
         formatter.field("instance_id", &self.instance_id);
         formatter.field("queue_id", &self.queue_id);
         formatter.field("quick_connect_ids", &self.quick_connect_ids);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociatePhoneNumberContactFlowInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the contact flow.</p>
+    pub contact_flow_id: std::option::Option<std::string::String>,
+}
+impl AssociatePhoneNumberContactFlowInput {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociatePhoneNumberContactFlowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociatePhoneNumberContactFlowInput");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("contact_flow_id", &self.contact_flow_id);
         formatter.finish()
     }
 }

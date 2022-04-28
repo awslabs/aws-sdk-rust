@@ -17,7 +17,7 @@ pub enum AllocateStaticIpErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -170,7 +170,7 @@ pub enum AttachCertificateToDistributionErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -337,7 +337,7 @@ pub enum AttachDiskErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -483,7 +483,7 @@ pub enum AttachInstancesToLoadBalancerErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -659,7 +659,7 @@ pub enum AttachLoadBalancerTlsCertificateErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -843,7 +843,7 @@ pub enum AttachStaticIpErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -998,7 +998,7 @@ pub enum CloseInstancePublicPortsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1163,7 +1163,7 @@ pub enum CopySnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1310,7 +1310,7 @@ pub enum CreateBucketErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A general service exception.</p>
@@ -1429,7 +1429,7 @@ pub enum CreateBucketAccessKeyErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1568,7 +1568,7 @@ pub enum CreateCertificateErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1703,7 +1703,7 @@ pub enum CreateCloudFormationStackErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1866,7 +1866,7 @@ pub enum CreateContactMethodErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2016,7 +2016,7 @@ pub enum CreateContainerServiceErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2155,7 +2155,7 @@ pub enum CreateContainerServiceDeploymentErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2309,7 +2309,7 @@ pub enum CreateContainerServiceRegistryLoginErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2469,7 +2469,7 @@ pub enum CreateDiskErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2615,7 +2615,7 @@ pub enum CreateDiskFromSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2780,7 +2780,7 @@ pub enum CreateDiskSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2936,7 +2936,7 @@ pub enum CreateDistributionErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3085,7 +3085,7 @@ pub enum CreateDomainErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3234,7 +3234,7 @@ pub enum CreateDomainEntryErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3389,7 +3389,7 @@ pub enum CreateInstancesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3544,7 +3544,7 @@ pub enum CreateInstancesFromSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3711,7 +3711,7 @@ pub enum CreateInstanceSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3876,7 +3876,7 @@ pub enum CreateKeyPairErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4025,7 +4025,7 @@ pub enum CreateLoadBalancerErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4183,7 +4183,7 @@ pub enum CreateLoadBalancerTlsCertificateErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4367,7 +4367,7 @@ pub enum CreateRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4532,7 +4532,7 @@ pub enum CreateRelationalDatabaseFromSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4724,7 +4724,7 @@ pub enum CreateRelationalDatabaseSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4906,7 +4906,7 @@ pub enum DeleteAlarmErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5044,7 +5044,7 @@ pub enum DeleteAutoSnapshotErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5191,7 +5191,7 @@ pub enum DeleteBucketErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5318,7 +5318,7 @@ pub enum DeleteBucketAccessKeyErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5457,7 +5457,7 @@ pub enum DeleteCertificateErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5590,7 +5590,7 @@ pub enum DeleteContactMethodErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5740,7 +5740,7 @@ pub enum DeleteContainerImageErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5879,7 +5879,7 @@ pub enum DeleteContainerServiceErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6020,7 +6020,7 @@ pub enum DeleteDiskErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6166,7 +6166,7 @@ pub enum DeleteDiskSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6322,7 +6322,7 @@ pub enum DeleteDistributionErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6471,7 +6471,7 @@ pub enum DeleteDomainErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6620,7 +6620,7 @@ pub enum DeleteDomainEntryErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6775,7 +6775,7 @@ pub enum DeleteInstanceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6930,7 +6930,7 @@ pub enum DeleteInstanceSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7095,7 +7095,7 @@ pub enum DeleteKeyPairErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7244,7 +7244,7 @@ pub enum DeleteKnownHostKeysErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7405,7 +7405,7 @@ pub enum DeleteLoadBalancerErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7563,7 +7563,7 @@ pub enum DeleteLoadBalancerTlsCertificateErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7747,7 +7747,7 @@ pub enum DeleteRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7912,7 +7912,7 @@ pub enum DeleteRelationalDatabaseSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8094,7 +8094,7 @@ pub enum DetachCertificateFromDistributionErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8265,7 +8265,7 @@ pub enum DetachDiskErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8411,7 +8411,7 @@ pub enum DetachInstancesFromLoadBalancerErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8591,7 +8591,7 @@ pub enum DetachStaticIpErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8744,7 +8744,7 @@ pub enum DisableAddOnErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8884,7 +8884,7 @@ pub enum DownloadDefaultKeyPairErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9047,7 +9047,7 @@ pub enum EnableAddOnErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9187,7 +9187,7 @@ pub enum ExportSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9342,7 +9342,7 @@ pub enum GetActiveNamesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9495,7 +9495,7 @@ pub enum GetAlarmsErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9627,7 +9627,7 @@ pub enum GetAutoSnapshotsErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9773,7 +9773,7 @@ pub enum GetBlueprintsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9920,7 +9920,7 @@ pub enum GetBucketAccessKeysErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10059,7 +10059,7 @@ pub enum GetBucketBundlesErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A general service exception.</p>
@@ -10184,7 +10184,7 @@ pub enum GetBucketMetricDataErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10323,7 +10323,7 @@ pub enum GetBucketsErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10449,7 +10449,7 @@ pub enum GetBundlesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10593,7 +10593,7 @@ pub enum GetCertificatesErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10728,7 +10728,7 @@ pub enum GetCloudFormationStackRecordsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10902,7 +10902,7 @@ pub enum GetContactMethodsErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11161,7 +11161,7 @@ pub enum GetContainerImagesErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11297,7 +11297,7 @@ pub enum GetContainerLogErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11430,7 +11430,7 @@ pub enum GetContainerServiceDeploymentsErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11576,7 +11576,7 @@ pub enum GetContainerServiceMetricDataErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11722,7 +11722,7 @@ pub enum GetContainerServicePowersErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11861,7 +11861,7 @@ pub enum GetContainerServicesErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12002,7 +12002,7 @@ pub enum GetDiskErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12145,7 +12145,7 @@ pub enum GetDisksErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12288,7 +12288,7 @@ pub enum GetDiskSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12443,7 +12443,7 @@ pub enum GetDiskSnapshotsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12596,7 +12596,7 @@ pub enum GetDistributionBundlesErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12746,7 +12746,7 @@ pub enum GetDistributionLatestCacheResetErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12911,7 +12911,7 @@ pub enum GetDistributionMetricDataErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13061,7 +13061,7 @@ pub enum GetDistributionsErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13207,7 +13207,7 @@ pub enum GetDomainErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13350,7 +13350,7 @@ pub enum GetDomainsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13496,7 +13496,7 @@ pub enum GetExportSnapshotRecordsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13661,7 +13661,7 @@ pub enum GetInstanceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13810,7 +13810,7 @@ pub enum GetInstanceAccessDetailsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13975,7 +13975,7 @@ pub enum GetInstanceMetricDataErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14138,7 +14138,7 @@ pub enum GetInstancePortStatesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14301,7 +14301,7 @@ pub enum GetInstancesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14450,7 +14450,7 @@ pub enum GetInstanceSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14611,7 +14611,7 @@ pub enum GetInstanceSnapshotsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14772,7 +14772,7 @@ pub enum GetInstanceStateErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14927,7 +14927,7 @@ pub enum GetKeyPairErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15073,7 +15073,7 @@ pub enum GetKeyPairsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15222,7 +15222,7 @@ pub enum GetLoadBalancerErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15377,7 +15377,7 @@ pub enum GetLoadBalancerMetricDataErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15542,7 +15542,7 @@ pub enum GetLoadBalancersErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15697,7 +15697,7 @@ pub enum GetLoadBalancerTlsCertificatesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15855,6 +15855,149 @@ impl std::error::Error for GetLoadBalancerTlsCertificatesError {
     }
 }
 
+/// Error type for the `GetLoadBalancerTlsPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLoadBalancerTlsPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: GetLoadBalancerTlsPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetLoadBalancerTlsPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLoadBalancerTlsPoliciesErrorKind {
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
+    AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// </note>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>A general service exception.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetLoadBalancerTlsPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLoadBalancerTlsPoliciesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLoadBalancerTlsPoliciesErrorKind::AccountSetupInProgressException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetLoadBalancerTlsPoliciesErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException(_inner) => _inner.fmt(f),
+            GetLoadBalancerTlsPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLoadBalancerTlsPoliciesError {
+    fn code(&self) -> Option<&str> {
+        GetLoadBalancerTlsPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLoadBalancerTlsPoliciesError {
+    /// Creates a new `GetLoadBalancerTlsPoliciesError`.
+    pub fn new(kind: GetLoadBalancerTlsPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLoadBalancerTlsPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLoadBalancerTlsPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoadBalancerTlsPoliciesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesErrorKind::AccountSetupInProgressException`.
+    pub fn is_account_setup_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoadBalancerTlsPoliciesErrorKind::AccountSetupInProgressException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoadBalancerTlsPoliciesErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException`.
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for GetLoadBalancerTlsPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLoadBalancerTlsPoliciesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLoadBalancerTlsPoliciesErrorKind::AccountSetupInProgressException(_inner) => {
+                Some(_inner)
+            }
+            GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetLoadBalancerTlsPoliciesErrorKind::ServiceException(_inner) => Some(_inner),
+            GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
+            GetLoadBalancerTlsPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetOperation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15873,7 +16016,7 @@ pub enum GetOperationErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16022,7 +16165,7 @@ pub enum GetOperationsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16171,7 +16314,7 @@ pub enum GetOperationsForResourceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16336,7 +16479,7 @@ pub enum GetRegionsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16482,7 +16625,7 @@ pub enum GetRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16645,7 +16788,7 @@ pub enum GetRelationalDatabaseBlueprintsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16825,7 +16968,7 @@ pub enum GetRelationalDatabaseBundlesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16996,7 +17139,7 @@ pub enum GetRelationalDatabaseEventsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17163,7 +17306,7 @@ pub enum GetRelationalDatabaseLogEventsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17339,7 +17482,7 @@ pub enum GetRelationalDatabaseLogStreamsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17519,7 +17662,7 @@ pub enum GetRelationalDatabaseMasterUserPasswordErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17713,7 +17856,7 @@ pub enum GetRelationalDatabaseMetricDataErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17893,7 +18036,7 @@ pub enum GetRelationalDatabaseParametersErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18073,7 +18216,7 @@ pub enum GetRelationalDatabasesErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18238,7 +18381,7 @@ pub enum GetRelationalDatabaseSnapshotErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18414,7 +18557,7 @@ pub enum GetRelationalDatabaseSnapshotsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18590,7 +18733,7 @@ pub enum GetStaticIpErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18739,7 +18882,7 @@ pub enum GetStaticIpsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18888,7 +19031,7 @@ pub enum ImportKeyPairErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19037,7 +19180,7 @@ pub enum IsVpcPeeredErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19186,7 +19329,7 @@ pub enum OpenInstancePublicPortsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19351,7 +19494,7 @@ pub enum PeerVpcErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19492,7 +19635,7 @@ pub enum PutAlarmErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19626,7 +19769,7 @@ pub enum PutInstancePublicPortsErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19791,7 +19934,7 @@ pub enum RebootInstanceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19946,7 +20089,7 @@ pub enum RebootRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20109,7 +20252,7 @@ pub enum RegisterContainerImageErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20250,7 +20393,7 @@ pub enum ReleaseStaticIpErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20403,7 +20546,7 @@ pub enum ResetDistributionCacheErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20553,7 +20696,7 @@ pub enum SendContactMethodVerificationErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20716,7 +20859,7 @@ pub enum SetIpAddressTypeErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20869,7 +21012,7 @@ pub enum SetResourceAccessForBucketErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21010,7 +21153,7 @@ pub enum StartInstanceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21159,7 +21302,7 @@ pub enum StartRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21324,7 +21467,7 @@ pub enum StopInstanceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21473,7 +21616,7 @@ pub enum StopRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21638,7 +21781,7 @@ pub enum TagResourceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21785,7 +21928,7 @@ pub enum TestAlarmErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21919,7 +22062,7 @@ pub enum UnpeerVpcErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22062,7 +22205,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22209,7 +22352,7 @@ pub enum UpdateBucketErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22336,7 +22479,7 @@ pub enum UpdateBucketBundleErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22472,7 +22615,7 @@ pub enum UpdateContainerServiceErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22611,7 +22754,7 @@ pub enum UpdateDistributionErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22758,7 +22901,7 @@ pub enum UpdateDistributionBundleErrorKind {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22910,7 +23053,7 @@ pub enum UpdateDomainEntryErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23065,7 +23208,7 @@ pub enum UpdateLoadBalancerAttributeErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23232,7 +23375,7 @@ pub enum UpdateRelationalDatabaseErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23397,7 +23540,7 @@ pub enum UpdateRelationalDatabaseParametersErrorKind {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -24056,7 +24199,7 @@ impl NotFoundException {
 }
 
 /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-/// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+/// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

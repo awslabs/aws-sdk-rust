@@ -282,19 +282,6 @@ impl Client {
     pub fn copy_option_group(&self) -> fluent_builders::CopyOptionGroup {
         fluent_builders::CopyOptionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the [`CreateCustomAvailabilityZone`](crate::client::fluent_builders::CreateCustomAvailabilityZone) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`custom_availability_zone_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::custom_availability_zone_name) / [`set_custom_availability_zone_name(Option<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::set_custom_availability_zone_name): <p>The name of the custom Availability Zone (AZ).</p>
-    ///   - [`existing_vpn_id(impl Into<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::existing_vpn_id) / [`set_existing_vpn_id(Option<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::set_existing_vpn_id): <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-    ///   - [`new_vpn_tunnel_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::new_vpn_tunnel_name) / [`set_new_vpn_tunnel_name(Option<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::set_new_vpn_tunnel_name): <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>  <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-    ///   - [`vpn_tunnel_originator_ip(impl Into<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::vpn_tunnel_originator_ip) / [`set_vpn_tunnel_originator_ip(Option<String>)`](crate::client::fluent_builders::CreateCustomAvailabilityZone::set_vpn_tunnel_originator_ip): <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>  <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-    /// - On success, responds with [`CreateCustomAvailabilityZoneOutput`](crate::output::CreateCustomAvailabilityZoneOutput) with field(s):
-    ///   - [`custom_availability_zone(Option<CustomAvailabilityZone>)`](crate::output::CreateCustomAvailabilityZoneOutput::custom_availability_zone): <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>  <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    /// - On failure, responds with [`SdkError<CreateCustomAvailabilityZoneError>`](crate::error::CreateCustomAvailabilityZoneError)
-    pub fn create_custom_availability_zone(&self) -> fluent_builders::CreateCustomAvailabilityZone {
-        fluent_builders::CreateCustomAvailabilityZone::new(self.handle.clone())
-    }
     /// Constructs a fluent builder for the [`CreateCustomDBEngineVersion`](crate::client::fluent_builders::CreateCustomDBEngineVersion) operation.
     ///
     /// - The fluent builder is configurable:
@@ -384,6 +371,7 @@ impl Client {
     ///   - [`enable_performance_insights(bool)`](crate::client::fluent_builders::CreateDBCluster::enable_performance_insights) / [`set_enable_performance_insights(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_enable_performance_insights): <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`performance_insights_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::performance_insights_kms_key_id) / [`set_performance_insights_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_performance_insights_kms_key_id): <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>  <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`performance_insights_retention_period(i32)`](crate::client::fluent_builders::CreateDBCluster::performance_insights_retention_period) / [`set_performance_insights_retention_period(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_performance_insights_retention_period): <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>  <p>Valid for: Multi-AZ DB clusters only</p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::CreateDBCluster::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::CreateDBCluster::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::CreateDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<CreateDBClusterError>`](crate::error::CreateDBClusterError)
@@ -453,7 +441,7 @@ impl Client {
     ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The password for the master user is managed by the DB cluster.</p>  <p> <b>MariaDB</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>Oracle</b> </p>  <p>Constraints: Must contain from 8 to 30 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
     ///   - [`db_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateDBInstance::db_security_groups) / [`set_db_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBInstance::set_db_security_groups): <p>A list of DB security groups to associate with this DB instance.</p>  <p>Default: The default DB security group for the database engine.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateDBInstance::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBInstance::set_vpc_security_group_ids): <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster.</p>  <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_availability_zone): <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Not applicable. Availability Zones are managed by the DB cluster.</p>  <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>  <p>Example: <code>us-east-1d</code> </p>  <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>   <p>If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.</p>   <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>  </note>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_availability_zone): <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>  <p> <b>Amazon Aurora</b> </p>  <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>  <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>  <p>Example: <code>us-east-1d</code> </p>  <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>   <p>If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.</p>   <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>  </note>
     ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_subnet_group_name): <p>A DB subnet group to associate with this DB instance.</p>  <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>  <p>Example: <code>mydbsubnetgroup</code> </p>
     ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_preferred_maintenance_window): <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a>.</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>
     ///   - [`db_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_parameter_group_name) / [`set_db_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_parameter_group_name): <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the default DB parameter group for the specified DB engine and version is used.</p>  <p>This setting doesn't apply to RDS Custom.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
@@ -672,16 +660,6 @@ impl Client {
     pub fn create_option_group(&self) -> fluent_builders::CreateOptionGroup {
         fluent_builders::CreateOptionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the [`DeleteCustomAvailabilityZone`](crate::client::fluent_builders::DeleteCustomAvailabilityZone) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`custom_availability_zone_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomAvailabilityZone::custom_availability_zone_id) / [`set_custom_availability_zone_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomAvailabilityZone::set_custom_availability_zone_id): <p>The custom AZ identifier.</p>
-    /// - On success, responds with [`DeleteCustomAvailabilityZoneOutput`](crate::output::DeleteCustomAvailabilityZoneOutput) with field(s):
-    ///   - [`custom_availability_zone(Option<CustomAvailabilityZone>)`](crate::output::DeleteCustomAvailabilityZoneOutput::custom_availability_zone): <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>  <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    /// - On failure, responds with [`SdkError<DeleteCustomAvailabilityZoneError>`](crate::error::DeleteCustomAvailabilityZoneError)
-    pub fn delete_custom_availability_zone(&self) -> fluent_builders::DeleteCustomAvailabilityZone {
-        fluent_builders::DeleteCustomAvailabilityZone::new(self.handle.clone())
-    }
     /// Constructs a fluent builder for the [`DeleteCustomDBEngineVersion`](crate::client::fluent_builders::DeleteCustomDBEngineVersion) operation.
     ///
     /// - The fluent builder is configurable:
@@ -877,23 +855,6 @@ impl Client {
     pub fn delete_global_cluster(&self) -> fluent_builders::DeleteGlobalCluster {
         fluent_builders::DeleteGlobalCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the [`DeleteInstallationMedia`](crate::client::fluent_builders::DeleteInstallationMedia) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`installation_media_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInstallationMedia::installation_media_id) / [`set_installation_media_id(Option<String>)`](crate::client::fluent_builders::DeleteInstallationMedia::set_installation_media_id): <p>The installation medium ID.</p>
-    /// - On success, responds with [`DeleteInstallationMediaOutput`](crate::output::DeleteInstallationMediaOutput) with field(s):
-    ///   - [`installation_media_id(Option<String>)`](crate::output::DeleteInstallationMediaOutput::installation_media_id): <p>The installation medium ID.</p>
-    ///   - [`custom_availability_zone_id(Option<String>)`](crate::output::DeleteInstallationMediaOutput::custom_availability_zone_id): <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-    ///   - [`engine(Option<String>)`](crate::output::DeleteInstallationMediaOutput::engine): <p>The DB engine.</p>
-    ///   - [`engine_version(Option<String>)`](crate::output::DeleteInstallationMediaOutput::engine_version): <p>The engine version of the DB engine.</p>
-    ///   - [`engine_installation_media_path(Option<String>)`](crate::output::DeleteInstallationMediaOutput::engine_installation_media_path): <p>The path to the installation medium for the DB engine.</p>
-    ///   - [`os_installation_media_path(Option<String>)`](crate::output::DeleteInstallationMediaOutput::os_installation_media_path): <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-    ///   - [`status(Option<String>)`](crate::output::DeleteInstallationMediaOutput::status): <p>The status of the installation medium.</p>
-    ///   - [`failure_cause(Option<InstallationMediaFailureCause>)`](crate::output::DeleteInstallationMediaOutput::failure_cause): <p>If an installation media failure occurred, the cause of the failure.</p>
-    /// - On failure, responds with [`SdkError<DeleteInstallationMediaError>`](crate::error::DeleteInstallationMediaError)
-    pub fn delete_installation_media(&self) -> fluent_builders::DeleteInstallationMedia {
-        fluent_builders::DeleteInstallationMedia::new(self.handle.clone())
-    }
     /// Constructs a fluent builder for the [`DeleteOptionGroup`](crate::client::fluent_builders::DeleteOptionGroup) operation.
     ///
     /// - The fluent builder is configurable:
@@ -941,23 +902,6 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeCertificatesError>`](crate::error::DescribeCertificatesError)
     pub fn describe_certificates(&self) -> fluent_builders::DescribeCertificates {
         fluent_builders::DescribeCertificates::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeCustomAvailabilityZones`](crate::client::fluent_builders::DescribeCustomAvailabilityZones) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`custom_availability_zone_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::custom_availability_zone_id) / [`set_custom_availability_zone_id(Option<String>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::set_custom_availability_zone_id): <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::set_filters): <p>A filter that specifies one or more custom AZs to describe.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeCustomAvailabilityZones::set_marker): <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeCustomAvailabilityZonesOutput`](crate::output::DescribeCustomAvailabilityZonesOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeCustomAvailabilityZonesOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    ///   - [`custom_availability_zones(Option<Vec<CustomAvailabilityZone>>)`](crate::output::DescribeCustomAvailabilityZonesOutput::custom_availability_zones): <p>The list of <code>CustomAvailabilityZone</code> objects for the Amazon Web Services account.</p>
-    /// - On failure, responds with [`SdkError<DescribeCustomAvailabilityZonesError>`](crate::error::DescribeCustomAvailabilityZonesError)
-    pub fn describe_custom_availability_zones(
-        &self,
-    ) -> fluent_builders::DescribeCustomAvailabilityZones {
-        fluent_builders::DescribeCustomAvailabilityZones::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDBClusterBacktracks`](crate::client::fluent_builders::DescribeDBClusterBacktracks) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterBacktracks::into_paginator).
@@ -1317,7 +1261,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEngineDefaultParameters::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_db_parameter_group_family): <p>The name of the DB parameter group family.</p>
+    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_db_parameter_group_family): <p>The name of the DB parameter group family.</p>  <p>Valid Values:</p>  <ul>   <li> <p> <code>aurora5.6</code> </p> </li>   <li> <p> <code>aurora-mysql5.7</code> </p> </li>   <li> <p> <code>aurora-mysql8.0</code> </p> </li>   <li> <p> <code>aurora-postgresql10</code> </p> </li>   <li> <p> <code>aurora-postgresql11</code> </p> </li>   <li> <p> <code>aurora-postgresql12</code> </p> </li>   <li> <p> <code>aurora-postgresql13</code> </p> </li>   <li> <p> <code>mariadb10.2</code> </p> </li>   <li> <p> <code>mariadb10.3</code> </p> </li>   <li> <p> <code>mariadb10.4</code> </p> </li>   <li> <p> <code>mariadb10.5</code> </p> </li>   <li> <p> <code>mariadb10.6</code> </p> </li>   <li> <p> <code>mysql5.7</code> </p> </li>   <li> <p> <code>mysql8.0</code> </p> </li>   <li> <p> <code>postgres10</code> </p> </li>   <li> <p> <code>postgres11</code> </p> </li>   <li> <p> <code>postgres12</code> </p> </li>   <li> <p> <code>postgres13</code> </p> </li>   <li> <p> <code>postgres14</code> </p> </li>   <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>   <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>   <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>   <li> <p> <code>sqlserver-se-11.0</code> </p> </li>   <li> <p> <code>sqlserver-se-12.0</code> </p> </li>   <li> <p> <code>sqlserver-se-13.0</code> </p> </li>   <li> <p> <code>sqlserver-se-14.0</code> </p> </li>   <li> <p> <code>sqlserver-se-15.0</code> </p> </li>   <li> <p> <code>sqlserver-web-11.0</code> </p> </li>   <li> <p> <code>sqlserver-web-12.0</code> </p> </li>   <li> <p> <code>sqlserver-web-13.0</code> </p> </li>   <li> <p> <code>sqlserver-web-14.0</code> </p> </li>   <li> <p> <code>sqlserver-web-15.0</code> </p> </li>  </ul>
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_filters): <p>This parameter isn't currently supported.</p>
     ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultParameters::set_marker): <p>An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1405,21 +1349,6 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::error::DescribeGlobalClustersError)
     pub fn describe_global_clusters(&self) -> fluent_builders::DescribeGlobalClusters {
         fluent_builders::DescribeGlobalClusters::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeInstallationMedia`](crate::client::fluent_builders::DescribeInstallationMedia) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeInstallationMedia::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`installation_media_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstallationMedia::installation_media_id) / [`set_installation_media_id(Option<String>)`](crate::client::fluent_builders::DescribeInstallationMedia::set_installation_media_id): <p>The installation medium ID.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeInstallationMedia::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeInstallationMedia::set_filters): <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>  <ul>   <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>   <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>  </ul>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeInstallationMedia::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeInstallationMedia::set_max_records): <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeInstallationMedia::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeInstallationMedia::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeInstallationMediaOutput`](crate::output::DescribeInstallationMediaOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeInstallationMediaOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeInstallationMedia</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    ///   - [`installation_media(Option<Vec<InstallationMedia>>)`](crate::output::DescribeInstallationMediaOutput::installation_media): <p>The list of <code>InstallationMedia</code> objects for the Amazon Web Services account.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstallationMediaError>`](crate::error::DescribeInstallationMediaError)
-    pub fn describe_installation_media(&self) -> fluent_builders::DescribeInstallationMedia {
-        fluent_builders::DescribeInstallationMedia::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeOptionGroupOptions`](crate::client::fluent_builders::DescribeOptionGroupOptions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOptionGroupOptions::into_paginator).
@@ -1602,27 +1531,6 @@ impl Client {
     pub fn failover_global_cluster(&self) -> fluent_builders::FailoverGlobalCluster {
         fluent_builders::FailoverGlobalCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the [`ImportInstallationMedia`](crate::client::fluent_builders::ImportInstallationMedia) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`custom_availability_zone_id(impl Into<String>)`](crate::client::fluent_builders::ImportInstallationMedia::custom_availability_zone_id) / [`set_custom_availability_zone_id(Option<String>)`](crate::client::fluent_builders::ImportInstallationMedia::set_custom_availability_zone_id): <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::ImportInstallationMedia::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::ImportInstallationMedia::set_engine): <p>The name of the database engine to be used for this instance.</p>  <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>  <p>Valid Values:</p>  <ul>   <li> <p> <code>sqlserver-ee</code> </p> </li>   <li> <p> <code>sqlserver-se</code> </p> </li>   <li> <p> <code>sqlserver-ex</code> </p> </li>   <li> <p> <code>sqlserver-web</code> </p> </li>  </ul>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::ImportInstallationMedia::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::ImportInstallationMedia::set_engine_version): <p>The version number of the database engine to use.</p>  <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>  <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>  <p> <b>Microsoft SQL Server</b> </p>  <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    ///   - [`engine_installation_media_path(impl Into<String>)`](crate::client::fluent_builders::ImportInstallationMedia::engine_installation_media_path) / [`set_engine_installation_media_path(Option<String>)`](crate::client::fluent_builders::ImportInstallationMedia::set_engine_installation_media_path): <p>The path to the installation medium for the specified DB engine.</p>  <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-    ///   - [`os_installation_media_path(impl Into<String>)`](crate::client::fluent_builders::ImportInstallationMedia::os_installation_media_path) / [`set_os_installation_media_path(Option<String>)`](crate::client::fluent_builders::ImportInstallationMedia::set_os_installation_media_path): <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>  <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-    /// - On success, responds with [`ImportInstallationMediaOutput`](crate::output::ImportInstallationMediaOutput) with field(s):
-    ///   - [`installation_media_id(Option<String>)`](crate::output::ImportInstallationMediaOutput::installation_media_id): <p>The installation medium ID.</p>
-    ///   - [`custom_availability_zone_id(Option<String>)`](crate::output::ImportInstallationMediaOutput::custom_availability_zone_id): <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-    ///   - [`engine(Option<String>)`](crate::output::ImportInstallationMediaOutput::engine): <p>The DB engine.</p>
-    ///   - [`engine_version(Option<String>)`](crate::output::ImportInstallationMediaOutput::engine_version): <p>The engine version of the DB engine.</p>
-    ///   - [`engine_installation_media_path(Option<String>)`](crate::output::ImportInstallationMediaOutput::engine_installation_media_path): <p>The path to the installation medium for the DB engine.</p>
-    ///   - [`os_installation_media_path(Option<String>)`](crate::output::ImportInstallationMediaOutput::os_installation_media_path): <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-    ///   - [`status(Option<String>)`](crate::output::ImportInstallationMediaOutput::status): <p>The status of the installation medium.</p>
-    ///   - [`failure_cause(Option<InstallationMediaFailureCause>)`](crate::output::ImportInstallationMediaOutput::failure_cause): <p>If an installation media failure occurred, the cause of the failure.</p>
-    /// - On failure, responds with [`SdkError<ImportInstallationMediaError>`](crate::error::ImportInstallationMediaError)
-    pub fn import_installation_media(&self) -> fluent_builders::ImportInstallationMedia {
-        fluent_builders::ImportInstallationMedia::new(self.handle.clone())
-    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1739,6 +1647,7 @@ impl Client {
     ///   - [`enable_performance_insights(bool)`](crate::client::fluent_builders::ModifyDBCluster::enable_performance_insights) / [`set_enable_performance_insights(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_enable_performance_insights): <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`performance_insights_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::performance_insights_kms_key_id) / [`set_performance_insights_kms_key_id(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_performance_insights_kms_key_id): <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>  <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>  <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`performance_insights_retention_period(i32)`](crate::client::fluent_builders::ModifyDBCluster::performance_insights_retention_period) / [`set_performance_insights_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_performance_insights_retention_period): <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>  <p>Valid for: Multi-AZ DB clusters only</p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::ModifyDBCluster::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::ModifyDBCluster::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::ModifyDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<ModifyDBClusterError>`](crate::error::ModifyDBClusterError)
@@ -2172,6 +2081,7 @@ impl Client {
     ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::RestoreDBClusterFromS3::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_domain): <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>  <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///   - [`domain_iam_role_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::domain_iam_role_name) / [`set_domain_iam_role_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_domain_iam_role_name): <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterFromS3::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterFromS3::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`RestoreDbClusterFromS3Output`](crate::output::RestoreDbClusterFromS3Output) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterFromS3Output::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterFromS3Error>`](crate::error::RestoreDBClusterFromS3Error)
@@ -2207,6 +2117,7 @@ impl Client {
     ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_storage_type): <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>  <p>Valid values: <code>io1</code> </p>  <p>When specified, a value for the <code>Iops</code> parameter is required.</p>  <p>Default: <code>io1</code> </p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_publicly_accessible): <p>A value that indicates whether the DB cluster is publicly accessible.</p>  <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>  <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>  <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>  <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterFromSnapshotOutput::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterFromSnapshotError>`](crate::error::RestoreDBClusterFromSnapshotError)
@@ -2243,6 +2154,7 @@ impl Client {
     ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_storage_type): <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>  <p>Valid values: <code>io1</code> </p>  <p>When specified, a value for the <code>Iops</code> parameter is required.</p>  <p>Default: <code>io1</code> </p>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_publicly_accessible): <p>A value that indicates whether the DB cluster is publicly accessible.</p>  <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>  <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>  <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>  <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>  <ul>   <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>   <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>  </ul>  <p>Valid for: Multi-AZ DB clusters only</p>
     ///   - [`iops(i32)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::iops) / [`set_iops(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>  <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>  <p>Valid for: Multi-AZ DB clusters only</p>
+    ///   - [`serverless_v2_scaling_configuration(ServerlessV2ScalingConfiguration)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::serverless_v2_scaling_configuration) / [`set_serverless_v2_scaling_configuration(Option<ServerlessV2ScalingConfiguration>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_serverless_v2_scaling_configuration): <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterToPointInTimeOutput::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterToPointInTimeError>`](crate::error::RestoreDBClusterToPointInTimeError)
@@ -4095,110 +4007,6 @@ pub mod fluent_builders {
             self
         }
     }
-    /// Fluent builder constructing a request to `CreateCustomAvailabilityZone`.
-    ///
-    /// <p>Creates a custom Availability Zone (AZ).</p>
-    /// <p>A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
-    /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateCustomAvailabilityZone {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_custom_availability_zone_input::Builder,
-    }
-    impl CreateCustomAvailabilityZone {
-        /// Creates a new `CreateCustomAvailabilityZone`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateCustomAvailabilityZoneOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateCustomAvailabilityZoneError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The name of the custom Availability Zone (AZ).</p>
-        pub fn custom_availability_zone_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.custom_availability_zone_name(input.into());
-            self
-        }
-        /// <p>The name of the custom Availability Zone (AZ).</p>
-        pub fn set_custom_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_name(input);
-            self
-        }
-        /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-        pub fn existing_vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_vpn_id(input.into());
-            self
-        }
-        /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and the VMware vSphere cluster.</p>
-        pub fn set_existing_vpn_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_existing_vpn_id(input);
-            self
-        }
-        /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn new_vpn_tunnel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_vpn_tunnel_name(input.into());
-            self
-        }
-        /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn set_new_vpn_tunnel_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_new_vpn_tunnel_name(input);
-            self
-        }
-        /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpn_tunnel_originator_ip(input.into());
-            self
-        }
-        /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn set_vpn_tunnel_originator_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_vpn_tunnel_originator_ip(input);
-            self
-        }
-    }
     /// Fluent builder constructing a request to `CreateCustomDBEngineVersion`.
     ///
     /// <p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and specific AMI. The supported engines are the following:</p>
@@ -5415,6 +5223,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_performance_insights_retention_period(input);
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDBClusterEndpoint`.
     ///
@@ -6334,7 +6160,7 @@ pub mod fluent_builders {
         }
         /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
         /// <p> <b>Amazon Aurora</b> </p>
-        /// <p>Not applicable. Availability Zones are managed by the DB cluster.</p>
+        /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
         /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
@@ -6347,7 +6173,7 @@ pub mod fluent_builders {
         }
         /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
         /// <p> <b>Amazon Aurora</b> </p>
-        /// <p>Not applicable. Availability Zones are managed by the DB cluster.</p>
+        /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
         /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
@@ -9103,67 +8929,6 @@ pub mod fluent_builders {
             self
         }
     }
-    /// Fluent builder constructing a request to `DeleteCustomAvailabilityZone`.
-    ///
-    /// <p>Deletes a custom Availability Zone (AZ).</p>
-    /// <p>A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
-    /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteCustomAvailabilityZone {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_custom_availability_zone_input::Builder,
-    }
-    impl DeleteCustomAvailabilityZone {
-        /// Creates a new `DeleteCustomAvailabilityZone`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteCustomAvailabilityZoneOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteCustomAvailabilityZoneError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The custom AZ identifier.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(input.into());
-            self
-        }
-        /// <p>The custom AZ identifier.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_id(input);
-            self
-        }
-    }
     /// Fluent builder constructing a request to `DeleteCustomDBEngineVersion`.
     ///
     /// <p>Deletes a custom engine version. To run this command, make sure you meet the following prerequisites:</p>
@@ -10257,62 +10022,6 @@ pub mod fluent_builders {
             self
         }
     }
-    /// Fluent builder constructing a request to `DeleteInstallationMedia`.
-    ///
-    /// <p>Deletes the installation medium for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteInstallationMedia {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_installation_media_input::Builder,
-    }
-    impl DeleteInstallationMedia {
-        /// Creates a new `DeleteInstallationMedia`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteInstallationMediaOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteInstallationMediaError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.installation_media_id(input.into());
-            self
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn set_installation_media_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_installation_media_id(input);
-            self
-        }
-    }
     /// Fluent builder constructing a request to `DeleteOptionGroup`.
     ///
     /// <p>Deletes an existing option group.</p>
@@ -10626,114 +10335,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeCustomAvailabilityZones`.
-    ///
-    /// <p>Returns information about custom Availability Zones (AZs).</p>
-    /// <p>A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
-    /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeCustomAvailabilityZones {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_custom_availability_zones_input::Builder,
-    }
-    impl DescribeCustomAvailabilityZones {
-        /// Creates a new `DescribeCustomAvailabilityZones`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeCustomAvailabilityZonesOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeCustomAvailabilityZonesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeCustomAvailabilityZonesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::DescribeCustomAvailabilityZonesPaginator {
-            crate::paginator::DescribeCustomAvailabilityZonesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(input.into());
-            self
-        }
-        /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_id(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>A filter that specifies one or more custom AZs to describe.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>A filter that specifies one or more custom AZs to describe.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        /// <p>Default: 100</p>
-        /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_records(input);
-            self
-        }
-        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        /// <p>Default: 100</p>
-        /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -13689,11 +13290,95 @@ pub mod fluent_builders {
             crate::paginator::DescribeEngineDefaultParametersPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the DB parameter group family.</p>
+        /// <p>Valid Values:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora5.6</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>mariadb10.2</code> </p> </li>
+        /// <li> <p> <code>mariadb10.3</code> </p> </li>
+        /// <li> <p> <code>mariadb10.4</code> </p> </li>
+        /// <li> <p> <code>mariadb10.5</code> </p> </li>
+        /// <li> <p> <code>mariadb10.6</code> </p> </li>
+        /// <li> <p> <code>mysql5.7</code> </p> </li>
+        /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>postgres10</code> </p> </li>
+        /// <li> <p> <code>postgres11</code> </p> </li>
+        /// <li> <p> <code>postgres12</code> </p> </li>
+        /// <li> <p> <code>postgres13</code> </p> </li>
+        /// <li> <p> <code>postgres14</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+        /// </ul>
         pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_parameter_group_family(input.into());
             self
         }
         /// <p>The name of the DB parameter group family.</p>
+        /// <p>Valid Values:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora5.6</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+        /// <li> <p> <code>mariadb10.2</code> </p> </li>
+        /// <li> <p> <code>mariadb10.3</code> </p> </li>
+        /// <li> <p> <code>mariadb10.4</code> </p> </li>
+        /// <li> <p> <code>mariadb10.5</code> </p> </li>
+        /// <li> <p> <code>mariadb10.6</code> </p> </li>
+        /// <li> <p> <code>mysql5.7</code> </p> </li>
+        /// <li> <p> <code>mysql8.0</code> </p> </li>
+        /// <li> <p> <code>postgres10</code> </p> </li>
+        /// <li> <p> <code>postgres11</code> </p> </li>
+        /// <li> <p> <code>postgres12</code> </p> </li>
+        /// <li> <p> <code>postgres13</code> </p> </li>
+        /// <li> <p> <code>postgres14</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+        /// </ul>
         pub fn set_db_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14372,113 +14057,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeInstallationMedia`.
-    ///
-    /// <p>Describes the available installation media for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeInstallationMedia {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_installation_media_input::Builder,
-    }
-    impl DescribeInstallationMedia {
-        /// Creates a new `DescribeInstallationMedia`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeInstallationMediaOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeInstallationMediaError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeInstallationMediaPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
-        pub fn into_paginator(self) -> crate::paginator::DescribeInstallationMediaPaginator {
-            crate::paginator::DescribeInstallationMediaPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.installation_media_id(input.into());
-            self
-        }
-        /// <p>The installation medium ID.</p>
-        pub fn set_installation_media_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_installation_media_id(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>
-        /// </ul>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>A filter that specifies one or more installation media to describe. Supported filters include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>custom-availability-zone-id</code> - Accepts custom Availability Zone (AZ) identifiers. The results list includes information about only the custom AZs identified by these identifiers.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts database engines. The results list includes information about only the database engines identified by these identifiers.</p> <p>For more information about the valid engines for installation media, see <code>ImportInstallationMedia</code>.</p> </li>
-        /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn max_records(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_records(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(input);
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -15945,145 +15523,6 @@ pub mod fluent_builders {
             self
         }
     }
-    /// Fluent builder constructing a request to `ImportInstallationMedia`.
-    ///
-    /// <p>Imports the installation media for a DB engine that requires an on-premises customer provided license, such as SQL Server.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ImportInstallationMedia {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::import_installation_media_input::Builder,
-    }
-    impl ImportInstallationMedia {
-        /// Creates a new `ImportInstallationMedia`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ImportInstallationMediaOutput,
-            aws_smithy_http::result::SdkError<crate::error::ImportInstallationMediaError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-        pub fn custom_availability_zone_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(input.into());
-            self
-        }
-        /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-        pub fn set_custom_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_id(input);
-            self
-        }
-        /// <p>The name of the database engine to be used for this instance.</p>
-        /// <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>
-        /// <p>Valid Values:</p>
-        /// <ul>
-        /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-        /// <li> <p> <code>sqlserver-se</code> </p> </li>
-        /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-        /// <li> <p> <code>sqlserver-web</code> </p> </li>
-        /// </ul>
-        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(input.into());
-            self
-        }
-        /// <p>The name of the database engine to be used for this instance.</p>
-        /// <p>The list only includes supported DB engines that require an on-premises customer provided license.</p>
-        /// <p>Valid Values:</p>
-        /// <ul>
-        /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-        /// <li> <p> <code>sqlserver-se</code> </p> </li>
-        /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-        /// <li> <p> <code>sqlserver-web</code> </p> </li>
-        /// </ul>
-        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(input);
-            self
-        }
-        /// <p>The version number of the database engine to use.</p>
-        /// <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>
-        /// <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>
-        /// <p> <b>Microsoft SQL Server</b> </p>
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(input.into());
-            self
-        }
-        /// <p>The version number of the database engine to use.</p>
-        /// <p>For a list of valid engine versions, call <code>DescribeDBEngineVersions</code>.</p>
-        /// <p>The following are the database engines and links to information about the major and minor versions. The list only includes DB engines that require an on-premises customer provided license.</p>
-        /// <p> <b>Microsoft SQL Server</b> </p>
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"> Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_engine_version(input);
-            self
-        }
-        /// <p>The path to the installation medium for the specified DB engine.</p>
-        /// <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-        pub fn engine_installation_media_path(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.engine_installation_media_path(input.into());
-            self
-        }
-        /// <p>The path to the installation medium for the specified DB engine.</p>
-        /// <p>Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
-        pub fn set_engine_installation_media_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_engine_installation_media_path(input);
-            self
-        }
-        /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
-        /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.os_installation_media_path(input.into());
-            self
-        }
-        /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
-        /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
-        pub fn set_os_installation_media_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_os_installation_media_path(input);
-            self
-        }
-    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on an Amazon RDS resource.</p>
@@ -16160,7 +15599,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyCertificates`.
     ///
-    /// <p>Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances temporarily, or remove the override.</p>
+    /// <p>Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the override.</p>
     /// <p>By using this operation, you can specify an RDS-approved SSL/TLS certificate for new DB instances that is different from the default certificate provided by RDS. You can also use this operation to remove the override, so that new DB instances use the default certificate provided by RDS.</p>
     /// <p>You might need to override the default certificate in the following situations:</p>
     /// <ul>
@@ -17168,6 +16607,24 @@ pub mod fluent_builders {
             input: std::option::Option<i32>,
         ) -> Self {
             self.inner = self.inner.set_performance_insights_retention_period(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
             self
         }
     }
@@ -21269,6 +20726,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RestoreDBClusterFromSnapshot`.
     ///
@@ -21872,6 +21347,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RestoreDBClusterToPointInTime`.
     ///
@@ -22437,6 +21930,24 @@ pub mod fluent_builders {
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_iops(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn serverless_v2_scaling_configuration(
+            mut self,
+            input: crate::model::ServerlessV2ScalingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.serverless_v2_scaling_configuration(input);
+            self
+        }
+        /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_serverless_v2_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
             self
         }
     }

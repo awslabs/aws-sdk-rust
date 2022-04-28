@@ -6313,6 +6313,18 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "originType" => {
+                                builder = builder.set_origin_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::OriginType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "result" => {
                                 builder = builder.set_result(
                                     crate::json_deser::deser_structure_crate_model_classification_result(tokens)?

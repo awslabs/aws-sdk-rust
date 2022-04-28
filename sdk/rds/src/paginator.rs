@@ -94,101 +94,6 @@ impl DescribeCertificatesPaginator {
     }
 }
 
-/// Paginator for [`DescribeCustomAvailabilityZones`](crate::operation::DescribeCustomAvailabilityZones)
-pub struct DescribeCustomAvailabilityZonesPaginator {
-    handle: std::sync::Arc<crate::client::Handle>,
-    builder: crate::input::describe_custom_availability_zones_input::Builder,
-}
-
-impl DescribeCustomAvailabilityZonesPaginator {
-    /// Create a new paginator-wrapper
-    pub(crate) fn new(
-        handle: std::sync::Arc<crate::client::Handle>,
-        builder: crate::input::describe_custom_availability_zones_input::Builder,
-    ) -> Self {
-        Self { handle, builder }
-    }
-
-    /// Set the page size
-    ///
-    /// _Note: this method will override any previously set value for `max_records`_
-    pub fn page_size(mut self, limit: i32) -> Self {
-        self.builder.max_records = Some(limit);
-        self
-    }
-
-    /// Create a flattened paginator
-    ///
-    /// This paginator automatically flattens results using `custom_availability_zones`. Queries to the underlying service
-    /// are dispatched lazily.
-    pub fn items(self) -> crate::paginator::DescribeCustomAvailabilityZonesPaginatorItems {
-        crate::paginator::DescribeCustomAvailabilityZonesPaginatorItems(self)
-    }
-
-    /// Create the pagination stream
-    ///
-    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
-    pub fn send(
-        self,
-    ) -> impl tokio_stream::Stream<
-        Item = std::result::Result<
-            crate::output::DescribeCustomAvailabilityZonesOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeCustomAvailabilityZonesError>,
-        >,
-    > + Unpin {
-        // Move individual fields out of self for the borrow checker
-        let builder = self.builder;
-        let handle = self.handle;
-        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
-            Box::pin(async move {
-                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
-                    Ok(input) => input,
-                    Err(e) => {
-                        let _ = tx.send(Err(e)).await;
-                        return;
-                    }
-                };
-                loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
-                        Ok(op) => op,
-                        Err(e) => {
-                            let _ = tx.send(Err(e)).await;
-                            return;
-                        }
-                    };
-                    let resp = handle.client.call(op).await;
-                    // If the input member is None or it was an error
-                    let done = match resp {
-                        Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_custom_availability_zones_output_marker(resp);
-                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.marker.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
-                            }
-                            input.marker = new_token.cloned();
-                            is_empty
-                        }
-                        Err(_) => true,
-                    };
-                    if tx.send(resp).await.is_err() {
-                        // receiving end was dropped
-                        return;
-                    }
-                    if done {
-                        return;
-                    }
-                }
-            })
-        })
-    }
-}
-
 /// Paginator for [`DescribeDBClusterBacktracks`](crate::operation::DescribeDBClusterBacktracks)
 pub struct DescribeDbClusterBacktracksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -2471,101 +2376,6 @@ impl DescribeGlobalClustersPaginator {
     }
 }
 
-/// Paginator for [`DescribeInstallationMedia`](crate::operation::DescribeInstallationMedia)
-pub struct DescribeInstallationMediaPaginator {
-    handle: std::sync::Arc<crate::client::Handle>,
-    builder: crate::input::describe_installation_media_input::Builder,
-}
-
-impl DescribeInstallationMediaPaginator {
-    /// Create a new paginator-wrapper
-    pub(crate) fn new(
-        handle: std::sync::Arc<crate::client::Handle>,
-        builder: crate::input::describe_installation_media_input::Builder,
-    ) -> Self {
-        Self { handle, builder }
-    }
-
-    /// Set the page size
-    ///
-    /// _Note: this method will override any previously set value for `max_records`_
-    pub fn page_size(mut self, limit: i32) -> Self {
-        self.builder.max_records = Some(limit);
-        self
-    }
-
-    /// Create a flattened paginator
-    ///
-    /// This paginator automatically flattens results using `installation_media`. Queries to the underlying service
-    /// are dispatched lazily.
-    pub fn items(self) -> crate::paginator::DescribeInstallationMediaPaginatorItems {
-        crate::paginator::DescribeInstallationMediaPaginatorItems(self)
-    }
-
-    /// Create the pagination stream
-    ///
-    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
-    pub fn send(
-        self,
-    ) -> impl tokio_stream::Stream<
-        Item = std::result::Result<
-            crate::output::DescribeInstallationMediaOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeInstallationMediaError>,
-        >,
-    > + Unpin {
-        // Move individual fields out of self for the borrow checker
-        let builder = self.builder;
-        let handle = self.handle;
-        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
-            Box::pin(async move {
-                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
-                    Ok(input) => input,
-                    Err(e) => {
-                        let _ = tx.send(Err(e)).await;
-                        return;
-                    }
-                };
-                loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
-                        Ok(op) => op,
-                        Err(e) => {
-                            let _ = tx.send(Err(e)).await;
-                            return;
-                        }
-                    };
-                    let resp = handle.client.call(op).await;
-                    // If the input member is None or it was an error
-                    let done = match resp {
-                        Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_installation_media_output_marker(resp);
-                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.marker.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
-                            }
-                            input.marker = new_token.cloned();
-                            is_empty
-                        }
-                        Err(_) => true,
-                    };
-                    if tx.send(resp).await.is_err() {
-                        // receiving end was dropped
-                        return;
-                    }
-                    if done {
-                        return;
-                    }
-                }
-            })
-        })
-    }
-}
-
 /// Paginator for [`DescribeOptionGroupOptions`](crate::operation::DescribeOptionGroupOptions)
 pub struct DescribeOptionGroupOptionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -3349,29 +3159,6 @@ impl DescribeCertificatesPaginatorItems {
     }
 }
 
-/// Flattened paginator for `DescribeCustomAvailabilityZonesPaginator`
-///
-/// This is created with [`.items()`](DescribeCustomAvailabilityZonesPaginator::items)
-pub struct DescribeCustomAvailabilityZonesPaginatorItems(DescribeCustomAvailabilityZonesPaginator);
-
-impl DescribeCustomAvailabilityZonesPaginatorItems {
-    /// Create the pagination stream
-    ///
-    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
-    ///
-    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
-    pub fn send(
-        self,
-    ) -> impl tokio_stream::Stream<
-        Item = std::result::Result<
-            crate::model::CustomAvailabilityZone,
-            aws_smithy_http::result::SdkError<crate::error::DescribeCustomAvailabilityZonesError>,
-        >,
-    > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_custom_availability_zones_output_custom_availability_zones(page).unwrap_or_default().into_iter())
-    }
-}
-
 /// Flattened paginator for `DescribeDbClusterBacktracksPaginator`
 ///
 /// This is created with [`.items()`](DescribeDbClusterBacktracksPaginator::items)
@@ -3959,29 +3746,6 @@ impl DescribeGlobalClustersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_global_clusters_output_global_clusters(page).unwrap_or_default().into_iter())
-    }
-}
-
-/// Flattened paginator for `DescribeInstallationMediaPaginator`
-///
-/// This is created with [`.items()`](DescribeInstallationMediaPaginator::items)
-pub struct DescribeInstallationMediaPaginatorItems(DescribeInstallationMediaPaginator);
-
-impl DescribeInstallationMediaPaginatorItems {
-    /// Create the pagination stream
-    ///
-    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
-    ///
-    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
-    pub fn send(
-        self,
-    ) -> impl tokio_stream::Stream<
-        Item = std::result::Result<
-            crate::model::InstallationMedia,
-            aws_smithy_http::result::SdkError<crate::error::DescribeInstallationMediaError>,
-        >,
-    > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_installation_media_output_installation_media(page).unwrap_or_default().into_iter())
     }
 }
 

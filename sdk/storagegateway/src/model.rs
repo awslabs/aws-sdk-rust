@@ -1235,7 +1235,6 @@ pub struct AutomaticTapeCreationRule {
     /// </note>
     pub tape_barcode_prefix: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
     pub tape_size_in_bytes: std::option::Option<i64>,
@@ -1252,7 +1251,6 @@ impl AutomaticTapeCreationRule {
         self.tape_barcode_prefix.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -1311,13 +1309,11 @@ pub mod automatic_tape_creation_rule {
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -1702,7 +1698,6 @@ pub struct TapeInfo {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The date that the tape became subject to tape retention lock.</p>
     pub retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -1731,7 +1726,6 @@ impl TapeInfo {
         self.gateway_arn.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -1825,13 +1819,11 @@ pub mod tape_info {
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -3524,7 +3516,6 @@ pub struct Tape {
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
     pub worm: bool,
@@ -3574,7 +3565,6 @@ impl Tape {
         self.kms_key.as_deref()
     }
     /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -3731,13 +3721,11 @@ pub mod tape {
             self
         }
         /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -3950,7 +3938,6 @@ pub struct TapeArchive {
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).</p>
     pub worm: bool,
@@ -4002,7 +3989,6 @@ impl TapeArchive {
         self.kms_key.as_deref()
     }
     /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
-    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
     pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -4165,13 +4151,11 @@ pub mod tape_archive {
             self
         }
         /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_id = Some(input.into());
             self
         }
         /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
-        /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_id = input;
             self
@@ -4767,7 +4751,7 @@ pub struct SmbFileShareInfo {
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
@@ -4879,7 +4863,7 @@ impl SmbFileShareInfo {
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> std::option::Option<&str> {
         self.default_storage_class.as_deref()
@@ -5176,13 +5160,13 @@ pub mod smb_file_share_info {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn set_default_storage_class(
             mut self,
@@ -5566,7 +5550,7 @@ pub struct NfsFileShareInfo {
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
@@ -5672,7 +5656,7 @@ impl NfsFileShareInfo {
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> std::option::Option<&str> {
         self.default_storage_class.as_deref()
@@ -5951,13 +5935,13 @@ pub mod nfs_file_share_info {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn set_default_storage_class(
             mut self,
@@ -6887,6 +6871,7 @@ pub struct CachediScsiVolume {
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>
     pub volume_used_in_bytes: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
@@ -6940,6 +6925,7 @@ impl CachediScsiVolume {
     }
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>
     pub fn volume_used_in_bytes(&self) -> std::option::Option<i64> {
         self.volume_used_in_bytes
@@ -7115,6 +7101,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
         /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+        /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
         /// </note>
         pub fn volume_used_in_bytes(mut self, input: i64) -> Self {
             self.volume_used_in_bytes = Some(input);
@@ -7122,6 +7109,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
         /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+        /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
         /// </note>
         pub fn set_volume_used_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.volume_used_in_bytes = input;

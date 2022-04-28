@@ -12,6 +12,8 @@ pub struct BatchExecuteStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchExecuteStatementErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -28,6 +30,7 @@ pub enum BatchExecuteStatementErrorKind {
 impl std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            BatchExecuteStatementErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             BatchExecuteStatementErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             BatchExecuteStatementErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             BatchExecuteStatementErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
@@ -87,6 +90,13 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
@@ -126,6 +136,7 @@ impl BatchExecuteStatementError {
 impl std::error::Error for BatchExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            BatchExecuteStatementErrorKind::AccessDeniedException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::BadRequestException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::ForbiddenException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::InternalServerErrorException(_inner) => Some(_inner),
@@ -149,6 +160,8 @@ pub struct BeginTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BeginTransactionErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -165,6 +178,7 @@ pub enum BeginTransactionErrorKind {
 impl std::fmt::Display for BeginTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            BeginTransactionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             BeginTransactionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             BeginTransactionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             BeginTransactionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
@@ -224,6 +238,13 @@ impl BeginTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `BeginTransactionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BeginTransactionErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BeginTransactionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
@@ -260,6 +281,7 @@ impl BeginTransactionError {
 impl std::error::Error for BeginTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            BeginTransactionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             BeginTransactionErrorKind::BadRequestException(_inner) => Some(_inner),
             BeginTransactionErrorKind::ForbiddenException(_inner) => Some(_inner),
             BeginTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
@@ -283,6 +305,8 @@ pub struct CommitTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CommitTransactionErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -301,6 +325,7 @@ pub enum CommitTransactionErrorKind {
 impl std::fmt::Display for CommitTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CommitTransactionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CommitTransactionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CommitTransactionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             CommitTransactionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
@@ -361,6 +386,13 @@ impl CommitTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CommitTransactionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
@@ -404,6 +436,7 @@ impl CommitTransactionError {
 impl std::error::Error for CommitTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CommitTransactionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CommitTransactionErrorKind::BadRequestException(_inner) => Some(_inner),
             CommitTransactionErrorKind::ForbiddenException(_inner) => Some(_inner),
             CommitTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
@@ -428,6 +461,8 @@ pub struct ExecuteSqlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteSqlErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -442,6 +477,7 @@ pub enum ExecuteSqlErrorKind {
 impl std::fmt::Display for ExecuteSqlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ExecuteSqlErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ExecuteSqlErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             ExecuteSqlErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ExecuteSqlErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
@@ -500,6 +536,10 @@ impl ExecuteSqlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ExecuteSqlErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `ExecuteSqlErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ExecuteSqlErrorKind::BadRequestException(_))
@@ -523,6 +563,7 @@ impl ExecuteSqlError {
 impl std::error::Error for ExecuteSqlError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ExecuteSqlErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ExecuteSqlErrorKind::BadRequestException(_inner) => Some(_inner),
             ExecuteSqlErrorKind::ForbiddenException(_inner) => Some(_inner),
             ExecuteSqlErrorKind::InternalServerErrorException(_inner) => Some(_inner),
@@ -545,6 +586,8 @@ pub struct ExecuteStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteStatementErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -561,6 +604,7 @@ pub enum ExecuteStatementErrorKind {
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ExecuteStatementErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
@@ -620,6 +664,13 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
@@ -656,6 +707,7 @@ impl ExecuteStatementError {
 impl std::error::Error for ExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ExecuteStatementErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::BadRequestException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::ForbiddenException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::InternalServerErrorException(_inner) => Some(_inner),
@@ -679,6 +731,8 @@ pub struct RollbackTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RollbackTransactionErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There is an error in the call or in a SQL statement.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -697,6 +751,7 @@ pub enum RollbackTransactionErrorKind {
 impl std::fmt::Display for RollbackTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RollbackTransactionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RollbackTransactionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             RollbackTransactionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             RollbackTransactionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
@@ -757,6 +812,13 @@ impl RollbackTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RollbackTransactionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
@@ -803,6 +865,7 @@ impl RollbackTransactionError {
 impl std::error::Error for RollbackTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RollbackTransactionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RollbackTransactionErrorKind::BadRequestException(_inner) => Some(_inner),
             RollbackTransactionErrorKind::ForbiddenException(_inner) => Some(_inner),
             RollbackTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
@@ -1216,5 +1279,69 @@ impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
     pub fn builder() -> crate::error::bad_request_exception::Builder {
         crate::error::bad_request_exception::Builder::default()
+    }
+}
+
+/// <p>You do not have sufficient access to perform this action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
     }
 }
