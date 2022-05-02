@@ -88,7 +88,7 @@ The SDK currently requires a minimum of Rust 1.58.1, and is not guaranteed to bu
 
 - Design docs - Design documentation for the SDK lives in the [design folder of smithy-rs](https://github.com/awslabs/smithy-rs/tree/main/design).
 - Runtime / Handwritten code: The Rust Runtime code that underpins the SDK can be accessed [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) and [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime). This code is copied into this repo as part of code generation.
-- [Code Examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+- [Code Examples](./examples)
 - [API reference documentation (rustdoc)](https://awslabs.github.io/aws-sdk-rust/)
 
 ## Security
