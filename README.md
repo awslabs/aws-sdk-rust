@@ -66,7 +66,7 @@ While we're working on the SDK, detailed usage instructions will be added to the
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) – For bug reports & feature requests
 * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
-* [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+* [Usage examples](./examples)
 
 ## Feedback and Contributing
 
