@@ -4,7 +4,7 @@
  */
 
 use bytes::Bytes;
-use futures_core::{ready, Stream};
+use futures_core::ready;
 use http::HeaderMap;
 use http_body::{Body, SizeHint};
 use std::future::Future;
@@ -12,7 +12,7 @@ use std::path::PathBuf;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use tokio::fs::File;
-use tokio::io;
+use tokio::io::{self, AsyncReadExt, AsyncSeekExt};
 use tokio_util::io::ReaderStream;
 
 use crate::body::SdkBody;
@@ -21,6 +21,8 @@ use super::{ByteStream, Error};
 
 // 4KB corresponds to the default buffer size used by Tokio's ReaderStream
 const DEFAULT_BUFFER_SIZE: usize = 4096;
+// By default, read files from their start
+const DEFAULT_OFFSET: u64 = 0;
 
 /// An HTTP Body designed to wrap files
 ///
@@ -30,23 +32,30 @@ const DEFAULT_BUFFER_SIZE: usize = 4096;
 /// 3. Provide size hint
 struct PathBody {
     state: State,
-    file_size: u64,
+    // The number of bytes to read
+    length: u64,
     buffer_size: usize,
+    // The byte-offset to start reading from
+    offset: Option<u64>,
 }
 
 impl PathBody {
-    fn from_path(path_buf: PathBuf, file_size: u64, buffer_size: usize) -> Self {
+    fn from_path(path_buf: PathBuf, length: u64, buffer_size: usize, offset: Option<u64>) -> Self {
         PathBody {
             state: State::Unloaded(path_buf),
-            file_size,
+            length,
             buffer_size,
+            offset,
         }
     }
-    fn from_file(file: File, file_size: u64, buffer_size: usize) -> Self {
+
+    fn from_file(file: File, length: u64, buffer_size: usize) -> Self {
         PathBody {
-            state: State::Loaded(ReaderStream::with_capacity(file, buffer_size)),
-            file_size,
+            state: State::Loaded(ReaderStream::with_capacity(file.take(length), buffer_size)),
+            length,
             buffer_size,
+            /// The file used to create this `PathBody` should have already had an offset applied
+            offset: None,
         }
     }
 }
@@ -57,7 +66,7 @@ impl PathBody {
 /// ```no_run
 /// # #[cfg(feature = "rt-tokio")]
 /// # {
-/// use aws_smithy_http::byte_stream::ByteStream;
+/// use aws_smithy_http::byte_stream::{ByteStream, Length};
 /// use std::path::Path;
 /// struct GetObjectInput {
 ///     body: ByteStream
@@ -69,7 +78,7 @@ impl PathBody {
 ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
 ///         .buffer_size(32_784)
 ///         // Specify the length of the file used (skips an additional call to retrieve the size)
-///         .file_size(123_456)
+///         .length(Length::UpTo(123_456))
 ///         .build()
 ///         .await
 ///         .expect("valid path");
@@ -80,8 +89,9 @@ impl PathBody {
 pub struct FsBuilder {
     file: Option<tokio::fs::File>,
     path: Option<PathBuf>,
-    file_size: Option<u64>,
+    length: Option<Length>,
     buffer_size: usize,
+    offset: Option<u64>,
 }
 
 impl Default for FsBuilder {
@@ -90,16 +100,26 @@ impl Default for FsBuilder {
     }
 }
 
+/// The length (in bytes) to read. Determines whether or not a short read counts as an error.
+pub enum Length {
+    /// Read this number of bytes exactly. Returns an error if the file is smaller than expected.
+    Exact(u64),
+    /// Read up to this number of bytes. May read less than the specified amount if the file
+    /// is smaller than expected.
+    UpTo(u64),
+}
+
 impl FsBuilder {
     /// Create a new [`FsBuilder`] (using a default read buffer of 4096 bytes).
     ///
     /// You must then call either [`file`](FsBuilder::file) or [`path`](FsBuilder::path) to specify what to read from.
     pub fn new() -> Self {
         FsBuilder {
-            file: None,
-            path: None,
-            file_size: None,
             buffer_size: DEFAULT_BUFFER_SIZE,
+            file: None,
+            length: None,
+            offset: None,
+            path: None,
         }
     }
 
@@ -122,11 +142,13 @@ impl FsBuilder {
         self
     }
 
-    /// Specify the length of the file to read (in bytes).
+    /// Specify the length to read (in bytes).
     ///
-    /// By pre-specifying the length of the file, this API skips an additional call to retrieve the size from file-system metadata.
-    pub fn file_size(mut self, file_size: u64) -> Self {
-        self.file_size = Some(file_size);
+    /// By pre-specifying the length, this API skips an additional call to retrieve the size from file-system metadata.
+    ///
+    /// When used in conjunction with [`offset`](FsBuilder::offset), allows for reading a single "chunk" of a file.
+    pub fn length(mut self, length: Length) -> Self {
+        self.length = Some(length);
         self
     }
 
@@ -139,43 +161,70 @@ impl FsBuilder {
         self
     }
 
+    /// Specify the offset to start reading from (in bytes)
+    ///
+    /// When used in conjunction with [`length`](FsBuilder::length), allows for reading a single "chunk" of a file.
+    pub fn offset(mut self, offset: u64) -> Self {
+        self.offset = Some(offset);
+        self
+    }
+
     /// Returns a [`ByteStream`](crate::byte_stream::ByteStream) from this builder.
-    /// NOTE: If both [`file`](FsBuilder::file) and [`path`](FsBuilder::path) have been called for this FsBuilder, `build` will
-    /// read from the path specified by [`path`](FsBuilder::path).
-    ///
-    /// # Panics
-    ///
-    /// Panics if neither of the `file` or`path` setters were called.
     pub async fn build(self) -> Result<ByteStream, Error> {
+        if self.path.is_some() && self.file.is_some() {
+            panic!("The 'file' and 'path' options on an FsBuilder are mutually exclusive but both were set. Please set only one")
+        };
+
         let buffer_size = self.buffer_size;
+        let offset = self.offset.unwrap_or(DEFAULT_OFFSET);
+        // Checking the file length like this does have a cost, but the benefit is that we can
+        // notify users when file/chunk is smaller than expected.
+        let file_length = self.get_file_size().await?;
+        if offset > file_length {
+            return Err(Error(Box::new(io::Error::new(
+                io::ErrorKind::InvalidInput,
+                "offset must be less than or equal to file size but was greater than",
+            ))));
+        }
+
+        let length = match self.length {
+            Some(Length::Exact(length)) => {
+                if length > file_length - offset {
+                    return Err(Error(Box::new(io::Error::new(
+                        io::ErrorKind::InvalidInput,
+                        "Length::Exact was larger than file size minus read offset",
+                    ))));
+                }
+                length
+            }
+            Some(Length::UpTo(length)) => length,
+            None => file_length - offset,
+        };
 
         if let Some(path) = self.path {
-            let path_buf = path.to_path_buf();
-            let file_size = self.file_size.unwrap_or(
-                tokio::fs::metadata(path)
-                    .await
-                    .map_err(|err| Error(err.into()))?
-                    .len(),
-            );
-
             let body_loader = move || {
+                // If an offset was provided, seeking will be handled in `PathBody::poll_data` each
+                // time the file is loaded.
                 SdkBody::from_dyn(http_body::combinators::BoxBody::new(PathBody::from_path(
-                    path_buf.clone(),
-                    file_size,
+                    path.clone(),
+                    length,
                     buffer_size,
+                    self.offset,
                 )))
             };
+
             Ok(ByteStream::new(SdkBody::retryable(body_loader)))
-        } else if let Some(file) = self.file {
-            let file_size = self.file_size.unwrap_or(
-                file.metadata()
+        } else if let Some(mut file) = self.file {
+            // When starting from a `File`, we need to do our own seeking
+            if offset != 0 {
+                let _s = file
+                    .seek(std::io::SeekFrom::Start(offset))
                     .await
-                    .map_err(|err| Error(err.into()))?
-                    .len(),
-            );
+                    .map_err(|err| Error(err.into()))?;
+            }
 
             let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
-                PathBody::from_file(file, file_size, buffer_size),
+                PathBody::from_file(file, length, buffer_size),
             ));
 
             Ok(ByteStream::new(body))
@@ -183,12 +232,22 @@ impl FsBuilder {
             panic!("FsBuilder constructed without a file or a path")
         }
     }
+
+    async fn get_file_size(&self) -> Result<u64, Error> {
+        match self.path.as_ref() {
+            Some(path) => tokio::fs::metadata(path).await,
+            // If it's not path-based then it's file-based
+            None => self.file.as_ref().unwrap().metadata().await,
+        }
+        .map(|metadata| metadata.len())
+        .map_err(|err| Error(err.into()))
+    }
 }
 
 enum State {
     Unloaded(PathBuf),
     Loading(Pin<Box<dyn Future<Output = io::Result<File>> + Send + Sync + 'static>>),
-    Loaded(tokio_util::io::ReaderStream<File>),
+    Loaded(tokio_util::io::ReaderStream<io::Take<File>>),
 }
 
 impl Body for PathBody {
@@ -199,30 +258,39 @@ impl Body for PathBody {
         mut self: Pin<&mut Self>,
         cx: &mut Context<'_>,
     ) -> Poll<Option<Result<Self::Data, Self::Error>>> {
+        let offset = self.offset.unwrap_or(DEFAULT_OFFSET);
         loop {
             match self.state {
                 State::Unloaded(ref path_buf) => {
                     let buf = path_buf.clone();
                     self.state = State::Loading(Box::pin(async move {
-                        let file = tokio::fs::File::open(&buf).await?;
+                        let mut file = tokio::fs::File::open(&buf).await?;
+
+                        if offset != 0 {
+                            let _s = file.seek(std::io::SeekFrom::Start(offset)).await?;
+                        }
+
                         Ok(file)
                     }));
                 }
                 State::Loading(ref mut future) => {
                     match ready!(Pin::new(future).poll(cx)) {
                         Ok(file) => {
-                            self.state =
-                                State::Loaded(ReaderStream::with_capacity(file, self.buffer_size));
+                            self.state = State::Loaded(ReaderStream::with_capacity(
+                                file.take(self.length),
+                                self.buffer_size,
+                            ));
                         }
                         Err(e) => return Poll::Ready(Some(Err(e.into()))),
                     };
                 }
                 State::Loaded(ref mut stream) => {
+                    use futures_core::Stream;
                     return match ready!(Pin::new(stream).poll_next(cx)) {
                         Some(Ok(bytes)) => Poll::Ready(Some(Ok(bytes))),
                         None => Poll::Ready(None),
                         Some(Err(e)) => Poll::Ready(Some(Err(e.into()))),
-                    }
+                    };
                 }
             };
         }
@@ -236,11 +304,316 @@ impl Body for PathBody {
     }
 
     fn is_end_stream(&self) -> bool {
-        // fast path end-stream for empty files
-        self.file_size == 0
+        // fast path end-stream for empty streams
+        self.length == 0
     }
 
     fn size_hint(&self) -> SizeHint {
-        SizeHint::with_exact(self.file_size)
+        SizeHint::with_exact(self.length)
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::FsBuilder;
+    use crate::byte_stream::{ByteStream, Length};
+    use bytes::Buf;
+    use http_body::Body;
+    use std::io::Write;
+    use tempfile::NamedTempFile;
+
+    #[tokio::test]
+    async fn path_based_bytestreams_with_builder() {
+        let mut file = NamedTempFile::new().unwrap();
+
+        for i in 0..10000 {
+            writeln!(file, "Brian was here. Briefly. {}", i).unwrap();
+        }
+        let file_length = file
+            .as_file()
+            .metadata()
+            .expect("file metadata is accessible")
+            .len();
+
+        let body = FsBuilder::new()
+            .path(&file)
+            .buffer_size(16384)
+            .length(Length::Exact(file_length))
+            .build()
+            .await
+            .unwrap()
+            .into_inner();
+
+        // assert that the specified length is used as size hint
+        assert_eq!(body.size_hint().exact(), Some(file_length));
+
+        let mut body1 = body.try_clone().expect("retryable bodies are cloneable");
+        // read a little bit from one of the clones
+        let some_data = body1
+            .data()
+            .await
+            .expect("should have some data")
+            .expect("read should not fail");
+        // The size of one read should be equal to that of the buffer size
+        assert_eq!(some_data.len(), 16384);
+
+        assert_eq!(
+            ByteStream::new(body1).collect().await.unwrap().remaining(),
+            file_length as usize - some_data.len()
+        );
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_length_is_used_as_size_hint() {
+        let mut file = NamedTempFile::new().unwrap();
+        write!(
+            file,
+            "A very long sentence that's clearly longer than a single byte."
+        )
+        .unwrap();
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        let body = FsBuilder::new()
+            .path(&file)
+            // The file is longer than 1 byte, let's see if this is used to generate the size hint
+            .length(Length::Exact(1))
+            .build()
+            .await
+            .unwrap()
+            .into_inner();
+
+        assert_eq!(body.size_hint().exact(), Some(1));
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_respects_length() {
+        let mut file = NamedTempFile::new().unwrap();
+        let line_0 = "Line 0\n";
+        let line_1 = "Line 1\n";
+
+        write!(file, "{}", line_0).unwrap();
+        write!(file, "{}", line_1).unwrap();
+
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        let body = FsBuilder::new()
+            .path(&file)
+            // We're going to read line 0 only
+            .length(Length::Exact(line_0.len() as u64))
+            .build()
+            .await
+            .unwrap();
+
+        let data = body.collect().await.unwrap().into_bytes();
+        let data_str = String::from_utf8(data.to_vec()).unwrap();
+
+        assert_eq!(&data_str, line_0);
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_length_exact() {
+        let mut file = NamedTempFile::new().unwrap();
+        let test_sentence = "This sentence is 30 bytes long";
+        assert_eq!(test_sentence.len(), 30);
+        write!(file, "{}", test_sentence).unwrap();
+
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        assert!(FsBuilder::new()
+            .path(&file)
+            // The file is 30 bytes so this is fine
+            .length(Length::Exact(29))
+            .build()
+            .await
+            .is_ok());
+
+        assert!(FsBuilder::new()
+            .path(&file)
+            // The file is 30 bytes so this is fine
+            .length(Length::Exact(30))
+            .build()
+            .await
+            .is_ok());
+
+        assert!(FsBuilder::new()
+            .path(&file)
+            // Larger than 30 bytes, this will cause an error
+            .length(Length::Exact(31))
+            .build()
+            .await
+            .is_err());
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_supports_offset() {
+        let mut file = NamedTempFile::new().unwrap();
+        let line_0 = "Line 0\n";
+        let line_1 = "Line 1\n";
+
+        write!(file, "{}", line_0).unwrap();
+        write!(file, "{}", line_1).unwrap();
+
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        let body = FsBuilder::new()
+            .path(&file)
+            // We're going to skip the first line by using offset
+            .offset(line_0.len() as u64)
+            .build()
+            .await
+            .unwrap();
+
+        let data = body.collect().await.unwrap().into_bytes();
+        let data_str = String::from_utf8(data.to_vec()).unwrap();
+
+        assert_eq!(&data_str, line_1);
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_offset_and_length_work_together() {
+        let mut file = NamedTempFile::new().unwrap();
+        let line_0 = "Line 0\n";
+        let line_1 = "Line 1\n";
+        let line_2 = "Line 2\n";
+
+        write!(file, "{}", line_0).unwrap();
+        write!(file, "{}", line_1).unwrap();
+        write!(file, "{}", line_2).unwrap();
+
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        let body = FsBuilder::new()
+            .path(&file)
+            // We're going to skip line 0 by using offset
+            .offset(line_0.len() as u64)
+            // We want to read only line 1 and stop before we get to line 2
+            .length(Length::Exact(line_1.len() as u64))
+            .build()
+            .await
+            .unwrap();
+
+        let data = body.collect().await.unwrap().into_bytes();
+        let data_str = String::from_utf8(data.to_vec()).unwrap();
+
+        assert_eq!(&data_str, line_1);
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_with_offset_greater_than_file_length_returns_error() {
+        let mut file = NamedTempFile::new().unwrap();
+        let line_0 = "Line 0\n";
+        let line_1 = "Line 1\n";
+
+        write!(file, "{}", line_0).unwrap();
+        write!(file, "{}", line_1).unwrap();
+
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        assert_eq!(
+            FsBuilder::new()
+                .path(&file)
+                // We're going to skip all file contents by setting an offset
+                // much larger than the file size
+                .offset(9000)
+                .build()
+                .await
+                .unwrap_err()
+                .to_string(),
+            "offset must be less than or equal to file size but was greater than"
+        );
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_with_length_greater_than_file_length_reads_everything() {
+        let mut file = NamedTempFile::new().unwrap();
+        let line_0 = "Line 0\n";
+        let line_1 = "Line 1\n";
+
+        write!(file, "{}", line_0).unwrap();
+        write!(file, "{}", line_1).unwrap();
+
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        let body = FsBuilder::new()
+            .path(&file)
+            .length(Length::UpTo(9000))
+            .build()
+            .await
+            .unwrap();
+
+        let data = body.collect().await.unwrap().into_bytes();
+        let data_str = String::from_utf8(data.to_vec()).unwrap();
+
+        assert_eq!(data_str, format!("{}{}", line_0, line_1));
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_can_be_used_for_chunking() {
+        let mut file = NamedTempFile::new().unwrap();
+        let mut in_memory_copy_of_file_contents = String::new();
+        // I put these two write loops in separate blocks so that the traits wouldn't conflict
+        {
+            use std::io::Write;
+            for i in 0..1000 {
+                writeln!(file, "Line {:04}", i).unwrap();
+            }
+        }
+
+        {
+            use std::fmt::Write;
+            for i in 0..1000 {
+                writeln!(in_memory_copy_of_file_contents, "Line {:04}", i).unwrap();
+            }
+            // Check we wrote the lines
+            assert!(!in_memory_copy_of_file_contents.is_empty());
+        }
+
+        let file_size = file.as_file().metadata().unwrap().len();
+        // Check that our in-memory copy has the same size as the file
+        assert_eq!(file_size as usize, in_memory_copy_of_file_contents.len());
+        let file_path = file.path().to_path_buf();
+        let chunks = 7;
+        let chunk_size = file_size / chunks;
+
+        let mut byte_streams = Vec::new();
+        for i in 0..chunks {
+            let length = if i == chunks - 1 {
+                // If we're on the last chunk, the length to read might be less than a whole chunk.
+                // We substract the size of all previous chunks from the total file size to get the
+                // size of the final chunk.
+                file_size - (i * chunk_size)
+            } else {
+                chunk_size
+            };
+
+            let byte_stream = FsBuilder::new()
+                .path(&file_path)
+                .offset(i * chunk_size)
+                .length(Length::Exact(length))
+                .build()
+                .await
+                .unwrap();
+
+            byte_streams.push(byte_stream);
+        }
+
+        let mut collected_bytes = Vec::new();
+
+        for byte_stream in byte_streams.into_iter() {
+            let bytes = byte_stream.collect().await.unwrap().into_bytes();
+            collected_bytes.push(bytes);
+        }
+
+        let bytes = collected_bytes.concat();
+        let data_str = String::from_utf8(bytes.to_vec()).unwrap();
+
+        assert_eq!(data_str, in_memory_copy_of_file_contents);
     }
 }

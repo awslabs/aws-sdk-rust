@@ -13,7 +13,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-rt-tokio = ["tokio/rt", "tokio/fs", "tokio-util/io"]
+rt-tokio = ["tokio/rt", "tokio/fs", "tokio/io-util", "tokio-util/io"]
 event-stream = ["aws-smithy-eventstream"]
 
 [dependencies]

@@ -102,7 +102,7 @@
 //! ```no_run
 //! # #[cfg(feature = "rt-tokio")]
 //! # {
-//! use aws_smithy_http::byte_stream::ByteStream;
+//! use aws_smithy_http::byte_stream::{ByteStream, Length};
 //! use std::path::Path;
 //! struct GetObjectInput {
 //!     body: ByteStream
@@ -111,7 +111,7 @@
 //! async fn bytestream_from_file() -> GetObjectInput {
 //!     let bytestream = ByteStream::read_from().path("docs/some-large-file.csv")
 //!         .buffer_size(32_784)
-//!         .file_size(123_456)
+//!         .length(Length::Exact(123_456))
 //!         .build()
 //!         .await
 //!         .expect("valid path");
@@ -135,6 +135,8 @@ use std::task::{Context, Poll};
 
 #[cfg(feature = "rt-tokio")]
 mod bytestream_util;
+#[cfg(feature = "rt-tokio")]
+pub use bytestream_util::Length;
 
 #[cfg(feature = "rt-tokio")]
 pub use self::bytestream_util::FsBuilder;
@@ -272,7 +274,7 @@ impl ByteStream {
     /// ```no_run
     /// # #[cfg(feature = "rt-tokio")]
     /// # {
-    /// use aws_smithy_http::byte_stream::ByteStream;
+    /// use aws_smithy_http::byte_stream::{ByteStream, Length};
     ///
     /// async fn bytestream_from_file() -> ByteStream {
     ///     let bytestream = ByteStream::read_from()
@@ -280,7 +282,7 @@ impl ByteStream {
     ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
     ///         .buffer_size(32_784)
     ///         // Specify the length of the file used (skips an additional call to retrieve the size)
-    ///         .file_size(123_456)
+    ///         .length(Length::Exact(123_456))
     ///         .build()
     ///         .await
     ///         .expect("valid path");
@@ -587,49 +589,6 @@ mod tests {
         assert!(body2.starts_with(b"Brian was here."));
         assert!(body2.ends_with(b"9999\n"));
         assert_eq!(body2.len(), 298890);
-
-        assert_eq!(
-            ByteStream::new(body1).collect().await?.remaining(),
-            298890 - some_data.len()
-        );
-
-        Ok(())
-    }
-
-    #[cfg(feature = "rt-tokio")]
-    #[tokio::test]
-    async fn path_based_bytestreams_with_builder() -> Result<(), Box<dyn std::error::Error>> {
-        use super::ByteStream;
-        use bytes::Buf;
-        use http_body::Body;
-        use std::io::Write;
-        use tempfile::NamedTempFile;
-        let mut file = NamedTempFile::new()?;
-
-        for i in 0..10000 {
-            writeln!(file, "Brian was here. Briefly. {}", i)?;
-        }
-        let body = ByteStream::read_from()
-            .path(&file)
-            .buffer_size(16384)
-            // This isn't the right file length - one shouldn't do this in real code
-            .file_size(200)
-            .build()
-            .await?
-            .into_inner();
-
-        // assert that the file length specified size is used as size hint
-        assert_eq!(body.size_hint().exact(), Some(200));
-
-        let mut body1 = body.try_clone().expect("retryable bodies are cloneable");
-        // read a little bit from one of the clones
-        let some_data = body1
-            .data()
-            .await
-            .expect("should have some data")
-            .expect("read should not fail");
-        // The size of one read should be equal to that of the buffer size
-        assert_eq!(some_data.len(), 16384);
 
         assert_eq!(
             ByteStream::new(body1).collect().await?.remaining(),
