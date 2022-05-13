@@ -6,7 +6,6 @@ pub fn add_headers_post_content(
     if let Some(inner_1) = &input.session_attributes {
         let formatted_2 = aws_smithy_types::base64::encode(&inner_1);
         if !formatted_2.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -24,7 +23,6 @@ pub fn add_headers_post_content(
     if let Some(inner_3) = &input.request_attributes {
         let formatted_4 = aws_smithy_types::base64::encode(&inner_3);
         if !formatted_4.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -42,7 +40,6 @@ pub fn add_headers_post_content(
     if let Some(inner_5) = &input.content_type {
         let formatted_6 = AsRef::<str>::as_ref(inner_5);
         if !formatted_6.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -60,7 +57,6 @@ pub fn add_headers_post_content(
     if let Some(inner_7) = &input.accept {
         let formatted_8 = AsRef::<str>::as_ref(inner_7);
         if !formatted_8.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -78,7 +74,6 @@ pub fn add_headers_post_content(
     if let Some(inner_9) = &input.active_contexts {
         let formatted_10 = aws_smithy_types::base64::encode(&inner_9);
         if !formatted_10.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -103,7 +98,6 @@ pub fn add_headers_put_session(
     if let Some(inner_11) = &input.accept {
         let formatted_12 = AsRef::<str>::as_ref(inner_11);
         if !formatted_12.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {

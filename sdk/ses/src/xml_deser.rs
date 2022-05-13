@@ -13,7 +13,6 @@ pub fn deser_structure_crate_error_already_exists_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -59,7 +58,6 @@ pub fn deser_structure_crate_error_limit_exceeded_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -95,7 +93,6 @@ pub fn deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -144,7 +141,6 @@ pub fn deser_structure_crate_error_configuration_set_already_exists_exception_xm
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -193,7 +189,6 @@ pub fn deser_structure_crate_error_invalid_configuration_set_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -229,7 +224,6 @@ pub fn deser_structure_crate_error_configuration_set_does_not_exist_exception_xm
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -278,7 +272,6 @@ pub fn deser_structure_crate_error_event_destination_already_exists_exception_xm
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -340,7 +333,6 @@ pub fn deser_structure_crate_error_invalid_cloud_watch_destination_exception_xml
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -402,7 +394,6 @@ pub fn deser_structure_crate_error_invalid_firehose_destination_exception_xml_er
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -464,7 +455,6 @@ pub fn deser_structure_crate_error_invalid_sns_destination_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -526,7 +516,6 @@ pub fn deser_structure_crate_error_invalid_tracking_options_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -562,7 +551,6 @@ pub fn deser_structure_crate_error_tracking_options_already_exists_exception_xml
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -611,7 +599,6 @@ pub fn deser_structure_crate_error_custom_verification_email_invalid_content_exc
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -647,7 +634,6 @@ pub fn deser_structure_crate_error_custom_verification_email_template_already_ex
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -696,7 +682,6 @@ pub fn deser_structure_crate_error_from_email_address_not_verified_exception_xml
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -745,7 +730,6 @@ pub fn deser_structure_crate_error_invalid_lambda_function_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -794,7 +778,6 @@ pub fn deser_structure_crate_error_invalid_s3_configuration_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -840,7 +823,6 @@ pub fn deser_structure_crate_error_invalid_sns_topic_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -887,7 +869,6 @@ pub fn deser_structure_crate_error_rule_does_not_exist_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -933,7 +914,6 @@ pub fn deser_structure_crate_error_invalid_template_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -982,7 +962,6 @@ pub fn deser_structure_crate_error_event_destination_does_not_exist_exception_xm
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -1044,7 +1023,6 @@ pub fn deser_structure_crate_error_tracking_options_does_not_exist_exception_xml
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -1090,7 +1068,6 @@ pub fn deser_structure_crate_error_cannot_delete_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -1136,7 +1113,6 @@ pub fn deser_operation_crate_operation_describe_active_receipt_rule_set(
     crate::output::describe_active_receipt_rule_set_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1197,7 +1173,6 @@ pub fn deser_operation_crate_operation_describe_configuration_set(
     crate::output::describe_configuration_set_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1286,7 +1261,6 @@ pub fn deser_operation_crate_operation_describe_receipt_rule(
     mut builder: crate::output::describe_receipt_rule_output::Builder,
 ) -> Result<crate::output::describe_receipt_rule_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1337,7 +1311,6 @@ pub fn deser_operation_crate_operation_describe_receipt_rule_set(
     crate::output::describe_receipt_rule_set_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1398,7 +1371,6 @@ pub fn deser_operation_crate_operation_get_account_sending_enabled(
     crate::output::get_account_sending_enabled_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1457,7 +1429,6 @@ pub fn deser_structure_crate_error_custom_verification_email_template_does_not_e
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -1503,7 +1474,6 @@ pub fn deser_operation_crate_operation_get_custom_verification_email_template(
     crate::output::get_custom_verification_email_template_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1622,7 +1592,6 @@ pub fn deser_operation_crate_operation_get_identity_dkim_attributes(
     crate::output::get_identity_dkim_attributes_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1673,7 +1642,6 @@ pub fn deser_operation_crate_operation_get_identity_mail_from_domain_attributes(
     crate::output::get_identity_mail_from_domain_attributes_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1724,7 +1692,6 @@ pub fn deser_operation_crate_operation_get_identity_notification_attributes(
     crate::output::get_identity_notification_attributes_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1773,7 +1740,6 @@ pub fn deser_operation_crate_operation_get_identity_policies(
     mut builder: crate::output::get_identity_policies_output::Builder,
 ) -> Result<crate::output::get_identity_policies_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1824,7 +1790,6 @@ pub fn deser_operation_crate_operation_get_identity_verification_attributes(
     crate::output::get_identity_verification_attributes_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1872,7 +1837,6 @@ pub fn deser_operation_crate_operation_get_send_quota(
     inp: &[u8],
     mut builder: crate::output::get_send_quota_output::Builder,
 ) -> Result<crate::output::get_send_quota_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1955,7 +1919,6 @@ pub fn deser_operation_crate_operation_get_send_statistics(
     inp: &[u8],
     mut builder: crate::output::get_send_statistics_output::Builder,
 ) -> Result<crate::output::get_send_statistics_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2009,7 +1972,6 @@ pub fn deser_structure_crate_error_template_does_not_exist_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2052,7 +2014,6 @@ pub fn deser_operation_crate_operation_get_template(
     inp: &[u8],
     mut builder: crate::output::get_template_output::Builder,
 ) -> Result<crate::output::get_template_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2101,7 +2062,6 @@ pub fn deser_operation_crate_operation_list_configuration_sets(
     mut builder: crate::output::list_configuration_sets_output::Builder,
 ) -> Result<crate::output::list_configuration_sets_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2165,7 +2125,6 @@ pub fn deser_operation_crate_operation_list_custom_verification_email_templates(
     crate::output::list_custom_verification_email_templates_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2226,7 +2185,6 @@ pub fn deser_operation_crate_operation_list_identities(
     inp: &[u8],
     mut builder: crate::output::list_identities_output::Builder,
 ) -> Result<crate::output::list_identities_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2288,7 +2246,6 @@ pub fn deser_operation_crate_operation_list_identity_policies(
     mut builder: crate::output::list_identity_policies_output::Builder,
 ) -> Result<crate::output::list_identity_policies_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2336,7 +2293,6 @@ pub fn deser_operation_crate_operation_list_receipt_filters(
     inp: &[u8],
     mut builder: crate::output::list_receipt_filters_output::Builder,
 ) -> Result<crate::output::list_receipt_filters_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2385,7 +2341,6 @@ pub fn deser_operation_crate_operation_list_receipt_rule_sets(
     mut builder: crate::output::list_receipt_rule_sets_output::Builder,
 ) -> Result<crate::output::list_receipt_rule_sets_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2446,7 +2401,6 @@ pub fn deser_operation_crate_operation_list_templates(
     inp: &[u8],
     mut builder: crate::output::list_templates_output::Builder,
 ) -> Result<crate::output::list_templates_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2510,7 +2464,6 @@ pub fn deser_operation_crate_operation_list_verified_email_addresses(
     crate::output::list_verified_email_addresses_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2564,7 +2517,6 @@ pub fn deser_structure_crate_error_invalid_delivery_options_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2597,7 +2549,6 @@ pub fn deser_structure_crate_error_invalid_policy_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2630,7 +2581,6 @@ pub fn deser_structure_crate_error_message_rejected_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2660,7 +2610,6 @@ pub fn deser_operation_crate_operation_send_bounce(
     inp: &[u8],
     mut builder: crate::output::send_bounce_output::Builder,
 ) -> Result<crate::output::send_bounce_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2715,7 +2664,6 @@ pub fn deser_structure_crate_error_account_sending_paused_exception_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2751,7 +2699,6 @@ pub fn deser_structure_crate_error_configuration_set_sending_paused_exception_xm
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2800,7 +2747,6 @@ pub fn deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_e
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2833,7 +2779,6 @@ pub fn deser_operation_crate_operation_send_bulk_templated_email(
     crate::output::send_bulk_templated_email_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2887,7 +2832,6 @@ pub fn deser_structure_crate_error_production_access_not_granted_exception_xml_e
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -2920,7 +2864,6 @@ pub fn deser_operation_crate_operation_send_custom_verification_email(
     crate::output::send_custom_verification_email_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2971,7 +2914,6 @@ pub fn deser_operation_crate_operation_send_email(
     inp: &[u8],
     mut builder: crate::output::send_email_output::Builder,
 ) -> Result<crate::output::send_email_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -3022,7 +2964,6 @@ pub fn deser_operation_crate_operation_send_raw_email(
     inp: &[u8],
     mut builder: crate::output::send_raw_email_output::Builder,
 ) -> Result<crate::output::send_raw_email_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -3073,7 +3014,6 @@ pub fn deser_operation_crate_operation_send_templated_email(
     inp: &[u8],
     mut builder: crate::output::send_templated_email_output::Builder,
 ) -> Result<crate::output::send_templated_email_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -3130,7 +3070,6 @@ pub fn deser_structure_crate_error_invalid_rendering_parameter_exception_xml_err
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -3179,7 +3118,6 @@ pub fn deser_structure_crate_error_missing_rendering_attribute_exception_xml_err
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
@@ -3222,7 +3160,6 @@ pub fn deser_operation_crate_operation_test_render_template(
     inp: &[u8],
     mut builder: crate::output::test_render_template_output::Builder,
 ) -> Result<crate::output::test_render_template_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -3273,7 +3210,6 @@ pub fn deser_operation_crate_operation_verify_domain_dkim(
     inp: &[u8],
     mut builder: crate::output::verify_domain_dkim_output::Builder,
 ) -> Result<crate::output::verify_domain_dkim_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -3322,7 +3258,6 @@ pub fn deser_operation_crate_operation_verify_domain_identity(
     mut builder: crate::output::verify_domain_identity_output::Builder,
 ) -> Result<crate::output::verify_domain_identity_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -6,7 +6,6 @@ pub fn add_headers_complete_attachment_upload(
     if let Some(inner_1) = &input.connection_token {
         let formatted_2 = AsRef::<str>::as_ref(inner_1);
         if !formatted_2.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -31,7 +30,6 @@ pub fn add_headers_create_participant_connection(
     if let Some(inner_3) = &input.participant_token {
         let formatted_4 = AsRef::<str>::as_ref(inner_3);
         if !formatted_4.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -56,7 +54,6 @@ pub fn add_headers_disconnect_participant(
     if let Some(inner_5) = &input.connection_token {
         let formatted_6 = AsRef::<str>::as_ref(inner_5);
         if !formatted_6.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -81,7 +78,6 @@ pub fn add_headers_get_attachment(
     if let Some(inner_7) = &input.connection_token {
         let formatted_8 = AsRef::<str>::as_ref(inner_7);
         if !formatted_8.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -106,7 +102,6 @@ pub fn add_headers_get_transcript(
     if let Some(inner_9) = &input.connection_token {
         let formatted_10 = AsRef::<str>::as_ref(inner_9);
         if !formatted_10.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -131,7 +126,6 @@ pub fn add_headers_send_event(
     if let Some(inner_11) = &input.connection_token {
         let formatted_12 = AsRef::<str>::as_ref(inner_11);
         if !formatted_12.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -156,7 +150,6 @@ pub fn add_headers_send_message(
     if let Some(inner_13) = &input.connection_token {
         let formatted_14 = AsRef::<str>::as_ref(inner_13);
         if !formatted_14.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -181,7 +174,6 @@ pub fn add_headers_start_attachment_upload(
     if let Some(inner_15) = &input.connection_token {
         let formatted_16 = AsRef::<str>::as_ref(inner_15);
         if !formatted_16.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {

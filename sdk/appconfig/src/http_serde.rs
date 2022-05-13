@@ -6,7 +6,6 @@ pub fn add_headers_create_hosted_configuration_version(
     if let Some(inner_1) = &input.description {
         let formatted_2 = AsRef::<str>::as_ref(inner_1);
         if !formatted_2.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -24,7 +23,6 @@ pub fn add_headers_create_hosted_configuration_version(
     if let Some(inner_3) = &input.content_type {
         let formatted_4 = AsRef::<str>::as_ref(inner_3);
         if !formatted_4.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -43,7 +41,6 @@ pub fn add_headers_create_hosted_configuration_version(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_5);
         let formatted_6 = encoder.encode();
         if !formatted_6.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {

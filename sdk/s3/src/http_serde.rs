@@ -6,7 +6,6 @@ pub fn add_headers_abort_multipart_upload(
     if let Some(inner_1) = &input.request_payer {
         let formatted_2 = AsRef::<str>::as_ref(inner_1);
         if !formatted_2.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -24,7 +23,6 @@ pub fn add_headers_abort_multipart_upload(
     if let Some(inner_3) = &input.expected_bucket_owner {
         let formatted_4 = AsRef::<str>::as_ref(inner_3);
         if !formatted_4.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -49,7 +47,6 @@ pub fn add_headers_complete_multipart_upload(
     if let Some(inner_5) = &input.request_payer {
         let formatted_6 = AsRef::<str>::as_ref(inner_5);
         if !formatted_6.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -67,7 +64,6 @@ pub fn add_headers_complete_multipart_upload(
     if let Some(inner_7) = &input.expected_bucket_owner {
         let formatted_8 = AsRef::<str>::as_ref(inner_7);
         if !formatted_8.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -92,7 +88,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_9) = &input.acl {
         let formatted_10 = AsRef::<str>::as_ref(inner_9);
         if !formatted_10.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -110,7 +105,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_11) = &input.cache_control {
         let formatted_12 = AsRef::<str>::as_ref(inner_11);
         if !formatted_12.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -128,7 +122,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_13) = &input.content_disposition {
         let formatted_14 = AsRef::<str>::as_ref(inner_13);
         if !formatted_14.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -146,7 +139,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_15) = &input.content_encoding {
         let formatted_16 = AsRef::<str>::as_ref(inner_15);
         if !formatted_16.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -164,7 +156,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_17) = &input.content_language {
         let formatted_18 = AsRef::<str>::as_ref(inner_17);
         if !formatted_18.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -182,7 +173,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_19) = &input.content_type {
         let formatted_20 = AsRef::<str>::as_ref(inner_19);
         if !formatted_20.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -200,7 +190,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_21) = &input.copy_source {
         let formatted_22 = AsRef::<str>::as_ref(inner_21);
         if !formatted_22.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -218,7 +207,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_23) = &input.copy_source_if_match {
         let formatted_24 = AsRef::<str>::as_ref(inner_23);
         if !formatted_24.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -236,7 +224,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_25) = &input.copy_source_if_modified_since {
         let formatted_26 = inner_25.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_26.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -254,7 +241,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_27) = &input.copy_source_if_none_match {
         let formatted_28 = AsRef::<str>::as_ref(inner_27);
         if !formatted_28.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -272,7 +258,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_29) = &input.copy_source_if_unmodified_since {
         let formatted_30 = inner_29.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_30.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_30;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -290,7 +275,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_31) = &input.expires {
         let formatted_32 = inner_31.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_32.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_32;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -308,7 +292,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_33) = &input.grant_full_control {
         let formatted_34 = AsRef::<str>::as_ref(inner_33);
         if !formatted_34.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_34;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -326,7 +309,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_35) = &input.grant_read {
         let formatted_36 = AsRef::<str>::as_ref(inner_35);
         if !formatted_36.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_36;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -344,7 +326,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_37) = &input.grant_read_acp {
         let formatted_38 = AsRef::<str>::as_ref(inner_37);
         if !formatted_38.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_38;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -362,7 +343,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_39) = &input.grant_write_acp {
         let formatted_40 = AsRef::<str>::as_ref(inner_39);
         if !formatted_40.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_40;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -380,7 +360,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_41) = &input.metadata_directive {
         let formatted_42 = AsRef::<str>::as_ref(inner_41);
         if !formatted_42.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_42;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -398,7 +377,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_43) = &input.tagging_directive {
         let formatted_44 = AsRef::<str>::as_ref(inner_43);
         if !formatted_44.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_44;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -416,7 +394,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_45) = &input.server_side_encryption {
         let formatted_46 = AsRef::<str>::as_ref(inner_45);
         if !formatted_46.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_46;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -434,7 +411,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_47) = &input.storage_class {
         let formatted_48 = AsRef::<str>::as_ref(inner_47);
         if !formatted_48.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_48;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -452,7 +428,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_49) = &input.website_redirect_location {
         let formatted_50 = AsRef::<str>::as_ref(inner_49);
         if !formatted_50.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_50;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -470,7 +445,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_51) = &input.sse_customer_algorithm {
         let formatted_52 = AsRef::<str>::as_ref(inner_51);
         if !formatted_52.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_52;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -491,7 +465,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_53) = &input.sse_customer_key {
         let formatted_54 = AsRef::<str>::as_ref(inner_53);
         if !formatted_54.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_54;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -509,7 +482,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_55) = &input.sse_customer_key_md5 {
         let formatted_56 = AsRef::<str>::as_ref(inner_55);
         if !formatted_56.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_56;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -530,7 +502,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_57) = &input.ssekms_key_id {
         let formatted_58 = AsRef::<str>::as_ref(inner_57);
         if !formatted_58.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_58;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -548,7 +519,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_59) = &input.ssekms_encryption_context {
         let formatted_60 = AsRef::<str>::as_ref(inner_59);
         if !formatted_60.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_60;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -567,7 +537,6 @@ pub fn add_headers_copy_object(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
         let formatted_61 = encoder.encode();
         if !formatted_61.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_61;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -588,7 +557,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_62) = &input.copy_source_sse_customer_algorithm {
         let formatted_63 = AsRef::<str>::as_ref(inner_62);
         if !formatted_63.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_63;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -609,7 +577,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_64) = &input.copy_source_sse_customer_key {
         let formatted_65 = AsRef::<str>::as_ref(inner_64);
         if !formatted_65.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_65;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -630,7 +597,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_66) = &input.copy_source_sse_customer_key_md5 {
         let formatted_67 = AsRef::<str>::as_ref(inner_66);
         if !formatted_67.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_67;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -651,7 +617,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_68) = &input.request_payer {
         let formatted_69 = AsRef::<str>::as_ref(inner_68);
         if !formatted_69.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_69;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -669,7 +634,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_70) = &input.tagging {
         let formatted_71 = AsRef::<str>::as_ref(inner_70);
         if !formatted_71.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_71;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -687,7 +651,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_72) = &input.object_lock_mode {
         let formatted_73 = AsRef::<str>::as_ref(inner_72);
         if !formatted_73.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_73;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -705,7 +668,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_74) = &input.object_lock_retain_until_date {
         let formatted_75 = inner_74.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_75.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_75;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -723,7 +685,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_76) = &input.object_lock_legal_hold_status {
         let formatted_77 = AsRef::<str>::as_ref(inner_76);
         if !formatted_77.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_77;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -741,7 +702,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_78) = &input.expected_bucket_owner {
         let formatted_79 = AsRef::<str>::as_ref(inner_78);
         if !formatted_79.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_79;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -759,7 +719,6 @@ pub fn add_headers_copy_object(
     if let Some(inner_80) = &input.expected_source_bucket_owner {
         let formatted_81 = AsRef::<str>::as_ref(inner_80);
         if !formatted_81.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_81;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -784,7 +743,6 @@ pub fn add_headers_copy_object(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            use std::convert::TryFrom;
             let header_value = AsRef::<str>::as_ref(v);
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -806,7 +764,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_83) = &input.acl {
         let formatted_84 = AsRef::<str>::as_ref(inner_83);
         if !formatted_84.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_84;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -824,7 +781,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_85) = &input.grant_full_control {
         let formatted_86 = AsRef::<str>::as_ref(inner_85);
         if !formatted_86.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_86;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -842,7 +798,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_87) = &input.grant_read {
         let formatted_88 = AsRef::<str>::as_ref(inner_87);
         if !formatted_88.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_88;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -860,7 +815,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_89) = &input.grant_read_acp {
         let formatted_90 = AsRef::<str>::as_ref(inner_89);
         if !formatted_90.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_90;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -878,7 +832,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_91) = &input.grant_write {
         let formatted_92 = AsRef::<str>::as_ref(inner_91);
         if !formatted_92.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_92;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -896,7 +849,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_93) = &input.grant_write_acp {
         let formatted_94 = AsRef::<str>::as_ref(inner_93);
         if !formatted_94.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_94;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -916,7 +868,6 @@ pub fn add_headers_create_bucket(
             aws_smithy_types::primitive::Encoder::from(input.object_lock_enabled_for_bucket);
         let formatted_95 = encoder.encode();
         if !formatted_95.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_95;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -934,7 +885,6 @@ pub fn add_headers_create_bucket(
     if let Some(inner_96) = &input.object_ownership {
         let formatted_97 = AsRef::<str>::as_ref(inner_96);
         if !formatted_97.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_97;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -959,7 +909,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_98) = &input.acl {
         let formatted_99 = AsRef::<str>::as_ref(inner_98);
         if !formatted_99.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_99;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -977,7 +926,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_100) = &input.cache_control {
         let formatted_101 = AsRef::<str>::as_ref(inner_100);
         if !formatted_101.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_101;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -995,7 +943,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_102) = &input.content_disposition {
         let formatted_103 = AsRef::<str>::as_ref(inner_102);
         if !formatted_103.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_103;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1013,7 +960,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_104) = &input.content_encoding {
         let formatted_105 = AsRef::<str>::as_ref(inner_104);
         if !formatted_105.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_105;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1031,7 +977,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_106) = &input.content_language {
         let formatted_107 = AsRef::<str>::as_ref(inner_106);
         if !formatted_107.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_107;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1049,7 +994,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_108) = &input.content_type {
         let formatted_109 = AsRef::<str>::as_ref(inner_108);
         if !formatted_109.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_109;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1067,7 +1011,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_110) = &input.expires {
         let formatted_111 = inner_110.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_111.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_111;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1085,7 +1028,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_112) = &input.grant_full_control {
         let formatted_113 = AsRef::<str>::as_ref(inner_112);
         if !formatted_113.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_113;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1103,7 +1045,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_114) = &input.grant_read {
         let formatted_115 = AsRef::<str>::as_ref(inner_114);
         if !formatted_115.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_115;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1121,7 +1062,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_116) = &input.grant_read_acp {
         let formatted_117 = AsRef::<str>::as_ref(inner_116);
         if !formatted_117.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_117;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1139,7 +1079,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_118) = &input.grant_write_acp {
         let formatted_119 = AsRef::<str>::as_ref(inner_118);
         if !formatted_119.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_119;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1157,7 +1096,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_120) = &input.server_side_encryption {
         let formatted_121 = AsRef::<str>::as_ref(inner_120);
         if !formatted_121.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_121;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1175,7 +1113,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_122) = &input.storage_class {
         let formatted_123 = AsRef::<str>::as_ref(inner_122);
         if !formatted_123.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_123;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1193,7 +1130,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_124) = &input.website_redirect_location {
         let formatted_125 = AsRef::<str>::as_ref(inner_124);
         if !formatted_125.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_125;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1211,7 +1147,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_126) = &input.sse_customer_algorithm {
         let formatted_127 = AsRef::<str>::as_ref(inner_126);
         if !formatted_127.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_127;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1232,7 +1167,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_128) = &input.sse_customer_key {
         let formatted_129 = AsRef::<str>::as_ref(inner_128);
         if !formatted_129.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_129;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1250,7 +1184,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_130) = &input.sse_customer_key_md5 {
         let formatted_131 = AsRef::<str>::as_ref(inner_130);
         if !formatted_131.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_131;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1271,7 +1204,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_132) = &input.ssekms_key_id {
         let formatted_133 = AsRef::<str>::as_ref(inner_132);
         if !formatted_133.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_133;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1289,7 +1221,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_134) = &input.ssekms_encryption_context {
         let formatted_135 = AsRef::<str>::as_ref(inner_134);
         if !formatted_135.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_135;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1308,7 +1239,6 @@ pub fn add_headers_create_multipart_upload(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
         let formatted_136 = encoder.encode();
         if !formatted_136.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_136;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1329,7 +1259,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_137) = &input.request_payer {
         let formatted_138 = AsRef::<str>::as_ref(inner_137);
         if !formatted_138.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_138;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1347,7 +1276,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_139) = &input.tagging {
         let formatted_140 = AsRef::<str>::as_ref(inner_139);
         if !formatted_140.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_140;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1365,7 +1293,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_141) = &input.object_lock_mode {
         let formatted_142 = AsRef::<str>::as_ref(inner_141);
         if !formatted_142.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_142;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1383,7 +1310,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_143) = &input.object_lock_retain_until_date {
         let formatted_144 = inner_143.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_144.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_144;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1401,7 +1327,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_145) = &input.object_lock_legal_hold_status {
         let formatted_146 = AsRef::<str>::as_ref(inner_145);
         if !formatted_146.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_146;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1419,7 +1344,6 @@ pub fn add_headers_create_multipart_upload(
     if let Some(inner_147) = &input.expected_bucket_owner {
         let formatted_148 = AsRef::<str>::as_ref(inner_147);
         if !formatted_148.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_148;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1444,7 +1368,6 @@ pub fn add_headers_create_multipart_upload(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            use std::convert::TryFrom;
             let header_value = AsRef::<str>::as_ref(v);
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1466,7 +1389,6 @@ pub fn add_headers_delete_bucket(
     if let Some(inner_150) = &input.expected_bucket_owner {
         let formatted_151 = AsRef::<str>::as_ref(inner_150);
         if !formatted_151.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_151;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1491,7 +1413,6 @@ pub fn add_headers_delete_bucket_analytics_configuration(
     if let Some(inner_152) = &input.expected_bucket_owner {
         let formatted_153 = AsRef::<str>::as_ref(inner_152);
         if !formatted_153.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_153;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1516,7 +1437,6 @@ pub fn add_headers_delete_bucket_cors(
     if let Some(inner_154) = &input.expected_bucket_owner {
         let formatted_155 = AsRef::<str>::as_ref(inner_154);
         if !formatted_155.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_155;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1541,7 +1461,6 @@ pub fn add_headers_delete_bucket_encryption(
     if let Some(inner_156) = &input.expected_bucket_owner {
         let formatted_157 = AsRef::<str>::as_ref(inner_156);
         if !formatted_157.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_157;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1566,7 +1485,6 @@ pub fn add_headers_delete_bucket_inventory_configuration(
     if let Some(inner_158) = &input.expected_bucket_owner {
         let formatted_159 = AsRef::<str>::as_ref(inner_158);
         if !formatted_159.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_159;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1591,7 +1509,6 @@ pub fn add_headers_delete_bucket_lifecycle(
     if let Some(inner_160) = &input.expected_bucket_owner {
         let formatted_161 = AsRef::<str>::as_ref(inner_160);
         if !formatted_161.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_161;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1616,7 +1533,6 @@ pub fn add_headers_delete_bucket_metrics_configuration(
     if let Some(inner_162) = &input.expected_bucket_owner {
         let formatted_163 = AsRef::<str>::as_ref(inner_162);
         if !formatted_163.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_163;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1641,7 +1557,6 @@ pub fn add_headers_delete_bucket_ownership_controls(
     if let Some(inner_164) = &input.expected_bucket_owner {
         let formatted_165 = AsRef::<str>::as_ref(inner_164);
         if !formatted_165.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_165;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1666,7 +1581,6 @@ pub fn add_headers_delete_bucket_policy(
     if let Some(inner_166) = &input.expected_bucket_owner {
         let formatted_167 = AsRef::<str>::as_ref(inner_166);
         if !formatted_167.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_167;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1691,7 +1605,6 @@ pub fn add_headers_delete_bucket_replication(
     if let Some(inner_168) = &input.expected_bucket_owner {
         let formatted_169 = AsRef::<str>::as_ref(inner_168);
         if !formatted_169.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_169;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1716,7 +1629,6 @@ pub fn add_headers_delete_bucket_tagging(
     if let Some(inner_170) = &input.expected_bucket_owner {
         let formatted_171 = AsRef::<str>::as_ref(inner_170);
         if !formatted_171.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_171;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1741,7 +1653,6 @@ pub fn add_headers_delete_bucket_website(
     if let Some(inner_172) = &input.expected_bucket_owner {
         let formatted_173 = AsRef::<str>::as_ref(inner_172);
         if !formatted_173.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_173;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1766,7 +1677,6 @@ pub fn add_headers_delete_object(
     if let Some(inner_174) = &input.mfa {
         let formatted_175 = AsRef::<str>::as_ref(inner_174);
         if !formatted_175.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_175;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1784,7 +1694,6 @@ pub fn add_headers_delete_object(
     if let Some(inner_176) = &input.request_payer {
         let formatted_177 = AsRef::<str>::as_ref(inner_176);
         if !formatted_177.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_177;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1804,7 +1713,6 @@ pub fn add_headers_delete_object(
             aws_smithy_types::primitive::Encoder::from(input.bypass_governance_retention);
         let formatted_178 = encoder.encode();
         if !formatted_178.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_178;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1822,7 +1730,6 @@ pub fn add_headers_delete_object(
     if let Some(inner_179) = &input.expected_bucket_owner {
         let formatted_180 = AsRef::<str>::as_ref(inner_179);
         if !formatted_180.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_180;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1847,7 +1754,6 @@ pub fn add_headers_delete_objects(
     if let Some(inner_181) = &input.mfa {
         let formatted_182 = AsRef::<str>::as_ref(inner_181);
         if !formatted_182.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_182;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1865,7 +1771,6 @@ pub fn add_headers_delete_objects(
     if let Some(inner_183) = &input.request_payer {
         let formatted_184 = AsRef::<str>::as_ref(inner_183);
         if !formatted_184.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_184;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1885,7 +1790,6 @@ pub fn add_headers_delete_objects(
             aws_smithy_types::primitive::Encoder::from(input.bypass_governance_retention);
         let formatted_185 = encoder.encode();
         if !formatted_185.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_185;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1903,7 +1807,6 @@ pub fn add_headers_delete_objects(
     if let Some(inner_186) = &input.expected_bucket_owner {
         let formatted_187 = AsRef::<str>::as_ref(inner_186);
         if !formatted_187.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_187;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1928,7 +1831,6 @@ pub fn add_headers_delete_object_tagging(
     if let Some(inner_188) = &input.expected_bucket_owner {
         let formatted_189 = AsRef::<str>::as_ref(inner_188);
         if !formatted_189.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_189;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1953,7 +1855,6 @@ pub fn add_headers_delete_public_access_block(
     if let Some(inner_190) = &input.expected_bucket_owner {
         let formatted_191 = AsRef::<str>::as_ref(inner_190);
         if !formatted_191.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_191;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -1978,7 +1879,6 @@ pub fn add_headers_get_bucket_accelerate_configuration(
     if let Some(inner_192) = &input.expected_bucket_owner {
         let formatted_193 = AsRef::<str>::as_ref(inner_192);
         if !formatted_193.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_193;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2003,7 +1903,6 @@ pub fn add_headers_get_bucket_acl(
     if let Some(inner_194) = &input.expected_bucket_owner {
         let formatted_195 = AsRef::<str>::as_ref(inner_194);
         if !formatted_195.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_195;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2028,7 +1927,6 @@ pub fn add_headers_get_bucket_analytics_configuration(
     if let Some(inner_196) = &input.expected_bucket_owner {
         let formatted_197 = AsRef::<str>::as_ref(inner_196);
         if !formatted_197.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_197;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2053,7 +1951,6 @@ pub fn add_headers_get_bucket_cors(
     if let Some(inner_198) = &input.expected_bucket_owner {
         let formatted_199 = AsRef::<str>::as_ref(inner_198);
         if !formatted_199.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_199;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2078,7 +1975,6 @@ pub fn add_headers_get_bucket_encryption(
     if let Some(inner_200) = &input.expected_bucket_owner {
         let formatted_201 = AsRef::<str>::as_ref(inner_200);
         if !formatted_201.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_201;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2103,7 +1999,6 @@ pub fn add_headers_get_bucket_inventory_configuration(
     if let Some(inner_202) = &input.expected_bucket_owner {
         let formatted_203 = AsRef::<str>::as_ref(inner_202);
         if !formatted_203.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_203;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2128,7 +2023,6 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
     if let Some(inner_204) = &input.expected_bucket_owner {
         let formatted_205 = AsRef::<str>::as_ref(inner_204);
         if !formatted_205.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_205;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2153,7 +2047,6 @@ pub fn add_headers_get_bucket_location(
     if let Some(inner_206) = &input.expected_bucket_owner {
         let formatted_207 = AsRef::<str>::as_ref(inner_206);
         if !formatted_207.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_207;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2178,7 +2071,6 @@ pub fn add_headers_get_bucket_logging(
     if let Some(inner_208) = &input.expected_bucket_owner {
         let formatted_209 = AsRef::<str>::as_ref(inner_208);
         if !formatted_209.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_209;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2203,7 +2095,6 @@ pub fn add_headers_get_bucket_metrics_configuration(
     if let Some(inner_210) = &input.expected_bucket_owner {
         let formatted_211 = AsRef::<str>::as_ref(inner_210);
         if !formatted_211.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_211;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2228,7 +2119,6 @@ pub fn add_headers_get_bucket_notification_configuration(
     if let Some(inner_212) = &input.expected_bucket_owner {
         let formatted_213 = AsRef::<str>::as_ref(inner_212);
         if !formatted_213.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_213;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2253,7 +2143,6 @@ pub fn add_headers_get_bucket_ownership_controls(
     if let Some(inner_214) = &input.expected_bucket_owner {
         let formatted_215 = AsRef::<str>::as_ref(inner_214);
         if !formatted_215.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_215;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2278,7 +2167,6 @@ pub fn add_headers_get_bucket_policy(
     if let Some(inner_216) = &input.expected_bucket_owner {
         let formatted_217 = AsRef::<str>::as_ref(inner_216);
         if !formatted_217.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_217;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2303,7 +2191,6 @@ pub fn add_headers_get_bucket_policy_status(
     if let Some(inner_218) = &input.expected_bucket_owner {
         let formatted_219 = AsRef::<str>::as_ref(inner_218);
         if !formatted_219.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_219;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2328,7 +2215,6 @@ pub fn add_headers_get_bucket_replication(
     if let Some(inner_220) = &input.expected_bucket_owner {
         let formatted_221 = AsRef::<str>::as_ref(inner_220);
         if !formatted_221.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_221;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2353,7 +2239,6 @@ pub fn add_headers_get_bucket_request_payment(
     if let Some(inner_222) = &input.expected_bucket_owner {
         let formatted_223 = AsRef::<str>::as_ref(inner_222);
         if !formatted_223.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_223;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2378,7 +2263,6 @@ pub fn add_headers_get_bucket_tagging(
     if let Some(inner_224) = &input.expected_bucket_owner {
         let formatted_225 = AsRef::<str>::as_ref(inner_224);
         if !formatted_225.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_225;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2403,7 +2287,6 @@ pub fn add_headers_get_bucket_versioning(
     if let Some(inner_226) = &input.expected_bucket_owner {
         let formatted_227 = AsRef::<str>::as_ref(inner_226);
         if !formatted_227.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_227;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2428,7 +2311,6 @@ pub fn add_headers_get_bucket_website(
     if let Some(inner_228) = &input.expected_bucket_owner {
         let formatted_229 = AsRef::<str>::as_ref(inner_228);
         if !formatted_229.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_229;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2453,7 +2335,6 @@ pub fn add_headers_get_object(
     if let Some(inner_230) = &input.if_match {
         let formatted_231 = AsRef::<str>::as_ref(inner_230);
         if !formatted_231.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_231;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2471,7 +2352,6 @@ pub fn add_headers_get_object(
     if let Some(inner_232) = &input.if_modified_since {
         let formatted_233 = inner_232.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_233.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_233;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2489,7 +2369,6 @@ pub fn add_headers_get_object(
     if let Some(inner_234) = &input.if_none_match {
         let formatted_235 = AsRef::<str>::as_ref(inner_234);
         if !formatted_235.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_235;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2507,7 +2386,6 @@ pub fn add_headers_get_object(
     if let Some(inner_236) = &input.if_unmodified_since {
         let formatted_237 = inner_236.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_237.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_237;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2525,7 +2403,6 @@ pub fn add_headers_get_object(
     if let Some(inner_238) = &input.range {
         let formatted_239 = AsRef::<str>::as_ref(inner_238);
         if !formatted_239.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_239;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2543,7 +2420,6 @@ pub fn add_headers_get_object(
     if let Some(inner_240) = &input.sse_customer_algorithm {
         let formatted_241 = AsRef::<str>::as_ref(inner_240);
         if !formatted_241.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_241;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2564,7 +2440,6 @@ pub fn add_headers_get_object(
     if let Some(inner_242) = &input.sse_customer_key {
         let formatted_243 = AsRef::<str>::as_ref(inner_242);
         if !formatted_243.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_243;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2582,7 +2457,6 @@ pub fn add_headers_get_object(
     if let Some(inner_244) = &input.sse_customer_key_md5 {
         let formatted_245 = AsRef::<str>::as_ref(inner_244);
         if !formatted_245.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_245;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2603,7 +2477,6 @@ pub fn add_headers_get_object(
     if let Some(inner_246) = &input.request_payer {
         let formatted_247 = AsRef::<str>::as_ref(inner_246);
         if !formatted_247.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_247;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2621,7 +2494,6 @@ pub fn add_headers_get_object(
     if let Some(inner_248) = &input.expected_bucket_owner {
         let formatted_249 = AsRef::<str>::as_ref(inner_248);
         if !formatted_249.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_249;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2646,7 +2518,6 @@ pub fn add_headers_get_object_acl(
     if let Some(inner_250) = &input.request_payer {
         let formatted_251 = AsRef::<str>::as_ref(inner_250);
         if !formatted_251.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_251;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2664,7 +2535,6 @@ pub fn add_headers_get_object_acl(
     if let Some(inner_252) = &input.expected_bucket_owner {
         let formatted_253 = AsRef::<str>::as_ref(inner_252);
         if !formatted_253.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_253;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2689,7 +2559,6 @@ pub fn add_headers_get_object_legal_hold(
     if let Some(inner_254) = &input.request_payer {
         let formatted_255 = AsRef::<str>::as_ref(inner_254);
         if !formatted_255.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_255;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2707,7 +2576,6 @@ pub fn add_headers_get_object_legal_hold(
     if let Some(inner_256) = &input.expected_bucket_owner {
         let formatted_257 = AsRef::<str>::as_ref(inner_256);
         if !formatted_257.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_257;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2732,7 +2600,6 @@ pub fn add_headers_get_object_lock_configuration(
     if let Some(inner_258) = &input.expected_bucket_owner {
         let formatted_259 = AsRef::<str>::as_ref(inner_258);
         if !formatted_259.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_259;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2757,7 +2624,6 @@ pub fn add_headers_get_object_retention(
     if let Some(inner_260) = &input.request_payer {
         let formatted_261 = AsRef::<str>::as_ref(inner_260);
         if !formatted_261.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_261;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2775,7 +2641,6 @@ pub fn add_headers_get_object_retention(
     if let Some(inner_262) = &input.expected_bucket_owner {
         let formatted_263 = AsRef::<str>::as_ref(inner_262);
         if !formatted_263.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_263;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2800,7 +2665,6 @@ pub fn add_headers_get_object_tagging(
     if let Some(inner_264) = &input.expected_bucket_owner {
         let formatted_265 = AsRef::<str>::as_ref(inner_264);
         if !formatted_265.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_265;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2818,7 +2682,6 @@ pub fn add_headers_get_object_tagging(
     if let Some(inner_266) = &input.request_payer {
         let formatted_267 = AsRef::<str>::as_ref(inner_266);
         if !formatted_267.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_267;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2843,7 +2706,6 @@ pub fn add_headers_get_object_torrent(
     if let Some(inner_268) = &input.request_payer {
         let formatted_269 = AsRef::<str>::as_ref(inner_268);
         if !formatted_269.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_269;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2861,7 +2723,6 @@ pub fn add_headers_get_object_torrent(
     if let Some(inner_270) = &input.expected_bucket_owner {
         let formatted_271 = AsRef::<str>::as_ref(inner_270);
         if !formatted_271.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_271;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2886,7 +2747,6 @@ pub fn add_headers_get_public_access_block(
     if let Some(inner_272) = &input.expected_bucket_owner {
         let formatted_273 = AsRef::<str>::as_ref(inner_272);
         if !formatted_273.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_273;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2911,7 +2771,6 @@ pub fn add_headers_head_bucket(
     if let Some(inner_274) = &input.expected_bucket_owner {
         let formatted_275 = AsRef::<str>::as_ref(inner_274);
         if !formatted_275.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_275;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2936,7 +2795,6 @@ pub fn add_headers_head_object(
     if let Some(inner_276) = &input.if_match {
         let formatted_277 = AsRef::<str>::as_ref(inner_276);
         if !formatted_277.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_277;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2954,7 +2812,6 @@ pub fn add_headers_head_object(
     if let Some(inner_278) = &input.if_modified_since {
         let formatted_279 = inner_278.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_279.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_279;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2972,7 +2829,6 @@ pub fn add_headers_head_object(
     if let Some(inner_280) = &input.if_none_match {
         let formatted_281 = AsRef::<str>::as_ref(inner_280);
         if !formatted_281.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_281;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -2990,7 +2846,6 @@ pub fn add_headers_head_object(
     if let Some(inner_282) = &input.if_unmodified_since {
         let formatted_283 = inner_282.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_283.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_283;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3008,7 +2863,6 @@ pub fn add_headers_head_object(
     if let Some(inner_284) = &input.range {
         let formatted_285 = AsRef::<str>::as_ref(inner_284);
         if !formatted_285.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_285;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3026,7 +2880,6 @@ pub fn add_headers_head_object(
     if let Some(inner_286) = &input.sse_customer_algorithm {
         let formatted_287 = AsRef::<str>::as_ref(inner_286);
         if !formatted_287.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_287;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3047,7 +2900,6 @@ pub fn add_headers_head_object(
     if let Some(inner_288) = &input.sse_customer_key {
         let formatted_289 = AsRef::<str>::as_ref(inner_288);
         if !formatted_289.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_289;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3065,7 +2917,6 @@ pub fn add_headers_head_object(
     if let Some(inner_290) = &input.sse_customer_key_md5 {
         let formatted_291 = AsRef::<str>::as_ref(inner_290);
         if !formatted_291.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_291;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3086,7 +2937,6 @@ pub fn add_headers_head_object(
     if let Some(inner_292) = &input.request_payer {
         let formatted_293 = AsRef::<str>::as_ref(inner_292);
         if !formatted_293.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_293;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3104,7 +2954,6 @@ pub fn add_headers_head_object(
     if let Some(inner_294) = &input.expected_bucket_owner {
         let formatted_295 = AsRef::<str>::as_ref(inner_294);
         if !formatted_295.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_295;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3129,7 +2978,6 @@ pub fn add_headers_list_bucket_analytics_configurations(
     if let Some(inner_296) = &input.expected_bucket_owner {
         let formatted_297 = AsRef::<str>::as_ref(inner_296);
         if !formatted_297.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_297;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3154,7 +3002,6 @@ pub fn add_headers_list_bucket_inventory_configurations(
     if let Some(inner_298) = &input.expected_bucket_owner {
         let formatted_299 = AsRef::<str>::as_ref(inner_298);
         if !formatted_299.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_299;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3179,7 +3026,6 @@ pub fn add_headers_list_bucket_metrics_configurations(
     if let Some(inner_300) = &input.expected_bucket_owner {
         let formatted_301 = AsRef::<str>::as_ref(inner_300);
         if !formatted_301.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_301;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3204,7 +3050,6 @@ pub fn add_headers_list_multipart_uploads(
     if let Some(inner_302) = &input.expected_bucket_owner {
         let formatted_303 = AsRef::<str>::as_ref(inner_302);
         if !formatted_303.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_303;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3229,7 +3074,6 @@ pub fn add_headers_list_objects(
     if let Some(inner_304) = &input.request_payer {
         let formatted_305 = AsRef::<str>::as_ref(inner_304);
         if !formatted_305.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_305;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3247,7 +3091,6 @@ pub fn add_headers_list_objects(
     if let Some(inner_306) = &input.expected_bucket_owner {
         let formatted_307 = AsRef::<str>::as_ref(inner_306);
         if !formatted_307.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_307;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3272,7 +3115,6 @@ pub fn add_headers_list_objects_v2(
     if let Some(inner_308) = &input.request_payer {
         let formatted_309 = AsRef::<str>::as_ref(inner_308);
         if !formatted_309.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_309;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3290,7 +3132,6 @@ pub fn add_headers_list_objects_v2(
     if let Some(inner_310) = &input.expected_bucket_owner {
         let formatted_311 = AsRef::<str>::as_ref(inner_310);
         if !formatted_311.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_311;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3315,7 +3156,6 @@ pub fn add_headers_list_object_versions(
     if let Some(inner_312) = &input.expected_bucket_owner {
         let formatted_313 = AsRef::<str>::as_ref(inner_312);
         if !formatted_313.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_313;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3340,7 +3180,6 @@ pub fn add_headers_list_parts(
     if let Some(inner_314) = &input.request_payer {
         let formatted_315 = AsRef::<str>::as_ref(inner_314);
         if !formatted_315.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_315;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3358,7 +3197,6 @@ pub fn add_headers_list_parts(
     if let Some(inner_316) = &input.expected_bucket_owner {
         let formatted_317 = AsRef::<str>::as_ref(inner_316);
         if !formatted_317.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_317;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3383,7 +3221,6 @@ pub fn add_headers_put_bucket_accelerate_configuration(
     if let Some(inner_318) = &input.expected_bucket_owner {
         let formatted_319 = AsRef::<str>::as_ref(inner_318);
         if !formatted_319.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_319;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3408,7 +3245,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_320) = &input.acl {
         let formatted_321 = AsRef::<str>::as_ref(inner_320);
         if !formatted_321.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_321;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3426,7 +3262,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_322) = &input.content_md5 {
         let formatted_323 = AsRef::<str>::as_ref(inner_322);
         if !formatted_323.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_323;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3444,7 +3279,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_324) = &input.grant_full_control {
         let formatted_325 = AsRef::<str>::as_ref(inner_324);
         if !formatted_325.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_325;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3462,7 +3296,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_326) = &input.grant_read {
         let formatted_327 = AsRef::<str>::as_ref(inner_326);
         if !formatted_327.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_327;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3480,7 +3313,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_328) = &input.grant_read_acp {
         let formatted_329 = AsRef::<str>::as_ref(inner_328);
         if !formatted_329.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_329;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3498,7 +3330,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_330) = &input.grant_write {
         let formatted_331 = AsRef::<str>::as_ref(inner_330);
         if !formatted_331.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_331;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3516,7 +3347,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_332) = &input.grant_write_acp {
         let formatted_333 = AsRef::<str>::as_ref(inner_332);
         if !formatted_333.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_333;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3534,7 +3364,6 @@ pub fn add_headers_put_bucket_acl(
     if let Some(inner_334) = &input.expected_bucket_owner {
         let formatted_335 = AsRef::<str>::as_ref(inner_334);
         if !formatted_335.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_335;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3559,7 +3388,6 @@ pub fn add_headers_put_bucket_analytics_configuration(
     if let Some(inner_336) = &input.expected_bucket_owner {
         let formatted_337 = AsRef::<str>::as_ref(inner_336);
         if !formatted_337.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_337;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3584,7 +3412,6 @@ pub fn add_headers_put_bucket_cors(
     if let Some(inner_338) = &input.content_md5 {
         let formatted_339 = AsRef::<str>::as_ref(inner_338);
         if !formatted_339.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_339;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3602,7 +3429,6 @@ pub fn add_headers_put_bucket_cors(
     if let Some(inner_340) = &input.expected_bucket_owner {
         let formatted_341 = AsRef::<str>::as_ref(inner_340);
         if !formatted_341.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_341;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3627,7 +3453,6 @@ pub fn add_headers_put_bucket_encryption(
     if let Some(inner_342) = &input.content_md5 {
         let formatted_343 = AsRef::<str>::as_ref(inner_342);
         if !formatted_343.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_343;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3645,7 +3470,6 @@ pub fn add_headers_put_bucket_encryption(
     if let Some(inner_344) = &input.expected_bucket_owner {
         let formatted_345 = AsRef::<str>::as_ref(inner_344);
         if !formatted_345.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_345;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3670,7 +3494,6 @@ pub fn add_headers_put_bucket_inventory_configuration(
     if let Some(inner_346) = &input.expected_bucket_owner {
         let formatted_347 = AsRef::<str>::as_ref(inner_346);
         if !formatted_347.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_347;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3695,7 +3518,6 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
     if let Some(inner_348) = &input.expected_bucket_owner {
         let formatted_349 = AsRef::<str>::as_ref(inner_348);
         if !formatted_349.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_349;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3720,7 +3542,6 @@ pub fn add_headers_put_bucket_logging(
     if let Some(inner_350) = &input.content_md5 {
         let formatted_351 = AsRef::<str>::as_ref(inner_350);
         if !formatted_351.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_351;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3738,7 +3559,6 @@ pub fn add_headers_put_bucket_logging(
     if let Some(inner_352) = &input.expected_bucket_owner {
         let formatted_353 = AsRef::<str>::as_ref(inner_352);
         if !formatted_353.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_353;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3763,7 +3583,6 @@ pub fn add_headers_put_bucket_metrics_configuration(
     if let Some(inner_354) = &input.expected_bucket_owner {
         let formatted_355 = AsRef::<str>::as_ref(inner_354);
         if !formatted_355.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_355;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3788,7 +3607,6 @@ pub fn add_headers_put_bucket_notification_configuration(
     if let Some(inner_356) = &input.expected_bucket_owner {
         let formatted_357 = AsRef::<str>::as_ref(inner_356);
         if !formatted_357.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_357;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3808,7 +3626,6 @@ pub fn add_headers_put_bucket_notification_configuration(
             aws_smithy_types::primitive::Encoder::from(input.skip_destination_validation);
         let formatted_358 = encoder.encode();
         if !formatted_358.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_358;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3833,7 +3650,6 @@ pub fn add_headers_put_bucket_ownership_controls(
     if let Some(inner_359) = &input.content_md5 {
         let formatted_360 = AsRef::<str>::as_ref(inner_359);
         if !formatted_360.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_360;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3851,7 +3667,6 @@ pub fn add_headers_put_bucket_ownership_controls(
     if let Some(inner_361) = &input.expected_bucket_owner {
         let formatted_362 = AsRef::<str>::as_ref(inner_361);
         if !formatted_362.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_362;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3876,7 +3691,6 @@ pub fn add_headers_put_bucket_policy(
     if let Some(inner_363) = &input.content_md5 {
         let formatted_364 = AsRef::<str>::as_ref(inner_363);
         if !formatted_364.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_364;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3896,7 +3710,6 @@ pub fn add_headers_put_bucket_policy(
             aws_smithy_types::primitive::Encoder::from(input.confirm_remove_self_bucket_access);
         let formatted_365 = encoder.encode();
         if !formatted_365.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_365;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3914,7 +3727,6 @@ pub fn add_headers_put_bucket_policy(
     if let Some(inner_366) = &input.expected_bucket_owner {
         let formatted_367 = AsRef::<str>::as_ref(inner_366);
         if !formatted_367.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_367;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3939,7 +3751,6 @@ pub fn add_headers_put_bucket_replication(
     if let Some(inner_368) = &input.content_md5 {
         let formatted_369 = AsRef::<str>::as_ref(inner_368);
         if !formatted_369.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_369;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3957,7 +3768,6 @@ pub fn add_headers_put_bucket_replication(
     if let Some(inner_370) = &input.token {
         let formatted_371 = AsRef::<str>::as_ref(inner_370);
         if !formatted_371.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_371;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -3975,7 +3785,6 @@ pub fn add_headers_put_bucket_replication(
     if let Some(inner_372) = &input.expected_bucket_owner {
         let formatted_373 = AsRef::<str>::as_ref(inner_372);
         if !formatted_373.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_373;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4000,7 +3809,6 @@ pub fn add_headers_put_bucket_request_payment(
     if let Some(inner_374) = &input.content_md5 {
         let formatted_375 = AsRef::<str>::as_ref(inner_374);
         if !formatted_375.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_375;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4018,7 +3826,6 @@ pub fn add_headers_put_bucket_request_payment(
     if let Some(inner_376) = &input.expected_bucket_owner {
         let formatted_377 = AsRef::<str>::as_ref(inner_376);
         if !formatted_377.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_377;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4043,7 +3850,6 @@ pub fn add_headers_put_bucket_tagging(
     if let Some(inner_378) = &input.content_md5 {
         let formatted_379 = AsRef::<str>::as_ref(inner_378);
         if !formatted_379.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_379;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4061,7 +3867,6 @@ pub fn add_headers_put_bucket_tagging(
     if let Some(inner_380) = &input.expected_bucket_owner {
         let formatted_381 = AsRef::<str>::as_ref(inner_380);
         if !formatted_381.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_381;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4086,7 +3891,6 @@ pub fn add_headers_put_bucket_versioning(
     if let Some(inner_382) = &input.content_md5 {
         let formatted_383 = AsRef::<str>::as_ref(inner_382);
         if !formatted_383.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_383;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4104,7 +3908,6 @@ pub fn add_headers_put_bucket_versioning(
     if let Some(inner_384) = &input.mfa {
         let formatted_385 = AsRef::<str>::as_ref(inner_384);
         if !formatted_385.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_385;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4122,7 +3925,6 @@ pub fn add_headers_put_bucket_versioning(
     if let Some(inner_386) = &input.expected_bucket_owner {
         let formatted_387 = AsRef::<str>::as_ref(inner_386);
         if !formatted_387.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_387;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4147,7 +3949,6 @@ pub fn add_headers_put_bucket_website(
     if let Some(inner_388) = &input.content_md5 {
         let formatted_389 = AsRef::<str>::as_ref(inner_388);
         if !formatted_389.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_389;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4165,7 +3966,6 @@ pub fn add_headers_put_bucket_website(
     if let Some(inner_390) = &input.expected_bucket_owner {
         let formatted_391 = AsRef::<str>::as_ref(inner_390);
         if !formatted_391.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_391;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4190,7 +3990,6 @@ pub fn add_headers_put_object(
     if let Some(inner_392) = &input.acl {
         let formatted_393 = AsRef::<str>::as_ref(inner_392);
         if !formatted_393.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_393;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4208,7 +4007,6 @@ pub fn add_headers_put_object(
     if let Some(inner_394) = &input.cache_control {
         let formatted_395 = AsRef::<str>::as_ref(inner_394);
         if !formatted_395.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_395;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4226,7 +4024,6 @@ pub fn add_headers_put_object(
     if let Some(inner_396) = &input.content_disposition {
         let formatted_397 = AsRef::<str>::as_ref(inner_396);
         if !formatted_397.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_397;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4244,7 +4041,6 @@ pub fn add_headers_put_object(
     if let Some(inner_398) = &input.content_encoding {
         let formatted_399 = AsRef::<str>::as_ref(inner_398);
         if !formatted_399.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_399;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4262,7 +4058,6 @@ pub fn add_headers_put_object(
     if let Some(inner_400) = &input.content_language {
         let formatted_401 = AsRef::<str>::as_ref(inner_400);
         if !formatted_401.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_401;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4281,7 +4076,6 @@ pub fn add_headers_put_object(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.content_length);
         let formatted_402 = encoder.encode();
         if !formatted_402.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_402;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4299,7 +4093,6 @@ pub fn add_headers_put_object(
     if let Some(inner_403) = &input.content_md5 {
         let formatted_404 = AsRef::<str>::as_ref(inner_403);
         if !formatted_404.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_404;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4317,7 +4110,6 @@ pub fn add_headers_put_object(
     if let Some(inner_405) = &input.content_type {
         let formatted_406 = AsRef::<str>::as_ref(inner_405);
         if !formatted_406.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_406;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4335,7 +4127,6 @@ pub fn add_headers_put_object(
     if let Some(inner_407) = &input.expires {
         let formatted_408 = inner_407.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_408.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_408;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4353,7 +4144,6 @@ pub fn add_headers_put_object(
     if let Some(inner_409) = &input.grant_full_control {
         let formatted_410 = AsRef::<str>::as_ref(inner_409);
         if !formatted_410.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_410;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4371,7 +4161,6 @@ pub fn add_headers_put_object(
     if let Some(inner_411) = &input.grant_read {
         let formatted_412 = AsRef::<str>::as_ref(inner_411);
         if !formatted_412.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_412;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4389,7 +4178,6 @@ pub fn add_headers_put_object(
     if let Some(inner_413) = &input.grant_read_acp {
         let formatted_414 = AsRef::<str>::as_ref(inner_413);
         if !formatted_414.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_414;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4407,7 +4195,6 @@ pub fn add_headers_put_object(
     if let Some(inner_415) = &input.grant_write_acp {
         let formatted_416 = AsRef::<str>::as_ref(inner_415);
         if !formatted_416.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_416;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4425,7 +4212,6 @@ pub fn add_headers_put_object(
     if let Some(inner_417) = &input.server_side_encryption {
         let formatted_418 = AsRef::<str>::as_ref(inner_417);
         if !formatted_418.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_418;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4443,7 +4229,6 @@ pub fn add_headers_put_object(
     if let Some(inner_419) = &input.storage_class {
         let formatted_420 = AsRef::<str>::as_ref(inner_419);
         if !formatted_420.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_420;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4461,7 +4246,6 @@ pub fn add_headers_put_object(
     if let Some(inner_421) = &input.website_redirect_location {
         let formatted_422 = AsRef::<str>::as_ref(inner_421);
         if !formatted_422.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_422;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4479,7 +4263,6 @@ pub fn add_headers_put_object(
     if let Some(inner_423) = &input.sse_customer_algorithm {
         let formatted_424 = AsRef::<str>::as_ref(inner_423);
         if !formatted_424.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_424;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4500,7 +4283,6 @@ pub fn add_headers_put_object(
     if let Some(inner_425) = &input.sse_customer_key {
         let formatted_426 = AsRef::<str>::as_ref(inner_425);
         if !formatted_426.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_426;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4518,7 +4300,6 @@ pub fn add_headers_put_object(
     if let Some(inner_427) = &input.sse_customer_key_md5 {
         let formatted_428 = AsRef::<str>::as_ref(inner_427);
         if !formatted_428.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_428;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4539,7 +4320,6 @@ pub fn add_headers_put_object(
     if let Some(inner_429) = &input.ssekms_key_id {
         let formatted_430 = AsRef::<str>::as_ref(inner_429);
         if !formatted_430.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_430;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4557,7 +4337,6 @@ pub fn add_headers_put_object(
     if let Some(inner_431) = &input.ssekms_encryption_context {
         let formatted_432 = AsRef::<str>::as_ref(inner_431);
         if !formatted_432.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_432;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4576,7 +4355,6 @@ pub fn add_headers_put_object(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
         let formatted_433 = encoder.encode();
         if !formatted_433.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_433;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4597,7 +4375,6 @@ pub fn add_headers_put_object(
     if let Some(inner_434) = &input.request_payer {
         let formatted_435 = AsRef::<str>::as_ref(inner_434);
         if !formatted_435.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_435;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4615,7 +4392,6 @@ pub fn add_headers_put_object(
     if let Some(inner_436) = &input.tagging {
         let formatted_437 = AsRef::<str>::as_ref(inner_436);
         if !formatted_437.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_437;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4633,7 +4409,6 @@ pub fn add_headers_put_object(
     if let Some(inner_438) = &input.object_lock_mode {
         let formatted_439 = AsRef::<str>::as_ref(inner_438);
         if !formatted_439.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_439;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4651,7 +4426,6 @@ pub fn add_headers_put_object(
     if let Some(inner_440) = &input.object_lock_retain_until_date {
         let formatted_441 = inner_440.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_441.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_441;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4669,7 +4443,6 @@ pub fn add_headers_put_object(
     if let Some(inner_442) = &input.object_lock_legal_hold_status {
         let formatted_443 = AsRef::<str>::as_ref(inner_442);
         if !formatted_443.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_443;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4687,7 +4460,6 @@ pub fn add_headers_put_object(
     if let Some(inner_444) = &input.expected_bucket_owner {
         let formatted_445 = AsRef::<str>::as_ref(inner_444);
         if !formatted_445.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_445;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4712,7 +4484,6 @@ pub fn add_headers_put_object(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            use std::convert::TryFrom;
             let header_value = AsRef::<str>::as_ref(v);
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4734,7 +4505,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_447) = &input.acl {
         let formatted_448 = AsRef::<str>::as_ref(inner_447);
         if !formatted_448.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_448;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4752,7 +4522,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_449) = &input.content_md5 {
         let formatted_450 = AsRef::<str>::as_ref(inner_449);
         if !formatted_450.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_450;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4770,7 +4539,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_451) = &input.grant_full_control {
         let formatted_452 = AsRef::<str>::as_ref(inner_451);
         if !formatted_452.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_452;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4788,7 +4556,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_453) = &input.grant_read {
         let formatted_454 = AsRef::<str>::as_ref(inner_453);
         if !formatted_454.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_454;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4806,7 +4573,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_455) = &input.grant_read_acp {
         let formatted_456 = AsRef::<str>::as_ref(inner_455);
         if !formatted_456.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_456;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4824,7 +4590,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_457) = &input.grant_write {
         let formatted_458 = AsRef::<str>::as_ref(inner_457);
         if !formatted_458.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_458;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4842,7 +4607,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_459) = &input.grant_write_acp {
         let formatted_460 = AsRef::<str>::as_ref(inner_459);
         if !formatted_460.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_460;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4860,7 +4624,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_461) = &input.request_payer {
         let formatted_462 = AsRef::<str>::as_ref(inner_461);
         if !formatted_462.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_462;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4878,7 +4641,6 @@ pub fn add_headers_put_object_acl(
     if let Some(inner_463) = &input.expected_bucket_owner {
         let formatted_464 = AsRef::<str>::as_ref(inner_463);
         if !formatted_464.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_464;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4903,7 +4665,6 @@ pub fn add_headers_put_object_legal_hold(
     if let Some(inner_465) = &input.request_payer {
         let formatted_466 = AsRef::<str>::as_ref(inner_465);
         if !formatted_466.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_466;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4921,7 +4682,6 @@ pub fn add_headers_put_object_legal_hold(
     if let Some(inner_467) = &input.content_md5 {
         let formatted_468 = AsRef::<str>::as_ref(inner_467);
         if !formatted_468.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_468;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4939,7 +4699,6 @@ pub fn add_headers_put_object_legal_hold(
     if let Some(inner_469) = &input.expected_bucket_owner {
         let formatted_470 = AsRef::<str>::as_ref(inner_469);
         if !formatted_470.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_470;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4964,7 +4723,6 @@ pub fn add_headers_put_object_lock_configuration(
     if let Some(inner_471) = &input.request_payer {
         let formatted_472 = AsRef::<str>::as_ref(inner_471);
         if !formatted_472.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_472;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -4982,7 +4740,6 @@ pub fn add_headers_put_object_lock_configuration(
     if let Some(inner_473) = &input.token {
         let formatted_474 = AsRef::<str>::as_ref(inner_473);
         if !formatted_474.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_474;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5000,7 +4757,6 @@ pub fn add_headers_put_object_lock_configuration(
     if let Some(inner_475) = &input.content_md5 {
         let formatted_476 = AsRef::<str>::as_ref(inner_475);
         if !formatted_476.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_476;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5018,7 +4774,6 @@ pub fn add_headers_put_object_lock_configuration(
     if let Some(inner_477) = &input.expected_bucket_owner {
         let formatted_478 = AsRef::<str>::as_ref(inner_477);
         if !formatted_478.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_478;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5043,7 +4798,6 @@ pub fn add_headers_put_object_retention(
     if let Some(inner_479) = &input.request_payer {
         let formatted_480 = AsRef::<str>::as_ref(inner_479);
         if !formatted_480.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_480;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5063,7 +4817,6 @@ pub fn add_headers_put_object_retention(
             aws_smithy_types::primitive::Encoder::from(input.bypass_governance_retention);
         let formatted_481 = encoder.encode();
         if !formatted_481.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_481;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5081,7 +4834,6 @@ pub fn add_headers_put_object_retention(
     if let Some(inner_482) = &input.content_md5 {
         let formatted_483 = AsRef::<str>::as_ref(inner_482);
         if !formatted_483.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_483;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5099,7 +4851,6 @@ pub fn add_headers_put_object_retention(
     if let Some(inner_484) = &input.expected_bucket_owner {
         let formatted_485 = AsRef::<str>::as_ref(inner_484);
         if !formatted_485.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_485;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5124,7 +4875,6 @@ pub fn add_headers_put_object_tagging(
     if let Some(inner_486) = &input.content_md5 {
         let formatted_487 = AsRef::<str>::as_ref(inner_486);
         if !formatted_487.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_487;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5142,7 +4892,6 @@ pub fn add_headers_put_object_tagging(
     if let Some(inner_488) = &input.expected_bucket_owner {
         let formatted_489 = AsRef::<str>::as_ref(inner_488);
         if !formatted_489.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_489;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5160,7 +4909,6 @@ pub fn add_headers_put_object_tagging(
     if let Some(inner_490) = &input.request_payer {
         let formatted_491 = AsRef::<str>::as_ref(inner_490);
         if !formatted_491.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_491;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5185,7 +4933,6 @@ pub fn add_headers_put_public_access_block(
     if let Some(inner_492) = &input.content_md5 {
         let formatted_493 = AsRef::<str>::as_ref(inner_492);
         if !formatted_493.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_493;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5203,7 +4950,6 @@ pub fn add_headers_put_public_access_block(
     if let Some(inner_494) = &input.expected_bucket_owner {
         let formatted_495 = AsRef::<str>::as_ref(inner_494);
         if !formatted_495.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_495;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5228,7 +4974,6 @@ pub fn add_headers_restore_object(
     if let Some(inner_496) = &input.request_payer {
         let formatted_497 = AsRef::<str>::as_ref(inner_496);
         if !formatted_497.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_497;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5246,7 +4991,6 @@ pub fn add_headers_restore_object(
     if let Some(inner_498) = &input.expected_bucket_owner {
         let formatted_499 = AsRef::<str>::as_ref(inner_498);
         if !formatted_499.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_499;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5271,7 +5015,6 @@ pub fn add_headers_select_object_content(
     if let Some(inner_500) = &input.sse_customer_algorithm {
         let formatted_501 = AsRef::<str>::as_ref(inner_500);
         if !formatted_501.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_501;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5292,7 +5035,6 @@ pub fn add_headers_select_object_content(
     if let Some(inner_502) = &input.sse_customer_key {
         let formatted_503 = AsRef::<str>::as_ref(inner_502);
         if !formatted_503.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_503;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5310,7 +5052,6 @@ pub fn add_headers_select_object_content(
     if let Some(inner_504) = &input.sse_customer_key_md5 {
         let formatted_505 = AsRef::<str>::as_ref(inner_504);
         if !formatted_505.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_505;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5331,7 +5072,6 @@ pub fn add_headers_select_object_content(
     if let Some(inner_506) = &input.expected_bucket_owner {
         let formatted_507 = AsRef::<str>::as_ref(inner_506);
         if !formatted_507.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_507;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5357,7 +5097,6 @@ pub fn add_headers_upload_part(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.content_length);
         let formatted_508 = encoder.encode();
         if !formatted_508.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_508;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5375,7 +5114,6 @@ pub fn add_headers_upload_part(
     if let Some(inner_509) = &input.content_md5 {
         let formatted_510 = AsRef::<str>::as_ref(inner_509);
         if !formatted_510.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_510;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5393,7 +5131,6 @@ pub fn add_headers_upload_part(
     if let Some(inner_511) = &input.sse_customer_algorithm {
         let formatted_512 = AsRef::<str>::as_ref(inner_511);
         if !formatted_512.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_512;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5414,7 +5151,6 @@ pub fn add_headers_upload_part(
     if let Some(inner_513) = &input.sse_customer_key {
         let formatted_514 = AsRef::<str>::as_ref(inner_513);
         if !formatted_514.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_514;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5432,7 +5168,6 @@ pub fn add_headers_upload_part(
     if let Some(inner_515) = &input.sse_customer_key_md5 {
         let formatted_516 = AsRef::<str>::as_ref(inner_515);
         if !formatted_516.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_516;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5453,7 +5188,6 @@ pub fn add_headers_upload_part(
     if let Some(inner_517) = &input.request_payer {
         let formatted_518 = AsRef::<str>::as_ref(inner_517);
         if !formatted_518.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_518;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5471,7 +5205,6 @@ pub fn add_headers_upload_part(
     if let Some(inner_519) = &input.expected_bucket_owner {
         let formatted_520 = AsRef::<str>::as_ref(inner_519);
         if !formatted_520.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_520;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5496,7 +5229,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_521) = &input.copy_source {
         let formatted_522 = AsRef::<str>::as_ref(inner_521);
         if !formatted_522.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_522;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5514,7 +5246,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_523) = &input.copy_source_if_match {
         let formatted_524 = AsRef::<str>::as_ref(inner_523);
         if !formatted_524.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_524;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5532,7 +5263,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_525) = &input.copy_source_if_modified_since {
         let formatted_526 = inner_525.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_526.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_526;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5550,7 +5280,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_527) = &input.copy_source_if_none_match {
         let formatted_528 = AsRef::<str>::as_ref(inner_527);
         if !formatted_528.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_528;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5568,7 +5297,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_529) = &input.copy_source_if_unmodified_since {
         let formatted_530 = inner_529.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_530.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_530;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5586,7 +5314,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_531) = &input.copy_source_range {
         let formatted_532 = AsRef::<str>::as_ref(inner_531);
         if !formatted_532.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_532;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5604,7 +5331,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_533) = &input.sse_customer_algorithm {
         let formatted_534 = AsRef::<str>::as_ref(inner_533);
         if !formatted_534.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_534;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5625,7 +5351,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_535) = &input.sse_customer_key {
         let formatted_536 = AsRef::<str>::as_ref(inner_535);
         if !formatted_536.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_536;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5643,7 +5368,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_537) = &input.sse_customer_key_md5 {
         let formatted_538 = AsRef::<str>::as_ref(inner_537);
         if !formatted_538.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_538;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5664,7 +5388,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_539) = &input.copy_source_sse_customer_algorithm {
         let formatted_540 = AsRef::<str>::as_ref(inner_539);
         if !formatted_540.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_540;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5685,7 +5408,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_541) = &input.copy_source_sse_customer_key {
         let formatted_542 = AsRef::<str>::as_ref(inner_541);
         if !formatted_542.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_542;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5706,7 +5428,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_543) = &input.copy_source_sse_customer_key_md5 {
         let formatted_544 = AsRef::<str>::as_ref(inner_543);
         if !formatted_544.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_544;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5727,7 +5448,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_545) = &input.request_payer {
         let formatted_546 = AsRef::<str>::as_ref(inner_545);
         if !formatted_546.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_546;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5745,7 +5465,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_547) = &input.expected_bucket_owner {
         let formatted_548 = AsRef::<str>::as_ref(inner_547);
         if !formatted_548.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_548;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5763,7 +5482,6 @@ pub fn add_headers_upload_part_copy(
     if let Some(inner_549) = &input.expected_source_bucket_owner {
         let formatted_550 = AsRef::<str>::as_ref(inner_549);
         if !formatted_550.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_550;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5788,7 +5506,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_551) = &input.request_route {
         let formatted_552 = AsRef::<str>::as_ref(inner_551);
         if !formatted_552.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_552;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5806,7 +5523,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_553) = &input.request_token {
         let formatted_554 = AsRef::<str>::as_ref(inner_553);
         if !formatted_554.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_554;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5825,7 +5541,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.status_code);
         let formatted_555 = encoder.encode();
         if !formatted_555.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_555;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5843,7 +5558,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_556) = &input.error_code {
         let formatted_557 = AsRef::<str>::as_ref(inner_556);
         if !formatted_557.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_557;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5861,7 +5575,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_558) = &input.error_message {
         let formatted_559 = AsRef::<str>::as_ref(inner_558);
         if !formatted_559.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_559;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5879,7 +5592,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_560) = &input.accept_ranges {
         let formatted_561 = AsRef::<str>::as_ref(inner_560);
         if !formatted_561.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_561;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5897,7 +5609,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_562) = &input.cache_control {
         let formatted_563 = AsRef::<str>::as_ref(inner_562);
         if !formatted_563.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_563;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5915,7 +5626,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_564) = &input.content_disposition {
         let formatted_565 = AsRef::<str>::as_ref(inner_564);
         if !formatted_565.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_565;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5933,7 +5643,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_566) = &input.content_encoding {
         let formatted_567 = AsRef::<str>::as_ref(inner_566);
         if !formatted_567.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_567;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5951,7 +5660,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_568) = &input.content_language {
         let formatted_569 = AsRef::<str>::as_ref(inner_568);
         if !formatted_569.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_569;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5970,7 +5678,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.content_length);
         let formatted_570 = encoder.encode();
         if !formatted_570.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_570;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -5988,7 +5695,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_571) = &input.content_range {
         let formatted_572 = AsRef::<str>::as_ref(inner_571);
         if !formatted_572.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_572;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6006,7 +5712,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_573) = &input.content_type {
         let formatted_574 = AsRef::<str>::as_ref(inner_573);
         if !formatted_574.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_574;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6025,7 +5730,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.delete_marker);
         let formatted_575 = encoder.encode();
         if !formatted_575.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_575;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6043,7 +5747,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_576) = &input.e_tag {
         let formatted_577 = AsRef::<str>::as_ref(inner_576);
         if !formatted_577.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_577;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6061,7 +5764,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_578) = &input.expires {
         let formatted_579 = inner_578.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_579.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_579;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6079,7 +5781,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_580) = &input.expiration {
         let formatted_581 = AsRef::<str>::as_ref(inner_580);
         if !formatted_581.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_581;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6097,7 +5798,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_582) = &input.last_modified {
         let formatted_583 = inner_582.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_583.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_583;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6116,7 +5816,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.missing_meta);
         let formatted_584 = encoder.encode();
         if !formatted_584.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_584;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6134,7 +5833,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_585) = &input.object_lock_mode {
         let formatted_586 = AsRef::<str>::as_ref(inner_585);
         if !formatted_586.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_586;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6152,7 +5850,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_587) = &input.object_lock_legal_hold_status {
         let formatted_588 = AsRef::<str>::as_ref(inner_587);
         if !formatted_588.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_588;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6173,7 +5870,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_589) = &input.object_lock_retain_until_date {
         let formatted_590 = inner_589.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_590.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_590;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6195,7 +5891,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.parts_count);
         let formatted_591 = encoder.encode();
         if !formatted_591.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_591;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6213,7 +5908,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_592) = &input.replication_status {
         let formatted_593 = AsRef::<str>::as_ref(inner_592);
         if !formatted_593.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_593;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6231,7 +5925,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_594) = &input.request_charged {
         let formatted_595 = AsRef::<str>::as_ref(inner_594);
         if !formatted_595.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_595;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6249,7 +5942,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_596) = &input.restore {
         let formatted_597 = AsRef::<str>::as_ref(inner_596);
         if !formatted_597.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_597;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6267,7 +5959,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_598) = &input.server_side_encryption {
         let formatted_599 = AsRef::<str>::as_ref(inner_598);
         if !formatted_599.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_599;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6288,7 +5979,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_600) = &input.sse_customer_algorithm {
         let formatted_601 = AsRef::<str>::as_ref(inner_600);
         if !formatted_601.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_601;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6309,7 +5999,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_602) = &input.ssekms_key_id {
         let formatted_603 = AsRef::<str>::as_ref(inner_602);
         if !formatted_603.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_603;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6330,7 +6019,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_604) = &input.sse_customer_key_md5 {
         let formatted_605 = AsRef::<str>::as_ref(inner_604);
         if !formatted_605.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_605;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6351,7 +6039,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_606) = &input.storage_class {
         let formatted_607 = AsRef::<str>::as_ref(inner_606);
         if !formatted_607.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_607;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6370,7 +6057,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.tag_count);
         let formatted_608 = encoder.encode();
         if !formatted_608.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_608;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6388,7 +6074,6 @@ pub fn add_headers_write_get_object_response(
     if let Some(inner_609) = &input.version_id {
         let formatted_610 = AsRef::<str>::as_ref(inner_609);
         if !formatted_610.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_610;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6407,7 +6092,6 @@ pub fn add_headers_write_get_object_response(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled);
         let formatted_611 = encoder.encode();
         if !formatted_611.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_611;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -6435,7 +6119,6 @@ pub fn add_headers_write_get_object_response(
                         details: format!("`{}` cannot be used as a header name: {}", k, err),
                     },
                 )?;
-            use std::convert::TryFrom;
             let header_value = AsRef::<str>::as_ref(v);
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {

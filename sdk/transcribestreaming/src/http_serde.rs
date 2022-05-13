@@ -6,7 +6,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_1) = &input.language_code {
         let formatted_2 = AsRef::<str>::as_ref(inner_1);
         if !formatted_2.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -25,7 +24,6 @@ pub fn add_headers_start_medical_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_3);
         let formatted_4 = encoder.encode();
         if !formatted_4.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -43,7 +41,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_5) = &input.media_encoding {
         let formatted_6 = AsRef::<str>::as_ref(inner_5);
         if !formatted_6.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -61,7 +58,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_7) = &input.vocabulary_name {
         let formatted_8 = AsRef::<str>::as_ref(inner_7);
         if !formatted_8.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -79,7 +75,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_9) = &input.specialty {
         let formatted_10 = AsRef::<str>::as_ref(inner_9);
         if !formatted_10.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -97,7 +92,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_11) = &input.r#type {
         let formatted_12 = AsRef::<str>::as_ref(inner_11);
         if !formatted_12.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -116,7 +110,6 @@ pub fn add_headers_start_medical_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.show_speaker_label);
         let formatted_13 = encoder.encode();
         if !formatted_13.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_13;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -134,7 +127,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_14) = &input.session_id {
         let formatted_15 = AsRef::<str>::as_ref(inner_14);
         if !formatted_15.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_15;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -154,7 +146,6 @@ pub fn add_headers_start_medical_stream_transcription(
             aws_smithy_types::primitive::Encoder::from(input.enable_channel_identification);
         let formatted_16 = encoder.encode();
         if !formatted_16.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -176,7 +167,6 @@ pub fn add_headers_start_medical_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_17);
         let formatted_18 = encoder.encode();
         if !formatted_18.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -194,7 +184,6 @@ pub fn add_headers_start_medical_stream_transcription(
     if let Some(inner_19) = &input.content_identification_type {
         let formatted_20 = AsRef::<str>::as_ref(inner_19);
         if !formatted_20.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -222,7 +211,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_21) = &input.language_code {
         let formatted_22 = AsRef::<str>::as_ref(inner_21);
         if !formatted_22.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -241,7 +229,6 @@ pub fn add_headers_start_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_23);
         let formatted_24 = encoder.encode();
         if !formatted_24.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -259,7 +246,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_25) = &input.media_encoding {
         let formatted_26 = AsRef::<str>::as_ref(inner_25);
         if !formatted_26.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -277,7 +263,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_27) = &input.vocabulary_name {
         let formatted_28 = AsRef::<str>::as_ref(inner_27);
         if !formatted_28.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -295,7 +280,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_29) = &input.session_id {
         let formatted_30 = AsRef::<str>::as_ref(inner_29);
         if !formatted_30.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_30;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -313,7 +297,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_31) = &input.vocabulary_filter_name {
         let formatted_32 = AsRef::<str>::as_ref(inner_31);
         if !formatted_32.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_32;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -331,7 +314,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_33) = &input.vocabulary_filter_method {
         let formatted_34 = AsRef::<str>::as_ref(inner_33);
         if !formatted_34.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_34;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -350,7 +332,6 @@ pub fn add_headers_start_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.show_speaker_label);
         let formatted_35 = encoder.encode();
         if !formatted_35.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_35;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -370,7 +351,6 @@ pub fn add_headers_start_stream_transcription(
             aws_smithy_types::primitive::Encoder::from(input.enable_channel_identification);
         let formatted_36 = encoder.encode();
         if !formatted_36.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_36;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -392,7 +372,6 @@ pub fn add_headers_start_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_37);
         let formatted_38 = encoder.encode();
         if !formatted_38.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_38;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -412,7 +391,6 @@ pub fn add_headers_start_stream_transcription(
             aws_smithy_types::primitive::Encoder::from(input.enable_partial_results_stabilization);
         let formatted_39 = encoder.encode();
         if !formatted_39.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_39;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -433,7 +411,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_40) = &input.partial_results_stability {
         let formatted_41 = AsRef::<str>::as_ref(inner_40);
         if !formatted_41.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_41;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -451,7 +428,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_42) = &input.content_identification_type {
         let formatted_43 = AsRef::<str>::as_ref(inner_42);
         if !formatted_43.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_43;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -472,7 +448,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_44) = &input.content_redaction_type {
         let formatted_45 = AsRef::<str>::as_ref(inner_44);
         if !formatted_45.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_45;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -490,7 +465,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_46) = &input.pii_entity_types {
         let formatted_47 = AsRef::<str>::as_ref(inner_46);
         if !formatted_47.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_47;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -508,7 +482,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_48) = &input.language_model_name {
         let formatted_49 = AsRef::<str>::as_ref(inner_48);
         if !formatted_49.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_49;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -527,7 +500,6 @@ pub fn add_headers_start_stream_transcription(
         let mut encoder = aws_smithy_types::primitive::Encoder::from(input.identify_language);
         let formatted_50 = encoder.encode();
         if !formatted_50.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_50;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -545,7 +517,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_51) = &input.language_options {
         let formatted_52 = AsRef::<str>::as_ref(inner_51);
         if !formatted_52.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_52;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -563,7 +534,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_53) = &input.preferred_language {
         let formatted_54 = AsRef::<str>::as_ref(inner_53);
         if !formatted_54.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_54;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -581,7 +551,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_55) = &input.vocabulary_names {
         let formatted_56 = AsRef::<str>::as_ref(inner_55);
         if !formatted_56.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_56;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
@@ -599,7 +568,6 @@ pub fn add_headers_start_stream_transcription(
     if let Some(inner_57) = &input.vocabulary_filter_names {
         let formatted_58 = AsRef::<str>::as_ref(inner_57);
         if !formatted_58.is_empty() {
-            use std::convert::TryFrom;
             let header_value = formatted_58;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {

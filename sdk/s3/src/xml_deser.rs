@@ -26,7 +26,6 @@ pub fn deser_structure_crate_error_no_such_upload_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -59,7 +58,6 @@ pub fn deser_operation_crate_operation_complete_multipart_upload(
     crate::output::complete_multipart_upload_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -140,7 +138,6 @@ pub fn deser_structure_crate_error_object_not_in_active_tier_error_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -173,7 +170,6 @@ pub fn deser_structure_crate_error_bucket_already_exists_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -206,7 +202,6 @@ pub fn deser_structure_crate_error_bucket_already_owned_by_you_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -237,7 +232,6 @@ pub fn deser_operation_crate_operation_create_multipart_upload(
     mut builder: crate::output::create_multipart_upload_output::Builder,
 ) -> Result<crate::output::create_multipart_upload_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -301,7 +295,6 @@ pub fn deser_operation_crate_operation_delete_objects(
     inp: &[u8],
     mut builder: crate::output::delete_objects_output::Builder,
 ) -> Result<crate::output::delete_objects_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -363,7 +356,6 @@ pub fn deser_operation_crate_operation_get_bucket_accelerate_configuration(
     crate::output::get_bucket_accelerate_configuration_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -402,7 +394,6 @@ pub fn deser_operation_crate_operation_get_bucket_acl(
     inp: &[u8],
     mut builder: crate::output::get_bucket_acl_output::Builder,
 ) -> Result<crate::output::get_bucket_acl_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -447,7 +438,6 @@ pub fn deser_operation_crate_operation_get_bucket_cors(
     inp: &[u8],
     mut builder: crate::output::get_bucket_cors_output::Builder,
 ) -> Result<crate::output::get_bucket_cors_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -492,7 +482,6 @@ pub fn deser_operation_crate_operation_get_bucket_lifecycle_configuration(
     crate::output::get_bucket_lifecycle_configuration_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -534,7 +523,6 @@ pub fn deser_operation_crate_operation_get_bucket_location(
     inp: &[u8],
     mut builder: crate::output::get_bucket_location_output::Builder,
 ) -> Result<crate::output::get_bucket_location_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -565,7 +553,6 @@ pub fn deser_operation_crate_operation_get_bucket_logging(
     inp: &[u8],
     mut builder: crate::output::get_bucket_logging_output::Builder,
 ) -> Result<crate::output::get_bucket_logging_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -603,7 +590,6 @@ pub fn deser_operation_crate_operation_get_bucket_notification_configuration(
     crate::output::get_bucket_notification_configuration_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -692,7 +678,6 @@ pub fn deser_operation_crate_operation_get_bucket_request_payment(
     crate::output::get_bucket_request_payment_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -731,7 +716,6 @@ pub fn deser_operation_crate_operation_get_bucket_tagging(
     inp: &[u8],
     mut builder: crate::output::get_bucket_tagging_output::Builder,
 ) -> Result<crate::output::get_bucket_tagging_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -767,7 +751,6 @@ pub fn deser_operation_crate_operation_get_bucket_versioning(
     mut builder: crate::output::get_bucket_versioning_output::Builder,
 ) -> Result<crate::output::get_bucket_versioning_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -820,7 +803,6 @@ pub fn deser_operation_crate_operation_get_bucket_website(
     inp: &[u8],
     mut builder: crate::output::get_bucket_website_output::Builder,
 ) -> Result<crate::output::get_bucket_website_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -888,7 +870,6 @@ pub fn deser_structure_crate_error_invalid_object_state_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -949,7 +930,6 @@ pub fn deser_structure_crate_error_no_such_key_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -979,7 +959,6 @@ pub fn deser_operation_crate_operation_get_object_acl(
     inp: &[u8],
     mut builder: crate::output::get_object_acl_output::Builder,
 ) -> Result<crate::output::get_object_acl_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1024,7 +1003,6 @@ pub fn deser_operation_crate_operation_get_object_tagging(
     inp: &[u8],
     mut builder: crate::output::get_object_tagging_output::Builder,
 ) -> Result<crate::output::get_object_tagging_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1062,7 +1040,6 @@ pub fn deser_structure_crate_error_not_found_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -1095,7 +1072,6 @@ pub fn deser_operation_crate_operation_list_bucket_analytics_configurations(
     crate::output::list_bucket_analytics_configurations_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1181,7 +1157,6 @@ pub fn deser_operation_crate_operation_list_bucket_intelligent_tiering_configura
     crate::output::list_bucket_intelligent_tiering_configurations_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1267,7 +1242,6 @@ pub fn deser_operation_crate_operation_list_bucket_inventory_configurations(
     crate::output::list_bucket_inventory_configurations_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1353,7 +1327,6 @@ pub fn deser_operation_crate_operation_list_bucket_metrics_configurations(
     crate::output::list_bucket_metrics_configurations_output::Builder,
     aws_smithy_xml::decode::XmlError,
 > {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1436,7 +1409,6 @@ pub fn deser_operation_crate_operation_list_buckets(
     inp: &[u8],
     mut builder: crate::output::list_buckets_output::Builder,
 ) -> Result<crate::output::list_buckets_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1482,7 +1454,6 @@ pub fn deser_operation_crate_operation_list_multipart_uploads(
     mut builder: crate::output::list_multipart_uploads_output::Builder,
 ) -> Result<crate::output::list_multipart_uploads_output::Builder, aws_smithy_xml::decode::XmlError>
 {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1679,7 +1650,6 @@ pub fn deser_structure_crate_error_no_such_bucket_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -1709,7 +1679,6 @@ pub fn deser_operation_crate_operation_list_objects(
     inp: &[u8],
     mut builder: crate::output::list_objects_output::Builder,
 ) -> Result<crate::output::list_objects_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -1877,7 +1846,6 @@ pub fn deser_operation_crate_operation_list_objects_v2(
     inp: &[u8],
     mut builder: crate::output::list_objects_v2_output::Builder,
 ) -> Result<crate::output::list_objects_v2_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2073,7 +2041,6 @@ pub fn deser_operation_crate_operation_list_object_versions(
     inp: &[u8],
     mut builder: crate::output::list_object_versions_output::Builder,
 ) -> Result<crate::output::list_object_versions_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2284,7 +2251,6 @@ pub fn deser_operation_crate_operation_list_parts(
     inp: &[u8],
     mut builder: crate::output::list_parts_output::Builder,
 ) -> Result<crate::output::list_parts_output::Builder, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -2461,7 +2427,6 @@ pub fn deser_structure_crate_error_object_already_in_active_tier_error_xml_err(
     if inp.is_empty() {
         return Ok(builder);
     }
-    use std::convert::TryFrom;
     let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
@@ -2489,7 +2454,6 @@ pub fn deser_structure_crate_error_object_already_in_active_tier_error_xml_err(
 pub fn deser_member_com_amazonaws_s3_synthetic_copy_object_output_copy_object_result(
     inp: &[u8],
 ) -> Result<crate::model::CopyObjectResult, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2506,7 +2470,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_copy_object_output_copy_object_re
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_analytics_configuration_output_analytics_configuration(
     inp: &[u8],
 ) -> Result<crate::model::AnalyticsConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2523,7 +2486,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_analytics_configuratio
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_encryption_output_server_side_encryption_configuration(
     inp: &[u8],
 ) -> Result<crate::model::ServerSideEncryptionConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2540,7 +2502,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_encryption_output_serv
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_intelligent_tiering_configuration_output_intelligent_tiering_configuration(
     inp: &[u8],
 ) -> Result<crate::model::IntelligentTieringConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2557,7 +2518,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_intelligent_tiering_co
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_inventory_configuration_output_inventory_configuration(
     inp: &[u8],
 ) -> Result<crate::model::InventoryConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2574,7 +2534,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_inventory_configuratio
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_metrics_configuration_output_metrics_configuration(
     inp: &[u8],
 ) -> Result<crate::model::MetricsConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2591,7 +2550,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_metrics_configuration_
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_ownership_controls_output_ownership_controls(
     inp: &[u8],
 ) -> Result<crate::model::OwnershipControls, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2608,7 +2566,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_ownership_controls_out
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_policy_status_output_policy_status(
     inp: &[u8],
 ) -> Result<crate::model::PolicyStatus, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2625,7 +2582,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_policy_status_output_p
 pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_replication_output_replication_configuration(
     inp: &[u8],
 ) -> Result<crate::model::ReplicationConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2642,7 +2598,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_bucket_replication_output_rep
 pub fn deser_member_com_amazonaws_s3_synthetic_get_object_legal_hold_output_legal_hold(
     inp: &[u8],
 ) -> Result<crate::model::ObjectLockLegalHold, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2659,7 +2614,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_object_legal_hold_output_lega
 pub fn deser_member_com_amazonaws_s3_synthetic_get_object_lock_configuration_output_object_lock_configuration(
     inp: &[u8],
 ) -> Result<crate::model::ObjectLockConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2676,7 +2630,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_object_lock_configuration_out
 pub fn deser_member_com_amazonaws_s3_synthetic_get_object_retention_output_retention(
     inp: &[u8],
 ) -> Result<crate::model::ObjectLockRetention, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2693,7 +2646,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_object_retention_output_reten
 pub fn deser_member_com_amazonaws_s3_synthetic_get_public_access_block_output_public_access_block_configuration(
     inp: &[u8],
 ) -> Result<crate::model::PublicAccessBlockConfiguration, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -2710,7 +2662,6 @@ pub fn deser_member_com_amazonaws_s3_synthetic_get_public_access_block_output_pu
 pub fn deser_member_com_amazonaws_s3_synthetic_upload_part_copy_output_copy_part_result(
     inp: &[u8],
 ) -> Result<crate::model::CopyPartResult, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -4338,7 +4289,6 @@ pub fn deser_structure_crate_model_initiator(
 pub fn deser_member_com_amazonaws_s3_stats_event_details(
     inp: &[u8],
 ) -> Result<crate::model::Stats, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -4355,7 +4305,6 @@ pub fn deser_member_com_amazonaws_s3_stats_event_details(
 pub fn deser_member_com_amazonaws_s3_progress_event_details(
     inp: &[u8],
 ) -> Result<crate::model::Progress, aws_smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
