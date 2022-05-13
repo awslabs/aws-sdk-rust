@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteRecommendationPreferences`](crate::client::fluent_builders::DeleteRecommendationPreferences) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::DeleteRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to delete.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::DeleteRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to delete.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>   <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>  </note>
     ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to delete.</p>  <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     ///   - [`recommendation_preference_names(Vec<RecommendationPreferenceName>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::recommendation_preference_names) / [`set_recommendation_preference_names(Option<Vec<RecommendationPreferenceName>>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_recommendation_preference_names): <p>The name of the recommendation preference to delete.</p>  <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
     /// - On success, responds with [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
@@ -327,7 +327,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetRecommendationPreferences`](crate::client::fluent_builders::GetRecommendationPreferences) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::GetRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference for which to return preferences.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::GetRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference for which to return preferences.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>   <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>  </note>
     ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to return.</p>  <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecommendationPreferences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_next_token): <p>The token to advance to the next page of recommendation preferences.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecommendationPreferences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_max_results): <p>The maximum number of recommendation preferences to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -354,7 +354,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutRecommendationPreferences`](crate::client::fluent_builders::PutRecommendationPreferences) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::PutRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to create.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::PutRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to create.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>   <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>  </note>
     ///   - [`scope(Scope)`](crate::client::fluent_builders::PutRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to create.</p>  <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>   <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>  </note>
     ///   - [`enhanced_infrastructure_metrics(EnhancedInfrastructureMetrics)`](crate::client::fluent_builders::PutRecommendationPreferences::enhanced_infrastructure_metrics) / [`set_enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>  <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     ///   - [`inferred_workload_types(InferredWorkloadTypesPreference)`](crate::client::fluent_builders::PutRecommendationPreferences::inferred_workload_types) / [`set_inferred_workload_types(Option<InferredWorkloadTypesPreference>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_inferred_workload_types): <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>   <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>  </note>  <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -429,13 +429,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target resource type of the recommendation preference to delete.</p>
-        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+        /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+        /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The target resource type of the recommendation preference to delete.</p>
-        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+        /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+        /// </note>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -2108,13 +2112,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
-        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+        /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+        /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
-        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+        /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+        /// </note>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -2294,13 +2302,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target resource type of the recommendation preference to create.</p>
-        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+        /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+        /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The target resource type of the recommendation preference to create.</p>
-        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+        /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+        /// </note>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,

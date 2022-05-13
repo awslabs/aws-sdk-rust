@@ -38,3 +38,13 @@ pub(crate) fn reflens_structure_crate_output_list_repository_associations_output
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_repository_associations_output_repository_association_summaries(
+    input: crate::output::ListRepositoryAssociationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>> {
+    let input = match input.repository_association_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

@@ -7,7 +7,7 @@ pub struct Options {
     /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
     /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
     /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-    /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
+    /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
     /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
     pub verify_mode: std::option::Option<crate::model::VerifyMode>,
     /// <p>A value that determines whether files at the destination should be overwritten or preserved when copying files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination file differs from the source file. If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
@@ -22,7 +22,7 @@ pub struct Options {
     /// </note>
     pub atime: std::option::Option<crate::model::Atime>,
     /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
-    /// <p>Default value: PRESERVE. </p>
+    /// <p>Default Value: <code>PRESERVE</code> </p>
     /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
     /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
     /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
@@ -88,12 +88,15 @@ pub struct Options {
     /// <p> <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
     pub security_descriptor_copy_flags:
         std::option::Option<crate::model::SmbSecurityDescriptorCopyFlags>,
+    /// <p>Specifies whether object tags are maintained when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
+    /// <p>Default Value: <code>PRESERVE</code> </p>
+    pub object_tags: std::option::Option<crate::model::ObjectTags>,
 }
 impl Options {
     /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
     /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
     /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-    /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
+    /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
     /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
     pub fn verify_mode(&self) -> std::option::Option<&crate::model::VerifyMode> {
         self.verify_mode.as_ref()
@@ -114,7 +117,7 @@ impl Options {
         self.atime.as_ref()
     }
     /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
-    /// <p>Default value: PRESERVE. </p>
+    /// <p>Default Value: <code>PRESERVE</code> </p>
     /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
     /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
     /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
@@ -205,6 +208,11 @@ impl Options {
     ) -> std::option::Option<&crate::model::SmbSecurityDescriptorCopyFlags> {
         self.security_descriptor_copy_flags.as_ref()
     }
+    /// <p>Specifies whether object tags are maintained when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
+    /// <p>Default Value: <code>PRESERVE</code> </p>
+    pub fn object_tags(&self) -> std::option::Option<&crate::model::ObjectTags> {
+        self.object_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Options {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -226,6 +234,7 @@ impl std::fmt::Debug for Options {
             "security_descriptor_copy_flags",
             &self.security_descriptor_copy_flags,
         );
+        formatter.field("object_tags", &self.object_tags);
         formatter.finish()
     }
 }
@@ -250,12 +259,13 @@ pub mod options {
         pub(crate) transfer_mode: std::option::Option<crate::model::TransferMode>,
         pub(crate) security_descriptor_copy_flags:
             std::option::Option<crate::model::SmbSecurityDescriptorCopyFlags>,
+        pub(crate) object_tags: std::option::Option<crate::model::ObjectTags>,
     }
     impl Builder {
         /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
         /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
         /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
+        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
         /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
         pub fn verify_mode(mut self, input: crate::model::VerifyMode) -> Self {
             self.verify_mode = Some(input);
@@ -264,7 +274,7 @@ pub mod options {
         /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
         /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
         /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
+        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
         /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
         pub fn set_verify_mode(
             mut self,
@@ -311,7 +321,7 @@ pub mod options {
             self
         }
         /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
-        /// <p>Default value: PRESERVE. </p>
+        /// <p>Default Value: <code>PRESERVE</code> </p>
         /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
         /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
         /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
@@ -322,7 +332,7 @@ pub mod options {
             self
         }
         /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
-        /// <p>Default value: PRESERVE. </p>
+        /// <p>Default Value: <code>PRESERVE</code> </p>
         /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
         /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
         /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
@@ -529,6 +539,21 @@ pub mod options {
             self.security_descriptor_copy_flags = input;
             self
         }
+        /// <p>Specifies whether object tags are maintained when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
+        /// <p>Default Value: <code>PRESERVE</code> </p>
+        pub fn object_tags(mut self, input: crate::model::ObjectTags) -> Self {
+            self.object_tags = Some(input);
+            self
+        }
+        /// <p>Specifies whether object tags are maintained when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
+        /// <p>Default Value: <code>PRESERVE</code> </p>
+        pub fn set_object_tags(
+            mut self,
+            input: std::option::Option<crate::model::ObjectTags>,
+        ) -> Self {
+            self.object_tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Options`](crate::model::Options)
         pub fn build(self) -> crate::model::Options {
             crate::model::Options {
@@ -546,6 +571,7 @@ pub mod options {
                 log_level: self.log_level,
                 transfer_mode: self.transfer_mode,
                 security_descriptor_copy_flags: self.security_descriptor_copy_flags,
+                object_tags: self.object_tags,
             }
         }
     }
@@ -554,6 +580,61 @@ impl Options {
     /// Creates a new builder-style object to manufacture [`Options`](crate::model::Options)
     pub fn builder() -> crate::model::options::Builder {
         crate::model::options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ObjectTags {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Preserve,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ObjectTags {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => ObjectTags::None,
+            "PRESERVE" => ObjectTags::Preserve,
+            other => ObjectTags::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ObjectTags {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ObjectTags::from(s))
+    }
+}
+impl ObjectTags {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ObjectTags::None => "NONE",
+            ObjectTags::Preserve => "PRESERVE",
+            ObjectTags::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PRESERVE"]
+    }
+}
+impl AsRef<str> for ObjectTags {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -4,7 +4,12 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
+    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
+    WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
@@ -52,9 +57,9 @@ pub enum Error {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -63,6 +68,7 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::WafAssociatedItemException(inner) => inner.fmt(f),
+            Error::WafConfigurationWarningException(inner) => inner.fmt(f),
             Error::WafDuplicateItemException(inner) => inner.fmt(f),
             Error::WafExpiredManagedRuleGroupVersionException(inner) => inner.fmt(f),
             Error::WafInternalErrorException(inner) => inner.fmt(f),
@@ -246,6 +252,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateWebACLError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateWebACLErrorKind::WafConfigurationWarningException(inner) => {
+                    Error::WafConfigurationWarningException(inner)
+                }
                 crate::error::CreateWebACLErrorKind::WafDuplicateItemException(inner) => {
                     Error::WafDuplicateItemException(inner)
                 }
@@ -1415,6 +1424,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateRuleGroupErrorKind::WafConfigurationWarningException(inner) => {
+                    Error::WafConfigurationWarningException(inner)
+                }
                 crate::error::UpdateRuleGroupErrorKind::WafDuplicateItemException(inner) => {
                     Error::WafDuplicateItemException(inner)
                 }
@@ -1455,6 +1467,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateWebACLError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateWebACLErrorKind::WafConfigurationWarningException(inner) => {
+                    Error::WafConfigurationWarningException(inner)
+                }
                 crate::error::UpdateWebACLErrorKind::WafDuplicateItemException(inner) => {
                     Error::WafDuplicateItemException(inner)
                 }

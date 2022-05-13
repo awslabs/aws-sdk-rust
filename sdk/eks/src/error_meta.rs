@@ -21,7 +21,7 @@ pub enum Error {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
+    /// <p>Required resources (such as service-linked roles) were created and are still propagating. Retry later.</p>
     ResourcePropagationDelayException(crate::error::ResourcePropagationDelayException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),

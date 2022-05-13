@@ -1600,6 +1600,23 @@ pub fn parse_cancel_job_error(
                 tmp
             }),
         },
+        "LimitExceededException" => crate::error::CancelJobError {
+            meta: generic,
+            kind: crate::error::CancelJobErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::CancelJobError {
             meta: generic,
             kind: crate::error::CancelJobErrorKind::ResourceNotFoundException({

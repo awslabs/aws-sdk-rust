@@ -228,6 +228,8 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     HandshakeRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidPaymentInstrument,
+    #[allow(missing_docs)] // documentation missing in model
     MasterAccountAddressDoesNotMatchMarketplace,
     #[allow(missing_docs)] // documentation missing in model
     MasterAccountMissingBusinessLicense,
@@ -283,6 +285,7 @@ impl std::convert::From<&str> for ConstraintViolationExceptionReason {
             "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService,
             "EMAIL_VERIFICATION_CODE_EXPIRED" => ConstraintViolationExceptionReason::EmailVerificationCodeExpired,
             "HANDSHAKE_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
+            "INVALID_PAYMENT_INSTRUMENT" => ConstraintViolationExceptionReason::InvalidPaymentInstrument,
             "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE" => ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace,
             "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE" => ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense,
             "MASTER_ACCOUNT_MISSING_CONTACT_INFO" => ConstraintViolationExceptionReason::MasterAccountMissingContactInfo,
@@ -330,6 +333,7 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
             ConstraintViolationExceptionReason::EmailVerificationCodeExpired => "EMAIL_VERIFICATION_CODE_EXPIRED",
             ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
             ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
             ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
             ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
@@ -368,6 +372,7 @@ impl ConstraintViolationExceptionReason {
             "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
             "EMAIL_VERIFICATION_CODE_EXPIRED",
             "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+            "INVALID_PAYMENT_INSTRUMENT",
             "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
             "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
             "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
@@ -2811,6 +2816,7 @@ pub struct CreateAccountStatus {
     /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
     /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
     /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
     /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
     /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
     /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
@@ -2860,6 +2866,7 @@ impl CreateAccountStatus {
     /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
     /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
     /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
     /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
     /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
     /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
@@ -2996,6 +3003,7 @@ pub mod create_account_status {
         /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
         /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
         /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
+        /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
         /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
         /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
         /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
@@ -3016,6 +3024,7 @@ pub mod create_account_status {
         /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
         /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
         /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
+        /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
         /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
         /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
         /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
@@ -3082,6 +3091,8 @@ pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidIdentityForBusinessValidation,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidPaymentInstrument,
+    #[allow(missing_docs)] // documentation missing in model
     MissingBusinessValidation,
     #[allow(missing_docs)] // documentation missing in model
     MissingPaymentInstrument,
@@ -3110,6 +3121,7 @@ impl std::convert::From<&str> for CreateAccountFailureReason {
             "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => {
                 CreateAccountFailureReason::InvalidIdentityForBusinessValidation
             }
+            "INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
             "MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
             "MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
             "PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
@@ -3144,6 +3156,7 @@ impl CreateAccountFailureReason {
             CreateAccountFailureReason::InvalidIdentityForBusinessValidation => {
                 "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"
             }
+            CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
             CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
@@ -3163,6 +3176,7 @@ impl CreateAccountFailureReason {
             "INVALID_ADDRESS",
             "INVALID_EMAIL",
             "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
+            "INVALID_PAYMENT_INSTRUMENT",
             "MISSING_BUSINESS_VALIDATION",
             "MISSING_PAYMENT_INSTRUMENT",
             "PENDING_BUSINESS_VALIDATION",

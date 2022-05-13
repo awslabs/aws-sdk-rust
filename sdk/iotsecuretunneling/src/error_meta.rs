@@ -100,6 +100,27 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RotateTunnelAccessTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RotateTunnelAccessTokenError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RotateTunnelAccessTokenErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::RotateTunnelAccessTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

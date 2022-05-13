@@ -540,6 +540,124 @@ impl std::error::Error for GetHLSStreamingSessionURLError {
     }
 }
 
+/// Error type for the `GetImages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetImagesError {
+    /// Kind of error that occurred.
+    pub kind: GetImagesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetImages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetImagesErrorKind {
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
+    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
+    NotAuthorizedException(crate::error::NotAuthorizedException),
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetImagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetImagesErrorKind::ClientLimitExceededException(_inner) => _inner.fmt(f),
+            GetImagesErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            GetImagesErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
+            GetImagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetImagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetImagesError {
+    fn code(&self) -> Option<&str> {
+        GetImagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetImagesError {
+    /// Creates a new `GetImagesError`.
+    pub fn new(kind: GetImagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetImagesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetImagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetImagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetImagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetImagesErrorKind::ClientLimitExceededException`.
+    pub fn is_client_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImagesErrorKind::ClientLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImagesErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(&self.kind, GetImagesErrorKind::InvalidArgumentException(_))
+    }
+    /// Returns `true` if the error kind is `GetImagesErrorKind::NotAuthorizedException`.
+    pub fn is_not_authorized_exception(&self) -> bool {
+        matches!(&self.kind, GetImagesErrorKind::NotAuthorizedException(_))
+    }
+    /// Returns `true` if the error kind is `GetImagesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetImagesErrorKind::ResourceNotFoundException(_))
+    }
+}
+impl std::error::Error for GetImagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetImagesErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
+            GetImagesErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            GetImagesErrorKind::NotAuthorizedException(_inner) => Some(_inner),
+            GetImagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetImagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetMediaForFragmentList` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

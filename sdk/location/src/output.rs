@@ -2262,6 +2262,7 @@ pub struct SearchPlaceIndexForTextOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+    /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
 }
 impl SearchPlaceIndexForTextOutput {
@@ -2270,6 +2271,7 @@ impl SearchPlaceIndexForTextOutput {
         self.summary.as_ref()
     }
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+    /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::SearchForTextResult]> {
         self.results.as_deref()
     }
@@ -2310,6 +2312,7 @@ pub mod search_place_index_for_text_output {
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
         /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+        /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
         pub fn results(mut self, input: crate::model::SearchForTextResult) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input);
@@ -2317,6 +2320,7 @@ pub mod search_place_index_for_text_output {
             self
         }
         /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+        /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,

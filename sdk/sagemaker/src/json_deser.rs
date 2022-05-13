@@ -26830,7 +26830,34 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder = crate::model::RSessionAppSettings::builder();
-            aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DefaultResourceSpec" => {
+                                builder = builder.set_default_resource_spec(
+                                    crate::json_deser::deser_structure_crate_model_resource_spec(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "CustomImages" => {
+                                builder = builder.set_custom_images(
+                                    crate::json_deser::deser_list_com_amazonaws_sagemaker_custom_images(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
             Ok(Some(builder.build()))
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
@@ -42276,6 +42303,19 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::MetricSetSource::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "StandardMetricName" => {
+                                builder = builder.set_standard_metric_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::AutoMlMetricExtendedEnum::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

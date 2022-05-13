@@ -2347,12 +2347,12 @@ pub mod get_experiment_results_input {
             self.start_time = input;
             self
         }
-        /// <p>The date and time that the experiment ended, if it is completed.</p>
+        /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The date and time that the experiment ended, if it is completed.</p>
+        /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4175,12 +4175,12 @@ pub mod start_experiment_input {
             self.experiment = input;
             self
         }
-        /// <p>The date and time to end the experiment.</p>
+        /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
         pub fn analysis_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.analysis_complete_time = Some(input);
             self
         }
-        /// <p>The date and time to end the experiment.</p>
+        /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
         pub fn set_analysis_complete_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7414,7 +7414,7 @@ pub struct StartExperimentInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to start.</p>
     pub experiment: std::option::Option<std::string::String>,
-    /// <p>The date and time to end the experiment.</p>
+    /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub analysis_complete_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExperimentInput {
@@ -7426,7 +7426,7 @@ impl StartExperimentInput {
     pub fn experiment(&self) -> std::option::Option<&str> {
         self.experiment.as_deref()
     }
-    /// <p>The date and time to end the experiment.</p>
+    /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub fn analysis_complete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.analysis_complete_time.as_ref()
     }
@@ -7451,7 +7451,7 @@ pub struct GetExperimentResultsInput {
     pub experiment: std::option::Option<std::string::String>,
     /// <p>The date and time that the experiment started.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that the experiment ended, if it is completed.</p>
+    /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
     pub metric_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7485,7 +7485,7 @@ impl GetExperimentResultsInput {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The date and time that the experiment ended, if it is completed.</p>
+    /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }

@@ -2836,6 +2836,228 @@ impl AsRef<str> for CatalogItemClass {
     }
 }
 
+/// <p> Information about hardware assets. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssetInfo {
+    /// <p> The ID of the asset. </p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p> The rack ID of the asset. </p>
+    pub rack_id: std::option::Option<std::string::String>,
+    /// <p> The type of the asset. </p>
+    pub asset_type: std::option::Option<crate::model::AssetType>,
+    /// <p> Information about compute hardware assets. </p>
+    pub compute_attributes: std::option::Option<crate::model::ComputeAttributes>,
+}
+impl AssetInfo {
+    /// <p> The ID of the asset. </p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p> The rack ID of the asset. </p>
+    pub fn rack_id(&self) -> std::option::Option<&str> {
+        self.rack_id.as_deref()
+    }
+    /// <p> The type of the asset. </p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p> Information about compute hardware assets. </p>
+    pub fn compute_attributes(&self) -> std::option::Option<&crate::model::ComputeAttributes> {
+        self.compute_attributes.as_ref()
+    }
+}
+impl std::fmt::Debug for AssetInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssetInfo");
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("rack_id", &self.rack_id);
+        formatter.field("asset_type", &self.asset_type);
+        formatter.field("compute_attributes", &self.compute_attributes);
+        formatter.finish()
+    }
+}
+/// See [`AssetInfo`](crate::model::AssetInfo)
+pub mod asset_info {
+    /// A builder for [`AssetInfo`](crate::model::AssetInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) rack_id: std::option::Option<std::string::String>,
+        pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
+        pub(crate) compute_attributes: std::option::Option<crate::model::ComputeAttributes>,
+    }
+    impl Builder {
+        /// <p> The ID of the asset. </p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the asset. </p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p> The rack ID of the asset. </p>
+        pub fn rack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rack_id = Some(input.into());
+            self
+        }
+        /// <p> The rack ID of the asset. </p>
+        pub fn set_rack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rack_id = input;
+            self
+        }
+        /// <p> The type of the asset. </p>
+        pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
+            self.asset_type = Some(input);
+            self
+        }
+        /// <p> The type of the asset. </p>
+        pub fn set_asset_type(
+            mut self,
+            input: std::option::Option<crate::model::AssetType>,
+        ) -> Self {
+            self.asset_type = input;
+            self
+        }
+        /// <p> Information about compute hardware assets. </p>
+        pub fn compute_attributes(mut self, input: crate::model::ComputeAttributes) -> Self {
+            self.compute_attributes = Some(input);
+            self
+        }
+        /// <p> Information about compute hardware assets. </p>
+        pub fn set_compute_attributes(
+            mut self,
+            input: std::option::Option<crate::model::ComputeAttributes>,
+        ) -> Self {
+            self.compute_attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssetInfo`](crate::model::AssetInfo)
+        pub fn build(self) -> crate::model::AssetInfo {
+            crate::model::AssetInfo {
+                asset_id: self.asset_id,
+                rack_id: self.rack_id,
+                asset_type: self.asset_type,
+                compute_attributes: self.compute_attributes,
+            }
+        }
+    }
+}
+impl AssetInfo {
+    /// Creates a new builder-style object to manufacture [`AssetInfo`](crate::model::AssetInfo)
+    pub fn builder() -> crate::model::asset_info::Builder {
+        crate::model::asset_info::Builder::default()
+    }
+}
+
+/// <p> Information about compute hardware assets. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ComputeAttributes {
+    /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+    pub host_id: std::option::Option<std::string::String>,
+}
+impl ComputeAttributes {
+    /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+    pub fn host_id(&self) -> std::option::Option<&str> {
+        self.host_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ComputeAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ComputeAttributes");
+        formatter.field("host_id", &self.host_id);
+        formatter.finish()
+    }
+}
+/// See [`ComputeAttributes`](crate::model::ComputeAttributes)
+pub mod compute_attributes {
+    /// A builder for [`ComputeAttributes`](crate::model::ComputeAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) host_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+        pub fn host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_id = Some(input.into());
+            self
+        }
+        /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+        pub fn set_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ComputeAttributes`](crate::model::ComputeAttributes)
+        pub fn build(self) -> crate::model::ComputeAttributes {
+            crate::model::ComputeAttributes {
+                host_id: self.host_id,
+            }
+        }
+    }
+}
+impl ComputeAttributes {
+    /// Creates a new builder-style object to manufacture [`ComputeAttributes`](crate::model::ComputeAttributes)
+    pub fn builder() -> crate::model::compute_attributes::Builder {
+        crate::model::compute_attributes::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AssetType {
+    #[allow(missing_docs)] // documentation missing in model
+    Compute,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AssetType {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPUTE" => AssetType::Compute,
+            other => AssetType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AssetType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AssetType::from(s))
+    }
+}
+impl AssetType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AssetType::Compute => "COMPUTE",
+            AssetType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPUTE"]
+    }
+}
+impl AsRef<str> for AssetType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about an instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

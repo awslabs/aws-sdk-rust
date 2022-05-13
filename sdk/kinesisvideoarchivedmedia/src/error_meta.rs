@@ -129,6 +129,31 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImagesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetImagesErrorKind::ClientLimitExceededException(inner) => {
+                    Error::ClientLimitExceededException(inner)
+                }
+                crate::error::GetImagesErrorKind::InvalidArgumentException(inner) => {
+                    Error::InvalidArgumentException(inner)
+                }
+                crate::error::GetImagesErrorKind::NotAuthorizedException(inner) => {
+                    Error::NotAuthorizedException(inner)
+                }
+                crate::error::GetImagesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetImagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError, R>>
     for Error
 where

@@ -2284,6 +2284,8 @@ impl CommitDiffSourceCodeType {
 pub struct MetricsSummary {
     /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
     pub metered_lines_of_code_count: std::option::Option<i64>,
+    /// <p>Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.</p>
+    pub suppressed_lines_of_code_count: std::option::Option<i64>,
     /// <p> Total number of recommendations found in the code review. </p>
     pub findings_count: std::option::Option<i64>,
 }
@@ -2291,6 +2293,10 @@ impl MetricsSummary {
     /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
     pub fn metered_lines_of_code_count(&self) -> std::option::Option<i64> {
         self.metered_lines_of_code_count
+    }
+    /// <p>Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.</p>
+    pub fn suppressed_lines_of_code_count(&self) -> std::option::Option<i64> {
+        self.suppressed_lines_of_code_count
     }
     /// <p> Total number of recommendations found in the code review. </p>
     pub fn findings_count(&self) -> std::option::Option<i64> {
@@ -2304,6 +2310,10 @@ impl std::fmt::Debug for MetricsSummary {
             "metered_lines_of_code_count",
             &self.metered_lines_of_code_count,
         );
+        formatter.field(
+            "suppressed_lines_of_code_count",
+            &self.suppressed_lines_of_code_count,
+        );
         formatter.field("findings_count", &self.findings_count);
         formatter.finish()
     }
@@ -2315,6 +2325,7 @@ pub mod metrics_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metered_lines_of_code_count: std::option::Option<i64>,
+        pub(crate) suppressed_lines_of_code_count: std::option::Option<i64>,
         pub(crate) findings_count: std::option::Option<i64>,
     }
     impl Builder {
@@ -2326,6 +2337,19 @@ pub mod metrics_summary {
         /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
         pub fn set_metered_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
             self.metered_lines_of_code_count = input;
+            self
+        }
+        /// <p>Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.</p>
+        pub fn suppressed_lines_of_code_count(mut self, input: i64) -> Self {
+            self.suppressed_lines_of_code_count = Some(input);
+            self
+        }
+        /// <p>Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.</p>
+        pub fn set_suppressed_lines_of_code_count(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.suppressed_lines_of_code_count = input;
             self
         }
         /// <p> Total number of recommendations found in the code review. </p>
@@ -2342,6 +2366,7 @@ pub mod metrics_summary {
         pub fn build(self) -> crate::model::MetricsSummary {
             crate::model::MetricsSummary {
                 metered_lines_of_code_count: self.metered_lines_of_code_count,
+                suppressed_lines_of_code_count: self.suppressed_lines_of_code_count,
                 findings_count: self.findings_count,
             }
         }
@@ -3181,8 +3206,10 @@ pub struct CodeReview {
     pub association_arn: std::option::Option<std::string::String>,
     /// <p> The statistics from the code review. </p>
     pub metrics: std::option::Option<crate::model::Metrics>,
-    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
+    /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
+    pub config_file_state: std::option::Option<crate::model::ConfigFileState>,
 }
 impl CodeReview {
     /// <p> The name of the code review. </p>
@@ -3247,9 +3274,13 @@ impl CodeReview {
     pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
         self.metrics.as_ref()
     }
-    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub fn analysis_types(&self) -> std::option::Option<&[crate::model::AnalysisType]> {
         self.analysis_types.as_deref()
+    }
+    /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
+    pub fn config_file_state(&self) -> std::option::Option<&crate::model::ConfigFileState> {
+        self.config_file_state.as_ref()
     }
 }
 impl std::fmt::Debug for CodeReview {
@@ -3270,6 +3301,7 @@ impl std::fmt::Debug for CodeReview {
         formatter.field("association_arn", &self.association_arn);
         formatter.field("metrics", &self.metrics);
         formatter.field("analysis_types", &self.analysis_types);
+        formatter.field("config_file_state", &self.config_file_state);
         formatter.finish()
     }
 }
@@ -3294,6 +3326,7 @@ pub mod code_review {
         pub(crate) association_arn: std::option::Option<std::string::String>,
         pub(crate) metrics: std::option::Option<crate::model::Metrics>,
         pub(crate) analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
+        pub(crate) config_file_state: std::option::Option<crate::model::ConfigFileState>,
     }
     impl Builder {
         /// <p> The name of the code review. </p>
@@ -3476,19 +3509,32 @@ pub mod code_review {
         ///
         /// To override the contents of this collection use [`set_analysis_types`](Self::set_analysis_types).
         ///
-        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+        /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
         pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
             v.push(input);
             self.analysis_types = Some(v);
             self
         }
-        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+        /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
         pub fn set_analysis_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
         ) -> Self {
             self.analysis_types = input;
+            self
+        }
+        /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
+        pub fn config_file_state(mut self, input: crate::model::ConfigFileState) -> Self {
+            self.config_file_state = Some(input);
+            self
+        }
+        /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
+        pub fn set_config_file_state(
+            mut self,
+            input: std::option::Option<crate::model::ConfigFileState>,
+        ) -> Self {
+            self.config_file_state = input;
             self
         }
         /// Consumes the builder and constructs a [`CodeReview`](crate::model::CodeReview)
@@ -3509,6 +3555,7 @@ pub mod code_review {
                 association_arn: self.association_arn,
                 metrics: self.metrics,
                 analysis_types: self.analysis_types,
+                config_file_state: self.config_file_state,
             }
         }
     }
@@ -3517,6 +3564,65 @@ impl CodeReview {
     /// Creates a new builder-style object to manufacture [`CodeReview`](crate::model::CodeReview)
     pub fn builder() -> crate::model::code_review::Builder {
         crate::model::code_review::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConfigFileState {
+    #[allow(missing_docs)] // documentation missing in model
+    Absent,
+    #[allow(missing_docs)] // documentation missing in model
+    Present,
+    #[allow(missing_docs)] // documentation missing in model
+    PresentWithErrors,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConfigFileState {
+    fn from(s: &str) -> Self {
+        match s {
+            "Absent" => ConfigFileState::Absent,
+            "Present" => ConfigFileState::Present,
+            "PresentWithErrors" => ConfigFileState::PresentWithErrors,
+            other => ConfigFileState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConfigFileState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConfigFileState::from(s))
+    }
+}
+impl ConfigFileState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConfigFileState::Absent => "Absent",
+            ConfigFileState::Present => "Present",
+            ConfigFileState::PresentWithErrors => "PresentWithErrors",
+            ConfigFileState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Absent", "Present", "PresentWithErrors"]
+    }
+}
+impl AsRef<str> for ConfigFileState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3579,15 +3685,21 @@ impl AsRef<str> for AnalysisType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
-    /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
+    /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
     pub metered_lines_of_code_count: std::option::Option<i64>,
+    /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
+    pub suppressed_lines_of_code_count: std::option::Option<i64>,
     /// <p> Total number of recommendations found in the code review. </p>
     pub findings_count: std::option::Option<i64>,
 }
 impl Metrics {
-    /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
+    /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
     pub fn metered_lines_of_code_count(&self) -> std::option::Option<i64> {
         self.metered_lines_of_code_count
+    }
+    /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
+    pub fn suppressed_lines_of_code_count(&self) -> std::option::Option<i64> {
+        self.suppressed_lines_of_code_count
     }
     /// <p> Total number of recommendations found in the code review. </p>
     pub fn findings_count(&self) -> std::option::Option<i64> {
@@ -3601,6 +3713,10 @@ impl std::fmt::Debug for Metrics {
             "metered_lines_of_code_count",
             &self.metered_lines_of_code_count,
         );
+        formatter.field(
+            "suppressed_lines_of_code_count",
+            &self.suppressed_lines_of_code_count,
+        );
         formatter.field("findings_count", &self.findings_count);
         formatter.finish()
     }
@@ -3612,17 +3728,31 @@ pub mod metrics {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metered_lines_of_code_count: std::option::Option<i64>,
+        pub(crate) suppressed_lines_of_code_count: std::option::Option<i64>,
         pub(crate) findings_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
+        /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
         pub fn metered_lines_of_code_count(mut self, input: i64) -> Self {
             self.metered_lines_of_code_count = Some(input);
             self
         }
-        /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
+        /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
         pub fn set_metered_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
             self.metered_lines_of_code_count = input;
+            self
+        }
+        /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
+        pub fn suppressed_lines_of_code_count(mut self, input: i64) -> Self {
+            self.suppressed_lines_of_code_count = Some(input);
+            self
+        }
+        /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
+        pub fn set_suppressed_lines_of_code_count(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.suppressed_lines_of_code_count = input;
             self
         }
         /// <p> Total number of recommendations found in the code review. </p>
@@ -3639,6 +3769,7 @@ pub mod metrics {
         pub fn build(self) -> crate::model::Metrics {
             crate::model::Metrics {
                 metered_lines_of_code_count: self.metered_lines_of_code_count,
+                suppressed_lines_of_code_count: self.suppressed_lines_of_code_count,
                 findings_count: self.findings_count,
             }
         }

@@ -20,12 +20,12 @@ pub mod close_tunnel_input {
             self.tunnel_id = input;
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+        /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn delete(mut self, input: bool) -> Self {
             self.delete = Some(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+        /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.delete = input;
             self
@@ -496,12 +496,12 @@ pub mod list_tunnels_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to retrieve the next set of results.</p>
+        /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to retrieve the next set of results.</p>
+        /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -841,6 +841,181 @@ impl OpenTunnelInput {
     /// Creates a new builder-style object to manufacture [`OpenTunnelInput`](crate::input::OpenTunnelInput)
     pub fn builder() -> crate::input::open_tunnel_input::Builder {
         crate::input::open_tunnel_input::Builder::default()
+    }
+}
+
+/// See [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput)
+pub mod rotate_tunnel_access_token_input {
+    /// A builder for [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tunnel_id: std::option::Option<std::string::String>,
+        pub(crate) client_mode: std::option::Option<crate::model::ClientMode>,
+        pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
+    }
+    impl Builder {
+        /// <p>The tunnel for which you want to rotate the access tokens.</p>
+        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tunnel_id = Some(input.into());
+            self
+        }
+        /// <p>The tunnel for which you want to rotate the access tokens.</p>
+        pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tunnel_id = input;
+            self
+        }
+        /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+        pub fn client_mode(mut self, input: crate::model::ClientMode) -> Self {
+            self.client_mode = Some(input);
+            self
+        }
+        /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+        pub fn set_client_mode(
+            mut self,
+            input: std::option::Option<crate::model::ClientMode>,
+        ) -> Self {
+            self.client_mode = input;
+            self
+        }
+        /// <p>The destination configuration.</p>
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
+            self
+        }
+        /// <p>The destination configuration.</p>
+        pub fn set_destination_config(
+            mut self,
+            input: std::option::Option<crate::model::DestinationConfig>,
+        ) -> Self {
+            self.destination_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RotateTunnelAccessTokenInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RotateTunnelAccessTokenInput {
+                tunnel_id: self.tunnel_id,
+                client_mode: self.client_mode,
+                destination_config: self.destination_config,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RotateTunnelAccessTokenInputOperationOutputAlias =
+    crate::operation::RotateTunnelAccessToken;
+#[doc(hidden)]
+pub type RotateTunnelAccessTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RotateTunnelAccessTokenInput {
+    /// Consumes the builder and constructs an Operation<[`RotateTunnelAccessToken`](crate::operation::RotateTunnelAccessToken)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RotateTunnelAccessToken,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RotateTunnelAccessTokenInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RotateTunnelAccessTokenInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "IoTSecuredTunneling.RotateTunnelAccessToken",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_rotate_tunnel_access_token(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RotateTunnelAccessToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RotateTunnelAccessToken",
+            "iotsecuretunneling",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput)
+    pub fn builder() -> crate::input::rotate_tunnel_access_token_input::Builder {
+        crate::input::rotate_tunnel_access_token_input::Builder::default()
     }
 }
 
@@ -1229,6 +1404,41 @@ impl std::fmt::Debug for TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RotateTunnelAccessTokenInput {
+    /// <p>The tunnel for which you want to rotate the access tokens.</p>
+    pub tunnel_id: std::option::Option<std::string::String>,
+    /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    pub client_mode: std::option::Option<crate::model::ClientMode>,
+    /// <p>The destination configuration.</p>
+    pub destination_config: std::option::Option<crate::model::DestinationConfig>,
+}
+impl RotateTunnelAccessTokenInput {
+    /// <p>The tunnel for which you want to rotate the access tokens.</p>
+    pub fn tunnel_id(&self) -> std::option::Option<&str> {
+        self.tunnel_id.as_deref()
+    }
+    /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    pub fn client_mode(&self) -> std::option::Option<&crate::model::ClientMode> {
+        self.client_mode.as_ref()
+    }
+    /// <p>The destination configuration.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+}
+impl std::fmt::Debug for RotateTunnelAccessTokenInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RotateTunnelAccessTokenInput");
+        formatter.field("tunnel_id", &self.tunnel_id);
+        formatter.field("client_mode", &self.client_mode);
+        formatter.field("destination_config", &self.destination_config);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenTunnelInput {
     /// <p>A short text description of the tunnel. </p>
     pub description: std::option::Option<std::string::String>,
@@ -1276,7 +1486,7 @@ pub struct ListTunnelsInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to retrieve the next set of results.</p>
+    /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTunnelsInput {
@@ -1288,7 +1498,7 @@ impl ListTunnelsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to retrieve the next set of results.</p>
+    /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1351,7 +1561,7 @@ impl std::fmt::Debug for DescribeTunnelInput {
 pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub delete: std::option::Option<bool>,
 }
 impl CloseTunnelInput {
@@ -1359,7 +1569,7 @@ impl CloseTunnelInput {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(&self) -> std::option::Option<bool> {
         self.delete
     }

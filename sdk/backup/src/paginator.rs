@@ -22,6 +22,14 @@ impl ListBackupJobsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `backup_jobs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListBackupJobsPaginatorItems {
+        crate::paginator::ListBackupJobsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -107,6 +115,14 @@ impl ListBackupPlansPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `backup_plans_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListBackupPlansPaginatorItems {
+        crate::paginator::ListBackupPlansPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -196,6 +212,14 @@ impl ListBackupPlanTemplatesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `backup_plan_templates_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListBackupPlanTemplatesPaginatorItems {
+        crate::paginator::ListBackupPlanTemplatesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -281,6 +305,14 @@ impl ListBackupPlanVersionsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `backup_plan_versions_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListBackupPlanVersionsPaginatorItems {
+        crate::paginator::ListBackupPlanVersionsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -370,6 +402,14 @@ impl ListBackupSelectionsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `backup_selections_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListBackupSelectionsPaginatorItems {
+        crate::paginator::ListBackupSelectionsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -457,6 +497,14 @@ impl ListBackupVaultsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `backup_vault_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListBackupVaultsPaginatorItems {
+        crate::paginator::ListBackupVaultsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -542,6 +590,14 @@ impl ListCopyJobsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `copy_jobs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListCopyJobsPaginatorItems {
+        crate::paginator::ListCopyJobsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -718,6 +774,14 @@ impl ListProtectedResourcesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `results`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListProtectedResourcesPaginatorItems {
+        crate::paginator::ListProtectedResourcesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -805,6 +869,14 @@ impl ListRecoveryPointsByBackupVaultPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `recovery_points`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListRecoveryPointsByBackupVaultPaginatorItems {
+        crate::paginator::ListRecoveryPointsByBackupVaultPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -890,6 +962,14 @@ impl ListRecoveryPointsByResourcePaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `recovery_points`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListRecoveryPointsByResourcePaginatorItems {
+        crate::paginator::ListRecoveryPointsByResourcePaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -1153,6 +1233,14 @@ impl ListRestoreJobsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `restore_jobs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListRestoreJobsPaginatorItems {
+        crate::paginator::ListRestoreJobsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -1300,6 +1388,287 @@ impl ListTagsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListBackupJobsPaginator`
+///
+/// This is created with [`.items()`](ListBackupJobsPaginator::items)
+pub struct ListBackupJobsPaginatorItems(ListBackupJobsPaginator);
+
+impl ListBackupJobsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BackupJob,
+            aws_smithy_http::result::SdkError<crate::error::ListBackupJobsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_backup_jobs_output_backup_jobs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListBackupPlansPaginator`
+///
+/// This is created with [`.items()`](ListBackupPlansPaginator::items)
+pub struct ListBackupPlansPaginatorItems(ListBackupPlansPaginator);
+
+impl ListBackupPlansPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BackupPlansListMember,
+            aws_smithy_http::result::SdkError<crate::error::ListBackupPlansError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_backup_plans_output_backup_plans_list(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListBackupPlanTemplatesPaginator`
+///
+/// This is created with [`.items()`](ListBackupPlanTemplatesPaginator::items)
+pub struct ListBackupPlanTemplatesPaginatorItems(ListBackupPlanTemplatesPaginator);
+
+impl ListBackupPlanTemplatesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BackupPlanTemplatesListMember,
+            aws_smithy_http::result::SdkError<crate::error::ListBackupPlanTemplatesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_backup_plan_templates_output_backup_plan_templates_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListBackupPlanVersionsPaginator`
+///
+/// This is created with [`.items()`](ListBackupPlanVersionsPaginator::items)
+pub struct ListBackupPlanVersionsPaginatorItems(ListBackupPlanVersionsPaginator);
+
+impl ListBackupPlanVersionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BackupPlansListMember,
+            aws_smithy_http::result::SdkError<crate::error::ListBackupPlanVersionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_backup_plan_versions_output_backup_plan_versions_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListBackupSelectionsPaginator`
+///
+/// This is created with [`.items()`](ListBackupSelectionsPaginator::items)
+pub struct ListBackupSelectionsPaginatorItems(ListBackupSelectionsPaginator);
+
+impl ListBackupSelectionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BackupSelectionsListMember,
+            aws_smithy_http::result::SdkError<crate::error::ListBackupSelectionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_backup_selections_output_backup_selections_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListBackupVaultsPaginator`
+///
+/// This is created with [`.items()`](ListBackupVaultsPaginator::items)
+pub struct ListBackupVaultsPaginatorItems(ListBackupVaultsPaginator);
+
+impl ListBackupVaultsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BackupVaultListMember,
+            aws_smithy_http::result::SdkError<crate::error::ListBackupVaultsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_backup_vaults_output_backup_vault_list(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListCopyJobsPaginator`
+///
+/// This is created with [`.items()`](ListCopyJobsPaginator::items)
+pub struct ListCopyJobsPaginatorItems(ListCopyJobsPaginator);
+
+impl ListCopyJobsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CopyJob,
+            aws_smithy_http::result::SdkError<crate::error::ListCopyJobsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_copy_jobs_output_copy_jobs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListProtectedResourcesPaginator`
+///
+/// This is created with [`.items()`](ListProtectedResourcesPaginator::items)
+pub struct ListProtectedResourcesPaginatorItems(ListProtectedResourcesPaginator);
+
+impl ListProtectedResourcesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ProtectedResource,
+            aws_smithy_http::result::SdkError<crate::error::ListProtectedResourcesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_protected_resources_output_results(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListRecoveryPointsByBackupVaultPaginator`
+///
+/// This is created with [`.items()`](ListRecoveryPointsByBackupVaultPaginator::items)
+pub struct ListRecoveryPointsByBackupVaultPaginatorItems(ListRecoveryPointsByBackupVaultPaginator);
+
+impl ListRecoveryPointsByBackupVaultPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::RecoveryPointByBackupVault,
+            aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByBackupVaultError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_recovery_points_by_backup_vault_output_recovery_points(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListRecoveryPointsByResourcePaginator`
+///
+/// This is created with [`.items()`](ListRecoveryPointsByResourcePaginator::items)
+pub struct ListRecoveryPointsByResourcePaginatorItems(ListRecoveryPointsByResourcePaginator);
+
+impl ListRecoveryPointsByResourcePaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::RecoveryPointByResource,
+            aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByResourceError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_recovery_points_by_resource_output_recovery_points(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListRestoreJobsPaginator`
+///
+/// This is created with [`.items()`](ListRestoreJobsPaginator::items)
+pub struct ListRestoreJobsPaginatorItems(ListRestoreJobsPaginator);
+
+impl ListRestoreJobsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::RestoreJobsListMember,
+            aws_smithy_http::result::SdkError<crate::error::ListRestoreJobsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_restore_jobs_output_restore_jobs(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

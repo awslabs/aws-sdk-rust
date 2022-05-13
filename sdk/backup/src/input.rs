@@ -5507,6 +5507,8 @@ pub mod list_backup_jobs_input {
         pub(crate) by_created_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) by_resource_type: std::option::Option<std::string::String>,
         pub(crate) by_account_id: std::option::Option<std::string::String>,
+        pub(crate) by_complete_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) by_complete_before: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -5650,6 +5652,32 @@ pub mod list_backup_jobs_input {
             self.by_account_id = input;
             self
         }
+        /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.by_complete_after = Some(input);
+            self
+        }
+        /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.by_complete_after = input;
+            self
+        }
+        /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.by_complete_before = Some(input);
+            self
+        }
+        /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.by_complete_before = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBackupJobsInput`](crate::input::ListBackupJobsInput)
         pub fn build(
             self,
@@ -5667,6 +5695,8 @@ pub mod list_backup_jobs_input {
                 by_created_after: self.by_created_after,
                 by_resource_type: self.by_resource_type,
                 by_account_id: self.by_account_id,
+                by_complete_after: self.by_complete_after,
+                by_complete_before: self.by_complete_before,
             })
         }
     }
@@ -5753,6 +5783,24 @@ impl ListBackupJobsInput {
                 }
                 if let Some(inner_44) = &_input.by_account_id {
                     query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_44));
+                }
+                if let Some(inner_45) = &_input.by_complete_after {
+                    query.push_kv(
+                        "completeAfter",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_45,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
+                }
+                if let Some(inner_46) = &_input.by_complete_before {
+                    query.push_kv(
+                        "completeBefore",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_46,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
                 }
                 Ok(())
             }
@@ -5909,19 +5957,19 @@ impl ListBackupPlansInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_45) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
+                if let Some(inner_47) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_47));
                 }
-                if let Some(inner_46) = &_input.max_results {
+                if let Some(inner_48) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
                     );
                 }
-                if let Some(inner_47) = &_input.include_deleted {
+                if let Some(inner_49) = &_input.include_deleted {
                     query.push_kv(
                         "includeDeleted",
-                        aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
                     );
                 }
                 Ok(())
@@ -6068,13 +6116,13 @@ impl ListBackupPlanTemplatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                if let Some(inner_50) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
                 }
-                if let Some(inner_49) = &_input.max_results {
+                if let Some(inner_51) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_51).encode(),
                     );
                 }
                 Ok(())
@@ -6227,14 +6275,14 @@ impl ListBackupPlanVersionsInput {
                 _input: &crate::input::ListBackupPlanVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.backup_plan_id;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_52 = &_input.backup_plan_id;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_52, false);
                 if backup_plan_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
@@ -6254,13 +6302,13 @@ impl ListBackupPlanVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_51) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_51));
+                if let Some(inner_53) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
                 }
-                if let Some(inner_52) = &_input.max_results {
+                if let Some(inner_54) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_52).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
                     );
                 }
                 Ok(())
@@ -6413,14 +6461,14 @@ impl ListBackupSelectionsInput {
                 _input: &crate::input::ListBackupSelectionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_53 = &_input.backup_plan_id;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_55 = &_input.backup_plan_id;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_55, false);
                 if backup_plan_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
@@ -6440,13 +6488,13 @@ impl ListBackupSelectionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_54) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                if let Some(inner_56) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
-                if let Some(inner_55) = &_input.max_results {
+                if let Some(inner_57) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
                     );
                 }
                 Ok(())
@@ -6592,13 +6640,13 @@ impl ListBackupVaultsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+                if let Some(inner_58) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
                 }
-                if let Some(inner_57) = &_input.max_results {
+                if let Some(inner_59) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
                     );
                 }
                 Ok(())
@@ -6683,6 +6731,8 @@ pub mod list_copy_jobs_input {
         pub(crate) by_resource_type: std::option::Option<std::string::String>,
         pub(crate) by_destination_vault_arn: std::option::Option<std::string::String>,
         pub(crate) by_account_id: std::option::Option<std::string::String>,
+        pub(crate) by_complete_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) by_complete_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
@@ -6824,6 +6874,32 @@ pub mod list_copy_jobs_input {
             self.by_account_id = input;
             self
         }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.by_complete_before = Some(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.by_complete_before = input;
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.by_complete_after = Some(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.by_complete_after = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCopyJobsInput`](crate::input::ListCopyJobsInput)
         pub fn build(
             self,
@@ -6841,6 +6917,8 @@ pub mod list_copy_jobs_input {
                 by_resource_type: self.by_resource_type,
                 by_destination_vault_arn: self.by_destination_vault_arn,
                 by_account_id: self.by_account_id,
+                by_complete_before: self.by_complete_before,
+                by_complete_after: self.by_complete_after,
             })
         }
     }
@@ -6877,56 +6955,74 @@ impl ListCopyJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_58) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
+                if let Some(inner_60) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
-                if let Some(inner_59) = &_input.max_results {
+                if let Some(inner_61) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
                     );
                 }
-                if let Some(inner_60) = &_input.by_resource_arn {
+                if let Some(inner_62) = &_input.by_resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_60),
+                        &aws_smithy_http::query::fmt_string(&inner_62),
                     );
                 }
-                if let Some(inner_61) = &_input.by_state {
-                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_61));
+                if let Some(inner_63) = &_input.by_state {
+                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_63));
                 }
-                if let Some(inner_62) = &_input.by_created_before {
+                if let Some(inner_64) = &_input.by_created_before {
                     query.push_kv(
                         "createdBefore",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_62,
+                            inner_64,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_63) = &_input.by_created_after {
+                if let Some(inner_65) = &_input.by_created_after {
                     query.push_kv(
                         "createdAfter",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_63,
+                            inner_65,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_64) = &_input.by_resource_type {
+                if let Some(inner_66) = &_input.by_resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_64),
+                        &aws_smithy_http::query::fmt_string(&inner_66),
                     );
                 }
-                if let Some(inner_65) = &_input.by_destination_vault_arn {
+                if let Some(inner_67) = &_input.by_destination_vault_arn {
                     query.push_kv(
                         "destinationVaultArn",
-                        &aws_smithy_http::query::fmt_string(&inner_65),
+                        &aws_smithy_http::query::fmt_string(&inner_67),
                     );
                 }
-                if let Some(inner_66) = &_input.by_account_id {
-                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_66));
+                if let Some(inner_68) = &_input.by_account_id {
+                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_68));
+                }
+                if let Some(inner_69) = &_input.by_complete_before {
+                    query.push_kv(
+                        "completeBefore",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_69,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
+                }
+                if let Some(inner_70) = &_input.by_complete_after {
+                    query.push_kv(
+                        "completeAfter",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_70,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
                 }
                 Ok(())
             }
@@ -7071,14 +7167,14 @@ impl ListFrameworksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.max_results {
+                if let Some(inner_71) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
                     );
                 }
-                if let Some(inner_68) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_68));
+                if let Some(inner_72) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_72));
                 }
                 Ok(())
             }
@@ -7223,13 +7319,13 @@ impl ListProtectedResourcesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_69) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                if let Some(inner_73) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
                 }
-                if let Some(inner_70) = &_input.max_results {
+                if let Some(inner_74) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
                     );
                 }
                 Ok(())
@@ -7463,14 +7559,14 @@ impl ListRecoveryPointsByBackupVaultInput {
                 _input: &crate::input::ListRecoveryPointsByBackupVaultInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_71 = &_input.backup_vault_name;
-                let input_71 = input_71.as_ref().ok_or(
+                let input_75 = &_input.backup_vault_name;
+                let input_75 = input_75.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_71, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_75, false);
                 if backup_vault_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
@@ -7490,47 +7586,47 @@ impl ListRecoveryPointsByBackupVaultInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_72) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_72));
+                if let Some(inner_76) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_76));
                 }
-                if let Some(inner_73) = &_input.max_results {
+                if let Some(inner_77) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
                     );
                 }
-                if let Some(inner_74) = &_input.by_resource_arn {
+                if let Some(inner_78) = &_input.by_resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_74),
+                        &aws_smithy_http::query::fmt_string(&inner_78),
                     );
                 }
-                if let Some(inner_75) = &_input.by_resource_type {
+                if let Some(inner_79) = &_input.by_resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_75),
+                        &aws_smithy_http::query::fmt_string(&inner_79),
                     );
                 }
-                if let Some(inner_76) = &_input.by_backup_plan_id {
+                if let Some(inner_80) = &_input.by_backup_plan_id {
                     query.push_kv(
                         "backupPlanId",
-                        &aws_smithy_http::query::fmt_string(&inner_76),
+                        &aws_smithy_http::query::fmt_string(&inner_80),
                     );
                 }
-                if let Some(inner_77) = &_input.by_created_before {
+                if let Some(inner_81) = &_input.by_created_before {
                     query.push_kv(
                         "createdBefore",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_77,
+                            inner_81,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_78) = &_input.by_created_after {
+                if let Some(inner_82) = &_input.by_created_after {
                     query.push_kv(
                         "createdAfter",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_78,
+                            inner_82,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
@@ -7688,14 +7784,14 @@ impl ListRecoveryPointsByResourceInput {
                 _input: &crate::input::ListRecoveryPointsByResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_79 = &_input.resource_arn;
-                let input_79 = input_79.as_ref().ok_or(
+                let input_83 = &_input.resource_arn;
+                let input_83 = input_83.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_79, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_83, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -7715,13 +7811,13 @@ impl ListRecoveryPointsByResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_80) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_80));
+                if let Some(inner_84) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_84));
                 }
-                if let Some(inner_81) = &_input.max_results {
+                if let Some(inner_85) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
                     );
                 }
                 Ok(())
@@ -7926,41 +8022,41 @@ impl ListReportJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_82) = &_input.by_report_plan_name {
+                if let Some(inner_86) = &_input.by_report_plan_name {
                     query.push_kv(
                         "ReportPlanName",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
+                        &aws_smithy_http::query::fmt_string(&inner_86),
                     );
                 }
-                if let Some(inner_83) = &_input.by_creation_before {
+                if let Some(inner_87) = &_input.by_creation_before {
                     query.push_kv(
                         "CreationBefore",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_83,
+                            inner_87,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_84) = &_input.by_creation_after {
+                if let Some(inner_88) = &_input.by_creation_after {
                     query.push_kv(
                         "CreationAfter",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_84,
+                            inner_88,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_85) = &_input.by_status {
-                    query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_85));
+                if let Some(inner_89) = &_input.by_status {
+                    query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_89));
                 }
-                if let Some(inner_86) = &_input.max_results {
+                if let Some(inner_90) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_86).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
                     );
                 }
-                if let Some(inner_87) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+                if let Some(inner_91) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_91));
                 }
                 Ok(())
             }
@@ -8105,14 +8201,14 @@ impl ListReportPlansInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_88) = &_input.max_results {
+                if let Some(inner_92) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
                     );
                 }
-                if let Some(inner_89) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_89));
+                if let Some(inner_93) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_93));
                 }
                 Ok(())
             }
@@ -8193,6 +8289,8 @@ pub mod list_restore_jobs_input {
         pub(crate) by_created_before: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) by_created_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) by_status: std::option::Option<crate::model::RestoreJobStatus>,
+        pub(crate) by_complete_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) by_complete_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -8267,6 +8365,32 @@ pub mod list_restore_jobs_input {
             self.by_status = input;
             self
         }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.by_complete_before = Some(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.by_complete_before = input;
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.by_complete_after = Some(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.by_complete_after = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::input::ListRestoreJobsInput)
         pub fn build(
             self,
@@ -8281,6 +8405,8 @@ pub mod list_restore_jobs_input {
                 by_created_before: self.by_created_before,
                 by_created_after: self.by_created_after,
                 by_status: self.by_status,
+                by_complete_before: self.by_complete_before,
+                by_complete_after: self.by_complete_after,
             })
         }
     }
@@ -8317,38 +8443,56 @@ impl ListRestoreJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_90));
+                if let Some(inner_94) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_94));
                 }
-                if let Some(inner_91) = &_input.max_results {
+                if let Some(inner_95) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_91).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
                     );
                 }
-                if let Some(inner_92) = &_input.by_account_id {
-                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_92));
+                if let Some(inner_96) = &_input.by_account_id {
+                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_96));
                 }
-                if let Some(inner_93) = &_input.by_created_before {
+                if let Some(inner_97) = &_input.by_created_before {
                     query.push_kv(
                         "createdBefore",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_93,
+                            inner_97,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_94) = &_input.by_created_after {
+                if let Some(inner_98) = &_input.by_created_after {
                     query.push_kv(
                         "createdAfter",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_94,
+                            inner_98,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_95) = &_input.by_status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_95));
+                if let Some(inner_99) = &_input.by_status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_99));
+                }
+                if let Some(inner_100) = &_input.by_complete_before {
+                    query.push_kv(
+                        "completeBefore",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_100,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
+                }
+                if let Some(inner_101) = &_input.by_complete_after {
+                    query.push_kv(
+                        "completeAfter",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_101,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
                 }
                 Ok(())
             }
@@ -8495,14 +8639,14 @@ impl ListTagsInput {
                 _input: &crate::input::ListTagsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_96 = &_input.resource_arn;
-                let input_96 = input_96.as_ref().ok_or(
+                let input_102 = &_input.resource_arn;
+                let input_102 = input_102.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_96, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_102, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8518,13 +8662,13 @@ impl ListTagsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_97) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_97));
+                if let Some(inner_103) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
                 }
-                if let Some(inner_98) = &_input.max_results {
+                if let Some(inner_104) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
                     );
                 }
                 Ok(())
@@ -8663,14 +8807,14 @@ impl PutBackupVaultAccessPolicyInput {
                 _input: &crate::input::PutBackupVaultAccessPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_99 = &_input.backup_vault_name;
-                let input_99 = input_99.as_ref().ok_or(
+                let input_105 = &_input.backup_vault_name;
+                let input_105 = input_105.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_99, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_105, false);
                 if backup_vault_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
@@ -8873,14 +9017,14 @@ impl PutBackupVaultLockConfigurationInput {
                 _input: &crate::input::PutBackupVaultLockConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_100 = &_input.backup_vault_name;
-                let input_100 = input_100.as_ref().ok_or(
+                let input_106 = &_input.backup_vault_name;
+                let input_106 = input_106.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_100, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_106, false);
                 if backup_vault_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
@@ -9089,14 +9233,14 @@ impl PutBackupVaultNotificationsInput {
                 _input: &crate::input::PutBackupVaultNotificationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_101 = &_input.backup_vault_name;
-                let input_101 = input_101.as_ref().ok_or(
+                let input_107 = &_input.backup_vault_name;
+                let input_107 = input_107.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_101, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_107, false);
                 if backup_vault_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
@@ -9766,14 +9910,14 @@ impl StartReportJobInput {
                 _input: &crate::input::StartReportJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_102 = &_input.report_plan_name;
-                let input_102 = input_102.as_ref().ok_or(
+                let input_108 = &_input.report_plan_name;
+                let input_108 = input_108.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let report_plan_name = aws_smithy_http::label::fmt_string(input_102, false);
+                let report_plan_name = aws_smithy_http::label::fmt_string(input_108, false);
                 if report_plan_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
@@ -10186,14 +10330,14 @@ impl StopBackupJobInput {
                 _input: &crate::input::StopBackupJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_103 = &_input.backup_job_id;
-                let input_103 = input_103.as_ref().ok_or(
+                let input_109 = &_input.backup_job_id;
+                let input_109 = input_109.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_103, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_109, false);
                 if backup_job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_job_id",
@@ -10357,14 +10501,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_104 = &_input.resource_arn;
-                let input_104 = input_104.as_ref().ok_or(
+                let input_110 = &_input.resource_arn;
+                let input_110 = input_110.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_104, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_110, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -10530,14 +10674,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_105 = &_input.resource_arn;
-                let input_105 = input_105.as_ref().ok_or(
+                let input_111 = &_input.resource_arn;
+                let input_111 = input_111.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_105, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_111, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -10700,14 +10844,14 @@ impl UpdateBackupPlanInput {
                 _input: &crate::input::UpdateBackupPlanInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_106 = &_input.backup_plan_id;
-                let input_106 = input_106.as_ref().ok_or(
+                let input_112 = &_input.backup_plan_id;
+                let input_112 = input_112.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_106, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_112, false);
                 if backup_plan_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
@@ -10914,14 +11058,14 @@ impl UpdateFrameworkInput {
                 _input: &crate::input::UpdateFrameworkInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_107 = &_input.framework_name;
-                let input_107 = input_107.as_ref().ok_or(
+                let input_113 = &_input.framework_name;
+                let input_113 = input_113.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let framework_name = aws_smithy_http::label::fmt_string(input_107, false);
+                let framework_name = aws_smithy_http::label::fmt_string(input_113, false);
                 if framework_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
@@ -11263,28 +11407,28 @@ impl UpdateRecoveryPointLifecycleInput {
                 _input: &crate::input::UpdateRecoveryPointLifecycleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_108 = &_input.backup_vault_name;
-                let input_108 = input_108.as_ref().ok_or(
+                let input_114 = &_input.backup_vault_name;
+                let input_114 = input_114.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_108, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_114, false);
                 if backup_vault_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_109 = &_input.recovery_point_arn;
-                let input_109 = input_109.as_ref().ok_or(
+                let input_115 = &_input.recovery_point_arn;
+                let input_115 = input_115.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_109, false);
+                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_115, false);
                 if recovery_point_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
@@ -11686,14 +11830,14 @@ impl UpdateReportPlanInput {
                 _input: &crate::input::UpdateReportPlanInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_110 = &_input.report_plan_name;
-                let input_110 = input_110.as_ref().ok_or(
+                let input_116 = &_input.report_plan_name;
+                let input_116 = input_116.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let report_plan_name = aws_smithy_http::label::fmt_string(input_110, false);
+                let report_plan_name = aws_smithy_http::label::fmt_string(input_116, false);
                 if report_plan_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
@@ -12569,6 +12713,10 @@ pub struct ListRestoreJobsInput {
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub by_status: std::option::Option<crate::model::RestoreJobStatus>,
+    /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub by_complete_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub by_complete_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListRestoreJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -12595,6 +12743,14 @@ impl ListRestoreJobsInput {
     pub fn by_status(&self) -> std::option::Option<&crate::model::RestoreJobStatus> {
         self.by_status.as_ref()
     }
+    /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn by_complete_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.by_complete_before.as_ref()
+    }
+    /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn by_complete_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.by_complete_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ListRestoreJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12605,6 +12761,8 @@ impl std::fmt::Debug for ListRestoreJobsInput {
         formatter.field("by_created_before", &self.by_created_before);
         formatter.field("by_created_after", &self.by_created_after);
         formatter.field("by_status", &self.by_status);
+        formatter.field("by_complete_before", &self.by_complete_before);
+        formatter.field("by_complete_after", &self.by_complete_after);
         formatter.finish()
     }
 }
@@ -12900,6 +13058,10 @@ pub struct ListCopyJobsInput {
     pub by_destination_vault_arn: std::option::Option<std::string::String>,
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub by_account_id: std::option::Option<std::string::String>,
+    /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub by_complete_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub by_complete_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListCopyJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
@@ -12952,6 +13114,14 @@ impl ListCopyJobsInput {
     pub fn by_account_id(&self) -> std::option::Option<&str> {
         self.by_account_id.as_deref()
     }
+    /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn by_complete_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.by_complete_before.as_ref()
+    }
+    /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn by_complete_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.by_complete_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ListCopyJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12965,6 +13135,8 @@ impl std::fmt::Debug for ListCopyJobsInput {
         formatter.field("by_resource_type", &self.by_resource_type);
         formatter.field("by_destination_vault_arn", &self.by_destination_vault_arn);
         formatter.field("by_account_id", &self.by_account_id);
+        formatter.field("by_complete_before", &self.by_complete_before);
+        formatter.field("by_complete_after", &self.by_complete_after);
         formatter.finish()
     }
 }
@@ -13167,6 +13339,10 @@ pub struct ListBackupJobsInput {
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     pub by_account_id: std::option::Option<std::string::String>,
+    /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub by_complete_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub by_complete_before: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListBackupJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -13220,6 +13396,14 @@ impl ListBackupJobsInput {
     pub fn by_account_id(&self) -> std::option::Option<&str> {
         self.by_account_id.as_deref()
     }
+    /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn by_complete_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.by_complete_after.as_ref()
+    }
+    /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn by_complete_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.by_complete_before.as_ref()
+    }
 }
 impl std::fmt::Debug for ListBackupJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13233,6 +13417,8 @@ impl std::fmt::Debug for ListBackupJobsInput {
         formatter.field("by_created_after", &self.by_created_after);
         formatter.field("by_resource_type", &self.by_resource_type);
         formatter.field("by_account_id", &self.by_account_id);
+        formatter.field("by_complete_after", &self.by_complete_after);
+        formatter.field("by_complete_before", &self.by_complete_before);
         formatter.finish()
     }
 }

@@ -1983,6 +1983,223 @@ impl GetSiteAddressInput {
     }
 }
 
+/// See [`ListAssetsInput`](crate::input::ListAssetsInput)
+pub mod list_assets_input {
+    /// A builder for [`ListAssetsInput`](crate::input::ListAssetsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) outpost_identifier: std::option::Option<std::string::String>,
+        pub(crate) host_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+        pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outpost_identifier = Some(input.into());
+            self
+        }
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+        pub fn set_outpost_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.outpost_identifier = input;
+            self
+        }
+        /// Appends an item to `host_id_filter`.
+        ///
+        /// To override the contents of this collection use [`set_host_id_filter`](Self::set_host_id_filter).
+        ///
+        /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn host_id_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.host_id_filter.unwrap_or_default();
+            v.push(input.into());
+            self.host_id_filter = Some(v);
+            self
+        }
+        /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_host_id_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.host_id_filter = input;
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssetsInput`](crate::input::ListAssetsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAssetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAssetsInput {
+                outpost_identifier: self.outpost_identifier,
+                host_id_filter: self.host_id_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAssetsInputOperationOutputAlias = crate::operation::ListAssets;
+#[doc(hidden)]
+pub type ListAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListAssetsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAssets`](crate::operation::ListAssets)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssets,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAssetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_13 = &_input.outpost_identifier;
+                let input_13 = input_13.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "outpost_identifier",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let outpost_identifier = aws_smithy_http::label::fmt_string(input_13, false);
+                if outpost_identifier.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "outpost_identifier",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/outposts/{OutpostIdentifier}/assets",
+                    OutpostIdentifier = outpost_identifier
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListAssetsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_14) = &_input.host_id_filter {
+                    for inner_15 in inner_14 {
+                        query.push_kv(
+                            "HostIdFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_15),
+                        );
+                    }
+                }
+                if let Some(inner_16) = &_input.max_results {
+                    query.push_kv(
+                        "MaxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    );
+                }
+                if let Some(inner_17) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssets",
+            "outposts",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::input::ListAssetsInput)
+    pub fn builder() -> crate::input::list_assets_input::Builder {
+        crate::input::list_assets_input::Builder::default()
+    }
+}
+
 /// See [`ListCatalogItemsInput`](crate::input::ListCatalogItemsInput)
 pub mod list_catalog_items_input {
     /// A builder for [`ListCatalogItemsInput`](crate::input::ListCatalogItemsInput)
@@ -2133,36 +2350,36 @@ impl ListCatalogItemsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_18) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
-                if let Some(inner_14) = &_input.max_results {
+                if let Some(inner_19) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                     );
                 }
-                if let Some(inner_15) = &_input.item_class_filter {
-                    for inner_16 in inner_15 {
+                if let Some(inner_20) = &_input.item_class_filter {
+                    for inner_21 in inner_20 {
                         query.push_kv(
                             "ItemClassFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_16),
+                            &aws_smithy_http::query::fmt_string(&inner_21),
                         );
                     }
                 }
-                if let Some(inner_17) = &_input.supported_storage_filter {
-                    for inner_18 in inner_17 {
+                if let Some(inner_22) = &_input.supported_storage_filter {
+                    for inner_23 in inner_22 {
                         query.push_kv(
                             "SupportedStorageFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_18),
+                            &aws_smithy_http::query::fmt_string(&inner_23),
                         );
                     }
                 }
-                if let Some(inner_19) = &_input.ec2_family_filter {
-                    for inner_20 in inner_19 {
+                if let Some(inner_24) = &_input.ec2_family_filter {
+                    for inner_25 in inner_24 {
                         query.push_kv(
                             "EC2FamilyFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_20),
+                            &aws_smithy_http::query::fmt_string(&inner_25),
                         );
                     }
                 }
@@ -2324,19 +2541,19 @@ impl ListOrdersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.outpost_identifier_filter {
+                if let Some(inner_26) = &_input.outpost_identifier_filter {
                     query.push_kv(
                         "OutpostIdentifierFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_21),
+                        &aws_smithy_http::query::fmt_string(&inner_26),
                     );
                 }
-                if let Some(inner_22) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_22));
+                if let Some(inner_27) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
-                if let Some(inner_23) = &_input.max_results {
+                if let Some(inner_28) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_23).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
                     );
                 }
                 Ok(())
@@ -2557,36 +2774,36 @@ impl ListOutpostsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                if let Some(inner_29) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
-                if let Some(inner_25) = &_input.max_results {
+                if let Some(inner_30) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
                     );
                 }
-                if let Some(inner_26) = &_input.life_cycle_status_filter {
-                    for inner_27 in inner_26 {
+                if let Some(inner_31) = &_input.life_cycle_status_filter {
+                    for inner_32 in inner_31 {
                         query.push_kv(
                             "LifeCycleStatusFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_27),
+                            &aws_smithy_http::query::fmt_string(&inner_32),
                         );
                     }
                 }
-                if let Some(inner_28) = &_input.availability_zone_filter {
-                    for inner_29 in inner_28 {
+                if let Some(inner_33) = &_input.availability_zone_filter {
+                    for inner_34 in inner_33 {
                         query.push_kv(
                             "AvailabilityZoneFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_29),
+                            &aws_smithy_http::query::fmt_string(&inner_34),
                         );
                     }
                 }
-                if let Some(inner_30) = &_input.availability_zone_id_filter {
-                    for inner_31 in inner_30 {
+                if let Some(inner_35) = &_input.availability_zone_id_filter {
+                    for inner_36 in inner_35 {
                         query.push_kv(
                             "AvailabilityZoneIdFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_31),
+                            &aws_smithy_http::query::fmt_string(&inner_36),
                         );
                     }
                 }
@@ -2817,36 +3034,36 @@ impl ListSitesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
-                if let Some(inner_33) = &_input.max_results {
+                if let Some(inner_38) = &_input.max_results {
                     query.push_kv(
                         "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
                     );
                 }
-                if let Some(inner_34) = &_input.operating_address_country_code_filter {
-                    for inner_35 in inner_34 {
+                if let Some(inner_39) = &_input.operating_address_country_code_filter {
+                    for inner_40 in inner_39 {
                         query.push_kv(
                             "OperatingAddressCountryCodeFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_35),
+                            &aws_smithy_http::query::fmt_string(&inner_40),
                         );
                     }
                 }
-                if let Some(inner_36) = &_input.operating_address_state_or_region_filter {
-                    for inner_37 in inner_36 {
+                if let Some(inner_41) = &_input.operating_address_state_or_region_filter {
+                    for inner_42 in inner_41 {
                         query.push_kv(
                             "OperatingAddressStateOrRegionFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_37),
+                            &aws_smithy_http::query::fmt_string(&inner_42),
                         );
                     }
                 }
-                if let Some(inner_38) = &_input.operating_address_city_filter {
-                    for inner_39 in inner_38 {
+                if let Some(inner_43) = &_input.operating_address_city_filter {
+                    for inner_44 in inner_43 {
                         query.push_kv(
                             "OperatingAddressCityFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_39),
+                            &aws_smithy_http::query::fmt_string(&inner_44),
                         );
                     }
                 }
@@ -2971,14 +3188,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_45 = &_input.resource_arn;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3138,14 +3355,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.resource_arn;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_46 = &_input.resource_arn;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3311,14 +3528,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.resource_arn;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_47 = &_input.resource_arn;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_42, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3334,9 +3551,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.tag_keys {
-                    for inner_44 in inner_43 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_44));
+                if let Some(inner_48) = &_input.tag_keys {
+                    for inner_49 in inner_48 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_49));
                     }
                 }
                 Ok(())
@@ -3505,14 +3722,14 @@ impl UpdateOutpostInput {
                 _input: &crate::input::UpdateOutpostInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.outpost_id;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_50 = &_input.outpost_id;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "outpost_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let outpost_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let outpost_id = aws_smithy_http::label::fmt_string(input_50, false);
                 if outpost_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "outpost_id",
@@ -3693,14 +3910,14 @@ impl UpdateSiteInput {
                 _input: &crate::input::UpdateSiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.site_id;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_51 = &_input.site_id;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_51, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -3872,14 +4089,14 @@ impl UpdateSiteAddressInput {
                 _input: &crate::input::UpdateSiteAddressInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.site_id;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_52 = &_input.site_id;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_52, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -4237,14 +4454,14 @@ impl UpdateSiteRackPhysicalPropertiesInput {
                 _input: &crate::input::UpdateSiteRackPhysicalPropertiesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_48 = &_input.site_id;
-                let input_48 = input_48.as_ref().ok_or(
+                let input_53 = &_input.site_id;
+                let input_53 = input_53.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_48, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_53, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -4918,6 +5135,50 @@ impl std::fmt::Debug for ListCatalogItemsInput {
         formatter.field("item_class_filter", &self.item_class_filter);
         formatter.field("supported_storage_filter", &self.supported_storage_filter);
         formatter.field("ec2_family_filter", &self.ec2_family_filter);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssetsInput {
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub outpost_identifier: std::option::Option<std::string::String>,
+    /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub host_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The maximum page size.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The pagination token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssetsInput {
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn outpost_identifier(&self) -> std::option::Option<&str> {
+        self.outpost_identifier.as_deref()
+    }
+    /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn host_id_filter(&self) -> std::option::Option<&[std::string::String]> {
+        self.host_id_filter.as_deref()
+    }
+    /// <p>The maximum page size.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAssetsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAssetsInput");
+        formatter.field("outpost_identifier", &self.outpost_identifier);
+        formatter.field("host_id_filter", &self.host_id_filter);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }

@@ -2510,6 +2510,8 @@ pub enum CreateDBInstanceErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
@@ -2539,6 +2541,7 @@ impl std::fmt::Display for CreateDBInstanceError {
             CreateDBInstanceErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
@@ -2701,6 +2704,13 @@ impl CreateDBInstanceError {
             CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::NetworkTypeNotSupported(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
@@ -2748,6 +2758,7 @@ impl std::error::Error for CreateDBInstanceError {
             CreateDBInstanceErrorKind::InvalidSubnet(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::NetworkTypeNotSupported(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
@@ -2800,6 +2811,8 @@ pub enum CreateDBInstanceReadReplicaErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
@@ -2851,6 +2864,7 @@ impl std::fmt::Display for CreateDBInstanceReadReplicaError {
                 _inner.fmt(f)
             }
             CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceReadReplicaErrorKind::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
@@ -3020,6 +3034,13 @@ impl CreateDBInstanceReadReplicaError {
             CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::NetworkTypeNotSupported(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
@@ -3087,6 +3108,7 @@ impl std::error::Error for CreateDBInstanceReadReplicaError {
                 Some(_inner)
             }
             CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateDBInstanceReadReplicaErrorKind::NetworkTypeNotSupported(_inner) => Some(_inner),
             CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 Some(_inner)
@@ -11301,6 +11323,8 @@ pub enum ModifyDBInstanceErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
@@ -11330,6 +11354,7 @@ impl std::fmt::Display for ModifyDBInstanceError {
             ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
@@ -11495,6 +11520,13 @@ impl ModifyDBInstanceError {
             ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::NetworkTypeNotSupported(_)
+        )
+    }
     /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
@@ -11542,6 +11574,7 @@ impl std::error::Error for ModifyDBInstanceError {
             ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::NetworkTypeNotSupported(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
@@ -15299,6 +15332,8 @@ pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
@@ -15353,6 +15388,9 @@ impl std::fmt::Display for RestoreDBInstanceFromDBSnapshotError {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDBInstanceFromDBSnapshotErrorKind::NetworkTypeNotSupported(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -15536,6 +15574,13 @@ impl RestoreDBInstanceFromDBSnapshotError {
             RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::NetworkTypeNotSupported(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
@@ -15610,6 +15655,9 @@ impl std::error::Error for RestoreDBInstanceFromDBSnapshotError {
             RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 Some(_inner)
             }
+            RestoreDBInstanceFromDBSnapshotErrorKind::NetworkTypeNotSupported(_inner) => {
+                Some(_inner)
+            }
             RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
@@ -15667,6 +15715,8 @@ pub enum RestoreDBInstanceFromS3ErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
@@ -15700,6 +15750,7 @@ impl std::fmt::Display for RestoreDBInstanceFromS3Error {
             RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            RestoreDBInstanceFromS3ErrorKind::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
@@ -15851,6 +15902,13 @@ impl RestoreDBInstanceFromS3Error {
             RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::NetworkTypeNotSupported(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
@@ -15900,6 +15958,7 @@ impl std::error::Error for RestoreDBInstanceFromS3Error {
             RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::NetworkTypeNotSupported(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 Some(_inner)
@@ -15959,6 +16018,8 @@ pub enum RestoreDBInstanceToPointInTimeErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0.</p>
@@ -16018,6 +16079,9 @@ impl std::fmt::Display for RestoreDBInstanceToPointInTimeError {
                 _inner.fmt(f)
             }
             RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDBInstanceToPointInTimeErrorKind::NetworkTypeNotSupported(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -16211,6 +16275,13 @@ impl RestoreDBInstanceToPointInTimeError {
             RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::NetworkTypeNotSupported(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
@@ -16293,6 +16364,9 @@ impl std::error::Error for RestoreDBInstanceToPointInTimeError {
                 Some(_inner)
             }
             RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_inner) => {
+                Some(_inner)
+            }
+            RestoreDBInstanceToPointInTimeErrorKind::NetworkTypeNotSupported(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -19705,6 +19779,70 @@ impl OptionGroupNotFoundFault {
     }
 }
 
+/// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkTypeNotSupported {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NetworkTypeNotSupported {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkTypeNotSupported");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NetworkTypeNotSupported {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NetworkTypeNotSupported {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NetworkTypeNotSupported")?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NetworkTypeNotSupported {}
+/// See [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+pub mod network_type_not_supported {
+    /// A builder for [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+        pub fn build(self) -> crate::error::NetworkTypeNotSupported {
+            crate::error::NetworkTypeNotSupported {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NetworkTypeNotSupported {
+    /// Creates a new builder-style object to manufacture [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+    pub fn builder() -> crate::error::network_type_not_supported::Builder {
+        crate::error::network_type_not_supported::Builder::default()
+    }
+}
+
 /// <p>Cannot restore from VPC backup to non-VPC DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19728,8 +19866,8 @@ impl InvalidRestoreFault {
 impl std::fmt::Display for InvalidRestoreFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRestoreFault")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -19792,8 +19930,8 @@ impl InstanceQuotaExceededFault {
 impl std::fmt::Display for InstanceQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceQuotaExceededFault")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -19856,8 +19994,8 @@ impl DomainNotFoundFault {
 impl std::fmt::Display for DomainNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DomainNotFoundFault")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -19923,8 +20061,8 @@ impl std::fmt::Display for DbParameterGroupNotFoundFault {
             f,
             "DbParameterGroupNotFoundFault [DBParameterGroupNotFoundFault]"
         )?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -19990,8 +20128,8 @@ impl std::fmt::Display for DbInstanceAutomatedBackupNotFoundFault {
             f,
             "DbInstanceAutomatedBackupNotFoundFault [DBInstanceAutomatedBackupNotFoundFault]"
         )?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -20057,8 +20195,8 @@ impl std::fmt::Display for DbInstanceAlreadyExistsFault {
             f,
             "DbInstanceAlreadyExistsFault [DBInstanceAlreadyExistsFault]"
         )?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -20121,8 +20259,8 @@ impl BackupPolicyNotFoundFault {
 impl std::fmt::Display for BackupPolicyNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupPolicyNotFoundFault")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -20188,8 +20326,8 @@ impl std::fmt::Display for InvalidDbSnapshotStateFault {
             f,
             "InvalidDbSnapshotStateFault [InvalidDBSnapshotStateFault]"
         )?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -20255,8 +20393,8 @@ impl std::fmt::Display for InvalidDbClusterSnapshotStateFault {
             f,
             "InvalidDbClusterSnapshotStateFault [InvalidDBClusterSnapshotStateFault]"
         )?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -20319,8 +20457,8 @@ impl InsufficientStorageClusterCapacityFault {
 impl std::fmt::Display for InsufficientStorageClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientStorageClusterCapacityFault")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -20386,8 +20524,8 @@ impl std::fmt::Display for InsufficientDbClusterCapacityFault {
             f,
             "InsufficientDbClusterCapacityFault [InsufficientDBClusterCapacityFault]"
         )?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -20453,8 +20591,8 @@ impl std::fmt::Display for DbClusterQuotaExceededFault {
             f,
             "DbClusterQuotaExceededFault [DBClusterQuotaExceededFault]"
         )?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -20520,8 +20658,8 @@ impl std::fmt::Display for DbClusterParameterGroupNotFoundFault {
             f,
             "DbClusterParameterGroupNotFoundFault [DBClusterParameterGroupNotFoundFault]"
         )?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -20587,8 +20725,8 @@ impl std::fmt::Display for DbClusterAlreadyExistsFault {
             f,
             "DbClusterAlreadyExistsFault [DBClusterAlreadyExistsFault]"
         )?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -20654,8 +20792,8 @@ impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
             f,
             "InvalidDbSubnetGroupStateFault [InvalidDBSubnetGroupStateFault]"
         )?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -20721,8 +20859,8 @@ impl std::fmt::Display for InvalidDbParameterGroupStateFault {
             f,
             "InvalidDbParameterGroupStateFault [InvalidDBParameterGroupStateFault]"
         )?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -20788,8 +20926,8 @@ impl std::fmt::Display for DbProxyTargetGroupNotFoundFault {
             f,
             "DbProxyTargetGroupNotFoundFault [DBProxyTargetGroupNotFoundFault]"
         )?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -20852,8 +20990,8 @@ impl DbProxyNotFoundFault {
 impl std::fmt::Display for DbProxyNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyNotFoundFault [DBProxyNotFoundFault]")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -20916,8 +21054,8 @@ impl SubscriptionNotFoundFault {
 impl std::fmt::Display for SubscriptionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionNotFoundFault")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -20980,8 +21118,8 @@ impl SourceNotFoundFault {
 impl std::fmt::Display for SourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceNotFoundFault")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -21047,8 +21185,8 @@ impl std::fmt::Display for DbInstanceRoleNotFoundFault {
             f,
             "DbInstanceRoleNotFoundFault [DBInstanceRoleNotFoundFault]"
         )?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -21111,8 +21249,8 @@ impl DbClusterRoleNotFoundFault {
 impl std::fmt::Display for DbClusterRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbClusterRoleNotFoundFault [DBClusterRoleNotFoundFault]")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -21175,8 +21313,8 @@ impl InvalidGlobalClusterStateFault {
 impl std::fmt::Display for InvalidGlobalClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGlobalClusterStateFault")?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -21239,8 +21377,8 @@ impl GlobalClusterNotFoundFault {
 impl std::fmt::Display for GlobalClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterNotFoundFault")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -21303,8 +21441,8 @@ impl InvalidDbProxyStateFault {
 impl std::fmt::Display for InvalidDbProxyStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbProxyStateFault [InvalidDBProxyStateFault]")?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
         }
         Ok(())
     }
@@ -21367,8 +21505,8 @@ impl InsufficientAvailableIPsInSubnetFault {
 impl std::fmt::Display for InsufficientAvailableIPsInSubnetFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientAvailableIPsInSubnetFault")?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
         }
         Ok(())
     }
@@ -21434,8 +21572,8 @@ impl std::fmt::Display for DbProxyTargetAlreadyRegisteredFault {
             f,
             "DbProxyTargetAlreadyRegisteredFault [DBProxyTargetAlreadyRegisteredFault]"
         )?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
@@ -21501,8 +21639,8 @@ impl std::fmt::Display for ReservedDbInstancesOfferingNotFoundFault {
             f,
             "ReservedDbInstancesOfferingNotFoundFault [ReservedDBInstancesOfferingNotFoundFault]"
         )?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -21568,8 +21706,8 @@ impl std::fmt::Display for ReservedDbInstanceQuotaExceededFault {
             f,
             "ReservedDbInstanceQuotaExceededFault [ReservedDBInstanceQuotaExceededFault]"
         )?;
-        if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -21635,8 +21773,8 @@ impl std::fmt::Display for ReservedDbInstanceAlreadyExistsFault {
             f,
             "ReservedDbInstanceAlreadyExistsFault [ReservedDBInstanceAlreadyExistsFault]"
         )?;
-        if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -21699,8 +21837,8 @@ impl InvalidOptionGroupStateFault {
 impl std::fmt::Display for InvalidOptionGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOptionGroupStateFault")?;
-        if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -21763,8 +21901,8 @@ impl SubscriptionCategoryNotFoundFault {
 impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionCategoryNotFoundFault")?;
-        if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -21827,8 +21965,8 @@ impl SnsTopicArnNotFoundFault {
 impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
-        if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
@@ -21891,8 +22029,8 @@ impl SnsNoAuthorizationFault {
 impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
-        if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -21955,8 +22093,8 @@ impl SnsInvalidTopicFault {
 impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
-        if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+        if let Some(inner_66) = &self.message {
+            write!(f, ": {}", inner_66)?;
         }
         Ok(())
     }
@@ -22019,8 +22157,8 @@ impl EventSubscriptionQuotaExceededFault {
 impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventSubscriptionQuotaExceededFault")?;
-        if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+        if let Some(inner_67) = &self.message {
+            write!(f, ": {}", inner_67)?;
         }
         Ok(())
     }
@@ -22083,8 +22221,8 @@ impl SubnetAlreadyInUse {
 impl std::fmt::Display for SubnetAlreadyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetAlreadyInUse")?;
-        if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+        if let Some(inner_68) = &self.message {
+            write!(f, ": {}", inner_68)?;
         }
         Ok(())
     }
@@ -22147,8 +22285,8 @@ impl DbSubnetQuotaExceededFault {
 impl std::fmt::Display for DbSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSubnetQuotaExceededFault [DBSubnetQuotaExceededFault]")?;
-        if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+        if let Some(inner_69) = &self.message {
+            write!(f, ": {}", inner_69)?;
         }
         Ok(())
     }
@@ -22211,8 +22349,8 @@ impl SharedSnapshotQuotaExceededFault {
 impl std::fmt::Display for SharedSnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SharedSnapshotQuotaExceededFault")?;
-        if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+        if let Some(inner_70) = &self.message {
+            write!(f, ": {}", inner_70)?;
         }
         Ok(())
     }
@@ -22278,8 +22416,8 @@ impl std::fmt::Display for InvalidDbProxyEndpointStateFault {
             f,
             "InvalidDbProxyEndpointStateFault [InvalidDBProxyEndpointStateFault]"
         )?;
-        if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+        if let Some(inner_71) = &self.message {
+            write!(f, ": {}", inner_71)?;
         }
         Ok(())
     }
@@ -22345,8 +22483,8 @@ impl std::fmt::Display for DbProxyEndpointNotFoundFault {
             f,
             "DbProxyEndpointNotFoundFault [DBProxyEndpointNotFoundFault]"
         )?;
-        if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
+        if let Some(inner_72) = &self.message {
+            write!(f, ": {}", inner_72)?;
         }
         Ok(())
     }
@@ -22412,8 +22550,8 @@ impl std::fmt::Display for DbProxyEndpointAlreadyExistsFault {
             f,
             "DbProxyEndpointAlreadyExistsFault [DBProxyEndpointAlreadyExistsFault]"
         )?;
-        if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
+        if let Some(inner_73) = &self.message {
+            write!(f, ": {}", inner_73)?;
         }
         Ok(())
     }
@@ -22476,8 +22614,8 @@ impl DbProxyAlreadyExistsFault {
 impl std::fmt::Display for DbProxyAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyAlreadyExistsFault [DBProxyAlreadyExistsFault]")?;
-        if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
+        if let Some(inner_74) = &self.message {
+            write!(f, ": {}", inner_74)?;
         }
         Ok(())
     }
@@ -22543,8 +22681,8 @@ impl std::fmt::Display for DbUpgradeDependencyFailureFault {
             f,
             "DbUpgradeDependencyFailureFault [DBUpgradeDependencyFailureFault]"
         )?;
-        if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
+        if let Some(inner_75) = &self.message {
+            write!(f, ": {}", inner_75)?;
         }
         Ok(())
     }
@@ -22607,8 +22745,8 @@ impl CertificateNotFoundFault {
 impl std::fmt::Display for CertificateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateNotFoundFault")?;
-        if let Some(inner_75) = &self.message {
-            write!(f, ": {}", inner_75)?;
+        if let Some(inner_76) = &self.message {
+            write!(f, ": {}", inner_76)?;
         }
         Ok(())
     }
@@ -22674,8 +22812,8 @@ impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
             f,
             "InvalidDbClusterEndpointStateFault [InvalidDBClusterEndpointStateFault]"
         )?;
-        if let Some(inner_76) = &self.message {
-            write!(f, ": {}", inner_76)?;
+        if let Some(inner_77) = &self.message {
+            write!(f, ": {}", inner_77)?;
         }
         Ok(())
     }
@@ -22741,8 +22879,8 @@ impl std::fmt::Display for DbClusterEndpointNotFoundFault {
             f,
             "DbClusterEndpointNotFoundFault [DBClusterEndpointNotFoundFault]"
         )?;
-        if let Some(inner_77) = &self.message {
-            write!(f, ": {}", inner_77)?;
+        if let Some(inner_78) = &self.message {
+            write!(f, ": {}", inner_78)?;
         }
         Ok(())
     }
@@ -22808,8 +22946,8 @@ impl std::fmt::Display for InvalidCustomDbEngineVersionStateFault {
             f,
             "InvalidCustomDbEngineVersionStateFault [InvalidCustomDBEngineVersionStateFault]"
         )?;
-        if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+        if let Some(inner_79) = &self.message {
+            write!(f, ": {}", inner_79)?;
         }
         Ok(())
     }
@@ -22875,8 +23013,8 @@ impl std::fmt::Display for CustomDbEngineVersionNotFoundFault {
             f,
             "CustomDbEngineVersionNotFoundFault [CustomDBEngineVersionNotFoundFault]"
         )?;
-        if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+        if let Some(inner_80) = &self.message {
+            write!(f, ": {}", inner_80)?;
         }
         Ok(())
     }
@@ -22942,8 +23080,8 @@ impl std::fmt::Display for InvalidDbClusterCapacityFault {
             f,
             "InvalidDbClusterCapacityFault [InvalidDBClusterCapacityFault]"
         )?;
-        if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+        if let Some(inner_81) = &self.message {
+            write!(f, ": {}", inner_81)?;
         }
         Ok(())
     }
@@ -23006,8 +23144,8 @@ impl DbLogFileNotFoundFault {
 impl std::fmt::Display for DbLogFileNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbLogFileNotFoundFault [DBLogFileNotFoundFault]")?;
-        if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+        if let Some(inner_82) = &self.message {
+            write!(f, ": {}", inner_82)?;
         }
         Ok(())
     }
@@ -23073,8 +23211,8 @@ impl std::fmt::Display for ReservedDbInstanceNotFoundFault {
             f,
             "ReservedDbInstanceNotFoundFault [ReservedDBInstanceNotFoundFault]"
         )?;
-        if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+        if let Some(inner_83) = &self.message {
+            write!(f, ": {}", inner_83)?;
         }
         Ok(())
     }
@@ -23137,8 +23275,8 @@ impl ExportTaskNotFoundFault {
 impl std::fmt::Display for ExportTaskNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportTaskNotFoundFault")?;
-        if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+        if let Some(inner_84) = &self.message {
+            write!(f, ": {}", inner_84)?;
         }
         Ok(())
     }
@@ -23201,8 +23339,8 @@ impl DbProxyTargetNotFoundFault {
 impl std::fmt::Display for DbProxyTargetNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyTargetNotFoundFault [DBProxyTargetNotFoundFault]")?;
-        if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+        if let Some(inner_85) = &self.message {
+            write!(f, ": {}", inner_85)?;
         }
         Ok(())
     }
@@ -23268,8 +23406,8 @@ impl std::fmt::Display for DbClusterBacktrackNotFoundFault {
             f,
             "DbClusterBacktrackNotFoundFault [DBClusterBacktrackNotFoundFault]"
         )?;
-        if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+        if let Some(inner_86) = &self.message {
+            write!(f, ": {}", inner_86)?;
         }
         Ok(())
     }
@@ -23332,8 +23470,8 @@ impl InvalidEventSubscriptionStateFault {
 impl std::fmt::Display for InvalidEventSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventSubscriptionStateFault")?;
-        if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+        if let Some(inner_87) = &self.message {
+            write!(f, ": {}", inner_87)?;
         }
         Ok(())
     }
@@ -23396,8 +23534,8 @@ impl InvalidDbSubnetStateFault {
 impl std::fmt::Display for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetStateFault [InvalidDBSubnetStateFault]")?;
-        if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+        if let Some(inner_88) = &self.message {
+            write!(f, ": {}", inner_88)?;
         }
         Ok(())
     }
@@ -23460,8 +23598,8 @@ impl InvalidDbInstanceAutomatedBackupStateFault {
 impl std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbInstanceAutomatedBackupStateFault [InvalidDBInstanceAutomatedBackupStateFault]")?;
-        if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+        if let Some(inner_89) = &self.message {
+            write!(f, ": {}", inner_89)?;
         }
         Ok(())
     }
@@ -23527,8 +23665,8 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
             f,
             "DbClusterSnapshotAlreadyExistsFault [DBClusterSnapshotAlreadyExistsFault]"
         )?;
-        if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+        if let Some(inner_90) = &self.message {
+            write!(f, ": {}", inner_90)?;
         }
         Ok(())
     }
@@ -23591,8 +23729,8 @@ impl OptionGroupQuotaExceededFault {
 impl std::fmt::Display for OptionGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupQuotaExceededFault")?;
-        if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+        if let Some(inner_91) = &self.message {
+            write!(f, ": {}", inner_91)?;
         }
         Ok(())
     }
@@ -23655,8 +23793,8 @@ impl OptionGroupAlreadyExistsFault {
 impl std::fmt::Display for OptionGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupAlreadyExistsFault")?;
-        if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+        if let Some(inner_92) = &self.message {
+            write!(f, ": {}", inner_92)?;
         }
         Ok(())
     }
@@ -23719,8 +23857,8 @@ impl GlobalClusterQuotaExceededFault {
 impl std::fmt::Display for GlobalClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterQuotaExceededFault")?;
-        if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+        if let Some(inner_93) = &self.message {
+            write!(f, ": {}", inner_93)?;
         }
         Ok(())
     }
@@ -23783,8 +23921,8 @@ impl GlobalClusterAlreadyExistsFault {
 impl std::fmt::Display for GlobalClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterAlreadyExistsFault")?;
-        if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+        if let Some(inner_94) = &self.message {
+            write!(f, ": {}", inner_94)?;
         }
         Ok(())
     }
@@ -23847,8 +23985,8 @@ impl SubscriptionAlreadyExistFault {
 impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
-        if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+        if let Some(inner_95) = &self.message {
+            write!(f, ": {}", inner_95)?;
         }
         Ok(())
     }
@@ -23914,8 +24052,8 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
             f,
             "DbSubnetGroupQuotaExceededFault [DBSubnetGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+        if let Some(inner_96) = &self.message {
+            write!(f, ": {}", inner_96)?;
         }
         Ok(())
     }
@@ -23981,8 +24119,8 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
             f,
             "DbSubnetGroupAlreadyExistsFault [DBSubnetGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+        if let Some(inner_97) = &self.message {
+            write!(f, ": {}", inner_97)?;
         }
         Ok(())
     }
@@ -24048,8 +24186,8 @@ impl std::fmt::Display for DbSecurityGroupQuotaExceededFault {
             f,
             "DbSecurityGroupQuotaExceededFault [DBSecurityGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+        if let Some(inner_98) = &self.message {
+            write!(f, ": {}", inner_98)?;
         }
         Ok(())
     }
@@ -24115,8 +24253,8 @@ impl std::fmt::Display for DbSecurityGroupNotSupportedFault {
             f,
             "DbSecurityGroupNotSupportedFault [DBSecurityGroupNotSupportedFault]"
         )?;
-        if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+        if let Some(inner_99) = &self.message {
+            write!(f, ": {}", inner_99)?;
         }
         Ok(())
     }
@@ -24182,8 +24320,8 @@ impl std::fmt::Display for DbSecurityGroupAlreadyExistsFault {
             f,
             "DbSecurityGroupAlreadyExistsFault [DBSecurityGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+        if let Some(inner_100) = &self.message {
+            write!(f, ": {}", inner_100)?;
         }
         Ok(())
     }
@@ -24249,8 +24387,8 @@ impl std::fmt::Display for DbProxyEndpointQuotaExceededFault {
             f,
             "DbProxyEndpointQuotaExceededFault [DBProxyEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+        if let Some(inner_101) = &self.message {
+            write!(f, ": {}", inner_101)?;
         }
         Ok(())
     }
@@ -24313,8 +24451,8 @@ impl DbProxyQuotaExceededFault {
 impl std::fmt::Display for DbProxyQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyQuotaExceededFault [DBProxyQuotaExceededFault]")?;
-        if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+        if let Some(inner_102) = &self.message {
+            write!(f, ": {}", inner_102)?;
         }
         Ok(())
     }
@@ -24380,8 +24518,8 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
             f,
             "DbParameterGroupQuotaExceededFault [DBParameterGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+        if let Some(inner_103) = &self.message {
+            write!(f, ": {}", inner_103)?;
         }
         Ok(())
     }
@@ -24447,8 +24585,8 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
             f,
             "DbParameterGroupAlreadyExistsFault [DBParameterGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+        if let Some(inner_104) = &self.message {
+            write!(f, ": {}", inner_104)?;
         }
         Ok(())
     }
@@ -24511,8 +24649,8 @@ impl InvalidDbSubnetGroupFault {
 impl std::fmt::Display for InvalidDbSubnetGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetGroupFault [InvalidDBSubnetGroupFault]")?;
-        if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+        if let Some(inner_105) = &self.message {
+            write!(f, ": {}", inner_105)?;
         }
         Ok(())
     }
@@ -24578,8 +24716,8 @@ impl std::fmt::Display for DbSubnetGroupNotAllowedFault {
             f,
             "DbSubnetGroupNotAllowedFault [DBSubnetGroupNotAllowedFault]"
         )?;
-        if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+        if let Some(inner_106) = &self.message {
+            write!(f, ": {}", inner_106)?;
         }
         Ok(())
     }
@@ -24645,8 +24783,8 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
             f,
             "DbClusterEndpointQuotaExceededFault [DBClusterEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+        if let Some(inner_107) = &self.message {
+            write!(f, ": {}", inner_107)?;
         }
         Ok(())
     }
@@ -24712,8 +24850,8 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
             f,
             "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
         )?;
-        if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+        if let Some(inner_108) = &self.message {
+            write!(f, ": {}", inner_108)?;
         }
         Ok(())
     }
@@ -24779,8 +24917,8 @@ impl std::fmt::Display for CustomDbEngineVersionQuotaExceededFault {
             f,
             "CustomDbEngineVersionQuotaExceededFault [CustomDBEngineVersionQuotaExceededFault]"
         )?;
-        if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+        if let Some(inner_109) = &self.message {
+            write!(f, ": {}", inner_109)?;
         }
         Ok(())
     }
@@ -24846,8 +24984,8 @@ impl std::fmt::Display for CustomDbEngineVersionAlreadyExistsFault {
             f,
             "CustomDbEngineVersionAlreadyExistsFault [CustomDBEngineVersionAlreadyExistsFault]"
         )?;
-        if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+        if let Some(inner_110) = &self.message {
+            write!(f, ": {}", inner_110)?;
         }
         Ok(())
     }
@@ -24910,8 +25048,8 @@ impl CustomAvailabilityZoneNotFoundFault {
 impl std::fmt::Display for CustomAvailabilityZoneNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomAvailabilityZoneNotFoundFault")?;
-        if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+        if let Some(inner_111) = &self.message {
+            write!(f, ": {}", inner_111)?;
         }
         Ok(())
     }
@@ -24974,8 +25112,8 @@ impl InvalidExportTaskStateFault {
 impl std::fmt::Display for InvalidExportTaskStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportTaskStateFault")?;
-        if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+        if let Some(inner_112) = &self.message {
+            write!(f, ": {}", inner_112)?;
         }
         Ok(())
     }
@@ -25038,8 +25176,8 @@ impl AuthorizationQuotaExceededFault {
 impl std::fmt::Display for AuthorizationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationQuotaExceededFault")?;
-        if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+        if let Some(inner_113) = &self.message {
+            write!(f, ": {}", inner_113)?;
         }
         Ok(())
     }
@@ -25102,8 +25240,8 @@ impl AuthorizationAlreadyExistsFault {
 impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationAlreadyExistsFault")?;
-        if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+        if let Some(inner_114) = &self.message {
+            write!(f, ": {}", inner_114)?;
         }
         Ok(())
     }
@@ -25169,8 +25307,8 @@ impl std::fmt::Display for DbInstanceRoleQuotaExceededFault {
             f,
             "DbInstanceRoleQuotaExceededFault [DBInstanceRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+        if let Some(inner_115) = &self.message {
+            write!(f, ": {}", inner_115)?;
         }
         Ok(())
     }
@@ -25236,8 +25374,8 @@ impl std::fmt::Display for DbInstanceRoleAlreadyExistsFault {
             f,
             "DbInstanceRoleAlreadyExistsFault [DBInstanceRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+        if let Some(inner_116) = &self.message {
+            write!(f, ": {}", inner_116)?;
         }
         Ok(())
     }
@@ -25303,8 +25441,8 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
             f,
             "DbClusterRoleQuotaExceededFault [DBClusterRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+        if let Some(inner_117) = &self.message {
+            write!(f, ": {}", inner_117)?;
         }
         Ok(())
     }
@@ -25370,8 +25508,8 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
             f,
             "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+        if let Some(inner_118) = &self.message {
+            write!(f, ": {}", inner_118)?;
         }
         Ok(())
     }

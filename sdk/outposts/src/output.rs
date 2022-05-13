@@ -697,6 +697,88 @@ impl ListCatalogItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssetsOutput {
+    /// <p> Information about hardware assets. </p>
+    pub assets: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
+    /// <p>The pagination token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssetsOutput {
+    /// <p> Information about hardware assets. </p>
+    pub fn assets(&self) -> std::option::Option<&[crate::model::AssetInfo]> {
+        self.assets.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAssetsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAssetsOutput");
+        formatter.field("assets", &self.assets);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAssetsOutput`](crate::output::ListAssetsOutput)
+pub mod list_assets_output {
+    /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `assets`.
+        ///
+        /// To override the contents of this collection use [`set_assets`](Self::set_assets).
+        ///
+        /// <p> Information about hardware assets. </p>
+        pub fn assets(mut self, input: crate::model::AssetInfo) -> Self {
+            let mut v = self.assets.unwrap_or_default();
+            v.push(input);
+            self.assets = Some(v);
+            self
+        }
+        /// <p> Information about hardware assets. </p>
+        pub fn set_assets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
+        ) -> Self {
+            self.assets = input;
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssetsOutput`](crate::output::ListAssetsOutput)
+        pub fn build(self) -> crate::output::ListAssetsOutput {
+            crate::output::ListAssetsOutput {
+                assets: self.assets,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAssetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssetsOutput`](crate::output::ListAssetsOutput)
+    pub fn builder() -> crate::output::list_assets_output::Builder {
+        crate::output::list_assets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteAddressOutput {
     /// <p> The ID of the site. </p>
     pub site_id: std::option::Option<std::string::String>,

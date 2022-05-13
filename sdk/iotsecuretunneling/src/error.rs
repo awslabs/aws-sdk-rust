@@ -450,6 +450,99 @@ impl std::error::Error for OpenTunnelError {
     }
 }
 
+/// Error type for the `RotateTunnelAccessToken` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RotateTunnelAccessTokenError {
+    /// Kind of error that occurred.
+    pub kind: RotateTunnelAccessTokenErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RotateTunnelAccessToken` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RotateTunnelAccessTokenErrorKind {
+    /// <p>Thrown when an operation is attempted on a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RotateTunnelAccessTokenError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RotateTunnelAccessTokenErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            RotateTunnelAccessTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RotateTunnelAccessTokenError {
+    fn code(&self) -> Option<&str> {
+        RotateTunnelAccessTokenError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RotateTunnelAccessTokenError {
+    /// Creates a new `RotateTunnelAccessTokenError`.
+    pub fn new(kind: RotateTunnelAccessTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RotateTunnelAccessTokenError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RotateTunnelAccessTokenErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RotateTunnelAccessTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RotateTunnelAccessTokenErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RotateTunnelAccessTokenErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateTunnelAccessTokenErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for RotateTunnelAccessTokenError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RotateTunnelAccessTokenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            RotateTunnelAccessTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

@@ -993,6 +993,15 @@ pub struct DbInstance {
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub backup_target: std::option::Option<std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1346,6 +1355,17 @@ impl DbInstance {
     pub fn backup_target(&self) -> std::option::Option<&str> {
         self.backup_target.as_deref()
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for DbInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1481,6 +1501,7 @@ impl std::fmt::Debug for DbInstance {
             &self.custom_iam_instance_profile,
         );
         formatter.field("backup_target", &self.backup_target);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -1579,6 +1600,7 @@ pub mod db_instance {
             std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2688,6 +2710,30 @@ pub mod db_instance {
             self.backup_target = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbInstance`](crate::model::DbInstance)
         pub fn build(self) -> crate::model::DbInstance {
             crate::model::DbInstance {
@@ -2770,6 +2816,7 @@ pub mod db_instance {
                 resume_full_automation_mode_time: self.resume_full_automation_mode_time,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
+                network_type: self.network_type,
             }
         }
     }
@@ -4246,6 +4293,15 @@ pub struct DbSubnetGroup {
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub db_subnet_group_arn: std::option::Option<std::string::String>,
+    /// <p>The network type of the DB subnet group.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DbSubnetGroup {
     /// <p>The name of the DB subnet group.</p>
@@ -4272,6 +4328,17 @@ impl DbSubnetGroup {
     pub fn db_subnet_group_arn(&self) -> std::option::Option<&str> {
         self.db_subnet_group_arn.as_deref()
     }
+    /// <p>The network type of the DB subnet group.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn supported_network_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_network_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DbSubnetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4285,6 +4352,7 @@ impl std::fmt::Debug for DbSubnetGroup {
         formatter.field("subnet_group_status", &self.subnet_group_status);
         formatter.field("subnets", &self.subnets);
         formatter.field("db_subnet_group_arn", &self.db_subnet_group_arn);
+        formatter.field("supported_network_types", &self.supported_network_types);
         formatter.finish()
     }
 }
@@ -4300,6 +4368,7 @@ pub mod db_subnet_group {
         pub(crate) subnet_group_status: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
         pub(crate) db_subnet_group_arn: std::option::Option<std::string::String>,
+        pub(crate) supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the DB subnet group.</p>
@@ -4386,6 +4455,39 @@ pub mod db_subnet_group {
             self.db_subnet_group_arn = input;
             self
         }
+        /// Appends an item to `supported_network_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
+        ///
+        /// <p>The network type of the DB subnet group.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn supported_network_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_network_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_network_types = Some(v);
+            self
+        }
+        /// <p>The network type of the DB subnet group.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_supported_network_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_network_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbSubnetGroup`](crate::model::DbSubnetGroup)
         pub fn build(self) -> crate::model::DbSubnetGroup {
             crate::model::DbSubnetGroup {
@@ -4395,6 +4497,7 @@ pub mod db_subnet_group {
                 subnet_group_status: self.subnet_group_status,
                 subnets: self.subnets,
                 db_subnet_group_arn: self.db_subnet_group_arn,
+                supported_network_types: self.supported_network_types,
             }
         }
     }
@@ -16102,6 +16205,10 @@ pub struct OrderableDbInstanceOption {
     /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub supports_clusters: bool,
+    /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
+    /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -16224,6 +16331,12 @@ impl OrderableDbInstanceOption {
     pub fn supports_clusters(&self) -> bool {
         self.supports_clusters
     }
+    /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
+    /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn supported_network_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_network_types.as_deref()
+    }
 }
 impl std::fmt::Debug for OrderableDbInstanceOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16281,6 +16394,7 @@ impl std::fmt::Debug for OrderableDbInstanceOption {
         );
         formatter.field("supports_global_databases", &self.supports_global_databases);
         formatter.field("supports_clusters", &self.supports_clusters);
+        formatter.field("supported_network_types", &self.supported_network_types);
         formatter.finish()
     }
 }
@@ -16322,6 +16436,7 @@ pub mod orderable_db_instance_option {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
         pub(crate) supports_clusters: std::option::Option<bool>,
+        pub(crate) supported_network_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The engine type of a DB instance.</p>
@@ -16687,6 +16802,29 @@ pub mod orderable_db_instance_option {
             self.supports_clusters = input;
             self
         }
+        /// Appends an item to `supported_network_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
+        ///
+        /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
+        /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn supported_network_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_network_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_network_types = Some(v);
+            self
+        }
+        /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
+        /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_supported_network_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_network_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption)
         pub fn build(self) -> crate::model::OrderableDbInstanceOption {
             crate::model::OrderableDbInstanceOption {
@@ -16723,6 +16861,7 @@ pub mod orderable_db_instance_option {
                 supported_activity_stream_modes: self.supported_activity_stream_modes,
                 supports_global_databases: self.supports_global_databases.unwrap_or_default(),
                 supports_clusters: self.supports_clusters.unwrap_or_default(),
+                supported_network_types: self.supported_network_types,
             }
         }
     }

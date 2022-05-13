@@ -22,6 +22,14 @@ impl ListResourceRequestsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `resource_request_status_summaries`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListResourceRequestsPaginatorItems {
+        crate::paginator::ListResourceRequestsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -109,6 +117,14 @@ impl ListResourcesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `resource_descriptions`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListResourcesPaginatorItems {
+        crate::paginator::ListResourcesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -169,6 +185,58 @@ impl ListResourcesPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListResourceRequestsPaginator`
+///
+/// This is created with [`.items()`](ListResourceRequestsPaginator::items)
+pub struct ListResourceRequestsPaginatorItems(ListResourceRequestsPaginator);
+
+impl ListResourceRequestsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ProgressEvent,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceRequestsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_resource_requests_output_resource_request_status_summaries(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListResourcesPaginator`
+///
+/// This is created with [`.items()`](ListResourcesPaginator::items)
+pub struct ListResourcesPaginatorItems(ListResourcesPaginator);
+
+impl ListResourcesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ResourceDescription,
+            aws_smithy_http::result::SdkError<crate::error::ListResourcesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_resources_output_resource_descriptions(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
         })
     }
 }

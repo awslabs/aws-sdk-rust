@@ -2167,14 +2167,47 @@ impl CanaryStatus {
 )]
 pub enum CanaryStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    CreatePending,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPermissions,
+    #[allow(missing_docs)] // documentation missing in model
+    RollbackComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    RollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    SyncDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatePending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CanaryStateReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_FAILED" => CanaryStateReasonCode::CreateFailed,
+            "CREATE_IN_PROGRESS" => CanaryStateReasonCode::CreateInProgress,
+            "CREATE_PENDING" => CanaryStateReasonCode::CreatePending,
+            "DELETE_FAILED" => CanaryStateReasonCode::DeleteFailed,
+            "DELETE_IN_PROGRESS" => CanaryStateReasonCode::DeleteInProgress,
             "INVALID_PERMISSIONS" => CanaryStateReasonCode::InvalidPermissions,
+            "ROLLBACK_COMPLETE" => CanaryStateReasonCode::RollbackComplete,
+            "ROLLBACK_FAILED" => CanaryStateReasonCode::RollbackFailed,
+            "SYNC_DELETE_IN_PROGRESS" => CanaryStateReasonCode::SyncDeleteInProgress,
+            "UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
+            "UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
+            "UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
             other => CanaryStateReasonCode::Unknown(other.to_owned()),
         }
     }
@@ -2190,13 +2223,37 @@ impl CanaryStateReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CanaryStateReasonCode::CreateFailed => "CREATE_FAILED",
+            CanaryStateReasonCode::CreateInProgress => "CREATE_IN_PROGRESS",
+            CanaryStateReasonCode::CreatePending => "CREATE_PENDING",
+            CanaryStateReasonCode::DeleteFailed => "DELETE_FAILED",
+            CanaryStateReasonCode::DeleteInProgress => "DELETE_IN_PROGRESS",
             CanaryStateReasonCode::InvalidPermissions => "INVALID_PERMISSIONS",
+            CanaryStateReasonCode::RollbackComplete => "ROLLBACK_COMPLETE",
+            CanaryStateReasonCode::RollbackFailed => "ROLLBACK_FAILED",
+            CanaryStateReasonCode::SyncDeleteInProgress => "SYNC_DELETE_IN_PROGRESS",
+            CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
+            CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
+            CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
             CanaryStateReasonCode::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["INVALID_PERMISSIONS"]
+        &[
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
+            "CREATE_PENDING",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "INVALID_PERMISSIONS",
+            "ROLLBACK_COMPLETE",
+            "ROLLBACK_FAILED",
+            "SYNC_DELETE_IN_PROGRESS",
+            "UPDATE_COMPLETE",
+            "UPDATE_IN_PROGRESS",
+            "UPDATE_PENDING",
+        ]
     }
 }
 impl AsRef<str> for CanaryStateReasonCode {

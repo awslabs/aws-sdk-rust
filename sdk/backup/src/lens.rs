@@ -148,3 +148,113 @@ pub(crate) fn reflens_structure_crate_output_list_tags_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_backup_jobs_output_backup_jobs(
+    input: crate::output::ListBackupJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BackupJob>> {
+    let input = match input.backup_jobs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_backup_plans_output_backup_plans_list(
+    input: crate::output::ListBackupPlansOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BackupPlansListMember>> {
+    let input = match input.backup_plans_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_backup_plan_templates_output_backup_plan_templates_list(
+    input: crate::output::ListBackupPlanTemplatesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BackupPlanTemplatesListMember>> {
+    let input = match input.backup_plan_templates_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_backup_plan_versions_output_backup_plan_versions_list(
+    input: crate::output::ListBackupPlanVersionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BackupPlansListMember>> {
+    let input = match input.backup_plan_versions_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_backup_selections_output_backup_selections_list(
+    input: crate::output::ListBackupSelectionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BackupSelectionsListMember>> {
+    let input = match input.backup_selections_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_backup_vaults_output_backup_vault_list(
+    input: crate::output::ListBackupVaultsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BackupVaultListMember>> {
+    let input = match input.backup_vault_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_copy_jobs_output_copy_jobs(
+    input: crate::output::ListCopyJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::CopyJob>> {
+    let input = match input.copy_jobs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_protected_resources_output_results(
+    input: crate::output::ListProtectedResourcesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ProtectedResource>> {
+    let input = match input.results {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_recovery_points_by_backup_vault_output_recovery_points(
+    input: crate::output::ListRecoveryPointsByBackupVaultOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RecoveryPointByBackupVault>> {
+    let input = match input.recovery_points {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_recovery_points_by_resource_output_recovery_points(
+    input: crate::output::ListRecoveryPointsByResourceOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RecoveryPointByResource>> {
+    let input = match input.recovery_points {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_restore_jobs_output_restore_jobs(
+    input: crate::output::ListRestoreJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RestoreJobsListMember>> {
+    let input = match input.restore_jobs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

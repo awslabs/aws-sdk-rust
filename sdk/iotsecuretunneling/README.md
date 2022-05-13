@@ -3,9 +3,9 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
+IoT Secure Tunneling creates remote connections to devices deployed in the field.
 
-For more information about how AWS IoT Secure Tunneling works, see [AWS IoT Secure Tunneling](https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html).
+For more information about how IoT Secure Tunneling works, see [IoT Secure Tunneling](https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html).
 
 ## Getting Started
 
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.11.0"
-aws-sdk-iotsecuretunneling = "0.11.0"
+aws-config = "0.12.0"
+aws-sdk-iotsecuretunneling = "0.12.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

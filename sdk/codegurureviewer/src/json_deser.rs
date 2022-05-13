@@ -1155,6 +1155,19 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_codegurureviewer_analysis_types(tokens)?
                                 );
                             }
+                            "ConfigFileState" => {
+                                builder = builder.set_config_file_state(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ConfigFileState::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -1615,6 +1628,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "MeteredLinesOfCodeCount" => {
                                 builder = builder.set_metered_lines_of_code_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "SuppressedLinesOfCodeCount" => {
+                                builder = builder.set_suppressed_lines_of_code_count(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
@@ -2532,6 +2553,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "MeteredLinesOfCodeCount" => {
                                 builder = builder.set_metered_lines_of_code_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "SuppressedLinesOfCodeCount" => {
+                                builder = builder.set_suppressed_lines_of_code_count(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

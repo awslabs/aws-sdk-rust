@@ -5289,6 +5289,12 @@ pub struct AssociationDescription {
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub schedule_offset: std::option::Option<i32>,
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl AssociationDescription {
     /// <p>The name of the SSM document.</p>
@@ -5405,6 +5411,14 @@ impl AssociationDescription {
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5446,6 +5460,7 @@ impl std::fmt::Debug for AssociationDescription {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
 }
@@ -5485,6 +5500,11 @@ pub mod association_description {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) schedule_offset: std::option::Option<i32>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The name of the SSM document.</p>
@@ -5841,6 +5861,38 @@ pub mod association_description {
             self.schedule_offset = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociationDescription`](crate::model::AssociationDescription)
         pub fn build(self) -> crate::model::AssociationDescription {
             crate::model::AssociationDescription {
@@ -5869,6 +5921,7 @@ pub mod association_description {
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
+                target_maps: self.target_maps,
             }
         }
     }
@@ -6691,6 +6744,12 @@ pub struct Runbook {
     pub target_parameter_name: std::option::Option<std::string::String>,
     /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
+    /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The <code>MaxErrors</code> value specified by the user when the execution started, indicating the maximum number of errors that can occur during the operation before the updates are stopped or rolled back.</p>
@@ -6723,6 +6782,14 @@ impl Runbook {
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
+    /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
@@ -6744,6 +6811,7 @@ impl std::fmt::Debug for Runbook {
         formatter.field("parameters", &self.parameters);
         formatter.field("target_parameter_name", &self.target_parameter_name);
         formatter.field("targets", &self.targets);
+        formatter.field("target_maps", &self.target_maps);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);
         formatter.field("target_locations", &self.target_locations);
@@ -6763,6 +6831,11 @@ pub mod runbook {
         >,
         pub(crate) target_parameter_name: std::option::Option<std::string::String>,
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
         pub(crate) max_concurrency: std::option::Option<std::string::String>,
         pub(crate) max_errors: std::option::Option<std::string::String>,
         pub(crate) target_locations:
@@ -6852,6 +6925,38 @@ pub mod runbook {
             self.targets = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
@@ -6902,6 +7007,7 @@ pub mod runbook {
                 parameters: self.parameters,
                 target_parameter_name: self.target_parameter_name,
                 targets: self.targets,
+                target_maps: self.target_maps,
                 max_concurrency: self.max_concurrency,
                 max_errors: self.max_errors,
                 target_locations: self.target_locations,
@@ -14538,6 +14644,12 @@ pub struct AssociationVersionInfo {
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub schedule_offset: std::option::Option<i32>,
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl AssociationVersionInfo {
     /// <p>The ID created by the system when the association was created.</p>
@@ -14624,6 +14736,14 @@ impl AssociationVersionInfo {
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociationVersionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14649,6 +14769,7 @@ impl std::fmt::Debug for AssociationVersionInfo {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
 }
@@ -14681,6 +14802,11 @@ pub mod association_version_info {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) schedule_offset: std::option::Option<i32>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The ID created by the system when the association was created.</p>
@@ -14949,6 +15075,38 @@ pub mod association_version_info {
             self.schedule_offset = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociationVersionInfo`](crate::model::AssociationVersionInfo)
         pub fn build(self) -> crate::model::AssociationVersionInfo {
             crate::model::AssociationVersionInfo {
@@ -14970,6 +15128,7 @@ pub mod association_version_info {
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
+                target_maps: self.target_maps,
             }
         }
     }
@@ -15009,6 +15168,12 @@ pub struct Association {
     pub association_name: std::option::Option<std::string::String>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub schedule_offset: std::option::Option<i32>,
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl Association {
     /// <p>The name of the SSM document.</p>
@@ -15057,6 +15222,14 @@ impl Association {
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
 }
 impl std::fmt::Debug for Association {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15072,6 +15245,7 @@ impl std::fmt::Debug for Association {
         formatter.field("schedule_expression", &self.schedule_expression);
         formatter.field("association_name", &self.association_name);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
 }
@@ -15092,6 +15266,11 @@ pub mod association {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) association_name: std::option::Option<std::string::String>,
         pub(crate) schedule_offset: std::option::Option<i32>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The name of the SSM document.</p>
@@ -15238,6 +15417,38 @@ pub mod association {
             self.schedule_offset = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Association`](crate::model::Association)
         pub fn build(self) -> crate::model::Association {
             crate::model::Association {
@@ -15252,6 +15463,7 @@ pub mod association {
                 schedule_expression: self.schedule_expression,
                 association_name: self.association_name,
                 schedule_offset: self.schedule_offset,
+                target_maps: self.target_maps,
             }
         }
     }
@@ -31465,6 +31677,12 @@ pub struct CreateAssociationBatchRequestEntry {
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub schedule_offset: std::option::Option<i32>,
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl CreateAssociationBatchRequestEntry {
     /// <p>The name of the SSM document that contains the configuration information for the managed node. You can specify Command or Automation runbooks.</p>
@@ -31555,6 +31773,14 @@ impl CreateAssociationBatchRequestEntry {
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31582,6 +31808,7 @@ impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
 }
@@ -31613,6 +31840,11 @@ pub mod create_association_batch_request_entry {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) schedule_offset: std::option::Option<i32>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The name of the SSM document that contains the configuration information for the managed node. You can specify Command or Automation runbooks.</p>
@@ -31884,6 +32116,38 @@ pub mod create_association_batch_request_entry {
             self.schedule_offset = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry)
         pub fn build(self) -> crate::model::CreateAssociationBatchRequestEntry {
             crate::model::CreateAssociationBatchRequestEntry {
@@ -31904,6 +32168,7 @@ pub mod create_association_batch_request_entry {
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
+                target_maps: self.target_maps,
             }
         }
     }

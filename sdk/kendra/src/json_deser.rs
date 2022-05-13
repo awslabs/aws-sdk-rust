@@ -11759,6 +11759,11 @@ where
                                     .map(|v| v.to_i32()),
                                 );
                             }
+                            "FacetResults" => {
+                                builder = builder.set_facet_results(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_facet_result_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

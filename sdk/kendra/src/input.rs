@@ -7834,14 +7834,14 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_facets`](Self::set_facets).
         ///
-        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
+        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
         pub fn facets(mut self, input: crate::model::Facet) -> Self {
             let mut v = self.facets.unwrap_or_default();
             v.push(input);
             self.facets = Some(v);
             self
         }
-        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
+        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
         pub fn set_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Facet>>,
@@ -7853,7 +7853,7 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
         ///
-        /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+        /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
         pub fn requested_document_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -7863,7 +7863,7 @@ pub mod query_input {
             self.requested_document_attributes = Some(v);
             self
         }
-        /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+        /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
         pub fn set_requested_document_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10950,9 +10950,9 @@ pub struct QueryInput {
     /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub attribute_filter: std::option::Option<crate::model::AttributeFilter>,
-    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
+    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
     pub facets: std::option::Option<std::vec::Vec<crate::model::Facet>>,
-    /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+    /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
     pub requested_document_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
     pub query_result_type_filter: std::option::Option<crate::model::QueryResultType>,
@@ -10991,11 +10991,11 @@ impl QueryInput {
     pub fn attribute_filter(&self) -> std::option::Option<&crate::model::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
-    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
+    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
     pub fn facets(&self) -> std::option::Option<&[crate::model::Facet]> {
         self.facets.as_deref()
     }
-    /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+    /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
     pub fn requested_document_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.requested_document_attributes.as_deref()
     }

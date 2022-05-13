@@ -369,6 +369,344 @@ impl AsRef<str> for FragmentSelectorType {
     }
 }
 
+/// <p>A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Image {
+    /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
+    pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
+    /// <ul>
+    /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+    /// </ul>
+    pub error: std::option::Option<crate::model::ImageError>,
+    /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
+    pub image_content: std::option::Option<std::string::String>,
+}
+impl Image {
+    /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
+    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.time_stamp.as_ref()
+    }
+    /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
+    /// <ul>
+    /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+    /// </ul>
+    pub fn error(&self) -> std::option::Option<&crate::model::ImageError> {
+        self.error.as_ref()
+    }
+    /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
+    pub fn image_content(&self) -> std::option::Option<&str> {
+        self.image_content.as_deref()
+    }
+}
+impl std::fmt::Debug for Image {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Image");
+        formatter.field("time_stamp", &self.time_stamp);
+        formatter.field("error", &self.error);
+        formatter.field("image_content", &self.image_content);
+        formatter.finish()
+    }
+}
+/// See [`Image`](crate::model::Image)
+pub mod image {
+    /// A builder for [`Image`](crate::model::Image)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) error: std::option::Option<crate::model::ImageError>,
+        pub(crate) image_content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
+        pub fn time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.time_stamp = Some(input);
+            self
+        }
+        /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
+        pub fn set_time_stamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.time_stamp = input;
+            self
+        }
+        /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
+        /// <ul>
+        /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+        /// </ul>
+        pub fn error(mut self, input: crate::model::ImageError) -> Self {
+            self.error = Some(input);
+            self
+        }
+        /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
+        /// <ul>
+        /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+        /// </ul>
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ImageError>) -> Self {
+            self.error = input;
+            self
+        }
+        /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
+        pub fn image_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_content = Some(input.into());
+            self
+        }
+        /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
+        pub fn set_image_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Image`](crate::model::Image)
+        pub fn build(self) -> crate::model::Image {
+            crate::model::Image {
+                time_stamp: self.time_stamp,
+                error: self.error,
+                image_content: self.image_content,
+            }
+        }
+    }
+}
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image)
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImageError {
+    #[allow(missing_docs)] // documentation missing in model
+    MediaError,
+    #[allow(missing_docs)] // documentation missing in model
+    NoMedia,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImageError {
+    fn from(s: &str) -> Self {
+        match s {
+            "MEDIA_ERROR" => ImageError::MediaError,
+            "NO_MEDIA" => ImageError::NoMedia,
+            other => ImageError::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImageError {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImageError::from(s))
+    }
+}
+impl ImageError {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImageError::MediaError => "MEDIA_ERROR",
+            ImageError::NoMedia => "NO_MEDIA",
+            ImageError::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MEDIA_ERROR", "NO_MEDIA"]
+    }
+}
+impl AsRef<str> for ImageError {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FormatConfigKey {
+    #[allow(missing_docs)] // documentation missing in model
+    JpegQuality,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FormatConfigKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "JPEGQuality" => FormatConfigKey::JpegQuality,
+            other => FormatConfigKey::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FormatConfigKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FormatConfigKey::from(s))
+    }
+}
+impl FormatConfigKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FormatConfigKey::JpegQuality => "JPEGQuality",
+            FormatConfigKey::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JPEGQuality"]
+    }
+}
+impl AsRef<str> for FormatConfigKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Format {
+    #[allow(missing_docs)] // documentation missing in model
+    Jpeg,
+    #[allow(missing_docs)] // documentation missing in model
+    Png,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Format {
+    fn from(s: &str) -> Self {
+        match s {
+            "JPEG" => Format::Jpeg,
+            "PNG" => Format::Png,
+            other => Format::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Format {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Format::from(s))
+    }
+}
+impl Format {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Format::Jpeg => "JPEG",
+            Format::Png => "PNG",
+            Format::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JPEG", "PNG"]
+    }
+}
+impl AsRef<str> for Format {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImageSelectorType {
+    #[allow(missing_docs)] // documentation missing in model
+    ProducerTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
+    ServerTimestamp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImageSelectorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRODUCER_TIMESTAMP" => ImageSelectorType::ProducerTimestamp,
+            "SERVER_TIMESTAMP" => ImageSelectorType::ServerTimestamp,
+            other => ImageSelectorType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImageSelectorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImageSelectorType::from(s))
+    }
+}
+impl ImageSelectorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImageSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
+            ImageSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
+            ImageSelectorType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+    }
+}
+impl AsRef<str> for ImageSelectorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(

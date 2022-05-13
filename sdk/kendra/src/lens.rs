@@ -59,8 +59,48 @@ pub(crate) fn reflens_structure_crate_output_list_experiences_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_faqs_output_next_token(
+    input: &crate::output::ListFaqsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_groups_older_than_ordering_id_output_next_token(
+    input: &crate::output::ListGroupsOlderThanOrderingIdOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_indices_output_next_token(
     input: &crate::output::ListIndicesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_query_suggestions_block_lists_output_next_token(
+    input: &crate::output::ListQuerySuggestionsBlockListsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_thesauri_output_next_token(
+    input: &crate::output::ListThesauriOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,

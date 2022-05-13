@@ -4935,6 +4935,7 @@ pub mod create_db_instance_input {
         pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -5402,10 +5403,7 @@ pub mod create_db_instance_input {
         /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
         /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
-        /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
-        /// <p>If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.</p>
-        /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-        /// </note>
+        /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
@@ -5415,10 +5413,7 @@ pub mod create_db_instance_input {
         /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
         /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
-        /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
-        /// <p>If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.</p>
-        /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-        /// </note>
+        /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5627,7 +5622,7 @@ pub mod create_db_instance_input {
         /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
         /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -5650,7 +5645,7 @@ pub mod create_db_instance_input {
         /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
         /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>MariaDB</b> </p>
         /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p> <b>Microsoft SQL Server</b> </p>
@@ -6244,6 +6239,30 @@ pub mod create_db_instance_input {
             self.backup_target = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput)
         pub fn build(
             self,
@@ -6302,6 +6321,7 @@ pub mod create_db_instance_input {
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
+                network_type: self.network_type,
             })
         }
     }
@@ -6452,6 +6472,7 @@ pub mod create_db_instance_read_replica_input {
         pub(crate) replica_mode: std::option::Option<crate::model::ReplicaMode>,
         pub(crate) max_allocated_storage: std::option::Option<i32>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -7080,6 +7101,30 @@ pub mod create_db_instance_read_replica_input {
             self.custom_iam_instance_profile = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaInput`](crate::input::CreateDbInstanceReadReplicaInput)
         pub fn build(
             self,
@@ -7121,6 +7166,7 @@ pub mod create_db_instance_read_replica_input {
                 replica_mode: self.replica_mode,
                 max_allocated_storage: self.max_allocated_storage,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
+                network_type: self.network_type,
             })
         }
     }
@@ -23225,6 +23271,7 @@ pub mod modify_db_instance_input {
         pub(crate) aws_backup_recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) automation_mode: std::option::Option<crate::model::AutomationMode>,
         pub(crate) resume_full_automation_mode_minutes: std::option::Option<i32>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -24178,6 +24225,30 @@ pub mod modify_db_instance_input {
             self.resume_full_automation_mode_minutes = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput)
         pub fn build(
             self,
@@ -24233,6 +24304,7 @@ pub mod modify_db_instance_input {
                 aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
                 automation_mode: self.automation_mode,
                 resume_full_automation_mode_minutes: self.resume_full_automation_mode_minutes,
+                network_type: self.network_type,
             })
         }
     }
@@ -30899,6 +30971,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -31476,6 +31549,30 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.backup_target = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput)
         pub fn build(
             self,
@@ -31515,6 +31612,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
+                network_type: self.network_type,
             })
         }
     }
@@ -31677,6 +31775,7 @@ pub mod restore_db_instance_from_s3_input {
         pub(crate) use_default_processor_features: std::option::Option<bool>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) max_allocated_storage: std::option::Option<i32>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -32362,6 +32461,30 @@ pub mod restore_db_instance_from_s3_input {
             self.max_allocated_storage = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Input`](crate::input::RestoreDbInstanceFromS3Input)
         pub fn build(
             self,
@@ -32414,6 +32537,7 @@ pub mod restore_db_instance_from_s3_input {
                 use_default_processor_features: self.use_default_processor_features,
                 deletion_protection: self.deletion_protection,
                 max_allocated_storage: self.max_allocated_storage,
+                network_type: self.network_type,
             })
         }
     }
@@ -32571,6 +32695,7 @@ pub mod restore_db_instance_to_point_in_time_input {
         pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -33234,6 +33359,30 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.backup_target = input;
             self
         }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB instance.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput)
         pub fn build(
             self,
@@ -33279,6 +33428,7 @@ pub mod restore_db_instance_to_point_in_time_input {
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
+                network_type: self.network_type,
             })
         }
     }
@@ -35647,6 +35797,15 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub backup_target: std::option::Option<std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbInstanceToPointInTimeInput {
     /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -35891,6 +36050,17 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn backup_target(&self) -> std::option::Option<&str> {
         self.backup_target.as_deref()
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDbInstanceToPointInTimeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35958,6 +36128,7 @@ impl std::fmt::Debug for RestoreDbInstanceToPointInTimeInput {
             &self.custom_iam_instance_profile,
         );
         formatter.field("backup_target", &self.backup_target);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -36117,6 +36288,15 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub max_allocated_storage: std::option::Option<i32>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbInstanceFromS3Input {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -36358,6 +36538,17 @@ impl RestoreDbInstanceFromS3Input {
     pub fn max_allocated_storage(&self) -> std::option::Option<i32> {
         self.max_allocated_storage
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDbInstanceFromS3Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36430,6 +36621,7 @@ impl std::fmt::Debug for RestoreDbInstanceFromS3Input {
         );
         formatter.field("deletion_protection", &self.deletion_protection);
         formatter.field("max_allocated_storage", &self.max_allocated_storage);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -36589,6 +36781,15 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub backup_target: std::option::Option<std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -36804,6 +37005,17 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn backup_target(&self) -> std::option::Option<&str> {
         self.backup_target.as_deref()
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36854,6 +37066,7 @@ impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
             &self.custom_iam_instance_profile,
         );
         formatter.field("backup_target", &self.backup_target);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -39478,6 +39691,15 @@ pub struct ModifyDbInstanceInput {
     pub automation_mode: std::option::Option<crate::model::AutomationMode>,
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is <code>60</code> (default). The maximum value is <code>1,440</code>.</p>
     pub resume_full_automation_mode_minutes: std::option::Option<i32>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -39852,6 +40074,17 @@ impl ModifyDbInstanceInput {
     pub fn resume_full_automation_mode_minutes(&self) -> std::option::Option<i32> {
         self.resume_full_automation_mode_minutes
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39942,6 +40175,7 @@ impl std::fmt::Debug for ModifyDbInstanceInput {
             "resume_full_automation_mode_minutes",
             &self.resume_full_automation_mode_minutes,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -45046,6 +45280,15 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -45280,6 +45523,17 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbInstanceReadReplicaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45344,6 +45598,7 @@ impl std::fmt::Debug for CreateDbInstanceReadReplicaInput {
             "custom_iam_instance_profile",
             &self.custom_iam_instance_profile,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -45545,10 +45800,7 @@ pub struct CreateDbInstanceInput {
     /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
-    /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
-    /// <p>If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.</p>
-    /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    /// </note>
+    /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -45626,7 +45878,7 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
     /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>MariaDB</b> </p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Microsoft SQL Server</b> </p>
@@ -45791,6 +46043,15 @@ pub struct CreateDbInstanceInput {
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub backup_target: std::option::Option<std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -46004,10 +46265,7 @@ impl CreateDbInstanceInput {
     /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
-    /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> <note>
-    /// <p>If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.</p>
-    /// <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User Guide.</a> </p>
-    /// </note>
+    /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -46101,7 +46359,7 @@ impl CreateDbInstanceInput {
     /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
     /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i> </code>. An example identifier is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create"> Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>MariaDB</b> </p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Microsoft SQL Server</b> </p>
@@ -46332,6 +46590,17 @@ impl CreateDbInstanceInput {
     pub fn backup_target(&self) -> std::option::Option<&str> {
         self.backup_target.as_deref()
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46410,6 +46679,7 @@ impl std::fmt::Debug for CreateDbInstanceInput {
             &self.custom_iam_instance_profile,
         );
         formatter.field("backup_target", &self.backup_target);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }

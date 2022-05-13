@@ -198,6 +198,8 @@ pub enum Error {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::error::NetworkTypeNotSupported),
     /// <p>The option group you are trying to create already exists.</p>
     OptionGroupAlreadyExistsFault(crate::error::OptionGroupAlreadyExistsFault),
     /// <p>The specified option group could not be found.</p>
@@ -345,6 +347,7 @@ impl std::fmt::Display for Error {
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
             Error::KmsKeyNotAccessibleFault(inner) => inner.fmt(f),
+            Error::NetworkTypeNotSupported(inner) => inner.fmt(f),
             Error::OptionGroupAlreadyExistsFault(inner) => inner.fmt(f),
             Error::OptionGroupNotFoundFault(inner) => inner.fmt(f),
             Error::OptionGroupQuotaExceededFault(inner) => inner.fmt(f),
@@ -894,6 +897,9 @@ where
                 crate::error::CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(inner) => {
                     Error::KmsKeyNotAccessibleFault(inner)
                 }
+                crate::error::CreateDBInstanceErrorKind::NetworkTypeNotSupported(inner) => {
+                    Error::NetworkTypeNotSupported(inner)
+                }
                 crate::error::CreateDBInstanceErrorKind::OptionGroupNotFoundFault(inner) => {
                     Error::OptionGroupNotFoundFault(inner)
                 }
@@ -939,6 +945,7 @@ where
                 crate::error::CreateDBInstanceReadReplicaErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
                 crate::error::CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
                 crate::error::CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+                crate::error::CreateDBInstanceReadReplicaErrorKind::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
                 crate::error::CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
                 crate::error::CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(inner) => Error::ProvisionedIopsNotAvailableInAzFault(inner),
                 crate::error::CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
@@ -2675,6 +2682,9 @@ where
                 crate::error::ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(inner) => {
                     Error::KmsKeyNotAccessibleFault(inner)
                 }
+                crate::error::ModifyDBInstanceErrorKind::NetworkTypeNotSupported(inner) => {
+                    Error::NetworkTypeNotSupported(inner)
+                }
                 crate::error::ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(inner) => {
                     Error::OptionGroupNotFoundFault(inner)
                 }
@@ -3382,6 +3392,7 @@ where
                 crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
                 crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
                 crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+                crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
                 crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
                 crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault(inner) => Error::ProvisionedIopsNotAvailableInAzFault(inner),
                 crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
@@ -3415,6 +3426,7 @@ where
                 crate::error::RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
                 crate::error::RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
                 crate::error::RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+                crate::error::RestoreDBInstanceFromS3ErrorKind::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
                 crate::error::RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
                 crate::error::RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(inner) => Error::ProvisionedIopsNotAvailableInAzFault(inner),
                 crate::error::RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
@@ -3456,6 +3468,7 @@ where
                 crate::error::RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
                 crate::error::RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
                 crate::error::RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+                crate::error::RestoreDBInstanceToPointInTimeErrorKind::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
                 crate::error::RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
                 crate::error::RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault(inner) => Error::PointInTimeRestoreNotEnabledFault(inner),
                 crate::error::RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault(inner) => Error::ProvisionedIopsNotAvailableInAzFault(inner),

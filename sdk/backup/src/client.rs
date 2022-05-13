@@ -587,6 +587,8 @@ impl Client {
     ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_created_after): <p>Returns only backup jobs that were created after the specified date.</p>
     ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSx</code> for Amazon FSx</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>S3</code> for Amazon S3</p> </li>   <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>  </ul>
     ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>  <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
+    ///   - [`by_complete_after(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_complete_after) / [`set_by_complete_after(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_complete_after): <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    ///   - [`by_complete_before(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_complete_before): <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     /// - On success, responds with [`ListBackupJobsOutput`](crate::output::ListBackupJobsOutput) with field(s):
     ///   - [`backup_jobs(Option<Vec<BackupJob>>)`](crate::output::ListBackupJobsOutput::backup_jobs): <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBackupJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -675,6 +677,8 @@ impl Client {
     ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSx</code> for Amazon FSx</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>S3</code> for Amazon S3</p> </li>   <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>  </ul>
     ///   - [`by_destination_vault_arn(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_destination_vault_arn) / [`set_by_destination_vault_arn(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_destination_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
     ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
+    ///   - [`by_complete_before(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_complete_before): <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    ///   - [`by_complete_after(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_complete_after) / [`set_by_complete_after(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_complete_after): <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     /// - On success, responds with [`ListCopyJobsOutput`](crate::output::ListCopyJobsOutput) with field(s):
     ///   - [`copy_jobs(Option<Vec<CopyJob>>)`](crate::output::ListCopyJobsOutput::copy_jobs): <p>An array of structures containing metadata about your copy jobs returned in JSON format. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCopyJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
@@ -785,6 +789,8 @@ impl Client {
     ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListRestoreJobs::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_created_before): <p>Returns only restore jobs that were created before the specified date.</p>
     ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListRestoreJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_created_after): <p>Returns only restore jobs that were created after the specified date.</p>
     ///   - [`by_status(RestoreJobStatus)`](crate::client::fluent_builders::ListRestoreJobs::by_status) / [`set_by_status(Option<RestoreJobStatus>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_status): <p>Returns only restore jobs associated with the specified job status.</p>
+    ///   - [`by_complete_before(DateTime)`](crate::client::fluent_builders::ListRestoreJobs::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_complete_before): <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    ///   - [`by_complete_after(DateTime)`](crate::client::fluent_builders::ListRestoreJobs::by_complete_after) / [`set_by_complete_after(Option<DateTime>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_complete_after): <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     /// - On success, responds with [`ListRestoreJobsOutput`](crate::output::ListRestoreJobsOutput) with field(s):
     ///   - [`restore_jobs(Option<Vec<RestoreJobsListMember>>)`](crate::output::ListRestoreJobsOutput::restore_jobs): <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRestoreJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -3488,6 +3494,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_account_id(input);
             self
         }
+        /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_complete_after(input);
+            self
+        }
+        /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_by_complete_after(input);
+            self
+        }
+        /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_complete_before(input);
+            self
+        }
+        /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_by_complete_before(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListBackupPlans`.
     ///
@@ -4055,6 +4087,32 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_by_account_id(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_complete_before(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_by_complete_before(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_complete_after(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_by_complete_after(input);
             self
         }
     }
@@ -4739,6 +4797,32 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RestoreJobStatus>,
         ) -> Self {
             self.inner = self.inner.set_by_status(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_complete_before(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_by_complete_before(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_complete_after(input);
+            self
+        }
+        /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+        pub fn set_by_complete_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_by_complete_after(input);
             self
         }
     }

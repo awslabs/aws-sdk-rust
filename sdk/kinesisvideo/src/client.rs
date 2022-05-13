@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateSignalingChannel`](crate::client::fluent_builders::CreateSignalingChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateSignalingChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateSignalingChannel::set_channel_name): <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateSignalingChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateSignalingChannel::set_channel_name): <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
     ///   - [`channel_type(ChannelType)`](crate::client::fluent_builders::CreateSignalingChannel::channel_type) / [`set_channel_type(Option<ChannelType>)`](crate::client::fluent_builders::CreateSignalingChannel::set_channel_type): <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
     ///   - [`single_master_configuration(SingleMasterConfiguration)`](crate::client::fluent_builders::CreateSignalingChannel::single_master_configuration) / [`set_single_master_configuration(Option<SingleMasterConfiguration>)`](crate::client::fluent_builders::CreateSignalingChannel::set_single_master_configuration): <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSignalingChannel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSignalingChannel::set_tags): <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
@@ -110,7 +110,7 @@ impl Client {
     ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::CreateStream::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::CreateStream::set_device_name): <p>The name of the device that is writing to the stream. </p> <note>   <p>In the current implementation, Kinesis Video Streams does not use this name.</p>  </note>
     ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::CreateStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::CreateStream::set_stream_name): <p>A name for the stream that you are creating.</p>  <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     ///   - [`media_type(impl Into<String>)`](crate::client::fluent_builders::CreateStream::media_type) / [`set_media_type(Option<String>)`](crate::client::fluent_builders::CreateStream::set_media_type): <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>  <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>  <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateStream::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateStream::set_kms_key_id): <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>  <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>  <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateStream::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateStream::set_kms_key_id): <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>  <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>  <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
     ///   - [`data_retention_in_hours(i32)`](crate::client::fluent_builders::CreateStream::data_retention_in_hours) / [`set_data_retention_in_hours(Option<i32>)`](crate::client::fluent_builders::CreateStream::set_data_retention_in_hours): <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>  <p>The default value is 0, indicating that the stream does not persist data.</p>  <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStream::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStream::set_tags): <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     /// - On success, responds with [`CreateStreamOutput`](crate::output::CreateStreamOutput) with field(s):
@@ -140,6 +140,32 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::error::DeleteStreamError)
     pub fn delete_stream(&self) -> fluent_builders::DeleteStream {
         fluent_builders::DeleteStream::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeImageGenerationConfiguration`](crate::client::fluent_builders::DescribeImageGenerationConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::set_stream_name): <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    /// - On success, responds with [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput) with field(s):
+    ///   - [`image_generation_configuration(Option<ImageGenerationConfiguration>)`](crate::output::DescribeImageGenerationConfigurationOutput::image_generation_configuration): <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+    /// - On failure, responds with [`SdkError<DescribeImageGenerationConfigurationError>`](crate::error::DescribeImageGenerationConfigurationError)
+    pub fn describe_image_generation_configuration(
+        &self,
+    ) -> fluent_builders::DescribeImageGenerationConfiguration {
+        fluent_builders::DescribeImageGenerationConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeNotificationConfiguration`](crate::client::fluent_builders::DescribeNotificationConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::set_stream_name): <p>The name of the stream from which to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the StreamARN.</p>
+    /// - On success, responds with [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput) with field(s):
+    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::output::DescribeNotificationConfigurationOutput::notification_configuration): <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+    /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationError>`](crate::error::DescribeNotificationConfigurationError)
+    pub fn describe_notification_configuration(
+        &self,
+    ) -> fluent_builders::DescribeNotificationConfiguration {
+        fluent_builders::DescribeNotificationConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSignalingChannel`](crate::client::fluent_builders::DescribeSignalingChannel) operation.
     ///
@@ -299,6 +325,34 @@ impl Client {
     pub fn update_data_retention(&self) -> fluent_builders::UpdateDataRetention {
         fluent_builders::UpdateDataRetention::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateImageGenerationConfiguration`](crate::client::fluent_builders::UpdateImageGenerationConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::set_stream_name): <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`image_generation_configuration(ImageGenerationConfiguration)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::image_generation_configuration) / [`set_image_generation_configuration(Option<ImageGenerationConfiguration>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::set_image_generation_configuration): <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
+    /// - On success, responds with [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateImageGenerationConfigurationError>`](crate::error::UpdateImageGenerationConfigurationError)
+    pub fn update_image_generation_configuration(
+        &self,
+    ) -> fluent_builders::UpdateImageGenerationConfiguration {
+        fluent_builders::UpdateImageGenerationConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateNotificationConfiguration`](crate::client::fluent_builders::UpdateNotificationConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::set_stream_name): <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    ///   - [`notification_configuration(NotificationConfiguration)`](crate::client::fluent_builders::UpdateNotificationConfiguration::notification_configuration) / [`set_notification_configuration(Option<NotificationConfiguration>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::set_notification_configuration): <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+    /// - On success, responds with [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNotificationConfigurationError>`](crate::error::UpdateNotificationConfigurationError)
+    pub fn update_notification_configuration(
+        &self,
+    ) -> fluent_builders::UpdateNotificationConfiguration {
+        fluent_builders::UpdateNotificationConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateSignalingChannel`](crate::client::fluent_builders::UpdateSignalingChannel) operation.
     ///
     /// - The fluent builder is configurable:
@@ -377,12 +431,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
@@ -520,14 +574,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_media_type(input);
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+        /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
         /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+        /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
         /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -709,6 +763,134 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_current_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeImageGenerationConfiguration`.
+    ///
+    /// <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeImageGenerationConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_image_generation_configuration_input::Builder,
+    }
+    impl DescribeImageGenerationConfiguration {
+        /// Creates a new `DescribeImageGenerationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeImageGenerationConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeImageGenerationConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeNotificationConfiguration`.
+    ///
+    /// <p>Gets the <code>NotificationConfiguration</code> for a given Kinesis video stream.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeNotificationConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_notification_configuration_input::Builder,
+    }
+    impl DescribeNotificationConfiguration {
+        /// Creates a new `DescribeNotificationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeNotificationConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeNotificationConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stream from which to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream from which to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the StreamARN.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the StreamARN.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }
@@ -1292,7 +1474,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+    /// <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1362,10 +1544,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagStream`.
     ///
-    /// <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
+    /// <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management User Guide</i>. </p>
     /// <p>You must provide either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     /// <p>This operation requires permission for the <code>KinesisVideo:TagStream</code> action.</p>
-    /// <p>Kinesis video streams support up to 50 tags.</p>
+    /// <p>A Kinesis video stream can support up to 50 tags.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagStream {
         handle: std::sync::Arc<super::Handle>,
@@ -1707,6 +1889,166 @@ pub mod fluent_builders {
             input: std::option::Option<i32>,
         ) -> Self {
             self.inner = self.inner.set_data_retention_change_in_hours(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateImageGenerationConfiguration`.
+    ///
+    /// <p>Updates the <code>StreamInfo</code> and <code>ImageProcessingConfiguration</code> fields.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateImageGenerationConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_image_generation_configuration_input::Builder,
+    }
+    impl UpdateImageGenerationConfiguration {
+        /// Creates a new `UpdateImageGenerationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateImageGenerationConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::UpdateImageGenerationConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+        /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
+        pub fn image_generation_configuration(
+            mut self,
+            input: crate::model::ImageGenerationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.image_generation_configuration(input);
+            self
+        }
+        /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
+        pub fn set_image_generation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageGenerationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_image_generation_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateNotificationConfiguration`.
+    ///
+    /// <p>Updates the notification information for a stream.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateNotificationConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_notification_configuration_input::Builder,
+    }
+    impl UpdateNotificationConfiguration {
+        /// Creates a new `UpdateNotificationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateNotificationConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNotificationConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
+            self
+        }
+        /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+        /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+        pub fn notification_configuration(
+            mut self,
+            input: crate::model::NotificationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.notification_configuration(input);
+            self
+        }
+        /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+        pub fn set_notification_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NotificationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_notification_configuration(input);
             self
         }
     }

@@ -767,6 +767,15 @@ pub fn deser_operation_crate_operation_get_experiment_results(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "details" => {
+                        builder = builder.set_details(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "reports" => {
                         builder = builder.set_reports(
                             crate::json_deser::deser_list_com_amazonaws_evidently_experiment_report_list(tokens)?

@@ -6221,6 +6221,8 @@ pub struct InstanceGroupModifyConfig {
     pub ec2_instance_ids_to_terminate: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Policy for customizing shrink operations.</p>
     pub shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
+    /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+    pub reconfiguration_type: std::option::Option<crate::model::ReconfigurationType>,
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
 }
@@ -6241,6 +6243,10 @@ impl InstanceGroupModifyConfig {
     pub fn shrink_policy(&self) -> std::option::Option<&crate::model::ShrinkPolicy> {
         self.shrink_policy.as_ref()
     }
+    /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+    pub fn reconfiguration_type(&self) -> std::option::Option<&crate::model::ReconfigurationType> {
+        self.reconfiguration_type.as_ref()
+    }
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
     pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
         self.configurations.as_deref()
@@ -6256,6 +6262,7 @@ impl std::fmt::Debug for InstanceGroupModifyConfig {
             &self.ec2_instance_ids_to_terminate,
         );
         formatter.field("shrink_policy", &self.shrink_policy);
+        formatter.field("reconfiguration_type", &self.reconfiguration_type);
         formatter.field("configurations", &self.configurations);
         formatter.finish()
     }
@@ -6271,6 +6278,7 @@ pub mod instance_group_modify_config {
         pub(crate) ec2_instance_ids_to_terminate:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
+        pub(crate) reconfiguration_type: std::option::Option<crate::model::ReconfigurationType>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     }
     impl Builder {
@@ -6332,6 +6340,19 @@ pub mod instance_group_modify_config {
             self.shrink_policy = input;
             self
         }
+        /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+        pub fn reconfiguration_type(mut self, input: crate::model::ReconfigurationType) -> Self {
+            self.reconfiguration_type = Some(input);
+            self
+        }
+        /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+        pub fn set_reconfiguration_type(
+            mut self,
+            input: std::option::Option<crate::model::ReconfigurationType>,
+        ) -> Self {
+            self.reconfiguration_type = input;
+            self
+        }
         /// Appends an item to `configurations`.
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
@@ -6358,6 +6379,7 @@ pub mod instance_group_modify_config {
                 instance_count: self.instance_count,
                 ec2_instance_ids_to_terminate: self.ec2_instance_ids_to_terminate,
                 shrink_policy: self.shrink_policy,
+                reconfiguration_type: self.reconfiguration_type,
                 configurations: self.configurations,
             }
         }
@@ -6367,6 +6389,61 @@ impl InstanceGroupModifyConfig {
     /// Creates a new builder-style object to manufacture [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig)
     pub fn builder() -> crate::model::instance_group_modify_config::Builder {
         crate::model::instance_group_modify_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReconfigurationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Merge,
+    #[allow(missing_docs)] // documentation missing in model
+    Overwrite,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReconfigurationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "MERGE" => ReconfigurationType::Merge,
+            "OVERWRITE" => ReconfigurationType::Overwrite,
+            other => ReconfigurationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReconfigurationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReconfigurationType::from(s))
+    }
+}
+impl ReconfigurationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReconfigurationType::Merge => "MERGE",
+            ReconfigurationType::Overwrite => "OVERWRITE",
+            ReconfigurationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MERGE", "OVERWRITE"]
+    }
+}
+impl AsRef<str> for ReconfigurationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -12653,6 +12730,58 @@ impl Step {
     }
 }
 
+/// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OsRelease {
+    /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
+    pub label: std::option::Option<std::string::String>,
+}
+impl OsRelease {
+    /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+}
+impl std::fmt::Debug for OsRelease {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OsRelease");
+        formatter.field("label", &self.label);
+        formatter.finish()
+    }
+}
+/// See [`OsRelease`](crate::model::OsRelease)
+pub mod os_release {
+    /// A builder for [`OsRelease`](crate::model::OsRelease)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OsRelease`](crate::model::OsRelease)
+        pub fn build(self) -> crate::model::OsRelease {
+            crate::model::OsRelease { label: self.label }
+        }
+    }
+}
+impl OsRelease {
+    /// Creates a new builder-style object to manufacture [`OsRelease`](crate::model::OsRelease)
+    pub fn builder() -> crate::model::os_release::Builder {
+        crate::model::os_release::Builder::default()
+    }
+}
+
 /// <p>The returned release label application names or versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14847,6 +14976,8 @@ pub struct Cluster {
     pub step_concurrency_level: std::option::Option<i32>,
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
     pub placement_groups: std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
+    /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
+    pub os_release_label: std::option::Option<std::string::String>,
 }
 impl Cluster {
     /// <p>The unique identifier for the cluster.</p>
@@ -14977,6 +15108,10 @@ impl Cluster {
     pub fn placement_groups(&self) -> std::option::Option<&[crate::model::PlacementGroupConfig]> {
         self.placement_groups.as_deref()
     }
+    /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
+    pub fn os_release_label(&self) -> std::option::Option<&str> {
+        self.os_release_label.as_deref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15011,6 +15146,7 @@ impl std::fmt::Debug for Cluster {
         formatter.field("outpost_arn", &self.outpost_arn);
         formatter.field("step_concurrency_level", &self.step_concurrency_level);
         formatter.field("placement_groups", &self.placement_groups);
+        formatter.field("os_release_label", &self.os_release_label);
         formatter.finish()
     }
 }
@@ -15053,6 +15189,7 @@ pub mod cluster {
         pub(crate) step_concurrency_level: std::option::Option<i32>,
         pub(crate) placement_groups:
             std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
+        pub(crate) os_release_label: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier for the cluster.</p>
@@ -15447,6 +15584,19 @@ pub mod cluster {
             self.placement_groups = input;
             self
         }
+        /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
+        pub fn os_release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_release_label = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
+        pub fn set_os_release_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.os_release_label = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
@@ -15480,6 +15630,7 @@ pub mod cluster {
                 outpost_arn: self.outpost_arn,
                 step_concurrency_level: self.step_concurrency_level,
                 placement_groups: self.placement_groups,
+                os_release_label: self.os_release_label,
             }
         }
     }

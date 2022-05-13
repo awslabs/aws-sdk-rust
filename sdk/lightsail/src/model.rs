@@ -9546,29 +9546,17 @@ impl AvailabilityZone {
 }
 
 /// <p>Describes the TLS security policies that are available for Lightsail load balancers.</p>
-/// <p>For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+/// <p>For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerTlsPolicy {
     /// <p>The name of the TLS security policy.</p>
-    /// <p>The following TLS security policy names are possible:</p>
-    /// <ul>
-    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-    /// </ul>
-    /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
     pub is_default: std::option::Option<bool>,
     /// <p>The description of the TLS security policy.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The protocols used in a given TLS security policy.</p>
-    /// <p>The following protocols are possible:</p>
-    /// <ul>
-    /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-    /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
-    /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
-    /// </ul>
     pub protocols: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
@@ -9576,12 +9564,6 @@ pub struct LoadBalancerTlsPolicy {
 }
 impl LoadBalancerTlsPolicy {
     /// <p>The name of the TLS security policy.</p>
-    /// <p>The following TLS security policy names are possible:</p>
-    /// <ul>
-    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-    /// </ul>
-    /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9594,12 +9576,6 @@ impl LoadBalancerTlsPolicy {
         self.description.as_deref()
     }
     /// <p>The protocols used in a given TLS security policy.</p>
-    /// <p>The following protocols are possible:</p>
-    /// <ul>
-    /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-    /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
-    /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
-    /// </ul>
     pub fn protocols(&self) -> std::option::Option<&[std::string::String]> {
         self.protocols.as_deref()
     }
@@ -9634,23 +9610,11 @@ pub mod load_balancer_tls_policy {
     }
     impl Builder {
         /// <p>The name of the TLS security policy.</p>
-        /// <p>The following TLS security policy names are possible:</p>
-        /// <ul>
-        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-        /// </ul>
-        /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the TLS security policy.</p>
-        /// <p>The following TLS security policy names are possible:</p>
-        /// <ul>
-        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-        /// </ul>
-        /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9680,12 +9644,6 @@ pub mod load_balancer_tls_policy {
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
         /// <p>The protocols used in a given TLS security policy.</p>
-        /// <p>The following protocols are possible:</p>
-        /// <ul>
-        /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-        /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
-        /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
-        /// </ul>
         pub fn protocols(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
@@ -9693,12 +9651,6 @@ pub mod load_balancer_tls_policy {
             self
         }
         /// <p>The protocols used in a given TLS security policy.</p>
-        /// <p>The following protocols are possible:</p>
-        /// <ul>
-        /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-        /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
-        /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
-        /// </ul>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11252,11 +11204,6 @@ pub struct LoadBalancer {
     /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
     pub https_redirection_enabled: std::option::Option<bool>,
     /// <p>The name of the TLS security policy for the load balancer.</p>
-    /// <p>The following TLS security policy names are possible:</p>
-    /// <ul>
-    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-    /// </ul>
     pub tls_policy_name: std::option::Option<std::string::String>,
 }
 impl LoadBalancer {
@@ -11343,11 +11290,6 @@ impl LoadBalancer {
         self.https_redirection_enabled
     }
     /// <p>The name of the TLS security policy for the load balancer.</p>
-    /// <p>The following TLS security policy names are possible:</p>
-    /// <ul>
-    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-    /// </ul>
     pub fn tls_policy_name(&self) -> std::option::Option<&str> {
         self.tls_policy_name.as_deref()
     }
@@ -11673,21 +11615,11 @@ pub mod load_balancer {
             self
         }
         /// <p>The name of the TLS security policy for the load balancer.</p>
-        /// <p>The following TLS security policy names are possible:</p>
-        /// <ul>
-        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-        /// </ul>
         pub fn tls_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.tls_policy_name = Some(input.into());
             self
         }
         /// <p>The name of the TLS security policy for the load balancer.</p>
-        /// <p>The following TLS security policy names are possible:</p>
-        /// <ul>
-        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
-        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
-        /// </ul>
         pub fn set_tls_policy_name(
             mut self,
             input: std::option::Option<std::string::String>,

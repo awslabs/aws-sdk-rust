@@ -105,6 +105,37 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionUR
     }
 }
 
+/// Operation shape for `GetImages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_images`](crate::client::Client::get_images).
+///
+/// See [`crate::client::fluent_builders::GetImages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetImages {
+    _private: (),
+}
+impl GetImages {
+    /// Creates a new builder-style object to manufacture [`GetImagesInput`](crate::input::GetImagesInput)
+    pub fn builder() -> crate::input::get_images_input::Builder {
+        crate::input::get_images_input::Builder::default()
+    }
+    /// Creates a new `GetImages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetImages {
+    type Output = std::result::Result<crate::output::GetImagesOutput, crate::error::GetImagesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_images_error(response)
+        } else {
+            crate::operation_deser::parse_get_images_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetMediaForFragmentList`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

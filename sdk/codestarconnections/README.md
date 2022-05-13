@@ -41,8 +41,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.11.0"
-aws-sdk-codestarconnections = "0.11.0"
+aws-config = "0.12.0"
+aws-sdk-codestarconnections = "0.12.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

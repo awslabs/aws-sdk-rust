@@ -898,12 +898,14 @@ pub mod create_gov_cloud_account_input {
             self.email = input;
             self
         }
-        /// <p>The friendly name of the member account.</p>
+        /// <p>The friendly name of the member account. </p>
+        /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the member account.</p>
+        /// <p>The friendly name of the member account. </p>
+        /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_name = input;
             self
@@ -10182,7 +10184,8 @@ pub struct CreateGovCloudAccountInput {
     /// </ul>
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the member account.</p>
+    /// <p>The friendly name of the member account. </p>
+    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub account_name: std::option::Option<std::string::String>,
     /// <p>(Optional)</p>
     /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member accounts in both the Amazon Web Services GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
@@ -10216,7 +10219,8 @@ impl CreateGovCloudAccountInput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The friendly name of the member account.</p>
+    /// <p>The friendly name of the member account. </p>
+    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn account_name(&self) -> std::option::Option<&str> {
         self.account_name.as_deref()
     }

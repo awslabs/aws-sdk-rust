@@ -2403,6 +2403,23 @@ pub fn parse_create_db_instance_error(
                 tmp
             }),
         },
+        "NetworkTypeNotSupported" => crate::error::CreateDBInstanceError {
+            meta: generic,
+            kind: crate::error::CreateDBInstanceErrorKind::NetworkTypeNotSupported({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OptionGroupNotFoundFault" => crate::error::CreateDBInstanceError {
             meta: generic,
             kind: crate::error::CreateDBInstanceErrorKind::OptionGroupNotFoundFault({
@@ -2718,6 +2735,20 @@ pub fn parse_create_db_instance_read_replica_error(
                     #[allow(unused_mut)]let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceReadReplicaError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NetworkTypeNotSupported" => crate::error::CreateDBInstanceReadReplicaError { meta: generic, kind: crate::error::CreateDBInstanceReadReplicaErrorKind::NetworkTypeNotSupported({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceReadReplicaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8852,6 +8883,23 @@ pub fn parse_modify_db_instance_error(
                 tmp
             }),
         },
+        "NetworkTypeNotSupported" => crate::error::ModifyDBInstanceError {
+            meta: generic,
+            kind: crate::error::ModifyDBInstanceErrorKind::NetworkTypeNotSupported({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OptionGroupNotFoundFault" => crate::error::ModifyDBInstanceError {
             meta: generic,
             kind: crate::error::ModifyDBInstanceErrorKind::OptionGroupNotFoundFault({
@@ -12230,6 +12278,20 @@ pub fn parse_restore_db_instance_from_db_snapshot_error(
                                                     }
             tmp
         })},
+        "NetworkTypeNotSupported" => crate::error::RestoreDBInstanceFromDBSnapshotError { meta: generic, kind: crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::NetworkTypeNotSupported({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "OptionGroupNotFoundFault" => crate::error::RestoreDBInstanceFromDBSnapshotError { meta: generic, kind: crate::error::RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -12561,6 +12623,23 @@ pub fn parse_restore_db_instance_from_s3_error(
                     let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NetworkTypeNotSupported" => crate::error::RestoreDBInstanceFromS3Error {
+            meta: generic,
+            kind: crate::error::RestoreDBInstanceFromS3ErrorKind::NetworkTypeNotSupported({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -12910,6 +12989,20 @@ pub fn parse_restore_db_instance_to_point_in_time_error(
                     #[allow(unused_mut)]let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceToPointInTimeError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NetworkTypeNotSupported" => crate::error::RestoreDBInstanceToPointInTimeError { meta: generic, kind: crate::error::RestoreDBInstanceToPointInTimeErrorKind::NetworkTypeNotSupported({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceToPointInTimeError::unhandled)?;
                     output.build()
                 }
             ;

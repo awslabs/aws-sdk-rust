@@ -243,7 +243,7 @@ impl Client {
     ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::GetExperimentResults::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::GetExperimentResults::set_project): <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
     ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::GetExperimentResults::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::GetExperimentResults::set_experiment): <p>The name of the experiment to retrieve the results of.</p>
     ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetExperimentResults::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetExperimentResults::set_start_time): <p>The date and time that the experiment started.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetExperimentResults::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetExperimentResults::set_end_time): <p>The date and time that the experiment ended, if it is completed.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetExperimentResults::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetExperimentResults::set_end_time): <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     ///   - [`metric_names(Vec<String>)`](crate::client::fluent_builders::GetExperimentResults::metric_names) / [`set_metric_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetExperimentResults::set_metric_names): <p>The names of the experiment metrics that you want to see the results of.</p>
     ///   - [`treatment_names(Vec<String>)`](crate::client::fluent_builders::GetExperimentResults::treatment_names) / [`set_treatment_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetExperimentResults::set_treatment_names): <p>The names of the experiment treatments that you want to see the results for.</p>
     ///   - [`base_stat(ExperimentBaseStat)`](crate::client::fluent_builders::GetExperimentResults::base_stat) / [`set_base_stat(Option<ExperimentBaseStat>)`](crate::client::fluent_builders::GetExperimentResults::set_base_stat): <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
@@ -254,6 +254,7 @@ impl Client {
     ///   - [`results_data(Option<Vec<ExperimentResultsData>>)`](crate::output::GetExperimentResultsOutput::results_data): <p>An array of structures that include experiment results including metric names and values. </p>
     ///   - [`reports(Option<Vec<ExperimentReport>>)`](crate::output::GetExperimentResultsOutput::reports): <p>An array of structures that include the reports that you requested.</p>
     ///   - [`timestamps(Option<Vec<DateTime>>)`](crate::output::GetExperimentResultsOutput::timestamps): <p>The timestamps of each result returned.</p>
+    ///   - [`details(Option<String>)`](crate::output::GetExperimentResultsOutput::details): <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
     /// - On failure, responds with [`SdkError<GetExperimentResultsError>`](crate::error::GetExperimentResultsError)
     pub fn get_experiment_results(&self) -> fluent_builders::GetExperimentResults {
         fluent_builders::GetExperimentResults::new(self.handle.clone())
@@ -374,7 +375,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::StartExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::StartExperiment::set_project): <p>The name or ARN of the project that contains the experiment to start.</p>
     ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::StartExperiment::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::StartExperiment::set_experiment): <p>The name of the experiment to start.</p>
-    ///   - [`analysis_complete_time(DateTime)`](crate::client::fluent_builders::StartExperiment::analysis_complete_time) / [`set_analysis_complete_time(Option<DateTime>)`](crate::client::fluent_builders::StartExperiment::set_analysis_complete_time): <p>The date and time to end the experiment.</p>
+    ///   - [`analysis_complete_time(DateTime)`](crate::client::fluent_builders::StartExperiment::analysis_complete_time) / [`set_analysis_complete_time(Option<DateTime>)`](crate::client::fluent_builders::StartExperiment::set_analysis_complete_time): <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     /// - On success, responds with [`StartExperimentOutput`](crate::output::StartExperimentOutput) with field(s):
     ///   - [`started_time(Option<DateTime>)`](crate::output::StartExperimentOutput::started_time): <p>A timestamp that indicates when the experiment started.</p>
     /// - On failure, responds with [`SdkError<StartExperimentError>`](crate::error::StartExperimentError)
@@ -1628,7 +1629,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExperimentResults`.
     ///
-    /// <p>Retrieves the results of a running or completed experiment.</p>
+    /// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment.</p>
+    /// <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperimentResults {
         handle: std::sync::Arc<super::Handle>,
@@ -1701,12 +1703,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The date and time that the experiment ended, if it is completed.</p>
+        /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The date and time that the experiment ended, if it is completed.</p>
+        /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2514,12 +2516,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment(input);
             self
         }
-        /// <p>The date and time to end the experiment.</p>
+        /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
         pub fn analysis_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.analysis_complete_time(input);
             self
         }
-        /// <p>The date and time to end the experiment.</p>
+        /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
         pub fn set_analysis_complete_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

@@ -2174,6 +2174,8 @@ pub struct DescribeReleaseLabelOutput {
     pub applications: std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+    pub available_os_releases: std::option::Option<std::vec::Vec<crate::model::OsRelease>>,
 }
 impl DescribeReleaseLabelOutput {
     /// <p>The target release label described in the response.</p>
@@ -2188,6 +2190,10 @@ impl DescribeReleaseLabelOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+    pub fn available_os_releases(&self) -> std::option::Option<&[crate::model::OsRelease]> {
+        self.available_os_releases.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReleaseLabelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2195,6 +2201,7 @@ impl std::fmt::Debug for DescribeReleaseLabelOutput {
         formatter.field("release_label", &self.release_label);
         formatter.field("applications", &self.applications);
         formatter.field("next_token", &self.next_token);
+        formatter.field("available_os_releases", &self.available_os_releases);
         formatter.finish()
     }
 }
@@ -2208,6 +2215,8 @@ pub mod describe_release_label_output {
         pub(crate) applications:
             std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) available_os_releases:
+            std::option::Option<std::vec::Vec<crate::model::OsRelease>>,
     }
     impl Builder {
         /// <p>The target release label described in the response.</p>
@@ -2252,12 +2261,32 @@ pub mod describe_release_label_output {
             self.next_token = input;
             self
         }
+        /// Appends an item to `available_os_releases`.
+        ///
+        /// To override the contents of this collection use [`set_available_os_releases`](Self::set_available_os_releases).
+        ///
+        /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+        pub fn available_os_releases(mut self, input: crate::model::OsRelease) -> Self {
+            let mut v = self.available_os_releases.unwrap_or_default();
+            v.push(input);
+            self.available_os_releases = Some(v);
+            self
+        }
+        /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+        pub fn set_available_os_releases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OsRelease>>,
+        ) -> Self {
+            self.available_os_releases = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeReleaseLabelOutput`](crate::output::DescribeReleaseLabelOutput)
         pub fn build(self) -> crate::output::DescribeReleaseLabelOutput {
             crate::output::DescribeReleaseLabelOutput {
                 release_label: self.release_label,
                 applications: self.applications,
                 next_token: self.next_token,
+                available_os_releases: self.available_os_releases,
             }
         }
     }

@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You have reached the maximum limit of active signaling channels for this AWS account in this region.</p>
+    /// <p>You have reached the maximum limit of active signaling channels for this Amazon Web Services account in this region.</p>
     AccountChannelLimitExceededException(crate::error::AccountChannelLimitExceededException),
     /// <p>The number of streams created for the account is too high.</p>
     AccountStreamLimitExceededException(crate::error::AccountStreamLimitExceededException),
@@ -19,13 +19,16 @@ pub enum Error {
     InvalidDeviceException(crate::error::InvalidDeviceException),
     /// <p>The format of the <code>StreamARN</code> is invalid.</p>
     InvalidResourceFormatException(crate::error::InvalidResourceFormatException),
+    /// <p>The Stream data retention in hours is equal to zero.</p>
+    NoDataRetentionException(crate::error::NoDataRetentionException),
     /// <p>The caller is not authorized to perform this operation.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
@@ -43,6 +46,7 @@ impl std::fmt::Display for Error {
             Error::InvalidArgumentException(inner) => inner.fmt(f),
             Error::InvalidDeviceException(inner) => inner.fmt(f),
             Error::InvalidResourceFormatException(inner) => inner.fmt(f),
+            Error::NoDataRetentionException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -171,6 +175,58 @@ where
                 }
                 crate::error::DeleteStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeImageGenerationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeImageGenerationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeImageGenerationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+                crate::error::DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+                crate::error::DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeNotificationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeNotificationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+                crate::error::DescribeNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+                crate::error::DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -526,6 +582,59 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::UpdateImageGenerationConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateImageGenerationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateImageGenerationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateNotificationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateNotificationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

@@ -12755,6 +12755,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceTypesFromInst
     }
 }
 
+/// Operation shape for `GetInstanceUefiData`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_instance_uefi_data`](crate::client::Client::get_instance_uefi_data).
+///
+/// See [`crate::client::fluent_builders::GetInstanceUefiData`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetInstanceUefiData {
+    _private: (),
+}
+impl GetInstanceUefiData {
+    /// Creates a new builder-style object to manufacture [`GetInstanceUefiDataInput`](crate::input::GetInstanceUefiDataInput)
+    pub fn builder() -> crate::input::get_instance_uefi_data_input::Builder {
+        crate::input::get_instance_uefi_data_input::Builder::default()
+    }
+    /// Creates a new `GetInstanceUefiData` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetInstanceUefiData {
+    type Output = std::result::Result<
+        crate::output::GetInstanceUefiDataOutput,
+        crate::error::GetInstanceUefiDataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_instance_uefi_data_error(response)
+        } else {
+            crate::operation_deser::parse_get_instance_uefi_data_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetIpamAddressHistory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

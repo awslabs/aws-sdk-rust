@@ -3530,7 +3530,7 @@ pub enum RegisterClusterErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>You have encountered a service limit on the specified resource.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
+    /// <p>Required resources (such as service-linked roles) were created and are still propagating. Retry later.</p>
     ResourcePropagationDelayException(crate::error::ResourcePropagationDelayException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -5581,7 +5581,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
+/// <p>Required resources (such as service-linked roles) were created and are still propagating. Retry later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePropagationDelayException {

@@ -51,7 +51,7 @@ impl Config {
     /// The signing service may be overridden by the `Endpoint`, or by specifying a custom
     /// [`SigningService`](aws_types::SigningService) during operation construction
     pub fn signing_service(&self) -> &'static str {
-        "awsmobilehubservice"
+        "AWSMobileHubService"
     }
 }
 /// Builder for creating a `Config`.

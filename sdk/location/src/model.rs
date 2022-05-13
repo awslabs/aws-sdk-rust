@@ -3176,6 +3176,7 @@ impl SearchForTextResult {
 }
 
 /// <p>Contains details about addresses or points of interest that match the search criteria.</p>
+/// <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Place {

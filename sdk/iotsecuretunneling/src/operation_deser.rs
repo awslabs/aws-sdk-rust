@@ -231,6 +231,67 @@ pub fn parse_open_tunnel_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_rotate_tunnel_access_token_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RotateTunnelAccessTokenOutput,
+    crate::error::RotateTunnelAccessTokenError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RotateTunnelAccessTokenError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RotateTunnelAccessTokenError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::RotateTunnelAccessTokenError {
+            meta: generic,
+            kind: crate::error::RotateTunnelAccessTokenErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RotateTunnelAccessTokenError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RotateTunnelAccessTokenError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_rotate_tunnel_access_token_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RotateTunnelAccessTokenOutput,
+    crate::error::RotateTunnelAccessTokenError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::rotate_tunnel_access_token_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_rotate_tunnel_access_token(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RotateTunnelAccessTokenError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {

@@ -62,6 +62,66 @@ impl UpdateSignalingChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateNotificationConfigurationOutput {}
+impl std::fmt::Debug for UpdateNotificationConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateNotificationConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
+pub mod update_notification_configuration_output {
+    /// A builder for [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
+        pub fn build(self) -> crate::output::UpdateNotificationConfigurationOutput {
+            crate::output::UpdateNotificationConfigurationOutput {}
+        }
+    }
+}
+impl UpdateNotificationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
+    pub fn builder() -> crate::output::update_notification_configuration_output::Builder {
+        crate::output::update_notification_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateImageGenerationConfigurationOutput {}
+impl std::fmt::Debug for UpdateImageGenerationConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateImageGenerationConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
+pub mod update_image_generation_configuration_output {
+    /// A builder for [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
+        pub fn build(self) -> crate::output::UpdateImageGenerationConfigurationOutput {
+            crate::output::UpdateImageGenerationConfigurationOutput {}
+        }
+    }
+}
+impl UpdateImageGenerationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
+    pub fn builder() -> crate::output::update_image_generation_configuration_output::Builder {
+        crate::output::update_image_generation_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataRetentionOutput {}
 impl std::fmt::Debug for UpdateDataRetentionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -799,6 +859,139 @@ impl DescribeSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput)
     pub fn builder() -> crate::output::describe_signaling_channel_output::Builder {
         crate::output::describe_signaling_channel_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeNotificationConfigurationOutput {
+    /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+    pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
+}
+impl DescribeNotificationConfigurationOutput {
+    /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+    pub fn notification_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+        self.notification_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeNotificationConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeNotificationConfigurationOutput");
+        formatter.field(
+            "notification_configuration",
+            &self.notification_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput)
+pub mod describe_notification_configuration_output {
+    /// A builder for [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notification_configuration:
+            std::option::Option<crate::model::NotificationConfiguration>,
+    }
+    impl Builder {
+        /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+        pub fn notification_configuration(
+            mut self,
+            input: crate::model::NotificationConfiguration,
+        ) -> Self {
+            self.notification_configuration = Some(input);
+            self
+        }
+        /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+        pub fn set_notification_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NotificationConfiguration>,
+        ) -> Self {
+            self.notification_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput)
+        pub fn build(self) -> crate::output::DescribeNotificationConfigurationOutput {
+            crate::output::DescribeNotificationConfigurationOutput {
+                notification_configuration: self.notification_configuration,
+            }
+        }
+    }
+}
+impl DescribeNotificationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput)
+    pub fn builder() -> crate::output::describe_notification_configuration_output::Builder {
+        crate::output::describe_notification_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeImageGenerationConfigurationOutput {
+    /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+    pub image_generation_configuration:
+        std::option::Option<crate::model::ImageGenerationConfiguration>,
+}
+impl DescribeImageGenerationConfigurationOutput {
+    /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+    pub fn image_generation_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageGenerationConfiguration> {
+        self.image_generation_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeImageGenerationConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeImageGenerationConfigurationOutput");
+        formatter.field(
+            "image_generation_configuration",
+            &self.image_generation_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput)
+pub mod describe_image_generation_configuration_output {
+    /// A builder for [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_generation_configuration:
+            std::option::Option<crate::model::ImageGenerationConfiguration>,
+    }
+    impl Builder {
+        /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+        pub fn image_generation_configuration(
+            mut self,
+            input: crate::model::ImageGenerationConfiguration,
+        ) -> Self {
+            self.image_generation_configuration = Some(input);
+            self
+        }
+        /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+        pub fn set_image_generation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ImageGenerationConfiguration>,
+        ) -> Self {
+            self.image_generation_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput)
+        pub fn build(self) -> crate::output::DescribeImageGenerationConfigurationOutput {
+            crate::output::DescribeImageGenerationConfigurationOutput {
+                image_generation_configuration: self.image_generation_configuration,
+            }
+        }
+    }
+}
+impl DescribeImageGenerationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput)
+    pub fn builder() -> crate::output::describe_image_generation_configuration_output::Builder {
+        crate::output::describe_image_generation_configuration_output::Builder::default()
     }
 }
 

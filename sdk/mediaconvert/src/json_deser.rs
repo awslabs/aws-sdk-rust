@@ -4454,6 +4454,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "videoGenerator" => {
+                                builder = builder.set_video_generator(
+                                    crate::json_deser::deser_structure_crate_model_input_video_generator(tokens)?
+                                );
+                            }
                             "videoSelector" => {
                                 builder = builder.set_video_selector(
                                     crate::json_deser::deser_structure_crate_model_video_selector(
@@ -6977,6 +6982,51 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_input_video_generator<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::InputVideoGenerator>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::InputVideoGenerator::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "duration" => {
+                                builder = builder.set_duration(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_video_selector<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VideoSelector>, aws_smithy_json::deserialize::Error>
@@ -7050,6 +7100,18 @@ where
                                     crate::json_deser::deser_structure_crate_model_hdr10_metadata(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "padVideo" => {
+                                builder = builder.set_pad_video(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::PadVideo::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "pid" => {
@@ -10900,6 +10962,19 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::DolbyVisionLevel6Mode::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "mapping" => {
+                                builder = builder.set_mapping(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DolbyVisionMapping::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

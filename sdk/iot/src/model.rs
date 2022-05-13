@@ -15790,6 +15790,8 @@ pub struct JobSummary {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub is_concurrent: std::option::Option<bool>,
 }
 impl JobSummary {
     /// <p>The job ARN.</p>
@@ -15824,6 +15826,10 @@ impl JobSummary {
     pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn is_concurrent(&self) -> std::option::Option<bool> {
+        self.is_concurrent
+    }
 }
 impl std::fmt::Debug for JobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15836,6 +15842,7 @@ impl std::fmt::Debug for JobSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("completed_at", &self.completed_at);
+        formatter.field("is_concurrent", &self.is_concurrent);
         formatter.finish()
     }
 }
@@ -15853,6 +15860,7 @@ pub mod job_summary {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) is_concurrent: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The job ARN.</p>
@@ -15950,6 +15958,16 @@ pub mod job_summary {
             self.completed_at = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn is_concurrent(mut self, input: bool) -> Self {
+            self.is_concurrent = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_is_concurrent(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_concurrent = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobSummary`](crate::model::JobSummary)
         pub fn build(self) -> crate::model::JobSummary {
             crate::model::JobSummary {
@@ -15961,6 +15979,7 @@ pub mod job_summary {
                 created_at: self.created_at,
                 last_updated_at: self.last_updated_at,
                 completed_at: self.completed_at,
+                is_concurrent: self.is_concurrent,
             }
         }
     }
@@ -24193,6 +24212,8 @@ pub struct Job {
     /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p>
     pub document_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub is_concurrent: std::option::Option<bool>,
 }
 impl Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -24290,6 +24311,10 @@ impl Job {
     {
         self.document_parameters.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn is_concurrent(&self) -> std::option::Option<bool> {
+        self.is_concurrent
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24321,6 +24346,7 @@ impl std::fmt::Debug for Job {
             &self.job_executions_retry_config,
         );
         formatter.field("document_parameters", &self.document_parameters);
+        formatter.field("is_concurrent", &self.is_concurrent);
         formatter.finish()
     }
 }
@@ -24355,6 +24381,7 @@ pub mod job {
         pub(crate) document_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) is_concurrent: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -24638,6 +24665,16 @@ pub mod job {
             self.document_parameters = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn is_concurrent(mut self, input: bool) -> Self {
+            self.is_concurrent = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_is_concurrent(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_concurrent = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job)
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
@@ -24662,6 +24699,7 @@ pub mod job {
                 job_template_arn: self.job_template_arn,
                 job_executions_retry_config: self.job_executions_retry_config,
                 document_parameters: self.document_parameters,
+                is_concurrent: self.is_concurrent,
             }
         }
     }

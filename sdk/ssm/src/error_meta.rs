@@ -170,6 +170,8 @@ pub enum Error {
     InvalidSchedule(crate::error::InvalidSchedule),
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
+    /// <p>TargetMap parameter isn't valid.</p>
+    InvalidTargetMaps(crate::error::InvalidTargetMaps),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
     /// <p>The update isn't valid.</p>
@@ -359,6 +361,7 @@ impl std::fmt::Display for Error {
             Error::InvalidRole(inner) => inner.fmt(f),
             Error::InvalidSchedule(inner) => inner.fmt(f),
             Error::InvalidTarget(inner) => inner.fmt(f),
+            Error::InvalidTargetMaps(inner) => inner.fmt(f),
             Error::InvalidTypeNameException(inner) => inner.fmt(f),
             Error::InvalidUpdate(inner) => inner.fmt(f),
             Error::InvocationDoesNotExist(inner) => inner.fmt(f),
@@ -579,6 +582,9 @@ where
                 crate::error::CreateAssociationErrorKind::InvalidTarget(inner) => {
                     Error::InvalidTarget(inner)
                 }
+                crate::error::CreateAssociationErrorKind::InvalidTargetMaps(inner) => {
+                    Error::InvalidTargetMaps(inner)
+                }
                 crate::error::CreateAssociationErrorKind::UnsupportedPlatformType(inner) => {
                     Error::UnsupportedPlatformType(inner)
                 }
@@ -629,6 +635,9 @@ where
                 }
                 crate::error::CreateAssociationBatchErrorKind::InvalidTarget(inner) => {
                     Error::InvalidTarget(inner)
+                }
+                crate::error::CreateAssociationBatchErrorKind::InvalidTargetMaps(inner) => {
+                    Error::InvalidTargetMaps(inner)
                 }
                 crate::error::CreateAssociationBatchErrorKind::UnsupportedPlatformType(inner) => {
                     Error::UnsupportedPlatformType(inner)
@@ -3661,6 +3670,9 @@ where
                 }
                 crate::error::UpdateAssociationErrorKind::InvalidTarget(inner) => {
                     Error::InvalidTarget(inner)
+                }
+                crate::error::UpdateAssociationErrorKind::InvalidTargetMaps(inner) => {
+                    Error::InvalidTargetMaps(inner)
                 }
                 crate::error::UpdateAssociationErrorKind::InvalidUpdate(inner) => {
                     Error::InvalidUpdate(inner)

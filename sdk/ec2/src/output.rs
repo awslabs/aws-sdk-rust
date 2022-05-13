@@ -10483,6 +10483,79 @@ impl GetIpamAddressHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetInstanceUefiDataOutput {
+    /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
+    pub uefi_data: std::option::Option<std::string::String>,
+}
+impl GetInstanceUefiDataOutput {
+    /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
+    pub fn uefi_data(&self) -> std::option::Option<&str> {
+        self.uefi_data.as_deref()
+    }
+}
+impl std::fmt::Debug for GetInstanceUefiDataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetInstanceUefiDataOutput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("uefi_data", &self.uefi_data);
+        formatter.finish()
+    }
+}
+/// See [`GetInstanceUefiDataOutput`](crate::output::GetInstanceUefiDataOutput)
+pub mod get_instance_uefi_data_output {
+    /// A builder for [`GetInstanceUefiDataOutput`](crate::output::GetInstanceUefiDataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) uefi_data: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
+        pub fn uefi_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uefi_data = Some(input.into());
+            self
+        }
+        /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
+        pub fn set_uefi_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uefi_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetInstanceUefiDataOutput`](crate::output::GetInstanceUefiDataOutput)
+        pub fn build(self) -> crate::output::GetInstanceUefiDataOutput {
+            crate::output::GetInstanceUefiDataOutput {
+                instance_id: self.instance_id,
+                uefi_data: self.uefi_data,
+            }
+        }
+    }
+}
+impl GetInstanceUefiDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceUefiDataOutput`](crate::output::GetInstanceUefiDataOutput)
+    pub fn builder() -> crate::output::get_instance_uefi_data_output::Builder {
+        crate::output::get_instance_uefi_data_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceTypesFromInstanceRequirementsOutput {
     /// <p>The instance types with the specified instance attributes.</p>
     pub instance_types:
@@ -23181,6 +23254,10 @@ pub struct DescribeImageAttributeOutput {
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The boot mode.</p>
     pub boot_mode: std::option::Option<crate::model::AttributeValue>,
+    /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
+    pub tpm_support: std::option::Option<crate::model::AttributeValue>,
+    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub uefi_data: std::option::Option<crate::model::AttributeValue>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
@@ -23225,6 +23302,14 @@ impl DescribeImageAttributeOutput {
     pub fn boot_mode(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.boot_mode.as_ref()
     }
+    /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
+    pub fn tpm_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.tpm_support.as_ref()
+    }
+    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn uefi_data(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.uefi_data.as_ref()
+    }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
@@ -23244,6 +23329,8 @@ impl std::fmt::Debug for DescribeImageAttributeOutput {
         formatter.field("ramdisk_id", &self.ramdisk_id);
         formatter.field("sriov_net_support", &self.sriov_net_support);
         formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("tpm_support", &self.tpm_support);
+        formatter.field("uefi_data", &self.uefi_data);
         formatter.field("last_launched_time", &self.last_launched_time);
         formatter.finish()
     }
@@ -23265,6 +23352,8 @@ pub mod describe_image_attribute_output {
         pub(crate) ramdisk_id: std::option::Option<crate::model::AttributeValue>,
         pub(crate) sriov_net_support: std::option::Option<crate::model::AttributeValue>,
         pub(crate) boot_mode: std::option::Option<crate::model::AttributeValue>,
+        pub(crate) tpm_support: std::option::Option<crate::model::AttributeValue>,
+        pub(crate) uefi_data: std::option::Option<crate::model::AttributeValue>,
         pub(crate) last_launched_time: std::option::Option<crate::model::AttributeValue>,
     }
     impl Builder {
@@ -23400,6 +23489,32 @@ pub mod describe_image_attribute_output {
             self.boot_mode = input;
             self
         }
+        /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
+        pub fn tpm_support(mut self, input: crate::model::AttributeValue) -> Self {
+            self.tpm_support = Some(input);
+            self
+        }
+        /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
+        pub fn set_tpm_support(
+            mut self,
+            input: std::option::Option<crate::model::AttributeValue>,
+        ) -> Self {
+            self.tpm_support = input;
+            self
+        }
+        /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn uefi_data(mut self, input: crate::model::AttributeValue) -> Self {
+            self.uefi_data = Some(input);
+            self
+        }
+        /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn set_uefi_data(
+            mut self,
+            input: std::option::Option<crate::model::AttributeValue>,
+        ) -> Self {
+            self.uefi_data = input;
+            self
+        }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
         /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
         /// </note>
@@ -23429,6 +23544,8 @@ pub mod describe_image_attribute_output {
                 ramdisk_id: self.ramdisk_id,
                 sriov_net_support: self.sriov_net_support,
                 boot_mode: self.boot_mode,
+                tpm_support: self.tpm_support,
+                uefi_data: self.uefi_data,
                 last_launched_time: self.last_launched_time,
             }
         }

@@ -161,6 +161,40 @@ impl aws_smithy_http::response::ParseStrictResponse for OpenTunnel {
     }
 }
 
+/// Operation shape for `RotateTunnelAccessToken`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`rotate_tunnel_access_token`](crate::client::Client::rotate_tunnel_access_token).
+///
+/// See [`crate::client::fluent_builders::RotateTunnelAccessToken`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RotateTunnelAccessToken {
+    _private: (),
+}
+impl RotateTunnelAccessToken {
+    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput)
+    pub fn builder() -> crate::input::rotate_tunnel_access_token_input::Builder {
+        crate::input::rotate_tunnel_access_token_input::Builder::default()
+    }
+    /// Creates a new `RotateTunnelAccessToken` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RotateTunnelAccessToken {
+    type Output = std::result::Result<
+        crate::output::RotateTunnelAccessTokenOutput,
+        crate::error::RotateTunnelAccessTokenError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_rotate_tunnel_access_token_error(response)
+        } else {
+            crate::operation_deser::parse_rotate_tunnel_access_token_response(response)
+        }
+    }
+}
+
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -2109,6 +2109,7 @@ pub mod create_cluster_input {
         pub(crate) aqua_configuration_status:
             std::option::Option<crate::model::AquaConfigurationStatus>,
         pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
+        pub(crate) load_sample_data: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -2711,6 +2712,19 @@ pub mod create_cluster_input {
             self.default_iam_role_arn = input;
             self
         }
+        /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+        pub fn load_sample_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.load_sample_data = Some(input.into());
+            self
+        }
+        /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+        pub fn set_load_sample_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_sample_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput)
         pub fn build(
             self,
@@ -2752,6 +2766,7 @@ pub mod create_cluster_input {
                 availability_zone_relocation: self.availability_zone_relocation,
                 aqua_configuration_status: self.aqua_configuration_status,
                 default_iam_role_arn: self.default_iam_role_arn,
+                load_sample_data: self.load_sample_data,
             })
         }
     }
@@ -28838,6 +28853,8 @@ pub struct CreateClusterInput {
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
     pub default_iam_role_arn: std::option::Option<std::string::String>,
+    /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+    pub load_sample_data: std::option::Option<std::string::String>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -29055,6 +29072,10 @@ impl CreateClusterInput {
     pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
         self.default_iam_role_arn.as_deref()
     }
+    /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+    pub fn load_sample_data(&self) -> std::option::Option<&str> {
+        self.load_sample_data.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29116,6 +29137,7 @@ impl std::fmt::Debug for CreateClusterInput {
         );
         formatter.field("aqua_configuration_status", &self.aqua_configuration_status);
         formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
+        formatter.field("load_sample_data", &self.load_sample_data);
         formatter.finish()
     }
 }

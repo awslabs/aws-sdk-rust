@@ -473,6 +473,9 @@ where
                 crate::error::CancelJobErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
+                crate::error::CancelJobErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
                 crate::error::CancelJobErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

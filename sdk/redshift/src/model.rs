@@ -12303,7 +12303,7 @@ pub struct DataShare {
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -12322,7 +12322,7 @@ impl DataShare {
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub fn data_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
@@ -12401,7 +12401,7 @@ pub mod data_share {
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
             input: crate::model::DataShareAssociation,
@@ -12411,7 +12411,7 @@ pub mod data_share {
             self.data_share_associations = Some(v);
             self
         }
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn set_data_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,

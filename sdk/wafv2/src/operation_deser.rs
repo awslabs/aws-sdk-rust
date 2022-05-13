@@ -894,6 +894,24 @@ pub fn parse_create_web_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "WAFConfigurationWarningException" => crate::error::CreateWebACLError {
+            meta: generic,
+            kind: crate::error::CreateWebACLErrorKind::WafConfigurationWarningException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_configuration_warning_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_configuration_warning_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "WAFDuplicateItemException" => crate::error::CreateWebACLError {
             meta: generic,
             kind: crate::error::CreateWebACLErrorKind::WafDuplicateItemException({
@@ -5947,6 +5965,24 @@ pub fn parse_update_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "WAFConfigurationWarningException" => crate::error::UpdateRuleGroupError {
+            meta: generic,
+            kind: crate::error::UpdateRuleGroupErrorKind::WafConfigurationWarningException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_configuration_warning_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_configuration_warning_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "WAFDuplicateItemException" => crate::error::UpdateRuleGroupError {
             meta: generic,
             kind: crate::error::UpdateRuleGroupErrorKind::WafDuplicateItemException({
@@ -6141,6 +6177,24 @@ pub fn parse_update_web_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "WAFConfigurationWarningException" => crate::error::UpdateWebACLError {
+            meta: generic,
+            kind: crate::error::UpdateWebACLErrorKind::WafConfigurationWarningException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_configuration_warning_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_configuration_warning_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "WAFDuplicateItemException" => crate::error::UpdateWebACLError {
             meta: generic,
             kind: crate::error::UpdateWebACLErrorKind::WafDuplicateItemException({

@@ -1963,7 +1963,7 @@ impl DocumentAttributeCondition {
     }
 }
 
-/// <p>The value of a custom document attribute. You can only provide one value for a custom attribute.</p>
+/// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttributeValue {
@@ -2829,60 +2829,58 @@ impl DataSourceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuipConfiguration {
-    /// <p>The configuration information to connect to your Quip data source domain.</p>
+    /// <p>The Quip site domain.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
-    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
     /// </ul>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+    /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
     pub crawl_file_comments: bool,
-    /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+    /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
     pub crawl_chat_rooms: bool,
-    /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+    /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
     pub crawl_attachments: bool,
     /// <p>The identifier of the Quip folder IDs to index.</p>
     pub folder_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub thread_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip messages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub message_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub attachment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl QuipConfiguration {
-    /// <p>The configuration information to connect to your Quip data source domain.</p>
+    /// <p>The Quip site domain.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
-    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+    /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
     pub fn crawl_file_comments(&self) -> bool {
         self.crawl_file_comments
     }
-    /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+    /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
     pub fn crawl_chat_rooms(&self) -> bool {
         self.crawl_chat_rooms
     }
-    /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+    /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -2890,19 +2888,19 @@ impl QuipConfiguration {
     pub fn folder_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.folder_ids.as_deref()
     }
-    /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub fn thread_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.thread_field_mappings.as_deref()
     }
-    /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip messages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub fn message_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.message_field_mappings.as_deref()
     }
-    /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub fn attachment_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
@@ -2916,7 +2914,7 @@ impl QuipConfiguration {
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
-    /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
@@ -2964,60 +2962,58 @@ pub mod quip_configuration {
         pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     }
     impl Builder {
-        /// <p>The configuration information to connect to your Quip data source domain.</p>
+        /// <p>The Quip site domain.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        /// <p>The configuration information to connect to your Quip data source domain.</p>
+        /// <p>The Quip site domain.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
-        /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+        /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Quip file system for Windows.</p> </li>
-        /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Quip Windows file system.</p> </li>
+        /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
-        /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+        /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
         pub fn crawl_file_comments(mut self, input: bool) -> Self {
             self.crawl_file_comments = Some(input);
             self
         }
-        /// <p>Specify whether to crawl file comments in your Quip data source. You can specify one or more of these options.</p>
+        /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
         pub fn set_crawl_file_comments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_file_comments = input;
             self
         }
-        /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+        /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
         pub fn crawl_chat_rooms(mut self, input: bool) -> Self {
             self.crawl_chat_rooms = Some(input);
             self
         }
-        /// <p>Specify whether to crawl chat rooms in your Quip data source. You can specify one or more of these options.</p>
+        /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
         pub fn set_crawl_chat_rooms(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_chat_rooms = input;
             self
         }
-        /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+        /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
         pub fn crawl_attachments(mut self, input: bool) -> Self {
             self.crawl_attachments = Some(input);
             self
         }
-        /// <p>Specify whether to crawl attachments in your Quip data source. You can specify one or more of these options.</p>
+        /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -3045,7 +3041,7 @@ pub mod quip_configuration {
         ///
         /// To override the contents of this collection use [`set_thread_field_mappings`](Self::set_thread_field_mappings).
         ///
-        /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
         pub fn thread_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -3055,7 +3051,7 @@ pub mod quip_configuration {
             self.thread_field_mappings = Some(v);
             self
         }
-        /// <p>A list of field mappings to apply when indexing Quip threads.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
         pub fn set_thread_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -3067,7 +3063,7 @@ pub mod quip_configuration {
         ///
         /// To override the contents of this collection use [`set_message_field_mappings`](Self::set_message_field_mappings).
         ///
-        /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip messages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
         pub fn message_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -3077,7 +3073,7 @@ pub mod quip_configuration {
             self.message_field_mappings = Some(v);
             self
         }
-        /// <p>A list of field mappings to apply when indexing Quip messages.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip messages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
         pub fn set_message_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -3089,7 +3085,7 @@ pub mod quip_configuration {
         ///
         /// To override the contents of this collection use [`set_attachment_field_mappings`](Self::set_attachment_field_mappings).
         ///
-        /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
         pub fn attachment_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -3099,7 +3095,7 @@ pub mod quip_configuration {
             self.attachment_field_mappings = Some(v);
             self
         }
-        /// <p>A list of field mappings to apply when indexing Quip attachments.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
         pub fn set_attachment_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -3145,7 +3141,7 @@ pub mod quip_configuration {
             self.exclusion_patterns = input;
             self
         }
-        /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn vpc_configuration(
             mut self,
             input: crate::model::DataSourceVpcConfiguration,
@@ -3153,7 +3149,7 @@ pub mod quip_configuration {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for connecting to an Amazon Virtual Private Cloud (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -12134,13 +12130,16 @@ impl FacetResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttributeValueCountPair {
-    /// <p>The value of the attribute. For example, "HR."</p>
+    /// <p>The value of the attribute. For example, "HR".</p>
     pub document_attribute_value: std::option::Option<crate::model::DocumentAttributeValue>,
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
     pub count: std::option::Option<i32>,
+    /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
+    /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+    pub facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
 }
 impl DocumentAttributeValueCountPair {
-    /// <p>The value of the attribute. For example, "HR."</p>
+    /// <p>The value of the attribute. For example, "HR".</p>
     pub fn document_attribute_value(
         &self,
     ) -> std::option::Option<&crate::model::DocumentAttributeValue> {
@@ -12150,12 +12149,18 @@ impl DocumentAttributeValueCountPair {
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
     }
+    /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
+    /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+    pub fn facet_results(&self) -> std::option::Option<&[crate::model::FacetResult]> {
+        self.facet_results.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentAttributeValueCountPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentAttributeValueCountPair");
         formatter.field("document_attribute_value", &self.document_attribute_value);
         formatter.field("count", &self.count);
+        formatter.field("facet_results", &self.facet_results);
         formatter.finish()
     }
 }
@@ -12168,9 +12173,10 @@ pub mod document_attribute_value_count_pair {
         pub(crate) document_attribute_value:
             std::option::Option<crate::model::DocumentAttributeValue>,
         pub(crate) count: std::option::Option<i32>,
+        pub(crate) facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
     }
     impl Builder {
-        /// <p>The value of the attribute. For example, "HR."</p>
+        /// <p>The value of the attribute. For example, "HR".</p>
         pub fn document_attribute_value(
             mut self,
             input: crate::model::DocumentAttributeValue,
@@ -12178,7 +12184,7 @@ pub mod document_attribute_value_count_pair {
             self.document_attribute_value = Some(input);
             self
         }
-        /// <p>The value of the attribute. For example, "HR."</p>
+        /// <p>The value of the attribute. For example, "HR".</p>
         pub fn set_document_attribute_value(
             mut self,
             input: std::option::Option<crate::model::DocumentAttributeValue>,
@@ -12196,11 +12202,33 @@ pub mod document_attribute_value_count_pair {
             self.count = input;
             self
         }
+        /// Appends an item to `facet_results`.
+        ///
+        /// To override the contents of this collection use [`set_facet_results`](Self::set_facet_results).
+        ///
+        /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
+        /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+        pub fn facet_results(mut self, input: crate::model::FacetResult) -> Self {
+            let mut v = self.facet_results.unwrap_or_default();
+            v.push(input);
+            self.facet_results = Some(v);
+            self
+        }
+        /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
+        /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+        pub fn set_facet_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
+        ) -> Self {
+            self.facet_results = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DocumentAttributeValueCountPair`](crate::model::DocumentAttributeValueCountPair)
         pub fn build(self) -> crate::model::DocumentAttributeValueCountPair {
             crate::model::DocumentAttributeValueCountPair {
                 document_attribute_value: self.document_attribute_value,
                 count: self.count,
+                facet_results: self.facet_results,
             }
         }
     }
@@ -12232,7 +12260,7 @@ pub struct QueryResultItem {
     pub document_excerpt: std::option::Option<crate::model::TextWithHighlights>,
     /// <p>The URI of the original location of the document.</p>
     pub document_uri: std::option::Option<std::string::String>,
-    /// <p>An array of document attributes for the document that the query result maps to. For example, the document author (Author) or the source URI (SourceUri) of the document.</p>
+    /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub document_attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
     /// <p>Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
     /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
@@ -12271,7 +12299,7 @@ impl QueryResultItem {
     pub fn document_uri(&self) -> std::option::Option<&str> {
         self.document_uri.as_deref()
     }
-    /// <p>An array of document attributes for the document that the query result maps to. For example, the document author (Author) or the source URI (SourceUri) of the document.</p>
+    /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub fn document_attributes(&self) -> std::option::Option<&[crate::model::DocumentAttribute]> {
         self.document_attributes.as_deref()
     }
@@ -12416,14 +12444,14 @@ pub mod query_result_item {
         ///
         /// To override the contents of this collection use [`set_document_attributes`](Self::set_document_attributes).
         ///
-        /// <p>An array of document attributes for the document that the query result maps to. For example, the document author (Author) or the source URI (SourceUri) of the document.</p>
+        /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
         pub fn document_attributes(mut self, input: crate::model::DocumentAttribute) -> Self {
             let mut v = self.document_attributes.unwrap_or_default();
             v.push(input);
             self.document_attributes = Some(v);
             self
         }
-        /// <p>An array of document attributes for the document that the query result maps to. For example, the document author (Author) or the source URI (SourceUri) of the document.</p>
+        /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
         pub fn set_document_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
@@ -12607,8 +12635,7 @@ impl AsRef<str> for ScoreConfidence {
     }
 }
 
-/// <p>A custom attribute value assigned to a document.</p>
-/// <p>For more information on how to create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom Attributes</a>.</p>
+/// <p>A document attribute or metadata field. To create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom attributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttribute {
@@ -13745,23 +13772,43 @@ impl DocumentRelevanceConfiguration {
     }
 }
 
-/// <p>Information about a document attribute</p>
+/// <p>Information about a document attribute. You can use document attributes as facets.</p>
+/// <p>For example, the document attribute or facet "Department" includes the values "HR", "Engineering", and "Accounting". You can display these values in the search results so that documents can be searched by department.</p>
+/// <p>You can display up to 10 facet values per facet for a query. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Facet {
     /// <p>The unique key for the document attribute.</p>
     pub document_attribute_key: std::option::Option<std::string::String>,
+    /// <p>An array of document attributes that are nested facets within a facet.</p>
+    /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
+    /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+    pub facets: std::option::Option<std::vec::Vec<crate::model::Facet>>,
+    /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+    pub max_results: i32,
 }
 impl Facet {
     /// <p>The unique key for the document attribute.</p>
     pub fn document_attribute_key(&self) -> std::option::Option<&str> {
         self.document_attribute_key.as_deref()
     }
+    /// <p>An array of document attributes that are nested facets within a facet.</p>
+    /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
+    /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+    pub fn facets(&self) -> std::option::Option<&[crate::model::Facet]> {
+        self.facets.as_deref()
+    }
+    /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for Facet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Facet");
         formatter.field("document_attribute_key", &self.document_attribute_key);
+        formatter.field("facets", &self.facets);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -13772,6 +13819,8 @@ pub mod facet {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_attribute_key: std::option::Option<std::string::String>,
+        pub(crate) facets: std::option::Option<std::vec::Vec<crate::model::Facet>>,
+        pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The unique key for the document attribute.</p>
@@ -13787,10 +13836,45 @@ pub mod facet {
             self.document_attribute_key = input;
             self
         }
+        /// Appends an item to `facets`.
+        ///
+        /// To override the contents of this collection use [`set_facets`](Self::set_facets).
+        ///
+        /// <p>An array of document attributes that are nested facets within a facet.</p>
+        /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
+        /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+        pub fn facets(mut self, input: crate::model::Facet) -> Self {
+            let mut v = self.facets.unwrap_or_default();
+            v.push(input);
+            self.facets = Some(v);
+            self
+        }
+        /// <p>An array of document attributes that are nested facets within a facet.</p>
+        /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
+        /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+        pub fn set_facets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Facet>>,
+        ) -> Self {
+            self.facets = input;
+            self
+        }
+        /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Facet`](crate::model::Facet)
         pub fn build(self) -> crate::model::Facet {
             crate::model::Facet {
                 document_attribute_key: self.document_attribute_key,
+                facets: self.facets,
+                max_results: self.max_results.unwrap_or_default(),
             }
         }
     }

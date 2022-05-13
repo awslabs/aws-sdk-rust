@@ -131,6 +131,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStream {
     }
 }
 
+/// Operation shape for `DescribeImageGenerationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_image_generation_configuration`](crate::client::Client::describe_image_generation_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeImageGenerationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeImageGenerationConfiguration {
+    _private: (),
+}
+impl DescribeImageGenerationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationInput`](crate::input::DescribeImageGenerationConfigurationInput)
+    pub fn builder() -> crate::input::describe_image_generation_configuration_input::Builder {
+        crate::input::describe_image_generation_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeImageGenerationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeImageGenerationConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeImageGenerationConfigurationOutput,
+        crate::error::DescribeImageGenerationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_image_generation_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_image_generation_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeNotificationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_notification_configuration`](crate::client::Client::describe_notification_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeNotificationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeNotificationConfiguration {
+    _private: (),
+}
+impl DescribeNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationInput`](crate::input::DescribeNotificationConfigurationInput)
+    pub fn builder() -> crate::input::describe_notification_configuration_input::Builder {
+        crate::input::describe_notification_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeNotificationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeNotificationConfigurationOutput,
+        crate::error::DescribeNotificationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_notification_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_notification_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeSignalingChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -556,6 +624,74 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRetention {
             crate::operation_deser::parse_update_data_retention_error(response)
         } else {
             crate::operation_deser::parse_update_data_retention_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateImageGenerationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_image_generation_configuration`](crate::client::Client::update_image_generation_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateImageGenerationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateImageGenerationConfiguration {
+    _private: (),
+}
+impl UpdateImageGenerationConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateImageGenerationConfigurationInput`](crate::input::UpdateImageGenerationConfigurationInput)
+    pub fn builder() -> crate::input::update_image_generation_configuration_input::Builder {
+        crate::input::update_image_generation_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateImageGenerationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateImageGenerationConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateImageGenerationConfigurationOutput,
+        crate::error::UpdateImageGenerationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_image_generation_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_image_generation_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateNotificationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_notification_configuration`](crate::client::Client::update_notification_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateNotificationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateNotificationConfiguration {
+    _private: (),
+}
+impl UpdateNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationConfigurationInput`](crate::input::UpdateNotificationConfigurationInput)
+    pub fn builder() -> crate::input::update_notification_configuration_input::Builder {
+        crate::input::update_notification_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateNotificationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateNotificationConfigurationOutput,
+        crate::error::UpdateNotificationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_notification_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_notification_configuration_response(response)
         }
     }
 }

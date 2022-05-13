@@ -72,6 +72,147 @@ impl Tag {
     }
 }
 
+/// <p>The destination configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DestinationConfig {
+    /// <p>The name of the IoT thing to which you want to connect.</p>
+    pub thing_name: std::option::Option<std::string::String>,
+    /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
+    pub services: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DestinationConfig {
+    /// <p>The name of the IoT thing to which you want to connect.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
+    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+        self.services.as_deref()
+    }
+}
+impl std::fmt::Debug for DestinationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DestinationConfig");
+        formatter.field("thing_name", &self.thing_name);
+        formatter.field("services", &self.services);
+        formatter.finish()
+    }
+}
+/// See [`DestinationConfig`](crate::model::DestinationConfig)
+pub mod destination_config {
+    /// A builder for [`DestinationConfig`](crate::model::DestinationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) thing_name: std::option::Option<std::string::String>,
+        pub(crate) services: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the IoT thing to which you want to connect.</p>
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.thing_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the IoT thing to which you want to connect.</p>
+        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.thing_name = input;
+            self
+        }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
+        pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.services.unwrap_or_default();
+            v.push(input.into());
+            self.services = Some(v);
+            self
+        }
+        /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
+        pub fn set_services(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.services = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DestinationConfig`](crate::model::DestinationConfig)
+        pub fn build(self) -> crate::model::DestinationConfig {
+            crate::model::DestinationConfig {
+                thing_name: self.thing_name,
+                services: self.services,
+            }
+        }
+    }
+}
+impl DestinationConfig {
+    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig)
+    pub fn builder() -> crate::model::destination_config::Builder {
+        crate::model::destination_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClientMode {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Destination,
+    #[allow(missing_docs)] // documentation missing in model
+    Source,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClientMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ClientMode::All,
+            "DESTINATION" => ClientMode::Destination,
+            "SOURCE" => ClientMode::Source,
+            other => ClientMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClientMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClientMode::from(s))
+    }
+}
+impl ClientMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClientMode::All => "ALL",
+            ClientMode::Destination => "DESTINATION",
+            ClientMode::Source => "SOURCE",
+            ClientMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "DESTINATION", "SOURCE"]
+    }
+}
+impl AsRef<str> for ClientMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Tunnel timeout configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -129,102 +270,13 @@ impl TimeoutConfig {
     }
 }
 
-/// <p>The destination configuration.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DestinationConfig {
-    /// <p>The name of the IoT thing to which you want to connect.</p>
-    pub thing_name: std::option::Option<std::string::String>,
-    /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.</p>
-    pub services: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DestinationConfig {
-    /// <p>The name of the IoT thing to which you want to connect.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
-        self.thing_name.as_deref()
-    }
-    /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.</p>
-    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
-        self.services.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfig");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("services", &self.services);
-        formatter.finish()
-    }
-}
-/// See [`DestinationConfig`](crate::model::DestinationConfig)
-pub mod destination_config {
-    /// A builder for [`DestinationConfig`](crate::model::DestinationConfig)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) thing_name: std::option::Option<std::string::String>,
-        pub(crate) services: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// <p>The name of the IoT thing to which you want to connect.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.thing_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the IoT thing to which you want to connect.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
-        }
-        /// Appends an item to `services`.
-        ///
-        /// To override the contents of this collection use [`set_services`](Self::set_services).
-        ///
-        /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.</p>
-        pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
-            self.services = Some(v);
-            self
-        }
-        /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.services = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DestinationConfig`](crate::model::DestinationConfig)
-        pub fn build(self) -> crate::model::DestinationConfig {
-            crate::model::DestinationConfig {
-                thing_name: self.thing_name,
-                services: self.services,
-            }
-        }
-    }
-}
-impl DestinationConfig {
-    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig)
-    pub fn builder() -> crate::model::destination_config::Builder {
-        crate::model::destination_config::Builder::default()
-    }
-}
-
 /// <p>Information about the tunnel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-    /// <region>
-    /// :
-    /// <account-id>
-    /// :tunnel/
-    /// <tunnel-id></tunnel-id>
-    /// </account-id>
-    /// </region></code> </p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub tunnel_arn: std::option::Option<std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
     pub status: std::option::Option<crate::model::TunnelStatus>,
@@ -240,14 +292,7 @@ impl TunnelSummary {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-    /// <region>
-    /// :
-    /// <account-id>
-    /// :tunnel/
-    /// <tunnel-id></tunnel-id>
-    /// </account-id>
-    /// </region></code> </p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub fn tunnel_arn(&self) -> std::option::Option<&str> {
         self.tunnel_arn.as_deref()
     }
@@ -304,26 +349,12 @@ pub mod tunnel_summary {
             self.tunnel_id = input;
             self
         }
-        /// <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-        /// <region>
-        /// :
-        /// <account-id>
-        /// :tunnel/
-        /// <tunnel-id></tunnel-id>
-        /// </account-id>
-        /// </region></code> </p>
+        /// <p>The Amazon Resource Name of the tunnel. </p>
         pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tunnel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-        /// <region>
-        /// :
-        /// <account-id>
-        /// :tunnel/
-        /// <tunnel-id></tunnel-id>
-        /// </account-id>
-        /// </region></code> </p>
+        /// <p>The Amazon Resource Name of the tunnel. </p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_arn = input;
             self
@@ -458,14 +489,7 @@ impl AsRef<str> for TunnelStatus {
 pub struct Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-    /// <region>
-    /// :
-    /// <account-id>
-    /// :tunnel/
-    /// <tunnel-id></tunnel-id>
-    /// </account-id>
-    /// </region></code> </p>
+    /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
     pub tunnel_arn: std::option::Option<std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
     pub status: std::option::Option<crate::model::TunnelStatus>,
@@ -491,14 +515,7 @@ impl Tunnel {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-    /// <region>
-    /// :
-    /// <account-id>
-    /// :tunnel/
-    /// <tunnel-id></tunnel-id>
-    /// </account-id>
-    /// </region></code> </p>
+    /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
     pub fn tunnel_arn(&self) -> std::option::Option<&str> {
         self.tunnel_arn.as_deref()
     }
@@ -590,26 +607,12 @@ pub mod tunnel {
             self.tunnel_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-        /// <region>
-        /// :
-        /// <account-id>
-        /// :tunnel/
-        /// <tunnel-id></tunnel-id>
-        /// </account-id>
-        /// </region></code> </p>
+        /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
         pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tunnel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-        /// <region>
-        /// :
-        /// <account-id>
-        /// :tunnel/
-        /// <tunnel-id></tunnel-id>
-        /// </account-id>
-        /// </region></code> </p>
+        /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_arn = input;
             self

@@ -1575,10 +1575,27 @@ impl UserSettings {
 /// <p>A collection of settings that apply to an <code>RSessionGateway</code> app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RSessionAppSettings {}
+pub struct RSessionAppSettings {
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    pub custom_images: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
+}
+impl RSessionAppSettings {
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn default_resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
+        self.default_resource_spec.as_ref()
+    }
+    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    pub fn custom_images(&self) -> std::option::Option<&[crate::model::CustomImage]> {
+        self.custom_images.as_deref()
+    }
+}
 impl std::fmt::Debug for RSessionAppSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RSessionAppSettings");
+        formatter.field("default_resource_spec", &self.default_resource_spec);
+        formatter.field("custom_images", &self.custom_images);
         formatter.finish()
     }
 }
@@ -1587,11 +1604,49 @@ pub mod r_session_app_settings {
     /// A builder for [`RSessionAppSettings`](crate::model::RSessionAppSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+        pub(crate) custom_images: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
+    }
     impl Builder {
+        /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+        pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
+            self.default_resource_spec = Some(input);
+            self
+        }
+        /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+        pub fn set_default_resource_spec(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSpec>,
+        ) -> Self {
+            self.default_resource_spec = input;
+            self
+        }
+        /// Appends an item to `custom_images`.
+        ///
+        /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
+        ///
+        /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+        pub fn custom_images(mut self, input: crate::model::CustomImage) -> Self {
+            let mut v = self.custom_images.unwrap_or_default();
+            v.push(input);
+            self.custom_images = Some(v);
+            self
+        }
+        /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+        pub fn set_custom_images(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
+        ) -> Self {
+            self.custom_images = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RSessionAppSettings`](crate::model::RSessionAppSettings)
         pub fn build(self) -> crate::model::RSessionAppSettings {
-            crate::model::RSessionAppSettings {}
+            crate::model::RSessionAppSettings {
+                default_resource_spec: self.default_resource_spec,
+                custom_images: self.custom_images,
+            }
         }
     }
 }
@@ -1602,251 +1657,98 @@ impl RSessionAppSettings {
     }
 }
 
-/// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app. <code>RStudioServerProAppSettings</code> cannot be updated. The <code>RStudioServerPro</code> app must be deleted and a new one created to make any changes.</p>
+/// <p>A custom SageMaker image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RStudioServerProAppSettings {
-    /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
-    pub access_status: std::option::Option<crate::model::RStudioServerProAccessStatus>,
-    /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
-    pub user_group: std::option::Option<crate::model::RStudioServerProUserGroup>,
+pub struct CustomImage {
+    /// <p>The name of the CustomImage. Must be unique to your account.</p>
+    pub image_name: std::option::Option<std::string::String>,
+    /// <p>The version number of the CustomImage.</p>
+    pub image_version_number: std::option::Option<i32>,
+    /// <p>The name of the AppImageConfig.</p>
+    pub app_image_config_name: std::option::Option<std::string::String>,
 }
-impl RStudioServerProAppSettings {
-    /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
-    pub fn access_status(
-        &self,
-    ) -> std::option::Option<&crate::model::RStudioServerProAccessStatus> {
-        self.access_status.as_ref()
+impl CustomImage {
+    /// <p>The name of the CustomImage. Must be unique to your account.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
     }
-    /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
-    pub fn user_group(&self) -> std::option::Option<&crate::model::RStudioServerProUserGroup> {
-        self.user_group.as_ref()
+    /// <p>The version number of the CustomImage.</p>
+    pub fn image_version_number(&self) -> std::option::Option<i32> {
+        self.image_version_number
+    }
+    /// <p>The name of the AppImageConfig.</p>
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
+        self.app_image_config_name.as_deref()
     }
 }
-impl std::fmt::Debug for RStudioServerProAppSettings {
+impl std::fmt::Debug for CustomImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RStudioServerProAppSettings");
-        formatter.field("access_status", &self.access_status);
-        formatter.field("user_group", &self.user_group);
+        let mut formatter = f.debug_struct("CustomImage");
+        formatter.field("image_name", &self.image_name);
+        formatter.field("image_version_number", &self.image_version_number);
+        formatter.field("app_image_config_name", &self.app_image_config_name);
         formatter.finish()
     }
 }
-/// See [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
-pub mod r_studio_server_pro_app_settings {
-    /// A builder for [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+/// See [`CustomImage`](crate::model::CustomImage)
+pub mod custom_image {
+    /// A builder for [`CustomImage`](crate::model::CustomImage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_status: std::option::Option<crate::model::RStudioServerProAccessStatus>,
-        pub(crate) user_group: std::option::Option<crate::model::RStudioServerProUserGroup>,
+        pub(crate) image_name: std::option::Option<std::string::String>,
+        pub(crate) image_version_number: std::option::Option<i32>,
+        pub(crate) app_image_config_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
-        pub fn access_status(mut self, input: crate::model::RStudioServerProAccessStatus) -> Self {
-            self.access_status = Some(input);
+        /// <p>The name of the CustomImage. Must be unique to your account.</p>
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_name = Some(input.into());
             self
         }
-        /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
-        pub fn set_access_status(
+        /// <p>The name of the CustomImage. Must be unique to your account.</p>
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_name = input;
+            self
+        }
+        /// <p>The version number of the CustomImage.</p>
+        pub fn image_version_number(mut self, input: i32) -> Self {
+            self.image_version_number = Some(input);
+            self
+        }
+        /// <p>The version number of the CustomImage.</p>
+        pub fn set_image_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.image_version_number = input;
+            self
+        }
+        /// <p>The name of the AppImageConfig.</p>
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_image_config_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the AppImageConfig.</p>
+        pub fn set_app_image_config_name(
             mut self,
-            input: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.access_status = input;
+            self.app_image_config_name = input;
             self
         }
-        /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
-        pub fn user_group(mut self, input: crate::model::RStudioServerProUserGroup) -> Self {
-            self.user_group = Some(input);
-            self
-        }
-        /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
-        pub fn set_user_group(
-            mut self,
-            input: std::option::Option<crate::model::RStudioServerProUserGroup>,
-        ) -> Self {
-            self.user_group = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
-        pub fn build(self) -> crate::model::RStudioServerProAppSettings {
-            crate::model::RStudioServerProAppSettings {
-                access_status: self.access_status,
-                user_group: self.user_group,
+        /// Consumes the builder and constructs a [`CustomImage`](crate::model::CustomImage)
+        pub fn build(self) -> crate::model::CustomImage {
+            crate::model::CustomImage {
+                image_name: self.image_name,
+                image_version_number: self.image_version_number,
+                app_image_config_name: self.app_image_config_name,
             }
         }
     }
 }
-impl RStudioServerProAppSettings {
-    /// Creates a new builder-style object to manufacture [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
-    pub fn builder() -> crate::model::r_studio_server_pro_app_settings::Builder {
-        crate::model::r_studio_server_pro_app_settings::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum RStudioServerProUserGroup {
-    #[allow(missing_docs)] // documentation missing in model
-    Admin,
-    #[allow(missing_docs)] // documentation missing in model
-    User,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for RStudioServerProUserGroup {
-    fn from(s: &str) -> Self {
-        match s {
-            "R_STUDIO_ADMIN" => RStudioServerProUserGroup::Admin,
-            "R_STUDIO_USER" => RStudioServerProUserGroup::User,
-            other => RStudioServerProUserGroup::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for RStudioServerProUserGroup {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RStudioServerProUserGroup::from(s))
-    }
-}
-impl RStudioServerProUserGroup {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RStudioServerProUserGroup::Admin => "R_STUDIO_ADMIN",
-            RStudioServerProUserGroup::User => "R_STUDIO_USER",
-            RStudioServerProUserGroup::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["R_STUDIO_ADMIN", "R_STUDIO_USER"]
-    }
-}
-impl AsRef<str> for RStudioServerProUserGroup {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum RStudioServerProAccessStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Disabled,
-    #[allow(missing_docs)] // documentation missing in model
-    Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for RStudioServerProAccessStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => RStudioServerProAccessStatus::Disabled,
-            "ENABLED" => RStudioServerProAccessStatus::Enabled,
-            other => RStudioServerProAccessStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for RStudioServerProAccessStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RStudioServerProAccessStatus::from(s))
-    }
-}
-impl RStudioServerProAccessStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RStudioServerProAccessStatus::Disabled => "DISABLED",
-            RStudioServerProAccessStatus::Enabled => "ENABLED",
-            RStudioServerProAccessStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
-    }
-}
-impl AsRef<str> for RStudioServerProAccessStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>The TensorBoard app settings.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TensorBoardAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
-}
-impl TensorBoardAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub fn default_resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
-        self.default_resource_spec.as_ref()
-    }
-}
-impl std::fmt::Debug for TensorBoardAppSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TensorBoardAppSettings");
-        formatter.field("default_resource_spec", &self.default_resource_spec);
-        formatter.finish()
-    }
-}
-/// See [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
-pub mod tensor_board_app_settings {
-    /// A builder for [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
-    }
-    impl Builder {
-        /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-        pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
-            self.default_resource_spec = Some(input);
-            self
-        }
-        /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-        pub fn set_default_resource_spec(
-            mut self,
-            input: std::option::Option<crate::model::ResourceSpec>,
-        ) -> Self {
-            self.default_resource_spec = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
-        pub fn build(self) -> crate::model::TensorBoardAppSettings {
-            crate::model::TensorBoardAppSettings {
-                default_resource_spec: self.default_resource_spec,
-            }
-        }
-    }
-}
-impl TensorBoardAppSettings {
-    /// Creates a new builder-style object to manufacture [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
-    pub fn builder() -> crate::model::tensor_board_app_settings::Builder {
-        crate::model::tensor_board_app_settings::Builder::default()
+impl CustomImage {
+    /// Creates a new builder-style object to manufacture [`CustomImage`](crate::model::CustomImage)
+    pub fn builder() -> crate::model::custom_image::Builder {
+        crate::model::custom_image::Builder::default()
     }
 }
 
@@ -2280,6 +2182,254 @@ impl AsRef<str> for AppInstanceType {
     }
 }
 
+/// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app. <code>RStudioServerProAppSettings</code> cannot be updated. The <code>RStudioServerPro</code> app must be deleted and a new one created to make any changes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RStudioServerProAppSettings {
+    /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+    pub access_status: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+    /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+    pub user_group: std::option::Option<crate::model::RStudioServerProUserGroup>,
+}
+impl RStudioServerProAppSettings {
+    /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+    pub fn access_status(
+        &self,
+    ) -> std::option::Option<&crate::model::RStudioServerProAccessStatus> {
+        self.access_status.as_ref()
+    }
+    /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+    pub fn user_group(&self) -> std::option::Option<&crate::model::RStudioServerProUserGroup> {
+        self.user_group.as_ref()
+    }
+}
+impl std::fmt::Debug for RStudioServerProAppSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RStudioServerProAppSettings");
+        formatter.field("access_status", &self.access_status);
+        formatter.field("user_group", &self.user_group);
+        formatter.finish()
+    }
+}
+/// See [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+pub mod r_studio_server_pro_app_settings {
+    /// A builder for [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_status: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+        pub(crate) user_group: std::option::Option<crate::model::RStudioServerProUserGroup>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+        pub fn access_status(mut self, input: crate::model::RStudioServerProAccessStatus) -> Self {
+            self.access_status = Some(input);
+            self
+        }
+        /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+        pub fn set_access_status(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+        ) -> Self {
+            self.access_status = input;
+            self
+        }
+        /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+        pub fn user_group(mut self, input: crate::model::RStudioServerProUserGroup) -> Self {
+            self.user_group = Some(input);
+            self
+        }
+        /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+        pub fn set_user_group(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProUserGroup>,
+        ) -> Self {
+            self.user_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+        pub fn build(self) -> crate::model::RStudioServerProAppSettings {
+            crate::model::RStudioServerProAppSettings {
+                access_status: self.access_status,
+                user_group: self.user_group,
+            }
+        }
+    }
+}
+impl RStudioServerProAppSettings {
+    /// Creates a new builder-style object to manufacture [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+    pub fn builder() -> crate::model::r_studio_server_pro_app_settings::Builder {
+        crate::model::r_studio_server_pro_app_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RStudioServerProUserGroup {
+    #[allow(missing_docs)] // documentation missing in model
+    Admin,
+    #[allow(missing_docs)] // documentation missing in model
+    User,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RStudioServerProUserGroup {
+    fn from(s: &str) -> Self {
+        match s {
+            "R_STUDIO_ADMIN" => RStudioServerProUserGroup::Admin,
+            "R_STUDIO_USER" => RStudioServerProUserGroup::User,
+            other => RStudioServerProUserGroup::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RStudioServerProUserGroup {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RStudioServerProUserGroup::from(s))
+    }
+}
+impl RStudioServerProUserGroup {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RStudioServerProUserGroup::Admin => "R_STUDIO_ADMIN",
+            RStudioServerProUserGroup::User => "R_STUDIO_USER",
+            RStudioServerProUserGroup::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["R_STUDIO_ADMIN", "R_STUDIO_USER"]
+    }
+}
+impl AsRef<str> for RStudioServerProUserGroup {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RStudioServerProAccessStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RStudioServerProAccessStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => RStudioServerProAccessStatus::Disabled,
+            "ENABLED" => RStudioServerProAccessStatus::Enabled,
+            other => RStudioServerProAccessStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RStudioServerProAccessStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RStudioServerProAccessStatus::from(s))
+    }
+}
+impl RStudioServerProAccessStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RStudioServerProAccessStatus::Disabled => "DISABLED",
+            RStudioServerProAccessStatus::Enabled => "ENABLED",
+            RStudioServerProAccessStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for RStudioServerProAccessStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The TensorBoard app settings.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TensorBoardAppSettings {
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+}
+impl TensorBoardAppSettings {
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    pub fn default_resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
+        self.default_resource_spec.as_ref()
+    }
+}
+impl std::fmt::Debug for TensorBoardAppSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TensorBoardAppSettings");
+        formatter.field("default_resource_spec", &self.default_resource_spec);
+        formatter.finish()
+    }
+}
+/// See [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
+pub mod tensor_board_app_settings {
+    /// A builder for [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    }
+    impl Builder {
+        /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+        pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
+            self.default_resource_spec = Some(input);
+            self
+        }
+        /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+        pub fn set_default_resource_spec(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSpec>,
+        ) -> Self {
+            self.default_resource_spec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
+        pub fn build(self) -> crate::model::TensorBoardAppSettings {
+            crate::model::TensorBoardAppSettings {
+                default_resource_spec: self.default_resource_spec,
+            }
+        }
+    }
+}
+impl TensorBoardAppSettings {
+    /// Creates a new builder-style object to manufacture [`TensorBoardAppSettings`](crate::model::TensorBoardAppSettings)
+    pub fn builder() -> crate::model::tensor_board_app_settings::Builder {
+        crate::model::tensor_board_app_settings::Builder::default()
+    }
+}
+
 /// <p>The KernelGateway app settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2406,101 +2556,6 @@ impl KernelGatewayAppSettings {
     /// Creates a new builder-style object to manufacture [`KernelGatewayAppSettings`](crate::model::KernelGatewayAppSettings)
     pub fn builder() -> crate::model::kernel_gateway_app_settings::Builder {
         crate::model::kernel_gateway_app_settings::Builder::default()
-    }
-}
-
-/// <p>A custom SageMaker image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomImage {
-    /// <p>The name of the CustomImage. Must be unique to your account.</p>
-    pub image_name: std::option::Option<std::string::String>,
-    /// <p>The version number of the CustomImage.</p>
-    pub image_version_number: std::option::Option<i32>,
-    /// <p>The name of the AppImageConfig.</p>
-    pub app_image_config_name: std::option::Option<std::string::String>,
-}
-impl CustomImage {
-    /// <p>The name of the CustomImage. Must be unique to your account.</p>
-    pub fn image_name(&self) -> std::option::Option<&str> {
-        self.image_name.as_deref()
-    }
-    /// <p>The version number of the CustomImage.</p>
-    pub fn image_version_number(&self) -> std::option::Option<i32> {
-        self.image_version_number
-    }
-    /// <p>The name of the AppImageConfig.</p>
-    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
-        self.app_image_config_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomImage");
-        formatter.field("image_name", &self.image_name);
-        formatter.field("image_version_number", &self.image_version_number);
-        formatter.field("app_image_config_name", &self.app_image_config_name);
-        formatter.finish()
-    }
-}
-/// See [`CustomImage`](crate::model::CustomImage)
-pub mod custom_image {
-    /// A builder for [`CustomImage`](crate::model::CustomImage)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) image_name: std::option::Option<std::string::String>,
-        pub(crate) image_version_number: std::option::Option<i32>,
-        pub(crate) app_image_config_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the CustomImage. Must be unique to your account.</p>
-        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.image_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the CustomImage. Must be unique to your account.</p>
-        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_name = input;
-            self
-        }
-        /// <p>The version number of the CustomImage.</p>
-        pub fn image_version_number(mut self, input: i32) -> Self {
-            self.image_version_number = Some(input);
-            self
-        }
-        /// <p>The version number of the CustomImage.</p>
-        pub fn set_image_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.image_version_number = input;
-            self
-        }
-        /// <p>The name of the AppImageConfig.</p>
-        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.app_image_config_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the AppImageConfig.</p>
-        pub fn set_app_image_config_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_image_config_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CustomImage`](crate::model::CustomImage)
-        pub fn build(self) -> crate::model::CustomImage {
-            crate::model::CustomImage {
-                image_name: self.image_name,
-                image_version_number: self.image_version_number,
-                app_image_config_name: self.app_image_config_name,
-            }
-        }
-    }
-}
-impl CustomImage {
-    /// Creates a new builder-style object to manufacture [`CustomImage`](crate::model::CustomImage)
-    pub fn builder() -> crate::model::custom_image::Builder {
-        crate::model::custom_image::Builder::default()
     }
 }
 
@@ -47047,6 +47102,8 @@ pub struct MetricDatum {
     pub value: f32,
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
     pub set: std::option::Option<crate::model::MetricSetSource>,
+    /// <p>The name of the standard metric.</p>
+    pub standard_metric_name: std::option::Option<crate::model::AutoMlMetricExtendedEnum>,
 }
 impl MetricDatum {
     /// <p>The name of the metric.</p>
@@ -47061,6 +47118,12 @@ impl MetricDatum {
     pub fn set(&self) -> std::option::Option<&crate::model::MetricSetSource> {
         self.set.as_ref()
     }
+    /// <p>The name of the standard metric.</p>
+    pub fn standard_metric_name(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoMlMetricExtendedEnum> {
+        self.standard_metric_name.as_ref()
+    }
 }
 impl std::fmt::Debug for MetricDatum {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47068,6 +47131,7 @@ impl std::fmt::Debug for MetricDatum {
         formatter.field("metric_name", &self.metric_name);
         formatter.field("value", &self.value);
         formatter.field("set", &self.set);
+        formatter.field("standard_metric_name", &self.standard_metric_name);
         formatter.finish()
     }
 }
@@ -47080,6 +47144,8 @@ pub mod metric_datum {
         pub(crate) metric_name: std::option::Option<crate::model::AutoMlMetricEnum>,
         pub(crate) value: std::option::Option<f32>,
         pub(crate) set: std::option::Option<crate::model::MetricSetSource>,
+        pub(crate) standard_metric_name:
+            std::option::Option<crate::model::AutoMlMetricExtendedEnum>,
     }
     impl Builder {
         /// <p>The name of the metric.</p>
@@ -47118,12 +47184,29 @@ pub mod metric_datum {
             self.set = input;
             self
         }
+        /// <p>The name of the standard metric.</p>
+        pub fn standard_metric_name(
+            mut self,
+            input: crate::model::AutoMlMetricExtendedEnum,
+        ) -> Self {
+            self.standard_metric_name = Some(input);
+            self
+        }
+        /// <p>The name of the standard metric.</p>
+        pub fn set_standard_metric_name(
+            mut self,
+            input: std::option::Option<crate::model::AutoMlMetricExtendedEnum>,
+        ) -> Self {
+            self.standard_metric_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MetricDatum`](crate::model::MetricDatum)
         pub fn build(self) -> crate::model::MetricDatum {
             crate::model::MetricDatum {
                 metric_name: self.metric_name,
                 value: self.value.unwrap_or_default(),
                 set: self.set,
+                standard_metric_name: self.standard_metric_name,
             }
         }
     }
@@ -47132,6 +47215,124 @@ impl MetricDatum {
     /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum)
     pub fn builder() -> crate::model::metric_datum::Builder {
         crate::model::metric_datum::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutoMlMetricExtendedEnum {
+    #[allow(missing_docs)] // documentation missing in model
+    Auc,
+    #[allow(missing_docs)] // documentation missing in model
+    Accuracy,
+    #[allow(missing_docs)] // documentation missing in model
+    BalancedAccuracy,
+    #[allow(missing_docs)] // documentation missing in model
+    F1,
+    #[allow(missing_docs)] // documentation missing in model
+    F1Macro,
+    #[allow(missing_docs)] // documentation missing in model
+    LogLoss,
+    #[allow(missing_docs)] // documentation missing in model
+    Mae,
+    #[allow(missing_docs)] // documentation missing in model
+    Mse,
+    #[allow(missing_docs)] // documentation missing in model
+    Precision,
+    #[allow(missing_docs)] // documentation missing in model
+    PrecisionMacro,
+    #[allow(missing_docs)] // documentation missing in model
+    R2,
+    #[allow(missing_docs)] // documentation missing in model
+    Rmse,
+    #[allow(missing_docs)] // documentation missing in model
+    Recall,
+    #[allow(missing_docs)] // documentation missing in model
+    RecallMacro,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AutoMlMetricExtendedEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUC" => AutoMlMetricExtendedEnum::Auc,
+            "Accuracy" => AutoMlMetricExtendedEnum::Accuracy,
+            "BalancedAccuracy" => AutoMlMetricExtendedEnum::BalancedAccuracy,
+            "F1" => AutoMlMetricExtendedEnum::F1,
+            "F1macro" => AutoMlMetricExtendedEnum::F1Macro,
+            "LogLoss" => AutoMlMetricExtendedEnum::LogLoss,
+            "MAE" => AutoMlMetricExtendedEnum::Mae,
+            "MSE" => AutoMlMetricExtendedEnum::Mse,
+            "Precision" => AutoMlMetricExtendedEnum::Precision,
+            "PrecisionMacro" => AutoMlMetricExtendedEnum::PrecisionMacro,
+            "R2" => AutoMlMetricExtendedEnum::R2,
+            "RMSE" => AutoMlMetricExtendedEnum::Rmse,
+            "Recall" => AutoMlMetricExtendedEnum::Recall,
+            "RecallMacro" => AutoMlMetricExtendedEnum::RecallMacro,
+            other => AutoMlMetricExtendedEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AutoMlMetricExtendedEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoMlMetricExtendedEnum::from(s))
+    }
+}
+impl AutoMlMetricExtendedEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoMlMetricExtendedEnum::Auc => "AUC",
+            AutoMlMetricExtendedEnum::Accuracy => "Accuracy",
+            AutoMlMetricExtendedEnum::BalancedAccuracy => "BalancedAccuracy",
+            AutoMlMetricExtendedEnum::F1 => "F1",
+            AutoMlMetricExtendedEnum::F1Macro => "F1macro",
+            AutoMlMetricExtendedEnum::LogLoss => "LogLoss",
+            AutoMlMetricExtendedEnum::Mae => "MAE",
+            AutoMlMetricExtendedEnum::Mse => "MSE",
+            AutoMlMetricExtendedEnum::Precision => "Precision",
+            AutoMlMetricExtendedEnum::PrecisionMacro => "PrecisionMacro",
+            AutoMlMetricExtendedEnum::R2 => "R2",
+            AutoMlMetricExtendedEnum::Rmse => "RMSE",
+            AutoMlMetricExtendedEnum::Recall => "Recall",
+            AutoMlMetricExtendedEnum::RecallMacro => "RecallMacro",
+            AutoMlMetricExtendedEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AUC",
+            "Accuracy",
+            "BalancedAccuracy",
+            "F1",
+            "F1macro",
+            "LogLoss",
+            "MAE",
+            "MSE",
+            "Precision",
+            "PrecisionMacro",
+            "R2",
+            "RMSE",
+            "Recall",
+            "RecallMacro",
+        ]
+    }
+}
+impl AsRef<str> for AutoMlMetricExtendedEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

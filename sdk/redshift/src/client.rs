@@ -127,7 +127,7 @@ impl Client {
     ///   - [`data_share_arn(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
     ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::AssociateDataShareConsumerOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::AssociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::AssociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<AssociateDataShareConsumerError>`](crate::error::AssociateDataShareConsumerError)
     pub fn associate_data_share_consumer(&self) -> fluent_builders::AssociateDataShareConsumer {
@@ -157,7 +157,7 @@ impl Client {
     ///   - [`data_share_arn(Option<String>)`](crate::output::AuthorizeDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::AuthorizeDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
     ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::AuthorizeDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::AuthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::AuthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::output::AuthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<AuthorizeDataShareError>`](crate::error::AuthorizeDataShareError)
     pub fn authorize_data_share(&self) -> fluent_builders::AuthorizeDataShare {
@@ -305,6 +305,7 @@ impl Client {
     ///   - [`availability_zone_relocation(bool)`](crate::client::fluent_builders::CreateCluster::availability_zone_relocation) / [`set_availability_zone_relocation(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
     ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::CreateCluster::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::CreateCluster::set_aqua_configuration_status): <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
     ///   - [`default_iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::default_iam_role_arn) / [`set_default_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+    ///   - [`load_sample_data(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::load_sample_data) / [`set_load_sample_data(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_load_sample_data): <p>A flag that specifies whether to load sample data once the cluster is created.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
@@ -530,7 +531,7 @@ impl Client {
     ///   - [`data_share_arn(Option<String>)`](crate::output::DeauthorizeDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::DeauthorizeDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
     ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::DeauthorizeDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::DeauthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::DeauthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::output::DeauthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<DeauthorizeDataShareError>`](crate::error::DeauthorizeDataShareError)
     pub fn deauthorize_data_share(&self) -> fluent_builders::DeauthorizeDataShare {
@@ -1351,7 +1352,7 @@ impl Client {
     ///   - [`data_share_arn(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
     ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::DisassociateDataShareConsumerOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::DisassociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::DisassociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<DisassociateDataShareConsumerError>`](crate::error::DisassociateDataShareConsumerError)
     pub fn disassociate_data_share_consumer(
@@ -1404,7 +1405,7 @@ impl Client {
     ///   - [`auto_create(bool)`](crate::client::fluent_builders::GetClusterCredentials::auto_create) / [`set_auto_create(Option<bool>)`](crate::client::fluent_builders::GetClusterCredentials::set_auto_create): <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
     ///   - [`db_groups(Vec<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_groups) / [`set_db_groups(Option<Vec<String>>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_groups): <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>  <p>Database group name constraints</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
     /// - On success, responds with [`GetClusterCredentialsOutput`](crate::output::GetClusterCredentialsOutput) with field(s):
-    ///   - [`db_user(Option<String>)`](crate::output::GetClusterCredentialsOutput::db_user): <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+    ///   - [`db_user(Option<String>)`](crate::output::GetClusterCredentialsOutput::db_user): <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     ///   - [`db_password(Option<String>)`](crate::output::GetClusterCredentialsOutput::db_password): <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     ///   - [`expiration(Option<DateTime>)`](crate::output::GetClusterCredentialsOutput::expiration): <p>The date and time the password in <code>DbPassword</code> expires.</p>
     /// - On failure, responds with [`SdkError<GetClusterCredentialsError>`](crate::error::GetClusterCredentialsError)
@@ -1741,7 +1742,7 @@ impl Client {
     ///   - [`data_share_arn(Option<String>)`](crate::output::RejectDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::RejectDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
     ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::RejectDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::RejectDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::RejectDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::output::RejectDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<RejectDataShareError>`](crate::error::RejectDataShareError)
     pub fn reject_data_share(&self) -> fluent_builders::RejectDataShare {
@@ -2287,7 +2288,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AuthorizeDataShare`.
     ///
-    /// <p>From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access privileges.</p>
+    /// <p>From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access permissions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeDataShare {
         handle: std::sync::Arc<super::Handle>,
@@ -3575,6 +3576,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_default_iam_role_arn(input);
+            self
+        }
+        /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+        pub fn load_sample_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_sample_data(input.into());
+            self
+        }
+        /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+        pub fn set_load_sample_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_load_sample_data(input);
             self
         }
     }
@@ -5117,7 +5131,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeauthorizeDataShare`.
     ///
-    /// <p>From the producer account, removes authorization from the specified datashare. </p>
+    /// <p>From a datashare producer account, removes authorization from the specified datashare. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeauthorizeDataShare {
         handle: std::sync::Arc<super::Handle>,
@@ -10381,7 +10395,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateDataShareConsumer`.
     ///
-    /// <p>From a consumer account, remove association for the specified datashare. </p>
+    /// <p>From a datashare consumer account, remove association for the specified datashare. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDataShareConsumer {
         handle: std::sync::Arc<super::Handle>,
@@ -10733,7 +10747,7 @@ pub mod fluent_builders {
     /// <p>Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or more database user groups that the user will join at log on. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>. </p>
-    /// <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> privilege.</p>
+    /// <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> permission.</p>
     /// <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClusterCredentials {
@@ -13123,7 +13137,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectDataShare`.
     ///
-    /// <p>From the consumer account, rejects the specified datashare.</p>
+    /// <p>From a datashare consumer account, rejects the specified datashare.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectDataShare {
         handle: std::sync::Arc<super::Handle>,

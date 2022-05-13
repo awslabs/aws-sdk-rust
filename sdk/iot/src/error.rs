@@ -1745,6 +1745,8 @@ pub struct CancelJobError {
 pub enum CancelJobErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A limit has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
@@ -1758,6 +1760,7 @@ impl std::fmt::Display for CancelJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CancelJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CancelJobErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CancelJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CancelJobErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             CancelJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -1819,6 +1822,10 @@ impl CancelJobError {
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::InvalidRequestException(_))
     }
+    /// Returns `true` if the error kind is `CancelJobErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CancelJobErrorKind::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `CancelJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ResourceNotFoundException(_))
@@ -1839,6 +1846,7 @@ impl std::error::Error for CancelJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CancelJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CancelJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             CancelJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CancelJobErrorKind::ThrottlingException(_inner) => Some(_inner),

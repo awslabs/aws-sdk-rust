@@ -676,6 +676,23 @@ pub fn parse_create_association_error(
                 tmp
             }),
         },
+        "InvalidTargetMaps" => crate::error::CreateAssociationError {
+            meta: generic,
+            kind: crate::error::CreateAssociationErrorKind::InvalidTargetMaps({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_target_maps::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_target_maps_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedPlatformType" => crate::error::CreateAssociationError {
             meta: generic,
             kind: crate::error::CreateAssociationErrorKind::UnsupportedPlatformType({
@@ -908,6 +925,23 @@ pub fn parse_create_association_batch_error(
                             output,
                         )
                         .map_err(crate::error::CreateAssociationBatchError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidTargetMaps" => crate::error::CreateAssociationBatchError {
+            meta: generic,
+            kind: crate::error::CreateAssociationBatchErrorKind::InvalidTargetMaps({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_target_maps::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_target_maps_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAssociationBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -12375,6 +12409,23 @@ pub fn parse_update_association_error(
                             output,
                         )
                         .map_err(crate::error::UpdateAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidTargetMaps" => crate::error::UpdateAssociationError {
+            meta: generic,
+            kind: crate::error::UpdateAssociationErrorKind::InvalidTargetMaps({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_target_maps::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_target_maps_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssociationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

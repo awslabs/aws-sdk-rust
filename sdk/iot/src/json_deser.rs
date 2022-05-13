@@ -12564,6 +12564,13 @@ where
                                     )?,
                                 );
                             }
+                            "isConcurrent" => {
+                                builder = builder.set_is_concurrent(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -20974,6 +20981,13 @@ where
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "isConcurrent" => {
+                                builder = builder.set_is_concurrent(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
                                     )?,
                                 );
                             }

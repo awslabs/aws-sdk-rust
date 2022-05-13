@@ -176,8 +176,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CalculateRoute::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CalculateRoute::set_calculator_name): <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    ///   - [`departure_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::departure_position) / [`set_departure_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_departure_position): <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>  </ul> <note>   <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`destination_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::destination_position) / [`set_destination_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_destination_position): <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>  </ul> <note>   <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`departure_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::departure_position) / [`set_departure_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_departure_position): <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>  </ul> <note>   <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`destination_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::destination_position) / [`set_destination_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_destination_position): <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>  </ul> <note>   <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     ///   - [`waypoint_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::waypoint_positions) / [`set_waypoint_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRoute::set_waypoint_positions): <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>  <ul>   <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>  </ul> <note>   <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>   <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>   <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     ///   - [`travel_mode(TravelMode)`](crate::client::fluent_builders::CalculateRoute::travel_mode) / [`set_travel_mode(Option<TravelMode>)`](crate::client::fluent_builders::CalculateRoute::set_travel_mode): <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>  <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>  <ul>   <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>   <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>  </ul>  <p>Default Value: <code>Car</code> </p>
     ///   - [`departure_time(DateTime)`](crate::client::fluent_builders::CalculateRoute::departure_time) / [`set_departure_time(Option<DateTime>)`](crate::client::fluent_builders::CalculateRoute::set_departure_time): <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>   <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>  </note>  <ul>   <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
@@ -580,6 +580,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::ListGeofences::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::ListGeofences::set_collection_name): <p>The name of the geofence collection storing the list of geofences.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGeofences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGeofences::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>  <p>Default value: <code>null</code> </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGeofences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGeofences::set_max_results): <p>An optional limit for the number of geofences returned in a single call. </p>  <p>Default value: <code>100</code> </p>
     /// - On success, responds with [`ListGeofencesOutput`](crate::output::ListGeofencesOutput) with field(s):
     ///   - [`entries(Option<Vec<ListGeofenceResponseEntry>>)`](crate::output::ListGeofencesOutput::entries): <p>Contains a list of geofences stored in the geofence collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGeofencesOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
@@ -683,7 +684,7 @@ impl Client {
     ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_index_name): <p>The name of the place index resource you want to use for the search.</p>
     ///   - [`position(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::position) / [`set_position(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_position): <p>Specifies the longitude and latitude of the position to query.</p>  <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>  <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_max_results): <p>An optional parameter. The maximum number of results returned per request.</p>  <p>Default value: <code>50</code> </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     /// - On success, responds with [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput) with field(s):
     ///   - [`summary(Option<SearchPlaceIndexForPositionSummary>)`](crate::output::SearchPlaceIndexForPositionOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     ///   - [`results(Option<Vec<SearchForPositionResult>>)`](crate::output::SearchPlaceIndexForPositionOutput::results): <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
@@ -700,7 +701,7 @@ impl Client {
     ///   - [`filter_b_box(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::filter_b_box) / [`set_filter_b_box(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_filter_b_box): <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>  <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>  <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>   <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>  </note>
     ///   - [`filter_countries(Vec<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::filter_countries) / [`set_filter_countries(Option<Vec<String>>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_filter_countries): <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>  <ul>   <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>  </ul>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_max_results): <p>An optional parameter. The maximum number of results returned per request. </p>  <p>The default: <code>5</code> </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>Used only when the partner selected is Here.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     /// - On success, responds with [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput) with field(s):
     ///   - [`summary(Option<SearchPlaceIndexForSuggestionsSummary>)`](crate::output::SearchPlaceIndexForSuggestionsOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     ///   - [`results(Option<Vec<SearchForSuggestionsResult>>)`](crate::output::SearchPlaceIndexForSuggestionsOutput::results): <p>A list of place suggestions that best match the search text.</p>
@@ -719,10 +720,10 @@ impl Client {
     ///   - [`filter_b_box(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForText::filter_b_box) / [`set_filter_b_box(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_filter_b_box): <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>  <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>  <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>   <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>  </note>
     ///   - [`filter_countries(Vec<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::filter_countries) / [`set_filter_countries(Option<Vec<String>>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_filter_countries): <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>  <ul>   <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>  </ul>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForText::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_max_results): <p>An optional parameter. The maximum number of results returned per request. </p>  <p>The default: <code>50</code> </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     /// - On success, responds with [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput) with field(s):
     ///   - [`summary(Option<SearchPlaceIndexForTextSummary>)`](crate::output::SearchPlaceIndexForTextOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
-    ///   - [`results(Option<Vec<SearchForTextResult>>)`](crate::output::SearchPlaceIndexForTextOutput::results): <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+    ///   - [`results(Option<Vec<SearchForTextResult>>)`](crate::output::SearchPlaceIndexForTextOutput::results): <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>  <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     /// - On failure, responds with [`SdkError<SearchPlaceIndexForTextError>`](crate::error::SearchPlaceIndexForTextError)
     pub fn search_place_index_for_text(&self) -> fluent_builders::SearchPlaceIndexForText {
         fluent_builders::SearchPlaceIndexForText::new(self.handle.clone())
@@ -1066,6 +1067,8 @@ pub mod fluent_builders {
     /// <p>The last geofence that a device was observed within is tracked for 30 days after the most recent device position update.</p>
     /// </note> <note>
     /// <p>Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
+    /// </note> <note>
+    /// <p>The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a <code>Tracker</code> associated with the <code>DeviceID</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEvaluateGeofences {
@@ -1430,7 +1433,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_departure_position`](Self::set_departure_position).
         ///
-        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
+        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
         /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
         /// </ul> <note>
@@ -1441,7 +1444,7 @@ pub mod fluent_builders {
             self.inner = self.inner.departure_position(input);
             self
         }
-        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
+        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
         /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
         /// </ul> <note>
@@ -1459,7 +1462,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_position`](Self::set_destination_position).
         ///
-        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
+        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
         /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
         /// </ul> <note>
@@ -1470,7 +1473,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_position(input);
             self
         }
-        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
+        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
         /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
         /// </ul> <note>
@@ -4152,6 +4155,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// <p>An optional limit for the number of geofences returned in a single call. </p>
+        /// <p>Default value: <code>100</code> </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>An optional limit for the number of geofences returned in a single call. </p>
+        /// <p>Default value: <code>100</code> </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListMaps`.
     ///
@@ -4753,13 +4768,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -4910,15 +4931,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
-        /// <p>Used only when the partner selected is Here.</p>
+        /// <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
-        /// <p>Used only when the partner selected is Here.</p>
+        /// <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self
@@ -5070,13 +5095,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_language(input);
             self

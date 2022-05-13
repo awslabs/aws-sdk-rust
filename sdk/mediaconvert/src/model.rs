@@ -3215,7 +3215,9 @@ pub struct DolbyVision {
     pub l6_metadata: std::option::Option<crate::model::DolbyVisionLevel6Metadata>,
     /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
     pub l6_mode: std::option::Option<crate::model::DolbyVisionLevel6Mode>,
-    /// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+    /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+    pub mapping: std::option::Option<crate::model::DolbyVisionMapping>,
+    /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
     pub profile: std::option::Option<crate::model::DolbyVisionProfile>,
 }
 impl DolbyVision {
@@ -3227,7 +3229,11 @@ impl DolbyVision {
     pub fn l6_mode(&self) -> std::option::Option<&crate::model::DolbyVisionLevel6Mode> {
         self.l6_mode.as_ref()
     }
-    /// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+    /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+    pub fn mapping(&self) -> std::option::Option<&crate::model::DolbyVisionMapping> {
+        self.mapping.as_ref()
+    }
+    /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
     pub fn profile(&self) -> std::option::Option<&crate::model::DolbyVisionProfile> {
         self.profile.as_ref()
     }
@@ -3237,6 +3243,7 @@ impl std::fmt::Debug for DolbyVision {
         let mut formatter = f.debug_struct("DolbyVision");
         formatter.field("l6_metadata", &self.l6_metadata);
         formatter.field("l6_mode", &self.l6_mode);
+        formatter.field("mapping", &self.mapping);
         formatter.field("profile", &self.profile);
         formatter.finish()
     }
@@ -3249,6 +3256,7 @@ pub mod dolby_vision {
     pub struct Builder {
         pub(crate) l6_metadata: std::option::Option<crate::model::DolbyVisionLevel6Metadata>,
         pub(crate) l6_mode: std::option::Option<crate::model::DolbyVisionLevel6Mode>,
+        pub(crate) mapping: std::option::Option<crate::model::DolbyVisionMapping>,
         pub(crate) profile: std::option::Option<crate::model::DolbyVisionProfile>,
     }
     impl Builder {
@@ -3278,12 +3286,25 @@ pub mod dolby_vision {
             self.l6_mode = input;
             self
         }
-        /// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+        /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+        pub fn mapping(mut self, input: crate::model::DolbyVisionMapping) -> Self {
+            self.mapping = Some(input);
+            self
+        }
+        /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+        pub fn set_mapping(
+            mut self,
+            input: std::option::Option<crate::model::DolbyVisionMapping>,
+        ) -> Self {
+            self.mapping = input;
+            self
+        }
+        /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
         pub fn profile(mut self, input: crate::model::DolbyVisionProfile) -> Self {
             self.profile = Some(input);
             self
         }
-        /// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+        /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
         pub fn set_profile(
             mut self,
             input: std::option::Option<crate::model::DolbyVisionProfile>,
@@ -3296,6 +3317,7 @@ pub mod dolby_vision {
             crate::model::DolbyVision {
                 l6_metadata: self.l6_metadata,
                 l6_mode: self.l6_mode,
+                mapping: self.mapping,
                 profile: self.profile,
             }
         }
@@ -3308,7 +3330,7 @@ impl DolbyVision {
     }
 }
 
-/// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+/// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3322,6 +3344,8 @@ impl DolbyVision {
 pub enum DolbyVisionProfile {
     #[allow(missing_docs)] // documentation missing in model
     Profile5,
+    #[allow(missing_docs)] // documentation missing in model
+    Profile81,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -3329,6 +3353,7 @@ impl std::convert::From<&str> for DolbyVisionProfile {
     fn from(s: &str) -> Self {
         match s {
             "PROFILE_5" => DolbyVisionProfile::Profile5,
+            "PROFILE_8_1" => DolbyVisionProfile::Profile81,
             other => DolbyVisionProfile::Unknown(other.to_owned()),
         }
     }
@@ -3345,15 +3370,71 @@ impl DolbyVisionProfile {
     pub fn as_str(&self) -> &str {
         match self {
             DolbyVisionProfile::Profile5 => "PROFILE_5",
+            DolbyVisionProfile::Profile81 => "PROFILE_8_1",
             DolbyVisionProfile::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["PROFILE_5"]
+        &["PROFILE_5", "PROFILE_8_1"]
     }
 }
 impl AsRef<str> for DolbyVisionProfile {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DolbyVisionMapping {
+    #[allow(missing_docs)] // documentation missing in model
+    Hdr101000,
+    #[allow(missing_docs)] // documentation missing in model
+    Hdr10Nomap,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DolbyVisionMapping {
+    fn from(s: &str) -> Self {
+        match s {
+            "HDR10_1000" => DolbyVisionMapping::Hdr101000,
+            "HDR10_NOMAP" => DolbyVisionMapping::Hdr10Nomap,
+            other => DolbyVisionMapping::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DolbyVisionMapping {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DolbyVisionMapping::from(s))
+    }
+}
+impl DolbyVisionMapping {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DolbyVisionMapping::Hdr101000 => "HDR10_1000",
+            DolbyVisionMapping::Hdr10Nomap => "HDR10_NOMAP",
+            DolbyVisionMapping::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HDR10_1000", "HDR10_NOMAP"]
+    }
+}
+impl AsRef<str> for DolbyVisionMapping {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -47196,6 +47277,8 @@ pub struct VideoSelector {
     pub embedded_timecode_override: std::option::Option<crate::model::EmbeddedTimecodeOverride>,
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage (ColorSpaceUsage). To specify whether color metadata is included in an output, set Color metadata (ColorMetadata). For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub hdr10_metadata: std::option::Option<crate::model::Hdr10Metadata>,
+    /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+    pub pad_video: std::option::Option<crate::model::PadVideo>,
     /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
     pub pid: i32,
     /// Selects a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported.
@@ -47228,6 +47311,10 @@ impl VideoSelector {
     pub fn hdr10_metadata(&self) -> std::option::Option<&crate::model::Hdr10Metadata> {
         self.hdr10_metadata.as_ref()
     }
+    /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+    pub fn pad_video(&self) -> std::option::Option<&crate::model::PadVideo> {
+        self.pad_video.as_ref()
+    }
     /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
     pub fn pid(&self) -> i32 {
         self.pid
@@ -47256,6 +47343,7 @@ impl std::fmt::Debug for VideoSelector {
             &self.embedded_timecode_override,
         );
         formatter.field("hdr10_metadata", &self.hdr10_metadata);
+        formatter.field("pad_video", &self.pad_video);
         formatter.field("pid", &self.pid);
         formatter.field("program_number", &self.program_number);
         formatter.field("rotate", &self.rotate);
@@ -47275,6 +47363,7 @@ pub mod video_selector {
         pub(crate) embedded_timecode_override:
             std::option::Option<crate::model::EmbeddedTimecodeOverride>,
         pub(crate) hdr10_metadata: std::option::Option<crate::model::Hdr10Metadata>,
+        pub(crate) pad_video: std::option::Option<crate::model::PadVideo>,
         pub(crate) pid: std::option::Option<i32>,
         pub(crate) program_number: std::option::Option<i32>,
         pub(crate) rotate: std::option::Option<crate::model::InputRotate>,
@@ -47349,6 +47438,16 @@ pub mod video_selector {
             self.hdr10_metadata = input;
             self
         }
+        /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+        pub fn pad_video(mut self, input: crate::model::PadVideo) -> Self {
+            self.pad_video = Some(input);
+            self
+        }
+        /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+        pub fn set_pad_video(mut self, input: std::option::Option<crate::model::PadVideo>) -> Self {
+            self.pad_video = input;
+            self
+        }
         /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
         pub fn pid(mut self, input: i32) -> Self {
             self.pid = Some(input);
@@ -47400,6 +47499,7 @@ pub mod video_selector {
                 color_space_usage: self.color_space_usage,
                 embedded_timecode_override: self.embedded_timecode_override,
                 hdr10_metadata: self.hdr10_metadata,
+                pad_video: self.pad_video,
                 pid: self.pid.unwrap_or_default(),
                 program_number: self.program_number.unwrap_or_default(),
                 rotate: self.rotate,
@@ -47542,6 +47642,61 @@ impl InputRotate {
     }
 }
 impl AsRef<str> for InputRotate {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PadVideo {
+    #[allow(missing_docs)] // documentation missing in model
+    Black,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PadVideo {
+    fn from(s: &str) -> Self {
+        match s {
+            "BLACK" => PadVideo::Black,
+            "DISABLED" => PadVideo::Disabled,
+            other => PadVideo::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PadVideo {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PadVideo::from(s))
+    }
+}
+impl PadVideo {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PadVideo::Black => "BLACK",
+            PadVideo::Disabled => "DISABLED",
+            PadVideo::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "DISABLED"]
+    }
+}
+impl AsRef<str> for PadVideo {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -52622,6 +52777,8 @@ pub struct Input {
     pub timecode_source: std::option::Option<crate::model::InputTimecodeSource>,
     /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start (SPECIFIEDSTART). For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub timecode_start: std::option::Option<std::string::String>,
+    /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+    pub video_generator: std::option::Option<crate::model::InputVideoGenerator>,
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub video_selector: std::option::Option<crate::model::VideoSelector>,
 }
@@ -52720,6 +52877,10 @@ impl Input {
     pub fn timecode_start(&self) -> std::option::Option<&str> {
         self.timecode_start.as_deref()
     }
+    /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+    pub fn video_generator(&self) -> std::option::Option<&crate::model::InputVideoGenerator> {
+        self.video_generator.as_ref()
+    }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub fn video_selector(&self) -> std::option::Option<&crate::model::VideoSelector> {
         self.video_selector.as_ref()
@@ -52748,6 +52909,7 @@ impl std::fmt::Debug for Input {
         formatter.field("supplemental_imps", &self.supplemental_imps);
         formatter.field("timecode_source", &self.timecode_source);
         formatter.field("timecode_start", &self.timecode_start);
+        formatter.field("video_generator", &self.video_generator);
         formatter.field("video_selector", &self.video_selector);
         formatter.finish()
     }
@@ -52784,6 +52946,7 @@ pub mod input {
         pub(crate) supplemental_imps: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) timecode_source: std::option::Option<crate::model::InputTimecodeSource>,
         pub(crate) timecode_start: std::option::Option<std::string::String>,
+        pub(crate) video_generator: std::option::Option<crate::model::InputVideoGenerator>,
         pub(crate) video_selector: std::option::Option<crate::model::VideoSelector>,
     }
     impl Builder {
@@ -53080,6 +53243,19 @@ pub mod input {
             self.timecode_start = input;
             self
         }
+        /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+        pub fn video_generator(mut self, input: crate::model::InputVideoGenerator) -> Self {
+            self.video_generator = Some(input);
+            self
+        }
+        /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+        pub fn set_video_generator(
+            mut self,
+            input: std::option::Option<crate::model::InputVideoGenerator>,
+        ) -> Self {
+            self.video_generator = input;
+            self
+        }
         /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
         pub fn video_selector(mut self, input: crate::model::VideoSelector) -> Self {
             self.video_selector = Some(input);
@@ -53116,6 +53292,7 @@ pub mod input {
                 supplemental_imps: self.supplemental_imps,
                 timecode_source: self.timecode_source,
                 timecode_start: self.timecode_start,
+                video_generator: self.video_generator,
                 video_selector: self.video_selector,
             }
         }
@@ -53125,6 +53302,60 @@ impl Input {
     /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input)
     pub fn builder() -> crate::model::input::Builder {
         crate::model::input::Builder::default()
+    }
+}
+
+/// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InputVideoGenerator {
+    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    pub duration: i32,
+}
+impl InputVideoGenerator {
+    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+}
+impl std::fmt::Debug for InputVideoGenerator {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InputVideoGenerator");
+        formatter.field("duration", &self.duration);
+        formatter.finish()
+    }
+}
+/// See [`InputVideoGenerator`](crate::model::InputVideoGenerator)
+pub mod input_video_generator {
+    /// A builder for [`InputVideoGenerator`](crate::model::InputVideoGenerator)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) duration: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
+            self
+        }
+        /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::model::InputVideoGenerator)
+        pub fn build(self) -> crate::model::InputVideoGenerator {
+            crate::model::InputVideoGenerator {
+                duration: self.duration.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl InputVideoGenerator {
+    /// Creates a new builder-style object to manufacture [`InputVideoGenerator`](crate::model::InputVideoGenerator)
+    pub fn builder() -> crate::model::input_video_generator::Builder {
+        crate::model::input_video_generator::Builder::default()
     }
 }
 

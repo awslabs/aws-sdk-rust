@@ -14,15 +14,16 @@ pub struct CreateSignalingChannelError {
 pub enum CreateSignalingChannelErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You have reached the maximum limit of active signaling channels for this AWS account in this region.</p>
+    /// <p>You have reached the maximum limit of active signaling channels for this Amazon Web Services account in this region.</p>
     AccountChannelLimitExceededException(crate::error::AccountChannelLimitExceededException),
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -178,9 +179,10 @@ pub enum CreateStreamErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Not implemented.</p>
     InvalidDeviceException(crate::error::InvalidDeviceException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -327,7 +329,8 @@ pub enum DeleteSignalingChannelErrorKind {
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -475,7 +478,8 @@ pub enum DeleteStreamErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The caller is not authorized to perform this operation.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -594,6 +598,298 @@ impl std::error::Error for DeleteStreamError {
             DeleteStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteStreamErrorKind::VersionMismatchException(_inner) => Some(_inner),
             DeleteStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeImageGenerationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeImageGenerationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeImageGenerationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeImageGenerationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeImageGenerationConfigurationErrorKind {
+    /// <p>You do not have required permissions to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    /// <p>The value for this input parameter is invalid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeImageGenerationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeImageGenerationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageGenerationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeImageGenerationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeImageGenerationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeImageGenerationConfigurationError {
+    /// Creates a new `DescribeImageGenerationConfigurationError`.
+    pub fn new(
+        kind: DescribeImageGenerationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeImageGenerationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeImageGenerationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeImageGenerationConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageGenerationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException`.
+    pub fn is_client_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeImageGenerationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeImageGenerationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                Some(_inner)
+            }
+            DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeImageGenerationConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `DescribeNotificationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeNotificationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeNotificationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeNotificationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeNotificationConfigurationErrorKind {
+    /// <p>You do not have required permissions to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    /// <p>The value for this input parameter is invalid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeNotificationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeNotificationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeNotificationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeNotificationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeNotificationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeNotificationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeNotificationConfigurationError {
+    /// Creates a new `DescribeNotificationConfigurationError`.
+    pub fn new(
+        kind: DescribeNotificationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeNotificationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeNotificationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeNotificationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeNotificationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeNotificationConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeNotificationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeNotificationConfigurationErrorKind::ClientLimitExceededException`.
+    pub fn is_client_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeNotificationConfigurationErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeNotificationConfigurationErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeNotificationConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeNotificationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeNotificationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            DescribeNotificationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                Some(_inner)
+            }
+            DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -997,7 +1293,8 @@ pub enum GetSignalingChannelEndpointErrorKind {
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1624,7 +1921,7 @@ pub enum TagResourceErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1760,7 +2057,7 @@ pub enum TagStreamErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2152,7 +2449,8 @@ pub enum UpdateDataRetentionErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The caller is not authorized to perform this operation.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2281,6 +2579,356 @@ impl std::error::Error for UpdateDataRetentionError {
     }
 }
 
+/// Error type for the `UpdateImageGenerationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateImageGenerationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateImageGenerationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateImageGenerationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateImageGenerationConfigurationErrorKind {
+    /// <p>You do not have required permissions to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    /// <p>The value for this input parameter is invalid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The Stream data retention in hours is equal to zero.</p>
+    NoDataRetentionException(crate::error::NoDataRetentionException),
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateImageGenerationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateImageGenerationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImageGenerationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateImageGenerationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateImageGenerationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateImageGenerationConfigurationError {
+    /// Creates a new `UpdateImageGenerationConfigurationError`.
+    pub fn new(
+        kind: UpdateImageGenerationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateImageGenerationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateImageGenerationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateImageGenerationConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImageGenerationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException`.
+    pub fn is_client_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException`.
+    pub fn is_no_data_retention_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImageGenerationConfigurationErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateImageGenerationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateImageGenerationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                Some(_inner)
+            }
+            UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(_inner) => {
+                Some(_inner)
+            }
+            UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(_inner) => {
+                Some(_inner)
+            }
+            UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateImageGenerationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateNotificationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateNotificationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateNotificationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateNotificationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateNotificationConfigurationErrorKind {
+    /// <p>You do not have required permissions to perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    /// <p>The value for this input parameter is invalid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The Stream data retention in hours is equal to zero.</p>
+    NoDataRetentionException(crate::error::NoDataRetentionException),
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateNotificationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateNotificationConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNotificationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNotificationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNotificationConfigurationErrorKind::NoDataRetentionException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNotificationConfigurationErrorKind::ResourceInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNotificationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateNotificationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateNotificationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateNotificationConfigurationError {
+    /// Creates a new `UpdateNotificationConfigurationError`.
+    pub fn new(
+        kind: UpdateNotificationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateNotificationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateNotificationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateNotificationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateNotificationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateNotificationConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNotificationConfigurationErrorKind::ClientLimitExceededException`.
+    pub fn is_client_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationConfigurationErrorKind::ClientLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNotificationConfigurationErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationConfigurationErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNotificationConfigurationErrorKind::NoDataRetentionException`.
+    pub fn is_no_data_retention_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationConfigurationErrorKind::NoDataRetentionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNotificationConfigurationErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationConfigurationErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNotificationConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateNotificationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateNotificationConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateNotificationConfigurationErrorKind::ClientLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNotificationConfigurationErrorKind::InvalidArgumentException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNotificationConfigurationErrorKind::NoDataRetentionException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNotificationConfigurationErrorKind::ResourceInUseException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateSignalingChannel` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2300,7 +2948,8 @@ pub enum UpdateSignalingChannelErrorKind {
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2448,7 +3097,8 @@ pub enum UpdateStreamErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The caller is not authorized to perform this operation.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>The signaling channel is currently not available for this operation.</p>
+    /// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+    /// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2699,7 +3349,8 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The signaling channel is currently not available for this operation.</p>
+/// <p>The resource is currently not available for this operation. New resources cannot be created with the same name as existing resources. Also, resources cannot be updated or deleted unless they are in an <code>ACTIVE</code> state.</p>
+/// <p>If this exception is returned, do not use it to determine whether the requested resource already exists. Instead, it is recommended you use the resource-specific describe API, for example, <code>DescribeStream</code> for video streams.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -3019,6 +3670,70 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>The Stream data retention in hours is equal to zero.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NoDataRetentionException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NoDataRetentionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NoDataRetentionException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NoDataRetentionException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoDataRetentionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoDataRetentionException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoDataRetentionException {}
+/// See [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+pub mod no_data_retention_exception {
+    /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+        pub fn build(self) -> crate::error::NoDataRetentionException {
+            crate::error::NoDataRetentionException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoDataRetentionException {
+    /// Creates a new builder-style object to manufacture [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+    pub fn builder() -> crate::error::no_data_retention_exception::Builder {
+        crate::error::no_data_retention_exception::Builder::default()
+    }
+}
+
 /// <p>The format of the <code>StreamARN</code> is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3042,8 +3757,8 @@ impl InvalidResourceFormatException {
 impl std::fmt::Display for InvalidResourceFormatException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceFormatException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -3083,7 +3798,7 @@ impl InvalidResourceFormatException {
     }
 }
 
-/// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+/// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagsPerResourceExceededLimitException {
@@ -3106,8 +3821,8 @@ impl TagsPerResourceExceededLimitException {
 impl std::fmt::Display for TagsPerResourceExceededLimitException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagsPerResourceExceededLimitException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -3170,8 +3885,8 @@ impl InvalidDeviceException {
 impl std::fmt::Display for InvalidDeviceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeviceException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -3234,8 +3949,8 @@ impl DeviceStreamLimitExceededException {
 impl std::fmt::Display for DeviceStreamLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeviceStreamLimitExceededException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -3298,8 +4013,8 @@ impl AccountStreamLimitExceededException {
 impl std::fmt::Display for AccountStreamLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccountStreamLimitExceededException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -3339,7 +4054,7 @@ impl AccountStreamLimitExceededException {
     }
 }
 
-/// <p>You have reached the maximum limit of active signaling channels for this AWS account in this region.</p>
+/// <p>You have reached the maximum limit of active signaling channels for this Amazon Web Services account in this region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountChannelLimitExceededException {
@@ -3362,8 +4077,8 @@ impl AccountChannelLimitExceededException {
 impl std::fmt::Display for AccountChannelLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccountChannelLimitExceededException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }

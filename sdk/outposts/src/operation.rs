@@ -383,6 +383,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSiteAddress {
     }
 }
 
+/// Operation shape for `ListAssets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_assets`](crate::client::Client::list_assets).
+///
+/// See [`crate::client::fluent_builders::ListAssets`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAssets {
+    _private: (),
+}
+impl ListAssets {
+    /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::input::ListAssetsInput)
+    pub fn builder() -> crate::input::list_assets_input::Builder {
+        crate::input::list_assets_input::Builder::default()
+    }
+    /// Creates a new `ListAssets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAssets {
+    type Output =
+        std::result::Result<crate::output::ListAssetsOutput, crate::error::ListAssetsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_assets_error(response)
+        } else {
+            crate::operation_deser::parse_list_assets_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListCatalogItems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

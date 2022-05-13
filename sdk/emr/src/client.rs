@@ -276,6 +276,7 @@ impl Client {
     ///   - [`release_label(Option<String>)`](crate::output::DescribeReleaseLabelOutput::release_label): <p>The target release label described in the response.</p>
     ///   - [`applications(Option<Vec<SimplifiedApplication>>)`](crate::output::DescribeReleaseLabelOutput::applications): <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeReleaseLabelOutput::next_token): <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    ///   - [`available_os_releases(Option<Vec<OsRelease>>)`](crate::output::DescribeReleaseLabelOutput::available_os_releases): <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeReleaseLabelError>`](crate::error::DescribeReleaseLabelError)
     pub fn describe_release_label(&self) -> fluent_builders::DescribeReleaseLabel {
         fluent_builders::DescribeReleaseLabel::new(self.handle.clone())
@@ -671,6 +672,7 @@ impl Client {
     ///   - [`managed_scaling_policy(ManagedScalingPolicy)`](crate::client::fluent_builders::RunJobFlow::managed_scaling_policy) / [`set_managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::client::fluent_builders::RunJobFlow::set_managed_scaling_policy): <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
     ///   - [`placement_group_configs(Vec<PlacementGroupConfig>)`](crate::client::fluent_builders::RunJobFlow::placement_group_configs) / [`set_placement_group_configs(Option<Vec<PlacementGroupConfig>>)`](crate::client::fluent_builders::RunJobFlow::set_placement_group_configs): <p>The specified placement group configuration for an Amazon EMR cluster.</p>
     ///   - [`auto_termination_policy(AutoTerminationPolicy)`](crate::client::fluent_builders::RunJobFlow::auto_termination_policy) / [`set_auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::client::fluent_builders::RunJobFlow::set_auto_termination_policy): <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
+    ///   - [`os_release_label(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::os_release_label) / [`set_os_release_label(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_os_release_label): <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
     /// - On success, responds with [`RunJobFlowOutput`](crate::output::RunJobFlowOutput) with field(s):
     ///   - [`job_flow_id(Option<String>)`](crate::output::RunJobFlowOutput::job_flow_id): <p>A unique identifier for the job flow.</p>
     ///   - [`cluster_arn(Option<String>)`](crate::output::RunJobFlowOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -4583,6 +4585,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AutoTerminationPolicy>,
         ) -> Self {
             self.inner = self.inner.set_auto_termination_policy(input);
+            self
+        }
+        /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+        pub fn os_release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os_release_label(input.into());
+            self
+        }
+        /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+        pub fn set_os_release_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_os_release_label(input);
             self
         }
     }

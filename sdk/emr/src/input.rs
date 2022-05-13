@@ -7378,6 +7378,7 @@ pub mod run_job_flow_input {
             std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
         pub(crate) auto_termination_policy:
             std::option::Option<crate::model::AutoTerminationPolicy>,
+        pub(crate) os_release_label: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the job flow.</p>
@@ -7830,6 +7831,19 @@ pub mod run_job_flow_input {
             self.auto_termination_policy = input;
             self
         }
+        /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+        pub fn os_release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_release_label = Some(input.into());
+            self
+        }
+        /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+        pub fn set_os_release_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.os_release_label = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RunJobFlowInput`](crate::input::RunJobFlowInput)
         pub fn build(
             self,
@@ -7866,6 +7880,7 @@ pub mod run_job_flow_input {
                 managed_scaling_policy: self.managed_scaling_policy,
                 placement_group_configs: self.placement_group_configs,
                 auto_termination_policy: self.auto_termination_policy,
+                os_release_label: self.os_release_label,
             })
         }
     }
@@ -9621,6 +9636,8 @@ pub struct RunJobFlowInput {
         std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
     /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
+    /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+    pub os_release_label: std::option::Option<std::string::String>,
 }
 impl RunJobFlowInput {
     /// <p>The name of the job flow.</p>
@@ -9768,6 +9785,10 @@ impl RunJobFlowInput {
     ) -> std::option::Option<&crate::model::AutoTerminationPolicy> {
         self.auto_termination_policy.as_ref()
     }
+    /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+    pub fn os_release_label(&self) -> std::option::Option<&str> {
+        self.os_release_label.as_deref()
+    }
 }
 impl std::fmt::Debug for RunJobFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9800,6 +9821,7 @@ impl std::fmt::Debug for RunJobFlowInput {
         formatter.field("managed_scaling_policy", &self.managed_scaling_policy);
         formatter.field("placement_group_configs", &self.placement_group_configs);
         formatter.field("auto_termination_policy", &self.auto_termination_policy);
+        formatter.field("os_release_label", &self.os_release_label);
         formatter.finish()
     }
 }

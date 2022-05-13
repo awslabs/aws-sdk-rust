@@ -1373,6 +1373,8 @@ pub struct GetExperimentResultsOutput {
     pub reports: std::option::Option<std::vec::Vec<crate::model::ExperimentReport>>,
     /// <p>The timestamps of each result returned.</p>
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
+    pub details: std::option::Option<std::string::String>,
 }
 impl GetExperimentResultsOutput {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
@@ -1387,6 +1389,10 @@ impl GetExperimentResultsOutput {
     pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
+    /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExperimentResultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1394,6 +1400,7 @@ impl std::fmt::Debug for GetExperimentResultsOutput {
         formatter.field("results_data", &self.results_data);
         formatter.field("reports", &self.reports);
         formatter.field("timestamps", &self.timestamps);
+        formatter.field("details", &self.details);
         formatter.finish()
     }
 }
@@ -1407,6 +1414,7 @@ pub mod get_experiment_results_output {
             std::option::Option<std::vec::Vec<crate::model::ExperimentResultsData>>,
         pub(crate) reports: std::option::Option<std::vec::Vec<crate::model::ExperimentReport>>,
         pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `results_data`.
@@ -1466,12 +1474,23 @@ pub mod get_experiment_results_output {
             self.timestamps = input;
             self
         }
+        /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.details = Some(input.into());
+            self
+        }
+        /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
+        pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetExperimentResultsOutput`](crate::output::GetExperimentResultsOutput)
         pub fn build(self) -> crate::output::GetExperimentResultsOutput {
             crate::output::GetExperimentResultsOutput {
                 results_data: self.results_data,
                 reports: self.reports,
                 timestamps: self.timestamps,
+                details: self.details,
             }
         }
     }

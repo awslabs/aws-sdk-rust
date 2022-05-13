@@ -26,7 +26,7 @@ pub enum AssociateWebACLErrorKind {
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -177,7 +177,7 @@ pub enum CheckCapacityErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -357,7 +357,7 @@ pub enum CreateIPSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -533,7 +533,7 @@ pub enum CreateRegexPatternSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -717,9 +717,9 @@ pub enum CreateRuleGroupErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -904,6 +904,10 @@ pub struct CreateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWebACLErrorKind {
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
+    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
+    WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
@@ -930,9 +934,9 @@ pub enum CreateWebACLErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -940,6 +944,7 @@ pub enum CreateWebACLErrorKind {
 impl std::fmt::Display for CreateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateWebACLErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
             CreateWebACLErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
             CreateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
             CreateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
@@ -1005,6 +1010,13 @@ impl CreateWebACLError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafConfigurationWarningException`.
+    pub fn is_waf_configuration_warning_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWebACLErrorKind::WafConfigurationWarningException(_)
+        )
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
@@ -1094,6 +1106,7 @@ impl CreateWebACLError {
 impl std::error::Error for CreateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateWebACLErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
@@ -1291,6 +1304,7 @@ pub struct DeleteIPSetError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteIPSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -1310,7 +1324,7 @@ pub enum DeleteIPSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1745,6 +1759,7 @@ pub struct DeleteRegexPatternSetError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteRegexPatternSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -1764,7 +1779,7 @@ pub enum DeleteRegexPatternSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1925,6 +1940,7 @@ pub struct DeleteRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteRuleGroupErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -1944,7 +1960,7 @@ pub enum DeleteRuleGroupErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2103,6 +2119,7 @@ pub struct DeleteWebACLError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteWebACLErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -2122,7 +2139,7 @@ pub enum DeleteWebACLErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4045,7 +4062,7 @@ pub enum GetWebACLForResourceErrorKind {
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5345,7 +5362,7 @@ pub enum ListTagsForResourceErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6110,7 +6127,7 @@ pub enum TagResourceErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6273,7 +6290,7 @@ pub enum UntagResourceErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6909,6 +6926,10 @@ pub struct UpdateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleGroupErrorKind {
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
+    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
+    WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
@@ -6931,7 +6952,7 @@ pub enum UpdateRuleGroupErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6939,6 +6960,7 @@ pub enum UpdateRuleGroupErrorKind {
 impl std::fmt::Display for UpdateRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
             UpdateRuleGroupErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
             UpdateRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
             UpdateRuleGroupErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
@@ -7001,6 +7023,13 @@ impl UpdateRuleGroupError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafConfigurationWarningException`.
+    pub fn is_waf_configuration_warning_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
@@ -7069,6 +7098,7 @@ impl UpdateRuleGroupError {
 impl std::error::Error for UpdateRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
             UpdateRuleGroupErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
             UpdateRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             UpdateRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
@@ -7096,6 +7126,10 @@ pub struct UpdateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateWebACLErrorKind {
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
+    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
+    WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
@@ -7124,7 +7158,7 @@ pub enum UpdateWebACLErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
-    /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7132,6 +7166,7 @@ pub enum UpdateWebACLErrorKind {
 impl std::fmt::Display for UpdateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateWebACLErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
             UpdateWebACLErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
             UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
                 _inner.fmt(f)
@@ -7198,6 +7233,13 @@ impl UpdateWebACLError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafConfigurationWarningException`.
+    pub fn is_waf_configuration_warning_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWebACLErrorKind::WafConfigurationWarningException(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
@@ -7280,6 +7322,7 @@ impl UpdateWebACLError {
 impl std::error::Error for UpdateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateWebACLErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
             UpdateWebACLErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
             UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
                 Some(_inner)
@@ -7298,7 +7341,7 @@ impl std::error::Error for UpdateWebACLError {
     }
 }
 
-/// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
+/// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafUnavailableEntityException {
@@ -8088,7 +8131,76 @@ impl WafDuplicateItemException {
     }
 }
 
-/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+/// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
+/// <p>Provide the handling configuration and retry your operation.</p>
+/// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WafConfigurationWarningException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for WafConfigurationWarningException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WafConfigurationWarningException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl WafConfigurationWarningException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for WafConfigurationWarningException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "WafConfigurationWarningException [WAFConfigurationWarningException]"
+        )?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for WafConfigurationWarningException {}
+/// See [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+pub mod waf_configuration_warning_exception {
+    /// A builder for [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+        pub fn build(self) -> crate::error::WafConfigurationWarningException {
+            crate::error::WafConfigurationWarningException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl WafConfigurationWarningException {
+    /// Creates a new builder-style object to manufacture [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+    pub fn builder() -> crate::error::waf_configuration_warning_exception::Builder {
+        crate::error::waf_configuration_warning_exception::Builder::default()
+    }
+}
+
+/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafTagOperationInternalErrorException {
@@ -8114,8 +8226,8 @@ impl std::fmt::Display for WafTagOperationInternalErrorException {
             f,
             "WafTagOperationInternalErrorException [WAFTagOperationInternalErrorException]"
         )?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -8178,8 +8290,8 @@ impl WafTagOperationException {
 impl std::fmt::Display for WafTagOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafTagOperationException [WAFTagOperationException]")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -8254,8 +8366,8 @@ impl std::fmt::Display for WafInvalidPermissionPolicyException {
             f,
             "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]"
         )?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -8321,8 +8433,8 @@ impl std::fmt::Display for WafServiceLinkedRoleErrorException {
             f,
             "WafServiceLinkedRoleErrorException [WAFServiceLinkedRoleErrorException]"
         )?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -8388,8 +8500,8 @@ impl std::fmt::Display for WafLogDestinationPermissionIssueException {
             f,
             "WafLogDestinationPermissionIssueException [WAFLogDestinationPermissionIssueException]"
         )?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -8430,6 +8542,7 @@ impl WafLogDestinationPermissionIssueException {
 }
 
 /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+/// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafAssociatedItemException {
@@ -8452,8 +8565,8 @@ impl WafAssociatedItemException {
 impl std::fmt::Display for WafAssociatedItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafAssociatedItemException [WAFAssociatedItemException]")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }

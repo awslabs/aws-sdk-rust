@@ -8,11 +8,11 @@ description = "Example usage of the SecretManager service"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.11.0"
+version = "0.12.0"
 
 [dependencies.aws-sdk-secretsmanager]
 path = "../../sdk/secretsmanager"
-version = "0.11.0"
+version = "0.12.0"
 
 [dependencies.tokio]
 version = "1"

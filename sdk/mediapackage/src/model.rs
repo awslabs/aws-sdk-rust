@@ -1568,7 +1568,7 @@ pub struct DashPackage {
     pub min_update_period_seconds: i32,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
     pub period_triggers: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
-    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
     pub profile: std::option::Option<crate::model::Profile>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     pub segment_duration_seconds: i32,
@@ -1580,7 +1580,7 @@ pub struct DashPackage {
     pub suggested_presentation_delay_seconds: i32,
     /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
     pub utc_timing: std::option::Option<crate::model::UtcTiming>,
-    /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+    /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
     pub utc_timing_uri: std::option::Option<std::string::String>,
 }
 impl DashPackage {
@@ -1618,7 +1618,7 @@ impl DashPackage {
     pub fn period_triggers(&self) -> std::option::Option<&[crate::model::PeriodTriggersElement]> {
         self.period_triggers.as_deref()
     }
-    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
     pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
         self.profile.as_ref()
     }
@@ -1644,7 +1644,7 @@ impl DashPackage {
     pub fn utc_timing(&self) -> std::option::Option<&crate::model::UtcTiming> {
         self.utc_timing.as_ref()
     }
-    /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+    /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
     pub fn utc_timing_uri(&self) -> std::option::Option<&str> {
         self.utc_timing_uri.as_deref()
     }
@@ -1812,12 +1812,12 @@ pub mod dash_package {
             self.period_triggers = input;
             self
         }
-        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
         pub fn profile(mut self, input: crate::model::Profile) -> Self {
             self.profile = Some(input);
             self
         }
-        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
         pub fn set_profile(mut self, input: std::option::Option<crate::model::Profile>) -> Self {
             self.profile = input;
             self
@@ -1887,12 +1887,12 @@ pub mod dash_package {
             self.utc_timing = input;
             self
         }
-        /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+        /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
         pub fn utc_timing_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.utc_timing_uri = Some(input.into());
             self
         }
-        /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+        /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
         pub fn set_utc_timing_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1948,6 +1948,8 @@ pub enum UtcTiming {
     #[allow(missing_docs)] // documentation missing in model
     HttpIso,
     #[allow(missing_docs)] // documentation missing in model
+    HttpXsdate,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1957,6 +1959,7 @@ impl std::convert::From<&str> for UtcTiming {
         match s {
             "HTTP-HEAD" => UtcTiming::HttpHead,
             "HTTP-ISO" => UtcTiming::HttpIso,
+            "HTTP-XSDATE" => UtcTiming::HttpXsdate,
             "NONE" => UtcTiming::None,
             other => UtcTiming::Unknown(other.to_owned()),
         }
@@ -1975,13 +1978,14 @@ impl UtcTiming {
         match self {
             UtcTiming::HttpHead => "HTTP-HEAD",
             UtcTiming::HttpIso => "HTTP-ISO",
+            UtcTiming::HttpXsdate => "HTTP-XSDATE",
             UtcTiming::None => "NONE",
             UtcTiming::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["HTTP-HEAD", "HTTP-ISO", "NONE"]
+        &["HTTP-HEAD", "HTTP-ISO", "HTTP-XSDATE", "NONE"]
     }
 }
 impl AsRef<str> for UtcTiming {
@@ -2066,6 +2070,8 @@ impl AsRef<str> for SegmentTemplateFormat {
 )]
 pub enum Profile {
     #[allow(missing_docs)] // documentation missing in model
+    DvbDash2014,
+    #[allow(missing_docs)] // documentation missing in model
     Hbbtv15,
     #[allow(missing_docs)] // documentation missing in model
     Hybridcast,
@@ -2077,6 +2083,7 @@ pub enum Profile {
 impl std::convert::From<&str> for Profile {
     fn from(s: &str) -> Self {
         match s {
+            "DVB_DASH_2014" => Profile::DvbDash2014,
             "HBBTV_1_5" => Profile::Hbbtv15,
             "HYBRIDCAST" => Profile::Hybridcast,
             "NONE" => Profile::None,
@@ -2095,6 +2102,7 @@ impl Profile {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Profile::DvbDash2014 => "DVB_DASH_2014",
             Profile::Hbbtv15 => "HBBTV_1_5",
             Profile::Hybridcast => "HYBRIDCAST",
             Profile::None => "NONE",
@@ -2103,7 +2111,7 @@ impl Profile {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["HBBTV_1_5", "HYBRIDCAST", "NONE"]
+        &["DVB_DASH_2014", "HBBTV_1_5", "HYBRIDCAST", "NONE"]
     }
 }
 impl AsRef<str> for Profile {

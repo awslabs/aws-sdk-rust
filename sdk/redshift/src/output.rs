@@ -777,7 +777,7 @@ pub struct RejectDataShareOutput {
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -796,7 +796,7 @@ impl RejectDataShareOutput {
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub fn data_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
@@ -875,7 +875,7 @@ pub mod reject_data_share_output {
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
             input: crate::model::DataShareAssociation,
@@ -885,7 +885,7 @@ pub mod reject_data_share_output {
             self.data_share_associations = Some(v);
             self
         }
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn set_data_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
@@ -2939,7 +2939,7 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClusterCredentialsOutput {
-    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     pub db_password: std::option::Option<std::string::String>,
@@ -2947,7 +2947,7 @@ pub struct GetClusterCredentialsOutput {
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetClusterCredentialsOutput {
-    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -2980,12 +2980,12 @@ pub mod get_cluster_credentials_output {
         pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+        /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+        /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -3310,7 +3310,7 @@ pub struct DisassociateDataShareConsumerOutput {
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -3329,7 +3329,7 @@ impl DisassociateDataShareConsumerOutput {
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub fn data_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
@@ -3408,7 +3408,7 @@ pub mod disassociate_data_share_consumer_output {
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
             input: crate::model::DataShareAssociation,
@@ -3418,7 +3418,7 @@ pub mod disassociate_data_share_consumer_output {
             self.data_share_associations = Some(v);
             self
         }
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn set_data_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
@@ -8120,7 +8120,7 @@ pub struct DeauthorizeDataShareOutput {
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -8139,7 +8139,7 @@ impl DeauthorizeDataShareOutput {
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub fn data_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
@@ -8218,7 +8218,7 @@ pub mod deauthorize_data_share_output {
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
             input: crate::model::DataShareAssociation,
@@ -8228,7 +8228,7 @@ pub mod deauthorize_data_share_output {
             self.data_share_associations = Some(v);
             self
         }
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn set_data_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
@@ -10827,7 +10827,7 @@ pub struct AuthorizeDataShareOutput {
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -10846,7 +10846,7 @@ impl AuthorizeDataShareOutput {
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub fn data_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
@@ -10925,7 +10925,7 @@ pub mod authorize_data_share_output {
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
             input: crate::model::DataShareAssociation,
@@ -10935,7 +10935,7 @@ pub mod authorize_data_share_output {
             self.data_share_associations = Some(v);
             self
         }
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn set_data_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
@@ -11043,7 +11043,7 @@ pub struct AssociateDataShareConsumerOutput {
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -11062,7 +11062,7 @@ impl AssociateDataShareConsumerOutput {
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
-    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub fn data_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
@@ -11141,7 +11141,7 @@ pub mod associate_data_share_consumer_output {
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
             input: crate::model::DataShareAssociation,
@@ -11151,7 +11151,7 @@ pub mod associate_data_share_consumer_output {
             self.data_share_associations = Some(v);
             self
         }
-        /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+        /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
         pub fn set_data_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,

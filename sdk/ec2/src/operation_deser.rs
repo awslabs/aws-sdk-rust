@@ -11484,6 +11484,38 @@ pub fn parse_get_instance_types_from_instance_requirements_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_instance_uefi_data_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetInstanceUefiDataOutput,
+    crate::error::GetInstanceUefiDataError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetInstanceUefiDataError::unhandled)?;
+    Err(crate::error::GetInstanceUefiDataError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_instance_uefi_data_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetInstanceUefiDataOutput,
+    crate::error::GetInstanceUefiDataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_instance_uefi_data_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_instance_uefi_data(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetInstanceUefiDataError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ipam_address_history_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

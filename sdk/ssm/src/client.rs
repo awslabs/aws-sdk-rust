@@ -176,6 +176,7 @@ impl Client {
     ///   - [`calendar_names(Vec<String>)`](crate::client::fluent_builders::CreateAssociation::calendar_names) / [`set_calendar_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAssociation::set_calendar_names): <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::CreateAssociation::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::CreateAssociation::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
     ///   - [`schedule_offset(i32)`](crate::client::fluent_builders::CreateAssociation::schedule_offset) / [`set_schedule_offset(Option<i32>)`](crate::client::fluent_builders::CreateAssociation::set_schedule_offset): <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>   <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>  </note>
+    ///   - [`target_maps(Vec<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateAssociation::target_maps) / [`set_target_maps(Option<Vec<HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::CreateAssociation::set_target_maps): <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     /// - On success, responds with [`CreateAssociationOutput`](crate::output::CreateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::output::CreateAssociationOutput::association_description): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<CreateAssociationError>`](crate::error::CreateAssociationError)
@@ -1013,7 +1014,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`command_id(impl Into<String>)`](crate::client::fluent_builders::GetCommandInvocation::command_id) / [`set_command_id(Option<String>)`](crate::client::fluent_builders::GetCommandInvocation::set_command_id): <p>(Required) The parent command ID of the invocation plugin.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetCommandInvocation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetCommandInvocation::set_instance_id): <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
-    ///   - [`plugin_name(impl Into<String>)`](crate::client::fluent_builders::GetCommandInvocation::plugin_name) / [`set_plugin_name(Option<String>)`](crate::client::fluent_builders::GetCommandInvocation::set_plugin_name): <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>  <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>  <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+    ///   - [`plugin_name(impl Into<String>)`](crate::client::fluent_builders::GetCommandInvocation::plugin_name) / [`set_plugin_name(Option<String>)`](crate::client::fluent_builders::GetCommandInvocation::set_plugin_name): <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>  <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
     /// - On success, responds with [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput) with field(s):
     ///   - [`command_id(Option<String>)`](crate::output::GetCommandInvocationOutput::command_id): <p>The parent command ID of the invocation plugin.</p>
     ///   - [`instance_id(Option<String>)`](crate::output::GetCommandInvocationOutput::instance_id): <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
@@ -1970,6 +1971,7 @@ impl Client {
     ///   - [`calendar_names(Vec<String>)`](crate::client::fluent_builders::UpdateAssociation::calendar_names) / [`set_calendar_names(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAssociation::set_calendar_names): <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::UpdateAssociation::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::UpdateAssociation::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
     ///   - [`schedule_offset(i32)`](crate::client::fluent_builders::UpdateAssociation::schedule_offset) / [`set_schedule_offset(Option<i32>)`](crate::client::fluent_builders::UpdateAssociation::set_schedule_offset): <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>   <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>  </note>
+    ///   - [`target_maps(Vec<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::UpdateAssociation::target_maps) / [`set_target_maps(Option<Vec<HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::UpdateAssociation::set_target_maps): <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     /// - On success, responds with [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::output::UpdateAssociationOutput::association_description): <p>The description of the association that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateAssociationError>`](crate::error::UpdateAssociationError)
@@ -3042,6 +3044,36 @@ pub mod fluent_builders {
         /// </note>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_schedule_offset(input);
+            self
+        }
+        /// Appends an item to `TargetMaps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.target_maps(input);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_target_maps(input);
             self
         }
     }
@@ -8665,16 +8697,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+        /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
         pub fn plugin_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.plugin_name(input.into());
             self
         }
-        /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+        /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
         pub fn set_plugin_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_plugin_name(input);
             self
@@ -14961,6 +14991,36 @@ pub mod fluent_builders {
         /// </note>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_schedule_offset(input);
+            self
+        }
+        /// Appends an item to `TargetMaps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.target_maps(input);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_target_maps(input);
             self
         }
     }

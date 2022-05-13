@@ -62,21 +62,115 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RotateTunnelAccessTokenOutput {
+    /// <p>The Amazon Resource Name for the tunnel.</p>
+    pub tunnel_arn: std::option::Option<std::string::String>,
+    /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub source_access_token: std::option::Option<std::string::String>,
+    /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub destination_access_token: std::option::Option<std::string::String>,
+}
+impl RotateTunnelAccessTokenOutput {
+    /// <p>The Amazon Resource Name for the tunnel.</p>
+    pub fn tunnel_arn(&self) -> std::option::Option<&str> {
+        self.tunnel_arn.as_deref()
+    }
+    /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub fn source_access_token(&self) -> std::option::Option<&str> {
+        self.source_access_token.as_deref()
+    }
+    /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub fn destination_access_token(&self) -> std::option::Option<&str> {
+        self.destination_access_token.as_deref()
+    }
+}
+impl std::fmt::Debug for RotateTunnelAccessTokenOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RotateTunnelAccessTokenOutput");
+        formatter.field("tunnel_arn", &self.tunnel_arn);
+        formatter.field("source_access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "destination_access_token",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.finish()
+    }
+}
+/// See [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+pub mod rotate_tunnel_access_token_output {
+    /// A builder for [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tunnel_arn: std::option::Option<std::string::String>,
+        pub(crate) source_access_token: std::option::Option<std::string::String>,
+        pub(crate) destination_access_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name for the tunnel.</p>
+        pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tunnel_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name for the tunnel.</p>
+        pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tunnel_arn = input;
+            self
+        }
+        /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+        pub fn source_access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_access_token = Some(input.into());
+            self
+        }
+        /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+        pub fn set_source_access_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_access_token = input;
+            self
+        }
+        /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+        pub fn destination_access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_access_token = Some(input.into());
+            self
+        }
+        /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+        pub fn set_destination_access_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_access_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+        pub fn build(self) -> crate::output::RotateTunnelAccessTokenOutput {
+            crate::output::RotateTunnelAccessTokenOutput {
+                tunnel_arn: self.tunnel_arn,
+                source_access_token: self.source_access_token,
+                destination_access_token: self.destination_access_token,
+            }
+        }
+    }
+}
+impl RotateTunnelAccessTokenOutput {
+    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+    pub fn builder() -> crate::output::rotate_tunnel_access_token_output::Builder {
+        crate::output::rotate_tunnel_access_token_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenTunnelOutput {
     /// <p>A unique alpha-numeric tunnel ID.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-    /// <region>
-    /// :
-    /// <account-id>
-    /// :tunnel/
-    /// <tunnel-id></tunnel-id>
-    /// </account-id>
-    /// </region></code> </p>
+    /// <p>The Amazon Resource Name for the tunnel.</p>
     pub tunnel_arn: std::option::Option<std::string::String>,
-    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
     pub source_access_token: std::option::Option<std::string::String>,
-    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     pub destination_access_token: std::option::Option<std::string::String>,
 }
 impl OpenTunnelOutput {
@@ -84,22 +178,15 @@ impl OpenTunnelOutput {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-    /// <region>
-    /// :
-    /// <account-id>
-    /// :tunnel/
-    /// <tunnel-id></tunnel-id>
-    /// </account-id>
-    /// </region></code> </p>
+    /// <p>The Amazon Resource Name for the tunnel.</p>
     pub fn tunnel_arn(&self) -> std::option::Option<&str> {
         self.tunnel_arn.as_deref()
     }
-    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn source_access_token(&self) -> std::option::Option<&str> {
         self.source_access_token.as_deref()
     }
-    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn destination_access_token(&self) -> std::option::Option<&str> {
         self.destination_access_token.as_deref()
     }
@@ -139,36 +226,22 @@ pub mod open_tunnel_output {
             self.tunnel_id = input;
             self
         }
-        /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-        /// <region>
-        /// :
-        /// <account-id>
-        /// :tunnel/
-        /// <tunnel-id></tunnel-id>
-        /// </account-id>
-        /// </region></code> </p>
+        /// <p>The Amazon Resource Name for the tunnel.</p>
         pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tunnel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
-        /// <region>
-        /// :
-        /// <account-id>
-        /// :tunnel/
-        /// <tunnel-id></tunnel-id>
-        /// </account-id>
-        /// </region></code> </p>
+        /// <p>The Amazon Resource Name for the tunnel.</p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_arn = input;
             self
         }
-        /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+        /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
         pub fn source_access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_access_token = Some(input.into());
             self
         }
-        /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+        /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
         pub fn set_source_access_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -176,12 +249,12 @@ pub mod open_tunnel_output {
             self.source_access_token = input;
             self
         }
-        /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+        /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
         pub fn destination_access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_access_token = Some(input.into());
             self
         }
-        /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+        /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
         pub fn set_destination_access_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -211,17 +284,17 @@ impl OpenTunnelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTunnelsOutput {
-    /// <p>A short description of the tunnels in an AWS account.</p>
+    /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
     pub tunnel_summaries: std::option::Option<std::vec::Vec<crate::model::TunnelSummary>>,
-    /// <p>A token to used to retrieve the next set of results.</p>
+    /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTunnelsOutput {
-    /// <p>A short description of the tunnels in an AWS account.</p>
+    /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
     pub fn tunnel_summaries(&self) -> std::option::Option<&[crate::model::TunnelSummary]> {
         self.tunnel_summaries.as_deref()
     }
-    /// <p>A token to used to retrieve the next set of results.</p>
+    /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -249,14 +322,14 @@ pub mod list_tunnels_output {
         ///
         /// To override the contents of this collection use [`set_tunnel_summaries`](Self::set_tunnel_summaries).
         ///
-        /// <p>A short description of the tunnels in an AWS account.</p>
+        /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
         pub fn tunnel_summaries(mut self, input: crate::model::TunnelSummary) -> Self {
             let mut v = self.tunnel_summaries.unwrap_or_default();
             v.push(input);
             self.tunnel_summaries = Some(v);
             self
         }
-        /// <p>A short description of the tunnels in an AWS account.</p>
+        /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
         pub fn set_tunnel_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TunnelSummary>>,
@@ -264,12 +337,12 @@ pub mod list_tunnels_output {
             self.tunnel_summaries = input;
             self
         }
-        /// <p>A token to used to retrieve the next set of results.</p>
+        /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to used to retrieve the next set of results.</p>
+        /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

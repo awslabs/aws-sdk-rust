@@ -658,6 +658,7 @@ impl Client {
         fluent_builders::ListExperiences::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFaqs`](crate::client::fluent_builders::ListFaqs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFaqs::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListFaqs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListFaqs::set_index_id): <p>The index that contains the FAQ lists.</p>
@@ -671,6 +672,7 @@ impl Client {
         fluent_builders::ListFaqs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListGroupsOlderThanOrderingId`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::set_index_id): <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
@@ -701,6 +703,7 @@ impl Client {
         fluent_builders::ListIndices::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListQuerySuggestionsBlockLists`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::set_index_id): <p>The identifier of the index for a list of all block lists that exist for that index.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
@@ -726,6 +729,7 @@ impl Client {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThesauri`](crate::client::fluent_builders::ListThesauri) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThesauri::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListThesauri::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListThesauri::set_index_id): <p>The identifier of the index associated with the thesaurus to list.</p>
@@ -759,8 +763,8 @@ impl Client {
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::Query::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::Query::set_index_id): <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::Query::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::Query::set_query_text): <p>The text to search for.</p>
     ///   - [`attribute_filter(AttributeFilter)`](crate::client::fluent_builders::Query::attribute_filter) / [`set_attribute_filter(Option<AttributeFilter>)`](crate::client::fluent_builders::Query::set_attribute_filter): <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>  <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    ///   - [`facets(Vec<Facet>)`](crate::client::fluent_builders::Query::facets) / [`set_facets(Option<Vec<Facet>>)`](crate::client::fluent_builders::Query::set_facets): <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
-    ///   - [`requested_document_attributes(Vec<String>)`](crate::client::fluent_builders::Query::requested_document_attributes) / [`set_requested_document_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::Query::set_requested_document_attributes): <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+    ///   - [`facets(Vec<Facet>)`](crate::client::fluent_builders::Query::facets) / [`set_facets(Option<Vec<Facet>>)`](crate::client::fluent_builders::Query::set_facets): <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
+    ///   - [`requested_document_attributes(Vec<String>)`](crate::client::fluent_builders::Query::requested_document_attributes) / [`set_requested_document_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::Query::set_requested_document_attributes): <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
     ///   - [`query_result_type_filter(QueryResultType)`](crate::client::fluent_builders::Query::query_result_type_filter) / [`set_query_result_type_filter(Option<QueryResultType>)`](crate::client::fluent_builders::Query::set_query_result_type_filter): <p>Sets the type of query. Only results for the specified query type are returned.</p>
     ///   - [`document_relevance_override_configurations(Vec<DocumentRelevanceConfiguration>)`](crate::client::fluent_builders::Query::document_relevance_override_configurations) / [`set_document_relevance_override_configurations(Option<Vec<DocumentRelevanceConfiguration>>)`](crate::client::fluent_builders::Query::set_document_relevance_override_configurations): <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>  <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>  <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>  <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     ///   - [`page_number(i32)`](crate::client::fluent_builders::Query::page_number) / [`set_page_number(Option<i32>)`](crate::client::fluent_builders::Query::set_page_number): <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
@@ -4164,6 +4168,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFaqsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFaqsPaginator {
+            crate::paginator::ListFaqsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The index that contains the FAQ lists.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
@@ -4237,6 +4247,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupsOlderThanOrderingIdPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupsOlderThanOrderingIdPaginator {
+            crate::paginator::ListGroupsOlderThanOrderingIdPaginator::new(self.handle, self.inner)
         }
         /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4405,6 +4421,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQuerySuggestionsBlockListsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQuerySuggestionsBlockListsPaginator {
+            crate::paginator::ListQuerySuggestionsBlockListsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
         /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4532,6 +4554,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListThesauriPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListThesauriPaginator {
+            crate::paginator::ListThesauriPaginator::new(self.handle, self.inner)
         }
         /// <p>The identifier of the index associated with the thesaurus to list.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4779,12 +4807,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_facets`](Self::set_facets).
         ///
-        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
+        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
         pub fn facets(mut self, input: crate::model::Facet) -> Self {
             self.inner = self.inner.facets(input);
             self
         }
-        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
+        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
         pub fn set_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Facet>>,
@@ -4796,7 +4824,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
         ///
-        /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+        /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
         pub fn requested_document_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -4804,7 +4832,7 @@ pub mod fluent_builders {
             self.inner = self.inner.requested_document_attributes(input.into());
             self
         }
-        /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
+        /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
         pub fn set_requested_document_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

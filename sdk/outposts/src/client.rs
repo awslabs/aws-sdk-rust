@@ -197,6 +197,7 @@ impl Client {
         fluent_builders::GetOutpost::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetOutpostInstanceTypes`](crate::client::fluent_builders::GetOutpostInstanceTypes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetOutpostInstanceTypes::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::GetOutpostInstanceTypes::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
@@ -233,6 +234,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetSiteAddressError>`](crate::error::GetSiteAddressError)
     pub fn get_site_address(&self) -> fluent_builders::GetSiteAddress {
         fluent_builders::GetSiteAddress::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListAssets`](crate::client::fluent_builders::ListAssets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`outpost_identifier(impl Into<String>)`](crate::client::fluent_builders::ListAssets::outpost_identifier) / [`set_outpost_identifier(Option<String>)`](crate::client::fluent_builders::ListAssets::set_outpost_identifier): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`host_id_filter(Vec<String>)`](crate::client::fluent_builders::ListAssets::host_id_filter) / [`set_host_id_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListAssets::set_host_id_filter): <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssets::set_max_results): <p>The maximum page size.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssets::set_next_token): <p>The pagination token.</p>
+    /// - On success, responds with [`ListAssetsOutput`](crate::output::ListAssetsOutput) with field(s):
+    ///   - [`assets(Option<Vec<AssetInfo>>)`](crate::output::ListAssetsOutput::assets): <p> Information about hardware assets. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssetsOutput::next_token): <p>The pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::error::ListAssetsError)
+    pub fn list_assets(&self) -> fluent_builders::ListAssets {
+        fluent_builders::ListAssets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCatalogItems`](crate::client::fluent_builders::ListCatalogItems) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCatalogItems::into_paginator).
@@ -1096,7 +1112,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOutpostInstanceTypes`.
     ///
-    /// <p>Lists the instance types for the specified Outpost.</p>
+    /// <p>Gets the instance types for the specified Outpost.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOutpostInstanceTypes {
         handle: std::sync::Arc<super::Handle>,
@@ -1135,6 +1151,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetOutpostInstanceTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetOutpostInstanceTypesPaginator {
+            crate::paginator::GetOutpostInstanceTypesPaginator::new(self.handle, self.inner)
         }
         /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1286,9 +1308,110 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListAssets`.
+    ///
+    /// <p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon Web Services Outposts, you can filter your request by host ID to return a list of hardware assets that allocate resources for Dedicated Hosts. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAssets {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_assets_input::Builder,
+    }
+    impl ListAssets {
+        /// Creates a new `ListAssets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAssetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAssetsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetsPaginator {
+            crate::paginator::ListAssetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+        pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_identifier(input.into());
+            self
+        }
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+        pub fn set_outpost_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_outpost_identifier(input);
+            self
+        }
+        /// Appends an item to `HostIdFilter`.
+        ///
+        /// To override the contents of this collection use [`set_host_id_filter`](Self::set_host_id_filter).
+        ///
+        /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn host_id_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_id_filter(input.into());
+            self
+        }
+        /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_host_id_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_host_id_filter(input);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListCatalogItems`.
     ///
-    /// <p>Use to create a list of every item in the catalog. Add filters to your request to return a more specific list of results. Use filters to match an item class, storage option, or EC2 family. </p>
+    /// <p>Lists the items in the catalog. Add filters to your request to return a more specific list of results. Use filters to match an item class, storage option, or EC2 family. </p>
     /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCatalogItems {
@@ -1418,7 +1541,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrders`.
     ///
-    /// <p>Create a list of the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a more specific list of results. </p>
+    /// <p>Lists the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a more specific list of results. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrders {
         handle: std::sync::Arc<super::Handle>,
@@ -1500,7 +1623,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOutposts`.
     ///
-    /// <p>Create a list of the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
+    /// <p>Lists the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
     /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutposts {
@@ -1630,7 +1753,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSites`.
     ///
-    /// <p>Create a list of the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to return a more specific list of results. Use filters to match site city, country code, or state/region of the operating address. </p>
+    /// <p>Lists the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to return a more specific list of results. Use filters to match site city, country code, or state/region of the operating address. </p>
     /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSites {

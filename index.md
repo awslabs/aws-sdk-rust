@@ -150,6 +150,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Augmented AI Runtime | [aws-sdk-sagemakera2iruntime](https://crates.io/crates/aws-sdk-sagemakera2iruntime) ([docs](https://docs.rs/aws-sdk-sagemakera2iruntime)) |
 | Amazon Chime | [aws-sdk-chime](https://crates.io/crates/aws-sdk-chime) ([docs](https://docs.rs/aws-sdk-chime)) |
 | Amazon Chime SDK Identity | [aws-sdk-chimesdkidentity](https://crates.io/crates/aws-sdk-chimesdkidentity) ([docs](https://docs.rs/aws-sdk-chimesdkidentity)) |
+| Amazon Chime SDK Media Pipelines | [aws-sdk-chimesdkmediapipelines](https://crates.io/crates/aws-sdk-chimesdkmediapipelines) ([docs](https://docs.rs/aws-sdk-chimesdkmediapipelines)) |
 | Amazon Chime SDK Meetings | [aws-sdk-chimesdkmeetings](https://crates.io/crates/aws-sdk-chimesdkmeetings) ([docs](https://docs.rs/aws-sdk-chimesdkmeetings)) |
 | Amazon Chime SDK Messaging | [aws-sdk-chimesdkmessaging](https://crates.io/crates/aws-sdk-chimesdkmessaging) ([docs](https://docs.rs/aws-sdk-chimesdkmessaging)) |
 | Amazon CloudDirectory | [aws-sdk-clouddirectory](https://crates.io/crates/aws-sdk-clouddirectory) ([docs](https://docs.rs/aws-sdk-clouddirectory)) |
@@ -206,6 +207,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Import/Export Snowball | [aws-sdk-snowball](https://crates.io/crates/aws-sdk-snowball) ([docs](https://docs.rs/aws-sdk-snowball)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/snowball)) |
 | Amazon Inspector | [aws-sdk-inspector](https://crates.io/crates/aws-sdk-inspector) ([docs](https://docs.rs/aws-sdk-inspector)) |
 | Amazon Interactive Video Service | [aws-sdk-ivs](https://crates.io/crates/aws-sdk-ivs) ([docs](https://docs.rs/aws-sdk-ivs)) |
+| Amazon Interactive Video Service Chat | [aws-sdk-ivschat](https://crates.io/crates/aws-sdk-ivschat) ([docs](https://docs.rs/aws-sdk-ivschat)) |
 | Amazon Keyspaces | [aws-sdk-keyspaces](https://crates.io/crates/aws-sdk-keyspaces) ([docs](https://docs.rs/aws-sdk-keyspaces)) |
 | Amazon Kinesis | [aws-sdk-kinesis](https://crates.io/crates/aws-sdk-kinesis) ([docs](https://docs.rs/aws-sdk-kinesis)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/kinesis)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalytics](https://crates.io/crates/aws-sdk-kinesisanalytics) ([docs](https://docs.rs/aws-sdk-kinesisanalytics)) |

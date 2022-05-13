@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleMasterConfiguration {
-    /// <p>The period of time a signaling channel retains underlivered messages before they are discarded.</p>
+    /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub message_ttl_seconds: std::option::Option<i32>,
 }
 impl SingleMasterConfiguration {
-    /// <p>The period of time a signaling channel retains underlivered messages before they are discarded.</p>
+    /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub fn message_ttl_seconds(&self) -> std::option::Option<i32> {
         self.message_ttl_seconds
     }
@@ -28,12 +28,12 @@ pub mod single_master_configuration {
         pub(crate) message_ttl_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The period of time a signaling channel retains underlivered messages before they are discarded.</p>
+        /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
         pub fn message_ttl_seconds(mut self, input: i32) -> Self {
             self.message_ttl_seconds = Some(input);
             self
         }
-        /// <p>The period of time a signaling channel retains underlivered messages before they are discarded.</p>
+        /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
         pub fn set_message_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.message_ttl_seconds = input;
             self
@@ -50,6 +50,660 @@ impl SingleMasterConfiguration {
     /// Creates a new builder-style object to manufacture [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration)
     pub fn builder() -> crate::model::single_master_configuration::Builder {
         crate::model::single_master_configuration::Builder::default()
+    }
+}
+
+/// <p>The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotificationConfiguration {
+    /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+    pub status: std::option::Option<crate::model::ConfigurationStatus>,
+    /// <p>The destination information required to deliver a notification to a customer.</p>
+    pub destination_config: std::option::Option<crate::model::NotificationDestinationConfig>,
+}
+impl NotificationConfiguration {
+    /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The destination information required to deliver a notification to a customer.</p>
+    pub fn destination_config(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationDestinationConfig> {
+        self.destination_config.as_ref()
+    }
+}
+impl std::fmt::Debug for NotificationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NotificationConfiguration");
+        formatter.field("status", &self.status);
+        formatter.field("destination_config", &self.destination_config);
+        formatter.finish()
+    }
+}
+/// See [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+pub mod notification_configuration {
+    /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
+        pub(crate) destination_config:
+            std::option::Option<crate::model::NotificationDestinationConfig>,
+    }
+    impl Builder {
+        /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+        pub fn status(mut self, input: crate::model::ConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The destination information required to deliver a notification to a customer.</p>
+        pub fn destination_config(
+            mut self,
+            input: crate::model::NotificationDestinationConfig,
+        ) -> Self {
+            self.destination_config = Some(input);
+            self
+        }
+        /// <p>The destination information required to deliver a notification to a customer.</p>
+        pub fn set_destination_config(
+            mut self,
+            input: std::option::Option<crate::model::NotificationDestinationConfig>,
+        ) -> Self {
+            self.destination_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+        pub fn build(self) -> crate::model::NotificationConfiguration {
+            crate::model::NotificationConfiguration {
+                status: self.status,
+                destination_config: self.destination_config,
+            }
+        }
+    }
+}
+impl NotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+    pub fn builder() -> crate::model::notification_configuration::Builder {
+        crate::model::notification_configuration::Builder::default()
+    }
+}
+
+/// <p>The structure that contains the information required to deliver a notification to a customer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotificationDestinationConfig {
+    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    pub uri: std::option::Option<std::string::String>,
+}
+impl NotificationDestinationConfig {
+    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+}
+impl std::fmt::Debug for NotificationDestinationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NotificationDestinationConfig");
+        formatter.field("uri", &self.uri);
+        formatter.finish()
+    }
+}
+/// See [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig)
+pub mod notification_destination_config {
+    /// A builder for [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
+            self
+        }
+        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig)
+        pub fn build(self) -> crate::model::NotificationDestinationConfig {
+            crate::model::NotificationDestinationConfig { uri: self.uri }
+        }
+    }
+}
+impl NotificationDestinationConfig {
+    /// Creates a new builder-style object to manufacture [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig)
+    pub fn builder() -> crate::model::notification_destination_config::Builder {
+        crate::model::notification_destination_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConfigurationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ConfigurationStatus::Disabled,
+            "ENABLED" => ConfigurationStatus::Enabled,
+            other => ConfigurationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConfigurationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConfigurationStatus::from(s))
+    }
+}
+impl ConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConfigurationStatus::Disabled => "DISABLED",
+            ConfigurationStatus::Enabled => "ENABLED",
+            ConfigurationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for ConfigurationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The structure that contains the information required for the KVS images delivery. If null, the configuration will be deleted from the stream.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImageGenerationConfiguration {
+    /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+    pub status: std::option::Option<crate::model::ConfigurationStatus>,
+    /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    pub image_selector_type: std::option::Option<crate::model::ImageSelectorType>,
+    /// <p>The structure that contains the information required to deliver images to a customer.</p>
+    pub destination_config: std::option::Option<crate::model::ImageGenerationDestinationConfig>,
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    pub sampling_interval: std::option::Option<i32>,
+    /// <p>The accepted image format.</p>
+    pub format: std::option::Option<crate::model::Format>,
+    /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+    pub format_config: std::option::Option<
+        std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
+    >,
+    /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    pub width_pixels: std::option::Option<i32>,
+    /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    pub height_pixels: std::option::Option<i32>,
+}
+impl ImageGenerationConfiguration {
+    /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    pub fn image_selector_type(&self) -> std::option::Option<&crate::model::ImageSelectorType> {
+        self.image_selector_type.as_ref()
+    }
+    /// <p>The structure that contains the information required to deliver images to a customer.</p>
+    pub fn destination_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageGenerationDestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    pub fn sampling_interval(&self) -> std::option::Option<i32> {
+        self.sampling_interval
+    }
+    /// <p>The accepted image format.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+    pub fn format_config(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
+    > {
+        self.format_config.as_ref()
+    }
+    /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    pub fn width_pixels(&self) -> std::option::Option<i32> {
+        self.width_pixels
+    }
+    /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    pub fn height_pixels(&self) -> std::option::Option<i32> {
+        self.height_pixels
+    }
+}
+impl std::fmt::Debug for ImageGenerationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageGenerationConfiguration");
+        formatter.field("status", &self.status);
+        formatter.field("image_selector_type", &self.image_selector_type);
+        formatter.field("destination_config", &self.destination_config);
+        formatter.field("sampling_interval", &self.sampling_interval);
+        formatter.field("format", &self.format);
+        formatter.field("format_config", &self.format_config);
+        formatter.field("width_pixels", &self.width_pixels);
+        formatter.field("height_pixels", &self.height_pixels);
+        formatter.finish()
+    }
+}
+/// See [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration)
+pub mod image_generation_configuration {
+    /// A builder for [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
+        pub(crate) image_selector_type: std::option::Option<crate::model::ImageSelectorType>,
+        pub(crate) destination_config:
+            std::option::Option<crate::model::ImageGenerationDestinationConfig>,
+        pub(crate) sampling_interval: std::option::Option<i32>,
+        pub(crate) format: std::option::Option<crate::model::Format>,
+        pub(crate) format_config: std::option::Option<
+            std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
+        >,
+        pub(crate) width_pixels: std::option::Option<i32>,
+        pub(crate) height_pixels: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+        pub fn status(mut self, input: crate::model::ConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+        pub fn image_selector_type(mut self, input: crate::model::ImageSelectorType) -> Self {
+            self.image_selector_type = Some(input);
+            self
+        }
+        /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+        pub fn set_image_selector_type(
+            mut self,
+            input: std::option::Option<crate::model::ImageSelectorType>,
+        ) -> Self {
+            self.image_selector_type = input;
+            self
+        }
+        /// <p>The structure that contains the information required to deliver images to a customer.</p>
+        pub fn destination_config(
+            mut self,
+            input: crate::model::ImageGenerationDestinationConfig,
+        ) -> Self {
+            self.destination_config = Some(input);
+            self
+        }
+        /// <p>The structure that contains the information required to deliver images to a customer.</p>
+        pub fn set_destination_config(
+            mut self,
+            input: std::option::Option<crate::model::ImageGenerationDestinationConfig>,
+        ) -> Self {
+            self.destination_config = input;
+            self
+        }
+        /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+        pub fn sampling_interval(mut self, input: i32) -> Self {
+            self.sampling_interval = Some(input);
+            self
+        }
+        /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+        pub fn set_sampling_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.sampling_interval = input;
+            self
+        }
+        /// <p>The accepted image format.</p>
+        pub fn format(mut self, input: crate::model::Format) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>The accepted image format.</p>
+        pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
+            self.format = input;
+            self
+        }
+        /// Adds a key-value pair to `format_config`.
+        ///
+        /// To override the contents of this collection use [`set_format_config`](Self::set_format_config).
+        ///
+        /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+        pub fn format_config(
+            mut self,
+            k: crate::model::FormatConfigKey,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.format_config.unwrap_or_default();
+            hash_map.insert(k, v.into());
+            self.format_config = Some(hash_map);
+            self
+        }
+        /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+        pub fn set_format_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
+            >,
+        ) -> Self {
+            self.format_config = input;
+            self
+        }
+        /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+        pub fn width_pixels(mut self, input: i32) -> Self {
+            self.width_pixels = Some(input);
+            self
+        }
+        /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+        pub fn set_width_pixels(mut self, input: std::option::Option<i32>) -> Self {
+            self.width_pixels = input;
+            self
+        }
+        /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+        pub fn height_pixels(mut self, input: i32) -> Self {
+            self.height_pixels = Some(input);
+            self
+        }
+        /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+        pub fn set_height_pixels(mut self, input: std::option::Option<i32>) -> Self {
+            self.height_pixels = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration)
+        pub fn build(self) -> crate::model::ImageGenerationConfiguration {
+            crate::model::ImageGenerationConfiguration {
+                status: self.status,
+                image_selector_type: self.image_selector_type,
+                destination_config: self.destination_config,
+                sampling_interval: self.sampling_interval,
+                format: self.format,
+                format_config: self.format_config,
+                width_pixels: self.width_pixels,
+                height_pixels: self.height_pixels,
+            }
+        }
+    }
+}
+impl ImageGenerationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration)
+    pub fn builder() -> crate::model::image_generation_configuration::Builder {
+        crate::model::image_generation_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FormatConfigKey {
+    #[allow(missing_docs)] // documentation missing in model
+    JpegQuality,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FormatConfigKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "JPEGQuality" => FormatConfigKey::JpegQuality,
+            other => FormatConfigKey::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FormatConfigKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FormatConfigKey::from(s))
+    }
+}
+impl FormatConfigKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FormatConfigKey::JpegQuality => "JPEGQuality",
+            FormatConfigKey::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JPEGQuality"]
+    }
+}
+impl AsRef<str> for FormatConfigKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Format {
+    #[allow(missing_docs)] // documentation missing in model
+    Jpeg,
+    #[allow(missing_docs)] // documentation missing in model
+    Png,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Format {
+    fn from(s: &str) -> Self {
+        match s {
+            "JPEG" => Format::Jpeg,
+            "PNG" => Format::Png,
+            other => Format::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Format {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Format::from(s))
+    }
+}
+impl Format {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Format::Jpeg => "JPEG",
+            Format::Png => "PNG",
+            Format::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JPEG", "PNG"]
+    }
+}
+impl AsRef<str> for Format {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The structure that contains the information required to deliver images to a customer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImageGenerationDestinationConfig {
+    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    pub uri: std::option::Option<std::string::String>,
+    /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+    pub destination_region: std::option::Option<std::string::String>,
+}
+impl ImageGenerationDestinationConfig {
+    /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+}
+impl std::fmt::Debug for ImageGenerationDestinationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageGenerationDestinationConfig");
+        formatter.field("uri", &self.uri);
+        formatter.field("destination_region", &self.destination_region);
+        formatter.finish()
+    }
+}
+/// See [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig)
+pub mod image_generation_destination_config {
+    /// A builder for [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) uri: std::option::Option<std::string::String>,
+        pub(crate) destination_region: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
+            self
+        }
+        /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
+            self
+        }
+        /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+        pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_region = Some(input.into());
+            self
+        }
+        /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+        pub fn set_destination_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig)
+        pub fn build(self) -> crate::model::ImageGenerationDestinationConfig {
+            crate::model::ImageGenerationDestinationConfig {
+                uri: self.uri,
+                destination_region: self.destination_region,
+            }
+        }
+    }
+}
+impl ImageGenerationDestinationConfig {
+    /// Creates a new builder-style object to manufacture [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig)
+    pub fn builder() -> crate::model::image_generation_destination_config::Builder {
+        crate::model::image_generation_destination_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImageSelectorType {
+    #[allow(missing_docs)] // documentation missing in model
+    ProducerTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
+    ServerTimestamp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImageSelectorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRODUCER_TIMESTAMP" => ImageSelectorType::ProducerTimestamp,
+            "SERVER_TIMESTAMP" => ImageSelectorType::ServerTimestamp,
+            other => ImageSelectorType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImageSelectorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImageSelectorType::from(s))
+    }
+}
+impl ImageSelectorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImageSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
+            ImageSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
+            ImageSelectorType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+    }
+}
+impl AsRef<str> for ImageSelectorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -193,7 +847,7 @@ pub struct StreamInfo {
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The <code>MediaType</code> of the stream. </p>
     pub media_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
+    /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The version of the stream.</p>
     pub version: std::option::Option<std::string::String>,
@@ -221,7 +875,7 @@ impl StreamInfo {
     pub fn media_type(&self) -> std::option::Option<&str> {
         self.media_type.as_deref()
     }
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
+    /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -314,12 +968,12 @@ pub mod stream_info {
             self.media_type = input;
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
+        /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
+        /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -785,6 +1439,8 @@ impl ChannelInfo {
 )]
 pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
+    FullMesh,
+    #[allow(missing_docs)] // documentation missing in model
     SingleMaster,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -792,6 +1448,7 @@ pub enum ChannelType {
 impl std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
         match s {
+            "FULL_MESH" => ChannelType::FullMesh,
             "SINGLE_MASTER" => ChannelType::SingleMaster,
             other => ChannelType::Unknown(other.to_owned()),
         }
@@ -808,13 +1465,14 @@ impl ChannelType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ChannelType::FullMesh => "FULL_MESH",
             ChannelType::SingleMaster => "SINGLE_MASTER",
             ChannelType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["SINGLE_MASTER"]
+        &["FULL_MESH", "SINGLE_MASTER"]
     }
 }
 impl AsRef<str> for ChannelType {
@@ -1192,6 +1850,8 @@ pub enum ApiName {
     #[allow(missing_docs)] // documentation missing in model
     GetHlsStreamingSessionUrl,
     #[allow(missing_docs)] // documentation missing in model
+    GetImages,
+    #[allow(missing_docs)] // documentation missing in model
     GetMedia,
     #[allow(missing_docs)] // documentation missing in model
     GetMediaForFragmentList,
@@ -1208,6 +1868,7 @@ impl std::convert::From<&str> for ApiName {
             "GET_CLIP" => ApiName::GetClip,
             "GET_DASH_STREAMING_SESSION_URL" => ApiName::GetDashStreamingSessionUrl,
             "GET_HLS_STREAMING_SESSION_URL" => ApiName::GetHlsStreamingSessionUrl,
+            "GET_IMAGES" => ApiName::GetImages,
             "GET_MEDIA" => ApiName::GetMedia,
             "GET_MEDIA_FOR_FRAGMENT_LIST" => ApiName::GetMediaForFragmentList,
             "LIST_FRAGMENTS" => ApiName::ListFragments,
@@ -1230,6 +1891,7 @@ impl ApiName {
             ApiName::GetClip => "GET_CLIP",
             ApiName::GetDashStreamingSessionUrl => "GET_DASH_STREAMING_SESSION_URL",
             ApiName::GetHlsStreamingSessionUrl => "GET_HLS_STREAMING_SESSION_URL",
+            ApiName::GetImages => "GET_IMAGES",
             ApiName::GetMedia => "GET_MEDIA",
             ApiName::GetMediaForFragmentList => "GET_MEDIA_FOR_FRAGMENT_LIST",
             ApiName::ListFragments => "LIST_FRAGMENTS",
@@ -1243,6 +1905,7 @@ impl ApiName {
             "GET_CLIP",
             "GET_DASH_STREAMING_SESSION_URL",
             "GET_HLS_STREAMING_SESSION_URL",
+            "GET_IMAGES",
             "GET_MEDIA",
             "GET_MEDIA_FOR_FRAGMENT_LIST",
             "LIST_FRAGMENTS",

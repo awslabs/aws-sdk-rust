@@ -993,6 +993,11 @@ pub mod create_association_input {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) schedule_offset: std::option::Option<i32>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -1272,6 +1277,38 @@ pub mod create_association_input {
             self.schedule_offset = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssociationInput`](crate::input::CreateAssociationInput)
         pub fn build(
             self,
@@ -1297,6 +1334,7 @@ pub mod create_association_input {
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
+                target_maps: self.target_maps,
             })
         }
     }
@@ -12139,16 +12177,14 @@ pub mod get_command_invocation_input {
             self.instance_id = input;
             self
         }
-        /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+        /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
         pub fn plugin_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.plugin_name = Some(input.into());
             self
         }
-        /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+        /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
         pub fn set_plugin_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plugin_name = input;
             self
@@ -23785,6 +23821,11 @@ pub mod update_association_input {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) schedule_offset: std::option::Option<i32>,
+        pub(crate) target_maps: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
     }
     impl Builder {
         /// <p>The ID of the association you want to update. </p>
@@ -24080,6 +24121,38 @@ pub mod update_association_input {
             self.schedule_offset = input;
             self
         }
+        /// Appends an item to `target_maps`.
+        ///
+        /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
+        ///
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn target_maps(
+            mut self,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.target_maps.unwrap_or_default();
+            v.push(input);
+            self.target_maps = Some(v);
+            self
+        }
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+        pub fn set_target_maps(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::collections::HashMap<
+                        std::string::String,
+                        std::vec::Vec<std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.target_maps = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::input::UpdateAssociationInput)
         pub fn build(
             self,
@@ -24106,6 +24179,7 @@ pub mod update_association_input {
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
+                target_maps: self.target_maps,
             })
         }
     }
@@ -28383,6 +28457,12 @@ pub struct UpdateAssociationInput {
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
     pub schedule_offset: std::option::Option<i32>,
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl UpdateAssociationInput {
     /// <p>The ID of the association you want to update. </p>
@@ -28481,6 +28561,14 @@ impl UpdateAssociationInput {
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28509,6 +28597,7 @@ impl std::fmt::Debug for UpdateAssociationInput {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
 }
@@ -31436,9 +31525,8 @@ pub struct GetCommandInvocationInput {
     pub command_id: std::option::Option<std::string::String>,
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
-    /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-    /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+    /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+    /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
     pub plugin_name: std::option::Option<std::string::String>,
 }
 impl GetCommandInvocationInput {
@@ -31450,9 +31538,8 @@ impl GetCommandInvocationInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
-    /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-    /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+    /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+    /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
     pub fn plugin_name(&self) -> std::option::Option<&str> {
         self.plugin_name.as_deref()
     }
@@ -34095,6 +34182,12 @@ pub struct CreateAssociationInput {
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
     pub schedule_offset: std::option::Option<i32>,
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub target_maps: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    >,
 }
 impl CreateAssociationInput {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -34189,6 +34282,14 @@ impl CreateAssociationInput {
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34216,6 +34317,7 @@ impl std::fmt::Debug for CreateAssociationInput {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
 }

@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`tunnel_id(impl Into<String>)`](crate::client::fluent_builders::CloseTunnel::tunnel_id) / [`set_tunnel_id(Option<String>)`](crate::client::fluent_builders::CloseTunnel::set_tunnel_id): <p>The ID of the tunnel to close.</p>
-    ///   - [`delete(bool)`](crate::client::fluent_builders::CloseTunnel::delete) / [`set_delete(Option<bool>)`](crate::client::fluent_builders::CloseTunnel::set_delete): <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    ///   - [`delete(bool)`](crate::client::fluent_builders::CloseTunnel::delete) / [`set_delete(Option<bool>)`](crate::client::fluent_builders::CloseTunnel::set_delete): <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     /// - On success, responds with [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
 
     /// - On failure, responds with [`SdkError<CloseTunnelError>`](crate::error::CloseTunnelError)
@@ -128,10 +128,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListTunnels::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListTunnels::set_thing_name): <p>The name of the IoT thing associated with the destination device.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTunnels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTunnels::set_max_results): <p>The maximum number of results to return at once.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTunnels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTunnels::set_next_token): <p>A token to retrieve the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTunnels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTunnels::set_next_token): <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
     /// - On success, responds with [`ListTunnelsOutput`](crate::output::ListTunnelsOutput) with field(s):
-    ///   - [`tunnel_summaries(Option<Vec<TunnelSummary>>)`](crate::output::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an AWS account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTunnelsOutput::next_token): <p>A token to used to retrieve the next set of results.</p>
+    ///   - [`tunnel_summaries(Option<Vec<TunnelSummary>>)`](crate::output::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an Amazon Web Services account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTunnelsOutput::next_token): <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::error::ListTunnelsError)
     pub fn list_tunnels(&self) -> fluent_builders::ListTunnels {
         fluent_builders::ListTunnels::new(self.handle.clone())
@@ -145,12 +145,26 @@ impl Client {
     ///   - [`timeout_config(TimeoutConfig)`](crate::client::fluent_builders::OpenTunnel::timeout_config) / [`set_timeout_config(Option<TimeoutConfig>)`](crate::client::fluent_builders::OpenTunnel::set_timeout_config): <p>Timeout configuration for a tunnel.</p>
     /// - On success, responds with [`OpenTunnelOutput`](crate::output::OpenTunnelOutput) with field(s):
     ///   - [`tunnel_id(Option<String>)`](crate::output::OpenTunnelOutput::tunnel_id): <p>A unique alpha-numeric tunnel ID.</p>
-    ///   - [`tunnel_arn(Option<String>)`](crate::output::OpenTunnelOutput::tunnel_arn): <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:   <region>    :    <account-id>     :tunnel/     <tunnel-id></tunnel-id>    </account-id>   </region></code> </p>
-    ///   - [`source_access_token(Option<String>)`](crate::output::OpenTunnelOutput::source_access_token): <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
-    ///   - [`destination_access_token(Option<String>)`](crate::output::OpenTunnelOutput::destination_access_token): <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    ///   - [`tunnel_arn(Option<String>)`](crate::output::OpenTunnelOutput::tunnel_arn): <p>The Amazon Resource Name for the tunnel.</p>
+    ///   - [`source_access_token(Option<String>)`](crate::output::OpenTunnelOutput::source_access_token): <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    ///   - [`destination_access_token(Option<String>)`](crate::output::OpenTunnelOutput::destination_access_token): <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     /// - On failure, responds with [`SdkError<OpenTunnelError>`](crate::error::OpenTunnelError)
     pub fn open_tunnel(&self) -> fluent_builders::OpenTunnel {
         fluent_builders::OpenTunnel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RotateTunnelAccessToken`](crate::client::fluent_builders::RotateTunnelAccessToken) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`tunnel_id(impl Into<String>)`](crate::client::fluent_builders::RotateTunnelAccessToken::tunnel_id) / [`set_tunnel_id(Option<String>)`](crate::client::fluent_builders::RotateTunnelAccessToken::set_tunnel_id): <p>The tunnel for which you want to rotate the access tokens.</p>
+    ///   - [`client_mode(ClientMode)`](crate::client::fluent_builders::RotateTunnelAccessToken::client_mode) / [`set_client_mode(Option<ClientMode>)`](crate::client::fluent_builders::RotateTunnelAccessToken::set_client_mode): <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    ///   - [`destination_config(DestinationConfig)`](crate::client::fluent_builders::RotateTunnelAccessToken::destination_config) / [`set_destination_config(Option<DestinationConfig>)`](crate::client::fluent_builders::RotateTunnelAccessToken::set_destination_config): <p>The destination configuration.</p>
+    /// - On success, responds with [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput) with field(s):
+    ///   - [`tunnel_arn(Option<String>)`](crate::output::RotateTunnelAccessTokenOutput::tunnel_arn): <p>The Amazon Resource Name for the tunnel.</p>
+    ///   - [`source_access_token(Option<String>)`](crate::output::RotateTunnelAccessTokenOutput::source_access_token): <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    ///   - [`destination_access_token(Option<String>)`](crate::output::RotateTunnelAccessTokenOutput::destination_access_token): <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    /// - On failure, responds with [`SdkError<RotateTunnelAccessTokenError>`](crate::error::RotateTunnelAccessTokenError)
+    pub fn rotate_tunnel_access_token(&self) -> fluent_builders::RotateTunnelAccessToken {
+        fluent_builders::RotateTunnelAccessToken::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -186,6 +200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CloseTunnel`.
     ///
     /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close the WebSocket connections between the client and proxy server so no data can be transmitted.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CloseTunnel</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloseTunnel {
         handle: std::sync::Arc<super::Handle>,
@@ -235,12 +250,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tunnel_id(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+        /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn delete(mut self, input: bool) -> Self {
             self.inner = self.inner.delete(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+        /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete(input);
             self
@@ -249,6 +264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTunnel`.
     ///
     /// <p>Gets information about a tunnel identified by the unique tunnel id.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeTunnel</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTunnel {
         handle: std::sync::Arc<super::Handle>,
@@ -354,7 +370,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTunnels`.
     ///
-    /// <p>List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will be listed before older tunnels.</p>
+    /// <p>List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order, newer tunnels will be listed before older tunnels.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTunnels</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTunnels {
         handle: std::sync::Arc<super::Handle>,
@@ -420,12 +437,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to retrieve the next set of results.</p>
+        /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to retrieve the next set of results.</p>
+        /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -433,7 +450,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OpenTunnel`.
     ///
-    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure Tunneling proxy server.</p>
+    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure Tunneling proxy server.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">OpenTunnel</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OpenTunnel {
         handle: std::sync::Arc<super::Handle>,
@@ -524,6 +542,88 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::TimeoutConfig>,
         ) -> Self {
             self.inner = self.inner.set_timeout_config(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RotateTunnelAccessToken`.
+    ///
+    /// <p>Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure tunneling to access the same tunnel.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RotateTunnelAccessToken</a> action.</p> <note>
+    /// <p>Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration is 12 hours and the tunnel has already been open for 4 hours. When you rotate the access tokens, the new tokens that are generated can only be used for the remaining 8 hours.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RotateTunnelAccessToken {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::rotate_tunnel_access_token_input::Builder,
+    }
+    impl RotateTunnelAccessToken {
+        /// Creates a new `RotateTunnelAccessToken`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RotateTunnelAccessTokenOutput,
+            aws_smithy_http::result::SdkError<crate::error::RotateTunnelAccessTokenError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The tunnel for which you want to rotate the access tokens.</p>
+        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tunnel_id(input.into());
+            self
+        }
+        /// <p>The tunnel for which you want to rotate the access tokens.</p>
+        pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_tunnel_id(input);
+            self
+        }
+        /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+        pub fn client_mode(mut self, input: crate::model::ClientMode) -> Self {
+            self.inner = self.inner.client_mode(input);
+            self
+        }
+        /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+        pub fn set_client_mode(
+            mut self,
+            input: std::option::Option<crate::model::ClientMode>,
+        ) -> Self {
+            self.inner = self.inner.set_client_mode(input);
+            self
+        }
+        /// <p>The destination configuration.</p>
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
+            self
+        }
+        /// <p>The destination configuration.</p>
+        pub fn set_destination_config(
+            mut self,
+            input: std::option::Option<crate::model::DestinationConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_config(input);
             self
         }
     }
