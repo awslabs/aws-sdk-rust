@@ -313,6 +313,13 @@ impl RetryHandler {
                 return None;
             }
         };
+
+        tracing::debug!(
+            "attempt {} failed with {:?}; retrying after {:?}",
+            self.local.attempts,
+            retry_kind,
+            dur
+        );
         let sleep_future = sleep.sleep(dur);
         let fut = async move {
             sleep_future.await;
