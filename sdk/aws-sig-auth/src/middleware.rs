@@ -13,8 +13,9 @@ use aws_smithy_http::property_bag::PropertyBag;
 use aws_types::region::SigningRegion;
 use aws_types::Credentials;
 use aws_types::SigningService;
+use std::error::Error;
+use std::fmt::{Display, Formatter};
 use std::time::SystemTime;
-use thiserror::Error;
 
 /// Container for the request signature for use in the property bag.
 #[non_exhaustive]
@@ -59,20 +60,53 @@ impl SigV4SigningStage {
     }
 }
 
-#[derive(Debug, Error)]
+#[derive(Debug)]
 pub enum SigningStageError {
-    #[error("No credentials in the property bag")]
     MissingCredentials,
-    #[error("No signing region in the property bag")]
     MissingSigningRegion,
-    #[error("No signing service in the property bag")]
     MissingSigningService,
-    #[error("No signing configuration in the property bag")]
     MissingSigningConfig,
-    #[error("The request body could not be signed by this configuration")]
     InvalidBodyType,
-    #[error("Signing failed")]
-    SigningFailure(#[from] SigningError),
+    SigningFailure(SigningError),
+}
+
+impl Display for SigningStageError {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match self {
+            SigningStageError::MissingCredentials => {
+                write!(f, "No credentials in the property bag")
+            }
+            SigningStageError::MissingSigningRegion => {
+                write!(f, "No signing region in the property bag")
+            }
+            SigningStageError::MissingSigningService => {
+                write!(f, "No signing service in the property bag")
+            }
+            SigningStageError::MissingSigningConfig => {
+                write!(f, "No signing configuration in the property bag")
+            }
+            SigningStageError::InvalidBodyType => write!(
+                f,
+                "The request body could not be signed by this configuration"
+            ),
+            SigningStageError::SigningFailure(_) => write!(f, "Signing failed"),
+        }
+    }
+}
+
+impl From<SigningError> for SigningStageError {
+    fn from(error: SigningError) -> Self {
+        Self::SigningFailure(error)
+    }
+}
+
+impl Error for SigningStageError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        match &self {
+            SigningStageError::SigningFailure(err) => Some(err.as_ref()),
+            _ => None,
+        }
+    }
 }
 
 /// Extract a signing config from a [`PropertyBag`](aws_smithy_http::property_bag::PropertyBag)

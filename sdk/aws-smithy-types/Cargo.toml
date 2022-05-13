@@ -9,7 +9,7 @@ repository = "https://github.com/awslabs/smithy-rs"
 
 [dependencies]
 itoa = "1.0.0"
-num-integer = "0.1"
+num-integer = "0.1.44"
 ryu = "1.0.5"
 time = { version = "0.3.4", features = ["parsing"] }
 

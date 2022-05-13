@@ -14,7 +14,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
 http = "0.2.3"
-lazy_static = "1"
+lazy_static = "1.4.0"
 tracing = "0.1"
 percent-encoding = "2.1.0"
 

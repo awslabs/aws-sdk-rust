@@ -25,6 +25,6 @@ path = "../aws-types"
 version = "0.11.0"
 
 [dependencies.regex]
-version = "1"
+version = "1.5.5"
 default-features = false
 features = ["std"]

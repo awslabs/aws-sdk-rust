@@ -17,7 +17,6 @@ sign-eventstream = ["aws-smithy-eventstream", "aws-sigv4/sign-eventstream"]
 
 [dependencies]
 http = "0.2.2"
-thiserror = "1"
 tracing = "0.1"
 
 [dependencies.aws-sigv4]

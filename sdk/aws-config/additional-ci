@@ -19,3 +19,6 @@ cargo test --all-features
 
 echo "### Testing each feature in isolation"
 cargo hack test --feature-powerset
+
+echo "### Checking that compiling with the minimal versions succeeds"
+cargo "+${RUST_NIGHTLY_VERSION:-nightly}" minimal-versions check --all-features
