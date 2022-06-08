@@ -114,6 +114,12 @@ fn user_agent() -> AwsUserAgent {
 ///
 /// 7. The default value of `http://169.254.169.254` will be used.
 ///
+/// 8. Docker settings to use to allow conections from inside docker container. This is because an extra hop
+/// is added when using a docker container so you need to increase the limit of hops alowed.
+/// ```
+/// amazonec2-metadata-token=required
+/// amazonec2-metadata-token-response-hop-limit=2
+/// ```
 #[derive(Debug)]
 pub struct Client {
     endpoint: Endpoint,
