@@ -120,6 +120,7 @@ fn user_agent() -> AwsUserAgent {
 /// amazonec2-metadata-token=required
 /// amazonec2-metadata-token-response-hop-limit=2
 /// ```
+///
 #[derive(Debug)]
 pub struct Client {
     endpoint: Endpoint,
