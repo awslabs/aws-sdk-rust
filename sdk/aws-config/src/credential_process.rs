@@ -15,6 +15,7 @@ use std::fmt;
 use std::process::Command;
 use std::time::SystemTime;
 
+#[derive(Clone)]
 pub(crate) struct CommandWithSensitiveArgs<T>(T);
 
 impl<T> CommandWithSensitiveArgs<T>
@@ -50,15 +51,6 @@ where
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:?}", format!("{}", self))
-    }
-}
-
-impl<T> Clone for CommandWithSensitiveArgs<T>
-where
-    T: Clone,
-{
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
     }
 }
 
