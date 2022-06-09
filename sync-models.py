@@ -11,9 +11,9 @@ import subprocess
 # Ensure working directory is the script path
 script_path = path.dirname(path.realpath(__file__))
 
-# Looks for aws-models in the parent directory of smithy-rs
+# Looks for aws-models in the parent directory of aws-sdk-rust
 def discover_aws_models():
-    repo_path = path.abspath(path.join(script_path, "../../../aws-models"))
+    repo_path = path.abspath(path.join(script_path, "../aws-models"))
     git_path = repo_path + "/.git"
     if path.exists(repo_path) and path.exists(git_path):
         print(f"Discovered aws-models at {repo_path}")
