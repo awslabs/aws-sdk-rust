@@ -41,7 +41,7 @@ mod idempotency_token;
 /// Input structures for operations.
 pub mod input;
 /// Generated accessors for nested fields
-mod lens;
+pub mod lens;
 pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
