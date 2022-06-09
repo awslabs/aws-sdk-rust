@@ -149,8 +149,9 @@ pub use self::bytestream_util::FsBuilder;
 ///
 /// `ByteStream` provides two primary mechanisms for accessing the data:
 /// 1. With `.collect()`:
-/// [`.collect()`](crate::byte_stream::ByteStream::collect) reads the complete ByteStream into memory and stores it in `AggregatedBytes`,
-/// a non-contiguous ByteBuffer.
+///
+///     [`.collect()`](crate::byte_stream::ByteStream::collect) reads the complete ByteStream into memory and stores it in `AggregatedBytes`,
+///     a non-contiguous ByteBuffer.
 ///     ```no_run
 ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes};
 ///     use aws_smithy_http::body::SdkBody;
@@ -165,7 +166,7 @@ pub use self::bytestream_util::FsBuilder;
 ///     ```
 /// 2. Via [`impl Stream`](futures_core::Stream):
 ///
-///     _Note: An import of `StreamExt` is required to use `try_next()`._
+///     _Note: An import of `StreamExt` is required to use `.try_next()`._
 ///
 ///     For use-cases where holding the entire ByteStream in memory is unnecessary, use the
 ///     `Stream` implementation:
@@ -189,6 +190,29 @@ pub use self::bytestream_util::FsBuilder;
 ///            digest.write(&bytes);
 ///        }
 ///        println!("digest: {}", digest.finish());
+///        Ok(())
+///     }
+///     ```
+///
+/// 3. Via [`.into_async_read()`](crate::byte_stream::ByteStream::into_async_read):
+///
+///     _Note: The `rt-tokio` feature must be active to use `.into_async_read()`._
+///
+///     It's possible to convert a `ByteStream` into a struct that implements [`tokio::io::AsyncRead`](tokio::io::AsyncRead).
+///     Then, you can use pre-existing tools like [`tokio::io::BufReader`](tokio::io::BufReader):
+///     ```no_run
+///     use aws_smithy_http::byte_stream::ByteStream;
+///     use aws_smithy_http::body::SdkBody;
+///     use tokio::io::{AsyncBufReadExt, BufReader};
+///     #[cfg(feature = "rt-tokio")]
+///     async fn example() -> std::io::Result<()> {
+///        let stream = ByteStream::new(SdkBody::from("hello!\nThis is some data"));
+///        // Wrap the stream in a BufReader
+///        let buf_reader = BufReader::new(stream.into_async_read());
+///        let mut lines = buf_reader.lines();
+///        assert_eq!(lines.next_line().await?, Some("hello!".to_owned()));
+///        assert_eq!(lines.next_line().await?, Some("This is some data".to_owned()));
+///        assert_eq!(lines.next_line().await?, None);
 ///        Ok(())
 ///     }
 ///     ```
@@ -347,6 +371,27 @@ impl ByteStream {
         self.0.with_body_callback(body_callback);
         self
     }
+
+    #[cfg(feature = "rt-tokio")]
+    /// Convert this `ByteStream` into a struct that implements [`AsyncRead`](tokio::io::AsyncRead).
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// use tokio::io::{BufReader, AsyncBufReadExt};
+    /// use aws_smithy_http::byte_stream::ByteStream;
+    ///
+    /// # async fn dox(my_bytestream: ByteStream) -> std::io::Result<()> {
+    /// let mut lines =  BufReader::new(my_bytestream.into_async_read()).lines();
+    /// while let Some(line) = lines.next_line().await? {
+    ///   // Do something line by line
+    /// }
+    /// # Ok(())
+    /// # }
+    /// ```
+    pub fn into_async_read(self) -> impl tokio::io::AsyncRead {
+        tokio_util::io::StreamReader::new(self)
+    }
 }
 
 impl Default for ByteStream {
@@ -400,6 +445,12 @@ impl std::fmt::Display for Error {
 impl StdError for Error {
     fn source(&self) -> Option<&(dyn StdError + 'static)> {
         Some(self.0.as_ref() as _)
+    }
+}
+
+impl From<Error> for std::io::Error {
+    fn from(err: Error) -> Self {
+        std::io::Error::new(std::io::ErrorKind::Other, err)
     }
 }
 
@@ -596,5 +647,22 @@ mod tests {
         );
 
         Ok(())
+    }
+
+    #[cfg(feature = "rt-tokio")]
+    #[tokio::test]
+    async fn bytestream_into_async_read() {
+        use super::ByteStream;
+        use tokio::io::AsyncBufReadExt;
+
+        let byte_stream = ByteStream::from_static(b"data 1\ndata 2\ndata 3");
+        let async_buf_read = tokio::io::BufReader::new(byte_stream.into_async_read());
+
+        let mut lines = async_buf_read.lines();
+
+        assert_eq!(lines.next_line().await.unwrap(), Some("data 1".to_owned()));
+        assert_eq!(lines.next_line().await.unwrap(), Some("data 2".to_owned()));
+        assert_eq!(lines.next_line().await.unwrap(), Some("data 3".to_owned()));
+        assert_eq!(lines.next_line().await.unwrap(), None);
     }
 }
