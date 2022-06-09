@@ -732,7 +732,7 @@ impl CreateBucketInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -1220,7 +1220,7 @@ impl CreateMultiRegionAccessPointInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -3060,7 +3060,7 @@ impl DeleteMultiRegionAccessPointInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -3894,7 +3894,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -6223,7 +6223,7 @@ impl GetMultiRegionAccessPointInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -6408,7 +6408,7 @@ impl GetMultiRegionAccessPointPolicyInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -6594,7 +6594,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -7866,7 +7866,7 @@ impl ListMultiRegionAccessPointsInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -9055,7 +9055,7 @@ impl PutBucketLifecycleConfigurationInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -9303,7 +9303,7 @@ impl PutBucketPolicyInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -9534,7 +9534,7 @@ impl PutBucketTaggingInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -9933,7 +9933,7 @@ impl PutMultiRegionAccessPointPolicyInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])

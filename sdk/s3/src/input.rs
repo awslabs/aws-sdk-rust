@@ -5022,7 +5022,7 @@ impl DeleteObjectsInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -14161,7 +14161,7 @@ impl PutBucketAclInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -14602,7 +14602,7 @@ impl PutBucketCorsInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -14829,7 +14829,7 @@ impl PutBucketEncryptionInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -15463,7 +15463,7 @@ impl PutBucketLifecycleConfigurationInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -15686,7 +15686,7 @@ impl PutBucketLoggingInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -16340,7 +16340,7 @@ impl PutBucketOwnershipControlsInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -16575,7 +16575,7 @@ impl PutBucketPolicyInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -16815,7 +16815,7 @@ impl PutBucketReplicationInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -17044,7 +17044,7 @@ impl PutBucketRequestPaymentInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -17262,7 +17262,7 @@ impl PutBucketTaggingInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -17501,7 +17501,7 @@ impl PutBucketVersioningInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -17724,7 +17724,7 @@ impl PutBucketWebsiteInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -18923,7 +18923,7 @@ impl PutObjectAclInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -19203,7 +19203,7 @@ impl PutObjectLegalHoldInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -19459,7 +19459,7 @@ impl PutObjectLockConfigurationInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -19751,7 +19751,7 @@ impl PutObjectRetentionInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -20030,7 +20030,7 @@ impl PutObjectTaggingInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
@@ -20258,7 +20258,7 @@ impl PutPublicAccessBlockInput {
                 .body()
                 .bytes()
                 .expect("checksum can only be computed for non-streaming operations");
-            let checksum = md5::compute(data);
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
                 aws_smithy_types::base64::encode(&checksum[..])
