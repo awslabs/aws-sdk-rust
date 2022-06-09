@@ -1,4 +1,16 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+v0.13.0 (June 9th, 2022)
+========================
+**New this release:**
+- 🎉 ([smithy-rs#1390](https://github.com/awslabs/smithy-rs/issues/1390)) Add method `ByteStream::into_async_read`. This makes it easy to convert `ByteStream`s into a struct implementing `tokio:io::AsyncRead`. Available on **crate feature** `rt-tokio` only.
+- 🎉 ([smithy-rs#1356](https://github.com/awslabs/smithy-rs/issues/1356), @jszwedko) Add support for `credential_process` in AWS configs for fetching credentials from an external process.
+- ([smithy-rs#1404](https://github.com/awslabs/smithy-rs/issues/1404), @petrosagg) Switch to [RustCrypto](https://github.com/RustCrypto)'s implementation of MD5.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @jszwedko ([smithy-rs#1356](https://github.com/awslabs/smithy-rs/issues/1356))
+- @petrosagg ([smithy-rs#1404](https://github.com/awslabs/smithy-rs/issues/1404))
+
 v0.12.0 (May 13th, 2022)
 ========================
 **New this release:**
