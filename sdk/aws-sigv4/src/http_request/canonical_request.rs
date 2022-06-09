@@ -10,7 +10,7 @@ use crate::http_request::sign::SignableRequest;
 use crate::http_request::url_escape::percent_encode_path;
 use crate::http_request::PercentEncodingMode;
 use crate::sign::sha256_hex_string;
-use http::header::{HeaderName, HOST, USER_AGENT};
+use http::header::{HeaderName, HOST};
 use http::{HeaderMap, HeaderValue, Method, Uri};
 use std::borrow::Cow;
 use std::cmp::Ordering;
@@ -218,10 +218,12 @@ impl<'a> CanonicalRequest<'a> {
 
         let mut signed_headers = Vec::with_capacity(canonical_headers.len());
         for (name, _) in &canonical_headers {
-            // The user agent header should not be signed because it may be altered by proxies
-            if name == USER_AGENT {
-                continue;
+            if let Some(excluded_headers) = params.settings.excluded_headers.as_ref() {
+                if excluded_headers.contains(name) {
+                    continue;
+                }
             }
+
             if params.settings.signature_location == SignatureLocation::QueryParams {
                 // The X-Amz-User-Agent header should not be signed if this is for a presigned URL
                 if name == HeaderName::from_static(header::X_AMZ_USER_AGENT) {
