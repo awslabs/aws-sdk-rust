@@ -11,6 +11,7 @@ use aws_types::region::Region;
 
 use super::repr::{self, BaseProvider};
 
+use crate::credential_process::CredentialProcessProvider;
 use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
 use crate::sso::{SsoConfig, SsoCredentialsProvider};
@@ -100,6 +101,9 @@ impl ProviderChain {
                     })?
             }
             BaseProvider::AccessKey(key) => Arc::new(key.clone()),
+            BaseProvider::CredentialProcess(credential_process) => Arc::new(
+                CredentialProcessProvider::new(credential_process.unredacted().into()),
+            ),
             BaseProvider::WebIdentityTokenRole {
                 role_arn,
                 web_identity_token_file,

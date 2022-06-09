@@ -123,6 +123,8 @@ pub mod sso;
 
 pub mod connector;
 
+pub mod credential_process;
+
 pub(crate) mod parsing;
 
 // Re-export types from smithy-types

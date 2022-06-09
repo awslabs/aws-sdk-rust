@@ -1,0 +1,7 @@
+{
+  "name": "credential_process_invalid",
+  "docs": "credential_process handles the external process returning invalid json",
+  "result": {
+    "ErrorContains": "Error retrieving credentials from external process, could not parse response: invalid JSON in response"
+  }
+}

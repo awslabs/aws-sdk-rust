@@ -122,6 +122,14 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 ///
 /// Other more complex configurations are possible, consult `test-data/assume-role-tests.json`.
 ///
+/// ### Credentials loaded from an external process
+/// ```ini
+/// [default]
+/// credential_process = /opt/bin/awscreds-custom --username helen
+/// ```
+///
+/// An external process can be used to provide credentials.
+///
 /// ### Loading Credentials from SSO
 /// ```ini
 /// [default]
@@ -493,4 +501,7 @@ mod test {
     make_test!(retry_on_error);
     make_test!(invalid_config);
     make_test!(region_override);
+    make_test!(credential_process);
+    make_test!(credential_process_failure);
+    make_test!(credential_process_invalid);
 }

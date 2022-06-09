@@ -1,0 +1,7 @@
+{
+  "name": "credential_process_failure",
+  "docs": "credential_process handles the external process exiting with a non-zero exit code",
+  "result": {
+    "ErrorContains": "An error occurred while loading credentials: Error retrieving credentials: external process exited with code exit status: 1"
+  }
+}

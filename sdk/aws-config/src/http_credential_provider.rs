@@ -22,7 +22,7 @@ use aws_types::credentials::CredentialsError;
 use aws_types::{credentials, Credentials};
 
 use crate::connector::expect_connector;
-use crate::json_credentials::{parse_json_credentials, JsonCredentials};
+use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
 
 use bytes::Bytes;
@@ -145,12 +145,12 @@ impl ParseStrictResponse for CredentialsResponseParser {
             std::str::from_utf8(response.body().as_ref()).map_err(CredentialsError::unhandled)?;
         let json_creds = parse_json_credentials(str_resp).map_err(CredentialsError::unhandled)?;
         match json_creds {
-            JsonCredentials::RefreshableCredentials {
+            JsonCredentials::RefreshableCredentials(RefreshableCredentials {
                 access_key_id,
                 secret_access_key,
                 session_token,
                 expiration,
-            } => Ok(Credentials::new(
+            }) => Ok(Credentials::new(
                 access_key_id,
                 secret_access_key,
                 Some(session_token.to_string()),

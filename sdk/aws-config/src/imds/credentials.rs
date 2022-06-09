@@ -10,7 +10,7 @@
 
 use crate::imds;
 use crate::imds::client::{ImdsError, LazyClient};
-use crate::json_credentials::{parse_json_credentials, JsonCredentials};
+use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
 use aws_smithy_client::SdkError;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
@@ -170,13 +170,13 @@ impl ImdsCredentialsProvider {
             .await
             .map_err(CredentialsError::provider_error)?;
         match parse_json_credentials(&credentials) {
-            Ok(JsonCredentials::RefreshableCredentials {
+            Ok(JsonCredentials::RefreshableCredentials(RefreshableCredentials {
                 access_key_id,
                 secret_access_key,
                 session_token,
                 expiration,
                 ..
-            }) => Ok(Credentials::new(
+            })) => Ok(Credentials::new(
                 access_key_id,
                 secret_access_key,
                 Some(session_token.to_string()),

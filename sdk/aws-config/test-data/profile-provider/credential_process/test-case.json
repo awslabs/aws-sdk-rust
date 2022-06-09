@@ -1,0 +1,12 @@
+{
+  "name": "credential_process",
+  "docs": "credential_process loads credentials from external process",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1651516560
+    }
+  }
+}
