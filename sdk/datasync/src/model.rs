@@ -3858,21 +3858,90 @@ impl FsxProtocolNfs {
     }
 }
 
-/// <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EfsInTransitEncryption {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Tls12,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EfsInTransitEncryption {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => EfsInTransitEncryption::None,
+            "TLS1_2" => EfsInTransitEncryption::Tls12,
+            other => EfsInTransitEncryption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EfsInTransitEncryption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EfsInTransitEncryption::from(s))
+    }
+}
+impl EfsInTransitEncryption {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EfsInTransitEncryption::None => "NONE",
+            EfsInTransitEncryption::Tls12 => "TLS1_2",
+            EfsInTransitEncryption::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "TLS1_2"]
+    }
+}
+impl AsRef<str> for EfsInTransitEncryption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Config {
-    /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
+    /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
+    /// <p>The subnet must be located:</p>
+    /// <ul>
+    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
+    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// </ul> <note>
+    /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
+    /// </note>
     pub subnet_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Ec2Config {
-    /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
+    /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
+    /// <p>The subnet must be located:</p>
+    /// <ul>
+    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
+    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// </ul> <note>
+    /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
+    /// </note>
     pub fn subnet_arn(&self) -> std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
     pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
     }
@@ -3895,12 +3964,26 @@ pub mod ec2_config {
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
+        /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
+        /// <p>The subnet must be located:</p>
+        /// <ul>
+        /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
+        /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+        /// </ul> <note>
+        /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
+        /// </note>
         pub fn subnet_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
+        /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
+        /// <p>The subnet must be located:</p>
+        /// <ul>
+        /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
+        /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+        /// </ul> <note>
+        /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
+        /// </note>
         pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_arn = input;
             self
@@ -3909,14 +3992,14 @@ pub mod ec2_config {
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.</p>
+        /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
             v.push(input.into());
             self.security_group_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.</p>
+        /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

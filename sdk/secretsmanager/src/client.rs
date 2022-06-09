@@ -259,7 +259,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_secret_id): <p>The ARN or name of the secret to attach the resource-based policy.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_policy): <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    ///   - [`block_public_policy(bool)`](crate::client::fluent_builders::PutResourcePolicy::block_public_policy) / [`set_block_public_policy(Option<bool>)`](crate::client::fluent_builders::PutResourcePolicy::set_block_public_policy): <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+    ///   - [`block_public_policy(bool)`](crate::client::fluent_builders::PutResourcePolicy::block_public_policy) / [`set_block_public_policy(Option<bool>)`](crate::client::fluent_builders::PutResourcePolicy::set_block_public_policy): <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::PutResourcePolicyOutput::arn): <p>The ARN of the secret.</p>
     ///   - [`name(Option<String>)`](crate::output::PutResourcePolicyOutput::name): <p>The name of the secret.</p>
@@ -1445,12 +1445,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_policy(input);
             self
         }
-        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
         pub fn block_public_policy(mut self, input: bool) -> Self {
             self.inner = self.inner.block_public_policy(input);
             self
         }
-        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_block_public_policy(input);
             self

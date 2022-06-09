@@ -177,6 +177,7 @@ members = [
     "sdk/elastictranscoder",
     "sdk/emr",
     "sdk/emrcontainers",
+    "sdk/emrserverless",
     "sdk/eventbridge",
     "sdk/evidently",
     "sdk/finspace",

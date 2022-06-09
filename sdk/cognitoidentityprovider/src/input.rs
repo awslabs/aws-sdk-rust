@@ -2517,7 +2517,7 @@ pub mod admin_link_provider_for_user_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The existing user in the user pool that you want to assign to the external identity provider user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked identity provider attribute) signs in.</p>
+        /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
         /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
         /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
         /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
@@ -2527,7 +2527,7 @@ pub mod admin_link_provider_for_user_input {
             self.destination_user = Some(input);
             self
         }
-        /// <p>The existing user in the user pool that you want to assign to the external identity provider user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked identity provider attribute) signs in.</p>
+        /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
         /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
         /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
         /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
@@ -2540,18 +2540,18 @@ pub mod admin_link_provider_for_user_input {
             self.destination_user = input;
             self
         }
-        /// <p>An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
-        /// <p>If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
+        /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+        /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
         /// <p></p>
-        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
         pub fn source_user(mut self, input: crate::model::ProviderUserIdentifierType) -> Self {
             self.source_user = Some(input);
             self
         }
-        /// <p>An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
-        /// <p>If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
+        /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+        /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
         /// <p></p>
-        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
         pub fn set_source_user(
             mut self,
             input: std::option::Option<crate::model::ProviderUserIdentifierType>,
@@ -3665,7 +3665,9 @@ pub mod admin_respond_to_auth_challenge_input {
         /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
         /// </note> </li>
         /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>AdminInitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
         /// </ul>
         /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
@@ -3686,7 +3688,9 @@ pub mod admin_respond_to_auth_challenge_input {
         /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
         /// </note> </li>
         /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>AdminInitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
         /// </ul>
         /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
@@ -4885,6 +4889,8 @@ pub mod admin_update_user_attributes_input {
         ///
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+        /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
         pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input);
@@ -4893,6 +4899,8 @@ pub mod admin_update_user_attributes_input {
         }
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+        /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -5238,12 +5246,12 @@ pub mod associate_software_token_input {
         pub(crate) session: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -5421,12 +5429,12 @@ pub mod change_password_input {
             self.proposed_password = input;
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -5570,12 +5578,12 @@ pub mod confirm_device_input {
         pub(crate) device_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -6339,16 +6347,16 @@ pub mod create_group_input {
             self.role_arn = input;
             self
         }
-        /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+        /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
         /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
-        /// <p>The default <code>Precedence</code> value is null.</p>
+        /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
         pub fn precedence(mut self, input: i32) -> Self {
             self.precedence = Some(input);
             self
         }
-        /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+        /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
         /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
-        /// <p>The default <code>Precedence</code> value is null.</p>
+        /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
         pub fn set_precedence(mut self, input: std::option::Option<i32>) -> Self {
             self.precedence = input;
             self
@@ -6508,12 +6516,12 @@ pub mod create_identity_provider_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6521,12 +6529,12 @@ pub mod create_identity_provider_input {
             self.provider_name = input;
             self
         }
-        /// <p>The identity provider type.</p>
+        /// <p>The IdP type.</p>
         pub fn provider_type(mut self, input: crate::model::IdentityProviderTypeType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The identity provider type.</p>
+        /// <p>The IdP type.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderTypeType>,
@@ -6538,7 +6546,7 @@ pub mod create_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
         ///
-        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+        /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
         /// <ul>
         /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
@@ -6568,16 +6576,22 @@ pub mod create_identity_provider_input {
         /// <li> <p>attributes_request_method</p> </li>
         /// <li> <p>oidc_issuer</p> </li>
         /// <li> <p>authorize_scopes</p> </li>
-        /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+        /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+        /// <ul>
+        /// <li> <p>authorize_url </p> </li>
+        /// <li> <p>token_url </p> </li>
+        /// <li> <p>attributes_url </p> </li>
+        /// <li> <p>jwks_uri </p> </li>
+        /// </ul> </li>
+        /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+        /// <ul>
+        /// <li> <p>attributes_url_add_attributes </p> </li>
+        /// </ul> </li>
         /// </ul> </li>
         /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li> <p>MetadataFile OR MetadataURL</p> </li>
-        /// <li> <p>IDPSignout (optional)</p> </li>
+        /// <li> <p>MetadataFile or MetadataURL</p> </li>
+        /// <li> <p>IDPSignout <i>optional</i> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn provider_details(
@@ -6590,7 +6604,7 @@ pub mod create_identity_provider_input {
             self.provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+        /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
         /// <ul>
         /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
@@ -6620,16 +6634,22 @@ pub mod create_identity_provider_input {
         /// <li> <p>attributes_request_method</p> </li>
         /// <li> <p>oidc_issuer</p> </li>
         /// <li> <p>authorize_scopes</p> </li>
-        /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+        /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+        /// <ul>
+        /// <li> <p>authorize_url </p> </li>
+        /// <li> <p>token_url </p> </li>
+        /// <li> <p>attributes_url </p> </li>
+        /// <li> <p>jwks_uri </p> </li>
+        /// </ul> </li>
+        /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+        /// <ul>
+        /// <li> <p>attributes_url_add_attributes </p> </li>
+        /// </ul> </li>
         /// </ul> </li>
         /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li> <p>MetadataFile OR MetadataURL</p> </li>
-        /// <li> <p>IDPSignout (optional)</p> </li>
+        /// <li> <p>MetadataFile or MetadataURL</p> </li>
+        /// <li> <p>IDPSignout <i>optional</i> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn set_provider_details(
@@ -6645,7 +6665,7 @@ pub mod create_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
         ///
-        /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+        /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
         pub fn attribute_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -6656,7 +6676,7 @@ pub mod create_identity_provider_input {
             self.attribute_mapping = Some(hash_map);
             self
         }
-        /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+        /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
         pub fn set_attribute_mapping(
             mut self,
             input: std::option::Option<
@@ -6670,14 +6690,14 @@ pub mod create_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
         ///
-        /// <p>A list of identity provider identifiers.</p>
+        /// <p>A list of IdP identifiers.</p>
         pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.idp_identifiers.unwrap_or_default();
             v.push(input.into());
             self.idp_identifiers = Some(v);
             self
         }
-        /// <p>A list of identity provider identifiers.</p>
+        /// <p>A list of IdP identifiers.</p>
         pub fn set_idp_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7198,6 +7218,8 @@ pub mod create_user_pool_input {
             std::option::Option<crate::model::VerificationMessageTemplateType>,
         pub(crate) sms_authentication_message: std::option::Option<std::string::String>,
         pub(crate) mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
+        pub(crate) user_attribute_update_settings:
+            std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
         pub(crate) device_configuration: std::option::Option<crate::model::DeviceConfigurationType>,
         pub(crate) email_configuration: std::option::Option<crate::model::EmailConfigurationType>,
         pub(crate) sms_configuration: std::option::Option<crate::model::SmsConfigurationType>,
@@ -7401,6 +7423,22 @@ pub mod create_user_pool_input {
             self.mfa_configuration = input;
             self
         }
+        /// <p></p>
+        pub fn user_attribute_update_settings(
+            mut self,
+            input: crate::model::UserAttributeUpdateSettingsType,
+        ) -> Self {
+            self.user_attribute_update_settings = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_user_attribute_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
+        ) -> Self {
+            self.user_attribute_update_settings = input;
+            self
+        }
         /// <p>The device configuration.</p>
         pub fn device_configuration(
             mut self,
@@ -7568,6 +7606,7 @@ pub mod create_user_pool_input {
                 verification_message_template: self.verification_message_template,
                 sms_authentication_message: self.sms_authentication_message,
                 mfa_configuration: self.mfa_configuration,
+                user_attribute_update_settings: self.user_attribute_update_settings,
                 device_configuration: self.device_configuration,
                 email_configuration: self.email_configuration,
                 sms_configuration: self.sms_configuration,
@@ -7754,42 +7793,54 @@ pub mod create_user_pool_client_input {
             self.generate_secret = input;
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+        /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.refresh_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+        /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+        /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.access_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+        /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+        /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn id_token_validity(mut self, input: i32) -> Self {
             self.id_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+        /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.id_token_validity = input;
             self
         }
-        /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
+        /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
         pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
             self.token_validity_units = Some(input);
             self
         }
-        /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
+        /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -7821,7 +7872,7 @@ pub mod create_user_pool_client_input {
         /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
         ///
         /// <p>The user pool attributes that the app client can write to.</p>
-        /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your user pool</a>.</p>
+        /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
         pub fn write_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.write_attributes.unwrap_or_default();
             v.push(input.into());
@@ -7829,7 +7880,7 @@ pub mod create_user_pool_client_input {
             self
         }
         /// <p>The user pool attributes that the app client can write to.</p>
-        /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your user pool</a>.</p>
+        /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
         pub fn set_write_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7852,6 +7903,7 @@ pub mod create_user_pool_client_input {
         /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
         /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
         pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             let mut v = self.explicit_auth_flows.unwrap_or_default();
             v.push(input);
@@ -7869,6 +7921,7 @@ pub mod create_user_pool_client_input {
         /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
         /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
         pub fn set_explicit_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
@@ -7880,7 +7933,7 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -7890,7 +7943,7 @@ pub mod create_user_pool_client_input {
             self.supported_identity_providers = Some(v);
             self
         }
-        /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7902,7 +7955,7 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_callback_ur_ls`](Self::set_callback_ur_ls).
         ///
-        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
         /// <li> <p>Be an absolute URI.</p> </li>
@@ -7918,7 +7971,7 @@ pub mod create_user_pool_client_input {
             self.callback_ur_ls = Some(v);
             self
         }
-        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
         /// <li> <p>Be an absolute URI.</p> </li>
@@ -7939,14 +7992,14 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
         ///
-        /// <p>A list of allowed logout URLs for the identity providers.</p>
+        /// <p>A list of allowed logout URLs for the IdPs.</p>
         pub fn logout_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logout_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.logout_ur_ls = Some(v);
             self
         }
-        /// <p>A list of allowed logout URLs for the identity providers.</p>
+        /// <p>A list of allowed logout URLs for the IdPs.</p>
         pub fn set_logout_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7990,9 +8043,26 @@ pub mod create_user_pool_client_input {
         /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
         ///
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        /// <dl>
+        /// <dt>
+        /// code
+        /// </dt>
+        /// <dd>
+        /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+        /// </dd>
+        /// <dt>
+        /// implicit
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+        /// </dd>
+        /// <dt>
+        /// client_credentials
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+        /// </dd>
+        /// </dl>
         pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
             v.push(input);
@@ -8000,9 +8070,26 @@ pub mod create_user_pool_client_input {
             self
         }
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        /// <dl>
+        /// <dt>
+        /// code
+        /// </dt>
+        /// <dd>
+        /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+        /// </dd>
+        /// <dt>
+        /// implicit
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+        /// </dd>
+        /// <dt>
+        /// client_credentials
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -8014,14 +8101,14 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
         ///
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8595,12 +8682,12 @@ pub mod delete_identity_provider_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8899,12 +8986,12 @@ pub mod delete_user_input {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token from a request to delete a user.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token from a request to delete a user.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -9064,12 +9151,12 @@ pub mod delete_user_attributes_input {
             self.user_attribute_names = input;
             self
         }
-        /// <p>The access token used in the request to delete user attributes.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token used in the request to delete user attributes.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -9675,12 +9762,12 @@ pub mod describe_identity_provider_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10736,12 +10823,12 @@ pub mod forget_device_input {
         pub(crate) device_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token for the forgotten device request.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token for the forgotten device request.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -10939,12 +11026,12 @@ pub mod forgot_password_input {
             self.username = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -11286,12 +11373,12 @@ pub mod get_device_input {
             self.device_key = input;
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -11586,12 +11673,12 @@ pub mod get_identity_provider_by_identifier_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The identity provider ID.</p>
+        /// <p>The IdP identifier.</p>
         pub fn idp_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.idp_identifier = Some(input.into());
             self
         }
-        /// <p>The identity provider ID.</p>
+        /// <p>The IdP identifier.</p>
         pub fn set_idp_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12031,12 +12118,12 @@ pub mod get_user_input {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token returned by the server response to get information about the user.</p>
+        /// <p>A non-expired access token for the user whose information you want to query.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token returned by the server response to get information about the user.</p>
+        /// <p>A non-expired access token for the user whose information you want to query.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -12174,12 +12261,12 @@ pub mod get_user_attribute_verification_code_input {
         >,
     }
     impl Builder {
-        /// <p>The access token returned by the server response to get the user attribute verification code.</p>
+        /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token returned by the server response to get the user attribute verification code.</p>
+        /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -12520,12 +12607,12 @@ pub mod global_sign_out_input {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -12682,7 +12769,7 @@ pub mod initiate_auth_input {
         /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
         /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
         /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
-        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the USERNAME in the user pool. </p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
         /// </ul>
         /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
         pub fn auth_flow(mut self, input: crate::model::AuthFlowType) -> Self {
@@ -12700,7 +12787,7 @@ pub mod initiate_auth_input {
         /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
         /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
         /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
-        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the USERNAME in the user pool. </p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
         /// </ul>
         /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
         pub fn set_auth_flow(
@@ -12828,12 +12915,12 @@ pub mod initiate_auth_input {
             self.client_id = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -12994,12 +13081,12 @@ pub mod list_devices_input {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access tokens for the request to list devices.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access tokens for the request to list devices.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -13339,12 +13426,12 @@ pub mod list_identity_providers_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The maximum number of identity providers to return.</p>
+        /// <p>The maximum number of IdPs to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of identity providers to return.</p>
+        /// <p>The maximum number of IdPs to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -14373,7 +14460,7 @@ pub mod list_users_input {
         /// <li> <p> <code>sub</code> </p> </li>
         /// </ul>
         /// <p>Custom attributes aren't searchable.</p> <note>
-        /// <p>You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
+        /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
         /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
         /// </note>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -14402,7 +14489,7 @@ pub mod list_users_input {
         /// <li> <p> <code>sub</code> </p> </li>
         /// </ul>
         /// <p>Custom attributes aren't searchable.</p> <note>
-        /// <p>You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
+        /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
         /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
         /// </note>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -14770,12 +14857,12 @@ pub mod resend_confirmation_code_input {
             self.username = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -15021,9 +15108,11 @@ pub mod respond_to_auth_challenge_input {
         /// <ul>
         /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> <note>
-        /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
+        /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.</p>
         /// </note> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
         /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
@@ -15045,9 +15134,11 @@ pub mod respond_to_auth_challenge_input {
         /// <ul>
         /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> <note>
-        /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
+        /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.</p>
         /// </note> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
         /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
@@ -15062,12 +15153,12 @@ pub mod respond_to_auth_challenge_input {
             self.challenge_responses = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -15870,12 +15961,12 @@ pub mod set_user_mfa_preference_input {
             self.software_token_mfa_settings = input;
             self
         }
-        /// <p>The access token for the user.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token for the user.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -16220,12 +16311,12 @@ pub mod set_user_settings_input {
         pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
     }
     impl Builder {
-        /// <p>The access token for the set user settings request.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token for the set user settings request.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -16473,12 +16564,12 @@ pub mod sign_up_input {
             self.validation_data = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -17523,12 +17614,12 @@ pub mod update_device_status_input {
             std::option::Option<crate::model::DeviceRememberedStatusType>,
     }
     impl Builder {
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -17901,12 +17992,12 @@ pub mod update_identity_provider_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17918,7 +18009,7 @@ pub mod update_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
         ///
-        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
+        /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
         pub fn provider_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -17929,7 +18020,7 @@ pub mod update_identity_provider_input {
             self.provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
+        /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
         pub fn set_provider_details(
             mut self,
             input: std::option::Option<
@@ -17943,7 +18034,7 @@ pub mod update_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
         ///
-        /// <p>The identity provider attribute mapping to be changed.</p>
+        /// <p>The IdP attribute mapping to be changed.</p>
         pub fn attribute_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -17954,7 +18045,7 @@ pub mod update_identity_provider_input {
             self.attribute_mapping = Some(hash_map);
             self
         }
-        /// <p>The identity provider attribute mapping to be changed.</p>
+        /// <p>The IdP attribute mapping to be changed.</p>
         pub fn set_attribute_mapping(
             mut self,
             input: std::option::Option<
@@ -17968,14 +18059,14 @@ pub mod update_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
         ///
-        /// <p>A list of identity provider identifiers.</p>
+        /// <p>A list of IdP identifiers.</p>
         pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.idp_identifiers.unwrap_or_default();
             v.push(input.into());
             self.idp_identifiers = Some(v);
             self
         }
-        /// <p>A list of identity provider identifiers.</p>
+        /// <p>A list of IdP identifiers.</p>
         pub fn set_idp_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18321,6 +18412,7 @@ pub mod update_user_attributes_input {
         ///
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
         pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input);
@@ -18329,6 +18421,7 @@ pub mod update_user_attributes_input {
         }
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -18336,12 +18429,12 @@ pub mod update_user_attributes_input {
             self.user_attributes = input;
             self
         }
-        /// <p>The access token for the request to update user attributes.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token for the request to update user attributes.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -18534,6 +18627,8 @@ pub mod update_user_pool_input {
         pub(crate) verification_message_template:
             std::option::Option<crate::model::VerificationMessageTemplateType>,
         pub(crate) sms_authentication_message: std::option::Option<std::string::String>,
+        pub(crate) user_attribute_update_settings:
+            std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
         pub(crate) mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
         pub(crate) device_configuration: std::option::Option<crate::model::DeviceConfigurationType>,
         pub(crate) email_configuration: std::option::Option<crate::model::EmailConfigurationType>,
@@ -18674,7 +18769,23 @@ pub mod update_user_pool_input {
             self.sms_authentication_message = input;
             self
         }
-        /// <p>Can be one of the following values:</p>
+        /// <p></p>
+        pub fn user_attribute_update_settings(
+            mut self,
+            input: crate::model::UserAttributeUpdateSettingsType,
+        ) -> Self {
+            self.user_attribute_update_settings = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_user_attribute_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
+        ) -> Self {
+            self.user_attribute_update_settings = input;
+            self
+        }
+        /// <p>Possible values include:</p>
         /// <ul>
         /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
         /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
@@ -18684,7 +18795,7 @@ pub mod update_user_pool_input {
             self.mfa_configuration = Some(input);
             self
         }
-        /// <p>Can be one of the following values:</p>
+        /// <p>Possible values include:</p>
         /// <ul>
         /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
         /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
@@ -18826,6 +18937,7 @@ pub mod update_user_pool_input {
                 email_verification_subject: self.email_verification_subject,
                 verification_message_template: self.verification_message_template,
                 sms_authentication_message: self.sms_authentication_message,
+                user_attribute_update_settings: self.user_attribute_update_settings,
                 mfa_configuration: self.mfa_configuration,
                 device_configuration: self.device_configuration,
                 email_configuration: self.email_configuration,
@@ -19011,42 +19123,54 @@ pub mod update_user_pool_client_input {
             self.client_name = input;
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+        /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.refresh_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+        /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
         }
-        /// <p>The time limit after which the access token is no longer valid and can't be used.</p>
+        /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.access_token_validity = Some(input);
             self
         }
-        /// <p>The time limit after which the access token is no longer valid and can't be used.</p>
+        /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
         }
-        /// <p>The time limit after which the ID token is no longer valid and can't be used.</p>
+        /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn id_token_validity(mut self, input: i32) -> Self {
             self.id_token_validity = Some(input);
             self
         }
-        /// <p>The time limit after which the ID token is no longer valid and can't be used.</p>
+        /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.id_token_validity = input;
             self
         }
-        /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens is hours.</p>
+        /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
         pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
             self.token_validity_units = Some(input);
             self
         }
-        /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens is hours.</p>
+        /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -19131,7 +19255,7 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -19141,7 +19265,7 @@ pub mod update_user_pool_client_input {
             self.supported_identity_providers = Some(v);
             self
         }
-        /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19153,7 +19277,7 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_callback_ur_ls`](Self::set_callback_ur_ls).
         ///
-        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
         /// <li> <p>Be an absolute URI.</p> </li>
@@ -19169,7 +19293,7 @@ pub mod update_user_pool_client_input {
             self.callback_ur_ls = Some(v);
             self
         }
-        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
         /// <li> <p>Be an absolute URI.</p> </li>
@@ -19190,14 +19314,14 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
         ///
-        /// <p>A list of allowed logout URLs for the identity providers.</p>
+        /// <p>A list of allowed logout URLs for the IdPs.</p>
         pub fn logout_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logout_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.logout_ur_ls = Some(v);
             self
         }
-        /// <p>A list of allowed logout URLs for the identity providers.</p>
+        /// <p>A list of allowed logout URLs for the IdPs.</p>
         pub fn set_logout_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19241,9 +19365,26 @@ pub mod update_user_pool_client_input {
         /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
         ///
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        /// <dl>
+        /// <dt>
+        /// code
+        /// </dt>
+        /// <dd>
+        /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+        /// </dd>
+        /// <dt>
+        /// implicit
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+        /// </dd>
+        /// <dt>
+        /// client_credentials
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+        /// </dd>
+        /// </dl>
         pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
             v.push(input);
@@ -19251,9 +19392,26 @@ pub mod update_user_pool_client_input {
             self
         }
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        /// <dl>
+        /// <dt>
+        /// code
+        /// </dt>
+        /// <dd>
+        /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+        /// </dd>
+        /// <dt>
+        /// implicit
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+        /// </dd>
+        /// <dt>
+        /// client_credentials
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -19265,14 +19423,14 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
         ///
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19293,7 +19451,7 @@ pub mod update_user_pool_client_input {
             self.allowed_o_auth_flows_user_pool_client = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+        /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
         /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
         /// </note>
         pub fn analytics_configuration(
@@ -19303,7 +19461,7 @@ pub mod update_user_pool_client_input {
             self.analytics_configuration = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+        /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
         /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
         /// </note>
         pub fn set_analytics_configuration(
@@ -19680,12 +19838,12 @@ pub mod verify_software_token_input {
         pub(crate) friendly_device_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -19860,12 +20018,12 @@ pub mod verify_user_attribute_input {
         pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token of the request to verify user attributes.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token of the request to verify user attributes.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -20023,7 +20181,7 @@ impl VerifyUserAttributeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyUserAttributeInput {
-    /// <p>The access token of the request to verify user attributes.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The attribute name in the request to verify user attributes.</p>
     pub attribute_name: std::option::Option<std::string::String>,
@@ -20031,7 +20189,7 @@ pub struct VerifyUserAttributeInput {
     pub code: std::option::Option<std::string::String>,
 }
 impl VerifyUserAttributeInput {
-    /// <p>The access token of the request to verify user attributes.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -20058,7 +20216,7 @@ impl std::fmt::Debug for VerifyUserAttributeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub session: std::option::Option<std::string::String>,
@@ -20068,7 +20226,7 @@ pub struct VerifySoftwareTokenInput {
     pub friendly_device_name: std::option::Option<std::string::String>,
 }
 impl VerifySoftwareTokenInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -20145,13 +20303,19 @@ pub struct UpdateUserPoolClientInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The client name from the update user pool client request.</p>
     pub client_name: std::option::Option<std::string::String>,
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     pub refresh_token_validity: i32,
-    /// <p>The time limit after which the access token is no longer valid and can't be used.</p>
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub access_token_validity: std::option::Option<i32>,
-    /// <p>The time limit after which the ID token is no longer valid and can't be used.</p>
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub id_token_validity: std::option::Option<i32>,
-    /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens is hours.</p>
+    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub token_validity_units: std::option::Option<crate::model::TokenValidityUnitsType>,
     /// <p>The read-only attributes of the user pool.</p>
     pub read_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20168,9 +20332,9 @@ pub struct UpdateUserPoolClientInput {
     /// </ul>
     pub explicit_auth_flows:
         std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
-    /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub supported_identity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li> <p>Be an absolute URI.</p> </li>
@@ -20181,7 +20345,7 @@ pub struct UpdateUserPoolClientInput {
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub callback_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
     pub logout_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
@@ -20195,15 +20359,32 @@ pub struct UpdateUserPoolClientInput {
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub default_redirect_uri: std::option::Option<std::string::String>,
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
     pub allowed_o_auth_flows: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
     pub allowed_o_auth_flows_user_pool_client: bool,
-    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+    /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
     pub analytics_configuration: std::option::Option<crate::model::AnalyticsConfigurationType>,
@@ -20231,19 +20412,25 @@ impl UpdateUserPoolClientInput {
     pub fn client_name(&self) -> std::option::Option<&str> {
         self.client_name.as_deref()
     }
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn refresh_token_validity(&self) -> i32 {
         self.refresh_token_validity
     }
-    /// <p>The time limit after which the access token is no longer valid and can't be used.</p>
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn access_token_validity(&self) -> std::option::Option<i32> {
         self.access_token_validity
     }
-    /// <p>The time limit after which the ID token is no longer valid and can't be used.</p>
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn id_token_validity(&self) -> std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens is hours.</p>
+    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn token_validity_units(
         &self,
     ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
@@ -20271,11 +20458,11 @@ impl UpdateUserPoolClientInput {
     ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
-    /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_identity_providers.as_deref()
     }
-    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li> <p>Be an absolute URI.</p> </li>
@@ -20288,7 +20475,7 @@ impl UpdateUserPoolClientInput {
     pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.callback_ur_ls.as_deref()
     }
-    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
     pub fn logout_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.logout_ur_ls.as_deref()
     }
@@ -20306,13 +20493,30 @@ impl UpdateUserPoolClientInput {
         self.default_redirect_uri.as_deref()
     }
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
     pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
         self.allowed_o_auth_flows.as_deref()
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
@@ -20320,7 +20524,7 @@ impl UpdateUserPoolClientInput {
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> bool {
         self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+    /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
     pub fn analytics_configuration(
@@ -20404,7 +20608,10 @@ pub struct UpdateUserPoolInput {
         std::option::Option<crate::model::VerificationMessageTemplateType>,
     /// <p>The contents of the SMS authentication message.</p>
     pub sms_authentication_message: std::option::Option<std::string::String>,
-    /// <p>Can be one of the following values:</p>
+    /// <p></p>
+    pub user_attribute_update_settings:
+        std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
+    /// <p>Possible values include:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
     /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
@@ -20468,7 +20675,13 @@ impl UpdateUserPoolInput {
     pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
         self.sms_authentication_message.as_deref()
     }
-    /// <p>Can be one of the following values:</p>
+    /// <p></p>
+    pub fn user_attribute_update_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
+        self.user_attribute_update_settings.as_ref()
+    }
+    /// <p>Possible values include:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
     /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
@@ -20541,6 +20754,10 @@ impl std::fmt::Debug for UpdateUserPoolInput {
             "sms_authentication_message",
             &self.sms_authentication_message,
         );
+        formatter.field(
+            "user_attribute_update_settings",
+            &self.user_attribute_update_settings,
+        );
         formatter.field("mfa_configuration", &self.mfa_configuration);
         formatter.field("device_configuration", &self.device_configuration);
         formatter.field("email_configuration", &self.email_configuration);
@@ -20559,8 +20776,9 @@ impl std::fmt::Debug for UpdateUserPoolInput {
 pub struct UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p>The access token for the request to update user attributes.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action initiates. </p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -20578,10 +20796,11 @@ pub struct UpdateUserAttributesInput {
 impl UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
-    /// <p>The access token for the request to update user attributes.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -20660,15 +20879,15 @@ impl std::fmt::Debug for UpdateResourceServerInput {
 pub struct UpdateIdentityProviderInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
+    /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
     pub provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identity provider attribute mapping to be changed.</p>
+    /// <p>The IdP attribute mapping to be changed.</p>
     pub attribute_mapping:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of identity provider identifiers.</p>
+    /// <p>A list of IdP identifiers.</p>
     pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateIdentityProviderInput {
@@ -20676,25 +20895,25 @@ impl UpdateIdentityProviderInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
+    /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
     pub fn provider_details(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.provider_details.as_ref()
     }
-    /// <p>The identity provider attribute mapping to be changed.</p>
+    /// <p>The IdP attribute mapping to be changed.</p>
     pub fn attribute_mapping(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attribute_mapping.as_ref()
     }
-    /// <p>A list of identity provider identifiers.</p>
+    /// <p>A list of IdP identifiers.</p>
     pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.idp_identifiers.as_deref()
     }
@@ -20764,7 +20983,7 @@ impl std::fmt::Debug for UpdateGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceStatusInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The device key.</p>
     pub device_key: std::option::Option<std::string::String>,
@@ -20772,7 +20991,7 @@ pub struct UpdateDeviceStatusInput {
     pub device_remembered_status: std::option::Option<crate::model::DeviceRememberedStatusType>,
 }
 impl UpdateDeviceStatusInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -20979,7 +21198,7 @@ pub struct SignUpInput {
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The validation data in the request to register a user.</p>
     pub validation_data: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
     /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
@@ -21022,7 +21241,7 @@ impl SignUpInput {
     pub fn validation_data(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.validation_data.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
@@ -21067,13 +21286,13 @@ impl std::fmt::Debug for SignUpInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUserSettingsInput {
-    /// <p>The access token for the set user settings request.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
 }
 impl SetUserSettingsInput {
-    /// <p>The access token for the set user settings request.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -21158,7 +21377,7 @@ pub struct SetUserMfaPreferenceInput {
     /// <p>The time-based one-time password software token MFA settings.</p>
     pub software_token_mfa_settings:
         std::option::Option<crate::model::SoftwareTokenMfaSettingsType>,
-    /// <p>The access token for the user.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl SetUserMfaPreferenceInput {
@@ -21172,7 +21391,7 @@ impl SetUserMfaPreferenceInput {
     ) -> std::option::Option<&crate::model::SoftwareTokenMfaSettingsType> {
         self.software_token_mfa_settings.as_ref()
     }
-    /// <p>The access token for the user.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -21353,9 +21572,11 @@ pub struct RespondToAuthChallengeInput {
     /// <ul>
     /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> <note>
-    /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
+    /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.</p>
     /// </note> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
     /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
@@ -21363,7 +21584,7 @@ pub struct RespondToAuthChallengeInput {
     /// </ul>
     pub challenge_responses:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
     /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
@@ -21400,9 +21621,11 @@ impl RespondToAuthChallengeInput {
     /// <ul>
     /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> <note>
-    /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
+    /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.</p>
     /// </note> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
     /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
@@ -21414,7 +21637,7 @@ impl RespondToAuthChallengeInput {
     {
         self.challenge_responses.as_ref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
@@ -21465,7 +21688,7 @@ pub struct ResendConfirmationCodeInput {
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -21497,7 +21720,7 @@ impl ResendConfirmationCodeInput {
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
@@ -21606,7 +21829,7 @@ pub struct ListUsersInput {
     /// <li> <p> <code>sub</code> </p> </li>
     /// </ul>
     /// <p>Custom attributes aren't searchable.</p> <note>
-    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
+    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
     /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -21650,7 +21873,7 @@ impl ListUsersInput {
     /// <li> <p> <code>sub</code> </p> </li>
     /// </ul>
     /// <p>Custom attributes aren't searchable.</p> <note>
-    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
+    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
     /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -21830,7 +22053,7 @@ impl std::fmt::Debug for ListResourceServersInput {
 pub struct ListIdentityProvidersInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of identity providers to return.</p>
+    /// <p>The maximum number of IdPs to return.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -21840,7 +22063,7 @@ impl ListIdentityProvidersInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The maximum number of identity providers to return.</p>
+    /// <p>The maximum number of IdPs to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -21898,7 +22121,7 @@ impl std::fmt::Debug for ListGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
-    /// <p>The access tokens for the request to list devices.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The limit of the device request.</p>
     pub limit: std::option::Option<i32>,
@@ -21906,7 +22129,7 @@ pub struct ListDevicesInput {
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesInput {
-    /// <p>The access tokens for the request to list devices.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -21944,7 +22167,7 @@ pub struct InitiateAuthInput {
     /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
     /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
     /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
-    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the USERNAME in the user pool. </p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     pub auth_flow: std::option::Option<crate::model::AuthFlowType>,
@@ -21985,7 +22208,7 @@ pub struct InitiateAuthInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The app client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
     /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
@@ -22002,7 +22225,7 @@ impl InitiateAuthInput {
     /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
     /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
     /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
-    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the USERNAME in the user pool. </p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     pub fn auth_flow(&self) -> std::option::Option<&crate::model::AuthFlowType> {
@@ -22055,7 +22278,7 @@ impl InitiateAuthInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
@@ -22081,11 +22304,11 @@ impl std::fmt::Debug for InitiateAuthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSignOutInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GlobalSignOutInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22123,7 +22346,7 @@ impl std::fmt::Debug for GetUserPoolMfaConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserAttributeVerificationCodeInput {
-    /// <p>The access token returned by the server response to get the user attribute verification code.</p>
+    /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
     pub attribute_name: std::option::Option<std::string::String>,
@@ -22141,7 +22364,7 @@ pub struct GetUserAttributeVerificationCodeInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetUserAttributeVerificationCodeInput {
-    /// <p>The access token returned by the server response to get the user attribute verification code.</p>
+    /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22180,11 +22403,11 @@ impl std::fmt::Debug for GetUserAttributeVerificationCodeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserInput {
-    /// <p>The access token returned by the server response to get information about the user.</p>
+    /// <p>A non-expired access token for the user whose information you want to query.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GetUserInput {
-    /// <p>The access token returned by the server response to get information about the user.</p>
+    /// <p>A non-expired access token for the user whose information you want to query.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22252,7 +22475,7 @@ impl std::fmt::Debug for GetSigningCertificateInput {
 pub struct GetIdentityProviderByIdentifierInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The identity provider ID.</p>
+    /// <p>The IdP identifier.</p>
     pub idp_identifier: std::option::Option<std::string::String>,
 }
 impl GetIdentityProviderByIdentifierInput {
@@ -22260,7 +22483,7 @@ impl GetIdentityProviderByIdentifierInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The identity provider ID.</p>
+    /// <p>The IdP identifier.</p>
     pub fn idp_identifier(&self) -> std::option::Option<&str> {
         self.idp_identifier.as_deref()
     }
@@ -22308,7 +22531,7 @@ impl std::fmt::Debug for GetGroupInput {
 pub struct GetDeviceInput {
     /// <p>The device key.</p>
     pub device_key: std::option::Option<std::string::String>,
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GetDeviceInput {
@@ -22316,7 +22539,7 @@ impl GetDeviceInput {
     pub fn device_key(&self) -> std::option::Option<&str> {
         self.device_key.as_deref()
     }
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22363,7 +22586,7 @@ pub struct ForgotPasswordInput {
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -22395,7 +22618,7 @@ impl ForgotPasswordInput {
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
@@ -22433,13 +22656,13 @@ impl std::fmt::Debug for ForgotPasswordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForgetDeviceInput {
-    /// <p>The access token for the forgotten device request.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The device key.</p>
     pub device_key: std::option::Option<std::string::String>,
 }
 impl ForgetDeviceInput {
-    /// <p>The access token for the forgotten device request.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22617,7 +22840,7 @@ impl std::fmt::Debug for DescribeResourceServerInput {
 pub struct DescribeIdentityProviderInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityProviderInput {
@@ -22625,7 +22848,7 @@ impl DescribeIdentityProviderInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -22723,7 +22946,7 @@ pub struct DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
     pub user_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The access token used in the request to delete user attributes.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl DeleteUserAttributesInput {
@@ -22732,7 +22955,7 @@ impl DeleteUserAttributesInput {
     pub fn user_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.user_attribute_names.as_deref()
     }
-    /// <p>The access token used in the request to delete user attributes.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22750,11 +22973,11 @@ impl std::fmt::Debug for DeleteUserAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>The access token from a request to delete a user.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
-    /// <p>The access token from a request to delete a user.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -22801,7 +23024,7 @@ impl std::fmt::Debug for DeleteResourceServerInput {
 pub struct DeleteIdentityProviderInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityProviderInput {
@@ -22809,7 +23032,7 @@ impl DeleteIdentityProviderInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -22902,18 +23125,24 @@ pub struct CreateUserPoolClientInput {
     pub client_name: std::option::Option<std::string::String>,
     /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
     pub generate_secret: bool,
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     pub refresh_token_validity: i32,
-    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub access_token_validity: std::option::Option<i32>,
-    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub id_token_validity: std::option::Option<i32>,
-    /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
     pub token_validity_units: std::option::Option<crate::model::TokenValidityUnitsType>,
     /// <p>The read attributes.</p>
     pub read_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user pool attributes that the app client can write to.</p>
-    /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your user pool</a>.</p>
+    /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
     pub write_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code> prefix.</p> <note>
     /// <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>
@@ -22926,11 +23155,12 @@ pub struct CreateUserPoolClientInput {
     /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
     /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
+    /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
     pub explicit_auth_flows:
         std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
-    /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub supported_identity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li> <p>Be an absolute URI.</p> </li>
@@ -22941,7 +23171,7 @@ pub struct CreateUserPoolClientInput {
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub callback_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
     pub logout_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
@@ -22955,11 +23185,28 @@ pub struct CreateUserPoolClientInput {
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: std::option::Option<std::string::String>,
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
     pub allowed_o_auth_flows: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
     pub allowed_o_auth_flows_user_pool_client: bool,
@@ -22992,19 +23239,25 @@ impl CreateUserPoolClientInput {
     pub fn generate_secret(&self) -> bool {
         self.generate_secret
     }
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn refresh_token_validity(&self) -> i32 {
         self.refresh_token_validity
     }
-    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn access_token_validity(&self) -> std::option::Option<i32> {
         self.access_token_validity
     }
-    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used. If you supply a TokenValidityUnits value, you will override the default time unit.</p>
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn id_token_validity(&self) -> std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
     pub fn token_validity_units(
         &self,
     ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
@@ -23015,7 +23268,7 @@ impl CreateUserPoolClientInput {
         self.read_attributes.as_deref()
     }
     /// <p>The user pool attributes that the app client can write to.</p>
-    /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your user pool</a>.</p>
+    /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
     pub fn write_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.write_attributes.as_deref()
     }
@@ -23030,16 +23283,17 @@ impl CreateUserPoolClientInput {
     /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
     /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
+    /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
     pub fn explicit_auth_flows(
         &self,
     ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
-    /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_identity_providers.as_deref()
     }
-    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li> <p>Be an absolute URI.</p> </li>
@@ -23052,7 +23306,7 @@ impl CreateUserPoolClientInput {
     pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.callback_ur_ls.as_deref()
     }
-    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
     pub fn logout_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.logout_ur_ls.as_deref()
     }
@@ -23070,13 +23324,30 @@ impl CreateUserPoolClientInput {
         self.default_redirect_uri.as_deref()
     }
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
     pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
         self.allowed_o_auth_flows.as_deref()
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
@@ -23181,6 +23452,9 @@ pub struct CreateUserPoolInput {
     pub sms_authentication_message: std::option::Option<std::string::String>,
     /// <p>Specifies MFA configuration details.</p>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
+    /// <p></p>
+    pub user_attribute_update_settings:
+        std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
     /// <p>The device configuration.</p>
     pub device_configuration: std::option::Option<crate::model::DeviceConfigurationType>,
     /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
@@ -23261,6 +23535,12 @@ impl CreateUserPoolInput {
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
+    /// <p></p>
+    pub fn user_attribute_update_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
+        self.user_attribute_update_settings.as_ref()
+    }
     /// <p>The device configuration.</p>
     pub fn device_configuration(
         &self,
@@ -23338,6 +23618,10 @@ impl std::fmt::Debug for CreateUserPoolInput {
             &self.sms_authentication_message,
         );
         formatter.field("mfa_configuration", &self.mfa_configuration);
+        formatter.field(
+            "user_attribute_update_settings",
+            &self.user_attribute_update_settings,
+        );
         formatter.field("device_configuration", &self.device_configuration);
         formatter.field("email_configuration", &self.email_configuration);
         formatter.field("sms_configuration", &self.sms_configuration);
@@ -23434,11 +23718,11 @@ impl std::fmt::Debug for CreateResourceServerInput {
 pub struct CreateIdentityProviderInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>The identity provider type.</p>
+    /// <p>The IdP type.</p>
     pub provider_type: std::option::Option<crate::model::IdentityProviderTypeType>,
-    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
     /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
@@ -23468,24 +23752,30 @@ pub struct CreateIdentityProviderInput {
     /// <li> <p>attributes_request_method</p> </li>
     /// <li> <p>oidc_issuer</p> </li>
     /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
     /// </ul> </li>
     /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li> <p>MetadataFile OR MetadataURL</p> </li>
-    /// <li> <p>IDPSignout (optional)</p> </li>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
     pub provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub attribute_mapping:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of identity provider identifiers.</p>
+    /// <p>A list of IdP identifiers.</p>
     pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateIdentityProviderInput {
@@ -23493,15 +23783,15 @@ impl CreateIdentityProviderInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>The identity provider type.</p>
+    /// <p>The IdP type.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
-    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
     /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
@@ -23531,16 +23821,22 @@ impl CreateIdentityProviderInput {
     /// <li> <p>attributes_request_method</p> </li>
     /// <li> <p>oidc_issuer</p> </li>
     /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
     /// </ul> </li>
     /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li> <p>MetadataFile OR MetadataURL</p> </li>
-    /// <li> <p>IDPSignout (optional)</p> </li>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
     pub fn provider_details(
@@ -23549,14 +23845,14 @@ impl CreateIdentityProviderInput {
     {
         self.provider_details.as_ref()
     }
-    /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn attribute_mapping(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attribute_mapping.as_ref()
     }
-    /// <p>A list of identity provider identifiers.</p>
+    /// <p>A list of IdP identifiers.</p>
     pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.idp_identifiers.as_deref()
     }
@@ -23586,9 +23882,9 @@ pub struct CreateGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
     /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
-    /// <p>The default <code>Precedence</code> value is null.</p>
+    /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
     pub precedence: std::option::Option<i32>,
 }
 impl CreateGroupInput {
@@ -23608,9 +23904,9 @@ impl CreateGroupInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
     /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
-    /// <p>The default <code>Precedence</code> value is null.</p>
+    /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
     pub fn precedence(&self) -> std::option::Option<i32> {
         self.precedence
     }
@@ -23815,7 +24111,7 @@ impl std::fmt::Debug for ConfirmForgotPasswordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmDeviceInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The device key.</p>
     pub device_key: std::option::Option<std::string::String>,
@@ -23826,7 +24122,7 @@ pub struct ConfirmDeviceInput {
     pub device_name: std::option::Option<std::string::String>,
 }
 impl ConfirmDeviceInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -23867,7 +24163,7 @@ pub struct ChangePasswordInput {
     pub previous_password: std::option::Option<std::string::String>,
     /// <p>The new password.</p>
     pub proposed_password: std::option::Option<std::string::String>,
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl ChangePasswordInput {
@@ -23879,7 +24175,7 @@ impl ChangePasswordInput {
     pub fn proposed_password(&self) -> std::option::Option<&str> {
         self.proposed_password.as_deref()
     }
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -23898,13 +24194,13 @@ impl std::fmt::Debug for ChangePasswordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub session: std::option::Option<std::string::String>,
 }
 impl AssociateSoftwareTokenInput {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -23960,6 +24256,8 @@ pub struct AdminUpdateUserAttributesInput {
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+    /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -23985,6 +24283,8 @@ impl AdminUpdateUserAttributesInput {
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+    /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
@@ -24244,7 +24544,9 @@ pub struct AdminRespondToAuthChallengeInput {
     /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
     /// </note> </li>
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>AdminInitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
@@ -24300,7 +24602,9 @@ impl AdminRespondToAuthChallengeInput {
     /// <p> <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.</p>
     /// </note> </li>
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>AdminInitiateAuth</code> response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable attributes that aren't required by your user pool.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
@@ -24589,17 +24893,17 @@ impl std::fmt::Debug for AdminListDevicesInput {
 pub struct AdminLinkProviderForUserInput {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The existing user in the user pool that you want to assign to the external identity provider user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked identity provider attribute) signs in.</p>
+    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
     /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
     /// </important>
     pub destination_user: std::option::Option<crate::model::ProviderUserIdentifierType>,
-    /// <p>An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
-    /// <p>If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
+    /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+    /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
     pub source_user: std::option::Option<crate::model::ProviderUserIdentifierType>,
 }
 impl AdminLinkProviderForUserInput {
@@ -24607,7 +24911,7 @@ impl AdminLinkProviderForUserInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The existing user in the user pool that you want to assign to the external identity provider user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked identity provider attribute) signs in.</p>
+    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
@@ -24618,10 +24922,10 @@ impl AdminLinkProviderForUserInput {
     ) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
         self.destination_user.as_ref()
     }
-    /// <p>An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
-    /// <p>If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
+    /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+    /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
     pub fn source_user(&self) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
         self.source_user.as_ref()
     }

@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
     /// <p>For more information about valid query syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     MalformedQueryException(crate::error::MalformedQueryException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),

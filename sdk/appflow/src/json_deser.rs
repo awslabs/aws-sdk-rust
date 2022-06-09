@@ -6433,6 +6433,14 @@ where
                                     )?,
                                 );
                             }
+                            "flowErrorDeactivationThreshold" => {
+                                builder = builder.set_flow_error_deactivation_threshold(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -9325,6 +9333,13 @@ where
                             "aggregationConfig" => {
                                 builder = builder.set_aggregation_config(
                                     crate::json_deser::deser_structure_crate_model_aggregation_config(tokens)?
+                                );
+                            }
+                            "preserveSourceDataTyping" => {
+                                builder = builder.set_preserve_source_data_typing(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

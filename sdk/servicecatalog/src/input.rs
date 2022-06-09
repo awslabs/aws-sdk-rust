@@ -10303,9 +10303,9 @@ pub mod list_accepted_portfolio_shares_input {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
-        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
-        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
         /// </ul>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.portfolio_share_type = Some(input);
@@ -10313,9 +10313,9 @@ pub mod list_accepted_portfolio_shares_input {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
-        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
-        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
         /// </ul>
         pub fn set_portfolio_share_type(
             mut self,
@@ -19974,9 +19974,9 @@ pub struct ListAcceptedPortfolioSharesInput {
     pub page_size: i32,
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
-    /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
-    /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
@@ -20000,9 +20000,9 @@ impl ListAcceptedPortfolioSharesInput {
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
-    /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
-    /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
     pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
         self.portfolio_share_type.as_ref()

@@ -176,6 +176,10 @@ pub struct SsmAutomation {
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+    /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
+    pub dynamic_parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
+    >,
 }
 impl SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
@@ -202,6 +206,14 @@ impl SsmAutomation {
     > {
         self.parameters.as_ref()
     }
+    /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
+    pub fn dynamic_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
+    > {
+        self.dynamic_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for SsmAutomation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -211,6 +223,7 @@ impl std::fmt::Debug for SsmAutomation {
         formatter.field("document_version", &self.document_version);
         formatter.field("target_account", &self.target_account);
         formatter.field("parameters", &self.parameters);
+        formatter.field("dynamic_parameters", &self.dynamic_parameters);
         formatter.finish()
     }
 }
@@ -226,6 +239,9 @@ pub mod ssm_automation {
         pub(crate) target_account: std::option::Option<crate::model::SsmTargetAccount>,
         pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+        pub(crate) dynamic_parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
         >,
     }
     impl Builder {
@@ -303,6 +319,34 @@ pub mod ssm_automation {
             self.parameters = input;
             self
         }
+        /// Adds a key-value pair to `dynamic_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_dynamic_parameters`](Self::set_dynamic_parameters).
+        ///
+        /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
+        pub fn dynamic_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::DynamicSsmParameterValue,
+        ) -> Self {
+            let mut hash_map = self.dynamic_parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.dynamic_parameters = Some(hash_map);
+            self
+        }
+        /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
+        pub fn set_dynamic_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::DynamicSsmParameterValue,
+                >,
+            >,
+        ) -> Self {
+            self.dynamic_parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SsmAutomation`](crate::model::SsmAutomation)
         pub fn build(self) -> crate::model::SsmAutomation {
             crate::model::SsmAutomation {
@@ -311,6 +355,7 @@ pub mod ssm_automation {
                 document_version: self.document_version,
                 target_account: self.target_account,
                 parameters: self.parameters,
+                dynamic_parameters: self.dynamic_parameters,
             }
         }
     }
@@ -319,6 +364,98 @@ impl SsmAutomation {
     /// Creates a new builder-style object to manufacture [`SsmAutomation`](crate::model::SsmAutomation)
     pub fn builder() -> crate::model::ssm_automation::Builder {
         crate::model::ssm_automation::Builder::default()
+    }
+}
+
+/// <p>The dynamic SSM parameter value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum DynamicSsmParameterValue {
+    /// <p>Variable dynamic parameters. A parameter value is determined when an incident is created.</p>
+    Variable(crate::model::VariableType),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl DynamicSsmParameterValue {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Variable`](crate::model::DynamicSsmParameterValue::Variable), extracting the inner [`VariableType`](crate::model::VariableType).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_variable(&self) -> std::result::Result<&crate::model::VariableType, &Self> {
+        if let DynamicSsmParameterValue::Variable(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Variable`](crate::model::DynamicSsmParameterValue::Variable).
+    pub fn is_variable(&self) -> bool {
+        self.as_variable().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VariableType {
+    #[allow(missing_docs)] // documentation missing in model
+    IncidentRecordArn,
+    #[allow(missing_docs)] // documentation missing in model
+    InvolvedResources,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VariableType {
+    fn from(s: &str) -> Self {
+        match s {
+            "INCIDENT_RECORD_ARN" => VariableType::IncidentRecordArn,
+            "INVOLVED_RESOURCES" => VariableType::InvolvedResources,
+            other => VariableType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VariableType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VariableType::from(s))
+    }
+}
+impl VariableType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VariableType::IncidentRecordArn => "INCIDENT_RECORD_ARN",
+            VariableType::InvolvedResources => "INVOLVED_RESOURCES",
+            VariableType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["INCIDENT_RECORD_ARN", "INVOLVED_RESOURCES"]
+    }
+}
+impl AsRef<str> for VariableType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -739,15 +876,7 @@ impl RelatedItemsUpdate {
 pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
     pub value: std::option::Option<crate::model::ItemValue>,
-    /// <p>The type of related item. Incident Manager supports the following types:</p>
-    /// <ul>
-    /// <li> <p> <code>ANALYSIS</code> </p> </li>
-    /// <li> <p> <code>INCIDENT</code> </p> </li>
-    /// <li> <p> <code>METRIC</code> </p> </li>
-    /// <li> <p> <code>PARENT</code> </p> </li>
-    /// <li> <p> <code>ATTACHMENT</code> </p> </li>
-    /// <li> <p> <code>OTHER</code> </p> </li>
-    /// </ul>
+    /// <p>The type of related item. </p>
     pub r#type: std::option::Option<crate::model::ItemType>,
 }
 impl ItemIdentifier {
@@ -755,15 +884,7 @@ impl ItemIdentifier {
     pub fn value(&self) -> std::option::Option<&crate::model::ItemValue> {
         self.value.as_ref()
     }
-    /// <p>The type of related item. Incident Manager supports the following types:</p>
-    /// <ul>
-    /// <li> <p> <code>ANALYSIS</code> </p> </li>
-    /// <li> <p> <code>INCIDENT</code> </p> </li>
-    /// <li> <p> <code>METRIC</code> </p> </li>
-    /// <li> <p> <code>PARENT</code> </p> </li>
-    /// <li> <p> <code>ATTACHMENT</code> </p> </li>
-    /// <li> <p> <code>OTHER</code> </p> </li>
-    /// </ul>
+    /// <p>The type of related item. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
     }
@@ -796,28 +917,12 @@ pub mod item_identifier {
             self.value = input;
             self
         }
-        /// <p>The type of related item. Incident Manager supports the following types:</p>
-        /// <ul>
-        /// <li> <p> <code>ANALYSIS</code> </p> </li>
-        /// <li> <p> <code>INCIDENT</code> </p> </li>
-        /// <li> <p> <code>METRIC</code> </p> </li>
-        /// <li> <p> <code>PARENT</code> </p> </li>
-        /// <li> <p> <code>ATTACHMENT</code> </p> </li>
-        /// <li> <p> <code>OTHER</code> </p> </li>
-        /// </ul>
+        /// <p>The type of related item. </p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of related item. Incident Manager supports the following types:</p>
-        /// <ul>
-        /// <li> <p> <code>ANALYSIS</code> </p> </li>
-        /// <li> <p> <code>INCIDENT</code> </p> </li>
-        /// <li> <p> <code>METRIC</code> </p> </li>
-        /// <li> <p> <code>PARENT</code> </p> </li>
-        /// <li> <p> <code>ATTACHMENT</code> </p> </li>
-        /// <li> <p> <code>OTHER</code> </p> </li>
-        /// </ul>
+        /// <p>The type of related item. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
             self
@@ -859,6 +964,8 @@ pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Incident,
     #[allow(missing_docs)] // documentation missing in model
+    InvolvedResource,
+    #[allow(missing_docs)] // documentation missing in model
     Metric,
     #[allow(missing_docs)] // documentation missing in model
     Other,
@@ -874,6 +981,7 @@ impl std::convert::From<&str> for ItemType {
             "ATTACHMENT" => ItemType::Attachment,
             "AUTOMATION" => ItemType::Automation,
             "INCIDENT" => ItemType::Incident,
+            "INVOLVED_RESOURCE" => ItemType::InvolvedResource,
             "METRIC" => ItemType::Metric,
             "OTHER" => ItemType::Other,
             "PARENT" => ItemType::Parent,
@@ -896,6 +1004,7 @@ impl ItemType {
             ItemType::Attachment => "ATTACHMENT",
             ItemType::Automation => "AUTOMATION",
             ItemType::Incident => "INCIDENT",
+            ItemType::InvolvedResource => "INVOLVED_RESOURCE",
             ItemType::Metric => "METRIC",
             ItemType::Other => "OTHER",
             ItemType::Parent => "PARENT",
@@ -909,6 +1018,7 @@ impl ItemType {
             "ATTACHMENT",
             "AUTOMATION",
             "INCIDENT",
+            "INVOLVED_RESOURCE",
             "METRIC",
             "OTHER",
             "PARENT",
@@ -1952,7 +2062,7 @@ impl IncidentRecordSummary {
 pub struct IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>The principal the assumed the role specified of the <code>createdBy</code>.</p>
+    /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
     pub invoked_by: std::option::Option<std::string::String>,
     /// <p>The resource that caused the incident to be created.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -1964,7 +2074,7 @@ impl IncidentRecordSource {
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The principal the assumed the role specified of the <code>createdBy</code>.</p>
+    /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
     pub fn invoked_by(&self) -> std::option::Option<&str> {
         self.invoked_by.as_deref()
     }
@@ -2009,12 +2119,12 @@ pub mod incident_record_source {
             self.created_by = input;
             self
         }
-        /// <p>The principal the assumed the role specified of the <code>createdBy</code>.</p>
+        /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
         pub fn invoked_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.invoked_by = Some(input.into());
             self
         }
-        /// <p>The principal the assumed the role specified of the <code>createdBy</code>.</p>
+        /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
         pub fn set_invoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.invoked_by = input;
             self

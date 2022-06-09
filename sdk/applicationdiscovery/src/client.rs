@@ -160,7 +160,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAgents`](crate::client::fluent_builders::DescribeAgents) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_ids(Vec<String>)`](crate::client::fluent_builders::DescribeAgents::agent_ids) / [`set_agent_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAgents::set_agent_ids): <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+    ///   - [`agent_ids(Vec<String>)`](crate::client::fluent_builders::DescribeAgents::agent_ids) / [`set_agent_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAgents::set_agent_ids): <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeAgents::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeAgents::set_filters): <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>  <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAgents::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeAgents::set_max_results): <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAgents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAgents::set_next_token): <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
@@ -283,6 +283,7 @@ impl Client {
     ///   - [`servers_mappedto_tags(i64)`](crate::output::GetDiscoverySummaryOutput::servers_mappedto_tags): <p>The number of servers mapped to tags.</p>
     ///   - [`agent_summary(Option<CustomerAgentInfo>)`](crate::output::GetDiscoverySummaryOutput::agent_summary): <p>Details about discovered agents, including agent status and health.</p>
     ///   - [`connector_summary(Option<CustomerConnectorInfo>)`](crate::output::GetDiscoverySummaryOutput::connector_summary): <p>Details about discovered connectors, including connector status and health.</p>
+    ///   - [`me_collector_summary(Option<CustomerMeCollectorInfo>)`](crate::output::GetDiscoverySummaryOutput::me_collector_summary): <p> Details about Migration Evaluator collectors, including collector status and health. </p>
     /// - On failure, responds with [`SdkError<GetDiscoverySummaryError>`](crate::error::GetDiscoverySummaryError)
     pub fn get_discovery_summary(&self) -> fluent_builders::GetDiscoverySummary {
         fluent_builders::GetDiscoverySummary::new(self.handle.clone())
@@ -291,10 +292,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`configuration_type(ConfigurationItemType)`](crate::client::fluent_builders::ListConfigurations::configuration_type) / [`set_configuration_type(Option<ConfigurationItemType>)`](crate::client::fluent_builders::ListConfigurations::set_configuration_type): <p>A valid configuration identified by Application Discovery Service. </p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListConfigurations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListConfigurations::set_filters): <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>  <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListConfigurations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListConfigurations::set_filters): <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>  <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConfigurations::set_max_results): <p>The total number of items to return. The maximum value is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurations::set_next_token): <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
-    ///   - [`order_by(Vec<OrderByElement>)`](crate::client::fluent_builders::ListConfigurations::order_by) / [`set_order_by(Option<Vec<OrderByElement>>)`](crate::client::fluent_builders::ListConfigurations::set_order_by): <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    ///   - [`order_by(Vec<OrderByElement>)`](crate::client::fluent_builders::ListConfigurations::order_by) / [`set_order_by(Option<Vec<OrderByElement>>)`](crate::client::fluent_builders::ListConfigurations::set_order_by): <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     /// - On success, responds with [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput) with field(s):
     ///   - [`configurations(Option<Vec<HashMap<String, String>>>)`](crate::output::ListConfigurationsOutput::configurations): <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationsOutput::next_token): <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
@@ -335,7 +336,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartDataCollectionByAgentIds`](crate::client::fluent_builders::StartDataCollectionByAgentIds) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_ids(Vec<String>)`](crate::client::fluent_builders::StartDataCollectionByAgentIds::agent_ids) / [`set_agent_ids(Option<Vec<String>>)`](crate::client::fluent_builders::StartDataCollectionByAgentIds::set_agent_ids): <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    ///   - [`agent_ids(Vec<String>)`](crate::client::fluent_builders::StartDataCollectionByAgentIds::agent_ids) / [`set_agent_ids(Option<Vec<String>>)`](crate::client::fluent_builders::StartDataCollectionByAgentIds::set_agent_ids): <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
     /// - On success, responds with [`StartDataCollectionByAgentIdsOutput`](crate::output::StartDataCollectionByAgentIdsOutput) with field(s):
     ///   - [`agents_configuration_status(Option<Vec<AgentConfigurationStatus>>)`](crate::output::StartDataCollectionByAgentIdsOutput::agents_configuration_status): <p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
     /// - On failure, responds with [`SdkError<StartDataCollectionByAgentIdsError>`](crate::error::StartDataCollectionByAgentIdsError)
@@ -362,7 +363,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartImportTask::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartImportTask::set_client_request_token): <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>  <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartImportTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartImportTask::set_name): <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
-    ///   - [`import_url(impl Into<String>)`](crate::client::fluent_builders::StartImportTask::import_url) / [`set_import_url(Option<String>)`](crate::client::fluent_builders::StartImportTask::set_import_url): <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>   <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>  </note>
+    ///   - [`import_url(impl Into<String>)`](crate::client::fluent_builders::StartImportTask::import_url) / [`set_import_url(Option<String>)`](crate::client::fluent_builders::StartImportTask::set_import_url): <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>   <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>  </note>
     /// - On success, responds with [`StartImportTaskOutput`](crate::output::StartImportTaskOutput) with field(s):
     ///   - [`task(Option<ImportTask>)`](crate::output::StartImportTaskOutput::task): <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     /// - On failure, responds with [`SdkError<StartImportTaskError>`](crate::error::StartImportTaskError)
@@ -494,7 +495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteImportData`.
     ///
     /// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p>
-    /// <p>AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
+    /// <p>Amazon Web Services Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteImportData {
         handle: std::sync::Arc<super::Handle>,
@@ -617,7 +618,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTags`.
     ///
-    /// <p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p>
+    /// <p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p> <important>
+    /// <p>Do not store sensitive information (like personal data) in tags.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags {
         handle: std::sync::Arc<super::Handle>,
@@ -879,12 +882,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_ids(input.into());
             self
         }
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -943,7 +946,7 @@ pub mod fluent_builders {
     /// <li> <p>connection</p> </li>
     /// </ul>
     /// <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p>
-    /// <p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// <p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurations {
@@ -1090,7 +1093,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExportConfigurations`.
     ///
-    /// <p> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>, instead.</p>
+    /// <p> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>, instead.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportConfigurations {
         handle: std::sync::Arc<super::Handle>,
@@ -1671,14 +1674,14 @@ pub mod fluent_builders {
         ///
         /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
         /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
         /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1710,12 +1713,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_order_by`](Self::set_order_by).
         ///
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn order_by(mut self, input: crate::model::OrderByElement) -> Self {
             self.inner = self.inner.order_by(input);
             self
         }
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn set_order_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
@@ -1916,12 +1919,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_ids(input.into());
             self
         }
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1934,7 +1937,7 @@ pub mod fluent_builders {
     ///
     /// <p> Begins the export of discovered data to an S3 bucket.</p>
     /// <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p>
-    /// <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>
+    /// <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both Amazon Web Services Agentless Discovery Connector data and summary data from Amazon Web Services Discovery Agents. Export of summary data is limited to two exports per day. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportTask {
         handle: std::sync::Arc<super::Handle>,
@@ -2037,16 +2040,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImportTask`.
     ///
-    /// <p>Starts an import task, which allows you to import details of your on-premises environment directly into AWS Migration Hub without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p>
+    /// <p>Starts an import task, which allows you to import details of your on-premises environment directly into Amazon Web Services Migration Hub without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p>
     /// <p>To start an import request, do this:</p>
     /// <ol>
-    /// <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li>
+    /// <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href="https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li>
     /// <li> <p>Fill out the template with your server and application data.</p> </li>
     /// <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li>
-    /// <li> <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the records from your file.</p> </li>
+    /// <li> <p>Use the console or the <code>StartImportTask</code> command with the Amazon Web Services CLI or one of the Amazon Web Services SDKs to import the records from your file.</p> </li>
     /// </ol>
-    /// <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> <note>
-    /// <p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub Import</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p> <note>
+    /// <p>There are limits to the number of import tasks you can create (and delete) in an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">Amazon Web Services Application Discovery Service Limits</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportTask {
@@ -2113,14 +2116,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+        /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn import_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.import_url(input.into());
             self
         }
         /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+        /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_import_url(input);

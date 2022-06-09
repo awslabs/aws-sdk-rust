@@ -1684,14 +1684,14 @@ impl DescribeLogStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
-    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
+    /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
     pub log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
-    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
+    /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
     pub fn log_groups(&self) -> std::option::Option<&[crate::model::LogGroup]> {
         self.log_groups.as_deref()
     }
@@ -1723,7 +1723,7 @@ pub mod describe_log_groups_output {
         /// To override the contents of this collection use [`set_log_groups`](Self::set_log_groups).
         ///
         /// <p>The log groups.</p>
-        /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
+        /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
         pub fn log_groups(mut self, input: crate::model::LogGroup) -> Self {
             let mut v = self.log_groups.unwrap_or_default();
             v.push(input);
@@ -1731,7 +1731,7 @@ pub mod describe_log_groups_output {
             self
         }
         /// <p>The log groups.</p>
-        /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
+        /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
         pub fn set_log_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,

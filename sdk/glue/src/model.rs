@@ -3951,6 +3951,10 @@ pub struct JobUpdate {
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
+    /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    pub code_gen_configuration_nodes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+    >,
 }
 impl JobUpdate {
     /// <p>Description of the job being defined.</p>
@@ -4047,6 +4051,14 @@ impl JobUpdate {
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
+    /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    pub fn code_gen_configuration_nodes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+    > {
+        self.code_gen_configuration_nodes.as_ref()
+    }
 }
 impl std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4068,6 +4080,10 @@ impl std::fmt::Debug for JobUpdate {
         formatter.field("security_configuration", &self.security_configuration);
         formatter.field("notification_property", &self.notification_property);
         formatter.field("glue_version", &self.glue_version);
+        formatter.field(
+            "code_gen_configuration_nodes",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
@@ -4098,6 +4114,9 @@ pub mod job_update {
         pub(crate) security_configuration: std::option::Option<std::string::String>,
         pub(crate) notification_property: std::option::Option<crate::model::NotificationProperty>,
         pub(crate) glue_version: std::option::Option<std::string::String>,
+        pub(crate) code_gen_configuration_nodes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+        >,
     }
     impl Builder {
         /// <p>Description of the job being defined.</p>
@@ -4351,6 +4370,34 @@ pub mod job_update {
             self.glue_version = input;
             self
         }
+        /// Adds a key-value pair to `code_gen_configuration_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_code_gen_configuration_nodes`](Self::set_code_gen_configuration_nodes).
+        ///
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn code_gen_configuration_nodes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::CodeGenConfigurationNode,
+        ) -> Self {
+            let mut hash_map = self.code_gen_configuration_nodes.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.code_gen_configuration_nodes = Some(hash_map);
+            self
+        }
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn set_code_gen_configuration_nodes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::CodeGenConfigurationNode,
+                >,
+            >,
+        ) -> Self {
+            self.code_gen_configuration_nodes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobUpdate`](crate::model::JobUpdate)
         pub fn build(self) -> crate::model::JobUpdate {
             crate::model::JobUpdate {
@@ -4371,6 +4418,7 @@ pub mod job_update {
                 security_configuration: self.security_configuration,
                 notification_property: self.notification_property,
                 glue_version: self.glue_version,
+                code_gen_configuration_nodes: self.code_gen_configuration_nodes,
             }
         }
     }
@@ -4379,6 +4427,12702 @@ impl JobUpdate {
     /// Creates a new builder-style object to manufacture [`JobUpdate`](crate::model::JobUpdate)
     pub fn builder() -> crate::model::job_update::Builder {
         crate::model::job_update::Builder::default()
+    }
+}
+
+/// <p> <code>CodeGenConfigurationNode</code> enumerates all valid Node types. One and only one of its member variables can be populated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CodeGenConfigurationNode {
+    /// <p>Specifies a connector to an Amazon Athena data source.</p>
+    pub athena_connector_source: std::option::Option<crate::model::AthenaConnectorSource>,
+    /// <p>Specifies a connector to a JDBC data source.</p>
+    pub jdbc_connector_source: std::option::Option<crate::model::JdbcConnectorSource>,
+    /// <p>Specifies a connector to an Apache Spark data source.</p>
+    pub spark_connector_source: std::option::Option<crate::model::SparkConnectorSource>,
+    /// <p>Specifies a data store in the Glue Data Catalog.</p>
+    pub catalog_source: std::option::Option<crate::model::CatalogSource>,
+    /// <p>Specifies an Amazon Redshift data store.</p>
+    pub redshift_source: std::option::Option<crate::model::RedshiftSource>,
+    /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+    pub s3_catalog_source: std::option::Option<crate::model::S3CatalogSource>,
+    /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+    pub s3_csv_source: std::option::Option<crate::model::S3CsvSource>,
+    /// <p>Specifies a JSON data store stored in Amazon S3.</p>
+    pub s3_json_source: std::option::Option<crate::model::S3JsonSource>,
+    /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+    pub s3_parquet_source: std::option::Option<crate::model::S3ParquetSource>,
+    /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    pub relational_catalog_source: std::option::Option<crate::model::RelationalCatalogSource>,
+    /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    pub dynamo_db_catalog_source: std::option::Option<crate::model::DynamoDbCatalogSource>,
+    /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    pub jdbc_connector_target: std::option::Option<crate::model::JdbcConnectorTarget>,
+    /// <p>Specifies a target that uses an Apache Spark connector.</p>
+    pub spark_connector_target: std::option::Option<crate::model::SparkConnectorTarget>,
+    /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+    pub catalog_target: std::option::Option<crate::model::BasicCatalogTarget>,
+    /// <p>Specifies a target that uses Amazon Redshift.</p>
+    pub redshift_target: std::option::Option<crate::model::RedshiftTarget>,
+    /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+    pub s3_catalog_target: std::option::Option<crate::model::S3CatalogTarget>,
+    /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    pub s3_glue_parquet_target: std::option::Option<crate::model::S3GlueParquetTarget>,
+    /// <p>Specifies a data target that writes to Amazon S3.</p>
+    pub s3_direct_target: std::option::Option<crate::model::S3DirectTarget>,
+    /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+    pub apply_mapping: std::option::Option<crate::model::ApplyMapping>,
+    /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+    pub select_fields: std::option::Option<crate::model::SelectFields>,
+    /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+    pub drop_fields: std::option::Option<crate::model::DropFields>,
+    /// <p>Specifies a transform that renames a single data property key.</p>
+    pub rename_field: std::option::Option<crate::model::RenameField>,
+    /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+    pub spigot: std::option::Option<crate::model::Spigot>,
+    /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+    pub join: std::option::Option<crate::model::Join>,
+    /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+    pub split_fields: std::option::Option<crate::model::SplitFields>,
+    /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+    pub select_from_collection: std::option::Option<crate::model::SelectFromCollection>,
+    /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+    pub fill_missing_values: std::option::Option<crate::model::FillMissingValues>,
+    /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+    pub filter: std::option::Option<crate::model::Filter>,
+    /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+    pub custom_code: std::option::Option<crate::model::CustomCode>,
+    /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+    pub spark_sql: std::option::Option<crate::model::SparkSql>,
+    /// <p>Specifies a direct Amazon Kinesis data source.</p>
+    pub direct_kinesis_source: std::option::Option<crate::model::DirectKinesisSource>,
+    /// <p>Specifies an Apache Kafka data store.</p>
+    pub direct_kafka_source: std::option::Option<crate::model::DirectKafkaSource>,
+    /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+    pub catalog_kinesis_source: std::option::Option<crate::model::CatalogKinesisSource>,
+    /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+    pub catalog_kafka_source: std::option::Option<crate::model::CatalogKafkaSource>,
+    /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+    pub drop_null_fields: std::option::Option<crate::model::DropNullFields>,
+    /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+    pub merge: std::option::Option<crate::model::Merge>,
+    /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+    pub union: std::option::Option<crate::model::Union>,
+    /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+    pub pii_detection: std::option::Option<crate::model::PiiDetection>,
+    /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+    pub aggregate: std::option::Option<crate::model::Aggregate>,
+    /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
+    pub drop_duplicates: std::option::Option<crate::model::DropDuplicates>,
+    /// <p>Specifies a data target that writes to a goverened catalog.</p>
+    pub governed_catalog_target: std::option::Option<crate::model::GovernedCatalogTarget>,
+    /// <p>Specifies a data source in a goverened Data Catalog.</p>
+    pub governed_catalog_source: std::option::Option<crate::model::GovernedCatalogSource>,
+    /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+    pub microsoft_sql_server_catalog_source:
+        std::option::Option<crate::model::MicrosoftSqlServerCatalogSource>,
+    /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+    pub my_sql_catalog_source: std::option::Option<crate::model::MySqlCatalogSource>,
+    /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+    pub oracle_sql_catalog_source: std::option::Option<crate::model::OracleSqlCatalogSource>,
+    /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+    pub postgre_sql_catalog_source: std::option::Option<crate::model::PostgreSqlCatalogSource>,
+    /// <p>Specifies a target that uses Microsoft SQL.</p>
+    pub microsoft_sql_server_catalog_target:
+        std::option::Option<crate::model::MicrosoftSqlServerCatalogTarget>,
+    /// <p>Specifies a target that uses MySQL.</p>
+    pub my_sql_catalog_target: std::option::Option<crate::model::MySqlCatalogTarget>,
+    /// <p>Specifies a target that uses Oracle SQL.</p>
+    pub oracle_sql_catalog_target: std::option::Option<crate::model::OracleSqlCatalogTarget>,
+    /// <p>Specifies a target that uses Postgres SQL.</p>
+    pub postgre_sql_catalog_target: std::option::Option<crate::model::PostgreSqlCatalogTarget>,
+}
+impl CodeGenConfigurationNode {
+    /// <p>Specifies a connector to an Amazon Athena data source.</p>
+    pub fn athena_connector_source(
+        &self,
+    ) -> std::option::Option<&crate::model::AthenaConnectorSource> {
+        self.athena_connector_source.as_ref()
+    }
+    /// <p>Specifies a connector to a JDBC data source.</p>
+    pub fn jdbc_connector_source(&self) -> std::option::Option<&crate::model::JdbcConnectorSource> {
+        self.jdbc_connector_source.as_ref()
+    }
+    /// <p>Specifies a connector to an Apache Spark data source.</p>
+    pub fn spark_connector_source(
+        &self,
+    ) -> std::option::Option<&crate::model::SparkConnectorSource> {
+        self.spark_connector_source.as_ref()
+    }
+    /// <p>Specifies a data store in the Glue Data Catalog.</p>
+    pub fn catalog_source(&self) -> std::option::Option<&crate::model::CatalogSource> {
+        self.catalog_source.as_ref()
+    }
+    /// <p>Specifies an Amazon Redshift data store.</p>
+    pub fn redshift_source(&self) -> std::option::Option<&crate::model::RedshiftSource> {
+        self.redshift_source.as_ref()
+    }
+    /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+    pub fn s3_catalog_source(&self) -> std::option::Option<&crate::model::S3CatalogSource> {
+        self.s3_catalog_source.as_ref()
+    }
+    /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+    pub fn s3_csv_source(&self) -> std::option::Option<&crate::model::S3CsvSource> {
+        self.s3_csv_source.as_ref()
+    }
+    /// <p>Specifies a JSON data store stored in Amazon S3.</p>
+    pub fn s3_json_source(&self) -> std::option::Option<&crate::model::S3JsonSource> {
+        self.s3_json_source.as_ref()
+    }
+    /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+    pub fn s3_parquet_source(&self) -> std::option::Option<&crate::model::S3ParquetSource> {
+        self.s3_parquet_source.as_ref()
+    }
+    /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    pub fn relational_catalog_source(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalCatalogSource> {
+        self.relational_catalog_source.as_ref()
+    }
+    /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    pub fn dynamo_db_catalog_source(
+        &self,
+    ) -> std::option::Option<&crate::model::DynamoDbCatalogSource> {
+        self.dynamo_db_catalog_source.as_ref()
+    }
+    /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    pub fn jdbc_connector_target(&self) -> std::option::Option<&crate::model::JdbcConnectorTarget> {
+        self.jdbc_connector_target.as_ref()
+    }
+    /// <p>Specifies a target that uses an Apache Spark connector.</p>
+    pub fn spark_connector_target(
+        &self,
+    ) -> std::option::Option<&crate::model::SparkConnectorTarget> {
+        self.spark_connector_target.as_ref()
+    }
+    /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+    pub fn catalog_target(&self) -> std::option::Option<&crate::model::BasicCatalogTarget> {
+        self.catalog_target.as_ref()
+    }
+    /// <p>Specifies a target that uses Amazon Redshift.</p>
+    pub fn redshift_target(&self) -> std::option::Option<&crate::model::RedshiftTarget> {
+        self.redshift_target.as_ref()
+    }
+    /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+    pub fn s3_catalog_target(&self) -> std::option::Option<&crate::model::S3CatalogTarget> {
+        self.s3_catalog_target.as_ref()
+    }
+    /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    pub fn s3_glue_parquet_target(
+        &self,
+    ) -> std::option::Option<&crate::model::S3GlueParquetTarget> {
+        self.s3_glue_parquet_target.as_ref()
+    }
+    /// <p>Specifies a data target that writes to Amazon S3.</p>
+    pub fn s3_direct_target(&self) -> std::option::Option<&crate::model::S3DirectTarget> {
+        self.s3_direct_target.as_ref()
+    }
+    /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+    pub fn apply_mapping(&self) -> std::option::Option<&crate::model::ApplyMapping> {
+        self.apply_mapping.as_ref()
+    }
+    /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+    pub fn select_fields(&self) -> std::option::Option<&crate::model::SelectFields> {
+        self.select_fields.as_ref()
+    }
+    /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+    pub fn drop_fields(&self) -> std::option::Option<&crate::model::DropFields> {
+        self.drop_fields.as_ref()
+    }
+    /// <p>Specifies a transform that renames a single data property key.</p>
+    pub fn rename_field(&self) -> std::option::Option<&crate::model::RenameField> {
+        self.rename_field.as_ref()
+    }
+    /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+    pub fn spigot(&self) -> std::option::Option<&crate::model::Spigot> {
+        self.spigot.as_ref()
+    }
+    /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+    pub fn join(&self) -> std::option::Option<&crate::model::Join> {
+        self.join.as_ref()
+    }
+    /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+    pub fn split_fields(&self) -> std::option::Option<&crate::model::SplitFields> {
+        self.split_fields.as_ref()
+    }
+    /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+    pub fn select_from_collection(
+        &self,
+    ) -> std::option::Option<&crate::model::SelectFromCollection> {
+        self.select_from_collection.as_ref()
+    }
+    /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+    pub fn fill_missing_values(&self) -> std::option::Option<&crate::model::FillMissingValues> {
+        self.fill_missing_values.as_ref()
+    }
+    /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::Filter> {
+        self.filter.as_ref()
+    }
+    /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+    pub fn custom_code(&self) -> std::option::Option<&crate::model::CustomCode> {
+        self.custom_code.as_ref()
+    }
+    /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+    pub fn spark_sql(&self) -> std::option::Option<&crate::model::SparkSql> {
+        self.spark_sql.as_ref()
+    }
+    /// <p>Specifies a direct Amazon Kinesis data source.</p>
+    pub fn direct_kinesis_source(&self) -> std::option::Option<&crate::model::DirectKinesisSource> {
+        self.direct_kinesis_source.as_ref()
+    }
+    /// <p>Specifies an Apache Kafka data store.</p>
+    pub fn direct_kafka_source(&self) -> std::option::Option<&crate::model::DirectKafkaSource> {
+        self.direct_kafka_source.as_ref()
+    }
+    /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+    pub fn catalog_kinesis_source(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogKinesisSource> {
+        self.catalog_kinesis_source.as_ref()
+    }
+    /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+    pub fn catalog_kafka_source(&self) -> std::option::Option<&crate::model::CatalogKafkaSource> {
+        self.catalog_kafka_source.as_ref()
+    }
+    /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+    pub fn drop_null_fields(&self) -> std::option::Option<&crate::model::DropNullFields> {
+        self.drop_null_fields.as_ref()
+    }
+    /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+    pub fn merge(&self) -> std::option::Option<&crate::model::Merge> {
+        self.merge.as_ref()
+    }
+    /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+    pub fn union(&self) -> std::option::Option<&crate::model::Union> {
+        self.union.as_ref()
+    }
+    /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+    pub fn pii_detection(&self) -> std::option::Option<&crate::model::PiiDetection> {
+        self.pii_detection.as_ref()
+    }
+    /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+    pub fn aggregate(&self) -> std::option::Option<&crate::model::Aggregate> {
+        self.aggregate.as_ref()
+    }
+    /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
+    pub fn drop_duplicates(&self) -> std::option::Option<&crate::model::DropDuplicates> {
+        self.drop_duplicates.as_ref()
+    }
+    /// <p>Specifies a data target that writes to a goverened catalog.</p>
+    pub fn governed_catalog_target(
+        &self,
+    ) -> std::option::Option<&crate::model::GovernedCatalogTarget> {
+        self.governed_catalog_target.as_ref()
+    }
+    /// <p>Specifies a data source in a goverened Data Catalog.</p>
+    pub fn governed_catalog_source(
+        &self,
+    ) -> std::option::Option<&crate::model::GovernedCatalogSource> {
+        self.governed_catalog_source.as_ref()
+    }
+    /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+    pub fn microsoft_sql_server_catalog_source(
+        &self,
+    ) -> std::option::Option<&crate::model::MicrosoftSqlServerCatalogSource> {
+        self.microsoft_sql_server_catalog_source.as_ref()
+    }
+    /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+    pub fn my_sql_catalog_source(&self) -> std::option::Option<&crate::model::MySqlCatalogSource> {
+        self.my_sql_catalog_source.as_ref()
+    }
+    /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+    pub fn oracle_sql_catalog_source(
+        &self,
+    ) -> std::option::Option<&crate::model::OracleSqlCatalogSource> {
+        self.oracle_sql_catalog_source.as_ref()
+    }
+    /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+    pub fn postgre_sql_catalog_source(
+        &self,
+    ) -> std::option::Option<&crate::model::PostgreSqlCatalogSource> {
+        self.postgre_sql_catalog_source.as_ref()
+    }
+    /// <p>Specifies a target that uses Microsoft SQL.</p>
+    pub fn microsoft_sql_server_catalog_target(
+        &self,
+    ) -> std::option::Option<&crate::model::MicrosoftSqlServerCatalogTarget> {
+        self.microsoft_sql_server_catalog_target.as_ref()
+    }
+    /// <p>Specifies a target that uses MySQL.</p>
+    pub fn my_sql_catalog_target(&self) -> std::option::Option<&crate::model::MySqlCatalogTarget> {
+        self.my_sql_catalog_target.as_ref()
+    }
+    /// <p>Specifies a target that uses Oracle SQL.</p>
+    pub fn oracle_sql_catalog_target(
+        &self,
+    ) -> std::option::Option<&crate::model::OracleSqlCatalogTarget> {
+        self.oracle_sql_catalog_target.as_ref()
+    }
+    /// <p>Specifies a target that uses Postgres SQL.</p>
+    pub fn postgre_sql_catalog_target(
+        &self,
+    ) -> std::option::Option<&crate::model::PostgreSqlCatalogTarget> {
+        self.postgre_sql_catalog_target.as_ref()
+    }
+}
+impl std::fmt::Debug for CodeGenConfigurationNode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CodeGenConfigurationNode");
+        formatter.field("athena_connector_source", &self.athena_connector_source);
+        formatter.field("jdbc_connector_source", &self.jdbc_connector_source);
+        formatter.field("spark_connector_source", &self.spark_connector_source);
+        formatter.field("catalog_source", &self.catalog_source);
+        formatter.field("redshift_source", &self.redshift_source);
+        formatter.field("s3_catalog_source", &self.s3_catalog_source);
+        formatter.field("s3_csv_source", &self.s3_csv_source);
+        formatter.field("s3_json_source", &self.s3_json_source);
+        formatter.field("s3_parquet_source", &self.s3_parquet_source);
+        formatter.field("relational_catalog_source", &self.relational_catalog_source);
+        formatter.field("dynamo_db_catalog_source", &self.dynamo_db_catalog_source);
+        formatter.field("jdbc_connector_target", &self.jdbc_connector_target);
+        formatter.field("spark_connector_target", &self.spark_connector_target);
+        formatter.field("catalog_target", &self.catalog_target);
+        formatter.field("redshift_target", &self.redshift_target);
+        formatter.field("s3_catalog_target", &self.s3_catalog_target);
+        formatter.field("s3_glue_parquet_target", &self.s3_glue_parquet_target);
+        formatter.field("s3_direct_target", &self.s3_direct_target);
+        formatter.field("apply_mapping", &self.apply_mapping);
+        formatter.field("select_fields", &self.select_fields);
+        formatter.field("drop_fields", &self.drop_fields);
+        formatter.field("rename_field", &self.rename_field);
+        formatter.field("spigot", &self.spigot);
+        formatter.field("join", &self.join);
+        formatter.field("split_fields", &self.split_fields);
+        formatter.field("select_from_collection", &self.select_from_collection);
+        formatter.field("fill_missing_values", &self.fill_missing_values);
+        formatter.field("filter", &self.filter);
+        formatter.field("custom_code", &self.custom_code);
+        formatter.field("spark_sql", &self.spark_sql);
+        formatter.field("direct_kinesis_source", &self.direct_kinesis_source);
+        formatter.field("direct_kafka_source", &self.direct_kafka_source);
+        formatter.field("catalog_kinesis_source", &self.catalog_kinesis_source);
+        formatter.field("catalog_kafka_source", &self.catalog_kafka_source);
+        formatter.field("drop_null_fields", &self.drop_null_fields);
+        formatter.field("merge", &self.merge);
+        formatter.field("union", &self.union);
+        formatter.field("pii_detection", &self.pii_detection);
+        formatter.field("aggregate", &self.aggregate);
+        formatter.field("drop_duplicates", &self.drop_duplicates);
+        formatter.field("governed_catalog_target", &self.governed_catalog_target);
+        formatter.field("governed_catalog_source", &self.governed_catalog_source);
+        formatter.field(
+            "microsoft_sql_server_catalog_source",
+            &self.microsoft_sql_server_catalog_source,
+        );
+        formatter.field("my_sql_catalog_source", &self.my_sql_catalog_source);
+        formatter.field("oracle_sql_catalog_source", &self.oracle_sql_catalog_source);
+        formatter.field(
+            "postgre_sql_catalog_source",
+            &self.postgre_sql_catalog_source,
+        );
+        formatter.field(
+            "microsoft_sql_server_catalog_target",
+            &self.microsoft_sql_server_catalog_target,
+        );
+        formatter.field("my_sql_catalog_target", &self.my_sql_catalog_target);
+        formatter.field("oracle_sql_catalog_target", &self.oracle_sql_catalog_target);
+        formatter.field(
+            "postgre_sql_catalog_target",
+            &self.postgre_sql_catalog_target,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode)
+pub mod code_gen_configuration_node {
+    /// A builder for [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) athena_connector_source:
+            std::option::Option<crate::model::AthenaConnectorSource>,
+        pub(crate) jdbc_connector_source: std::option::Option<crate::model::JdbcConnectorSource>,
+        pub(crate) spark_connector_source: std::option::Option<crate::model::SparkConnectorSource>,
+        pub(crate) catalog_source: std::option::Option<crate::model::CatalogSource>,
+        pub(crate) redshift_source: std::option::Option<crate::model::RedshiftSource>,
+        pub(crate) s3_catalog_source: std::option::Option<crate::model::S3CatalogSource>,
+        pub(crate) s3_csv_source: std::option::Option<crate::model::S3CsvSource>,
+        pub(crate) s3_json_source: std::option::Option<crate::model::S3JsonSource>,
+        pub(crate) s3_parquet_source: std::option::Option<crate::model::S3ParquetSource>,
+        pub(crate) relational_catalog_source:
+            std::option::Option<crate::model::RelationalCatalogSource>,
+        pub(crate) dynamo_db_catalog_source:
+            std::option::Option<crate::model::DynamoDbCatalogSource>,
+        pub(crate) jdbc_connector_target: std::option::Option<crate::model::JdbcConnectorTarget>,
+        pub(crate) spark_connector_target: std::option::Option<crate::model::SparkConnectorTarget>,
+        pub(crate) catalog_target: std::option::Option<crate::model::BasicCatalogTarget>,
+        pub(crate) redshift_target: std::option::Option<crate::model::RedshiftTarget>,
+        pub(crate) s3_catalog_target: std::option::Option<crate::model::S3CatalogTarget>,
+        pub(crate) s3_glue_parquet_target: std::option::Option<crate::model::S3GlueParquetTarget>,
+        pub(crate) s3_direct_target: std::option::Option<crate::model::S3DirectTarget>,
+        pub(crate) apply_mapping: std::option::Option<crate::model::ApplyMapping>,
+        pub(crate) select_fields: std::option::Option<crate::model::SelectFields>,
+        pub(crate) drop_fields: std::option::Option<crate::model::DropFields>,
+        pub(crate) rename_field: std::option::Option<crate::model::RenameField>,
+        pub(crate) spigot: std::option::Option<crate::model::Spigot>,
+        pub(crate) join: std::option::Option<crate::model::Join>,
+        pub(crate) split_fields: std::option::Option<crate::model::SplitFields>,
+        pub(crate) select_from_collection: std::option::Option<crate::model::SelectFromCollection>,
+        pub(crate) fill_missing_values: std::option::Option<crate::model::FillMissingValues>,
+        pub(crate) filter: std::option::Option<crate::model::Filter>,
+        pub(crate) custom_code: std::option::Option<crate::model::CustomCode>,
+        pub(crate) spark_sql: std::option::Option<crate::model::SparkSql>,
+        pub(crate) direct_kinesis_source: std::option::Option<crate::model::DirectKinesisSource>,
+        pub(crate) direct_kafka_source: std::option::Option<crate::model::DirectKafkaSource>,
+        pub(crate) catalog_kinesis_source: std::option::Option<crate::model::CatalogKinesisSource>,
+        pub(crate) catalog_kafka_source: std::option::Option<crate::model::CatalogKafkaSource>,
+        pub(crate) drop_null_fields: std::option::Option<crate::model::DropNullFields>,
+        pub(crate) merge: std::option::Option<crate::model::Merge>,
+        pub(crate) union: std::option::Option<crate::model::Union>,
+        pub(crate) pii_detection: std::option::Option<crate::model::PiiDetection>,
+        pub(crate) aggregate: std::option::Option<crate::model::Aggregate>,
+        pub(crate) drop_duplicates: std::option::Option<crate::model::DropDuplicates>,
+        pub(crate) governed_catalog_target:
+            std::option::Option<crate::model::GovernedCatalogTarget>,
+        pub(crate) governed_catalog_source:
+            std::option::Option<crate::model::GovernedCatalogSource>,
+        pub(crate) microsoft_sql_server_catalog_source:
+            std::option::Option<crate::model::MicrosoftSqlServerCatalogSource>,
+        pub(crate) my_sql_catalog_source: std::option::Option<crate::model::MySqlCatalogSource>,
+        pub(crate) oracle_sql_catalog_source:
+            std::option::Option<crate::model::OracleSqlCatalogSource>,
+        pub(crate) postgre_sql_catalog_source:
+            std::option::Option<crate::model::PostgreSqlCatalogSource>,
+        pub(crate) microsoft_sql_server_catalog_target:
+            std::option::Option<crate::model::MicrosoftSqlServerCatalogTarget>,
+        pub(crate) my_sql_catalog_target: std::option::Option<crate::model::MySqlCatalogTarget>,
+        pub(crate) oracle_sql_catalog_target:
+            std::option::Option<crate::model::OracleSqlCatalogTarget>,
+        pub(crate) postgre_sql_catalog_target:
+            std::option::Option<crate::model::PostgreSqlCatalogTarget>,
+    }
+    impl Builder {
+        /// <p>Specifies a connector to an Amazon Athena data source.</p>
+        pub fn athena_connector_source(
+            mut self,
+            input: crate::model::AthenaConnectorSource,
+        ) -> Self {
+            self.athena_connector_source = Some(input);
+            self
+        }
+        /// <p>Specifies a connector to an Amazon Athena data source.</p>
+        pub fn set_athena_connector_source(
+            mut self,
+            input: std::option::Option<crate::model::AthenaConnectorSource>,
+        ) -> Self {
+            self.athena_connector_source = input;
+            self
+        }
+        /// <p>Specifies a connector to a JDBC data source.</p>
+        pub fn jdbc_connector_source(mut self, input: crate::model::JdbcConnectorSource) -> Self {
+            self.jdbc_connector_source = Some(input);
+            self
+        }
+        /// <p>Specifies a connector to a JDBC data source.</p>
+        pub fn set_jdbc_connector_source(
+            mut self,
+            input: std::option::Option<crate::model::JdbcConnectorSource>,
+        ) -> Self {
+            self.jdbc_connector_source = input;
+            self
+        }
+        /// <p>Specifies a connector to an Apache Spark data source.</p>
+        pub fn spark_connector_source(mut self, input: crate::model::SparkConnectorSource) -> Self {
+            self.spark_connector_source = Some(input);
+            self
+        }
+        /// <p>Specifies a connector to an Apache Spark data source.</p>
+        pub fn set_spark_connector_source(
+            mut self,
+            input: std::option::Option<crate::model::SparkConnectorSource>,
+        ) -> Self {
+            self.spark_connector_source = input;
+            self
+        }
+        /// <p>Specifies a data store in the Glue Data Catalog.</p>
+        pub fn catalog_source(mut self, input: crate::model::CatalogSource) -> Self {
+            self.catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a data store in the Glue Data Catalog.</p>
+        pub fn set_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::CatalogSource>,
+        ) -> Self {
+            self.catalog_source = input;
+            self
+        }
+        /// <p>Specifies an Amazon Redshift data store.</p>
+        pub fn redshift_source(mut self, input: crate::model::RedshiftSource) -> Self {
+            self.redshift_source = Some(input);
+            self
+        }
+        /// <p>Specifies an Amazon Redshift data store.</p>
+        pub fn set_redshift_source(
+            mut self,
+            input: std::option::Option<crate::model::RedshiftSource>,
+        ) -> Self {
+            self.redshift_source = input;
+            self
+        }
+        /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+        pub fn s3_catalog_source(mut self, input: crate::model::S3CatalogSource) -> Self {
+            self.s3_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+        pub fn set_s3_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::S3CatalogSource>,
+        ) -> Self {
+            self.s3_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+        pub fn s3_csv_source(mut self, input: crate::model::S3CsvSource) -> Self {
+            self.s3_csv_source = Some(input);
+            self
+        }
+        /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+        pub fn set_s3_csv_source(
+            mut self,
+            input: std::option::Option<crate::model::S3CsvSource>,
+        ) -> Self {
+            self.s3_csv_source = input;
+            self
+        }
+        /// <p>Specifies a JSON data store stored in Amazon S3.</p>
+        pub fn s3_json_source(mut self, input: crate::model::S3JsonSource) -> Self {
+            self.s3_json_source = Some(input);
+            self
+        }
+        /// <p>Specifies a JSON data store stored in Amazon S3.</p>
+        pub fn set_s3_json_source(
+            mut self,
+            input: std::option::Option<crate::model::S3JsonSource>,
+        ) -> Self {
+            self.s3_json_source = input;
+            self
+        }
+        /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+        pub fn s3_parquet_source(mut self, input: crate::model::S3ParquetSource) -> Self {
+            self.s3_parquet_source = Some(input);
+            self
+        }
+        /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+        pub fn set_s3_parquet_source(
+            mut self,
+            input: std::option::Option<crate::model::S3ParquetSource>,
+        ) -> Self {
+            self.s3_parquet_source = input;
+            self
+        }
+        /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+        pub fn relational_catalog_source(
+            mut self,
+            input: crate::model::RelationalCatalogSource,
+        ) -> Self {
+            self.relational_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+        pub fn set_relational_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::RelationalCatalogSource>,
+        ) -> Self {
+            self.relational_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+        pub fn dynamo_db_catalog_source(
+            mut self,
+            input: crate::model::DynamoDbCatalogSource,
+        ) -> Self {
+            self.dynamo_db_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+        pub fn set_dynamo_db_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::DynamoDbCatalogSource>,
+        ) -> Self {
+            self.dynamo_db_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+        pub fn jdbc_connector_target(mut self, input: crate::model::JdbcConnectorTarget) -> Self {
+            self.jdbc_connector_target = Some(input);
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+        pub fn set_jdbc_connector_target(
+            mut self,
+            input: std::option::Option<crate::model::JdbcConnectorTarget>,
+        ) -> Self {
+            self.jdbc_connector_target = input;
+            self
+        }
+        /// <p>Specifies a target that uses an Apache Spark connector.</p>
+        pub fn spark_connector_target(mut self, input: crate::model::SparkConnectorTarget) -> Self {
+            self.spark_connector_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses an Apache Spark connector.</p>
+        pub fn set_spark_connector_target(
+            mut self,
+            input: std::option::Option<crate::model::SparkConnectorTarget>,
+        ) -> Self {
+            self.spark_connector_target = input;
+            self
+        }
+        /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+        pub fn catalog_target(mut self, input: crate::model::BasicCatalogTarget) -> Self {
+            self.catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+        pub fn set_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::BasicCatalogTarget>,
+        ) -> Self {
+            self.catalog_target = input;
+            self
+        }
+        /// <p>Specifies a target that uses Amazon Redshift.</p>
+        pub fn redshift_target(mut self, input: crate::model::RedshiftTarget) -> Self {
+            self.redshift_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses Amazon Redshift.</p>
+        pub fn set_redshift_target(
+            mut self,
+            input: std::option::Option<crate::model::RedshiftTarget>,
+        ) -> Self {
+            self.redshift_target = input;
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+        pub fn s3_catalog_target(mut self, input: crate::model::S3CatalogTarget) -> Self {
+            self.s3_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+        pub fn set_s3_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::S3CatalogTarget>,
+        ) -> Self {
+            self.s3_catalog_target = input;
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+        pub fn s3_glue_parquet_target(mut self, input: crate::model::S3GlueParquetTarget) -> Self {
+            self.s3_glue_parquet_target = Some(input);
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+        pub fn set_s3_glue_parquet_target(
+            mut self,
+            input: std::option::Option<crate::model::S3GlueParquetTarget>,
+        ) -> Self {
+            self.s3_glue_parquet_target = input;
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3.</p>
+        pub fn s3_direct_target(mut self, input: crate::model::S3DirectTarget) -> Self {
+            self.s3_direct_target = Some(input);
+            self
+        }
+        /// <p>Specifies a data target that writes to Amazon S3.</p>
+        pub fn set_s3_direct_target(
+            mut self,
+            input: std::option::Option<crate::model::S3DirectTarget>,
+        ) -> Self {
+            self.s3_direct_target = input;
+            self
+        }
+        /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+        pub fn apply_mapping(mut self, input: crate::model::ApplyMapping) -> Self {
+            self.apply_mapping = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+        pub fn set_apply_mapping(
+            mut self,
+            input: std::option::Option<crate::model::ApplyMapping>,
+        ) -> Self {
+            self.apply_mapping = input;
+            self
+        }
+        /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+        pub fn select_fields(mut self, input: crate::model::SelectFields) -> Self {
+            self.select_fields = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+        pub fn set_select_fields(
+            mut self,
+            input: std::option::Option<crate::model::SelectFields>,
+        ) -> Self {
+            self.select_fields = input;
+            self
+        }
+        /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+        pub fn drop_fields(mut self, input: crate::model::DropFields) -> Self {
+            self.drop_fields = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+        pub fn set_drop_fields(
+            mut self,
+            input: std::option::Option<crate::model::DropFields>,
+        ) -> Self {
+            self.drop_fields = input;
+            self
+        }
+        /// <p>Specifies a transform that renames a single data property key.</p>
+        pub fn rename_field(mut self, input: crate::model::RenameField) -> Self {
+            self.rename_field = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that renames a single data property key.</p>
+        pub fn set_rename_field(
+            mut self,
+            input: std::option::Option<crate::model::RenameField>,
+        ) -> Self {
+            self.rename_field = input;
+            self
+        }
+        /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+        pub fn spigot(mut self, input: crate::model::Spigot) -> Self {
+            self.spigot = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+        pub fn set_spigot(mut self, input: std::option::Option<crate::model::Spigot>) -> Self {
+            self.spigot = input;
+            self
+        }
+        /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+        pub fn join(mut self, input: crate::model::Join) -> Self {
+            self.join = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+        pub fn set_join(mut self, input: std::option::Option<crate::model::Join>) -> Self {
+            self.join = input;
+            self
+        }
+        /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+        pub fn split_fields(mut self, input: crate::model::SplitFields) -> Self {
+            self.split_fields = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+        pub fn set_split_fields(
+            mut self,
+            input: std::option::Option<crate::model::SplitFields>,
+        ) -> Self {
+            self.split_fields = input;
+            self
+        }
+        /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+        pub fn select_from_collection(mut self, input: crate::model::SelectFromCollection) -> Self {
+            self.select_from_collection = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+        pub fn set_select_from_collection(
+            mut self,
+            input: std::option::Option<crate::model::SelectFromCollection>,
+        ) -> Self {
+            self.select_from_collection = input;
+            self
+        }
+        /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+        pub fn fill_missing_values(mut self, input: crate::model::FillMissingValues) -> Self {
+            self.fill_missing_values = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+        pub fn set_fill_missing_values(
+            mut self,
+            input: std::option::Option<crate::model::FillMissingValues>,
+        ) -> Self {
+            self.fill_missing_values = input;
+            self
+        }
+        /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+        pub fn filter(mut self, input: crate::model::Filter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::Filter>) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+        pub fn custom_code(mut self, input: crate::model::CustomCode) -> Self {
+            self.custom_code = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+        pub fn set_custom_code(
+            mut self,
+            input: std::option::Option<crate::model::CustomCode>,
+        ) -> Self {
+            self.custom_code = input;
+            self
+        }
+        /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+        pub fn spark_sql(mut self, input: crate::model::SparkSql) -> Self {
+            self.spark_sql = Some(input);
+            self
+        }
+        /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+        pub fn set_spark_sql(mut self, input: std::option::Option<crate::model::SparkSql>) -> Self {
+            self.spark_sql = input;
+            self
+        }
+        /// <p>Specifies a direct Amazon Kinesis data source.</p>
+        pub fn direct_kinesis_source(mut self, input: crate::model::DirectKinesisSource) -> Self {
+            self.direct_kinesis_source = Some(input);
+            self
+        }
+        /// <p>Specifies a direct Amazon Kinesis data source.</p>
+        pub fn set_direct_kinesis_source(
+            mut self,
+            input: std::option::Option<crate::model::DirectKinesisSource>,
+        ) -> Self {
+            self.direct_kinesis_source = input;
+            self
+        }
+        /// <p>Specifies an Apache Kafka data store.</p>
+        pub fn direct_kafka_source(mut self, input: crate::model::DirectKafkaSource) -> Self {
+            self.direct_kafka_source = Some(input);
+            self
+        }
+        /// <p>Specifies an Apache Kafka data store.</p>
+        pub fn set_direct_kafka_source(
+            mut self,
+            input: std::option::Option<crate::model::DirectKafkaSource>,
+        ) -> Self {
+            self.direct_kafka_source = input;
+            self
+        }
+        /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+        pub fn catalog_kinesis_source(mut self, input: crate::model::CatalogKinesisSource) -> Self {
+            self.catalog_kinesis_source = Some(input);
+            self
+        }
+        /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+        pub fn set_catalog_kinesis_source(
+            mut self,
+            input: std::option::Option<crate::model::CatalogKinesisSource>,
+        ) -> Self {
+            self.catalog_kinesis_source = input;
+            self
+        }
+        /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+        pub fn catalog_kafka_source(mut self, input: crate::model::CatalogKafkaSource) -> Self {
+            self.catalog_kafka_source = Some(input);
+            self
+        }
+        /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+        pub fn set_catalog_kafka_source(
+            mut self,
+            input: std::option::Option<crate::model::CatalogKafkaSource>,
+        ) -> Self {
+            self.catalog_kafka_source = input;
+            self
+        }
+        /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+        pub fn drop_null_fields(mut self, input: crate::model::DropNullFields) -> Self {
+            self.drop_null_fields = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+        pub fn set_drop_null_fields(
+            mut self,
+            input: std::option::Option<crate::model::DropNullFields>,
+        ) -> Self {
+            self.drop_null_fields = input;
+            self
+        }
+        /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+        pub fn merge(mut self, input: crate::model::Merge) -> Self {
+            self.merge = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+        pub fn set_merge(mut self, input: std::option::Option<crate::model::Merge>) -> Self {
+            self.merge = input;
+            self
+        }
+        /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+        pub fn union(mut self, input: crate::model::Union) -> Self {
+            self.union = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+        pub fn set_union(mut self, input: std::option::Option<crate::model::Union>) -> Self {
+            self.union = input;
+            self
+        }
+        /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+        pub fn pii_detection(mut self, input: crate::model::PiiDetection) -> Self {
+            self.pii_detection = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+        pub fn set_pii_detection(
+            mut self,
+            input: std::option::Option<crate::model::PiiDetection>,
+        ) -> Self {
+            self.pii_detection = input;
+            self
+        }
+        /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+        pub fn aggregate(mut self, input: crate::model::Aggregate) -> Self {
+            self.aggregate = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+        pub fn set_aggregate(
+            mut self,
+            input: std::option::Option<crate::model::Aggregate>,
+        ) -> Self {
+            self.aggregate = input;
+            self
+        }
+        /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
+        pub fn drop_duplicates(mut self, input: crate::model::DropDuplicates) -> Self {
+            self.drop_duplicates = Some(input);
+            self
+        }
+        /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
+        pub fn set_drop_duplicates(
+            mut self,
+            input: std::option::Option<crate::model::DropDuplicates>,
+        ) -> Self {
+            self.drop_duplicates = input;
+            self
+        }
+        /// <p>Specifies a data target that writes to a goverened catalog.</p>
+        pub fn governed_catalog_target(
+            mut self,
+            input: crate::model::GovernedCatalogTarget,
+        ) -> Self {
+            self.governed_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a data target that writes to a goverened catalog.</p>
+        pub fn set_governed_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::GovernedCatalogTarget>,
+        ) -> Self {
+            self.governed_catalog_target = input;
+            self
+        }
+        /// <p>Specifies a data source in a goverened Data Catalog.</p>
+        pub fn governed_catalog_source(
+            mut self,
+            input: crate::model::GovernedCatalogSource,
+        ) -> Self {
+            self.governed_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a data source in a goverened Data Catalog.</p>
+        pub fn set_governed_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::GovernedCatalogSource>,
+        ) -> Self {
+            self.governed_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+        pub fn microsoft_sql_server_catalog_source(
+            mut self,
+            input: crate::model::MicrosoftSqlServerCatalogSource,
+        ) -> Self {
+            self.microsoft_sql_server_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+        pub fn set_microsoft_sql_server_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::MicrosoftSqlServerCatalogSource>,
+        ) -> Self {
+            self.microsoft_sql_server_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+        pub fn my_sql_catalog_source(mut self, input: crate::model::MySqlCatalogSource) -> Self {
+            self.my_sql_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+        pub fn set_my_sql_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::MySqlCatalogSource>,
+        ) -> Self {
+            self.my_sql_catalog_source = input;
+            self
+        }
+        /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+        pub fn oracle_sql_catalog_source(
+            mut self,
+            input: crate::model::OracleSqlCatalogSource,
+        ) -> Self {
+            self.oracle_sql_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+        pub fn set_oracle_sql_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::OracleSqlCatalogSource>,
+        ) -> Self {
+            self.oracle_sql_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+        pub fn postgre_sql_catalog_source(
+            mut self,
+            input: crate::model::PostgreSqlCatalogSource,
+        ) -> Self {
+            self.postgre_sql_catalog_source = Some(input);
+            self
+        }
+        /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+        pub fn set_postgre_sql_catalog_source(
+            mut self,
+            input: std::option::Option<crate::model::PostgreSqlCatalogSource>,
+        ) -> Self {
+            self.postgre_sql_catalog_source = input;
+            self
+        }
+        /// <p>Specifies a target that uses Microsoft SQL.</p>
+        pub fn microsoft_sql_server_catalog_target(
+            mut self,
+            input: crate::model::MicrosoftSqlServerCatalogTarget,
+        ) -> Self {
+            self.microsoft_sql_server_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses Microsoft SQL.</p>
+        pub fn set_microsoft_sql_server_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::MicrosoftSqlServerCatalogTarget>,
+        ) -> Self {
+            self.microsoft_sql_server_catalog_target = input;
+            self
+        }
+        /// <p>Specifies a target that uses MySQL.</p>
+        pub fn my_sql_catalog_target(mut self, input: crate::model::MySqlCatalogTarget) -> Self {
+            self.my_sql_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses MySQL.</p>
+        pub fn set_my_sql_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::MySqlCatalogTarget>,
+        ) -> Self {
+            self.my_sql_catalog_target = input;
+            self
+        }
+        /// <p>Specifies a target that uses Oracle SQL.</p>
+        pub fn oracle_sql_catalog_target(
+            mut self,
+            input: crate::model::OracleSqlCatalogTarget,
+        ) -> Self {
+            self.oracle_sql_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses Oracle SQL.</p>
+        pub fn set_oracle_sql_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::OracleSqlCatalogTarget>,
+        ) -> Self {
+            self.oracle_sql_catalog_target = input;
+            self
+        }
+        /// <p>Specifies a target that uses Postgres SQL.</p>
+        pub fn postgre_sql_catalog_target(
+            mut self,
+            input: crate::model::PostgreSqlCatalogTarget,
+        ) -> Self {
+            self.postgre_sql_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that uses Postgres SQL.</p>
+        pub fn set_postgre_sql_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::PostgreSqlCatalogTarget>,
+        ) -> Self {
+            self.postgre_sql_catalog_target = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode)
+        pub fn build(self) -> crate::model::CodeGenConfigurationNode {
+            crate::model::CodeGenConfigurationNode {
+                athena_connector_source: self.athena_connector_source,
+                jdbc_connector_source: self.jdbc_connector_source,
+                spark_connector_source: self.spark_connector_source,
+                catalog_source: self.catalog_source,
+                redshift_source: self.redshift_source,
+                s3_catalog_source: self.s3_catalog_source,
+                s3_csv_source: self.s3_csv_source,
+                s3_json_source: self.s3_json_source,
+                s3_parquet_source: self.s3_parquet_source,
+                relational_catalog_source: self.relational_catalog_source,
+                dynamo_db_catalog_source: self.dynamo_db_catalog_source,
+                jdbc_connector_target: self.jdbc_connector_target,
+                spark_connector_target: self.spark_connector_target,
+                catalog_target: self.catalog_target,
+                redshift_target: self.redshift_target,
+                s3_catalog_target: self.s3_catalog_target,
+                s3_glue_parquet_target: self.s3_glue_parquet_target,
+                s3_direct_target: self.s3_direct_target,
+                apply_mapping: self.apply_mapping,
+                select_fields: self.select_fields,
+                drop_fields: self.drop_fields,
+                rename_field: self.rename_field,
+                spigot: self.spigot,
+                join: self.join,
+                split_fields: self.split_fields,
+                select_from_collection: self.select_from_collection,
+                fill_missing_values: self.fill_missing_values,
+                filter: self.filter,
+                custom_code: self.custom_code,
+                spark_sql: self.spark_sql,
+                direct_kinesis_source: self.direct_kinesis_source,
+                direct_kafka_source: self.direct_kafka_source,
+                catalog_kinesis_source: self.catalog_kinesis_source,
+                catalog_kafka_source: self.catalog_kafka_source,
+                drop_null_fields: self.drop_null_fields,
+                merge: self.merge,
+                union: self.union,
+                pii_detection: self.pii_detection,
+                aggregate: self.aggregate,
+                drop_duplicates: self.drop_duplicates,
+                governed_catalog_target: self.governed_catalog_target,
+                governed_catalog_source: self.governed_catalog_source,
+                microsoft_sql_server_catalog_source: self.microsoft_sql_server_catalog_source,
+                my_sql_catalog_source: self.my_sql_catalog_source,
+                oracle_sql_catalog_source: self.oracle_sql_catalog_source,
+                postgre_sql_catalog_source: self.postgre_sql_catalog_source,
+                microsoft_sql_server_catalog_target: self.microsoft_sql_server_catalog_target,
+                my_sql_catalog_target: self.my_sql_catalog_target,
+                oracle_sql_catalog_target: self.oracle_sql_catalog_target,
+                postgre_sql_catalog_target: self.postgre_sql_catalog_target,
+            }
+        }
+    }
+}
+impl CodeGenConfigurationNode {
+    /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode)
+    pub fn builder() -> crate::model::code_gen_configuration_node::Builder {
+        crate::model::code_gen_configuration_node::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses Postgres SQL.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PostgreSqlCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl PostgreSqlCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for PostgreSqlCatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PostgreSqlCatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`PostgreSqlCatalogTarget`](crate::model::PostgreSqlCatalogTarget)
+pub mod postgre_sql_catalog_target {
+    /// A builder for [`PostgreSqlCatalogTarget`](crate::model::PostgreSqlCatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostgreSqlCatalogTarget`](crate::model::PostgreSqlCatalogTarget)
+        pub fn build(self) -> crate::model::PostgreSqlCatalogTarget {
+            crate::model::PostgreSqlCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl PostgreSqlCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`PostgreSqlCatalogTarget`](crate::model::PostgreSqlCatalogTarget)
+    pub fn builder() -> crate::model::postgre_sql_catalog_target::Builder {
+        crate::model::postgre_sql_catalog_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses Oracle SQL.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OracleSqlCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl OracleSqlCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for OracleSqlCatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OracleSqlCatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`OracleSqlCatalogTarget`](crate::model::OracleSqlCatalogTarget)
+pub mod oracle_sql_catalog_target {
+    /// A builder for [`OracleSqlCatalogTarget`](crate::model::OracleSqlCatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OracleSqlCatalogTarget`](crate::model::OracleSqlCatalogTarget)
+        pub fn build(self) -> crate::model::OracleSqlCatalogTarget {
+            crate::model::OracleSqlCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl OracleSqlCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`OracleSqlCatalogTarget`](crate::model::OracleSqlCatalogTarget)
+    pub fn builder() -> crate::model::oracle_sql_catalog_target::Builder {
+        crate::model::oracle_sql_catalog_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses MySQL.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MySqlCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl MySqlCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for MySqlCatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MySqlCatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`MySqlCatalogTarget`](crate::model::MySqlCatalogTarget)
+pub mod my_sql_catalog_target {
+    /// A builder for [`MySqlCatalogTarget`](crate::model::MySqlCatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MySqlCatalogTarget`](crate::model::MySqlCatalogTarget)
+        pub fn build(self) -> crate::model::MySqlCatalogTarget {
+            crate::model::MySqlCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl MySqlCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`MySqlCatalogTarget`](crate::model::MySqlCatalogTarget)
+    pub fn builder() -> crate::model::my_sql_catalog_target::Builder {
+        crate::model::my_sql_catalog_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses Microsoft SQL.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MicrosoftSqlServerCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl MicrosoftSqlServerCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for MicrosoftSqlServerCatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MicrosoftSqlServerCatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`MicrosoftSqlServerCatalogTarget`](crate::model::MicrosoftSqlServerCatalogTarget)
+pub mod microsoft_sql_server_catalog_target {
+    /// A builder for [`MicrosoftSqlServerCatalogTarget`](crate::model::MicrosoftSqlServerCatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MicrosoftSqlServerCatalogTarget`](crate::model::MicrosoftSqlServerCatalogTarget)
+        pub fn build(self) -> crate::model::MicrosoftSqlServerCatalogTarget {
+            crate::model::MicrosoftSqlServerCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl MicrosoftSqlServerCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`MicrosoftSqlServerCatalogTarget`](crate::model::MicrosoftSqlServerCatalogTarget)
+    pub fn builder() -> crate::model::microsoft_sql_server_catalog_target::Builder {
+        crate::model::microsoft_sql_server_catalog_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PostgreSqlCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl PostgreSqlCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for PostgreSqlCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PostgreSqlCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`PostgreSqlCatalogSource`](crate::model::PostgreSqlCatalogSource)
+pub mod postgre_sql_catalog_source {
+    /// A builder for [`PostgreSqlCatalogSource`](crate::model::PostgreSqlCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostgreSqlCatalogSource`](crate::model::PostgreSqlCatalogSource)
+        pub fn build(self) -> crate::model::PostgreSqlCatalogSource {
+            crate::model::PostgreSqlCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl PostgreSqlCatalogSource {
+    /// Creates a new builder-style object to manufacture [`PostgreSqlCatalogSource`](crate::model::PostgreSqlCatalogSource)
+    pub fn builder() -> crate::model::postgre_sql_catalog_source::Builder {
+        crate::model::postgre_sql_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OracleSqlCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl OracleSqlCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for OracleSqlCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OracleSqlCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`OracleSqlCatalogSource`](crate::model::OracleSqlCatalogSource)
+pub mod oracle_sql_catalog_source {
+    /// A builder for [`OracleSqlCatalogSource`](crate::model::OracleSqlCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OracleSqlCatalogSource`](crate::model::OracleSqlCatalogSource)
+        pub fn build(self) -> crate::model::OracleSqlCatalogSource {
+            crate::model::OracleSqlCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl OracleSqlCatalogSource {
+    /// Creates a new builder-style object to manufacture [`OracleSqlCatalogSource`](crate::model::OracleSqlCatalogSource)
+    pub fn builder() -> crate::model::oracle_sql_catalog_source::Builder {
+        crate::model::oracle_sql_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MySqlCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl MySqlCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for MySqlCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MySqlCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`MySqlCatalogSource`](crate::model::MySqlCatalogSource)
+pub mod my_sql_catalog_source {
+    /// A builder for [`MySqlCatalogSource`](crate::model::MySqlCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MySqlCatalogSource`](crate::model::MySqlCatalogSource)
+        pub fn build(self) -> crate::model::MySqlCatalogSource {
+            crate::model::MySqlCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl MySqlCatalogSource {
+    /// Creates a new builder-style object to manufacture [`MySqlCatalogSource`](crate::model::MySqlCatalogSource)
+    pub fn builder() -> crate::model::my_sql_catalog_source::Builder {
+        crate::model::my_sql_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MicrosoftSqlServerCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl MicrosoftSqlServerCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for MicrosoftSqlServerCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MicrosoftSqlServerCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`MicrosoftSqlServerCatalogSource`](crate::model::MicrosoftSqlServerCatalogSource)
+pub mod microsoft_sql_server_catalog_source {
+    /// A builder for [`MicrosoftSqlServerCatalogSource`](crate::model::MicrosoftSqlServerCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MicrosoftSqlServerCatalogSource`](crate::model::MicrosoftSqlServerCatalogSource)
+        pub fn build(self) -> crate::model::MicrosoftSqlServerCatalogSource {
+            crate::model::MicrosoftSqlServerCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl MicrosoftSqlServerCatalogSource {
+    /// Creates a new builder-style object to manufacture [`MicrosoftSqlServerCatalogSource`](crate::model::MicrosoftSqlServerCatalogSource)
+    pub fn builder() -> crate::model::microsoft_sql_server_catalog_source::Builder {
+        crate::model::microsoft_sql_server_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies the data store in the governed Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GovernedCatalogSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The database table to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    pub partition_predicate: std::option::Option<std::string::String>,
+    /// <p>Specifies additional connection options.</p>
+    pub additional_options: std::option::Option<crate::model::S3SourceAdditionalOptions>,
+}
+impl GovernedCatalogSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The database table to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    pub fn partition_predicate(&self) -> std::option::Option<&str> {
+        self.partition_predicate.as_deref()
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::model::S3SourceAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
+}
+impl std::fmt::Debug for GovernedCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GovernedCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.field("partition_predicate", &self.partition_predicate);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.finish()
+    }
+}
+/// See [`GovernedCatalogSource`](crate::model::GovernedCatalogSource)
+pub mod governed_catalog_source {
+    /// A builder for [`GovernedCatalogSource`](crate::model::GovernedCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) partition_predicate: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<crate::model::S3SourceAdditionalOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The database table to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The database table to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+        pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_predicate = Some(input.into());
+            self
+        }
+        /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+        pub fn set_partition_predicate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_predicate = input;
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_options(
+            mut self,
+            input: crate::model::S3SourceAdditionalOptions,
+        ) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::S3SourceAdditionalOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GovernedCatalogSource`](crate::model::GovernedCatalogSource)
+        pub fn build(self) -> crate::model::GovernedCatalogSource {
+            crate::model::GovernedCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+                partition_predicate: self.partition_predicate,
+                additional_options: self.additional_options,
+            }
+        }
+    }
+}
+impl GovernedCatalogSource {
+    /// Creates a new builder-style object to manufacture [`GovernedCatalogSource`](crate::model::GovernedCatalogSource)
+    pub fn builder() -> crate::model::governed_catalog_source::Builder {
+        crate::model::governed_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3SourceAdditionalOptions {
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub bounded_size: std::option::Option<i64>,
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub bounded_files: std::option::Option<i64>,
+}
+impl S3SourceAdditionalOptions {
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub fn bounded_size(&self) -> std::option::Option<i64> {
+        self.bounded_size
+    }
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub fn bounded_files(&self) -> std::option::Option<i64> {
+        self.bounded_files
+    }
+}
+impl std::fmt::Debug for S3SourceAdditionalOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3SourceAdditionalOptions");
+        formatter.field("bounded_size", &self.bounded_size);
+        formatter.field("bounded_files", &self.bounded_files);
+        formatter.finish()
+    }
+}
+/// See [`S3SourceAdditionalOptions`](crate::model::S3SourceAdditionalOptions)
+pub mod s3_source_additional_options {
+    /// A builder for [`S3SourceAdditionalOptions`](crate::model::S3SourceAdditionalOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bounded_size: std::option::Option<i64>,
+        pub(crate) bounded_files: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+        pub fn bounded_size(mut self, input: i64) -> Self {
+            self.bounded_size = Some(input);
+            self
+        }
+        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+        pub fn set_bounded_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.bounded_size = input;
+            self
+        }
+        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+        pub fn bounded_files(mut self, input: i64) -> Self {
+            self.bounded_files = Some(input);
+            self
+        }
+        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+        pub fn set_bounded_files(mut self, input: std::option::Option<i64>) -> Self {
+            self.bounded_files = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3SourceAdditionalOptions`](crate::model::S3SourceAdditionalOptions)
+        pub fn build(self) -> crate::model::S3SourceAdditionalOptions {
+            crate::model::S3SourceAdditionalOptions {
+                bounded_size: self.bounded_size,
+                bounded_files: self.bounded_files,
+            }
+        }
+    }
+}
+impl S3SourceAdditionalOptions {
+    /// Creates a new builder-style object to manufacture [`S3SourceAdditionalOptions`](crate::model::S3SourceAdditionalOptions)
+    pub fn builder() -> crate::model::s3_source_additional_options::Builder {
+        crate::model::s3_source_additional_options::Builder::default()
+    }
+}
+
+/// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GovernedCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>A policy that specifies update behavior for the governed catalog.</p>
+    pub schema_change_policy: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+}
+impl GovernedCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A policy that specifies update behavior for the governed catalog.</p>
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogSchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for GovernedCatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GovernedCatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("partition_keys", &self.partition_keys);
+        formatter.field("table", &self.table);
+        formatter.field("database", &self.database);
+        formatter.field("schema_change_policy", &self.schema_change_policy);
+        formatter.finish()
+    }
+}
+/// See [`GovernedCatalogTarget`](crate::model::GovernedCatalogTarget)
+pub mod governed_catalog_target {
+    /// A builder for [`GovernedCatalogTarget`](crate::model::GovernedCatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) partition_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) schema_change_policy:
+            std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.partition_keys.unwrap_or_default();
+            v.push(input);
+            self.partition_keys = Some(v);
+            self
+        }
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn set_partition_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.partition_keys = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>A policy that specifies update behavior for the governed catalog.</p>
+        pub fn schema_change_policy(
+            mut self,
+            input: crate::model::CatalogSchemaChangePolicy,
+        ) -> Self {
+            self.schema_change_policy = Some(input);
+            self
+        }
+        /// <p>A policy that specifies update behavior for the governed catalog.</p>
+        pub fn set_schema_change_policy(
+            mut self,
+            input: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+        ) -> Self {
+            self.schema_change_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GovernedCatalogTarget`](crate::model::GovernedCatalogTarget)
+        pub fn build(self) -> crate::model::GovernedCatalogTarget {
+            crate::model::GovernedCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                partition_keys: self.partition_keys,
+                table: self.table,
+                database: self.database,
+                schema_change_policy: self.schema_change_policy,
+            }
+        }
+    }
+}
+impl GovernedCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`GovernedCatalogTarget`](crate::model::GovernedCatalogTarget)
+    pub fn builder() -> crate::model::governed_catalog_target::Builder {
+        crate::model::governed_catalog_target::Builder::default()
+    }
+}
+
+/// <p>A policy that specifies update behavior for the crawler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CatalogSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub enable_update_catalog: std::option::Option<bool>,
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+}
+impl CatalogSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
+        self.enable_update_catalog
+    }
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
+        self.update_behavior.as_ref()
+    }
+}
+impl std::fmt::Debug for CatalogSchemaChangePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CatalogSchemaChangePolicy");
+        formatter.field("enable_update_catalog", &self.enable_update_catalog);
+        formatter.field("update_behavior", &self.update_behavior);
+        formatter.finish()
+    }
+}
+/// See [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy)
+pub mod catalog_schema_change_policy {
+    /// A builder for [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_update_catalog: std::option::Option<bool>,
+        pub(crate) update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+    }
+    impl Builder {
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn enable_update_catalog(mut self, input: bool) -> Self {
+            self.enable_update_catalog = Some(input);
+            self
+        }
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_update_catalog = input;
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn update_behavior(mut self, input: crate::model::UpdateCatalogBehavior) -> Self {
+            self.update_behavior = Some(input);
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn set_update_behavior(
+            mut self,
+            input: std::option::Option<crate::model::UpdateCatalogBehavior>,
+        ) -> Self {
+            self.update_behavior = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy)
+        pub fn build(self) -> crate::model::CatalogSchemaChangePolicy {
+            crate::model::CatalogSchemaChangePolicy {
+                enable_update_catalog: self.enable_update_catalog,
+                update_behavior: self.update_behavior,
+            }
+        }
+    }
+}
+impl CatalogSchemaChangePolicy {
+    /// Creates a new builder-style object to manufacture [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy)
+    pub fn builder() -> crate::model::catalog_schema_change_policy::Builder {
+        crate::model::catalog_schema_change_policy::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateCatalogBehavior {
+    #[allow(missing_docs)] // documentation missing in model
+    Log,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInDatabase,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for UpdateCatalogBehavior {
+    fn from(s: &str) -> Self {
+        match s {
+            "LOG" => UpdateCatalogBehavior::Log,
+            "UPDATE_IN_DATABASE" => UpdateCatalogBehavior::UpdateInDatabase,
+            other => UpdateCatalogBehavior::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for UpdateCatalogBehavior {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateCatalogBehavior::from(s))
+    }
+}
+impl UpdateCatalogBehavior {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateCatalogBehavior::Log => "LOG",
+            UpdateCatalogBehavior::UpdateInDatabase => "UPDATE_IN_DATABASE",
+            UpdateCatalogBehavior::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LOG", "UPDATE_IN_DATABASE"]
+    }
+}
+impl AsRef<str> for UpdateCatalogBehavior {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a transform that removes rows of repeating data from a data set. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DropDuplicates {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the columns to be merged or removed if repeating.</p>
+    pub columns: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl DropDuplicates {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the columns to be merged or removed if repeating.</p>
+    pub fn columns(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.columns.as_deref()
+    }
+}
+impl std::fmt::Debug for DropDuplicates {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DropDuplicates");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("columns", &self.columns);
+        formatter.finish()
+    }
+}
+/// See [`DropDuplicates`](crate::model::DropDuplicates)
+pub mod drop_duplicates {
+    /// A builder for [`DropDuplicates`](crate::model::DropDuplicates)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) columns: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `columns`.
+        ///
+        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
+        ///
+        /// <p>The name of the columns to be merged or removed if repeating.</p>
+        pub fn columns(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.columns.unwrap_or_default();
+            v.push(input);
+            self.columns = Some(v);
+            self
+        }
+        /// <p>The name of the columns to be merged or removed if repeating.</p>
+        pub fn set_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.columns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DropDuplicates`](crate::model::DropDuplicates)
+        pub fn build(self) -> crate::model::DropDuplicates {
+            crate::model::DropDuplicates {
+                name: self.name,
+                inputs: self.inputs,
+                columns: self.columns,
+            }
+        }
+    }
+}
+impl DropDuplicates {
+    /// Creates a new builder-style object to manufacture [`DropDuplicates`](crate::model::DropDuplicates)
+    pub fn builder() -> crate::model::drop_duplicates::Builder {
+        crate::model::drop_duplicates::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Aggregate {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the fields to group by.</p>
+    pub groups: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    pub aggs: std::option::Option<std::vec::Vec<crate::model::AggregateOperation>>,
+}
+impl Aggregate {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies the fields to group by.</p>
+    pub fn groups(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.groups.as_deref()
+    }
+    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    pub fn aggs(&self) -> std::option::Option<&[crate::model::AggregateOperation]> {
+        self.aggs.as_deref()
+    }
+}
+impl std::fmt::Debug for Aggregate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Aggregate");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("groups", &self.groups);
+        formatter.field("aggs", &self.aggs);
+        formatter.finish()
+    }
+}
+/// See [`Aggregate`](crate::model::Aggregate)
+pub mod aggregate {
+    /// A builder for [`Aggregate`](crate::model::Aggregate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) groups: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) aggs: std::option::Option<std::vec::Vec<crate::model::AggregateOperation>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>Specifies the fields to group by.</p>
+        pub fn groups(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.groups.unwrap_or_default();
+            v.push(input);
+            self.groups = Some(v);
+            self
+        }
+        /// <p>Specifies the fields to group by.</p>
+        pub fn set_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.groups = input;
+            self
+        }
+        /// Appends an item to `aggs`.
+        ///
+        /// To override the contents of this collection use [`set_aggs`](Self::set_aggs).
+        ///
+        /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+        pub fn aggs(mut self, input: crate::model::AggregateOperation) -> Self {
+            let mut v = self.aggs.unwrap_or_default();
+            v.push(input);
+            self.aggs = Some(v);
+            self
+        }
+        /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+        pub fn set_aggs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AggregateOperation>>,
+        ) -> Self {
+            self.aggs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Aggregate`](crate::model::Aggregate)
+        pub fn build(self) -> crate::model::Aggregate {
+            crate::model::Aggregate {
+                name: self.name,
+                inputs: self.inputs,
+                groups: self.groups,
+                aggs: self.aggs,
+            }
+        }
+    }
+}
+impl Aggregate {
+    /// Creates a new builder-style object to manufacture [`Aggregate`](crate::model::Aggregate)
+    pub fn builder() -> crate::model::aggregate::Builder {
+        crate::model::aggregate::Builder::default()
+    }
+}
+
+/// <p>Specifies the set of parameters needed to perform aggregation in the aggregate transform.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregateOperation {
+    /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
+    pub column: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the aggregation function to apply.</p>
+    /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+    pub agg_func: std::option::Option<crate::model::AggFunction>,
+}
+impl AggregateOperation {
+    /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
+    pub fn column(&self) -> std::option::Option<&[std::string::String]> {
+        self.column.as_deref()
+    }
+    /// <p>Specifies the aggregation function to apply.</p>
+    /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+    pub fn agg_func(&self) -> std::option::Option<&crate::model::AggFunction> {
+        self.agg_func.as_ref()
+    }
+}
+impl std::fmt::Debug for AggregateOperation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregateOperation");
+        formatter.field("column", &self.column);
+        formatter.field("agg_func", &self.agg_func);
+        formatter.finish()
+    }
+}
+/// See [`AggregateOperation`](crate::model::AggregateOperation)
+pub mod aggregate_operation {
+    /// A builder for [`AggregateOperation`](crate::model::AggregateOperation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) column: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) agg_func: std::option::Option<crate::model::AggFunction>,
+    }
+    impl Builder {
+        /// Appends an item to `column`.
+        ///
+        /// To override the contents of this collection use [`set_column`](Self::set_column).
+        ///
+        /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
+        pub fn column(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.column.unwrap_or_default();
+            v.push(input.into());
+            self.column = Some(v);
+            self
+        }
+        /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
+        pub fn set_column(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.column = input;
+            self
+        }
+        /// <p>Specifies the aggregation function to apply.</p>
+        /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+        pub fn agg_func(mut self, input: crate::model::AggFunction) -> Self {
+            self.agg_func = Some(input);
+            self
+        }
+        /// <p>Specifies the aggregation function to apply.</p>
+        /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+        pub fn set_agg_func(
+            mut self,
+            input: std::option::Option<crate::model::AggFunction>,
+        ) -> Self {
+            self.agg_func = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregateOperation`](crate::model::AggregateOperation)
+        pub fn build(self) -> crate::model::AggregateOperation {
+            crate::model::AggregateOperation {
+                column: self.column,
+                agg_func: self.agg_func,
+            }
+        }
+    }
+}
+impl AggregateOperation {
+    /// Creates a new builder-style object to manufacture [`AggregateOperation`](crate::model::AggregateOperation)
+    pub fn builder() -> crate::model::aggregate_operation::Builder {
+        crate::model::aggregate_operation::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AggFunction {
+    #[allow(missing_docs)] // documentation missing in model
+    Avg,
+    #[allow(missing_docs)] // documentation missing in model
+    Count,
+    #[allow(missing_docs)] // documentation missing in model
+    CountDistinct,
+    #[allow(missing_docs)] // documentation missing in model
+    First,
+    #[allow(missing_docs)] // documentation missing in model
+    Kurtosis,
+    #[allow(missing_docs)] // documentation missing in model
+    Last,
+    #[allow(missing_docs)] // documentation missing in model
+    Max,
+    #[allow(missing_docs)] // documentation missing in model
+    Min,
+    #[allow(missing_docs)] // documentation missing in model
+    Skewness,
+    #[allow(missing_docs)] // documentation missing in model
+    StddevPop,
+    #[allow(missing_docs)] // documentation missing in model
+    StddevSamp,
+    #[allow(missing_docs)] // documentation missing in model
+    Sum,
+    #[allow(missing_docs)] // documentation missing in model
+    SumDistinct,
+    #[allow(missing_docs)] // documentation missing in model
+    VarPop,
+    #[allow(missing_docs)] // documentation missing in model
+    VarSamp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AggFunction {
+    fn from(s: &str) -> Self {
+        match s {
+            "avg" => AggFunction::Avg,
+            "count" => AggFunction::Count,
+            "countDistinct" => AggFunction::CountDistinct,
+            "first" => AggFunction::First,
+            "kurtosis" => AggFunction::Kurtosis,
+            "last" => AggFunction::Last,
+            "max" => AggFunction::Max,
+            "min" => AggFunction::Min,
+            "skewness" => AggFunction::Skewness,
+            "stddev_pop" => AggFunction::StddevPop,
+            "stddev_samp" => AggFunction::StddevSamp,
+            "sum" => AggFunction::Sum,
+            "sumDistinct" => AggFunction::SumDistinct,
+            "var_pop" => AggFunction::VarPop,
+            "var_samp" => AggFunction::VarSamp,
+            other => AggFunction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AggFunction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AggFunction::from(s))
+    }
+}
+impl AggFunction {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AggFunction::Avg => "avg",
+            AggFunction::Count => "count",
+            AggFunction::CountDistinct => "countDistinct",
+            AggFunction::First => "first",
+            AggFunction::Kurtosis => "kurtosis",
+            AggFunction::Last => "last",
+            AggFunction::Max => "max",
+            AggFunction::Min => "min",
+            AggFunction::Skewness => "skewness",
+            AggFunction::StddevPop => "stddev_pop",
+            AggFunction::StddevSamp => "stddev_samp",
+            AggFunction::Sum => "sum",
+            AggFunction::SumDistinct => "sumDistinct",
+            AggFunction::VarPop => "var_pop",
+            AggFunction::VarSamp => "var_samp",
+            AggFunction::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "avg",
+            "count",
+            "countDistinct",
+            "first",
+            "kurtosis",
+            "last",
+            "max",
+            "min",
+            "skewness",
+            "stddev_pop",
+            "stddev_samp",
+            "sum",
+            "sumDistinct",
+            "var_pop",
+            "var_samp",
+        ]
+    }
+}
+impl AsRef<str> for AggFunction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PiiDetection {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The node ID inputs to the transform.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Indicates the type of PIIDetection transform. </p>
+    pub pii_type: std::option::Option<crate::model::PiiType>,
+    /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
+    /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
+    pub entity_types_to_detect: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
+    pub output_column_name: std::option::Option<std::string::String>,
+    /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
+    pub sample_fraction: std::option::Option<f64>,
+    /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
+    pub threshold_fraction: std::option::Option<f64>,
+    /// <p>Indicates the value that will replace the detected entity. </p>
+    pub mask_value: std::option::Option<std::string::String>,
+}
+impl PiiDetection {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The node ID inputs to the transform.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Indicates the type of PIIDetection transform. </p>
+    pub fn pii_type(&self) -> std::option::Option<&crate::model::PiiType> {
+        self.pii_type.as_ref()
+    }
+    /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
+    /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
+    pub fn entity_types_to_detect(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_types_to_detect.as_deref()
+    }
+    /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
+    pub fn output_column_name(&self) -> std::option::Option<&str> {
+        self.output_column_name.as_deref()
+    }
+    /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
+    pub fn sample_fraction(&self) -> std::option::Option<f64> {
+        self.sample_fraction
+    }
+    /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
+    pub fn threshold_fraction(&self) -> std::option::Option<f64> {
+        self.threshold_fraction
+    }
+    /// <p>Indicates the value that will replace the detected entity. </p>
+    pub fn mask_value(&self) -> std::option::Option<&str> {
+        self.mask_value.as_deref()
+    }
+}
+impl std::fmt::Debug for PiiDetection {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PiiDetection");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("pii_type", &self.pii_type);
+        formatter.field("entity_types_to_detect", &self.entity_types_to_detect);
+        formatter.field("output_column_name", &self.output_column_name);
+        formatter.field("sample_fraction", &self.sample_fraction);
+        formatter.field("threshold_fraction", &self.threshold_fraction);
+        formatter.field("mask_value", &self.mask_value);
+        formatter.finish()
+    }
+}
+/// See [`PiiDetection`](crate::model::PiiDetection)
+pub mod pii_detection {
+    /// A builder for [`PiiDetection`](crate::model::PiiDetection)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) pii_type: std::option::Option<crate::model::PiiType>,
+        pub(crate) entity_types_to_detect: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) output_column_name: std::option::Option<std::string::String>,
+        pub(crate) sample_fraction: std::option::Option<f64>,
+        pub(crate) threshold_fraction: std::option::Option<f64>,
+        pub(crate) mask_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The node ID inputs to the transform.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The node ID inputs to the transform.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>Indicates the type of PIIDetection transform. </p>
+        pub fn pii_type(mut self, input: crate::model::PiiType) -> Self {
+            self.pii_type = Some(input);
+            self
+        }
+        /// <p>Indicates the type of PIIDetection transform. </p>
+        pub fn set_pii_type(mut self, input: std::option::Option<crate::model::PiiType>) -> Self {
+            self.pii_type = input;
+            self
+        }
+        /// Appends an item to `entity_types_to_detect`.
+        ///
+        /// To override the contents of this collection use [`set_entity_types_to_detect`](Self::set_entity_types_to_detect).
+        ///
+        /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
+        /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
+        pub fn entity_types_to_detect(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.entity_types_to_detect.unwrap_or_default();
+            v.push(input.into());
+            self.entity_types_to_detect = Some(v);
+            self
+        }
+        /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
+        /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
+        pub fn set_entity_types_to_detect(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.entity_types_to_detect = input;
+            self
+        }
+        /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
+        pub fn output_column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_column_name = Some(input.into());
+            self
+        }
+        /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
+        pub fn set_output_column_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.output_column_name = input;
+            self
+        }
+        /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
+        pub fn sample_fraction(mut self, input: f64) -> Self {
+            self.sample_fraction = Some(input);
+            self
+        }
+        /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
+        pub fn set_sample_fraction(mut self, input: std::option::Option<f64>) -> Self {
+            self.sample_fraction = input;
+            self
+        }
+        /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
+        pub fn threshold_fraction(mut self, input: f64) -> Self {
+            self.threshold_fraction = Some(input);
+            self
+        }
+        /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
+        pub fn set_threshold_fraction(mut self, input: std::option::Option<f64>) -> Self {
+            self.threshold_fraction = input;
+            self
+        }
+        /// <p>Indicates the value that will replace the detected entity. </p>
+        pub fn mask_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mask_value = Some(input.into());
+            self
+        }
+        /// <p>Indicates the value that will replace the detected entity. </p>
+        pub fn set_mask_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mask_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PiiDetection`](crate::model::PiiDetection)
+        pub fn build(self) -> crate::model::PiiDetection {
+            crate::model::PiiDetection {
+                name: self.name,
+                inputs: self.inputs,
+                pii_type: self.pii_type,
+                entity_types_to_detect: self.entity_types_to_detect,
+                output_column_name: self.output_column_name,
+                sample_fraction: self.sample_fraction,
+                threshold_fraction: self.threshold_fraction,
+                mask_value: self.mask_value,
+            }
+        }
+    }
+}
+impl PiiDetection {
+    /// Creates a new builder-style object to manufacture [`PiiDetection`](crate::model::PiiDetection)
+    pub fn builder() -> crate::model::pii_detection::Builder {
+        crate::model::pii_detection::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PiiType {
+    #[allow(missing_docs)] // documentation missing in model
+    ColumnAudit,
+    #[allow(missing_docs)] // documentation missing in model
+    ColumnMasking,
+    #[allow(missing_docs)] // documentation missing in model
+    RowAudit,
+    #[allow(missing_docs)] // documentation missing in model
+    RowMasking,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PiiType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ColumnAudit" => PiiType::ColumnAudit,
+            "ColumnMasking" => PiiType::ColumnMasking,
+            "RowAudit" => PiiType::RowAudit,
+            "RowMasking" => PiiType::RowMasking,
+            other => PiiType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PiiType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PiiType::from(s))
+    }
+}
+impl PiiType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PiiType::ColumnAudit => "ColumnAudit",
+            PiiType::ColumnMasking => "ColumnMasking",
+            PiiType::RowAudit => "RowAudit",
+            PiiType::RowMasking => "RowMasking",
+            PiiType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ColumnAudit", "ColumnMasking", "RowAudit", "RowMasking"]
+    }
+}
+impl AsRef<str> for PiiType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Union {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The node ID inputs to the transform.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Indicates the type of Union transform. </p>
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+    pub union_type: std::option::Option<crate::model::UnionType>,
+}
+impl Union {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The node ID inputs to the transform.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Indicates the type of Union transform. </p>
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+    pub fn union_type(&self) -> std::option::Option<&crate::model::UnionType> {
+        self.union_type.as_ref()
+    }
+}
+impl std::fmt::Debug for Union {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Union");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("union_type", &self.union_type);
+        formatter.finish()
+    }
+}
+/// See [`Union`](crate::model::Union)
+pub mod union {
+    /// A builder for [`Union`](crate::model::Union)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) union_type: std::option::Option<crate::model::UnionType>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The node ID inputs to the transform.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The node ID inputs to the transform.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>Indicates the type of Union transform. </p>
+        /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+        /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+        pub fn union_type(mut self, input: crate::model::UnionType) -> Self {
+            self.union_type = Some(input);
+            self
+        }
+        /// <p>Indicates the type of Union transform. </p>
+        /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+        /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+        pub fn set_union_type(
+            mut self,
+            input: std::option::Option<crate::model::UnionType>,
+        ) -> Self {
+            self.union_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Union`](crate::model::Union)
+        pub fn build(self) -> crate::model::Union {
+            crate::model::Union {
+                name: self.name,
+                inputs: self.inputs,
+                union_type: self.union_type,
+            }
+        }
+    }
+}
+impl Union {
+    /// Creates a new builder-style object to manufacture [`Union`](crate::model::Union)
+    pub fn builder() -> crate::model::union::Builder {
+        crate::model::union::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UnionType {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Distinct,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for UnionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => UnionType::All,
+            "DISTINCT" => UnionType::Distinct,
+            other => UnionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for UnionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UnionType::from(s))
+    }
+}
+impl UnionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UnionType::All => "ALL",
+            UnionType::Distinct => "DISTINCT",
+            UnionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "DISTINCT"]
+    }
+}
+impl AsRef<str> for UnionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Merge {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+    pub source: std::option::Option<std::string::String>,
+    /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
+    pub primary_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl Merge {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
+    pub fn primary_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.primary_keys.as_deref()
+    }
+}
+impl std::fmt::Debug for Merge {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Merge");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("source", &self.source);
+        formatter.field("primary_keys", &self.primary_keys);
+        formatter.finish()
+    }
+}
+/// See [`Merge`](crate::model::Merge)
+pub mod merge {
+    /// A builder for [`Merge`](crate::model::Merge)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) primary_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// Appends an item to `primary_keys`.
+        ///
+        /// To override the contents of this collection use [`set_primary_keys`](Self::set_primary_keys).
+        ///
+        /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
+        pub fn primary_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.primary_keys.unwrap_or_default();
+            v.push(input);
+            self.primary_keys = Some(v);
+            self
+        }
+        /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
+        pub fn set_primary_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.primary_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Merge`](crate::model::Merge)
+        pub fn build(self) -> crate::model::Merge {
+            crate::model::Merge {
+                name: self.name,
+                inputs: self.inputs,
+                source: self.source,
+                primary_keys: self.primary_keys,
+            }
+        }
+    }
+}
+impl Merge {
+    /// Creates a new builder-style object to manufacture [`Merge`](crate::model::Merge)
+    pub fn builder() -> crate::model::merge::Builder {
+        crate::model::merge::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DropNullFields {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
+    pub null_check_box_list: std::option::Option<crate::model::NullCheckBoxList>,
+    /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
+    /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+    pub null_text_list: std::option::Option<std::vec::Vec<crate::model::NullValueField>>,
+}
+impl DropNullFields {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
+    pub fn null_check_box_list(&self) -> std::option::Option<&crate::model::NullCheckBoxList> {
+        self.null_check_box_list.as_ref()
+    }
+    /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
+    /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+    pub fn null_text_list(&self) -> std::option::Option<&[crate::model::NullValueField]> {
+        self.null_text_list.as_deref()
+    }
+}
+impl std::fmt::Debug for DropNullFields {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DropNullFields");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("null_check_box_list", &self.null_check_box_list);
+        formatter.field("null_text_list", &self.null_text_list);
+        formatter.finish()
+    }
+}
+/// See [`DropNullFields`](crate::model::DropNullFields)
+pub mod drop_null_fields {
+    /// A builder for [`DropNullFields`](crate::model::DropNullFields)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) null_check_box_list: std::option::Option<crate::model::NullCheckBoxList>,
+        pub(crate) null_text_list: std::option::Option<std::vec::Vec<crate::model::NullValueField>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
+        pub fn null_check_box_list(mut self, input: crate::model::NullCheckBoxList) -> Self {
+            self.null_check_box_list = Some(input);
+            self
+        }
+        /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
+        pub fn set_null_check_box_list(
+            mut self,
+            input: std::option::Option<crate::model::NullCheckBoxList>,
+        ) -> Self {
+            self.null_check_box_list = input;
+            self
+        }
+        /// Appends an item to `null_text_list`.
+        ///
+        /// To override the contents of this collection use [`set_null_text_list`](Self::set_null_text_list).
+        ///
+        /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
+        /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+        pub fn null_text_list(mut self, input: crate::model::NullValueField) -> Self {
+            let mut v = self.null_text_list.unwrap_or_default();
+            v.push(input);
+            self.null_text_list = Some(v);
+            self
+        }
+        /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
+        /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+        pub fn set_null_text_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NullValueField>>,
+        ) -> Self {
+            self.null_text_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DropNullFields`](crate::model::DropNullFields)
+        pub fn build(self) -> crate::model::DropNullFields {
+            crate::model::DropNullFields {
+                name: self.name,
+                inputs: self.inputs,
+                null_check_box_list: self.null_check_box_list,
+                null_text_list: self.null_text_list,
+            }
+        }
+    }
+}
+impl DropNullFields {
+    /// Creates a new builder-style object to manufacture [`DropNullFields`](crate::model::DropNullFields)
+    pub fn builder() -> crate::model::drop_null_fields::Builder {
+        crate::model::drop_null_fields::Builder::default()
+    }
+}
+
+/// <p>Represents a custom null value such as a zeros or other value being used as a null placeholder unique to the dataset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NullValueField {
+    /// <p>The value of the null placeholder.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The datatype of the value.</p>
+    pub datatype: std::option::Option<crate::model::Datatype>,
+}
+impl NullValueField {
+    /// <p>The value of the null placeholder.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The datatype of the value.</p>
+    pub fn datatype(&self) -> std::option::Option<&crate::model::Datatype> {
+        self.datatype.as_ref()
+    }
+}
+impl std::fmt::Debug for NullValueField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NullValueField");
+        formatter.field("value", &self.value);
+        formatter.field("datatype", &self.datatype);
+        formatter.finish()
+    }
+}
+/// See [`NullValueField`](crate::model::NullValueField)
+pub mod null_value_field {
+    /// A builder for [`NullValueField`](crate::model::NullValueField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) datatype: std::option::Option<crate::model::Datatype>,
+    }
+    impl Builder {
+        /// <p>The value of the null placeholder.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the null placeholder.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The datatype of the value.</p>
+        pub fn datatype(mut self, input: crate::model::Datatype) -> Self {
+            self.datatype = Some(input);
+            self
+        }
+        /// <p>The datatype of the value.</p>
+        pub fn set_datatype(mut self, input: std::option::Option<crate::model::Datatype>) -> Self {
+            self.datatype = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NullValueField`](crate::model::NullValueField)
+        pub fn build(self) -> crate::model::NullValueField {
+            crate::model::NullValueField {
+                value: self.value,
+                datatype: self.datatype,
+            }
+        }
+    }
+}
+impl NullValueField {
+    /// Creates a new builder-style object to manufacture [`NullValueField`](crate::model::NullValueField)
+    pub fn builder() -> crate::model::null_value_field::Builder {
+        crate::model::null_value_field::Builder::default()
+    }
+}
+
+/// <p>A structure representing the datatype of the value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Datatype {
+    /// <p>The datatype of the value.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A label assigned to the datatype.</p>
+    pub label: std::option::Option<std::string::String>,
+}
+impl Datatype {
+    /// <p>The datatype of the value.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A label assigned to the datatype.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+}
+impl std::fmt::Debug for Datatype {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Datatype");
+        formatter.field("id", &self.id);
+        formatter.field("label", &self.label);
+        formatter.finish()
+    }
+}
+/// See [`Datatype`](crate::model::Datatype)
+pub mod datatype {
+    /// A builder for [`Datatype`](crate::model::Datatype)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) label: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The datatype of the value.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The datatype of the value.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A label assigned to the datatype.</p>
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
+            self
+        }
+        /// <p>A label assigned to the datatype.</p>
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Datatype`](crate::model::Datatype)
+        pub fn build(self) -> crate::model::Datatype {
+            crate::model::Datatype {
+                id: self.id,
+                label: self.label,
+            }
+        }
+    }
+}
+impl Datatype {
+    /// Creates a new builder-style object to manufacture [`Datatype`](crate::model::Datatype)
+    pub fn builder() -> crate::model::datatype::Builder {
+        crate::model::datatype::Builder::default()
+    }
+}
+
+/// <p>Represents whether certain values are recognized as null values for removal.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NullCheckBoxList {
+    /// <p>Specifies that an empty string is considered as a null value.</p>
+    pub is_empty: std::option::Option<bool>,
+    /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
+    pub is_null_string: std::option::Option<bool>,
+    /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
+    pub is_neg_one: std::option::Option<bool>,
+}
+impl NullCheckBoxList {
+    /// <p>Specifies that an empty string is considered as a null value.</p>
+    pub fn is_empty(&self) -> std::option::Option<bool> {
+        self.is_empty
+    }
+    /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
+    pub fn is_null_string(&self) -> std::option::Option<bool> {
+        self.is_null_string
+    }
+    /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
+    pub fn is_neg_one(&self) -> std::option::Option<bool> {
+        self.is_neg_one
+    }
+}
+impl std::fmt::Debug for NullCheckBoxList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NullCheckBoxList");
+        formatter.field("is_empty", &self.is_empty);
+        formatter.field("is_null_string", &self.is_null_string);
+        formatter.field("is_neg_one", &self.is_neg_one);
+        formatter.finish()
+    }
+}
+/// See [`NullCheckBoxList`](crate::model::NullCheckBoxList)
+pub mod null_check_box_list {
+    /// A builder for [`NullCheckBoxList`](crate::model::NullCheckBoxList)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) is_empty: std::option::Option<bool>,
+        pub(crate) is_null_string: std::option::Option<bool>,
+        pub(crate) is_neg_one: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Specifies that an empty string is considered as a null value.</p>
+        pub fn is_empty(mut self, input: bool) -> Self {
+            self.is_empty = Some(input);
+            self
+        }
+        /// <p>Specifies that an empty string is considered as a null value.</p>
+        pub fn set_is_empty(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_empty = input;
+            self
+        }
+        /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
+        pub fn is_null_string(mut self, input: bool) -> Self {
+            self.is_null_string = Some(input);
+            self
+        }
+        /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
+        pub fn set_is_null_string(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_null_string = input;
+            self
+        }
+        /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
+        pub fn is_neg_one(mut self, input: bool) -> Self {
+            self.is_neg_one = Some(input);
+            self
+        }
+        /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
+        pub fn set_is_neg_one(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_neg_one = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NullCheckBoxList`](crate::model::NullCheckBoxList)
+        pub fn build(self) -> crate::model::NullCheckBoxList {
+            crate::model::NullCheckBoxList {
+                is_empty: self.is_empty,
+                is_null_string: self.is_null_string,
+                is_neg_one: self.is_neg_one,
+            }
+        }
+    }
+}
+impl NullCheckBoxList {
+    /// Creates a new builder-style object to manufacture [`NullCheckBoxList`](crate::model::NullCheckBoxList)
+    pub fn builder() -> crate::model::null_check_box_list::Builder {
+        crate::model::null_check_box_list::Builder::default()
+    }
+}
+
+/// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CatalogKafkaSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub window_size: std::option::Option<i32>,
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub detect_schema: std::option::Option<bool>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>Specifies the streaming options.</p>
+    pub streaming_options: std::option::Option<crate::model::KafkaStreamingSourceOptions>,
+    /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+}
+impl CatalogKafkaSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub fn window_size(&self) -> std::option::Option<i32> {
+        self.window_size
+    }
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub fn detect_schema(&self) -> std::option::Option<bool> {
+        self.detect_schema
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>Specifies the streaming options.</p>
+    pub fn streaming_options(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaStreamingSourceOptions> {
+        self.streaming_options.as_ref()
+    }
+    /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    pub fn data_preview_options(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
+        self.data_preview_options.as_ref()
+    }
+}
+impl std::fmt::Debug for CatalogKafkaSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CatalogKafkaSource");
+        formatter.field("name", &self.name);
+        formatter.field("window_size", &self.window_size);
+        formatter.field("detect_schema", &self.detect_schema);
+        formatter.field("table", &self.table);
+        formatter.field("database", &self.database);
+        formatter.field("streaming_options", &self.streaming_options);
+        formatter.field("data_preview_options", &self.data_preview_options);
+        formatter.finish()
+    }
+}
+/// See [`CatalogKafkaSource`](crate::model::CatalogKafkaSource)
+pub mod catalog_kafka_source {
+    /// A builder for [`CatalogKafkaSource`](crate::model::CatalogKafkaSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) window_size: std::option::Option<i32>,
+        pub(crate) detect_schema: std::option::Option<bool>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) streaming_options:
+            std::option::Option<crate::model::KafkaStreamingSourceOptions>,
+        pub(crate) data_preview_options:
+            std::option::Option<crate::model::StreamingDataPreviewOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn window_size(mut self, input: i32) -> Self {
+            self.window_size = Some(input);
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn set_window_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.window_size = input;
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn detect_schema(mut self, input: bool) -> Self {
+            self.detect_schema = Some(input);
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn set_detect_schema(mut self, input: std::option::Option<bool>) -> Self {
+            self.detect_schema = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>Specifies the streaming options.</p>
+        pub fn streaming_options(
+            mut self,
+            input: crate::model::KafkaStreamingSourceOptions,
+        ) -> Self {
+            self.streaming_options = Some(input);
+            self
+        }
+        /// <p>Specifies the streaming options.</p>
+        pub fn set_streaming_options(
+            mut self,
+            input: std::option::Option<crate::model::KafkaStreamingSourceOptions>,
+        ) -> Self {
+            self.streaming_options = input;
+            self
+        }
+        /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+        pub fn data_preview_options(
+            mut self,
+            input: crate::model::StreamingDataPreviewOptions,
+        ) -> Self {
+            self.data_preview_options = Some(input);
+            self
+        }
+        /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+        pub fn set_data_preview_options(
+            mut self,
+            input: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+        ) -> Self {
+            self.data_preview_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CatalogKafkaSource`](crate::model::CatalogKafkaSource)
+        pub fn build(self) -> crate::model::CatalogKafkaSource {
+            crate::model::CatalogKafkaSource {
+                name: self.name,
+                window_size: self.window_size,
+                detect_schema: self.detect_schema,
+                table: self.table,
+                database: self.database,
+                streaming_options: self.streaming_options,
+                data_preview_options: self.data_preview_options,
+            }
+        }
+    }
+}
+impl CatalogKafkaSource {
+    /// Creates a new builder-style object to manufacture [`CatalogKafkaSource`](crate::model::CatalogKafkaSource)
+    pub fn builder() -> crate::model::catalog_kafka_source::Builder {
+        crate::model::catalog_kafka_source::Builder::default()
+    }
+}
+
+/// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StreamingDataPreviewOptions {
+    /// <p>The polling time in milliseconds.</p>
+    pub polling_time: std::option::Option<i64>,
+    /// <p>The limit to the number of records polled.</p>
+    pub record_polling_limit: std::option::Option<i64>,
+}
+impl StreamingDataPreviewOptions {
+    /// <p>The polling time in milliseconds.</p>
+    pub fn polling_time(&self) -> std::option::Option<i64> {
+        self.polling_time
+    }
+    /// <p>The limit to the number of records polled.</p>
+    pub fn record_polling_limit(&self) -> std::option::Option<i64> {
+        self.record_polling_limit
+    }
+}
+impl std::fmt::Debug for StreamingDataPreviewOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamingDataPreviewOptions");
+        formatter.field("polling_time", &self.polling_time);
+        formatter.field("record_polling_limit", &self.record_polling_limit);
+        formatter.finish()
+    }
+}
+/// See [`StreamingDataPreviewOptions`](crate::model::StreamingDataPreviewOptions)
+pub mod streaming_data_preview_options {
+    /// A builder for [`StreamingDataPreviewOptions`](crate::model::StreamingDataPreviewOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) polling_time: std::option::Option<i64>,
+        pub(crate) record_polling_limit: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The polling time in milliseconds.</p>
+        pub fn polling_time(mut self, input: i64) -> Self {
+            self.polling_time = Some(input);
+            self
+        }
+        /// <p>The polling time in milliseconds.</p>
+        pub fn set_polling_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.polling_time = input;
+            self
+        }
+        /// <p>The limit to the number of records polled.</p>
+        pub fn record_polling_limit(mut self, input: i64) -> Self {
+            self.record_polling_limit = Some(input);
+            self
+        }
+        /// <p>The limit to the number of records polled.</p>
+        pub fn set_record_polling_limit(mut self, input: std::option::Option<i64>) -> Self {
+            self.record_polling_limit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamingDataPreviewOptions`](crate::model::StreamingDataPreviewOptions)
+        pub fn build(self) -> crate::model::StreamingDataPreviewOptions {
+            crate::model::StreamingDataPreviewOptions {
+                polling_time: self.polling_time,
+                record_polling_limit: self.record_polling_limit,
+            }
+        }
+    }
+}
+impl StreamingDataPreviewOptions {
+    /// Creates a new builder-style object to manufacture [`StreamingDataPreviewOptions`](crate::model::StreamingDataPreviewOptions)
+    pub fn builder() -> crate::model::streaming_data_preview_options::Builder {
+        crate::model::streaming_data_preview_options::Builder::default()
+    }
+}
+
+/// <p>Additional options for streaming.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KafkaStreamingSourceOptions {
+    /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
+    pub bootstrap_servers: std::option::Option<std::string::String>,
+    /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
+    pub security_protocol: std::option::Option<std::string::String>,
+    /// <p>The name of the connection.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub topic_name: std::option::Option<std::string::String>,
+    /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub assign: std::option::Option<std::string::String>,
+    /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub subscribe_pattern: std::option::Option<std::string::String>,
+    /// <p>An optional classification.</p>
+    pub classification: std::option::Option<std::string::String>,
+    /// <p>Specifies the delimiter character.</p>
+    pub delimiter: std::option::Option<std::string::String>,
+    /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
+    pub starting_offsets: std::option::Option<std::string::String>,
+    /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
+    pub ending_offsets: std::option::Option<std::string::String>,
+    /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
+    pub poll_timeout_ms: std::option::Option<i64>,
+    /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
+    pub num_retries: std::option::Option<i32>,
+    /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
+    pub retry_interval_ms: std::option::Option<i64>,
+    /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
+    pub max_offsets_per_trigger: std::option::Option<i64>,
+    /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
+    pub min_partitions: std::option::Option<i32>,
+}
+impl KafkaStreamingSourceOptions {
+    /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
+    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
+        self.bootstrap_servers.as_deref()
+    }
+    /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
+    pub fn security_protocol(&self) -> std::option::Option<&str> {
+        self.security_protocol.as_deref()
+    }
+    /// <p>The name of the connection.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub fn topic_name(&self) -> std::option::Option<&str> {
+        self.topic_name.as_deref()
+    }
+    /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub fn assign(&self) -> std::option::Option<&str> {
+        self.assign.as_deref()
+    }
+    /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub fn subscribe_pattern(&self) -> std::option::Option<&str> {
+        self.subscribe_pattern.as_deref()
+    }
+    /// <p>An optional classification.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>Specifies the delimiter character.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
+    pub fn starting_offsets(&self) -> std::option::Option<&str> {
+        self.starting_offsets.as_deref()
+    }
+    /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
+    pub fn ending_offsets(&self) -> std::option::Option<&str> {
+        self.ending_offsets.as_deref()
+    }
+    /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
+    pub fn poll_timeout_ms(&self) -> std::option::Option<i64> {
+        self.poll_timeout_ms
+    }
+    /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
+    pub fn num_retries(&self) -> std::option::Option<i32> {
+        self.num_retries
+    }
+    /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
+    pub fn retry_interval_ms(&self) -> std::option::Option<i64> {
+        self.retry_interval_ms
+    }
+    /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
+    pub fn max_offsets_per_trigger(&self) -> std::option::Option<i64> {
+        self.max_offsets_per_trigger
+    }
+    /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
+    pub fn min_partitions(&self) -> std::option::Option<i32> {
+        self.min_partitions
+    }
+}
+impl std::fmt::Debug for KafkaStreamingSourceOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KafkaStreamingSourceOptions");
+        formatter.field("bootstrap_servers", &self.bootstrap_servers);
+        formatter.field("security_protocol", &self.security_protocol);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("topic_name", &self.topic_name);
+        formatter.field("assign", &self.assign);
+        formatter.field("subscribe_pattern", &self.subscribe_pattern);
+        formatter.field("classification", &self.classification);
+        formatter.field("delimiter", &self.delimiter);
+        formatter.field("starting_offsets", &self.starting_offsets);
+        formatter.field("ending_offsets", &self.ending_offsets);
+        formatter.field("poll_timeout_ms", &self.poll_timeout_ms);
+        formatter.field("num_retries", &self.num_retries);
+        formatter.field("retry_interval_ms", &self.retry_interval_ms);
+        formatter.field("max_offsets_per_trigger", &self.max_offsets_per_trigger);
+        formatter.field("min_partitions", &self.min_partitions);
+        formatter.finish()
+    }
+}
+/// See [`KafkaStreamingSourceOptions`](crate::model::KafkaStreamingSourceOptions)
+pub mod kafka_streaming_source_options {
+    /// A builder for [`KafkaStreamingSourceOptions`](crate::model::KafkaStreamingSourceOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bootstrap_servers: std::option::Option<std::string::String>,
+        pub(crate) security_protocol: std::option::Option<std::string::String>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) topic_name: std::option::Option<std::string::String>,
+        pub(crate) assign: std::option::Option<std::string::String>,
+        pub(crate) subscribe_pattern: std::option::Option<std::string::String>,
+        pub(crate) classification: std::option::Option<std::string::String>,
+        pub(crate) delimiter: std::option::Option<std::string::String>,
+        pub(crate) starting_offsets: std::option::Option<std::string::String>,
+        pub(crate) ending_offsets: std::option::Option<std::string::String>,
+        pub(crate) poll_timeout_ms: std::option::Option<i64>,
+        pub(crate) num_retries: std::option::Option<i32>,
+        pub(crate) retry_interval_ms: std::option::Option<i64>,
+        pub(crate) max_offsets_per_trigger: std::option::Option<i64>,
+        pub(crate) min_partitions: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
+        pub fn bootstrap_servers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bootstrap_servers = Some(input.into());
+            self
+        }
+        /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
+        pub fn set_bootstrap_servers(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bootstrap_servers = input;
+            self
+        }
+        /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
+        pub fn security_protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_protocol = Some(input.into());
+            self
+        }
+        /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
+        pub fn set_security_protocol(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_protocol = input;
+            self
+        }
+        /// <p>The name of the connection.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_name = Some(input.into());
+            self
+        }
+        /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+        pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_name = input;
+            self
+        }
+        /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+        pub fn assign(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assign = Some(input.into());
+            self
+        }
+        /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+        pub fn set_assign(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assign = input;
+            self
+        }
+        /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+        pub fn subscribe_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscribe_pattern = Some(input.into());
+            self
+        }
+        /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+        pub fn set_subscribe_pattern(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subscribe_pattern = input;
+            self
+        }
+        /// <p>An optional classification.</p>
+        pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
+            self.classification = Some(input.into());
+            self
+        }
+        /// <p>An optional classification.</p>
+        pub fn set_classification(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.classification = input;
+            self
+        }
+        /// <p>Specifies the delimiter character.</p>
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
+            self
+        }
+        /// <p>Specifies the delimiter character.</p>
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
+            self
+        }
+        /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
+        pub fn starting_offsets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.starting_offsets = Some(input.into());
+            self
+        }
+        /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
+        pub fn set_starting_offsets(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.starting_offsets = input;
+            self
+        }
+        /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
+        pub fn ending_offsets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ending_offsets = Some(input.into());
+            self
+        }
+        /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
+        pub fn set_ending_offsets(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ending_offsets = input;
+            self
+        }
+        /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
+        pub fn poll_timeout_ms(mut self, input: i64) -> Self {
+            self.poll_timeout_ms = Some(input);
+            self
+        }
+        /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
+        pub fn set_poll_timeout_ms(mut self, input: std::option::Option<i64>) -> Self {
+            self.poll_timeout_ms = input;
+            self
+        }
+        /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
+            self
+        }
+        /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
+            self
+        }
+        /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
+        pub fn retry_interval_ms(mut self, input: i64) -> Self {
+            self.retry_interval_ms = Some(input);
+            self
+        }
+        /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
+        pub fn set_retry_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
+            self.retry_interval_ms = input;
+            self
+        }
+        /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
+        pub fn max_offsets_per_trigger(mut self, input: i64) -> Self {
+            self.max_offsets_per_trigger = Some(input);
+            self
+        }
+        /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
+        pub fn set_max_offsets_per_trigger(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_offsets_per_trigger = input;
+            self
+        }
+        /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
+        pub fn min_partitions(mut self, input: i32) -> Self {
+            self.min_partitions = Some(input);
+            self
+        }
+        /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
+        pub fn set_min_partitions(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_partitions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KafkaStreamingSourceOptions`](crate::model::KafkaStreamingSourceOptions)
+        pub fn build(self) -> crate::model::KafkaStreamingSourceOptions {
+            crate::model::KafkaStreamingSourceOptions {
+                bootstrap_servers: self.bootstrap_servers,
+                security_protocol: self.security_protocol,
+                connection_name: self.connection_name,
+                topic_name: self.topic_name,
+                assign: self.assign,
+                subscribe_pattern: self.subscribe_pattern,
+                classification: self.classification,
+                delimiter: self.delimiter,
+                starting_offsets: self.starting_offsets,
+                ending_offsets: self.ending_offsets,
+                poll_timeout_ms: self.poll_timeout_ms,
+                num_retries: self.num_retries,
+                retry_interval_ms: self.retry_interval_ms,
+                max_offsets_per_trigger: self.max_offsets_per_trigger,
+                min_partitions: self.min_partitions,
+            }
+        }
+    }
+}
+impl KafkaStreamingSourceOptions {
+    /// Creates a new builder-style object to manufacture [`KafkaStreamingSourceOptions`](crate::model::KafkaStreamingSourceOptions)
+    pub fn builder() -> crate::model::kafka_streaming_source_options::Builder {
+        crate::model::kafka_streaming_source_options::Builder::default()
+    }
+}
+
+/// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CatalogKinesisSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub window_size: std::option::Option<i32>,
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub detect_schema: std::option::Option<bool>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>Additional options for the Kinesis streaming data source.</p>
+    pub streaming_options: std::option::Option<crate::model::KinesisStreamingSourceOptions>,
+    /// <p>Additional options for data preview.</p>
+    pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+}
+impl CatalogKinesisSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub fn window_size(&self) -> std::option::Option<i32> {
+        self.window_size
+    }
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub fn detect_schema(&self) -> std::option::Option<bool> {
+        self.detect_schema
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>Additional options for the Kinesis streaming data source.</p>
+    pub fn streaming_options(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamingSourceOptions> {
+        self.streaming_options.as_ref()
+    }
+    /// <p>Additional options for data preview.</p>
+    pub fn data_preview_options(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
+        self.data_preview_options.as_ref()
+    }
+}
+impl std::fmt::Debug for CatalogKinesisSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CatalogKinesisSource");
+        formatter.field("name", &self.name);
+        formatter.field("window_size", &self.window_size);
+        formatter.field("detect_schema", &self.detect_schema);
+        formatter.field("table", &self.table);
+        formatter.field("database", &self.database);
+        formatter.field("streaming_options", &self.streaming_options);
+        formatter.field("data_preview_options", &self.data_preview_options);
+        formatter.finish()
+    }
+}
+/// See [`CatalogKinesisSource`](crate::model::CatalogKinesisSource)
+pub mod catalog_kinesis_source {
+    /// A builder for [`CatalogKinesisSource`](crate::model::CatalogKinesisSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) window_size: std::option::Option<i32>,
+        pub(crate) detect_schema: std::option::Option<bool>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) streaming_options:
+            std::option::Option<crate::model::KinesisStreamingSourceOptions>,
+        pub(crate) data_preview_options:
+            std::option::Option<crate::model::StreamingDataPreviewOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn window_size(mut self, input: i32) -> Self {
+            self.window_size = Some(input);
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn set_window_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.window_size = input;
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn detect_schema(mut self, input: bool) -> Self {
+            self.detect_schema = Some(input);
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn set_detect_schema(mut self, input: std::option::Option<bool>) -> Self {
+            self.detect_schema = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>Additional options for the Kinesis streaming data source.</p>
+        pub fn streaming_options(
+            mut self,
+            input: crate::model::KinesisStreamingSourceOptions,
+        ) -> Self {
+            self.streaming_options = Some(input);
+            self
+        }
+        /// <p>Additional options for the Kinesis streaming data source.</p>
+        pub fn set_streaming_options(
+            mut self,
+            input: std::option::Option<crate::model::KinesisStreamingSourceOptions>,
+        ) -> Self {
+            self.streaming_options = input;
+            self
+        }
+        /// <p>Additional options for data preview.</p>
+        pub fn data_preview_options(
+            mut self,
+            input: crate::model::StreamingDataPreviewOptions,
+        ) -> Self {
+            self.data_preview_options = Some(input);
+            self
+        }
+        /// <p>Additional options for data preview.</p>
+        pub fn set_data_preview_options(
+            mut self,
+            input: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+        ) -> Self {
+            self.data_preview_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CatalogKinesisSource`](crate::model::CatalogKinesisSource)
+        pub fn build(self) -> crate::model::CatalogKinesisSource {
+            crate::model::CatalogKinesisSource {
+                name: self.name,
+                window_size: self.window_size,
+                detect_schema: self.detect_schema,
+                table: self.table,
+                database: self.database,
+                streaming_options: self.streaming_options,
+                data_preview_options: self.data_preview_options,
+            }
+        }
+    }
+}
+impl CatalogKinesisSource {
+    /// Creates a new builder-style object to manufacture [`CatalogKinesisSource`](crate::model::CatalogKinesisSource)
+    pub fn builder() -> crate::model::catalog_kinesis_source::Builder {
+        crate::model::catalog_kinesis_source::Builder::default()
+    }
+}
+
+/// <p>Additional options for the Amazon Kinesis streaming data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KinesisStreamingSourceOptions {
+    /// <p>The URL of the Kinesis endpoint.</p>
+    pub endpoint_url: std::option::Option<std::string::String>,
+    /// <p>The name of the Kinesis data stream.</p>
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>An optional classification.</p>
+    pub classification: std::option::Option<std::string::String>,
+    /// <p>Specifies the delimiter character.</p>
+    pub delimiter: std::option::Option<std::string::String>,
+    /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+    pub starting_position: std::option::Option<crate::model::StartingPosition>,
+    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    pub max_fetch_time_in_ms: std::option::Option<i64>,
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    pub max_fetch_records_per_shard: std::option::Option<i64>,
+    /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
+    pub max_record_per_read: std::option::Option<i64>,
+    /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
+    pub add_idle_time_between_reads: std::option::Option<bool>,
+    /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
+    pub idle_time_between_reads_in_ms: std::option::Option<i64>,
+    /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
+    pub describe_shard_interval: std::option::Option<i64>,
+    /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
+    pub num_retries: std::option::Option<i32>,
+    /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
+    pub retry_interval_ms: std::option::Option<i64>,
+    /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
+    pub max_retry_interval_ms: std::option::Option<i64>,
+    /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
+    pub avoid_empty_batches: std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
+    pub role_session_name: std::option::Option<std::string::String>,
+}
+impl KinesisStreamingSourceOptions {
+    /// <p>The URL of the Kinesis endpoint.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The name of the Kinesis data stream.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>An optional classification.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>Specifies the delimiter character.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+    pub fn starting_position(&self) -> std::option::Option<&crate::model::StartingPosition> {
+        self.starting_position.as_ref()
+    }
+    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    pub fn max_fetch_time_in_ms(&self) -> std::option::Option<i64> {
+        self.max_fetch_time_in_ms
+    }
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    pub fn max_fetch_records_per_shard(&self) -> std::option::Option<i64> {
+        self.max_fetch_records_per_shard
+    }
+    /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
+    pub fn max_record_per_read(&self) -> std::option::Option<i64> {
+        self.max_record_per_read
+    }
+    /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
+    pub fn add_idle_time_between_reads(&self) -> std::option::Option<bool> {
+        self.add_idle_time_between_reads
+    }
+    /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
+    pub fn idle_time_between_reads_in_ms(&self) -> std::option::Option<i64> {
+        self.idle_time_between_reads_in_ms
+    }
+    /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
+    pub fn describe_shard_interval(&self) -> std::option::Option<i64> {
+        self.describe_shard_interval
+    }
+    /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
+    pub fn num_retries(&self) -> std::option::Option<i32> {
+        self.num_retries
+    }
+    /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
+    pub fn retry_interval_ms(&self) -> std::option::Option<i64> {
+        self.retry_interval_ms
+    }
+    /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
+    pub fn max_retry_interval_ms(&self) -> std::option::Option<i64> {
+        self.max_retry_interval_ms
+    }
+    /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
+    pub fn avoid_empty_batches(&self) -> std::option::Option<bool> {
+        self.avoid_empty_batches
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
+    pub fn role_session_name(&self) -> std::option::Option<&str> {
+        self.role_session_name.as_deref()
+    }
+}
+impl std::fmt::Debug for KinesisStreamingSourceOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KinesisStreamingSourceOptions");
+        formatter.field("endpoint_url", &self.endpoint_url);
+        formatter.field("stream_name", &self.stream_name);
+        formatter.field("classification", &self.classification);
+        formatter.field("delimiter", &self.delimiter);
+        formatter.field("starting_position", &self.starting_position);
+        formatter.field("max_fetch_time_in_ms", &self.max_fetch_time_in_ms);
+        formatter.field(
+            "max_fetch_records_per_shard",
+            &self.max_fetch_records_per_shard,
+        );
+        formatter.field("max_record_per_read", &self.max_record_per_read);
+        formatter.field(
+            "add_idle_time_between_reads",
+            &self.add_idle_time_between_reads,
+        );
+        formatter.field(
+            "idle_time_between_reads_in_ms",
+            &self.idle_time_between_reads_in_ms,
+        );
+        formatter.field("describe_shard_interval", &self.describe_shard_interval);
+        formatter.field("num_retries", &self.num_retries);
+        formatter.field("retry_interval_ms", &self.retry_interval_ms);
+        formatter.field("max_retry_interval_ms", &self.max_retry_interval_ms);
+        formatter.field("avoid_empty_batches", &self.avoid_empty_batches);
+        formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("role_session_name", &self.role_session_name);
+        formatter.finish()
+    }
+}
+/// See [`KinesisStreamingSourceOptions`](crate::model::KinesisStreamingSourceOptions)
+pub mod kinesis_streaming_source_options {
+    /// A builder for [`KinesisStreamingSourceOptions`](crate::model::KinesisStreamingSourceOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_url: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) classification: std::option::Option<std::string::String>,
+        pub(crate) delimiter: std::option::Option<std::string::String>,
+        pub(crate) starting_position: std::option::Option<crate::model::StartingPosition>,
+        pub(crate) max_fetch_time_in_ms: std::option::Option<i64>,
+        pub(crate) max_fetch_records_per_shard: std::option::Option<i64>,
+        pub(crate) max_record_per_read: std::option::Option<i64>,
+        pub(crate) add_idle_time_between_reads: std::option::Option<bool>,
+        pub(crate) idle_time_between_reads_in_ms: std::option::Option<i64>,
+        pub(crate) describe_shard_interval: std::option::Option<i64>,
+        pub(crate) num_retries: std::option::Option<i32>,
+        pub(crate) retry_interval_ms: std::option::Option<i64>,
+        pub(crate) max_retry_interval_ms: std::option::Option<i64>,
+        pub(crate) avoid_empty_batches: std::option::Option<bool>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) role_session_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The URL of the Kinesis endpoint.</p>
+        pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the Kinesis endpoint.</p>
+        pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_url = input;
+            self
+        }
+        /// <p>The name of the Kinesis data stream.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Kinesis data stream.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
+            self
+        }
+        /// <p>An optional classification.</p>
+        pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
+            self.classification = Some(input.into());
+            self
+        }
+        /// <p>An optional classification.</p>
+        pub fn set_classification(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.classification = input;
+            self
+        }
+        /// <p>Specifies the delimiter character.</p>
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
+            self
+        }
+        /// <p>Specifies the delimiter character.</p>
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
+            self
+        }
+        /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+        pub fn starting_position(mut self, input: crate::model::StartingPosition) -> Self {
+            self.starting_position = Some(input);
+            self
+        }
+        /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+        pub fn set_starting_position(
+            mut self,
+            input: std::option::Option<crate::model::StartingPosition>,
+        ) -> Self {
+            self.starting_position = input;
+            self
+        }
+        /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+        pub fn max_fetch_time_in_ms(mut self, input: i64) -> Self {
+            self.max_fetch_time_in_ms = Some(input);
+            self
+        }
+        /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+        pub fn set_max_fetch_time_in_ms(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_fetch_time_in_ms = input;
+            self
+        }
+        /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+        pub fn max_fetch_records_per_shard(mut self, input: i64) -> Self {
+            self.max_fetch_records_per_shard = Some(input);
+            self
+        }
+        /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+        pub fn set_max_fetch_records_per_shard(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_fetch_records_per_shard = input;
+            self
+        }
+        /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
+        pub fn max_record_per_read(mut self, input: i64) -> Self {
+            self.max_record_per_read = Some(input);
+            self
+        }
+        /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
+        pub fn set_max_record_per_read(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_record_per_read = input;
+            self
+        }
+        /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
+        pub fn add_idle_time_between_reads(mut self, input: bool) -> Self {
+            self.add_idle_time_between_reads = Some(input);
+            self
+        }
+        /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
+        pub fn set_add_idle_time_between_reads(mut self, input: std::option::Option<bool>) -> Self {
+            self.add_idle_time_between_reads = input;
+            self
+        }
+        /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
+        pub fn idle_time_between_reads_in_ms(mut self, input: i64) -> Self {
+            self.idle_time_between_reads_in_ms = Some(input);
+            self
+        }
+        /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
+        pub fn set_idle_time_between_reads_in_ms(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.idle_time_between_reads_in_ms = input;
+            self
+        }
+        /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
+        pub fn describe_shard_interval(mut self, input: i64) -> Self {
+            self.describe_shard_interval = Some(input);
+            self
+        }
+        /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
+        pub fn set_describe_shard_interval(mut self, input: std::option::Option<i64>) -> Self {
+            self.describe_shard_interval = input;
+            self
+        }
+        /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
+            self
+        }
+        /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
+            self
+        }
+        /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
+        pub fn retry_interval_ms(mut self, input: i64) -> Self {
+            self.retry_interval_ms = Some(input);
+            self
+        }
+        /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
+        pub fn set_retry_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
+            self.retry_interval_ms = input;
+            self
+        }
+        /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
+        pub fn max_retry_interval_ms(mut self, input: i64) -> Self {
+            self.max_retry_interval_ms = Some(input);
+            self
+        }
+        /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
+        pub fn set_max_retry_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_retry_interval_ms = input;
+            self
+        }
+        /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
+        pub fn avoid_empty_batches(mut self, input: bool) -> Self {
+            self.avoid_empty_batches = Some(input);
+            self
+        }
+        /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
+        pub fn set_avoid_empty_batches(mut self, input: std::option::Option<bool>) -> Self {
+            self.avoid_empty_batches = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
+        pub fn role_session_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_session_name = Some(input.into());
+            self
+        }
+        /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
+        pub fn set_role_session_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.role_session_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KinesisStreamingSourceOptions`](crate::model::KinesisStreamingSourceOptions)
+        pub fn build(self) -> crate::model::KinesisStreamingSourceOptions {
+            crate::model::KinesisStreamingSourceOptions {
+                endpoint_url: self.endpoint_url,
+                stream_name: self.stream_name,
+                classification: self.classification,
+                delimiter: self.delimiter,
+                starting_position: self.starting_position,
+                max_fetch_time_in_ms: self.max_fetch_time_in_ms,
+                max_fetch_records_per_shard: self.max_fetch_records_per_shard,
+                max_record_per_read: self.max_record_per_read,
+                add_idle_time_between_reads: self.add_idle_time_between_reads,
+                idle_time_between_reads_in_ms: self.idle_time_between_reads_in_ms,
+                describe_shard_interval: self.describe_shard_interval,
+                num_retries: self.num_retries,
+                retry_interval_ms: self.retry_interval_ms,
+                max_retry_interval_ms: self.max_retry_interval_ms,
+                avoid_empty_batches: self.avoid_empty_batches,
+                stream_arn: self.stream_arn,
+                role_arn: self.role_arn,
+                role_session_name: self.role_session_name,
+            }
+        }
+    }
+}
+impl KinesisStreamingSourceOptions {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamingSourceOptions`](crate::model::KinesisStreamingSourceOptions)
+    pub fn builder() -> crate::model::kinesis_streaming_source_options::Builder {
+        crate::model::kinesis_streaming_source_options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StartingPosition {
+    #[allow(missing_docs)] // documentation missing in model
+    Earliest,
+    #[allow(missing_docs)] // documentation missing in model
+    Latest,
+    #[allow(missing_docs)] // documentation missing in model
+    TrimHorizon,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StartingPosition {
+    fn from(s: &str) -> Self {
+        match s {
+            "earliest" => StartingPosition::Earliest,
+            "latest" => StartingPosition::Latest,
+            "trim_horizon" => StartingPosition::TrimHorizon,
+            other => StartingPosition::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StartingPosition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StartingPosition::from(s))
+    }
+}
+impl StartingPosition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StartingPosition::Earliest => "earliest",
+            StartingPosition::Latest => "latest",
+            StartingPosition::TrimHorizon => "trim_horizon",
+            StartingPosition::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["earliest", "latest", "trim_horizon"]
+    }
+}
+impl AsRef<str> for StartingPosition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies an Apache Kafka data store.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DirectKafkaSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the streaming options.</p>
+    pub streaming_options: std::option::Option<crate::model::KafkaStreamingSourceOptions>,
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub window_size: std::option::Option<i32>,
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub detect_schema: std::option::Option<bool>,
+    /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+}
+impl DirectKafkaSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the streaming options.</p>
+    pub fn streaming_options(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaStreamingSourceOptions> {
+        self.streaming_options.as_ref()
+    }
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub fn window_size(&self) -> std::option::Option<i32> {
+        self.window_size
+    }
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub fn detect_schema(&self) -> std::option::Option<bool> {
+        self.detect_schema
+    }
+    /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    pub fn data_preview_options(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
+        self.data_preview_options.as_ref()
+    }
+}
+impl std::fmt::Debug for DirectKafkaSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DirectKafkaSource");
+        formatter.field("name", &self.name);
+        formatter.field("streaming_options", &self.streaming_options);
+        formatter.field("window_size", &self.window_size);
+        formatter.field("detect_schema", &self.detect_schema);
+        formatter.field("data_preview_options", &self.data_preview_options);
+        formatter.finish()
+    }
+}
+/// See [`DirectKafkaSource`](crate::model::DirectKafkaSource)
+pub mod direct_kafka_source {
+    /// A builder for [`DirectKafkaSource`](crate::model::DirectKafkaSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) streaming_options:
+            std::option::Option<crate::model::KafkaStreamingSourceOptions>,
+        pub(crate) window_size: std::option::Option<i32>,
+        pub(crate) detect_schema: std::option::Option<bool>,
+        pub(crate) data_preview_options:
+            std::option::Option<crate::model::StreamingDataPreviewOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the streaming options.</p>
+        pub fn streaming_options(
+            mut self,
+            input: crate::model::KafkaStreamingSourceOptions,
+        ) -> Self {
+            self.streaming_options = Some(input);
+            self
+        }
+        /// <p>Specifies the streaming options.</p>
+        pub fn set_streaming_options(
+            mut self,
+            input: std::option::Option<crate::model::KafkaStreamingSourceOptions>,
+        ) -> Self {
+            self.streaming_options = input;
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn window_size(mut self, input: i32) -> Self {
+            self.window_size = Some(input);
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn set_window_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.window_size = input;
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn detect_schema(mut self, input: bool) -> Self {
+            self.detect_schema = Some(input);
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn set_detect_schema(mut self, input: std::option::Option<bool>) -> Self {
+            self.detect_schema = input;
+            self
+        }
+        /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+        pub fn data_preview_options(
+            mut self,
+            input: crate::model::StreamingDataPreviewOptions,
+        ) -> Self {
+            self.data_preview_options = Some(input);
+            self
+        }
+        /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+        pub fn set_data_preview_options(
+            mut self,
+            input: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+        ) -> Self {
+            self.data_preview_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DirectKafkaSource`](crate::model::DirectKafkaSource)
+        pub fn build(self) -> crate::model::DirectKafkaSource {
+            crate::model::DirectKafkaSource {
+                name: self.name,
+                streaming_options: self.streaming_options,
+                window_size: self.window_size,
+                detect_schema: self.detect_schema,
+                data_preview_options: self.data_preview_options,
+            }
+        }
+    }
+}
+impl DirectKafkaSource {
+    /// Creates a new builder-style object to manufacture [`DirectKafkaSource`](crate::model::DirectKafkaSource)
+    pub fn builder() -> crate::model::direct_kafka_source::Builder {
+        crate::model::direct_kafka_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a direct Amazon Kinesis data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DirectKinesisSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub window_size: std::option::Option<i32>,
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub detect_schema: std::option::Option<bool>,
+    /// <p>Additional options for the Kinesis streaming data source.</p>
+    pub streaming_options: std::option::Option<crate::model::KinesisStreamingSourceOptions>,
+    /// <p>Additional options for data preview.</p>
+    pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+}
+impl DirectKinesisSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub fn window_size(&self) -> std::option::Option<i32> {
+        self.window_size
+    }
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub fn detect_schema(&self) -> std::option::Option<bool> {
+        self.detect_schema
+    }
+    /// <p>Additional options for the Kinesis streaming data source.</p>
+    pub fn streaming_options(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamingSourceOptions> {
+        self.streaming_options.as_ref()
+    }
+    /// <p>Additional options for data preview.</p>
+    pub fn data_preview_options(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
+        self.data_preview_options.as_ref()
+    }
+}
+impl std::fmt::Debug for DirectKinesisSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DirectKinesisSource");
+        formatter.field("name", &self.name);
+        formatter.field("window_size", &self.window_size);
+        formatter.field("detect_schema", &self.detect_schema);
+        formatter.field("streaming_options", &self.streaming_options);
+        formatter.field("data_preview_options", &self.data_preview_options);
+        formatter.finish()
+    }
+}
+/// See [`DirectKinesisSource`](crate::model::DirectKinesisSource)
+pub mod direct_kinesis_source {
+    /// A builder for [`DirectKinesisSource`](crate::model::DirectKinesisSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) window_size: std::option::Option<i32>,
+        pub(crate) detect_schema: std::option::Option<bool>,
+        pub(crate) streaming_options:
+            std::option::Option<crate::model::KinesisStreamingSourceOptions>,
+        pub(crate) data_preview_options:
+            std::option::Option<crate::model::StreamingDataPreviewOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn window_size(mut self, input: i32) -> Self {
+            self.window_size = Some(input);
+            self
+        }
+        /// <p>The amount of time to spend processing each micro batch.</p>
+        pub fn set_window_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.window_size = input;
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn detect_schema(mut self, input: bool) -> Self {
+            self.detect_schema = Some(input);
+            self
+        }
+        /// <p>Whether to automatically determine the schema from the incoming data.</p>
+        pub fn set_detect_schema(mut self, input: std::option::Option<bool>) -> Self {
+            self.detect_schema = input;
+            self
+        }
+        /// <p>Additional options for the Kinesis streaming data source.</p>
+        pub fn streaming_options(
+            mut self,
+            input: crate::model::KinesisStreamingSourceOptions,
+        ) -> Self {
+            self.streaming_options = Some(input);
+            self
+        }
+        /// <p>Additional options for the Kinesis streaming data source.</p>
+        pub fn set_streaming_options(
+            mut self,
+            input: std::option::Option<crate::model::KinesisStreamingSourceOptions>,
+        ) -> Self {
+            self.streaming_options = input;
+            self
+        }
+        /// <p>Additional options for data preview.</p>
+        pub fn data_preview_options(
+            mut self,
+            input: crate::model::StreamingDataPreviewOptions,
+        ) -> Self {
+            self.data_preview_options = Some(input);
+            self
+        }
+        /// <p>Additional options for data preview.</p>
+        pub fn set_data_preview_options(
+            mut self,
+            input: std::option::Option<crate::model::StreamingDataPreviewOptions>,
+        ) -> Self {
+            self.data_preview_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DirectKinesisSource`](crate::model::DirectKinesisSource)
+        pub fn build(self) -> crate::model::DirectKinesisSource {
+            crate::model::DirectKinesisSource {
+                name: self.name,
+                window_size: self.window_size,
+                detect_schema: self.detect_schema,
+                streaming_options: self.streaming_options,
+                data_preview_options: self.data_preview_options,
+            }
+        }
+    }
+}
+impl DirectKinesisSource {
+    /// Creates a new builder-style object to manufacture [`DirectKinesisSource`](crate::model::DirectKinesisSource)
+    pub fn builder() -> crate::model::direct_kinesis_source::Builder {
+        crate::model::direct_kinesis_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SparkSql {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+    pub sql_query: std::option::Option<std::string::String>,
+    /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
+    /// <p> <code>select * from SqlName</code> </p>
+    /// <p>and that gets data from MyDataSource.</p>
+    pub sql_aliases: std::option::Option<std::vec::Vec<crate::model::SqlAlias>>,
+    /// <p>Specifies the data schema for the SparkSQL transform.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl SparkSql {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+    pub fn sql_query(&self) -> std::option::Option<&str> {
+        self.sql_query.as_deref()
+    }
+    /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
+    /// <p> <code>select * from SqlName</code> </p>
+    /// <p>and that gets data from MyDataSource.</p>
+    pub fn sql_aliases(&self) -> std::option::Option<&[crate::model::SqlAlias]> {
+        self.sql_aliases.as_deref()
+    }
+    /// <p>Specifies the data schema for the SparkSQL transform.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for SparkSql {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SparkSql");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("sql_query", &self.sql_query);
+        formatter.field("sql_aliases", &self.sql_aliases);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`SparkSql`](crate::model::SparkSql)
+pub mod spark_sql {
+    /// A builder for [`SparkSql`](crate::model::SparkSql)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) sql_query: std::option::Option<std::string::String>,
+        pub(crate) sql_aliases: std::option::Option<std::vec::Vec<crate::model::SqlAlias>>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+        pub fn sql_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sql_query = Some(input.into());
+            self
+        }
+        /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+        pub fn set_sql_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sql_query = input;
+            self
+        }
+        /// Appends an item to `sql_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_sql_aliases`](Self::set_sql_aliases).
+        ///
+        /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
+        /// <p> <code>select * from SqlName</code> </p>
+        /// <p>and that gets data from MyDataSource.</p>
+        pub fn sql_aliases(mut self, input: crate::model::SqlAlias) -> Self {
+            let mut v = self.sql_aliases.unwrap_or_default();
+            v.push(input);
+            self.sql_aliases = Some(v);
+            self
+        }
+        /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
+        /// <p> <code>select * from SqlName</code> </p>
+        /// <p>and that gets data from MyDataSource.</p>
+        pub fn set_sql_aliases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SqlAlias>>,
+        ) -> Self {
+            self.sql_aliases = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the SparkSQL transform.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the SparkSQL transform.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SparkSql`](crate::model::SparkSql)
+        pub fn build(self) -> crate::model::SparkSql {
+            crate::model::SparkSql {
+                name: self.name,
+                inputs: self.inputs,
+                sql_query: self.sql_query,
+                sql_aliases: self.sql_aliases,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl SparkSql {
+    /// Creates a new builder-style object to manufacture [`SparkSql`](crate::model::SparkSql)
+    pub fn builder() -> crate::model::spark_sql::Builder {
+        crate::model::spark_sql::Builder::default()
+    }
+}
+
+/// <p>Specifies a user-defined schema when a schema cannot be determined by AWS Glue.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlueSchema {
+    /// <p>Specifies the column definitions that make up a Glue schema.</p>
+    pub columns: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+}
+impl GlueSchema {
+    /// <p>Specifies the column definitions that make up a Glue schema.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::GlueStudioSchemaColumn]> {
+        self.columns.as_deref()
+    }
+}
+impl std::fmt::Debug for GlueSchema {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlueSchema");
+        formatter.field("columns", &self.columns);
+        formatter.finish()
+    }
+}
+/// See [`GlueSchema`](crate::model::GlueSchema)
+pub mod glue_schema {
+    /// A builder for [`GlueSchema`](crate::model::GlueSchema)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) columns:
+            std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+    }
+    impl Builder {
+        /// Appends an item to `columns`.
+        ///
+        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
+        ///
+        /// <p>Specifies the column definitions that make up a Glue schema.</p>
+        pub fn columns(mut self, input: crate::model::GlueStudioSchemaColumn) -> Self {
+            let mut v = self.columns.unwrap_or_default();
+            v.push(input);
+            self.columns = Some(v);
+            self
+        }
+        /// <p>Specifies the column definitions that make up a Glue schema.</p>
+        pub fn set_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+        ) -> Self {
+            self.columns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlueSchema`](crate::model::GlueSchema)
+        pub fn build(self) -> crate::model::GlueSchema {
+            crate::model::GlueSchema {
+                columns: self.columns,
+            }
+        }
+    }
+}
+impl GlueSchema {
+    /// Creates a new builder-style object to manufacture [`GlueSchema`](crate::model::GlueSchema)
+    pub fn builder() -> crate::model::glue_schema::Builder {
+        crate::model::glue_schema::Builder::default()
+    }
+}
+
+/// <p>Specifies a single column in a Glue schema definition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlueStudioSchemaColumn {
+    /// <p>The name of the column in the Glue Studio schema.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The hive type for this column in the Glue Studio schema.</p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl GlueStudioSchemaColumn {
+    /// <p>The name of the column in the Glue Studio schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The hive type for this column in the Glue Studio schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
+impl std::fmt::Debug for GlueStudioSchemaColumn {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlueStudioSchemaColumn");
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn)
+pub mod glue_studio_schema_column {
+    /// A builder for [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column in the Glue Studio schema.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column in the Glue Studio schema.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The hive type for this column in the Glue Studio schema.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The hive type for this column in the Glue Studio schema.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn)
+        pub fn build(self) -> crate::model::GlueStudioSchemaColumn {
+            crate::model::GlueStudioSchemaColumn {
+                name: self.name,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl GlueStudioSchemaColumn {
+    /// Creates a new builder-style object to manufacture [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn)
+    pub fn builder() -> crate::model::glue_studio_schema_column::Builder {
+        crate::model::glue_studio_schema_column::Builder::default()
+    }
+}
+
+/// <p>Represents a single entry in the list of values for <code>SqlAliases</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SqlAlias {
+    /// <p>A table, or a column in a table.</p>
+    pub from: std::option::Option<std::string::String>,
+    /// <p>A temporary name given to a table, or a column in a table.</p>
+    pub alias: std::option::Option<std::string::String>,
+}
+impl SqlAlias {
+    /// <p>A table, or a column in a table.</p>
+    pub fn from(&self) -> std::option::Option<&str> {
+        self.from.as_deref()
+    }
+    /// <p>A temporary name given to a table, or a column in a table.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+}
+impl std::fmt::Debug for SqlAlias {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SqlAlias");
+        formatter.field("from", &self.from);
+        formatter.field("alias", &self.alias);
+        formatter.finish()
+    }
+}
+/// See [`SqlAlias`](crate::model::SqlAlias)
+pub mod sql_alias {
+    /// A builder for [`SqlAlias`](crate::model::SqlAlias)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) from: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A table, or a column in a table.</p>
+        pub fn from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from = Some(input.into());
+            self
+        }
+        /// <p>A table, or a column in a table.</p>
+        pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from = input;
+            self
+        }
+        /// <p>A temporary name given to a table, or a column in a table.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>A temporary name given to a table, or a column in a table.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SqlAlias`](crate::model::SqlAlias)
+        pub fn build(self) -> crate::model::SqlAlias {
+            crate::model::SqlAlias {
+                from: self.from,
+                alias: self.alias,
+            }
+        }
+    }
+}
+impl SqlAlias {
+    /// Creates a new builder-style object to manufacture [`SqlAlias`](crate::model::SqlAlias)
+    pub fn builder() -> crate::model::sql_alias::Builder {
+        crate::model::sql_alias::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomCode {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The custom code that is used to perform the data transformation.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>The name defined for the custom code node class.</p>
+    pub class_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the data schema for the custom code transform.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl CustomCode {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The custom code that is used to perform the data transformation.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The name defined for the custom code node class.</p>
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    /// <p>Specifies the data schema for the custom code transform.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for CustomCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomCode");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("code", &self.code);
+        formatter.field("class_name", &self.class_name);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`CustomCode`](crate::model::CustomCode)
+pub mod custom_code {
+    /// A builder for [`CustomCode`](crate::model::CustomCode)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) class_name: std::option::Option<std::string::String>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The custom code that is used to perform the data transformation.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The custom code that is used to perform the data transformation.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The name defined for the custom code node class.</p>
+        pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.class_name = Some(input.into());
+            self
+        }
+        /// <p>The name defined for the custom code node class.</p>
+        pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.class_name = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the custom code transform.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the custom code transform.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomCode`](crate::model::CustomCode)
+        pub fn build(self) -> crate::model::CustomCode {
+            crate::model::CustomCode {
+                name: self.name,
+                inputs: self.inputs,
+                code: self.code,
+                class_name: self.class_name,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl CustomCode {
+    /// Creates a new builder-style object to manufacture [`CustomCode`](crate::model::CustomCode)
+    pub fn builder() -> crate::model::custom_code::Builder {
+        crate::model::custom_code::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Filter {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
+    pub logical_operator: std::option::Option<crate::model::FilterLogicalOperator>,
+    /// <p>Specifies a filter expression.</p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::FilterExpression>>,
+}
+impl Filter {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
+    pub fn logical_operator(&self) -> std::option::Option<&crate::model::FilterLogicalOperator> {
+        self.logical_operator.as_ref()
+    }
+    /// <p>Specifies a filter expression.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::FilterExpression]> {
+        self.filters.as_deref()
+    }
+}
+impl std::fmt::Debug for Filter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Filter");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("logical_operator", &self.logical_operator);
+        formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+/// See [`Filter`](crate::model::Filter)
+pub mod filter {
+    /// A builder for [`Filter`](crate::model::Filter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) logical_operator: std::option::Option<crate::model::FilterLogicalOperator>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::FilterExpression>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
+        pub fn logical_operator(mut self, input: crate::model::FilterLogicalOperator) -> Self {
+            self.logical_operator = Some(input);
+            self
+        }
+        /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
+        pub fn set_logical_operator(
+            mut self,
+            input: std::option::Option<crate::model::FilterLogicalOperator>,
+        ) -> Self {
+            self.logical_operator = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Specifies a filter expression.</p>
+        pub fn filters(mut self, input: crate::model::FilterExpression) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>Specifies a filter expression.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FilterExpression>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        pub fn build(self) -> crate::model::Filter {
+            crate::model::Filter {
+                name: self.name,
+                inputs: self.inputs,
+                logical_operator: self.logical_operator,
+                filters: self.filters,
+            }
+        }
+    }
+}
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
+/// <p>Specifies a filter expression.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterExpression {
+    /// <p>The type of operation to perform in the expression.</p>
+    pub operation: std::option::Option<crate::model::FilterOperation>,
+    /// <p>Whether the expression is to be negated.</p>
+    pub negated: std::option::Option<bool>,
+    /// <p>A list of filter values.</p>
+    pub values: std::option::Option<std::vec::Vec<crate::model::FilterValue>>,
+}
+impl FilterExpression {
+    /// <p>The type of operation to perform in the expression.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::FilterOperation> {
+        self.operation.as_ref()
+    }
+    /// <p>Whether the expression is to be negated.</p>
+    pub fn negated(&self) -> std::option::Option<bool> {
+        self.negated
+    }
+    /// <p>A list of filter values.</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::FilterValue]> {
+        self.values.as_deref()
+    }
+}
+impl std::fmt::Debug for FilterExpression {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterExpression");
+        formatter.field("operation", &self.operation);
+        formatter.field("negated", &self.negated);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`FilterExpression`](crate::model::FilterExpression)
+pub mod filter_expression {
+    /// A builder for [`FilterExpression`](crate::model::FilterExpression)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operation: std::option::Option<crate::model::FilterOperation>,
+        pub(crate) negated: std::option::Option<bool>,
+        pub(crate) values: std::option::Option<std::vec::Vec<crate::model::FilterValue>>,
+    }
+    impl Builder {
+        /// <p>The type of operation to perform in the expression.</p>
+        pub fn operation(mut self, input: crate::model::FilterOperation) -> Self {
+            self.operation = Some(input);
+            self
+        }
+        /// <p>The type of operation to perform in the expression.</p>
+        pub fn set_operation(
+            mut self,
+            input: std::option::Option<crate::model::FilterOperation>,
+        ) -> Self {
+            self.operation = input;
+            self
+        }
+        /// <p>Whether the expression is to be negated.</p>
+        pub fn negated(mut self, input: bool) -> Self {
+            self.negated = Some(input);
+            self
+        }
+        /// <p>Whether the expression is to be negated.</p>
+        pub fn set_negated(mut self, input: std::option::Option<bool>) -> Self {
+            self.negated = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of filter values.</p>
+        pub fn values(mut self, input: crate::model::FilterValue) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input);
+            self.values = Some(v);
+            self
+        }
+        /// <p>A list of filter values.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FilterValue>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterExpression`](crate::model::FilterExpression)
+        pub fn build(self) -> crate::model::FilterExpression {
+            crate::model::FilterExpression {
+                operation: self.operation,
+                negated: self.negated,
+                values: self.values,
+            }
+        }
+    }
+}
+impl FilterExpression {
+    /// Creates a new builder-style object to manufacture [`FilterExpression`](crate::model::FilterExpression)
+    pub fn builder() -> crate::model::filter_expression::Builder {
+        crate::model::filter_expression::Builder::default()
+    }
+}
+
+/// <p>Represents a single entry in the list of values for a <code>FilterExpression</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterValue {
+    /// <p>The type of filter value.</p>
+    pub r#type: std::option::Option<crate::model::FilterValueType>,
+    /// <p>The value to be associated.</p>
+    pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FilterValue {
+    /// <p>The type of filter value.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FilterValueType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The value to be associated.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for FilterValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterValue");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`FilterValue`](crate::model::FilterValue)
+pub mod filter_value {
+    /// A builder for [`FilterValue`](crate::model::FilterValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::FilterValueType>,
+        pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The type of filter value.</p>
+        pub fn r#type(mut self, input: crate::model::FilterValueType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of filter value.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::FilterValueType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>The value to be associated.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.value.unwrap_or_default();
+            v.push(input.into());
+            self.value = Some(v);
+            self
+        }
+        /// <p>The value to be associated.</p>
+        pub fn set_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterValue`](crate::model::FilterValue)
+        pub fn build(self) -> crate::model::FilterValue {
+            crate::model::FilterValue {
+                r#type: self.r#type,
+                value: self.value,
+            }
+        }
+    }
+}
+impl FilterValue {
+    /// Creates a new builder-style object to manufacture [`FilterValue`](crate::model::FilterValue)
+    pub fn builder() -> crate::model::filter_value::Builder {
+        crate::model::filter_value::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FilterValueType {
+    #[allow(missing_docs)] // documentation missing in model
+    Columnextracted,
+    #[allow(missing_docs)] // documentation missing in model
+    Constant,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FilterValueType {
+    fn from(s: &str) -> Self {
+        match s {
+            "COLUMNEXTRACTED" => FilterValueType::Columnextracted,
+            "CONSTANT" => FilterValueType::Constant,
+            other => FilterValueType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FilterValueType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FilterValueType::from(s))
+    }
+}
+impl FilterValueType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FilterValueType::Columnextracted => "COLUMNEXTRACTED",
+            FilterValueType::Constant => "CONSTANT",
+            FilterValueType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COLUMNEXTRACTED", "CONSTANT"]
+    }
+}
+impl AsRef<str> for FilterValueType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FilterOperation {
+    #[allow(missing_docs)] // documentation missing in model
+    Eq,
+    #[allow(missing_docs)] // documentation missing in model
+    Gt,
+    #[allow(missing_docs)] // documentation missing in model
+    Gte,
+    #[allow(missing_docs)] // documentation missing in model
+    Isnull,
+    #[allow(missing_docs)] // documentation missing in model
+    Lt,
+    #[allow(missing_docs)] // documentation missing in model
+    Lte,
+    #[allow(missing_docs)] // documentation missing in model
+    Regex,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FilterOperation {
+    fn from(s: &str) -> Self {
+        match s {
+            "EQ" => FilterOperation::Eq,
+            "GT" => FilterOperation::Gt,
+            "GTE" => FilterOperation::Gte,
+            "ISNULL" => FilterOperation::Isnull,
+            "LT" => FilterOperation::Lt,
+            "LTE" => FilterOperation::Lte,
+            "REGEX" => FilterOperation::Regex,
+            other => FilterOperation::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FilterOperation {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FilterOperation::from(s))
+    }
+}
+impl FilterOperation {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FilterOperation::Eq => "EQ",
+            FilterOperation::Gt => "GT",
+            FilterOperation::Gte => "GTE",
+            FilterOperation::Isnull => "ISNULL",
+            FilterOperation::Lt => "LT",
+            FilterOperation::Lte => "LTE",
+            FilterOperation::Regex => "REGEX",
+            FilterOperation::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EQ", "GT", "GTE", "ISNULL", "LT", "LTE", "REGEX"]
+    }
+}
+impl AsRef<str> for FilterOperation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FilterLogicalOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    And,
+    #[allow(missing_docs)] // documentation missing in model
+    Or,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FilterLogicalOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "AND" => FilterLogicalOperator::And,
+            "OR" => FilterLogicalOperator::Or,
+            other => FilterLogicalOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FilterLogicalOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FilterLogicalOperator::from(s))
+    }
+}
+impl FilterLogicalOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FilterLogicalOperator::And => "AND",
+            FilterLogicalOperator::Or => "OR",
+            FilterLogicalOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AND", "OR"]
+    }
+}
+impl AsRef<str> for FilterLogicalOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FillMissingValues {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
+    pub imputed_path: std::option::Option<std::string::String>,
+    /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
+    pub filled_path: std::option::Option<std::string::String>,
+}
+impl FillMissingValues {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
+    pub fn imputed_path(&self) -> std::option::Option<&str> {
+        self.imputed_path.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
+    pub fn filled_path(&self) -> std::option::Option<&str> {
+        self.filled_path.as_deref()
+    }
+}
+impl std::fmt::Debug for FillMissingValues {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FillMissingValues");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("imputed_path", &self.imputed_path);
+        formatter.field("filled_path", &self.filled_path);
+        formatter.finish()
+    }
+}
+/// See [`FillMissingValues`](crate::model::FillMissingValues)
+pub mod fill_missing_values {
+    /// A builder for [`FillMissingValues`](crate::model::FillMissingValues)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) imputed_path: std::option::Option<std::string::String>,
+        pub(crate) filled_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
+        pub fn imputed_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.imputed_path = Some(input.into());
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
+        pub fn set_imputed_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imputed_path = input;
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
+        pub fn filled_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filled_path = Some(input.into());
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
+        pub fn set_filled_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filled_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FillMissingValues`](crate::model::FillMissingValues)
+        pub fn build(self) -> crate::model::FillMissingValues {
+            crate::model::FillMissingValues {
+                name: self.name,
+                inputs: self.inputs,
+                imputed_path: self.imputed_path,
+                filled_path: self.filled_path,
+            }
+        }
+    }
+}
+impl FillMissingValues {
+    /// Creates a new builder-style object to manufacture [`FillMissingValues`](crate::model::FillMissingValues)
+    pub fn builder() -> crate::model::fill_missing_values::Builder {
+        crate::model::fill_missing_values::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SelectFromCollection {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The index for the DynamicFrame to be selected.</p>
+    pub index: i32,
+}
+impl SelectFromCollection {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The index for the DynamicFrame to be selected.</p>
+    pub fn index(&self) -> i32 {
+        self.index
+    }
+}
+impl std::fmt::Debug for SelectFromCollection {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectFromCollection");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("index", &self.index);
+        formatter.finish()
+    }
+}
+/// See [`SelectFromCollection`](crate::model::SelectFromCollection)
+pub mod select_from_collection {
+    /// A builder for [`SelectFromCollection`](crate::model::SelectFromCollection)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) index: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The index for the DynamicFrame to be selected.</p>
+        pub fn index(mut self, input: i32) -> Self {
+            self.index = Some(input);
+            self
+        }
+        /// <p>The index for the DynamicFrame to be selected.</p>
+        pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.index = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SelectFromCollection`](crate::model::SelectFromCollection)
+        pub fn build(self) -> crate::model::SelectFromCollection {
+            crate::model::SelectFromCollection {
+                name: self.name,
+                inputs: self.inputs,
+                index: self.index.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl SelectFromCollection {
+    /// Creates a new builder-style object to manufacture [`SelectFromCollection`](crate::model::SelectFromCollection)
+    pub fn builder() -> crate::model::select_from_collection::Builder {
+        crate::model::select_from_collection::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SplitFields {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl SplitFields {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.paths.as_deref()
+    }
+}
+impl std::fmt::Debug for SplitFields {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SplitFields");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("paths", &self.paths);
+        formatter.finish()
+    }
+}
+/// See [`SplitFields`](crate::model::SplitFields)
+pub mod split_fields {
+    /// A builder for [`SplitFields`](crate::model::SplitFields)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A JSON path to a variable in the data structure.</p>
+        pub fn paths(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input);
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SplitFields`](crate::model::SplitFields)
+        pub fn build(self) -> crate::model::SplitFields {
+            crate::model::SplitFields {
+                name: self.name,
+                inputs: self.inputs,
+                paths: self.paths,
+            }
+        }
+    }
+}
+impl SplitFields {
+    /// Creates a new builder-style object to manufacture [`SplitFields`](crate::model::SplitFields)
+    pub fn builder() -> crate::model::split_fields::Builder {
+        crate::model::split_fields::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Join {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the type of join to be performed on the datasets.</p>
+    pub join_type: std::option::Option<crate::model::JoinType>,
+    /// <p>A list of the two columns to be joined.</p>
+    pub columns: std::option::Option<std::vec::Vec<crate::model::JoinColumn>>,
+}
+impl Join {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies the type of join to be performed on the datasets.</p>
+    pub fn join_type(&self) -> std::option::Option<&crate::model::JoinType> {
+        self.join_type.as_ref()
+    }
+    /// <p>A list of the two columns to be joined.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::JoinColumn]> {
+        self.columns.as_deref()
+    }
+}
+impl std::fmt::Debug for Join {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Join");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("join_type", &self.join_type);
+        formatter.field("columns", &self.columns);
+        formatter.finish()
+    }
+}
+/// See [`Join`](crate::model::Join)
+pub mod join {
+    /// A builder for [`Join`](crate::model::Join)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) join_type: std::option::Option<crate::model::JoinType>,
+        pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::JoinColumn>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>Specifies the type of join to be performed on the datasets.</p>
+        pub fn join_type(mut self, input: crate::model::JoinType) -> Self {
+            self.join_type = Some(input);
+            self
+        }
+        /// <p>Specifies the type of join to be performed on the datasets.</p>
+        pub fn set_join_type(mut self, input: std::option::Option<crate::model::JoinType>) -> Self {
+            self.join_type = input;
+            self
+        }
+        /// Appends an item to `columns`.
+        ///
+        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
+        ///
+        /// <p>A list of the two columns to be joined.</p>
+        pub fn columns(mut self, input: crate::model::JoinColumn) -> Self {
+            let mut v = self.columns.unwrap_or_default();
+            v.push(input);
+            self.columns = Some(v);
+            self
+        }
+        /// <p>A list of the two columns to be joined.</p>
+        pub fn set_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::JoinColumn>>,
+        ) -> Self {
+            self.columns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Join`](crate::model::Join)
+        pub fn build(self) -> crate::model::Join {
+            crate::model::Join {
+                name: self.name,
+                inputs: self.inputs,
+                join_type: self.join_type,
+                columns: self.columns,
+            }
+        }
+    }
+}
+impl Join {
+    /// Creates a new builder-style object to manufacture [`Join`](crate::model::Join)
+    pub fn builder() -> crate::model::join::Builder {
+        crate::model::join::Builder::default()
+    }
+}
+
+/// <p>Specifies a column to be joined.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JoinColumn {
+    /// <p>The column to be joined.</p>
+    pub from: std::option::Option<std::string::String>,
+    /// <p>The key of the column to be joined.</p>
+    pub keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl JoinColumn {
+    /// <p>The column to be joined.</p>
+    pub fn from(&self) -> std::option::Option<&str> {
+        self.from.as_deref()
+    }
+    /// <p>The key of the column to be joined.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.keys.as_deref()
+    }
+}
+impl std::fmt::Debug for JoinColumn {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JoinColumn");
+        formatter.field("from", &self.from);
+        formatter.field("keys", &self.keys);
+        formatter.finish()
+    }
+}
+/// See [`JoinColumn`](crate::model::JoinColumn)
+pub mod join_column {
+    /// A builder for [`JoinColumn`](crate::model::JoinColumn)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) from: std::option::Option<std::string::String>,
+        pub(crate) keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// <p>The column to be joined.</p>
+        pub fn from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from = Some(input.into());
+            self
+        }
+        /// <p>The column to be joined.</p>
+        pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from = input;
+            self
+        }
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>The key of the column to be joined.</p>
+        pub fn keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.keys.unwrap_or_default();
+            v.push(input);
+            self.keys = Some(v);
+            self
+        }
+        /// <p>The key of the column to be joined.</p>
+        pub fn set_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JoinColumn`](crate::model::JoinColumn)
+        pub fn build(self) -> crate::model::JoinColumn {
+            crate::model::JoinColumn {
+                from: self.from,
+                keys: self.keys,
+            }
+        }
+    }
+}
+impl JoinColumn {
+    /// Creates a new builder-style object to manufacture [`JoinColumn`](crate::model::JoinColumn)
+    pub fn builder() -> crate::model::join_column::Builder {
+        crate::model::join_column::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JoinType {
+    #[allow(missing_docs)] // documentation missing in model
+    Equijoin,
+    #[allow(missing_docs)] // documentation missing in model
+    Left,
+    #[allow(missing_docs)] // documentation missing in model
+    LeftAnti,
+    #[allow(missing_docs)] // documentation missing in model
+    LeftSemi,
+    #[allow(missing_docs)] // documentation missing in model
+    Outer,
+    #[allow(missing_docs)] // documentation missing in model
+    Right,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JoinType {
+    fn from(s: &str) -> Self {
+        match s {
+            "equijoin" => JoinType::Equijoin,
+            "left" => JoinType::Left,
+            "leftanti" => JoinType::LeftAnti,
+            "leftsemi" => JoinType::LeftSemi,
+            "outer" => JoinType::Outer,
+            "right" => JoinType::Right,
+            other => JoinType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JoinType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JoinType::from(s))
+    }
+}
+impl JoinType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JoinType::Equijoin => "equijoin",
+            JoinType::Left => "left",
+            JoinType::LeftAnti => "leftanti",
+            JoinType::LeftSemi => "leftsemi",
+            JoinType::Outer => "outer",
+            JoinType::Right => "right",
+            JoinType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["equijoin", "left", "leftanti", "leftsemi", "outer", "right"]
+    }
+}
+impl AsRef<str> for JoinType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Spigot {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+    pub path: std::option::Option<std::string::String>,
+    /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+    pub topk: std::option::Option<i32>,
+    /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+    pub prob: std::option::Option<f64>,
+}
+impl Spigot {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+    pub fn topk(&self) -> std::option::Option<i32> {
+        self.topk
+    }
+    /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+    pub fn prob(&self) -> std::option::Option<f64> {
+        self.prob
+    }
+}
+impl std::fmt::Debug for Spigot {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Spigot");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("path", &self.path);
+        formatter.field("topk", &self.topk);
+        formatter.field("prob", &self.prob);
+        formatter.finish()
+    }
+}
+/// See [`Spigot`](crate::model::Spigot)
+pub mod spigot {
+    /// A builder for [`Spigot`](crate::model::Spigot)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) topk: std::option::Option<i32>,
+        pub(crate) prob: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+        pub fn topk(mut self, input: i32) -> Self {
+            self.topk = Some(input);
+            self
+        }
+        /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+        pub fn set_topk(mut self, input: std::option::Option<i32>) -> Self {
+            self.topk = input;
+            self
+        }
+        /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+        pub fn prob(mut self, input: f64) -> Self {
+            self.prob = Some(input);
+            self
+        }
+        /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+        pub fn set_prob(mut self, input: std::option::Option<f64>) -> Self {
+            self.prob = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Spigot`](crate::model::Spigot)
+        pub fn build(self) -> crate::model::Spigot {
+            crate::model::Spigot {
+                name: self.name,
+                inputs: self.inputs,
+                path: self.path,
+                topk: self.topk,
+                prob: self.prob,
+            }
+        }
+    }
+}
+impl Spigot {
+    /// Creates a new builder-style object to manufacture [`Spigot`](crate::model::Spigot)
+    pub fn builder() -> crate::model::spigot::Builder {
+        crate::model::spigot::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that renames a single data property key.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RenameField {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A JSON path to a variable in the data structure for the source data.</p>
+    pub source_path: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A JSON path to a variable in the data structure for the target data.</p>
+    pub target_path: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RenameField {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure for the source data.</p>
+    pub fn source_path(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_path.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure for the target data.</p>
+    pub fn target_path(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_path.as_deref()
+    }
+}
+impl std::fmt::Debug for RenameField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RenameField");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("source_path", &self.source_path);
+        formatter.field("target_path", &self.target_path);
+        formatter.finish()
+    }
+}
+/// See [`RenameField`](crate::model::RenameField)
+pub mod rename_field {
+    /// A builder for [`RenameField`](crate::model::RenameField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) source_path: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) target_path: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `source_path`.
+        ///
+        /// To override the contents of this collection use [`set_source_path`](Self::set_source_path).
+        ///
+        /// <p>A JSON path to a variable in the data structure for the source data.</p>
+        pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.source_path.unwrap_or_default();
+            v.push(input.into());
+            self.source_path = Some(v);
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure for the source data.</p>
+        pub fn set_source_path(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.source_path = input;
+            self
+        }
+        /// Appends an item to `target_path`.
+        ///
+        /// To override the contents of this collection use [`set_target_path`](Self::set_target_path).
+        ///
+        /// <p>A JSON path to a variable in the data structure for the target data.</p>
+        pub fn target_path(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.target_path.unwrap_or_default();
+            v.push(input.into());
+            self.target_path = Some(v);
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure for the target data.</p>
+        pub fn set_target_path(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.target_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RenameField`](crate::model::RenameField)
+        pub fn build(self) -> crate::model::RenameField {
+            crate::model::RenameField {
+                name: self.name,
+                inputs: self.inputs,
+                source_path: self.source_path,
+                target_path: self.target_path,
+            }
+        }
+    }
+}
+impl RenameField {
+    /// Creates a new builder-style object to manufacture [`RenameField`](crate::model::RenameField)
+    pub fn builder() -> crate::model::rename_field::Builder {
+        crate::model::rename_field::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DropFields {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl DropFields {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.paths.as_deref()
+    }
+}
+impl std::fmt::Debug for DropFields {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DropFields");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("paths", &self.paths);
+        formatter.finish()
+    }
+}
+/// See [`DropFields`](crate::model::DropFields)
+pub mod drop_fields {
+    /// A builder for [`DropFields`](crate::model::DropFields)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A JSON path to a variable in the data structure.</p>
+        pub fn paths(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input);
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DropFields`](crate::model::DropFields)
+        pub fn build(self) -> crate::model::DropFields {
+            crate::model::DropFields {
+                name: self.name,
+                inputs: self.inputs,
+                paths: self.paths,
+            }
+        }
+    }
+}
+impl DropFields {
+    /// Creates a new builder-style object to manufacture [`DropFields`](crate::model::DropFields)
+    pub fn builder() -> crate::model::drop_fields::Builder {
+        crate::model::drop_fields::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SelectFields {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl SelectFields {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.paths.as_deref()
+    }
+}
+impl std::fmt::Debug for SelectFields {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectFields");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("paths", &self.paths);
+        formatter.finish()
+    }
+}
+/// See [`SelectFields`](crate::model::SelectFields)
+pub mod select_fields {
+    /// A builder for [`SelectFields`](crate::model::SelectFields)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A JSON path to a variable in the data structure.</p>
+        pub fn paths(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input);
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A JSON path to a variable in the data structure.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SelectFields`](crate::model::SelectFields)
+        pub fn build(self) -> crate::model::SelectFields {
+            crate::model::SelectFields {
+                name: self.name,
+                inputs: self.inputs,
+                paths: self.paths,
+            }
+        }
+    }
+}
+impl SelectFields {
+    /// Creates a new builder-style object to manufacture [`SelectFields`](crate::model::SelectFields)
+    pub fn builder() -> crate::model::select_fields::Builder {
+        crate::model::select_fields::Builder::default()
+    }
+}
+
+/// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ApplyMapping {
+    /// <p>The name of the transform node.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The data inputs identified by their node names.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+    pub mapping: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
+}
+impl ApplyMapping {
+    /// <p>The name of the transform node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+    pub fn mapping(&self) -> std::option::Option<&[crate::model::Mapping]> {
+        self.mapping.as_deref()
+    }
+}
+impl std::fmt::Debug for ApplyMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ApplyMapping");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("mapping", &self.mapping);
+        formatter.finish()
+    }
+}
+/// See [`ApplyMapping`](crate::model::ApplyMapping)
+pub mod apply_mapping {
+    /// A builder for [`ApplyMapping`](crate::model::ApplyMapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) mapping: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
+    }
+    impl Builder {
+        /// <p>The name of the transform node.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the transform node.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The data inputs identified by their node names.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `mapping`.
+        ///
+        /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
+        ///
+        /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+        pub fn mapping(mut self, input: crate::model::Mapping) -> Self {
+            let mut v = self.mapping.unwrap_or_default();
+            v.push(input);
+            self.mapping = Some(v);
+            self
+        }
+        /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+        pub fn set_mapping(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
+        ) -> Self {
+            self.mapping = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ApplyMapping`](crate::model::ApplyMapping)
+        pub fn build(self) -> crate::model::ApplyMapping {
+            crate::model::ApplyMapping {
+                name: self.name,
+                inputs: self.inputs,
+                mapping: self.mapping,
+            }
+        }
+    }
+}
+impl ApplyMapping {
+    /// Creates a new builder-style object to manufacture [`ApplyMapping`](crate::model::ApplyMapping)
+    pub fn builder() -> crate::model::apply_mapping::Builder {
+        crate::model::apply_mapping::Builder::default()
+    }
+}
+
+/// <p>Specifies the mapping of data property keys.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Mapping {
+    /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
+    pub to_key: std::option::Option<std::string::String>,
+    /// <p>The table or column to be modified.</p>
+    pub from_path: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The type of the data to be modified.</p>
+    pub from_type: std::option::Option<std::string::String>,
+    /// <p>The data type that the data is to be modified to.</p>
+    pub to_type: std::option::Option<std::string::String>,
+    /// <p>If true, then the column is removed.</p>
+    pub dropped: std::option::Option<bool>,
+    /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
+    /// <p>For the children part, suppose you have the structure:</p>
+    /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    /// <p>You can specify a <code>Mapping</code> that looks like:</p>
+    /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    pub children: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
+}
+impl Mapping {
+    /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
+    pub fn to_key(&self) -> std::option::Option<&str> {
+        self.to_key.as_deref()
+    }
+    /// <p>The table or column to be modified.</p>
+    pub fn from_path(&self) -> std::option::Option<&[std::string::String]> {
+        self.from_path.as_deref()
+    }
+    /// <p>The type of the data to be modified.</p>
+    pub fn from_type(&self) -> std::option::Option<&str> {
+        self.from_type.as_deref()
+    }
+    /// <p>The data type that the data is to be modified to.</p>
+    pub fn to_type(&self) -> std::option::Option<&str> {
+        self.to_type.as_deref()
+    }
+    /// <p>If true, then the column is removed.</p>
+    pub fn dropped(&self) -> std::option::Option<bool> {
+        self.dropped
+    }
+    /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
+    /// <p>For the children part, suppose you have the structure:</p>
+    /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    /// <p>You can specify a <code>Mapping</code> that looks like:</p>
+    /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    pub fn children(&self) -> std::option::Option<&[crate::model::Mapping]> {
+        self.children.as_deref()
+    }
+}
+impl std::fmt::Debug for Mapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Mapping");
+        formatter.field("to_key", &self.to_key);
+        formatter.field("from_path", &self.from_path);
+        formatter.field("from_type", &self.from_type);
+        formatter.field("to_type", &self.to_type);
+        formatter.field("dropped", &self.dropped);
+        formatter.field("children", &self.children);
+        formatter.finish()
+    }
+}
+/// See [`Mapping`](crate::model::Mapping)
+pub mod mapping {
+    /// A builder for [`Mapping`](crate::model::Mapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) to_key: std::option::Option<std::string::String>,
+        pub(crate) from_path: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) from_type: std::option::Option<std::string::String>,
+        pub(crate) to_type: std::option::Option<std::string::String>,
+        pub(crate) dropped: std::option::Option<bool>,
+        pub(crate) children: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
+    }
+    impl Builder {
+        /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
+        pub fn to_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.to_key = Some(input.into());
+            self
+        }
+        /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
+        pub fn set_to_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.to_key = input;
+            self
+        }
+        /// Appends an item to `from_path`.
+        ///
+        /// To override the contents of this collection use [`set_from_path`](Self::set_from_path).
+        ///
+        /// <p>The table or column to be modified.</p>
+        pub fn from_path(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.from_path.unwrap_or_default();
+            v.push(input.into());
+            self.from_path = Some(v);
+            self
+        }
+        /// <p>The table or column to be modified.</p>
+        pub fn set_from_path(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.from_path = input;
+            self
+        }
+        /// <p>The type of the data to be modified.</p>
+        pub fn from_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_type = Some(input.into());
+            self
+        }
+        /// <p>The type of the data to be modified.</p>
+        pub fn set_from_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from_type = input;
+            self
+        }
+        /// <p>The data type that the data is to be modified to.</p>
+        pub fn to_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.to_type = Some(input.into());
+            self
+        }
+        /// <p>The data type that the data is to be modified to.</p>
+        pub fn set_to_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.to_type = input;
+            self
+        }
+        /// <p>If true, then the column is removed.</p>
+        pub fn dropped(mut self, input: bool) -> Self {
+            self.dropped = Some(input);
+            self
+        }
+        /// <p>If true, then the column is removed.</p>
+        pub fn set_dropped(mut self, input: std::option::Option<bool>) -> Self {
+            self.dropped = input;
+            self
+        }
+        /// Appends an item to `children`.
+        ///
+        /// To override the contents of this collection use [`set_children`](Self::set_children).
+        ///
+        /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
+        /// <p>For the children part, suppose you have the structure:</p>
+        /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+        /// <p>You can specify a <code>Mapping</code> that looks like:</p>
+        /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+        pub fn children(mut self, input: crate::model::Mapping) -> Self {
+            let mut v = self.children.unwrap_or_default();
+            v.push(input);
+            self.children = Some(v);
+            self
+        }
+        /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
+        /// <p>For the children part, suppose you have the structure:</p>
+        /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+        /// <p>You can specify a <code>Mapping</code> that looks like:</p>
+        /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+        pub fn set_children(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
+        ) -> Self {
+            self.children = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Mapping`](crate::model::Mapping)
+        pub fn build(self) -> crate::model::Mapping {
+            crate::model::Mapping {
+                to_key: self.to_key,
+                from_path: self.from_path,
+                from_type: self.from_type,
+                to_type: self.to_type,
+                dropped: self.dropped,
+                children: self.children,
+            }
+        }
+    }
+}
+impl Mapping {
+    /// Creates a new builder-style object to manufacture [`Mapping`](crate::model::Mapping)
+    pub fn builder() -> crate::model::mapping::Builder {
+        crate::model::mapping::Builder::default()
+    }
+}
+
+/// <p>Specifies a data target that writes to Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3DirectTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>A single Amazon S3 path to write to.</p>
+    pub path: std::option::Option<std::string::String>,
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub compression: std::option::Option<std::string::String>,
+    /// <p>Specifies the data output format for the target.</p>
+    pub format: std::option::Option<crate::model::TargetFormat>,
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub schema_change_policy: std::option::Option<crate::model::DirectSchemaChangePolicy>,
+}
+impl S3DirectTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>A single Amazon S3 path to write to.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn compression(&self) -> std::option::Option<&str> {
+        self.compression.as_deref()
+    }
+    /// <p>Specifies the data output format for the target.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TargetFormat> {
+        self.format.as_ref()
+    }
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectSchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for S3DirectTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DirectTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("partition_keys", &self.partition_keys);
+        formatter.field("path", &self.path);
+        formatter.field("compression", &self.compression);
+        formatter.field("format", &self.format);
+        formatter.field("schema_change_policy", &self.schema_change_policy);
+        formatter.finish()
+    }
+}
+/// See [`S3DirectTarget`](crate::model::S3DirectTarget)
+pub mod s3_direct_target {
+    /// A builder for [`S3DirectTarget`](crate::model::S3DirectTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) partition_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) compression: std::option::Option<std::string::String>,
+        pub(crate) format: std::option::Option<crate::model::TargetFormat>,
+        pub(crate) schema_change_policy:
+            std::option::Option<crate::model::DirectSchemaChangePolicy>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.partition_keys.unwrap_or_default();
+            v.push(input);
+            self.partition_keys = Some(v);
+            self
+        }
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn set_partition_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.partition_keys = input;
+            self
+        }
+        /// <p>A single Amazon S3 path to write to.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>A single Amazon S3 path to write to.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn compression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compression = Some(input.into());
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn set_compression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.compression = input;
+            self
+        }
+        /// <p>Specifies the data output format for the target.</p>
+        pub fn format(mut self, input: crate::model::TargetFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>Specifies the data output format for the target.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::TargetFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn schema_change_policy(
+            mut self,
+            input: crate::model::DirectSchemaChangePolicy,
+        ) -> Self {
+            self.schema_change_policy = Some(input);
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn set_schema_change_policy(
+            mut self,
+            input: std::option::Option<crate::model::DirectSchemaChangePolicy>,
+        ) -> Self {
+            self.schema_change_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DirectTarget`](crate::model::S3DirectTarget)
+        pub fn build(self) -> crate::model::S3DirectTarget {
+            crate::model::S3DirectTarget {
+                name: self.name,
+                inputs: self.inputs,
+                partition_keys: self.partition_keys,
+                path: self.path,
+                compression: self.compression,
+                format: self.format,
+                schema_change_policy: self.schema_change_policy,
+            }
+        }
+    }
+}
+impl S3DirectTarget {
+    /// Creates a new builder-style object to manufacture [`S3DirectTarget`](crate::model::S3DirectTarget)
+    pub fn builder() -> crate::model::s3_direct_target::Builder {
+        crate::model::s3_direct_target::Builder::default()
+    }
+}
+
+/// <p>A policy that specifies update behavior for the crawler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DirectSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub enable_update_catalog: std::option::Option<bool>,
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>Specifies the database that the schema change policy applies to.</p>
+    pub database: std::option::Option<std::string::String>,
+}
+impl DirectSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
+        self.enable_update_catalog
+    }
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
+        self.update_behavior.as_ref()
+    }
+    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>Specifies the database that the schema change policy applies to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
+impl std::fmt::Debug for DirectSchemaChangePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DirectSchemaChangePolicy");
+        formatter.field("enable_update_catalog", &self.enable_update_catalog);
+        formatter.field("update_behavior", &self.update_behavior);
+        formatter.field("table", &self.table);
+        formatter.field("database", &self.database);
+        formatter.finish()
+    }
+}
+/// See [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy)
+pub mod direct_schema_change_policy {
+    /// A builder for [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_update_catalog: std::option::Option<bool>,
+        pub(crate) update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn enable_update_catalog(mut self, input: bool) -> Self {
+            self.enable_update_catalog = Some(input);
+            self
+        }
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_update_catalog = input;
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn update_behavior(mut self, input: crate::model::UpdateCatalogBehavior) -> Self {
+            self.update_behavior = Some(input);
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn set_update_behavior(
+            mut self,
+            input: std::option::Option<crate::model::UpdateCatalogBehavior>,
+        ) -> Self {
+            self.update_behavior = input;
+            self
+        }
+        /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>Specifies the database that the schema change policy applies to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>Specifies the database that the schema change policy applies to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy)
+        pub fn build(self) -> crate::model::DirectSchemaChangePolicy {
+            crate::model::DirectSchemaChangePolicy {
+                enable_update_catalog: self.enable_update_catalog,
+                update_behavior: self.update_behavior,
+                table: self.table,
+                database: self.database,
+            }
+        }
+    }
+}
+impl DirectSchemaChangePolicy {
+    /// Creates a new builder-style object to manufacture [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy)
+    pub fn builder() -> crate::model::direct_schema_change_policy::Builder {
+        crate::model::direct_schema_change_policy::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Avro,
+    #[allow(missing_docs)] // documentation missing in model
+    Csv,
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
+    Orc,
+    #[allow(missing_docs)] // documentation missing in model
+    Parquet,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "avro" => TargetFormat::Avro,
+            "csv" => TargetFormat::Csv,
+            "json" => TargetFormat::Json,
+            "orc" => TargetFormat::Orc,
+            "parquet" => TargetFormat::Parquet,
+            other => TargetFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetFormat::from(s))
+    }
+}
+impl TargetFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetFormat::Avro => "avro",
+            TargetFormat::Csv => "csv",
+            TargetFormat::Json => "json",
+            TargetFormat::Orc => "orc",
+            TargetFormat::Parquet => "parquet",
+            TargetFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["avro", "csv", "json", "orc", "parquet"]
+    }
+}
+impl AsRef<str> for TargetFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3GlueParquetTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>A single Amazon S3 path to write to.</p>
+    pub path: std::option::Option<std::string::String>,
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub compression: std::option::Option<crate::model::ParquetCompressionType>,
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub schema_change_policy: std::option::Option<crate::model::DirectSchemaChangePolicy>,
+}
+impl S3GlueParquetTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>A single Amazon S3 path to write to.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn compression(&self) -> std::option::Option<&crate::model::ParquetCompressionType> {
+        self.compression.as_ref()
+    }
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectSchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for S3GlueParquetTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3GlueParquetTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("partition_keys", &self.partition_keys);
+        formatter.field("path", &self.path);
+        formatter.field("compression", &self.compression);
+        formatter.field("schema_change_policy", &self.schema_change_policy);
+        formatter.finish()
+    }
+}
+/// See [`S3GlueParquetTarget`](crate::model::S3GlueParquetTarget)
+pub mod s3_glue_parquet_target {
+    /// A builder for [`S3GlueParquetTarget`](crate::model::S3GlueParquetTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) partition_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) compression: std::option::Option<crate::model::ParquetCompressionType>,
+        pub(crate) schema_change_policy:
+            std::option::Option<crate::model::DirectSchemaChangePolicy>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.partition_keys.unwrap_or_default();
+            v.push(input);
+            self.partition_keys = Some(v);
+            self
+        }
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn set_partition_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.partition_keys = input;
+            self
+        }
+        /// <p>A single Amazon S3 path to write to.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>A single Amazon S3 path to write to.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn compression(mut self, input: crate::model::ParquetCompressionType) -> Self {
+            self.compression = Some(input);
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn set_compression(
+            mut self,
+            input: std::option::Option<crate::model::ParquetCompressionType>,
+        ) -> Self {
+            self.compression = input;
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn schema_change_policy(
+            mut self,
+            input: crate::model::DirectSchemaChangePolicy,
+        ) -> Self {
+            self.schema_change_policy = Some(input);
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn set_schema_change_policy(
+            mut self,
+            input: std::option::Option<crate::model::DirectSchemaChangePolicy>,
+        ) -> Self {
+            self.schema_change_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3GlueParquetTarget`](crate::model::S3GlueParquetTarget)
+        pub fn build(self) -> crate::model::S3GlueParquetTarget {
+            crate::model::S3GlueParquetTarget {
+                name: self.name,
+                inputs: self.inputs,
+                partition_keys: self.partition_keys,
+                path: self.path,
+                compression: self.compression,
+                schema_change_policy: self.schema_change_policy,
+            }
+        }
+    }
+}
+impl S3GlueParquetTarget {
+    /// Creates a new builder-style object to manufacture [`S3GlueParquetTarget`](crate::model::S3GlueParquetTarget)
+    pub fn builder() -> crate::model::s3_glue_parquet_target::Builder {
+        crate::model::s3_glue_parquet_target::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ParquetCompressionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gzip,
+    #[allow(missing_docs)] // documentation missing in model
+    Lzo,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Snappy,
+    #[allow(missing_docs)] // documentation missing in model
+    Uncompressed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ParquetCompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "gzip" => ParquetCompressionType::Gzip,
+            "lzo" => ParquetCompressionType::Lzo,
+            "none" => ParquetCompressionType::None,
+            "snappy" => ParquetCompressionType::Snappy,
+            "uncompressed" => ParquetCompressionType::Uncompressed,
+            other => ParquetCompressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ParquetCompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParquetCompressionType::from(s))
+    }
+}
+impl ParquetCompressionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParquetCompressionType::Gzip => "gzip",
+            ParquetCompressionType::Lzo => "lzo",
+            ParquetCompressionType::None => "none",
+            ParquetCompressionType::Snappy => "snappy",
+            ParquetCompressionType::Uncompressed => "uncompressed",
+            ParquetCompressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["gzip", "lzo", "none", "snappy", "uncompressed"]
+    }
+}
+impl AsRef<str> for ParquetCompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3CatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub schema_change_policy: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+}
+impl S3CatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogSchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for S3CatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3CatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("partition_keys", &self.partition_keys);
+        formatter.field("table", &self.table);
+        formatter.field("database", &self.database);
+        formatter.field("schema_change_policy", &self.schema_change_policy);
+        formatter.finish()
+    }
+}
+/// See [`S3CatalogTarget`](crate::model::S3CatalogTarget)
+pub mod s3_catalog_target {
+    /// A builder for [`S3CatalogTarget`](crate::model::S3CatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) partition_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) schema_change_policy:
+            std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.partition_keys.unwrap_or_default();
+            v.push(input);
+            self.partition_keys = Some(v);
+            self
+        }
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn set_partition_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.partition_keys = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn schema_change_policy(
+            mut self,
+            input: crate::model::CatalogSchemaChangePolicy,
+        ) -> Self {
+            self.schema_change_policy = Some(input);
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn set_schema_change_policy(
+            mut self,
+            input: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+        ) -> Self {
+            self.schema_change_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3CatalogTarget`](crate::model::S3CatalogTarget)
+        pub fn build(self) -> crate::model::S3CatalogTarget {
+            crate::model::S3CatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                partition_keys: self.partition_keys,
+                table: self.table,
+                database: self.database,
+                schema_change_policy: self.schema_change_policy,
+            }
+        }
+    }
+}
+impl S3CatalogTarget {
+    /// Creates a new builder-style object to manufacture [`S3CatalogTarget`](crate::model::S3CatalogTarget)
+    pub fn builder() -> crate::model::s3_catalog_target::Builder {
+        crate::model::s3_catalog_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses Amazon Redshift.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RedshiftTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the database to write to.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to write to.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    pub redshift_tmp_dir: std::option::Option<std::string::String>,
+    /// <p>The IAM role with permissions.</p>
+    pub tmp_dir_iam_role: std::option::Option<std::string::String>,
+    /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
+    pub upsert_redshift_options: std::option::Option<crate::model::UpsertRedshiftTargetOptions>,
+}
+impl RedshiftTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    pub fn redshift_tmp_dir(&self) -> std::option::Option<&str> {
+        self.redshift_tmp_dir.as_deref()
+    }
+    /// <p>The IAM role with permissions.</p>
+    pub fn tmp_dir_iam_role(&self) -> std::option::Option<&str> {
+        self.tmp_dir_iam_role.as_deref()
+    }
+    /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
+    pub fn upsert_redshift_options(
+        &self,
+    ) -> std::option::Option<&crate::model::UpsertRedshiftTargetOptions> {
+        self.upsert_redshift_options.as_ref()
+    }
+}
+impl std::fmt::Debug for RedshiftTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RedshiftTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.field("redshift_tmp_dir", &self.redshift_tmp_dir);
+        formatter.field("tmp_dir_iam_role", &self.tmp_dir_iam_role);
+        formatter.field("upsert_redshift_options", &self.upsert_redshift_options);
+        formatter.finish()
+    }
+}
+/// See [`RedshiftTarget`](crate::model::RedshiftTarget)
+pub mod redshift_target {
+    /// A builder for [`RedshiftTarget`](crate::model::RedshiftTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) redshift_tmp_dir: std::option::Option<std::string::String>,
+        pub(crate) tmp_dir_iam_role: std::option::Option<std::string::String>,
+        pub(crate) upsert_redshift_options:
+            std::option::Option<crate::model::UpsertRedshiftTargetOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+        pub fn redshift_tmp_dir(mut self, input: impl Into<std::string::String>) -> Self {
+            self.redshift_tmp_dir = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+        pub fn set_redshift_tmp_dir(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.redshift_tmp_dir = input;
+            self
+        }
+        /// <p>The IAM role with permissions.</p>
+        pub fn tmp_dir_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tmp_dir_iam_role = Some(input.into());
+            self
+        }
+        /// <p>The IAM role with permissions.</p>
+        pub fn set_tmp_dir_iam_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tmp_dir_iam_role = input;
+            self
+        }
+        /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
+        pub fn upsert_redshift_options(
+            mut self,
+            input: crate::model::UpsertRedshiftTargetOptions,
+        ) -> Self {
+            self.upsert_redshift_options = Some(input);
+            self
+        }
+        /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
+        pub fn set_upsert_redshift_options(
+            mut self,
+            input: std::option::Option<crate::model::UpsertRedshiftTargetOptions>,
+        ) -> Self {
+            self.upsert_redshift_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RedshiftTarget`](crate::model::RedshiftTarget)
+        pub fn build(self) -> crate::model::RedshiftTarget {
+            crate::model::RedshiftTarget {
+                name: self.name,
+                inputs: self.inputs,
+                database: self.database,
+                table: self.table,
+                redshift_tmp_dir: self.redshift_tmp_dir,
+                tmp_dir_iam_role: self.tmp_dir_iam_role,
+                upsert_redshift_options: self.upsert_redshift_options,
+            }
+        }
+    }
+}
+impl RedshiftTarget {
+    /// Creates a new builder-style object to manufacture [`RedshiftTarget`](crate::model::RedshiftTarget)
+    pub fn builder() -> crate::model::redshift_target::Builder {
+        crate::model::redshift_target::Builder::default()
+    }
+}
+
+/// <p>The options to configure an upsert operation when writing to a Redshift target .</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpsertRedshiftTargetOptions {
+    /// <p>The physical location of the Redshift table.</p>
+    pub table_location: std::option::Option<std::string::String>,
+    /// <p>The name of the connection to use to write to Redshift.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The keys used to determine whether to perform an update or insert.</p>
+    pub upsert_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpsertRedshiftTargetOptions {
+    /// <p>The physical location of the Redshift table.</p>
+    pub fn table_location(&self) -> std::option::Option<&str> {
+        self.table_location.as_deref()
+    }
+    /// <p>The name of the connection to use to write to Redshift.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The keys used to determine whether to perform an update or insert.</p>
+    pub fn upsert_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.upsert_keys.as_deref()
+    }
+}
+impl std::fmt::Debug for UpsertRedshiftTargetOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpsertRedshiftTargetOptions");
+        formatter.field("table_location", &self.table_location);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("upsert_keys", &self.upsert_keys);
+        formatter.finish()
+    }
+}
+/// See [`UpsertRedshiftTargetOptions`](crate::model::UpsertRedshiftTargetOptions)
+pub mod upsert_redshift_target_options {
+    /// A builder for [`UpsertRedshiftTargetOptions`](crate::model::UpsertRedshiftTargetOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_location: std::option::Option<std::string::String>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) upsert_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The physical location of the Redshift table.</p>
+        pub fn table_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_location = Some(input.into());
+            self
+        }
+        /// <p>The physical location of the Redshift table.</p>
+        pub fn set_table_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.table_location = input;
+            self
+        }
+        /// <p>The name of the connection to use to write to Redshift.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection to use to write to Redshift.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// Appends an item to `upsert_keys`.
+        ///
+        /// To override the contents of this collection use [`set_upsert_keys`](Self::set_upsert_keys).
+        ///
+        /// <p>The keys used to determine whether to perform an update or insert.</p>
+        pub fn upsert_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.upsert_keys.unwrap_or_default();
+            v.push(input.into());
+            self.upsert_keys = Some(v);
+            self
+        }
+        /// <p>The keys used to determine whether to perform an update or insert.</p>
+        pub fn set_upsert_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.upsert_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpsertRedshiftTargetOptions`](crate::model::UpsertRedshiftTargetOptions)
+        pub fn build(self) -> crate::model::UpsertRedshiftTargetOptions {
+            crate::model::UpsertRedshiftTargetOptions {
+                table_location: self.table_location,
+                connection_name: self.connection_name,
+                upsert_keys: self.upsert_keys,
+            }
+        }
+    }
+}
+impl UpsertRedshiftTargetOptions {
+    /// Creates a new builder-style object to manufacture [`UpsertRedshiftTargetOptions`](crate::model::UpsertRedshiftTargetOptions)
+    pub fn builder() -> crate::model::upsert_redshift_target_options::Builder {
+        crate::model::upsert_redshift_target_options::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BasicCatalogTarget {
+    /// <p>The name of your data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl BasicCatalogTarget {
+    /// <p>The name of your data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for BasicCatalogTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BasicCatalogTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`BasicCatalogTarget`](crate::model::BasicCatalogTarget)
+pub mod basic_catalog_target {
+    /// A builder for [`BasicCatalogTarget`](crate::model::BasicCatalogTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of your data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of your data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BasicCatalogTarget`](crate::model::BasicCatalogTarget)
+        pub fn build(self) -> crate::model::BasicCatalogTarget {
+            crate::model::BasicCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl BasicCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`BasicCatalogTarget`](crate::model::BasicCatalogTarget)
+    pub fn builder() -> crate::model::basic_catalog_target::Builder {
+        crate::model::basic_catalog_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that uses an Apache Spark connector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SparkConnectorTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of a connection for an Apache Spark connector.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The name of an Apache Spark connector.</p>
+    pub connector_name: std::option::Option<std::string::String>,
+    /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    pub connection_type: std::option::Option<std::string::String>,
+    /// <p>Additional connection options for the connector.</p>
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies the data schema for the custom spark target.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl SparkConnectorTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of a connection for an Apache Spark connector.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The name of an Apache Spark connector.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    pub fn connection_type(&self) -> std::option::Option<&str> {
+        self.connection_type.as_deref()
+    }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_options.as_ref()
+    }
+    /// <p>Specifies the data schema for the custom spark target.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for SparkConnectorTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SparkConnectorTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("connector_name", &self.connector_name);
+        formatter.field("connection_type", &self.connection_type);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`SparkConnectorTarget`](crate::model::SparkConnectorTarget)
+pub mod spark_connector_target {
+    /// A builder for [`SparkConnectorTarget`](crate::model::SparkConnectorTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) connector_name: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of a connection for an Apache Spark connector.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a connection for an Apache Spark connector.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// <p>The name of an Apache Spark connector.</p>
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of an Apache Spark connector.</p>
+        pub fn set_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_name = input;
+            self
+        }
+        /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+        pub fn connection_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_type = Some(input.into());
+            self
+        }
+        /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+        pub fn set_connection_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_type = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
+        ///
+        /// <p>Additional connection options for the connector.</p>
+        pub fn additional_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_options = Some(hash_map);
+            self
+        }
+        /// <p>Additional connection options for the connector.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the custom spark target.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the custom spark target.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SparkConnectorTarget`](crate::model::SparkConnectorTarget)
+        pub fn build(self) -> crate::model::SparkConnectorTarget {
+            crate::model::SparkConnectorTarget {
+                name: self.name,
+                inputs: self.inputs,
+                connection_name: self.connection_name,
+                connector_name: self.connector_name,
+                connection_type: self.connection_type,
+                additional_options: self.additional_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl SparkConnectorTarget {
+    /// Creates a new builder-style object to manufacture [`SparkConnectorTarget`](crate::model::SparkConnectorTarget)
+    pub fn builder() -> crate::model::spark_connector_target::Builder {
+        crate::model::spark_connector_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JdbcConnectorTarget {
+    /// <p>The name of the data target.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the data target.</p>
+    pub connection_table: std::option::Option<std::string::String>,
+    /// <p>The name of a connector that will be used.</p>
+    pub connector_name: std::option::Option<std::string::String>,
+    /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+    pub connection_type: std::option::Option<std::string::String>,
+    /// <p>Additional connection options for the connector.</p>
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies the data schema for the JDBC target.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl JdbcConnectorTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The name of the table in the data target.</p>
+    pub fn connection_table(&self) -> std::option::Option<&str> {
+        self.connection_table.as_deref()
+    }
+    /// <p>The name of a connector that will be used.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+    pub fn connection_type(&self) -> std::option::Option<&str> {
+        self.connection_type.as_deref()
+    }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_options.as_ref()
+    }
+    /// <p>Specifies the data schema for the JDBC target.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for JdbcConnectorTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JdbcConnectorTarget");
+        formatter.field("name", &self.name);
+        formatter.field("inputs", &self.inputs);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("connection_table", &self.connection_table);
+        formatter.field("connector_name", &self.connector_name);
+        formatter.field("connection_type", &self.connection_type);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`JdbcConnectorTarget`](crate::model::JdbcConnectorTarget)
+pub mod jdbc_connector_target {
+    /// A builder for [`JdbcConnectorTarget`](crate::model::JdbcConnectorTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) connection_table: std::option::Option<std::string::String>,
+        pub(crate) connector_name: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// <p>The name of the table in the data target.</p>
+        pub fn connection_table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the data target.</p>
+        pub fn set_connection_table(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_table = input;
+            self
+        }
+        /// <p>The name of a connector that will be used.</p>
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a connector that will be used.</p>
+        pub fn set_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_name = input;
+            self
+        }
+        /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+        pub fn connection_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_type = Some(input.into());
+            self
+        }
+        /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+        pub fn set_connection_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_type = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
+        ///
+        /// <p>Additional connection options for the connector.</p>
+        pub fn additional_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_options = Some(hash_map);
+            self
+        }
+        /// <p>Additional connection options for the connector.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the JDBC target.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the JDBC target.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JdbcConnectorTarget`](crate::model::JdbcConnectorTarget)
+        pub fn build(self) -> crate::model::JdbcConnectorTarget {
+            crate::model::JdbcConnectorTarget {
+                name: self.name,
+                inputs: self.inputs,
+                connection_name: self.connection_name,
+                connection_table: self.connection_table,
+                connector_name: self.connector_name,
+                connection_type: self.connection_type,
+                additional_options: self.additional_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl JdbcConnectorTarget {
+    /// Creates a new builder-style object to manufacture [`JdbcConnectorTarget`](crate::model::JdbcConnectorTarget)
+    pub fn builder() -> crate::model::jdbc_connector_target::Builder {
+        crate::model::jdbc_connector_target::Builder::default()
+    }
+}
+
+/// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DynamoDbCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl DynamoDbCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for DynamoDbCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DynamoDbCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`DynamoDbCatalogSource`](crate::model::DynamoDbCatalogSource)
+pub mod dynamo_db_catalog_source {
+    /// A builder for [`DynamoDbCatalogSource`](crate::model::DynamoDbCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DynamoDbCatalogSource`](crate::model::DynamoDbCatalogSource)
+        pub fn build(self) -> crate::model::DynamoDbCatalogSource {
+            crate::model::DynamoDbCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl DynamoDbCatalogSource {
+    /// Creates a new builder-style object to manufacture [`DynamoDbCatalogSource`](crate::model::DynamoDbCatalogSource)
+    pub fn builder() -> crate::model::dynamo_db_catalog_source::Builder {
+        crate::model::dynamo_db_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RelationalCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl RelationalCatalogSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for RelationalCatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RelationalCatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`RelationalCatalogSource`](crate::model::RelationalCatalogSource)
+pub mod relational_catalog_source {
+    /// A builder for [`RelationalCatalogSource`](crate::model::RelationalCatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RelationalCatalogSource`](crate::model::RelationalCatalogSource)
+        pub fn build(self) -> crate::model::RelationalCatalogSource {
+            crate::model::RelationalCatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl RelationalCatalogSource {
+    /// Creates a new builder-style object to manufacture [`RelationalCatalogSource`](crate::model::RelationalCatalogSource)
+    pub fn builder() -> crate::model::relational_catalog_source::Builder {
+        crate::model::relational_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3ParquetSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub compression_type: std::option::Option<crate::model::ParquetCompressionType>,
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    pub group_size: std::option::Option<std::string::String>,
+    /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    pub group_files: std::option::Option<std::string::String>,
+    /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    pub recurse: std::option::Option<bool>,
+    /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    pub max_band: std::option::Option<i32>,
+    /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    pub max_files_in_band: std::option::Option<i32>,
+    /// <p>Specifies additional connection options.</p>
+    pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+    /// <p>Specifies the data schema for the S3 Parquet source.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl S3ParquetSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.paths.as_deref()
+    }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn compression_type(&self) -> std::option::Option<&crate::model::ParquetCompressionType> {
+        self.compression_type.as_ref()
+    }
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusions.as_deref()
+    }
+    /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    pub fn group_size(&self) -> std::option::Option<&str> {
+        self.group_size.as_deref()
+    }
+    /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    pub fn group_files(&self) -> std::option::Option<&str> {
+        self.group_files.as_deref()
+    }
+    /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    pub fn recurse(&self) -> std::option::Option<bool> {
+        self.recurse
+    }
+    /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    pub fn max_band(&self) -> std::option::Option<i32> {
+        self.max_band
+    }
+    /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    pub fn max_files_in_band(&self) -> std::option::Option<i32> {
+        self.max_files_in_band
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DirectSourceAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
+    /// <p>Specifies the data schema for the S3 Parquet source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for S3ParquetSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3ParquetSource");
+        formatter.field("name", &self.name);
+        formatter.field("paths", &self.paths);
+        formatter.field("compression_type", &self.compression_type);
+        formatter.field("exclusions", &self.exclusions);
+        formatter.field("group_size", &self.group_size);
+        formatter.field("group_files", &self.group_files);
+        formatter.field("recurse", &self.recurse);
+        formatter.field("max_band", &self.max_band);
+        formatter.field("max_files_in_band", &self.max_files_in_band);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`S3ParquetSource`](crate::model::S3ParquetSource)
+pub mod s3_parquet_source {
+    /// A builder for [`S3ParquetSource`](crate::model::S3ParquetSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) compression_type: std::option::Option<crate::model::ParquetCompressionType>,
+        pub(crate) exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) group_size: std::option::Option<std::string::String>,
+        pub(crate) group_files: std::option::Option<std::string::String>,
+        pub(crate) recurse: std::option::Option<bool>,
+        pub(crate) max_band: std::option::Option<i32>,
+        pub(crate) max_files_in_band: std::option::Option<i32>,
+        pub(crate) additional_options:
+            std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input.into());
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn compression_type(mut self, input: crate::model::ParquetCompressionType) -> Self {
+            self.compression_type = Some(input);
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn set_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::ParquetCompressionType>,
+        ) -> Self {
+            self.compression_type = input;
+            self
+        }
+        /// Appends an item to `exclusions`.
+        ///
+        /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
+        ///
+        /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+        pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusions.unwrap_or_default();
+            v.push(input.into());
+            self.exclusions = Some(v);
+            self
+        }
+        /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+        pub fn set_exclusions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusions = input;
+            self
+        }
+        /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+        pub fn group_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_size = Some(input.into());
+            self
+        }
+        /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+        pub fn set_group_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_size = input;
+            self
+        }
+        /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+        pub fn group_files(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_files = Some(input.into());
+            self
+        }
+        /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+        pub fn set_group_files(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_files = input;
+            self
+        }
+        /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+        pub fn recurse(mut self, input: bool) -> Self {
+            self.recurse = Some(input);
+            self
+        }
+        /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+        pub fn set_recurse(mut self, input: std::option::Option<bool>) -> Self {
+            self.recurse = input;
+            self
+        }
+        /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+        pub fn max_band(mut self, input: i32) -> Self {
+            self.max_band = Some(input);
+            self
+        }
+        /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+        pub fn set_max_band(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_band = input;
+            self
+        }
+        /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+        pub fn max_files_in_band(mut self, input: i32) -> Self {
+            self.max_files_in_band = Some(input);
+            self
+        }
+        /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+        pub fn set_max_files_in_band(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_files_in_band = input;
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_options(
+            mut self,
+            input: crate::model::S3DirectSourceAdditionalOptions,
+        ) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the S3 Parquet source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the S3 Parquet source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3ParquetSource`](crate::model::S3ParquetSource)
+        pub fn build(self) -> crate::model::S3ParquetSource {
+            crate::model::S3ParquetSource {
+                name: self.name,
+                paths: self.paths,
+                compression_type: self.compression_type,
+                exclusions: self.exclusions,
+                group_size: self.group_size,
+                group_files: self.group_files,
+                recurse: self.recurse,
+                max_band: self.max_band,
+                max_files_in_band: self.max_files_in_band,
+                additional_options: self.additional_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl S3ParquetSource {
+    /// Creates a new builder-style object to manufacture [`S3ParquetSource`](crate::model::S3ParquetSource)
+    pub fn builder() -> crate::model::s3_parquet_source::Builder {
+        crate::model::s3_parquet_source::Builder::default()
+    }
+}
+
+/// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3DirectSourceAdditionalOptions {
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub bounded_size: std::option::Option<i64>,
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub bounded_files: std::option::Option<i64>,
+    /// <p>Sets option to enable a sample path.</p>
+    pub enable_sample_path: std::option::Option<bool>,
+    /// <p>If enabled, specifies the sample path.</p>
+    pub sample_path: std::option::Option<std::string::String>,
+}
+impl S3DirectSourceAdditionalOptions {
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub fn bounded_size(&self) -> std::option::Option<i64> {
+        self.bounded_size
+    }
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub fn bounded_files(&self) -> std::option::Option<i64> {
+        self.bounded_files
+    }
+    /// <p>Sets option to enable a sample path.</p>
+    pub fn enable_sample_path(&self) -> std::option::Option<bool> {
+        self.enable_sample_path
+    }
+    /// <p>If enabled, specifies the sample path.</p>
+    pub fn sample_path(&self) -> std::option::Option<&str> {
+        self.sample_path.as_deref()
+    }
+}
+impl std::fmt::Debug for S3DirectSourceAdditionalOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DirectSourceAdditionalOptions");
+        formatter.field("bounded_size", &self.bounded_size);
+        formatter.field("bounded_files", &self.bounded_files);
+        formatter.field("enable_sample_path", &self.enable_sample_path);
+        formatter.field("sample_path", &self.sample_path);
+        formatter.finish()
+    }
+}
+/// See [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions)
+pub mod s3_direct_source_additional_options {
+    /// A builder for [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bounded_size: std::option::Option<i64>,
+        pub(crate) bounded_files: std::option::Option<i64>,
+        pub(crate) enable_sample_path: std::option::Option<bool>,
+        pub(crate) sample_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+        pub fn bounded_size(mut self, input: i64) -> Self {
+            self.bounded_size = Some(input);
+            self
+        }
+        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+        pub fn set_bounded_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.bounded_size = input;
+            self
+        }
+        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+        pub fn bounded_files(mut self, input: i64) -> Self {
+            self.bounded_files = Some(input);
+            self
+        }
+        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+        pub fn set_bounded_files(mut self, input: std::option::Option<i64>) -> Self {
+            self.bounded_files = input;
+            self
+        }
+        /// <p>Sets option to enable a sample path.</p>
+        pub fn enable_sample_path(mut self, input: bool) -> Self {
+            self.enable_sample_path = Some(input);
+            self
+        }
+        /// <p>Sets option to enable a sample path.</p>
+        pub fn set_enable_sample_path(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_sample_path = input;
+            self
+        }
+        /// <p>If enabled, specifies the sample path.</p>
+        pub fn sample_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_path = Some(input.into());
+            self
+        }
+        /// <p>If enabled, specifies the sample path.</p>
+        pub fn set_sample_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sample_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions)
+        pub fn build(self) -> crate::model::S3DirectSourceAdditionalOptions {
+            crate::model::S3DirectSourceAdditionalOptions {
+                bounded_size: self.bounded_size,
+                bounded_files: self.bounded_files,
+                enable_sample_path: self.enable_sample_path,
+                sample_path: self.sample_path,
+            }
+        }
+    }
+}
+impl S3DirectSourceAdditionalOptions {
+    /// Creates a new builder-style object to manufacture [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions)
+    pub fn builder() -> crate::model::s3_direct_source_additional_options::Builder {
+        crate::model::s3_direct_source_additional_options::Builder::default()
+    }
+}
+
+/// <p>Specifies a JSON data store stored in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3JsonSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub compression_type: std::option::Option<crate::model::CompressionType>,
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    pub group_size: std::option::Option<std::string::String>,
+    /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    pub group_files: std::option::Option<std::string::String>,
+    /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    pub recurse: std::option::Option<bool>,
+    /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    pub max_band: std::option::Option<i32>,
+    /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    pub max_files_in_band: std::option::Option<i32>,
+    /// <p>Specifies additional connection options.</p>
+    pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+    /// <p>A JsonPath string defining the JSON data.</p>
+    pub json_path: std::option::Option<std::string::String>,
+    /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+    pub multiline: std::option::Option<bool>,
+    /// <p>Specifies the data schema for the S3 JSON source.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl S3JsonSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.paths.as_deref()
+    }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
+        self.compression_type.as_ref()
+    }
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusions.as_deref()
+    }
+    /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    pub fn group_size(&self) -> std::option::Option<&str> {
+        self.group_size.as_deref()
+    }
+    /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    pub fn group_files(&self) -> std::option::Option<&str> {
+        self.group_files.as_deref()
+    }
+    /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    pub fn recurse(&self) -> std::option::Option<bool> {
+        self.recurse
+    }
+    /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    pub fn max_band(&self) -> std::option::Option<i32> {
+        self.max_band
+    }
+    /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    pub fn max_files_in_band(&self) -> std::option::Option<i32> {
+        self.max_files_in_band
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DirectSourceAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
+    /// <p>A JsonPath string defining the JSON data.</p>
+    pub fn json_path(&self) -> std::option::Option<&str> {
+        self.json_path.as_deref()
+    }
+    /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+    pub fn multiline(&self) -> std::option::Option<bool> {
+        self.multiline
+    }
+    /// <p>Specifies the data schema for the S3 JSON source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for S3JsonSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3JsonSource");
+        formatter.field("name", &self.name);
+        formatter.field("paths", &self.paths);
+        formatter.field("compression_type", &self.compression_type);
+        formatter.field("exclusions", &self.exclusions);
+        formatter.field("group_size", &self.group_size);
+        formatter.field("group_files", &self.group_files);
+        formatter.field("recurse", &self.recurse);
+        formatter.field("max_band", &self.max_band);
+        formatter.field("max_files_in_band", &self.max_files_in_band);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("json_path", &self.json_path);
+        formatter.field("multiline", &self.multiline);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`S3JsonSource`](crate::model::S3JsonSource)
+pub mod s3_json_source {
+    /// A builder for [`S3JsonSource`](crate::model::S3JsonSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
+        pub(crate) exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) group_size: std::option::Option<std::string::String>,
+        pub(crate) group_files: std::option::Option<std::string::String>,
+        pub(crate) recurse: std::option::Option<bool>,
+        pub(crate) max_band: std::option::Option<i32>,
+        pub(crate) max_files_in_band: std::option::Option<i32>,
+        pub(crate) additional_options:
+            std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        pub(crate) json_path: std::option::Option<std::string::String>,
+        pub(crate) multiline: std::option::Option<bool>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input.into());
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
+            self.compression_type = Some(input);
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn set_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::CompressionType>,
+        ) -> Self {
+            self.compression_type = input;
+            self
+        }
+        /// Appends an item to `exclusions`.
+        ///
+        /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
+        ///
+        /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+        pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusions.unwrap_or_default();
+            v.push(input.into());
+            self.exclusions = Some(v);
+            self
+        }
+        /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+        pub fn set_exclusions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusions = input;
+            self
+        }
+        /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+        pub fn group_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_size = Some(input.into());
+            self
+        }
+        /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+        pub fn set_group_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_size = input;
+            self
+        }
+        /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+        pub fn group_files(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_files = Some(input.into());
+            self
+        }
+        /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+        pub fn set_group_files(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_files = input;
+            self
+        }
+        /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+        pub fn recurse(mut self, input: bool) -> Self {
+            self.recurse = Some(input);
+            self
+        }
+        /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+        pub fn set_recurse(mut self, input: std::option::Option<bool>) -> Self {
+            self.recurse = input;
+            self
+        }
+        /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+        pub fn max_band(mut self, input: i32) -> Self {
+            self.max_band = Some(input);
+            self
+        }
+        /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+        pub fn set_max_band(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_band = input;
+            self
+        }
+        /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+        pub fn max_files_in_band(mut self, input: i32) -> Self {
+            self.max_files_in_band = Some(input);
+            self
+        }
+        /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+        pub fn set_max_files_in_band(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_files_in_band = input;
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_options(
+            mut self,
+            input: crate::model::S3DirectSourceAdditionalOptions,
+        ) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// <p>A JsonPath string defining the JSON data.</p>
+        pub fn json_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.json_path = Some(input.into());
+            self
+        }
+        /// <p>A JsonPath string defining the JSON data.</p>
+        pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.json_path = input;
+            self
+        }
+        /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+        pub fn multiline(mut self, input: bool) -> Self {
+            self.multiline = Some(input);
+            self
+        }
+        /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+        pub fn set_multiline(mut self, input: std::option::Option<bool>) -> Self {
+            self.multiline = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the S3 JSON source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the S3 JSON source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3JsonSource`](crate::model::S3JsonSource)
+        pub fn build(self) -> crate::model::S3JsonSource {
+            crate::model::S3JsonSource {
+                name: self.name,
+                paths: self.paths,
+                compression_type: self.compression_type,
+                exclusions: self.exclusions,
+                group_size: self.group_size,
+                group_files: self.group_files,
+                recurse: self.recurse,
+                max_band: self.max_band,
+                max_files_in_band: self.max_files_in_band,
+                additional_options: self.additional_options,
+                json_path: self.json_path,
+                multiline: self.multiline,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl S3JsonSource {
+    /// Creates a new builder-style object to manufacture [`S3JsonSource`](crate::model::S3JsonSource)
+    pub fn builder() -> crate::model::s3_json_source::Builder {
+        crate::model::s3_json_source::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CompressionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Bzip2,
+    #[allow(missing_docs)] // documentation missing in model
+    Gzip,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "bzip2" => CompressionType::Bzip2,
+            "gzip" => CompressionType::Gzip,
+            other => CompressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CompressionType::from(s))
+    }
+}
+impl CompressionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CompressionType::Bzip2 => "bzip2",
+            CompressionType::Gzip => "gzip",
+            CompressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["bzip2", "gzip"]
+    }
+}
+impl AsRef<str> for CompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3CsvSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub compression_type: std::option::Option<crate::model::CompressionType>,
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    pub group_size: std::option::Option<std::string::String>,
+    /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    pub group_files: std::option::Option<std::string::String>,
+    /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    pub recurse: std::option::Option<bool>,
+    /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    pub max_band: std::option::Option<i32>,
+    /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    pub max_files_in_band: std::option::Option<i32>,
+    /// <p>Specifies additional connection options.</p>
+    pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+    /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
+    pub separator: std::option::Option<crate::model::Separator>,
+    /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
+    pub escaper: std::option::Option<std::string::String>,
+    /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
+    pub quote_char: std::option::Option<crate::model::QuoteChar>,
+    /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+    pub multiline: std::option::Option<bool>,
+    /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
+    pub with_header: std::option::Option<bool>,
+    /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
+    pub write_header: std::option::Option<bool>,
+    /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
+    pub skip_first: std::option::Option<bool>,
+    /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
+    pub optimize_performance: bool,
+    /// <p>Specifies the data schema for the S3 CSV source.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl S3CsvSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.paths.as_deref()
+    }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
+        self.compression_type.as_ref()
+    }
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusions.as_deref()
+    }
+    /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    pub fn group_size(&self) -> std::option::Option<&str> {
+        self.group_size.as_deref()
+    }
+    /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    pub fn group_files(&self) -> std::option::Option<&str> {
+        self.group_files.as_deref()
+    }
+    /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    pub fn recurse(&self) -> std::option::Option<bool> {
+        self.recurse
+    }
+    /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    pub fn max_band(&self) -> std::option::Option<i32> {
+        self.max_band
+    }
+    /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    pub fn max_files_in_band(&self) -> std::option::Option<i32> {
+        self.max_files_in_band
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DirectSourceAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
+    /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
+    pub fn separator(&self) -> std::option::Option<&crate::model::Separator> {
+        self.separator.as_ref()
+    }
+    /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
+    pub fn escaper(&self) -> std::option::Option<&str> {
+        self.escaper.as_deref()
+    }
+    /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
+    pub fn quote_char(&self) -> std::option::Option<&crate::model::QuoteChar> {
+        self.quote_char.as_ref()
+    }
+    /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+    pub fn multiline(&self) -> std::option::Option<bool> {
+        self.multiline
+    }
+    /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
+    pub fn with_header(&self) -> std::option::Option<bool> {
+        self.with_header
+    }
+    /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
+    pub fn write_header(&self) -> std::option::Option<bool> {
+        self.write_header
+    }
+    /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
+    pub fn skip_first(&self) -> std::option::Option<bool> {
+        self.skip_first
+    }
+    /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
+    pub fn optimize_performance(&self) -> bool {
+        self.optimize_performance
+    }
+    /// <p>Specifies the data schema for the S3 CSV source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for S3CsvSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3CsvSource");
+        formatter.field("name", &self.name);
+        formatter.field("paths", &self.paths);
+        formatter.field("compression_type", &self.compression_type);
+        formatter.field("exclusions", &self.exclusions);
+        formatter.field("group_size", &self.group_size);
+        formatter.field("group_files", &self.group_files);
+        formatter.field("recurse", &self.recurse);
+        formatter.field("max_band", &self.max_band);
+        formatter.field("max_files_in_band", &self.max_files_in_band);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("separator", &self.separator);
+        formatter.field("escaper", &self.escaper);
+        formatter.field("quote_char", &self.quote_char);
+        formatter.field("multiline", &self.multiline);
+        formatter.field("with_header", &self.with_header);
+        formatter.field("write_header", &self.write_header);
+        formatter.field("skip_first", &self.skip_first);
+        formatter.field("optimize_performance", &self.optimize_performance);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`S3CsvSource`](crate::model::S3CsvSource)
+pub mod s3_csv_source {
+    /// A builder for [`S3CsvSource`](crate::model::S3CsvSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
+        pub(crate) exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) group_size: std::option::Option<std::string::String>,
+        pub(crate) group_files: std::option::Option<std::string::String>,
+        pub(crate) recurse: std::option::Option<bool>,
+        pub(crate) max_band: std::option::Option<i32>,
+        pub(crate) max_files_in_band: std::option::Option<i32>,
+        pub(crate) additional_options:
+            std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        pub(crate) separator: std::option::Option<crate::model::Separator>,
+        pub(crate) escaper: std::option::Option<std::string::String>,
+        pub(crate) quote_char: std::option::Option<crate::model::QuoteChar>,
+        pub(crate) multiline: std::option::Option<bool>,
+        pub(crate) with_header: std::option::Option<bool>,
+        pub(crate) write_header: std::option::Option<bool>,
+        pub(crate) skip_first: std::option::Option<bool>,
+        pub(crate) optimize_performance: std::option::Option<bool>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input.into());
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
+            self.compression_type = Some(input);
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn set_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::CompressionType>,
+        ) -> Self {
+            self.compression_type = input;
+            self
+        }
+        /// Appends an item to `exclusions`.
+        ///
+        /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
+        ///
+        /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+        pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusions.unwrap_or_default();
+            v.push(input.into());
+            self.exclusions = Some(v);
+            self
+        }
+        /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+        pub fn set_exclusions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusions = input;
+            self
+        }
+        /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+        pub fn group_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_size = Some(input.into());
+            self
+        }
+        /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+        pub fn set_group_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_size = input;
+            self
+        }
+        /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+        pub fn group_files(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_files = Some(input.into());
+            self
+        }
+        /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+        pub fn set_group_files(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_files = input;
+            self
+        }
+        /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+        pub fn recurse(mut self, input: bool) -> Self {
+            self.recurse = Some(input);
+            self
+        }
+        /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+        pub fn set_recurse(mut self, input: std::option::Option<bool>) -> Self {
+            self.recurse = input;
+            self
+        }
+        /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+        pub fn max_band(mut self, input: i32) -> Self {
+            self.max_band = Some(input);
+            self
+        }
+        /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+        pub fn set_max_band(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_band = input;
+            self
+        }
+        /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+        pub fn max_files_in_band(mut self, input: i32) -> Self {
+            self.max_files_in_band = Some(input);
+            self
+        }
+        /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+        pub fn set_max_files_in_band(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_files_in_band = input;
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_options(
+            mut self,
+            input: crate::model::S3DirectSourceAdditionalOptions,
+        ) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
+        pub fn separator(mut self, input: crate::model::Separator) -> Self {
+            self.separator = Some(input);
+            self
+        }
+        /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
+        pub fn set_separator(
+            mut self,
+            input: std::option::Option<crate::model::Separator>,
+        ) -> Self {
+            self.separator = input;
+            self
+        }
+        /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
+        pub fn escaper(mut self, input: impl Into<std::string::String>) -> Self {
+            self.escaper = Some(input.into());
+            self
+        }
+        /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
+        pub fn set_escaper(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.escaper = input;
+            self
+        }
+        /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
+        pub fn quote_char(mut self, input: crate::model::QuoteChar) -> Self {
+            self.quote_char = Some(input);
+            self
+        }
+        /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
+        pub fn set_quote_char(
+            mut self,
+            input: std::option::Option<crate::model::QuoteChar>,
+        ) -> Self {
+            self.quote_char = input;
+            self
+        }
+        /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+        pub fn multiline(mut self, input: bool) -> Self {
+            self.multiline = Some(input);
+            self
+        }
+        /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+        pub fn set_multiline(mut self, input: std::option::Option<bool>) -> Self {
+            self.multiline = input;
+            self
+        }
+        /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
+        pub fn with_header(mut self, input: bool) -> Self {
+            self.with_header = Some(input);
+            self
+        }
+        /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
+        pub fn set_with_header(mut self, input: std::option::Option<bool>) -> Self {
+            self.with_header = input;
+            self
+        }
+        /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
+        pub fn write_header(mut self, input: bool) -> Self {
+            self.write_header = Some(input);
+            self
+        }
+        /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
+        pub fn set_write_header(mut self, input: std::option::Option<bool>) -> Self {
+            self.write_header = input;
+            self
+        }
+        /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
+        pub fn skip_first(mut self, input: bool) -> Self {
+            self.skip_first = Some(input);
+            self
+        }
+        /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
+        pub fn set_skip_first(mut self, input: std::option::Option<bool>) -> Self {
+            self.skip_first = input;
+            self
+        }
+        /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
+        pub fn optimize_performance(mut self, input: bool) -> Self {
+            self.optimize_performance = Some(input);
+            self
+        }
+        /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
+        pub fn set_optimize_performance(mut self, input: std::option::Option<bool>) -> Self {
+            self.optimize_performance = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the S3 CSV source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the S3 CSV source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3CsvSource`](crate::model::S3CsvSource)
+        pub fn build(self) -> crate::model::S3CsvSource {
+            crate::model::S3CsvSource {
+                name: self.name,
+                paths: self.paths,
+                compression_type: self.compression_type,
+                exclusions: self.exclusions,
+                group_size: self.group_size,
+                group_files: self.group_files,
+                recurse: self.recurse,
+                max_band: self.max_band,
+                max_files_in_band: self.max_files_in_band,
+                additional_options: self.additional_options,
+                separator: self.separator,
+                escaper: self.escaper,
+                quote_char: self.quote_char,
+                multiline: self.multiline,
+                with_header: self.with_header,
+                write_header: self.write_header,
+                skip_first: self.skip_first,
+                optimize_performance: self.optimize_performance.unwrap_or_default(),
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl S3CsvSource {
+    /// Creates a new builder-style object to manufacture [`S3CsvSource`](crate::model::S3CsvSource)
+    pub fn builder() -> crate::model::s3_csv_source::Builder {
+        crate::model::s3_csv_source::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum QuoteChar {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Quillemet,
+    #[allow(missing_docs)] // documentation missing in model
+    Quote,
+    #[allow(missing_docs)] // documentation missing in model
+    SingleQuote,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for QuoteChar {
+    fn from(s: &str) -> Self {
+        match s {
+            "disabled" => QuoteChar::Disabled,
+            "quillemet" => QuoteChar::Quillemet,
+            "quote" => QuoteChar::Quote,
+            "single_quote" => QuoteChar::SingleQuote,
+            other => QuoteChar::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for QuoteChar {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(QuoteChar::from(s))
+    }
+}
+impl QuoteChar {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            QuoteChar::Disabled => "disabled",
+            QuoteChar::Quillemet => "quillemet",
+            QuoteChar::Quote => "quote",
+            QuoteChar::SingleQuote => "single_quote",
+            QuoteChar::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "quillemet", "quote", "single_quote"]
+    }
+}
+impl AsRef<str> for QuoteChar {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Separator {
+    #[allow(missing_docs)] // documentation missing in model
+    Comma,
+    #[allow(missing_docs)] // documentation missing in model
+    Ctrla,
+    #[allow(missing_docs)] // documentation missing in model
+    Pipe,
+    #[allow(missing_docs)] // documentation missing in model
+    Semicolon,
+    #[allow(missing_docs)] // documentation missing in model
+    Tab,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Separator {
+    fn from(s: &str) -> Self {
+        match s {
+            "comma" => Separator::Comma,
+            "ctrla" => Separator::Ctrla,
+            "pipe" => Separator::Pipe,
+            "semicolon" => Separator::Semicolon,
+            "tab" => Separator::Tab,
+            other => Separator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Separator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Separator::from(s))
+    }
+}
+impl Separator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Separator::Comma => "comma",
+            Separator::Ctrla => "ctrla",
+            Separator::Pipe => "pipe",
+            Separator::Semicolon => "semicolon",
+            Separator::Tab => "tab",
+            Separator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["comma", "ctrla", "pipe", "semicolon", "tab"]
+    }
+}
+impl AsRef<str> for Separator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3CatalogSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The database table to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    pub partition_predicate: std::option::Option<std::string::String>,
+    /// <p>Specifies additional connection options.</p>
+    pub additional_options: std::option::Option<crate::model::S3SourceAdditionalOptions>,
+}
+impl S3CatalogSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The database table to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    pub fn partition_predicate(&self) -> std::option::Option<&str> {
+        self.partition_predicate.as_deref()
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::model::S3SourceAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
+}
+impl std::fmt::Debug for S3CatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3CatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.field("partition_predicate", &self.partition_predicate);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.finish()
+    }
+}
+/// See [`S3CatalogSource`](crate::model::S3CatalogSource)
+pub mod s3_catalog_source {
+    /// A builder for [`S3CatalogSource`](crate::model::S3CatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) partition_predicate: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<crate::model::S3SourceAdditionalOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The database table to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The database table to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+        pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_predicate = Some(input.into());
+            self
+        }
+        /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+        pub fn set_partition_predicate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_predicate = input;
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_options(
+            mut self,
+            input: crate::model::S3SourceAdditionalOptions,
+        ) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::S3SourceAdditionalOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3CatalogSource`](crate::model::S3CatalogSource)
+        pub fn build(self) -> crate::model::S3CatalogSource {
+            crate::model::S3CatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+                partition_predicate: self.partition_predicate,
+                additional_options: self.additional_options,
+            }
+        }
+    }
+}
+impl S3CatalogSource {
+    /// Creates a new builder-style object to manufacture [`S3CatalogSource`](crate::model::S3CatalogSource)
+    pub fn builder() -> crate::model::s3_catalog_source::Builder {
+        crate::model::s3_catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies an Amazon Redshift data store.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RedshiftSource {
+    /// <p>The name of the Amazon Redshift data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The database table to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    pub redshift_tmp_dir: std::option::Option<std::string::String>,
+    /// <p>The IAM role with permissions.</p>
+    pub tmp_dir_iam_role: std::option::Option<std::string::String>,
+}
+impl RedshiftSource {
+    /// <p>The name of the Amazon Redshift data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The database table to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    pub fn redshift_tmp_dir(&self) -> std::option::Option<&str> {
+        self.redshift_tmp_dir.as_deref()
+    }
+    /// <p>The IAM role with permissions.</p>
+    pub fn tmp_dir_iam_role(&self) -> std::option::Option<&str> {
+        self.tmp_dir_iam_role.as_deref()
+    }
+}
+impl std::fmt::Debug for RedshiftSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RedshiftSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.field("redshift_tmp_dir", &self.redshift_tmp_dir);
+        formatter.field("tmp_dir_iam_role", &self.tmp_dir_iam_role);
+        formatter.finish()
+    }
+}
+/// See [`RedshiftSource`](crate::model::RedshiftSource)
+pub mod redshift_source {
+    /// A builder for [`RedshiftSource`](crate::model::RedshiftSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) redshift_tmp_dir: std::option::Option<std::string::String>,
+        pub(crate) tmp_dir_iam_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Amazon Redshift data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Amazon Redshift data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The database table to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The database table to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+        pub fn redshift_tmp_dir(mut self, input: impl Into<std::string::String>) -> Self {
+            self.redshift_tmp_dir = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+        pub fn set_redshift_tmp_dir(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.redshift_tmp_dir = input;
+            self
+        }
+        /// <p>The IAM role with permissions.</p>
+        pub fn tmp_dir_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tmp_dir_iam_role = Some(input.into());
+            self
+        }
+        /// <p>The IAM role with permissions.</p>
+        pub fn set_tmp_dir_iam_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tmp_dir_iam_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RedshiftSource`](crate::model::RedshiftSource)
+        pub fn build(self) -> crate::model::RedshiftSource {
+            crate::model::RedshiftSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+                redshift_tmp_dir: self.redshift_tmp_dir,
+                tmp_dir_iam_role: self.tmp_dir_iam_role,
+            }
+        }
+    }
+}
+impl RedshiftSource {
+    /// Creates a new builder-style object to manufacture [`RedshiftSource`](crate::model::RedshiftSource)
+    pub fn builder() -> crate::model::redshift_source::Builder {
+        crate::model::redshift_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a data store in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CatalogSource {
+    /// <p>The name of the data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    pub table: std::option::Option<std::string::String>,
+}
+impl CatalogSource {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+}
+impl std::fmt::Debug for CatalogSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CatalogSource");
+        formatter.field("name", &self.name);
+        formatter.field("database", &self.database);
+        formatter.field("table", &self.table);
+        formatter.finish()
+    }
+}
+/// See [`CatalogSource`](crate::model::CatalogSource)
+pub mod catalog_source {
+    /// A builder for [`CatalogSource`](crate::model::CatalogSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CatalogSource`](crate::model::CatalogSource)
+        pub fn build(self) -> crate::model::CatalogSource {
+            crate::model::CatalogSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+            }
+        }
+    }
+}
+impl CatalogSource {
+    /// Creates a new builder-style object to manufacture [`CatalogSource`](crate::model::CatalogSource)
+    pub fn builder() -> crate::model::catalog_source::Builder {
+        crate::model::catalog_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a connector to an Apache Spark data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SparkConnectorSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub connector_name: std::option::Option<std::string::String>,
+    /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    pub connection_type: std::option::Option<std::string::String>,
+    /// <p>Additional connection options for the connector.</p>
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies data schema for the custom spark source.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl SparkConnectorSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    pub fn connection_type(&self) -> std::option::Option<&str> {
+        self.connection_type.as_deref()
+    }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_options.as_ref()
+    }
+    /// <p>Specifies data schema for the custom spark source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for SparkConnectorSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SparkConnectorSource");
+        formatter.field("name", &self.name);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("connector_name", &self.connector_name);
+        formatter.field("connection_type", &self.connection_type);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`SparkConnectorSource`](crate::model::SparkConnectorSource)
+pub mod spark_connector_source {
+    /// A builder for [`SparkConnectorSource`](crate::model::SparkConnectorSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) connector_name: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+        pub fn set_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_name = input;
+            self
+        }
+        /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+        pub fn connection_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_type = Some(input.into());
+            self
+        }
+        /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+        pub fn set_connection_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_type = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
+        ///
+        /// <p>Additional connection options for the connector.</p>
+        pub fn additional_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_options = Some(hash_map);
+            self
+        }
+        /// <p>Additional connection options for the connector.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies data schema for the custom spark source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies data schema for the custom spark source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SparkConnectorSource`](crate::model::SparkConnectorSource)
+        pub fn build(self) -> crate::model::SparkConnectorSource {
+            crate::model::SparkConnectorSource {
+                name: self.name,
+                connection_name: self.connection_name,
+                connector_name: self.connector_name,
+                connection_type: self.connection_type,
+                additional_options: self.additional_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl SparkConnectorSource {
+    /// Creates a new builder-style object to manufacture [`SparkConnectorSource`](crate::model::SparkConnectorSource)
+    pub fn builder() -> crate::model::spark_connector_source::Builder {
+        crate::model::spark_connector_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a connector to a JDBC data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JdbcConnectorSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub connector_name: std::option::Option<std::string::String>,
+    /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
+    pub connection_type: std::option::Option<std::string::String>,
+    /// <p>Additional connection options for the connector.</p>
+    pub additional_options: std::option::Option<crate::model::JdbcConnectorOptions>,
+    /// <p>The name of the table in the data source.</p>
+    pub connection_table: std::option::Option<std::string::String>,
+    /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
+    pub query: std::option::Option<std::string::String>,
+    /// <p>Specifies the data schema for the custom JDBC source.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl JdbcConnectorSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
+    pub fn connection_type(&self) -> std::option::Option<&str> {
+        self.connection_type.as_deref()
+    }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn additional_options(&self) -> std::option::Option<&crate::model::JdbcConnectorOptions> {
+        self.additional_options.as_ref()
+    }
+    /// <p>The name of the table in the data source.</p>
+    pub fn connection_table(&self) -> std::option::Option<&str> {
+        self.connection_table.as_deref()
+    }
+    /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
+    /// <p>Specifies the data schema for the custom JDBC source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for JdbcConnectorSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JdbcConnectorSource");
+        formatter.field("name", &self.name);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("connector_name", &self.connector_name);
+        formatter.field("connection_type", &self.connection_type);
+        formatter.field("additional_options", &self.additional_options);
+        formatter.field("connection_table", &self.connection_table);
+        formatter.field("query", &self.query);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`JdbcConnectorSource`](crate::model::JdbcConnectorSource)
+pub mod jdbc_connector_source {
+    /// A builder for [`JdbcConnectorSource`](crate::model::JdbcConnectorSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) connector_name: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<crate::model::JdbcConnectorOptions>,
+        pub(crate) connection_table: std::option::Option<std::string::String>,
+        pub(crate) query: std::option::Option<std::string::String>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+        pub fn set_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_name = input;
+            self
+        }
+        /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
+        pub fn connection_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_type = Some(input.into());
+            self
+        }
+        /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
+        pub fn set_connection_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_type = input;
+            self
+        }
+        /// <p>Additional connection options for the connector.</p>
+        pub fn additional_options(mut self, input: crate::model::JdbcConnectorOptions) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Additional connection options for the connector.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::JdbcConnectorOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// <p>The name of the table in the data source.</p>
+        pub fn connection_table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the data source.</p>
+        pub fn set_connection_table(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_table = input;
+            self
+        }
+        /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
+        pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query = Some(input.into());
+            self
+        }
+        /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
+        pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the custom JDBC source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the custom JDBC source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JdbcConnectorSource`](crate::model::JdbcConnectorSource)
+        pub fn build(self) -> crate::model::JdbcConnectorSource {
+            crate::model::JdbcConnectorSource {
+                name: self.name,
+                connection_name: self.connection_name,
+                connector_name: self.connector_name,
+                connection_type: self.connection_type,
+                additional_options: self.additional_options,
+                connection_table: self.connection_table,
+                query: self.query,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl JdbcConnectorSource {
+    /// Creates a new builder-style object to manufacture [`JdbcConnectorSource`](crate::model::JdbcConnectorSource)
+    pub fn builder() -> crate::model::jdbc_connector_source::Builder {
+        crate::model::jdbc_connector_source::Builder::default()
+    }
+}
+
+/// <p>Additional connection options for the connector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JdbcConnectorOptions {
+    /// <p>Extra condition clause to filter data from source. For example:</p>
+    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+    pub filter_predicate: std::option::Option<std::string::String>,
+    /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
+    pub partition_column: std::option::Option<std::string::String>,
+    /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    pub lower_bound: std::option::Option<i64>,
+    /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    pub upper_bound: std::option::Option<i64>,
+    /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
+    pub num_partitions: std::option::Option<i64>,
+    /// <p>The name of the job bookmark keys on which to sort.</p>
+    pub job_bookmark_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies an ascending or descending sort order.</p>
+    pub job_bookmark_keys_sort_order: std::option::Option<std::string::String>,
+    /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
+    pub data_type_mapping: std::option::Option<
+        std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>,
+    >,
+}
+impl JdbcConnectorOptions {
+    /// <p>Extra condition clause to filter data from source. For example:</p>
+    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+    pub fn filter_predicate(&self) -> std::option::Option<&str> {
+        self.filter_predicate.as_deref()
+    }
+    /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
+    pub fn partition_column(&self) -> std::option::Option<&str> {
+        self.partition_column.as_deref()
+    }
+    /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    pub fn lower_bound(&self) -> std::option::Option<i64> {
+        self.lower_bound
+    }
+    /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    pub fn upper_bound(&self) -> std::option::Option<i64> {
+        self.upper_bound
+    }
+    /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
+    pub fn num_partitions(&self) -> std::option::Option<i64> {
+        self.num_partitions
+    }
+    /// <p>The name of the job bookmark keys on which to sort.</p>
+    pub fn job_bookmark_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_bookmark_keys.as_deref()
+    }
+    /// <p>Specifies an ascending or descending sort order.</p>
+    pub fn job_bookmark_keys_sort_order(&self) -> std::option::Option<&str> {
+        self.job_bookmark_keys_sort_order.as_deref()
+    }
+    /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
+    pub fn data_type_mapping(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>,
+    > {
+        self.data_type_mapping.as_ref()
+    }
+}
+impl std::fmt::Debug for JdbcConnectorOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JdbcConnectorOptions");
+        formatter.field("filter_predicate", &self.filter_predicate);
+        formatter.field("partition_column", &self.partition_column);
+        formatter.field("lower_bound", &self.lower_bound);
+        formatter.field("upper_bound", &self.upper_bound);
+        formatter.field("num_partitions", &self.num_partitions);
+        formatter.field("job_bookmark_keys", &self.job_bookmark_keys);
+        formatter.field(
+            "job_bookmark_keys_sort_order",
+            &self.job_bookmark_keys_sort_order,
+        );
+        formatter.field("data_type_mapping", &self.data_type_mapping);
+        formatter.finish()
+    }
+}
+/// See [`JdbcConnectorOptions`](crate::model::JdbcConnectorOptions)
+pub mod jdbc_connector_options {
+    /// A builder for [`JdbcConnectorOptions`](crate::model::JdbcConnectorOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter_predicate: std::option::Option<std::string::String>,
+        pub(crate) partition_column: std::option::Option<std::string::String>,
+        pub(crate) lower_bound: std::option::Option<i64>,
+        pub(crate) upper_bound: std::option::Option<i64>,
+        pub(crate) num_partitions: std::option::Option<i64>,
+        pub(crate) job_bookmark_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) job_bookmark_keys_sort_order: std::option::Option<std::string::String>,
+        pub(crate) data_type_mapping: std::option::Option<
+            std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>,
+        >,
+    }
+    impl Builder {
+        /// <p>Extra condition clause to filter data from source. For example:</p>
+        /// <p> <code>BillingCity='Mountain View'</code> </p>
+        /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+        pub fn filter_predicate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter_predicate = Some(input.into());
+            self
+        }
+        /// <p>Extra condition clause to filter data from source. For example:</p>
+        /// <p> <code>BillingCity='Mountain View'</code> </p>
+        /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+        pub fn set_filter_predicate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.filter_predicate = input;
+            self
+        }
+        /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
+        pub fn partition_column(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_column = Some(input.into());
+            self
+        }
+        /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
+        pub fn set_partition_column(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_column = input;
+            self
+        }
+        /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+        pub fn lower_bound(mut self, input: i64) -> Self {
+            self.lower_bound = Some(input);
+            self
+        }
+        /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+        pub fn set_lower_bound(mut self, input: std::option::Option<i64>) -> Self {
+            self.lower_bound = input;
+            self
+        }
+        /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+        pub fn upper_bound(mut self, input: i64) -> Self {
+            self.upper_bound = Some(input);
+            self
+        }
+        /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+        pub fn set_upper_bound(mut self, input: std::option::Option<i64>) -> Self {
+            self.upper_bound = input;
+            self
+        }
+        /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
+        pub fn num_partitions(mut self, input: i64) -> Self {
+            self.num_partitions = Some(input);
+            self
+        }
+        /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
+        pub fn set_num_partitions(mut self, input: std::option::Option<i64>) -> Self {
+            self.num_partitions = input;
+            self
+        }
+        /// Appends an item to `job_bookmark_keys`.
+        ///
+        /// To override the contents of this collection use [`set_job_bookmark_keys`](Self::set_job_bookmark_keys).
+        ///
+        /// <p>The name of the job bookmark keys on which to sort.</p>
+        pub fn job_bookmark_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.job_bookmark_keys.unwrap_or_default();
+            v.push(input.into());
+            self.job_bookmark_keys = Some(v);
+            self
+        }
+        /// <p>The name of the job bookmark keys on which to sort.</p>
+        pub fn set_job_bookmark_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.job_bookmark_keys = input;
+            self
+        }
+        /// <p>Specifies an ascending or descending sort order.</p>
+        pub fn job_bookmark_keys_sort_order(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.job_bookmark_keys_sort_order = Some(input.into());
+            self
+        }
+        /// <p>Specifies an ascending or descending sort order.</p>
+        pub fn set_job_bookmark_keys_sort_order(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_bookmark_keys_sort_order = input;
+            self
+        }
+        /// Adds a key-value pair to `data_type_mapping`.
+        ///
+        /// To override the contents of this collection use [`set_data_type_mapping`](Self::set_data_type_mapping).
+        ///
+        /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
+        pub fn data_type_mapping(
+            mut self,
+            k: crate::model::JdbcDataType,
+            v: crate::model::GlueRecordType,
+        ) -> Self {
+            let mut hash_map = self.data_type_mapping.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.data_type_mapping = Some(hash_map);
+            self
+        }
+        /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
+        pub fn set_data_type_mapping(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>,
+            >,
+        ) -> Self {
+            self.data_type_mapping = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JdbcConnectorOptions`](crate::model::JdbcConnectorOptions)
+        pub fn build(self) -> crate::model::JdbcConnectorOptions {
+            crate::model::JdbcConnectorOptions {
+                filter_predicate: self.filter_predicate,
+                partition_column: self.partition_column,
+                lower_bound: self.lower_bound,
+                upper_bound: self.upper_bound,
+                num_partitions: self.num_partitions,
+                job_bookmark_keys: self.job_bookmark_keys,
+                job_bookmark_keys_sort_order: self.job_bookmark_keys_sort_order,
+                data_type_mapping: self.data_type_mapping,
+            }
+        }
+    }
+}
+impl JdbcConnectorOptions {
+    /// Creates a new builder-style object to manufacture [`JdbcConnectorOptions`](crate::model::JdbcConnectorOptions)
+    pub fn builder() -> crate::model::jdbc_connector_options::Builder {
+        crate::model::jdbc_connector_options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GlueRecordType {
+    #[allow(missing_docs)] // documentation missing in model
+    Bigdecimal,
+    #[allow(missing_docs)] // documentation missing in model
+    Byte,
+    #[allow(missing_docs)] // documentation missing in model
+    Date,
+    #[allow(missing_docs)] // documentation missing in model
+    Double,
+    #[allow(missing_docs)] // documentation missing in model
+    Float,
+    #[allow(missing_docs)] // documentation missing in model
+    Int,
+    #[allow(missing_docs)] // documentation missing in model
+    Long,
+    #[allow(missing_docs)] // documentation missing in model
+    Short,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestamp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for GlueRecordType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BIGDECIMAL" => GlueRecordType::Bigdecimal,
+            "BYTE" => GlueRecordType::Byte,
+            "DATE" => GlueRecordType::Date,
+            "DOUBLE" => GlueRecordType::Double,
+            "FLOAT" => GlueRecordType::Float,
+            "INT" => GlueRecordType::Int,
+            "LONG" => GlueRecordType::Long,
+            "SHORT" => GlueRecordType::Short,
+            "STRING" => GlueRecordType::String,
+            "TIMESTAMP" => GlueRecordType::Timestamp,
+            other => GlueRecordType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for GlueRecordType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GlueRecordType::from(s))
+    }
+}
+impl GlueRecordType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GlueRecordType::Bigdecimal => "BIGDECIMAL",
+            GlueRecordType::Byte => "BYTE",
+            GlueRecordType::Date => "DATE",
+            GlueRecordType::Double => "DOUBLE",
+            GlueRecordType::Float => "FLOAT",
+            GlueRecordType::Int => "INT",
+            GlueRecordType::Long => "LONG",
+            GlueRecordType::Short => "SHORT",
+            GlueRecordType::String => "STRING",
+            GlueRecordType::Timestamp => "TIMESTAMP",
+            GlueRecordType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BIGDECIMAL",
+            "BYTE",
+            "DATE",
+            "DOUBLE",
+            "FLOAT",
+            "INT",
+            "LONG",
+            "SHORT",
+            "STRING",
+            "TIMESTAMP",
+        ]
+    }
+}
+impl AsRef<str> for GlueRecordType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JdbcDataType {
+    #[allow(missing_docs)] // documentation missing in model
+    Array,
+    #[allow(missing_docs)] // documentation missing in model
+    Bigint,
+    #[allow(missing_docs)] // documentation missing in model
+    Binary,
+    #[allow(missing_docs)] // documentation missing in model
+    Bit,
+    #[allow(missing_docs)] // documentation missing in model
+    Blob,
+    #[allow(missing_docs)] // documentation missing in model
+    Boolean,
+    #[allow(missing_docs)] // documentation missing in model
+    Char,
+    #[allow(missing_docs)] // documentation missing in model
+    Clob,
+    #[allow(missing_docs)] // documentation missing in model
+    Datalink,
+    #[allow(missing_docs)] // documentation missing in model
+    Date,
+    #[allow(missing_docs)] // documentation missing in model
+    Decimal,
+    #[allow(missing_docs)] // documentation missing in model
+    Distinct,
+    #[allow(missing_docs)] // documentation missing in model
+    Double,
+    #[allow(missing_docs)] // documentation missing in model
+    Float,
+    #[allow(missing_docs)] // documentation missing in model
+    Integer,
+    #[allow(missing_docs)] // documentation missing in model
+    JavaObject,
+    #[allow(missing_docs)] // documentation missing in model
+    Longnvarchar,
+    #[allow(missing_docs)] // documentation missing in model
+    Longvarbinary,
+    #[allow(missing_docs)] // documentation missing in model
+    Longvarchar,
+    #[allow(missing_docs)] // documentation missing in model
+    Nchar,
+    #[allow(missing_docs)] // documentation missing in model
+    Nclob,
+    #[allow(missing_docs)] // documentation missing in model
+    Null,
+    #[allow(missing_docs)] // documentation missing in model
+    Numeric,
+    #[allow(missing_docs)] // documentation missing in model
+    Nvarchar,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
+    #[allow(missing_docs)] // documentation missing in model
+    Real,
+    #[allow(missing_docs)] // documentation missing in model
+    Ref,
+    #[allow(missing_docs)] // documentation missing in model
+    RefCursor,
+    #[allow(missing_docs)] // documentation missing in model
+    Rowid,
+    #[allow(missing_docs)] // documentation missing in model
+    Smallint,
+    #[allow(missing_docs)] // documentation missing in model
+    Sqlxml,
+    #[allow(missing_docs)] // documentation missing in model
+    Struct,
+    #[allow(missing_docs)] // documentation missing in model
+    Time,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestamp,
+    #[allow(missing_docs)] // documentation missing in model
+    TimestampWithTimezone,
+    #[allow(missing_docs)] // documentation missing in model
+    TimeWithTimezone,
+    #[allow(missing_docs)] // documentation missing in model
+    Tinyint,
+    #[allow(missing_docs)] // documentation missing in model
+    Varbinary,
+    #[allow(missing_docs)] // documentation missing in model
+    Varchar,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JdbcDataType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARRAY" => JdbcDataType::Array,
+            "BIGINT" => JdbcDataType::Bigint,
+            "BINARY" => JdbcDataType::Binary,
+            "BIT" => JdbcDataType::Bit,
+            "BLOB" => JdbcDataType::Blob,
+            "BOOLEAN" => JdbcDataType::Boolean,
+            "CHAR" => JdbcDataType::Char,
+            "CLOB" => JdbcDataType::Clob,
+            "DATALINK" => JdbcDataType::Datalink,
+            "DATE" => JdbcDataType::Date,
+            "DECIMAL" => JdbcDataType::Decimal,
+            "DISTINCT" => JdbcDataType::Distinct,
+            "DOUBLE" => JdbcDataType::Double,
+            "FLOAT" => JdbcDataType::Float,
+            "INTEGER" => JdbcDataType::Integer,
+            "JAVA_OBJECT" => JdbcDataType::JavaObject,
+            "LONGNVARCHAR" => JdbcDataType::Longnvarchar,
+            "LONGVARBINARY" => JdbcDataType::Longvarbinary,
+            "LONGVARCHAR" => JdbcDataType::Longvarchar,
+            "NCHAR" => JdbcDataType::Nchar,
+            "NCLOB" => JdbcDataType::Nclob,
+            "NULL" => JdbcDataType::Null,
+            "NUMERIC" => JdbcDataType::Numeric,
+            "NVARCHAR" => JdbcDataType::Nvarchar,
+            "OTHER" => JdbcDataType::Other,
+            "REAL" => JdbcDataType::Real,
+            "REF" => JdbcDataType::Ref,
+            "REF_CURSOR" => JdbcDataType::RefCursor,
+            "ROWID" => JdbcDataType::Rowid,
+            "SMALLINT" => JdbcDataType::Smallint,
+            "SQLXML" => JdbcDataType::Sqlxml,
+            "STRUCT" => JdbcDataType::Struct,
+            "TIME" => JdbcDataType::Time,
+            "TIMESTAMP" => JdbcDataType::Timestamp,
+            "TIMESTAMP_WITH_TIMEZONE" => JdbcDataType::TimestampWithTimezone,
+            "TIME_WITH_TIMEZONE" => JdbcDataType::TimeWithTimezone,
+            "TINYINT" => JdbcDataType::Tinyint,
+            "VARBINARY" => JdbcDataType::Varbinary,
+            "VARCHAR" => JdbcDataType::Varchar,
+            other => JdbcDataType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JdbcDataType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JdbcDataType::from(s))
+    }
+}
+impl JdbcDataType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JdbcDataType::Array => "ARRAY",
+            JdbcDataType::Bigint => "BIGINT",
+            JdbcDataType::Binary => "BINARY",
+            JdbcDataType::Bit => "BIT",
+            JdbcDataType::Blob => "BLOB",
+            JdbcDataType::Boolean => "BOOLEAN",
+            JdbcDataType::Char => "CHAR",
+            JdbcDataType::Clob => "CLOB",
+            JdbcDataType::Datalink => "DATALINK",
+            JdbcDataType::Date => "DATE",
+            JdbcDataType::Decimal => "DECIMAL",
+            JdbcDataType::Distinct => "DISTINCT",
+            JdbcDataType::Double => "DOUBLE",
+            JdbcDataType::Float => "FLOAT",
+            JdbcDataType::Integer => "INTEGER",
+            JdbcDataType::JavaObject => "JAVA_OBJECT",
+            JdbcDataType::Longnvarchar => "LONGNVARCHAR",
+            JdbcDataType::Longvarbinary => "LONGVARBINARY",
+            JdbcDataType::Longvarchar => "LONGVARCHAR",
+            JdbcDataType::Nchar => "NCHAR",
+            JdbcDataType::Nclob => "NCLOB",
+            JdbcDataType::Null => "NULL",
+            JdbcDataType::Numeric => "NUMERIC",
+            JdbcDataType::Nvarchar => "NVARCHAR",
+            JdbcDataType::Other => "OTHER",
+            JdbcDataType::Real => "REAL",
+            JdbcDataType::Ref => "REF",
+            JdbcDataType::RefCursor => "REF_CURSOR",
+            JdbcDataType::Rowid => "ROWID",
+            JdbcDataType::Smallint => "SMALLINT",
+            JdbcDataType::Sqlxml => "SQLXML",
+            JdbcDataType::Struct => "STRUCT",
+            JdbcDataType::Time => "TIME",
+            JdbcDataType::Timestamp => "TIMESTAMP",
+            JdbcDataType::TimestampWithTimezone => "TIMESTAMP_WITH_TIMEZONE",
+            JdbcDataType::TimeWithTimezone => "TIME_WITH_TIMEZONE",
+            JdbcDataType::Tinyint => "TINYINT",
+            JdbcDataType::Varbinary => "VARBINARY",
+            JdbcDataType::Varchar => "VARCHAR",
+            JdbcDataType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ARRAY",
+            "BIGINT",
+            "BINARY",
+            "BIT",
+            "BLOB",
+            "BOOLEAN",
+            "CHAR",
+            "CLOB",
+            "DATALINK",
+            "DATE",
+            "DECIMAL",
+            "DISTINCT",
+            "DOUBLE",
+            "FLOAT",
+            "INTEGER",
+            "JAVA_OBJECT",
+            "LONGNVARCHAR",
+            "LONGVARBINARY",
+            "LONGVARCHAR",
+            "NCHAR",
+            "NCLOB",
+            "NULL",
+            "NUMERIC",
+            "NVARCHAR",
+            "OTHER",
+            "REAL",
+            "REF",
+            "REF_CURSOR",
+            "ROWID",
+            "SMALLINT",
+            "SQLXML",
+            "STRUCT",
+            "TIME",
+            "TIMESTAMP",
+            "TIMESTAMP_WITH_TIMEZONE",
+            "TIME_WITH_TIMEZONE",
+            "TINYINT",
+            "VARBINARY",
+            "VARCHAR",
+        ]
+    }
+}
+impl AsRef<str> for JdbcDataType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a connector to an Amazon Athena data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AthenaConnectorSource {
+    /// <p>The name of the data source.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub connection_name: std::option::Option<std::string::String>,
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub connector_name: std::option::Option<std::string::String>,
+    /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
+    pub connection_type: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the data source.</p>
+    pub connection_table: std::option::Option<std::string::String>,
+    /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
+    pub schema_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the data schema for the custom Athena source.</p>
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl AthenaConnectorSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
+    pub fn connection_type(&self) -> std::option::Option<&str> {
+        self.connection_type.as_deref()
+    }
+    /// <p>The name of the table in the data source.</p>
+    pub fn connection_table(&self) -> std::option::Option<&str> {
+        self.connection_table.as_deref()
+    }
+    /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Specifies the data schema for the custom Athena source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+impl std::fmt::Debug for AthenaConnectorSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AthenaConnectorSource");
+        formatter.field("name", &self.name);
+        formatter.field("connection_name", &self.connection_name);
+        formatter.field("connector_name", &self.connector_name);
+        formatter.field("connection_type", &self.connection_type);
+        formatter.field("connection_table", &self.connection_table);
+        formatter.field("schema_name", &self.schema_name);
+        formatter.field("output_schemas", &self.output_schemas);
+        formatter.finish()
+    }
+}
+/// See [`AthenaConnectorSource`](crate::model::AthenaConnectorSource)
+pub mod athena_connector_source {
+    /// A builder for [`AthenaConnectorSource`](crate::model::AthenaConnectorSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) connector_name: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<std::string::String>,
+        pub(crate) connection_table: std::option::Option<std::string::String>,
+        pub(crate) schema_name: std::option::Option<std::string::String>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the connection that is associated with the connector.</p>
+        pub fn set_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_name = input;
+            self
+        }
+        /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+        pub fn set_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_name = input;
+            self
+        }
+        /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
+        pub fn connection_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_type = Some(input.into());
+            self
+        }
+        /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
+        pub fn set_connection_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_type = input;
+            self
+        }
+        /// <p>The name of the table in the data source.</p>
+        pub fn connection_table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the data source.</p>
+        pub fn set_connection_table(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_table = input;
+            self
+        }
+        /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
+        pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_name = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the custom Athena source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the custom Athena source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AthenaConnectorSource`](crate::model::AthenaConnectorSource)
+        pub fn build(self) -> crate::model::AthenaConnectorSource {
+            crate::model::AthenaConnectorSource {
+                name: self.name,
+                connection_name: self.connection_name,
+                connector_name: self.connector_name,
+                connection_type: self.connection_type,
+                connection_table: self.connection_table,
+                schema_name: self.schema_name,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl AthenaConnectorSource {
+    /// Creates a new builder-style object to manufacture [`AthenaConnectorSource`](crate::model::AthenaConnectorSource)
+    pub fn builder() -> crate::model::athena_connector_source::Builder {
+        crate::model::athena_connector_source::Builder::default()
     }
 }
 
@@ -20909,6 +33653,10 @@ pub struct Job {
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
+    /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    pub code_gen_configuration_nodes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+    >,
 }
 impl Job {
     /// <p>The name you assign to this job definition.</p>
@@ -21019,6 +33767,14 @@ impl Job {
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
+    /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    pub fn code_gen_configuration_nodes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+    > {
+        self.code_gen_configuration_nodes.as_ref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21043,6 +33799,10 @@ impl std::fmt::Debug for Job {
         formatter.field("security_configuration", &self.security_configuration);
         formatter.field("notification_property", &self.notification_property);
         formatter.field("glue_version", &self.glue_version);
+        formatter.field(
+            "code_gen_configuration_nodes",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
@@ -21076,6 +33836,9 @@ pub mod job {
         pub(crate) security_configuration: std::option::Option<std::string::String>,
         pub(crate) notification_property: std::option::Option<crate::model::NotificationProperty>,
         pub(crate) glue_version: std::option::Option<std::string::String>,
+        pub(crate) code_gen_configuration_nodes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+        >,
     }
     impl Builder {
         /// <p>The name you assign to this job definition.</p>
@@ -21369,6 +34132,34 @@ pub mod job {
             self.glue_version = input;
             self
         }
+        /// Adds a key-value pair to `code_gen_configuration_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_code_gen_configuration_nodes`](Self::set_code_gen_configuration_nodes).
+        ///
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn code_gen_configuration_nodes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::CodeGenConfigurationNode,
+        ) -> Self {
+            let mut hash_map = self.code_gen_configuration_nodes.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.code_gen_configuration_nodes = Some(hash_map);
+            self
+        }
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn set_code_gen_configuration_nodes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::CodeGenConfigurationNode,
+                >,
+            >,
+        ) -> Self {
+            self.code_gen_configuration_nodes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job)
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
@@ -21392,6 +34183,7 @@ pub mod job {
                 security_configuration: self.security_configuration,
                 notification_property: self.notification_property,
                 glue_version: self.glue_version,
+                code_gen_configuration_nodes: self.code_gen_configuration_nodes,
             }
         }
     }

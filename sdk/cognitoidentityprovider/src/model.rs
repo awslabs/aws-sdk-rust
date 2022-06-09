@@ -127,13 +127,19 @@ pub struct UserPoolClientType {
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user pool client was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     pub refresh_token_validity: i32,
-    /// <p>The time limit, specified by tokenValidityUnits, defaulting to hours, after which the access token is no longer valid and can't be used.</p>
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub access_token_validity: std::option::Option<i32>,
-    /// <p>The time limit specified by tokenValidityUnits, defaulting to hours, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub id_token_validity: std::option::Option<i32>,
-    /// <p>The time units used to specify the token validity times of their respective token.</p>
+    /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
     pub token_validity_units: std::option::Option<crate::model::TokenValidityUnitsType>,
     /// <p>The Read-only attributes.</p>
     pub read_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -150,9 +156,9 @@ pub struct UserPoolClientType {
     /// </ul>
     pub explicit_auth_flows:
         std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
-    /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub supported_identity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li> <p>Be an absolute URI.</p> </li>
@@ -163,7 +169,7 @@ pub struct UserPoolClientType {
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub callback_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
     pub logout_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
@@ -177,11 +183,28 @@ pub struct UserPoolClientType {
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: std::option::Option<std::string::String>,
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
     pub allowed_o_auth_flows: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
     pub allowed_o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
     pub allowed_o_auth_flows_user_pool_client: std::option::Option<bool>,
@@ -193,7 +216,7 @@ pub struct UserPoolClientType {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
-    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors aren't prevented.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub prevent_user_existence_errors:
         std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
@@ -225,19 +248,25 @@ impl UserPoolClientType {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn refresh_token_validity(&self) -> i32 {
         self.refresh_token_validity
     }
-    /// <p>The time limit, specified by tokenValidityUnits, defaulting to hours, after which the access token is no longer valid and can't be used.</p>
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn access_token_validity(&self) -> std::option::Option<i32> {
         self.access_token_validity
     }
-    /// <p>The time limit specified by tokenValidityUnits, defaulting to hours, after which the refresh token is no longer valid and can't be used.</p>
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     pub fn id_token_validity(&self) -> std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The time units used to specify the token validity times of their respective token.</p>
+    /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
     pub fn token_validity_units(
         &self,
     ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
@@ -265,11 +294,11 @@ impl UserPoolClientType {
     ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
-    /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_identity_providers.as_deref()
     }
-    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li> <p>Be an absolute URI.</p> </li>
@@ -282,7 +311,7 @@ impl UserPoolClientType {
     pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.callback_ur_ls.as_deref()
     }
-    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
     pub fn logout_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.logout_ur_ls.as_deref()
     }
@@ -300,13 +329,30 @@ impl UserPoolClientType {
         self.default_redirect_uri.as_deref()
     }
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
     pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
         self.allowed_o_auth_flows.as_deref()
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
     pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
@@ -326,7 +372,7 @@ impl UserPoolClientType {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
-    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors aren't prevented.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub fn prevent_user_existence_errors(
         &self,
@@ -481,42 +527,54 @@ pub mod user_pool_client_type {
             self.creation_date = input;
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+        /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.refresh_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+        /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
         }
-        /// <p>The time limit, specified by tokenValidityUnits, defaulting to hours, after which the access token is no longer valid and can't be used.</p>
+        /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.access_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, specified by tokenValidityUnits, defaulting to hours, after which the access token is no longer valid and can't be used.</p>
+        /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
         }
-        /// <p>The time limit specified by tokenValidityUnits, defaulting to hours, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn id_token_validity(mut self, input: i32) -> Self {
             self.id_token_validity = Some(input);
             self
         }
-        /// <p>The time limit specified by tokenValidityUnits, defaulting to hours, after which the refresh token is no longer valid and can't be used.</p>
+        /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+        /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+        /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.id_token_validity = input;
             self
         }
-        /// <p>The time units used to specify the token validity times of their respective token.</p>
+        /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
         pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
             self.token_validity_units = Some(input);
             self
         }
-        /// <p>The time units used to specify the token validity times of their respective token.</p>
+        /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -601,7 +659,7 @@ pub mod user_pool_client_type {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -611,7 +669,7 @@ pub mod user_pool_client_type {
             self.supported_identity_providers = Some(v);
             self
         }
-        /// <p>A list of provider names for the identity providers that are supported on this client.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -623,7 +681,7 @@ pub mod user_pool_client_type {
         ///
         /// To override the contents of this collection use [`set_callback_ur_ls`](Self::set_callback_ur_ls).
         ///
-        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
         /// <li> <p>Be an absolute URI.</p> </li>
@@ -639,7 +697,7 @@ pub mod user_pool_client_type {
             self.callback_ur_ls = Some(v);
             self
         }
-        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
         /// <li> <p>Be an absolute URI.</p> </li>
@@ -660,14 +718,14 @@ pub mod user_pool_client_type {
         ///
         /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
         ///
-        /// <p>A list of allowed logout URLs for the identity providers.</p>
+        /// <p>A list of allowed logout URLs for the IdPs.</p>
         pub fn logout_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logout_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.logout_ur_ls = Some(v);
             self
         }
-        /// <p>A list of allowed logout URLs for the identity providers.</p>
+        /// <p>A list of allowed logout URLs for the IdPs.</p>
         pub fn set_logout_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -711,9 +769,26 @@ pub mod user_pool_client_type {
         /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
         ///
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        /// <dl>
+        /// <dt>
+        /// code
+        /// </dt>
+        /// <dd>
+        /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+        /// </dd>
+        /// <dt>
+        /// implicit
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+        /// </dd>
+        /// <dt>
+        /// client_credentials
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+        /// </dd>
+        /// </dl>
         pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
             v.push(input);
@@ -721,9 +796,26 @@ pub mod user_pool_client_type {
             self
         }
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        /// <dl>
+        /// <dt>
+        /// code
+        /// </dt>
+        /// <dd>
+        /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+        /// </dd>
+        /// <dt>
+        /// implicit
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+        /// </dd>
+        /// <dt>
+        /// client_credentials
+        /// </dt>
+        /// <dd>
+        /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -735,14 +827,14 @@ pub mod user_pool_client_type {
         ///
         /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
         ///
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+        /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+        /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -787,7 +879,7 @@ pub mod user_pool_client_type {
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
-        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors aren't prevented.</p> </li>
+        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
         /// </ul>
         pub fn prevent_user_existence_errors(
             mut self,
@@ -800,7 +892,7 @@ pub mod user_pool_client_type {
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
-        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors aren't prevented.</p> </li>
+        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
         /// </ul>
         pub fn set_prevent_user_existence_errors(
             mut self,
@@ -911,7 +1003,7 @@ impl AsRef<str> for PreventUserExistenceErrorTypes {
     }
 }
 
-/// <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note>
+/// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for a user pool.</p> <note>
 /// <p>In Regions where Amazon Pinpointisn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
 /// </note>
 #[non_exhaustive]
@@ -919,13 +1011,13 @@ impl AsRef<str> for PreventUserExistenceErrorTypes {
 pub struct AnalyticsConfigurationType {
     /// <p>The application ID for an Amazon Pinpoint application.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The external ID.</p>
     pub external_id: std::option::Option<std::string::String>,
-    /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+    /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub user_data_shared: bool,
 }
 impl AnalyticsConfigurationType {
@@ -933,7 +1025,7 @@ impl AnalyticsConfigurationType {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -945,7 +1037,7 @@ impl AnalyticsConfigurationType {
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
-    /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+    /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub fn user_data_shared(&self) -> bool {
         self.user_data_shared
     }
@@ -987,12 +1079,12 @@ pub mod analytics_configuration_type {
             self.application_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
         pub fn set_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1020,12 +1112,12 @@ pub mod analytics_configuration_type {
             self.external_id = input;
             self
         }
-        /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+        /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
         pub fn user_data_shared(mut self, input: bool) -> Self {
             self.user_data_shared = Some(input);
             self
         }
-        /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+        /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
         pub fn set_user_data_shared(mut self, input: std::option::Option<bool>) -> Self {
             self.user_data_shared = input;
             self
@@ -1196,7 +1288,7 @@ impl AsRef<str> for ExplicitAuthFlowsType {
     }
 }
 
-/// <p>The data type for TokenValidityUnits that specifics the time measurements for token validity.</p>
+/// <p>The data type TokenValidityUnits specifies the time units you use when you set the duration of ID, access, and refresh tokens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TokenValidityUnitsType {
@@ -1687,7 +1779,7 @@ impl AsRef<str> for AdvancedSecurityModeType {
 pub struct AdminCreateUserConfigType {
     /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>
     pub allow_admin_create_user_only: bool,
-    /// <p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
+    /// <p>The user account expiration limit, in days, after which a new account that hasn't signed in is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
     /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user pool.</p>
     /// </note>
     pub unused_account_validity_days: i32,
@@ -1700,7 +1792,7 @@ impl AdminCreateUserConfigType {
     pub fn allow_admin_create_user_only(&self) -> bool {
         self.allow_admin_create_user_only
     }
-    /// <p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
+    /// <p>The user account expiration limit, in days, after which a new account that hasn't signed in is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
     /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user pool.</p>
     /// </note>
     pub fn unused_account_validity_days(&self) -> i32 {
@@ -1753,14 +1845,14 @@ pub mod admin_create_user_config_type {
             self.allow_admin_create_user_only = input;
             self
         }
-        /// <p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
+        /// <p>The user account expiration limit, in days, after which a new account that hasn't signed in is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
         /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user pool.</p>
         /// </note>
         pub fn unused_account_validity_days(mut self, input: i32) -> Self {
             self.unused_account_validity_days = Some(input);
             self
         }
-        /// <p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
+        /// <p>The user account expiration limit, in days, after which a new account that hasn't signed in is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
         /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user pool.</p>
         /// </note>
         pub fn set_unused_account_validity_days(mut self, input: std::option::Option<i32>) -> Self {
@@ -2024,26 +2116,13 @@ pub struct EmailConfigurationType {
     /// <p>When Amazon Cognito emails your users, it uses its built-in email functionality. When you use the default option, Amazon Cognito allows only a limited number of emails each day for your user pool. For typical production environments, the default email limit is less than the required delivery volume. To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES email configuration.</p>
     /// <p>To look up the email delivery limit for the default option, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits in </a> in the <i> Developer Guide</i>.</p>
     /// <p>The default FROM address is <code>no-reply@verificationemail.com</code>. To customize the FROM address, provide the Amazon Resource Name (ARN) of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
-    /// <p> If EmailSendingAccount is COGNITO_DEFAULT, you can't use the following parameters:</p>
-    /// <ul>
-    /// <li> <p>EmailVerificationMessage</p> </li>
-    /// <li> <p>EmailVerificationSubject</p> </li>
-    /// <li> <p>InviteMessageTemplate.EmailMessage</p> </li>
-    /// <li> <p>InviteMessageTemplate.EmailSubject</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailMessage</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailMessageByLink</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailSubject,</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li>
-    /// </ul> <note>
-    /// <p>DEVELOPER EmailSendingAccount is required.</p>
-    /// </note>
     /// </dd>
     /// <dt>
     /// DEVELOPER
     /// </dt>
     /// <dd>
     /// <p>When Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send email from your verified email address. When you use this option, the email delivery limits are the same limits that apply to your Amazon SES verified email address in your Amazon Web Services account.</p>
-    /// <p>If you use this option, you must provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
+    /// <p>If you use this option, provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
     /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role, in your Amazon Web Services account. This role contains the permissions that allow to access Amazon SES and send email messages with your address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
@@ -2091,26 +2170,13 @@ impl EmailConfigurationType {
     /// <p>When Amazon Cognito emails your users, it uses its built-in email functionality. When you use the default option, Amazon Cognito allows only a limited number of emails each day for your user pool. For typical production environments, the default email limit is less than the required delivery volume. To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES email configuration.</p>
     /// <p>To look up the email delivery limit for the default option, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits in </a> in the <i> Developer Guide</i>.</p>
     /// <p>The default FROM address is <code>no-reply@verificationemail.com</code>. To customize the FROM address, provide the Amazon Resource Name (ARN) of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
-    /// <p> If EmailSendingAccount is COGNITO_DEFAULT, you can't use the following parameters:</p>
-    /// <ul>
-    /// <li> <p>EmailVerificationMessage</p> </li>
-    /// <li> <p>EmailVerificationSubject</p> </li>
-    /// <li> <p>InviteMessageTemplate.EmailMessage</p> </li>
-    /// <li> <p>InviteMessageTemplate.EmailSubject</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailMessage</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailMessageByLink</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailSubject,</p> </li>
-    /// <li> <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li>
-    /// </ul> <note>
-    /// <p>DEVELOPER EmailSendingAccount is required.</p>
-    /// </note>
     /// </dd>
     /// <dt>
     /// DEVELOPER
     /// </dt>
     /// <dd>
     /// <p>When Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send email from your verified email address. When you use this option, the email delivery limits are the same limits that apply to your Amazon SES verified email address in your Amazon Web Services account.</p>
-    /// <p>If you use this option, you must provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
+    /// <p>If you use this option, provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
     /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role, in your Amazon Web Services account. This role contains the permissions that allow to access Amazon SES and send email messages with your address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
@@ -2210,26 +2276,13 @@ pub mod email_configuration_type {
         /// <p>When Amazon Cognito emails your users, it uses its built-in email functionality. When you use the default option, Amazon Cognito allows only a limited number of emails each day for your user pool. For typical production environments, the default email limit is less than the required delivery volume. To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES email configuration.</p>
         /// <p>To look up the email delivery limit for the default option, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits in </a> in the <i> Developer Guide</i>.</p>
         /// <p>The default FROM address is <code>no-reply@verificationemail.com</code>. To customize the FROM address, provide the Amazon Resource Name (ARN) of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
-        /// <p> If EmailSendingAccount is COGNITO_DEFAULT, you can't use the following parameters:</p>
-        /// <ul>
-        /// <li> <p>EmailVerificationMessage</p> </li>
-        /// <li> <p>EmailVerificationSubject</p> </li>
-        /// <li> <p>InviteMessageTemplate.EmailMessage</p> </li>
-        /// <li> <p>InviteMessageTemplate.EmailSubject</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailMessage</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailMessageByLink</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailSubject,</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li>
-        /// </ul> <note>
-        /// <p>DEVELOPER EmailSendingAccount is required.</p>
-        /// </note>
         /// </dd>
         /// <dt>
         /// DEVELOPER
         /// </dt>
         /// <dd>
         /// <p>When Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send email from your verified email address. When you use this option, the email delivery limits are the same limits that apply to your Amazon SES verified email address in your Amazon Web Services account.</p>
-        /// <p>If you use this option, you must provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
+        /// <p>If you use this option, provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
         /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role, in your Amazon Web Services account. This role contains the permissions that allow to access Amazon SES and send email messages with your address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         /// </dd>
         /// </dl>
@@ -2249,26 +2302,13 @@ pub mod email_configuration_type {
         /// <p>When Amazon Cognito emails your users, it uses its built-in email functionality. When you use the default option, Amazon Cognito allows only a limited number of emails each day for your user pool. For typical production environments, the default email limit is less than the required delivery volume. To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES email configuration.</p>
         /// <p>To look up the email delivery limit for the default option, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits in </a> in the <i> Developer Guide</i>.</p>
         /// <p>The default FROM address is <code>no-reply@verificationemail.com</code>. To customize the FROM address, provide the Amazon Resource Name (ARN) of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
-        /// <p> If EmailSendingAccount is COGNITO_DEFAULT, you can't use the following parameters:</p>
-        /// <ul>
-        /// <li> <p>EmailVerificationMessage</p> </li>
-        /// <li> <p>EmailVerificationSubject</p> </li>
-        /// <li> <p>InviteMessageTemplate.EmailMessage</p> </li>
-        /// <li> <p>InviteMessageTemplate.EmailSubject</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailMessage</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailMessageByLink</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailSubject,</p> </li>
-        /// <li> <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li>
-        /// </ul> <note>
-        /// <p>DEVELOPER EmailSendingAccount is required.</p>
-        /// </note>
         /// </dd>
         /// <dt>
         /// DEVELOPER
         /// </dt>
         /// <dd>
         /// <p>When Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send email from your verified email address. When you use this option, the email delivery limits are the same limits that apply to your Amazon SES verified email address in your Amazon Web Services account.</p>
-        /// <p>If you use this option, you must provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
+        /// <p>If you use this option, provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.</p>
         /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role, in your Amazon Web Services account. This role contains the permissions that allow to access Amazon SES and send email messages with your address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         /// </dd>
         /// </dl>
@@ -2564,41 +2604,181 @@ impl AsRef<str> for UserPoolMfaType {
     }
 }
 
+/// <p>The settings for updates to user attributes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserAttributeUpdateSettingsType {
+    /// <p>Requires that your user verifies their email address, phone number, or both before Amazon Cognito updates the value of that attribute. When you update a user attribute that has this option activated, Amazon Cognito sends a verification message to the new phone number or email address. Amazon Cognito doesn’t change the value of the attribute until your user responds to the verification message and confirms the new value.</p>
+    /// <p>You can verify an updated email address or phone number with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html">VerifyUserAttribute</a> API request. You can also call the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to true.</p>
+    /// <p>When <code>AttributesRequireVerificationBeforeUpdate</code> is false, your user pool doesn't require that your users verify attribute changes before Amazon Cognito updates them. In a user pool where <code>AttributesRequireVerificationBeforeUpdate</code> is false, API operations that change attribute values can immediately update a user’s <code>email</code> or <code>phone_number</code> attribute.</p>
+    pub attributes_require_verification_before_update:
+        std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
+}
+impl UserAttributeUpdateSettingsType {
+    /// <p>Requires that your user verifies their email address, phone number, or both before Amazon Cognito updates the value of that attribute. When you update a user attribute that has this option activated, Amazon Cognito sends a verification message to the new phone number or email address. Amazon Cognito doesn’t change the value of the attribute until your user responds to the verification message and confirms the new value.</p>
+    /// <p>You can verify an updated email address or phone number with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html">VerifyUserAttribute</a> API request. You can also call the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to true.</p>
+    /// <p>When <code>AttributesRequireVerificationBeforeUpdate</code> is false, your user pool doesn't require that your users verify attribute changes before Amazon Cognito updates them. In a user pool where <code>AttributesRequireVerificationBeforeUpdate</code> is false, API operations that change attribute values can immediately update a user’s <code>email</code> or <code>phone_number</code> attribute.</p>
+    pub fn attributes_require_verification_before_update(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
+        self.attributes_require_verification_before_update
+            .as_deref()
+    }
+}
+impl std::fmt::Debug for UserAttributeUpdateSettingsType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserAttributeUpdateSettingsType");
+        formatter.field(
+            "attributes_require_verification_before_update",
+            &self.attributes_require_verification_before_update,
+        );
+        formatter.finish()
+    }
+}
+/// See [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType)
+pub mod user_attribute_update_settings_type {
+    /// A builder for [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attributes_require_verification_before_update:
+            std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
+    }
+    impl Builder {
+        /// Appends an item to `attributes_require_verification_before_update`.
+        ///
+        /// To override the contents of this collection use [`set_attributes_require_verification_before_update`](Self::set_attributes_require_verification_before_update).
+        ///
+        /// <p>Requires that your user verifies their email address, phone number, or both before Amazon Cognito updates the value of that attribute. When you update a user attribute that has this option activated, Amazon Cognito sends a verification message to the new phone number or email address. Amazon Cognito doesn’t change the value of the attribute until your user responds to the verification message and confirms the new value.</p>
+        /// <p>You can verify an updated email address or phone number with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html">VerifyUserAttribute</a> API request. You can also call the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to true.</p>
+        /// <p>When <code>AttributesRequireVerificationBeforeUpdate</code> is false, your user pool doesn't require that your users verify attribute changes before Amazon Cognito updates them. In a user pool where <code>AttributesRequireVerificationBeforeUpdate</code> is false, API operations that change attribute values can immediately update a user’s <code>email</code> or <code>phone_number</code> attribute.</p>
+        pub fn attributes_require_verification_before_update(
+            mut self,
+            input: crate::model::VerifiedAttributeType,
+        ) -> Self {
+            let mut v = self
+                .attributes_require_verification_before_update
+                .unwrap_or_default();
+            v.push(input);
+            self.attributes_require_verification_before_update = Some(v);
+            self
+        }
+        /// <p>Requires that your user verifies their email address, phone number, or both before Amazon Cognito updates the value of that attribute. When you update a user attribute that has this option activated, Amazon Cognito sends a verification message to the new phone number or email address. Amazon Cognito doesn’t change the value of the attribute until your user responds to the verification message and confirms the new value.</p>
+        /// <p>You can verify an updated email address or phone number with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html">VerifyUserAttribute</a> API request. You can also call the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to true.</p>
+        /// <p>When <code>AttributesRequireVerificationBeforeUpdate</code> is false, your user pool doesn't require that your users verify attribute changes before Amazon Cognito updates them. In a user pool where <code>AttributesRequireVerificationBeforeUpdate</code> is false, API operations that change attribute values can immediately update a user’s <code>email</code> or <code>phone_number</code> attribute.</p>
+        pub fn set_attributes_require_verification_before_update(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
+        ) -> Self {
+            self.attributes_require_verification_before_update = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType)
+        pub fn build(self) -> crate::model::UserAttributeUpdateSettingsType {
+            crate::model::UserAttributeUpdateSettingsType {
+                attributes_require_verification_before_update: self
+                    .attributes_require_verification_before_update,
+            }
+        }
+    }
+}
+impl UserAttributeUpdateSettingsType {
+    /// Creates a new builder-style object to manufacture [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType)
+    pub fn builder() -> crate::model::user_attribute_update_settings_type::Builder {
+        crate::model::user_attribute_update_settings_type::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VerifiedAttributeType {
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
+    PhoneNumber,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VerifiedAttributeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "email" => VerifiedAttributeType::Email,
+            "phone_number" => VerifiedAttributeType::PhoneNumber,
+            other => VerifiedAttributeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VerifiedAttributeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VerifiedAttributeType::from(s))
+    }
+}
+impl VerifiedAttributeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VerifiedAttributeType::Email => "email",
+            VerifiedAttributeType::PhoneNumber => "phone_number",
+            VerifiedAttributeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["email", "phone_number"]
+    }
+}
+impl AsRef<str> for VerifiedAttributeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The template for verification messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerificationMessageTemplateType {
-    /// <p>The SMS message template.</p>
+    /// <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
     pub sms_message: std::option::Option<std::string::String>,
-    /// <p>The email message template. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>The template for email messages that Amazon Cognito sends to your users. You can set an <code>EmailMessage</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub email_message: std::option::Option<std::string::String>,
-    /// <p>The subject line for the email message template. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>The subject line for the email message template. You can set an <code>EmailSubject</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub email_subject: std::option::Option<std::string::String>,
-    /// <p>The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+    /// <p>The email message template for sending a confirmation link to the user. You can set an <code>EmailMessageByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub email_message_by_link: std::option::Option<std::string::String>,
-    /// <p>The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink is allowed only <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+    /// <p>The subject line for the email message template for sending a confirmation link to the user. You can set an <code>EmailSubjectByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub email_subject_by_link: std::option::Option<std::string::String>,
     /// <p>The default email option.</p>
     pub default_email_option: std::option::Option<crate::model::DefaultEmailOptionType>,
 }
 impl VerificationMessageTemplateType {
-    /// <p>The SMS message template.</p>
+    /// <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
     pub fn sms_message(&self) -> std::option::Option<&str> {
         self.sms_message.as_deref()
     }
-    /// <p>The email message template. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>The template for email messages that Amazon Cognito sends to your users. You can set an <code>EmailMessage</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub fn email_message(&self) -> std::option::Option<&str> {
         self.email_message.as_deref()
     }
-    /// <p>The subject line for the email message template. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>The subject line for the email message template. You can set an <code>EmailSubject</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub fn email_subject(&self) -> std::option::Option<&str> {
         self.email_subject.as_deref()
     }
-    /// <p>The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+    /// <p>The email message template for sending a confirmation link to the user. You can set an <code>EmailMessageByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub fn email_message_by_link(&self) -> std::option::Option<&str> {
         self.email_message_by_link.as_deref()
     }
-    /// <p>The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink is allowed only <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+    /// <p>The subject line for the email message template for sending a confirmation link to the user. You can set an <code>EmailSubjectByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
     pub fn email_subject_by_link(&self) -> std::option::Option<&str> {
         self.email_subject_by_link.as_deref()
     }
@@ -2635,22 +2815,22 @@ pub mod verification_message_template_type {
         pub(crate) default_email_option: std::option::Option<crate::model::DefaultEmailOptionType>,
     }
     impl Builder {
-        /// <p>The SMS message template.</p>
+        /// <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
         pub fn sms_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.sms_message = Some(input.into());
             self
         }
-        /// <p>The SMS message template.</p>
+        /// <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
         pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sms_message = input;
             self
         }
-        /// <p>The email message template. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>The template for email messages that Amazon Cognito sends to your users. You can set an <code>EmailMessage</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_message = Some(input.into());
             self
         }
-        /// <p>The email message template. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>The template for email messages that Amazon Cognito sends to your users. You can set an <code>EmailMessage</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn set_email_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2658,12 +2838,12 @@ pub mod verification_message_template_type {
             self.email_message = input;
             self
         }
-        /// <p>The subject line for the email message template. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>The subject line for the email message template. You can set an <code>EmailSubject</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn email_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_subject = Some(input.into());
             self
         }
-        /// <p>The subject line for the email message template. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>The subject line for the email message template. You can set an <code>EmailSubject</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn set_email_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2671,12 +2851,12 @@ pub mod verification_message_template_type {
             self.email_subject = input;
             self
         }
-        /// <p>The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+        /// <p>The email message template for sending a confirmation link to the user. You can set an <code>EmailMessageByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn email_message_by_link(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_message_by_link = Some(input.into());
             self
         }
-        /// <p>The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+        /// <p>The email message template for sending a confirmation link to the user. You can set an <code>EmailMessageByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn set_email_message_by_link(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2684,12 +2864,12 @@ pub mod verification_message_template_type {
             self.email_message_by_link = input;
             self
         }
-        /// <p>The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink is allowed only <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+        /// <p>The subject line for the email message template for sending a confirmation link to the user. You can set an <code>EmailSubjectByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn email_subject_by_link(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_subject_by_link = Some(input.into());
             self
         }
-        /// <p>The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink is allowed only <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+        /// <p>The subject line for the email message template for sending a confirmation link to the user. You can set an <code>EmailSubjectByLink</code> template only if the value of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is <code>DEVELOPER</code>, your user pool sends email messages with your own Amazon SES configuration.</p>
         pub fn set_email_subject_by_link(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2780,61 +2960,6 @@ impl DefaultEmailOptionType {
     }
 }
 impl AsRef<str> for DefaultEmailOptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum VerifiedAttributeType {
-    #[allow(missing_docs)] // documentation missing in model
-    Email,
-    #[allow(missing_docs)] // documentation missing in model
-    PhoneNumber,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for VerifiedAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "email" => VerifiedAttributeType::Email,
-            "phone_number" => VerifiedAttributeType::PhoneNumber,
-            other => VerifiedAttributeType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for VerifiedAttributeType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VerifiedAttributeType::from(s))
-    }
-}
-impl VerifiedAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VerifiedAttributeType::Email => "email",
-            VerifiedAttributeType::PhoneNumber => "phone_number",
-            VerifiedAttributeType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["email", "phone_number"]
-    }
-}
-impl AsRef<str> for VerifiedAttributeType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -3511,7 +3636,7 @@ pub struct PasswordPolicyType {
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.</p>
     pub require_symbols: bool,
     /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
-    /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated <code>UnusedAccountValidityDays</code> value for that user pool.</p>
+    /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
     /// </note>
     pub temporary_password_validity_days: i32,
 }
@@ -3537,7 +3662,7 @@ impl PasswordPolicyType {
         self.require_symbols
     }
     /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
-    /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated <code>UnusedAccountValidityDays</code> value for that user pool.</p>
+    /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
     /// </note>
     pub fn temporary_password_validity_days(&self) -> i32 {
         self.temporary_password_validity_days
@@ -3623,14 +3748,14 @@ pub mod password_policy_type {
             self
         }
         /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
-        /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated <code>UnusedAccountValidityDays</code> value for that user pool.</p>
+        /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
         /// </note>
         pub fn temporary_password_validity_days(mut self, input: i32) -> Self {
             self.temporary_password_validity_days = Some(input);
             self
         }
         /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
-        /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated <code>UnusedAccountValidityDays</code> value for that user pool.</p>
+        /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
         /// </note>
         pub fn set_temporary_password_validity_days(
             mut self,
@@ -3661,27 +3786,27 @@ impl PasswordPolicyType {
     }
 }
 
-/// <p>The code delivery details being returned from the server.</p>
+/// <p>The delivery details for an email or SMS message that Amazon Cognito sent for authentication or verification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeDeliveryDetailsType {
-    /// <p>The destination for the code delivery details.</p>
+    /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
     pub destination: std::option::Option<std::string::String>,
-    /// <p>The delivery medium (email message or phone number).</p>
+    /// <p>The method that Amazon Cognito used to send the code.</p>
     pub delivery_medium: std::option::Option<crate::model::DeliveryMediumType>,
-    /// <p>The attribute name.</p>
+    /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
     pub attribute_name: std::option::Option<std::string::String>,
 }
 impl CodeDeliveryDetailsType {
-    /// <p>The destination for the code delivery details.</p>
+    /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
-    /// <p>The delivery medium (email message or phone number).</p>
+    /// <p>The method that Amazon Cognito used to send the code.</p>
     pub fn delivery_medium(&self) -> std::option::Option<&crate::model::DeliveryMediumType> {
         self.delivery_medium.as_ref()
     }
-    /// <p>The attribute name.</p>
+    /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
@@ -3706,22 +3831,22 @@ pub mod code_delivery_details_type {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The destination for the code delivery details.</p>
+        /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
         }
-        /// <p>The destination for the code delivery details.</p>
+        /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
         }
-        /// <p>The delivery medium (email message or phone number).</p>
+        /// <p>The method that Amazon Cognito used to send the code.</p>
         pub fn delivery_medium(mut self, input: crate::model::DeliveryMediumType) -> Self {
             self.delivery_medium = Some(input);
             self
         }
-        /// <p>The delivery medium (email message or phone number).</p>
+        /// <p>The method that Amazon Cognito used to send the code.</p>
         pub fn set_delivery_medium(
             mut self,
             input: std::option::Option<crate::model::DeliveryMediumType>,
@@ -3729,12 +3854,12 @@ pub mod code_delivery_details_type {
             self.delivery_medium = input;
             self
         }
-        /// <p>The attribute name.</p>
+        /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The attribute name.</p>
+        /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4084,17 +4209,17 @@ impl ResourceServerScopeType {
     }
 }
 
-/// <p>A container for information about an identity provider.</p>
+/// <p>A container for information about an IdP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderType {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>The identity provider type.</p>
+    /// <p>The IdP type.</p>
     pub provider_type: std::option::Option<crate::model::IdentityProviderTypeType>,
-    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
     /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
@@ -4114,7 +4239,7 @@ pub struct IdentityProviderType {
     /// <li> <p>client_id</p> </li>
     /// <li> <p>team_id</p> </li>
     /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
     /// <li> <p>authorize_scopes</p> </li>
     /// </ul> </li>
     /// <li> <p>For OIDC providers:</p>
@@ -4124,28 +4249,34 @@ pub struct IdentityProviderType {
     /// <li> <p>attributes_request_method</p> </li>
     /// <li> <p>oidc_issuer</p> </li>
     /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
     /// </ul> </li>
     /// <li> <p>For SAML providers:</p>
     /// <ul>
     /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignOut <i>optional</i> </p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
     pub provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub attribute_mapping:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of identity provider identifiers.</p>
+    /// <p>A list of IdP identifiers.</p>
     pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The date the identity provider was last modified.</p>
+    /// <p>The date the IdP was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date the identity provider was created.</p>
+    /// <p>The date the IdP was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IdentityProviderType {
@@ -4153,15 +4284,15 @@ impl IdentityProviderType {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>The identity provider type.</p>
+    /// <p>The IdP type.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
-    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
     /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
@@ -4181,7 +4312,7 @@ impl IdentityProviderType {
     /// <li> <p>client_id</p> </li>
     /// <li> <p>team_id</p> </li>
     /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
     /// <li> <p>authorize_scopes</p> </li>
     /// </ul> </li>
     /// <li> <p>For OIDC providers:</p>
@@ -4191,16 +4322,22 @@ impl IdentityProviderType {
     /// <li> <p>attributes_request_method</p> </li>
     /// <li> <p>oidc_issuer</p> </li>
     /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-    /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
     /// </ul> </li>
     /// <li> <p>For SAML providers:</p>
     /// <ul>
     /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignOut <i>optional</i> </p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
     pub fn provider_details(
@@ -4209,22 +4346,22 @@ impl IdentityProviderType {
     {
         self.provider_details.as_ref()
     }
-    /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn attribute_mapping(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attribute_mapping.as_ref()
     }
-    /// <p>A list of identity provider identifiers.</p>
+    /// <p>A list of IdP identifiers.</p>
     pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.idp_identifiers.as_deref()
     }
-    /// <p>The date the identity provider was last modified.</p>
+    /// <p>The date the IdP was last modified.</p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The date the identity provider was created.</p>
+    /// <p>The date the IdP was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
@@ -4273,12 +4410,12 @@ pub mod identity_provider_type {
             self.user_pool_id = input;
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4286,12 +4423,12 @@ pub mod identity_provider_type {
             self.provider_name = input;
             self
         }
-        /// <p>The identity provider type.</p>
+        /// <p>The IdP type.</p>
         pub fn provider_type(mut self, input: crate::model::IdentityProviderTypeType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The identity provider type.</p>
+        /// <p>The IdP type.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderTypeType>,
@@ -4303,7 +4440,7 @@ pub mod identity_provider_type {
         ///
         /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
         ///
-        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+        /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
         /// <ul>
         /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
@@ -4323,7 +4460,7 @@ pub mod identity_provider_type {
         /// <li> <p>client_id</p> </li>
         /// <li> <p>team_id</p> </li>
         /// <li> <p>key_id</p> </li>
-        /// <li> <p>private_key</p> </li>
+        /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
         /// <li> <p>authorize_scopes</p> </li>
         /// </ul> </li>
         /// <li> <p>For OIDC providers:</p>
@@ -4333,16 +4470,22 @@ pub mod identity_provider_type {
         /// <li> <p>attributes_request_method</p> </li>
         /// <li> <p>oidc_issuer</p> </li>
         /// <li> <p>authorize_scopes</p> </li>
-        /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+        /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+        /// <ul>
+        /// <li> <p>authorize_url </p> </li>
+        /// <li> <p>token_url </p> </li>
+        /// <li> <p>attributes_url </p> </li>
+        /// <li> <p>jwks_uri </p> </li>
+        /// </ul> </li>
+        /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+        /// <ul>
+        /// <li> <p>attributes_url_add_attributes </p> </li>
+        /// </ul> </li>
         /// </ul> </li>
         /// <li> <p>For SAML providers:</p>
         /// <ul>
         /// <li> <p>MetadataFile or MetadataURL</p> </li>
-        /// <li> <p>IDPSignOut <i>optional</i> </p> </li>
+        /// <li> <p>IDPSignout <i>optional</i> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn provider_details(
@@ -4355,7 +4498,7 @@ pub mod identity_provider_type {
             self.provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
+        /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
         /// <ul>
         /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
@@ -4375,7 +4518,7 @@ pub mod identity_provider_type {
         /// <li> <p>client_id</p> </li>
         /// <li> <p>team_id</p> </li>
         /// <li> <p>key_id</p> </li>
-        /// <li> <p>private_key</p> </li>
+        /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
         /// <li> <p>authorize_scopes</p> </li>
         /// </ul> </li>
         /// <li> <p>For OIDC providers:</p>
@@ -4385,16 +4528,22 @@ pub mod identity_provider_type {
         /// <li> <p>attributes_request_method</p> </li>
         /// <li> <p>oidc_issuer</p> </li>
         /// <li> <p>authorize_scopes</p> </li>
-        /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
-        /// <li> <p>attributes_url_add_attributes <i>a read-only property that is set automatically</i> </p> </li>
+        /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+        /// <ul>
+        /// <li> <p>authorize_url </p> </li>
+        /// <li> <p>token_url </p> </li>
+        /// <li> <p>attributes_url </p> </li>
+        /// <li> <p>jwks_uri </p> </li>
+        /// </ul> </li>
+        /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+        /// <ul>
+        /// <li> <p>attributes_url_add_attributes </p> </li>
+        /// </ul> </li>
         /// </ul> </li>
         /// <li> <p>For SAML providers:</p>
         /// <ul>
         /// <li> <p>MetadataFile or MetadataURL</p> </li>
-        /// <li> <p>IDPSignOut <i>optional</i> </p> </li>
+        /// <li> <p>IDPSignout <i>optional</i> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn set_provider_details(
@@ -4410,7 +4559,7 @@ pub mod identity_provider_type {
         ///
         /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
         ///
-        /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+        /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
         pub fn attribute_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -4421,7 +4570,7 @@ pub mod identity_provider_type {
             self.attribute_mapping = Some(hash_map);
             self
         }
-        /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+        /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
         pub fn set_attribute_mapping(
             mut self,
             input: std::option::Option<
@@ -4435,14 +4584,14 @@ pub mod identity_provider_type {
         ///
         /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
         ///
-        /// <p>A list of identity provider identifiers.</p>
+        /// <p>A list of IdP identifiers.</p>
         pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.idp_identifiers.unwrap_or_default();
             v.push(input.into());
             self.idp_identifiers = Some(v);
             self
         }
-        /// <p>A list of identity provider identifiers.</p>
+        /// <p>A list of IdP identifiers.</p>
         pub fn set_idp_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4450,12 +4599,12 @@ pub mod identity_provider_type {
             self.idp_identifiers = input;
             self
         }
-        /// <p>The date the identity provider was last modified.</p>
+        /// <p>The date the IdP was last modified.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// <p>The date the identity provider was last modified.</p>
+        /// <p>The date the IdP was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4463,12 +4612,12 @@ pub mod identity_provider_type {
             self.last_modified_date = input;
             self
         }
-        /// <p>The date the identity provider was created.</p>
+        /// <p>The date the IdP was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>The date the identity provider was created.</p>
+        /// <p>The date the IdP was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5299,7 +5448,7 @@ impl AsRef<str> for UserImportJobStatusType {
     }
 }
 
-/// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+/// <p>Information that your app generates about a user's <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> session. Amazon Cognito advanced security features calculate risk levels for user sessions based on this context data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserContextDataType {
@@ -5354,9 +5503,7 @@ impl UserContextDataType {
 }
 
 /// <p>An Amazon Pinpoint analytics endpoint.</p>
-/// <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note>
-/// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
-/// </note>
+/// <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics. For more information about Amazon Web Services Regions that can contain Amazon Pinpoint resources for use with Amazon Cognito user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics with Amazon Cognito user pools</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsMetadataType {
@@ -6422,7 +6569,7 @@ impl AccountTakeoverActionsType {
 pub struct AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
     pub notify: bool,
-    /// <p>The action to take in response to the account takeover action. Valid values are:</p>
+    /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
     /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -6436,7 +6583,7 @@ impl AccountTakeoverActionType {
     pub fn notify(&self) -> bool {
         self.notify
     }
-    /// <p>The action to take in response to the account takeover action. Valid values are:</p>
+    /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
     /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -6477,7 +6624,7 @@ pub mod account_takeover_action_type {
             self.notify = input;
             self
         }
-        /// <p>The action to take in response to the account takeover action. Valid values are:</p>
+        /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
         /// <ul>
         /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
         /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -6488,7 +6635,7 @@ pub mod account_takeover_action_type {
             self.event_action = Some(input);
             self
         }
-        /// <p>The action to take in response to the account takeover action. Valid values are:</p>
+        /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
         /// <ul>
         /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
         /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -7097,7 +7244,7 @@ impl AsRef<str> for EventFilterType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationResultType {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The expiration period of the authentication result in seconds.</p>
     pub expires_in: i32,
@@ -7111,7 +7258,7 @@ pub struct AuthenticationResultType {
     pub new_device_metadata: std::option::Option<crate::model::NewDeviceMetadataType>,
 }
 impl AuthenticationResultType {
-    /// <p>The access token.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -7162,12 +7309,12 @@ pub mod authentication_result_type {
         pub(crate) new_device_metadata: std::option::Option<crate::model::NewDeviceMetadataType>,
     }
     impl Builder {
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token.</p>
+        /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -7422,7 +7569,7 @@ impl AsRef<str> for ChallengeNameType {
     }
 }
 
-/// <p>The user type.</p>
+/// <p>A user profile in a Amazon Cognito user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserType {
@@ -7440,6 +7587,7 @@ pub struct UserType {
     /// <ul>
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
@@ -7474,6 +7622,7 @@ impl UserType {
     /// <ul>
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
@@ -7584,6 +7733,7 @@ pub mod user_type {
         /// <ul>
         /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
+        /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
         /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
         /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
@@ -7597,6 +7747,7 @@ pub mod user_type {
         /// <ul>
         /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
+        /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
         /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
         /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
@@ -8037,13 +8188,13 @@ impl UserPoolClientDescription {
     }
 }
 
-/// <p>A container for identity provider details.</p>
+/// <p>A container for IdP details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProviderDescription {
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>The identity provider type.</p>
+    /// <p>The IdP type.</p>
     pub provider_type: std::option::Option<crate::model::IdentityProviderTypeType>,
     /// <p>The date the provider was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -8051,11 +8202,11 @@ pub struct ProviderDescription {
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProviderDescription {
-    /// <p>The identity provider name.</p>
+    /// <p>The IdP name.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>The identity provider type.</p>
+    /// <p>The IdP type.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
@@ -8090,12 +8241,12 @@ pub mod provider_description {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The identity provider name.</p>
+        /// <p>The IdP name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8103,12 +8254,12 @@ pub mod provider_description {
             self.provider_name = input;
             self
         }
-        /// <p>The identity provider type.</p>
+        /// <p>The IdP type.</p>
         pub fn provider_type(mut self, input: crate::model::IdentityProviderTypeType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The identity provider type.</p>
+        /// <p>The IdP type.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderTypeType>,
@@ -8704,6 +8855,9 @@ pub struct UserPoolType {
         std::option::Option<crate::model::VerificationMessageTemplateType>,
     /// <p>The contents of the SMS authentication message.</p>
     pub sms_authentication_message: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub user_attribute_update_settings:
+        std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
     /// <p>Can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
@@ -8827,6 +8981,12 @@ impl UserPoolType {
     /// <p>The contents of the SMS authentication message.</p>
     pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
         self.sms_authentication_message.as_deref()
+    }
+    /// <p></p>
+    pub fn user_attribute_update_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
+        self.user_attribute_update_settings.as_ref()
     }
     /// <p>Can be one of the following values:</p>
     /// <ul>
@@ -8954,6 +9114,10 @@ impl std::fmt::Debug for UserPoolType {
             "sms_authentication_message",
             &self.sms_authentication_message,
         );
+        formatter.field(
+            "user_attribute_update_settings",
+            &self.user_attribute_update_settings,
+        );
         formatter.field("mfa_configuration", &self.mfa_configuration);
         formatter.field("device_configuration", &self.device_configuration);
         formatter.field("estimated_number_of_users", &self.estimated_number_of_users);
@@ -9002,6 +9166,8 @@ pub mod user_pool_type {
         pub(crate) verification_message_template:
             std::option::Option<crate::model::VerificationMessageTemplateType>,
         pub(crate) sms_authentication_message: std::option::Option<std::string::String>,
+        pub(crate) user_attribute_update_settings:
+            std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
         pub(crate) mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
         pub(crate) device_configuration: std::option::Option<crate::model::DeviceConfigurationType>,
         pub(crate) estimated_number_of_users: std::option::Option<i32>,
@@ -9251,6 +9417,22 @@ pub mod user_pool_type {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.sms_authentication_message = input;
+            self
+        }
+        /// <p></p>
+        pub fn user_attribute_update_settings(
+            mut self,
+            input: crate::model::UserAttributeUpdateSettingsType,
+        ) -> Self {
+            self.user_attribute_update_settings = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_user_attribute_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
+        ) -> Self {
+            self.user_attribute_update_settings = input;
             self
         }
         /// <p>Can be one of the following values:</p>
@@ -9527,6 +9709,7 @@ pub mod user_pool_type {
                 email_verification_subject: self.email_verification_subject,
                 verification_message_template: self.verification_message_template,
                 sms_authentication_message: self.sms_authentication_message,
+                user_attribute_update_settings: self.user_attribute_update_settings,
                 mfa_configuration: self.mfa_configuration,
                 device_configuration: self.device_configuration,
                 estimated_number_of_users: self.estimated_number_of_users.unwrap_or_default(),
@@ -9557,7 +9740,7 @@ impl UserPoolType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsernameConfigurationType {
-    /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
+    /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
     /// <p>Valid values include:</p>
     /// <dl>
     /// <dt>
@@ -9576,7 +9759,7 @@ pub struct UsernameConfigurationType {
     pub case_sensitive: std::option::Option<bool>,
 }
 impl UsernameConfigurationType {
-    /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
+    /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
     /// <p>Valid values include:</p>
     /// <dl>
     /// <dt>
@@ -9612,7 +9795,7 @@ pub mod username_configuration_type {
         pub(crate) case_sensitive: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
+        /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
         /// <p>Valid values include:</p>
         /// <dl>
         /// <dt>
@@ -9632,7 +9815,7 @@ pub mod username_configuration_type {
             self.case_sensitive = Some(input);
             self
         }
-        /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
+        /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
         /// <p>Valid values include:</p>
         /// <dl>
         /// <dt>
@@ -9795,7 +9978,7 @@ pub struct SchemaAttributeType {
     /// <p>Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator. Users won't be able to modify this attribute using their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
     pub developer_only_attribute: std::option::Option<bool>,
     /// <p>Specifies whether the value of the attribute can be changed.</p>
-    /// <p>For any user pool attribute that is mapped to an identity provider attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+    /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
     pub mutable: std::option::Option<bool>,
     /// <p>Specifies whether a user pool attribute is required. If the attribute is required and the user doesn't provide a value, registration or sign-in will fail.</p>
     pub required: std::option::Option<bool>,
@@ -9823,7 +10006,7 @@ impl SchemaAttributeType {
         self.developer_only_attribute
     }
     /// <p>Specifies whether the value of the attribute can be changed.</p>
-    /// <p>For any user pool attribute that is mapped to an identity provider attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+    /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
     pub fn mutable(&self) -> std::option::Option<bool> {
         self.mutable
     }
@@ -9920,13 +10103,13 @@ pub mod schema_attribute_type {
             self
         }
         /// <p>Specifies whether the value of the attribute can be changed.</p>
-        /// <p>For any user pool attribute that is mapped to an identity provider attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+        /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
         pub fn mutable(mut self, input: bool) -> Self {
             self.mutable = Some(input);
             self
         }
         /// <p>Specifies whether the value of the attribute can be changed.</p>
-        /// <p>For any user pool attribute that is mapped to an identity provider attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+        /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
         pub fn set_mutable(mut self, input: std::option::Option<bool>) -> Self {
             self.mutable = input;
             self
@@ -10209,7 +10392,7 @@ impl AsRef<str> for AttributeDataType {
 pub struct DeviceSecretVerifierConfigType {
     /// <p>The password verifier.</p>
     pub password_verifier: std::option::Option<std::string::String>,
-    /// <p>The salt.</p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
     pub salt: std::option::Option<std::string::String>,
 }
 impl DeviceSecretVerifierConfigType {
@@ -10217,7 +10400,7 @@ impl DeviceSecretVerifierConfigType {
     pub fn password_verifier(&self) -> std::option::Option<&str> {
         self.password_verifier.as_deref()
     }
-    /// <p>The salt.</p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
     pub fn salt(&self) -> std::option::Option<&str> {
         self.salt.as_deref()
     }
@@ -10253,12 +10436,12 @@ pub mod device_secret_verifier_config_type {
             self.password_verifier = input;
             self
         }
-        /// <p>The salt.</p>
+        /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
         pub fn salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.salt = Some(input.into());
             self
         }
-        /// <p>The salt.</p>
+        /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
         pub fn set_salt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.salt = input;
             self
@@ -11462,7 +11645,7 @@ impl AsRef<str> for EventType {
     }
 }
 
-/// <p>A container for information about an identity provider for a user pool.</p>
+/// <p>A container for information about an IdP for a user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProviderUserIdentifierType {

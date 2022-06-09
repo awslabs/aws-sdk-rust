@@ -283,6 +283,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoreDevice {
     }
 }
 
+/// Operation shape for `DeleteDeployment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_deployment`](crate::client::Client::delete_deployment).
+///
+/// See [`crate::client::fluent_builders::DeleteDeployment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteDeployment {
+    _private: (),
+}
+impl DeleteDeployment {
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
+    pub fn builder() -> crate::input::delete_deployment_input::Builder {
+        crate::input::delete_deployment_input::Builder::default()
+    }
+    /// Creates a new `DeleteDeployment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDeployment {
+    type Output = std::result::Result<
+        crate::output::DeleteDeploymentOutput,
+        crate::error::DeleteDeploymentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_deployment_error(response)
+        } else {
+            crate::operation_deser::parse_delete_deployment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeComponent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -8407,6 +8407,35 @@ pub fn parse_list_core_networks_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_organization_service_access_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListOrganizationServiceAccessStatusOutput,
+    crate::error::ListOrganizationServiceAccessStatusError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListOrganizationServiceAccessStatusError::unhandled)?;
+    Err(crate::error::ListOrganizationServiceAccessStatusError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_organization_service_access_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListOrganizationServiceAccessStatusOutput,
+    crate::error::ListOrganizationServiceAccessStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_organization_service_access_status_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_organization_service_access_status(response.body().as_ref(), output).map_err(crate::error::ListOrganizationServiceAccessStatusError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9313,6 +9342,137 @@ pub fn parse_restore_core_network_policy_version_response(
                 output,
             )
             .map_err(crate::error::RestoreCoreNetworkPolicyVersionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_organization_service_access_update_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartOrganizationServiceAccessUpdateOutput,
+    crate::error::StartOrganizationServiceAccessUpdateError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::StartOrganizationServiceAccessUpdateError { meta: generic, kind: crate::error::StartOrganizationServiceAccessUpdateErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ConflictException" => crate::error::StartOrganizationServiceAccessUpdateError { meta: generic, kind: crate::error::StartOrganizationServiceAccessUpdateErrorKind::ConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::StartOrganizationServiceAccessUpdateError { meta: generic, kind: crate::error::StartOrganizationServiceAccessUpdateErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_start_organization_service_access_update_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::StartOrganizationServiceAccessUpdateError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceQuotaExceededException" => crate::error::StartOrganizationServiceAccessUpdateError { meta: generic, kind: crate::error::StartOrganizationServiceAccessUpdateErrorKind::ServiceQuotaExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::StartOrganizationServiceAccessUpdateError { meta: generic, kind: crate::error::StartOrganizationServiceAccessUpdateErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_start_organization_service_access_update_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::StartOrganizationServiceAccessUpdateError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::StartOrganizationServiceAccessUpdateError { meta: generic, kind: crate::error::StartOrganizationServiceAccessUpdateErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::StartOrganizationServiceAccessUpdateError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_organization_service_access_update_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartOrganizationServiceAccessUpdateOutput,
+    crate::error::StartOrganizationServiceAccessUpdateError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::start_organization_service_access_update_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_organization_service_access_update(response.body().as_ref(), output).map_err(crate::error::StartOrganizationServiceAccessUpdateError::unhandled)?;
         output.build()
     })
 }

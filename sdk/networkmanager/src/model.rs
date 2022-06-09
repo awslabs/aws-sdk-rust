@@ -1745,7 +1745,7 @@ impl Bandwidth {
     }
 }
 
-/// <p>Describes a global network. This is a single private network acting as a high-level container for your network objects, including an Amazon Web Services-manged Core Network.</p>
+/// <p>Describes a global network. This is a single private network acting as a high-level container for your network objects, including an Amazon Web Services-managed Core Network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalNetwork {
@@ -4510,6 +4510,217 @@ impl RouteAnalysisEndpointOptionsSpecification {
     /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
     pub fn builder() -> crate::model::route_analysis_endpoint_options_specification::Builder {
         crate::model::route_analysis_endpoint_options_specification::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    pub organization_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub organization_aws_service_access_status: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub slr_deployment_status: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub account_status_list: std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
+}
+impl OrganizationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn organization_aws_service_access_status(&self) -> std::option::Option<&str> {
+        self.organization_aws_service_access_status.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn slr_deployment_status(&self) -> std::option::Option<&str> {
+        self.slr_deployment_status.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn account_status_list(&self) -> std::option::Option<&[crate::model::AccountStatus]> {
+        self.account_status_list.as_deref()
+    }
+}
+impl std::fmt::Debug for OrganizationStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationStatus");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field(
+            "organization_aws_service_access_status",
+            &self.organization_aws_service_access_status,
+        );
+        formatter.field("slr_deployment_status", &self.slr_deployment_status);
+        formatter.field("account_status_list", &self.account_status_list);
+        formatter.finish()
+    }
+}
+/// See [`OrganizationStatus`](crate::model::OrganizationStatus)
+pub mod organization_status {
+    /// A builder for [`OrganizationStatus`](crate::model::OrganizationStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) organization_aws_service_access_status: std::option::Option<std::string::String>,
+        pub(crate) slr_deployment_status: std::option::Option<std::string::String>,
+        pub(crate) account_status_list:
+            std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn organization_aws_service_access_status(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.organization_aws_service_access_status = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_organization_aws_service_access_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_aws_service_access_status = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn slr_deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.slr_deployment_status = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_slr_deployment_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.slr_deployment_status = input;
+            self
+        }
+        /// Appends an item to `account_status_list`.
+        ///
+        /// To override the contents of this collection use [`set_account_status_list`](Self::set_account_status_list).
+        ///
+        pub fn account_status_list(mut self, input: crate::model::AccountStatus) -> Self {
+            let mut v = self.account_status_list.unwrap_or_default();
+            v.push(input);
+            self.account_status_list = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_account_status_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
+        ) -> Self {
+            self.account_status_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationStatus`](crate::model::OrganizationStatus)
+        pub fn build(self) -> crate::model::OrganizationStatus {
+            crate::model::OrganizationStatus {
+                organization_id: self.organization_id,
+                organization_aws_service_access_status: self.organization_aws_service_access_status,
+                slr_deployment_status: self.slr_deployment_status,
+                account_status_list: self.account_status_list,
+            }
+        }
+    }
+}
+impl OrganizationStatus {
+    /// Creates a new builder-style object to manufacture [`OrganizationStatus`](crate::model::OrganizationStatus)
+    pub fn builder() -> crate::model::organization_status::Builder {
+        crate::model::organization_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccountStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    pub account_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub slr_deployment_status: std::option::Option<std::string::String>,
+}
+impl AccountStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn slr_deployment_status(&self) -> std::option::Option<&str> {
+        self.slr_deployment_status.as_deref()
+    }
+}
+impl std::fmt::Debug for AccountStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountStatus");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("slr_deployment_status", &self.slr_deployment_status);
+        formatter.finish()
+    }
+}
+/// See [`AccountStatus`](crate::model::AccountStatus)
+pub mod account_status {
+    /// A builder for [`AccountStatus`](crate::model::AccountStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) slr_deployment_status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn slr_deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.slr_deployment_status = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_slr_deployment_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.slr_deployment_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountStatus`](crate::model::AccountStatus)
+        pub fn build(self) -> crate::model::AccountStatus {
+            crate::model::AccountStatus {
+                account_id: self.account_id,
+                slr_deployment_status: self.slr_deployment_status,
+            }
+        }
+    }
+}
+impl AccountStatus {
+    /// Creates a new builder-style object to manufacture [`AccountStatus`](crate::model::AccountStatus)
+    pub fn builder() -> crate::model::account_status::Builder {
+        crate::model::account_status::Builder::default()
     }
 }
 

@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`predictor_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoPredictor::predictor_name) / [`set_predictor_name(Option<String>)`](crate::client::fluent_builders::CreateAutoPredictor::set_predictor_name): <p>A unique name for the predictor</p>
-    ///   - [`forecast_horizon(i32)`](crate::client::fluent_builders::CreateAutoPredictor::forecast_horizon) / [`set_forecast_horizon(Option<i32>)`](crate::client::fluent_builders::CreateAutoPredictor::set_forecast_horizon): <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+    ///   - [`forecast_horizon(i32)`](crate::client::fluent_builders::CreateAutoPredictor::forecast_horizon) / [`set_forecast_horizon(Option<i32>)`](crate::client::fluent_builders::CreateAutoPredictor::set_forecast_horizon): <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>  <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>  <p>If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.</p>
     ///   - [`forecast_types(Vec<String>)`](crate::client::fluent_builders::CreateAutoPredictor::forecast_types) / [`set_forecast_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoPredictor::set_forecast_types): <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
     ///   - [`forecast_dimensions(Vec<String>)`](crate::client::fluent_builders::CreateAutoPredictor::forecast_dimensions) / [`set_forecast_dimensions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoPredictor::set_forecast_dimensions): <p>An array of dimension (field) names that specify how to group the generated forecast.</p>  <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
     ///   - [`forecast_frequency(impl Into<String>)`](crate::client::fluent_builders::CreateAutoPredictor::forecast_frequency) / [`set_forecast_frequency(Option<String>)`](crate::client::fluent_builders::CreateAutoPredictor::set_forecast_frequency): <p>The frequency of predictions in a forecast.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>  <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>  <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
@@ -105,6 +105,8 @@ impl Client {
     ///   - [`optimization_metric(OptimizationMetric)`](crate::client::fluent_builders::CreateAutoPredictor::optimization_metric) / [`set_optimization_metric(Option<OptimizationMetric>)`](crate::client::fluent_builders::CreateAutoPredictor::set_optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
     ///   - [`explain_predictor(bool)`](crate::client::fluent_builders::CreateAutoPredictor::explain_predictor) / [`set_explain_predictor(Option<bool>)`](crate::client::fluent_builders::CreateAutoPredictor::set_explain_predictor): <p>Create an Explainability resource for the predictor.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAutoPredictor::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAutoPredictor::set_tags): <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    ///   - [`monitor_config(MonitorConfig)`](crate::client::fluent_builders::CreateAutoPredictor::monitor_config) / [`set_monitor_config(Option<MonitorConfig>)`](crate::client::fluent_builders::CreateAutoPredictor::set_monitor_config): <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>  <p>Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
+    ///   - [`time_alignment_boundary(TimeAlignmentBoundary)`](crate::client::fluent_builders::CreateAutoPredictor::time_alignment_boundary) / [`set_time_alignment_boundary(Option<TimeAlignmentBoundary>)`](crate::client::fluent_builders::CreateAutoPredictor::set_time_alignment_boundary): <p>The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency. Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>.</p>
     /// - On success, responds with [`CreateAutoPredictorOutput`](crate::output::CreateAutoPredictorOutput) with field(s):
     ///   - [`predictor_arn(Option<String>)`](crate::output::CreateAutoPredictorOutput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor.</p>
     /// - On failure, responds with [`SdkError<CreateAutoPredictorError>`](crate::error::CreateAutoPredictorError)
@@ -115,10 +117,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_name): <p>A name for the dataset.</p>
-    ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateDataset::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateDataset::set_domain): <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>  <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateDataset::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateDataset::set_domain): <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation must match.</p>  <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.</p>
     ///   - [`dataset_type(DatasetType)`](crate::client::fluent_builders::CreateDataset::dataset_type) / [`set_dataset_type(Option<DatasetType>)`](crate::client::fluent_builders::CreateDataset::set_dataset_type): <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
     ///   - [`data_frequency(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::data_frequency) / [`set_data_frequency(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_data_frequency): <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
-    ///   - [`schema(Schema)`](crate::client::fluent_builders::CreateDataset::schema) / [`set_schema(Option<Schema>)`](crate::client::fluent_builders::CreateDataset::set_schema): <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
+    ///   - [`schema(Schema)`](crate::client::fluent_builders::CreateDataset::schema) / [`set_schema(Option<Schema>)`](crate::client::fluent_builders::CreateDataset::set_schema): <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and Dataset Types</a>.</p>
     ///   - [`encryption_config(EncryptionConfig)`](crate::client::fluent_builders::CreateDataset::encryption_config) / [`set_encryption_config(Option<EncryptionConfig>)`](crate::client::fluent_builders::CreateDataset::set_encryption_config): <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataset::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataset::set_tags): <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
     /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
@@ -131,7 +133,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetGroup::dataset_group_name) / [`set_dataset_group_name(Option<String>)`](crate::client::fluent_builders::CreateDatasetGroup::set_dataset_group_name): <p>A name for the dataset group.</p>
-    ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateDatasetGroup::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateDatasetGroup::set_domain): <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>  <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateDatasetGroup::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateDatasetGroup::set_domain): <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation must match.</p>  <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.</p>
     ///   - [`dataset_arns(Vec<String>)`](crate::client::fluent_builders::CreateDatasetGroup::dataset_arns) / [`set_dataset_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDatasetGroup::set_dataset_arns): <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDatasetGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDatasetGroup::set_tags): <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
     /// - On success, responds with [`CreateDatasetGroupOutput`](crate::output::CreateDatasetGroupOutput) with field(s):
@@ -145,7 +147,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`dataset_import_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::dataset_import_job_name) / [`set_dataset_import_job_name(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_dataset_import_job_name): <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
     ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
-    ///   - [`data_source(DataSource)`](crate::client::fluent_builders::CreateDatasetImportJob::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_data_source): <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>  <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
+    ///   - [`data_source(DataSource)`](crate::client::fluent_builders::CreateDatasetImportJob::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_data_source): <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>  <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
     ///   - [`timestamp_format(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::timestamp_format) / [`set_timestamp_format(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_timestamp_format): <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>  <ul>   <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>   <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>  </ul>  <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
     ///   - [`time_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::time_zone) / [`set_time_zone(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_time_zone): <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>  <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
     ///   - [`use_geolocation_for_time_zone(bool)`](crate::client::fluent_builders::CreateDatasetImportJob::use_geolocation_for_time_zone) / [`set_use_geolocation_for_time_zone(bool)`](crate::client::fluent_builders::CreateDatasetImportJob::set_use_geolocation_for_time_zone): <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
@@ -165,7 +167,7 @@ impl Client {
     ///   - [`explainability_config(ExplainabilityConfig)`](crate::client::fluent_builders::CreateExplainability::explainability_config) / [`set_explainability_config(Option<ExplainabilityConfig>)`](crate::client::fluent_builders::CreateExplainability::set_explainability_config): <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     ///   - [`data_source(DataSource)`](crate::client::fluent_builders::CreateExplainability::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::CreateExplainability::set_data_source): <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
     ///   - [`schema(Schema)`](crate::client::fluent_builders::CreateExplainability::schema) / [`set_schema(Option<Schema>)`](crate::client::fluent_builders::CreateExplainability::set_schema): <p>Defines the fields of a dataset.</p>
-    ///   - [`enable_visualization(bool)`](crate::client::fluent_builders::CreateExplainability::enable_visualization) / [`set_enable_visualization(Option<bool>)`](crate::client::fluent_builders::CreateExplainability::set_enable_visualization): <p>Create an Expainability visualization that is viewable within the AWS console.</p>
+    ///   - [`enable_visualization(bool)`](crate::client::fluent_builders::CreateExplainability::enable_visualization) / [`set_enable_visualization(Option<bool>)`](crate::client::fluent_builders::CreateExplainability::set_enable_visualization): <p>Create an Explainability visualization that is viewable within the AWS console.</p>
     ///   - [`start_date_time(impl Into<String>)`](crate::client::fluent_builders::CreateExplainability::start_date_time) / [`set_start_date_time(Option<String>)`](crate::client::fluent_builders::CreateExplainability::set_start_date_time): <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>  <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     ///   - [`end_date_time(impl Into<String>)`](crate::client::fluent_builders::CreateExplainability::end_date_time) / [`set_end_date_time(Option<String>)`](crate::client::fluent_builders::CreateExplainability::set_end_date_time): <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>  <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateExplainability::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateExplainability::set_tags): <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
@@ -193,7 +195,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`forecast_name(impl Into<String>)`](crate::client::fluent_builders::CreateForecast::forecast_name) / [`set_forecast_name(Option<String>)`](crate::client::fluent_builders::CreateForecast::set_forecast_name): <p>A name for the forecast.</p>
     ///   - [`predictor_arn(impl Into<String>)`](crate::client::fluent_builders::CreateForecast::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::client::fluent_builders::CreateForecast::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    ///   - [`forecast_types(Vec<String>)`](crate::client::fluent_builders::CreateForecast::forecast_types) / [`set_forecast_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateForecast::set_forecast_types): <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+    ///   - [`forecast_types(Vec<String>)`](crate::client::fluent_builders::CreateForecast::forecast_types) / [`set_forecast_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateForecast::set_forecast_types): <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>  <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateForecast::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateForecast::set_tags): <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
     /// - On success, responds with [`CreateForecastOutput`](crate::output::CreateForecastOutput) with field(s):
     ///   - [`forecast_arn(Option<String>)`](crate::output::CreateForecastOutput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
@@ -213,6 +215,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateForecastExportJobError>`](crate::error::CreateForecastExportJobError)
     pub fn create_forecast_export_job(&self) -> fluent_builders::CreateForecastExportJob {
         fluent_builders::CreateForecastExportJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateMonitor`](crate::client::fluent_builders::CreateMonitor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`monitor_name(impl Into<String>)`](crate::client::fluent_builders::CreateMonitor::monitor_name) / [`set_monitor_name(Option<String>)`](crate::client::fluent_builders::CreateMonitor::set_monitor_name): <p>The name of the monitor resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMonitor::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateMonitor::set_resource_arn): <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMonitor::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMonitor::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
+    /// - On success, responds with [`CreateMonitorOutput`](crate::output::CreateMonitorOutput) with field(s):
+    ///   - [`monitor_arn(Option<String>)`](crate::output::CreateMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    /// - On failure, responds with [`SdkError<CreateMonitorError>`](crate::error::CreateMonitorError)
+    pub fn create_monitor(&self) -> fluent_builders::CreateMonitor {
+        fluent_builders::CreateMonitor::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreatePredictor`](crate::client::fluent_builders::CreatePredictor) operation.
     ///
@@ -323,6 +337,16 @@ impl Client {
     pub fn delete_forecast_export_job(&self) -> fluent_builders::DeleteForecastExportJob {
         fluent_builders::DeleteForecastExportJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteMonitor`](crate::client::fluent_builders::DeleteMonitor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`monitor_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteMonitor::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::client::fluent_builders::DeleteMonitor::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    /// - On success, responds with [`DeleteMonitorOutput`](crate::output::DeleteMonitorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMonitorError>`](crate::error::DeleteMonitorError)
+    pub fn delete_monitor(&self) -> fluent_builders::DeleteMonitor {
+        fluent_builders::DeleteMonitor::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeletePredictor`](crate::client::fluent_builders::DeletePredictor) operation.
     ///
     /// - The fluent builder is configurable:
@@ -377,6 +401,8 @@ impl Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeAutoPredictorOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::output::DescribeAutoPredictorOutput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
     ///   - [`explainability_info(Option<ExplainabilityInfo>)`](crate::output::DescribeAutoPredictorOutput::explainability_info): <p>Provides the status and ARN of the Predictor Explainability.</p>
+    ///   - [`monitor_info(Option<MonitorInfo>)`](crate::output::DescribeAutoPredictorOutput::monitor_info): <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
+    ///   - [`time_alignment_boundary(Option<TimeAlignmentBoundary>)`](crate::output::DescribeAutoPredictorOutput::time_alignment_boundary): <p>The time boundary Forecast uses when aggregating data.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoPredictorError>`](crate::error::DescribeAutoPredictorError)
     pub fn describe_auto_predictor(&self) -> fluent_builders::DescribeAutoPredictor {
         fluent_builders::DescribeAutoPredictor::new(self.handle.clone())
@@ -393,9 +419,9 @@ impl Client {
     ///   - [`data_frequency(Option<String>)`](crate::output::DescribeDatasetOutput::data_frequency): <p>The frequency of data collection.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
     ///   - [`schema(Option<Schema>)`](crate::output::DescribeDatasetOutput::schema): <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::output::DescribeDatasetOutput::encryption_config): <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetOutput::status): <p>The status of the dataset. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>  </ul>  <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>   <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>  </note>
+    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetOutput::status): <p>The status of the dataset. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>  </ul>  <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>   <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>  </note>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::creation_time): <p>When the dataset was created.</p>
-    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::last_modification_time): <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::last_modification_time): <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset {
         fluent_builders::DescribeDataset::new(self.handle.clone())
@@ -409,9 +435,9 @@ impl Client {
     ///   - [`dataset_group_arn(Option<String>)`](crate::output::DescribeDatasetGroupOutput::dataset_group_arn): <p>The ARN of the dataset group.</p>
     ///   - [`dataset_arns(Option<Vec<String>>)`](crate::output::DescribeDatasetGroupOutput::dataset_arns): <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
     ///   - [`domain(Option<Domain>)`](crate::output::DescribeDatasetGroupOutput::domain): <p>The domain associated with the dataset group.</p>
-    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetGroupOutput::status): <p>The status of the dataset group. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>  </ul>  <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>   <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>  </note>
+    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetGroupOutput::status): <p>The status of the dataset group. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>  </ul>  <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>   <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>  </note>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDatasetGroupOutput::creation_time): <p>When the dataset group was created.</p>
-    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetGroupOutput::last_modification_time): <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetGroupOutput::last_modification_time): <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetGroupError>`](crate::error::DescribeDatasetGroupError)
     pub fn describe_dataset_group(&self) -> fluent_builders::DescribeDatasetGroup {
         fluent_builders::DescribeDatasetGroup::new(self.handle.clone())
@@ -515,6 +541,26 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeForecastExportJobError>`](crate::error::DescribeForecastExportJobError)
     pub fn describe_forecast_export_job(&self) -> fluent_builders::DescribeForecastExportJob {
         fluent_builders::DescribeForecastExportJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeMonitor`](crate::client::fluent_builders::DescribeMonitor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`monitor_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMonitor::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::client::fluent_builders::DescribeMonitor::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+    /// - On success, responds with [`DescribeMonitorOutput`](crate::output::DescribeMonitorOutput) with field(s):
+    ///   - [`monitor_name(Option<String>)`](crate::output::DescribeMonitorOutput::monitor_name): <p>The name of the monitor.</p>
+    ///   - [`monitor_arn(Option<String>)`](crate::output::DescribeMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeMonitorOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeMonitorOutput::status): <p>The status of the monitor resource.</p>
+    ///   - [`last_evaluation_time(Option<DateTime>)`](crate::output::DescribeMonitorOutput::last_evaluation_time): <p>The timestamp of the latest evaluation completed by the monitor.</p>
+    ///   - [`last_evaluation_state(Option<String>)`](crate::output::DescribeMonitorOutput::last_evaluation_state): <p>The state of the monitor's latest evaluation.</p>
+    ///   - [`baseline(Option<Baseline>)`](crate::output::DescribeMonitorOutput::baseline): <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+    ///   - [`message(Option<String>)`](crate::output::DescribeMonitorOutput::message): <p>An error message, if any, for the monitor.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeMonitorOutput::creation_time): <p>The timestamp for when the monitor resource was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeMonitorOutput::last_modification_time): <p>The timestamp of the latest modification to the monitor.</p>
+    ///   - [`estimated_evaluation_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeMonitorOutput::estimated_evaluation_time_remaining_in_minutes): <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+    /// - On failure, responds with [`SdkError<DescribeMonitorError>`](crate::error::DescribeMonitorError)
+    pub fn describe_monitor(&self) -> fluent_builders::DescribeMonitor {
+        fluent_builders::DescribeMonitor::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribePredictor`](crate::client::fluent_builders::DescribePredictor) operation.
     ///
@@ -622,6 +668,7 @@ impl Client {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListExplainabilities`](crate::client::fluent_builders::ListExplainabilities) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExplainabilities::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExplainabilities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExplainabilities::set_next_token): <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -635,6 +682,7 @@ impl Client {
         fluent_builders::ListExplainabilities::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListExplainabilityExports`](crate::client::fluent_builders::ListExplainabilityExports) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExplainabilityExports::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExplainabilityExports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExplainabilityExports::set_next_token): <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -675,6 +723,35 @@ impl Client {
     pub fn list_forecasts(&self) -> fluent_builders::ListForecasts {
         fluent_builders::ListForecasts::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListMonitorEvaluations`](crate::client::fluent_builders::ListMonitorEvaluations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitorEvaluations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitorEvaluations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitorEvaluations::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitorEvaluations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitorEvaluations::set_max_results): <p>The maximum number of monitoring results to return.</p>
+    ///   - [`monitor_arn(impl Into<String>)`](crate::client::fluent_builders::ListMonitorEvaluations::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::client::fluent_builders::ListMonitorEvaluations::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListMonitorEvaluations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListMonitorEvaluations::set_filters): <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>EvaluationState</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p> </li>  </ul>  <p>For example, to list only successful monitor evaluations, you would specify:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
+    /// - On success, responds with [`ListMonitorEvaluationsOutput`](crate::output::ListMonitorEvaluationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListMonitorEvaluationsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`predictor_monitor_evaluations(Option<Vec<PredictorMonitorEvaluation>>)`](crate::output::ListMonitorEvaluationsOutput::predictor_monitor_evaluations): <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>  <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+    /// - On failure, responds with [`SdkError<ListMonitorEvaluationsError>`](crate::error::ListMonitorEvaluationsError)
+    pub fn list_monitor_evaluations(&self) -> fluent_builders::ListMonitorEvaluations {
+        fluent_builders::ListMonitorEvaluations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListMonitors`](crate::client::fluent_builders::ListMonitors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitors::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitors::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitors::set_max_results): <p>The maximum number of monitors to include in the response.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListMonitors::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListMonitors::set_filters): <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all monitors who's status is ACTIVE, you would specify:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    /// - On success, responds with [`ListMonitorsOutput`](crate::output::ListMonitorsOutput) with field(s):
+    ///   - [`monitors(Option<Vec<MonitorSummary>>)`](crate::output::ListMonitorsOutput::monitors): <p>An array of objects that summarize each monitor's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMonitorsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListMonitorsError>`](crate::error::ListMonitorsError)
+    pub fn list_monitors(&self) -> fluent_builders::ListMonitors {
+        fluent_builders::ListMonitors::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListPredictorBacktestExportJobs`](crate::client::fluent_builders::ListPredictorBacktestExportJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPredictorBacktestExportJobs::into_paginator).
     ///
@@ -714,6 +791,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ResumeResource`](crate::client::fluent_builders::ResumeResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ResumeResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ResumeResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
+    /// - On success, responds with [`ResumeResourceOutput`](crate::output::ResumeResourceOutput)
+
+    /// - On failure, responds with [`SdkError<ResumeResourceError>`](crate::error::ResumeResourceError)
+    pub fn resume_resource(&self) -> fluent_builders::ResumeResource {
+        fluent_builders::ResumeResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StopResource`](crate::client::fluent_builders::StopResource) operation.
     ///
@@ -777,7 +864,7 @@ pub mod fluent_builders {
     /// <li> <p> <code>PredictorName</code> - A unique name for the predictor.</p> </li>
     /// <li> <p> <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the predictor.</p> </li>
     /// <li> <p> <code>ForecastFrequency</code> - The granularity of your forecasts (hourly, daily, weekly, etc).</p> </li>
-    /// <li> <p> <code>ForecastHorizon</code> - The number of time steps being forecasted.</p> </li>
+    /// <li> <p> <code>ForecastHorizon</code> - The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p> </li>
     /// </ul>
     /// <p>When creating a new predictor, do not specify a value for <code>ReferencePredictorArn</code>.</p>
     /// <p> <b>Upgrading and retraining predictors</b> </p>
@@ -840,11 +927,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
+        /// <p>If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.</p>
         pub fn forecast_horizon(mut self, input: i32) -> Self {
             self.inner = self.inner.forecast_horizon(input);
             self
         }
         /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
+        /// <p>If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_forecast_horizon(input);
             self
@@ -1003,6 +1094,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>
+        /// <p>Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
+        pub fn monitor_config(mut self, input: crate::model::MonitorConfig) -> Self {
+            self.inner = self.inner.monitor_config(input);
+            self
+        }
+        /// <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>
+        /// <p>Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
+        pub fn set_monitor_config(
+            mut self,
+            input: std::option::Option<crate::model::MonitorConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_monitor_config(input);
+            self
+        }
+        /// <p>The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency. Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>.</p>
+        pub fn time_alignment_boundary(
+            mut self,
+            input: crate::model::TimeAlignmentBoundary,
+        ) -> Self {
+            self.inner = self.inner.time_alignment_boundary(input);
+            self
+        }
+        /// <p>The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency. Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>.</p>
+        pub fn set_time_alignment_boundary(
+            mut self,
+            input: std::option::Option<crate::model::TimeAlignmentBoundary>,
+        ) -> Self {
+            self.inner = self.inner.set_time_alignment_boundary(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
@@ -1012,10 +1134,10 @@ pub mod fluent_builders {
     /// <li> <p> <i> <code>Domain</code> </i> and <i> <code>DatasetType</code> </i> - Each dataset has an associated dataset domain and a type within the domain. Amazon Forecast provides a list of predefined domains and types within each domain. For each unique dataset domain and type within the domain, Amazon Forecast requires your data to include a minimum set of predefined fields.</p> </li>
     /// <li> <p> <i> <code>Schema</code> </i> - A schema specifies the fields in the dataset, including the field name and data type.</p> </li>
     /// </ul>
-    /// <p>After creating a dataset, you import your training data into it and add the dataset to a dataset group. You use the dataset group to create a predictor. For more information, see <code>howitworks-datasets-groups</code>.</p>
-    /// <p>To get a list of all your datasets, use the <code>ListDatasets</code> operation.</p>
+    /// <p>After creating a dataset, you import your training data into it and add the dataset to a dataset group. You use the dataset group to create a predictor. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.</p>
+    /// <p>To get a list of all your datasets, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a> operation.</p>
     /// <p>For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast Sample GitHub repository</a>.</p> <note>
-    /// <p>The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import training data. Use the <code>DescribeDataset</code> operation to get the status.</p>
+    /// <p>The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation to get the status.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset {
@@ -1066,14 +1188,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.inner = self.inner.domain(input);
             self
         }
-        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -1106,12 +1228,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_frequency(input);
             self
         }
-        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and Dataset Types</a>.</p>
         pub fn schema(mut self, input: crate::model::Schema) -> Self {
             self.inner = self.inner.schema(input);
             self
         }
-        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and Dataset Types</a>.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.inner = self.inner.set_schema(input);
             self
@@ -1169,10 +1291,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetGroup`.
     ///
-    /// <p>Creates a dataset group, which holds a collection of related datasets. You can add datasets to the dataset group when you create the dataset group, or later by using the <code>UpdateDatasetGroup</code> operation.</p>
-    /// <p>After creating a dataset group and adding datasets, you use the dataset group when you create a predictor. For more information, see <code>howitworks-datasets-groups</code>.</p>
-    /// <p>To get a list of all your datasets groups, use the <code>ListDatasetGroups</code> operation.</p> <note>
-    /// <p>The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor. To get the status, use the <code>DescribeDatasetGroup</code> operation.</p>
+    /// <p>Creates a dataset group, which holds a collection of related datasets. You can add datasets to the dataset group when you create the dataset group, or later by using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p>
+    /// <p>After creating a dataset group and adding datasets, you use the dataset group when you create a predictor. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.</p>
+    /// <p>To get a list of all your datasets groups, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a> operation.</p> <note>
+    /// <p>The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetGroup {
@@ -1226,14 +1348,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_name(input);
             self
         }
-        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.inner = self.inner.domain(input);
             self
         }
-        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -1296,11 +1418,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDatasetImportJob`.
     ///
     /// <p>Imports your training data to an Amazon Forecast dataset. You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.</p>
-    /// <p>You must specify a <code>DataSource</code> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more information, see <code>aws-forecast-iam-roles</code>.</p>
+    /// <p>You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up permissions</a>.</p>
     /// <p>The training data must be in CSV format. The delimiter must be a comma (,).</p>
     /// <p>You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
     /// <p>Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you want to model off of, and not just the new data collected since the previous import.</p>
-    /// <p>To get a list of all your dataset import jobs, filtered by specified criteria, use the <code>ListDatasetImportJobs</code> operation.</p>
+    /// <p>To get a list of all your dataset import jobs, filtered by specified criteria, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetImportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -1364,13 +1486,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.inner = self.inner.data_source(input);
             self
         }
         /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1629,12 +1751,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schema(input);
             self
         }
-        /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
+        /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
         pub fn enable_visualization(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_visualization(input);
             self
         }
-        /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
+        /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
         pub fn set_enable_visualization(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_visualization(input);
             self
@@ -1904,12 +2026,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
+        /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.forecast_types(input.into());
             self
         }
-        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
+        /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2081,6 +2205,86 @@ pub mod fluent_builders {
         /// <li> <p>Tag keys and values are case sensitive.</p> </li>
         /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateMonitor`.
+    ///
+    /// <p>Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateMonitor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_monitor_input::Builder,
+    }
+    impl CreateMonitor {
+        /// Creates a new `CreateMonitor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateMonitorOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateMonitorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the monitor resource.</p>
+        pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_name(input.into());
+            self
+        }
+        /// <p>The name of the monitor resource.</p>
+        pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_monitor_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2571,8 +2775,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
-    /// <p>Deletes an Amazon Forecast dataset that was created using the <code>CreateDataset</code> operation. You can only delete datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the <code>DescribeDataset</code> operation.</p> <note>
-    /// <p>Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
+    /// <p>Deletes an Amazon Forecast dataset that was created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation. You can only delete datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation.</p> <note>
+    /// <p>Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update the dataset group, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation, omitting the deleted dataset's ARN.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset {
@@ -2626,7 +2830,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatasetGroup`.
     ///
-    /// <p>Deletes a dataset group created using the <code>CreateDatasetGroup</code> operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <code>DescribeDatasetGroup</code> operation.</p>
+    /// <p>Deletes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation.</p>
     /// <p>This operation deletes only the dataset group, not the datasets in the group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetGroup {
@@ -2683,7 +2887,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatasetImportJob`.
     ///
-    /// <p>Deletes a dataset import job created using the <code>CreateDatasetImportJob</code> operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeDatasetImportJob</code> operation.</p>
+    /// <p>Deletes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetImportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -2960,6 +3164,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteMonitor`.
+    ///
+    /// <p>Deletes a monitor resource. You can only delete a monitor resource with a status of <code>ACTIVE</code>, <code>ACTIVE_STOPPED</code>, <code>CREATE_FAILED</code>, or <code>CREATE_STOPPED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteMonitor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_monitor_input::Builder,
+    }
+    impl DeleteMonitor {
+        /// Creates a new `DeleteMonitor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteMonitorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteMonitorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_monitor_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeletePredictor`.
     ///
     /// <p>Deletes a predictor created using the <code>DescribePredictor</code> or <code>CreatePredictor</code> operations. You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribePredictor</code> operation.</p>
@@ -3196,7 +3453,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
-    /// <p>Describes an Amazon Forecast dataset created using the <code>CreateDataset</code> operation.</p>
+    /// <p>Describes an Amazon Forecast dataset created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
     /// <p>In addition to listing the parameters specified in the <code>CreateDataset</code> request, this operation includes the following dataset properties:</p>
     /// <ul>
     /// <li> <p> <code>CreationTime</code> </p> </li>
@@ -3255,7 +3512,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetGroup`.
     ///
-    /// <p>Describes a dataset group created using the <code>CreateDatasetGroup</code> operation.</p>
+    /// <p>Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation.</p>
     /// <p>In addition to listing the parameters provided in the <code>CreateDatasetGroup</code> request, this operation includes the following properties:</p>
     /// <ul>
     /// <li> <p> <code>DatasetArns</code> - The datasets belonging to the group.</p> </li>
@@ -3318,7 +3575,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetImportJob`.
     ///
-    /// <p>Describes a dataset import job created using the <code>CreateDatasetImportJob</code> operation.</p>
+    /// <p>Describes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation.</p>
     /// <p>In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code> request, this operation includes the following properties:</p>
     /// <ul>
     /// <li> <p> <code>CreationTime</code> </p> </li>
@@ -3617,6 +3874,68 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeMonitor`.
+    ///
+    /// <p>Describes a monitor resource. In addition to listing the properties provided in the <code>CreateMonitor</code> request, this operation lists the following properties:</p>
+    /// <ul>
+    /// <li> <p> <code>Baseline</code> </p> </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastEvaluationTime</code> </p> </li>
+    /// <li> <p> <code>LastEvaluationState</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Message</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeMonitor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_monitor_input::Builder,
+    }
+    impl DescribeMonitor {
+        /// Creates a new `DescribeMonitor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMonitorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMonitorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_monitor_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribePredictor`.
     ///
     /// <note>
@@ -3815,7 +4134,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetGroups`.
     ///
-    /// <p>Returns a list of dataset groups created using the <code>CreateDatasetGroup</code> operation. For each dataset group, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the dataset group ARN with the <code>DescribeDatasetGroup</code> operation.</p>
+    /// <p>Returns a list of dataset groups created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation. For each dataset group, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the dataset group ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -3884,7 +4203,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetImportJobs`.
     ///
-    /// <p>Returns a list of dataset import jobs created using the <code>CreateDatasetImportJob</code> operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the <code>DescribeDatasetImportJob</code> operation. You can filter the list by providing an array of <code>Filter</code> objects.</p>
+    /// <p>Returns a list of dataset import jobs created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation. You can filter the list by providing an array of <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a> objects.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetImportJobs {
         handle: std::sync::Arc<super::Handle>,
@@ -3986,7 +4305,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
-    /// <p>Returns a list of datasets created using the <code>CreateDataset</code> operation. For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with the <code>DescribeDataset</code> operation.</p>
+    /// <p>Returns a list of datasets created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation. For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets {
         handle: std::sync::Arc<super::Handle>,
@@ -4096,6 +4415,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExplainabilitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExplainabilitiesPaginator {
+            crate::paginator::ListExplainabilitiesPaginator::new(self.handle, self.inner)
+        }
         /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
@@ -4188,6 +4513,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExplainabilityExportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExplainabilityExportsPaginator {
+            crate::paginator::ListExplainabilityExportsPaginator::new(self.handle, self.inner)
         }
         /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4441,6 +4772,221 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
         /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMonitorEvaluations`.
+    ///
+    /// <p>Returns a list of the monitoring evaluation results and predictor events collected by the monitor resource during different windows of time.</p>
+    /// <p>For information about monitoring see <code>predictor-monitoring</code>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMonitorEvaluations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_monitor_evaluations_input::Builder,
+    }
+    impl ListMonitorEvaluations {
+        /// Creates a new `ListMonitorEvaluations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMonitorEvaluationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitorEvaluationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitorEvaluationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMonitorEvaluationsPaginator {
+            crate::paginator::ListMonitorEvaluationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of monitoring results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of monitoring results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_monitor_arn(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>EvaluationState</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p> </li>
+        /// </ul>
+        /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>EvaluationState</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p> </li>
+        /// </ul>
+        /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMonitors`.
+    ///
+    /// <p>Returns a list of monitors created with the <code>CreateMonitor</code> operation and <code>CreateAutoPredictor</code> operation. For each monitor resource, this operation returns of a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve a complete set of properties of a monitor resource by specify the monitor's ARN in the <code>DescribeMonitor</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMonitors {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_monitors_input::Builder,
+    }
+    impl ListMonitors {
+        /// Creates a new `ListMonitors`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMonitorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitorsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMonitorsPaginator {
+            crate::paginator::ListMonitorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of monitors to include in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of monitors to include in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all monitors who's status is ACTIVE, you would specify:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all monitors who's status is ACTIVE, you would specify:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4704,6 +5250,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ResumeResource`.
+    ///
+    /// <p>Resumes a stopped monitor resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ResumeResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::resume_resource_input::Builder,
+    }
+    impl ResumeResource {
+        /// Creates a new `ResumeResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ResumeResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ResumeResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StopResource`.
     ///
     /// <p>Stops a resource.</p>
@@ -4931,7 +5530,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDatasetGroup`.
     ///
     /// <p>Replaces the datasets in a dataset group with the specified datasets.</p> <note>
-    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor. Use the <code>DescribeDatasetGroup</code> operation to get the status.</p>
+    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation to get the status.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatasetGroup {

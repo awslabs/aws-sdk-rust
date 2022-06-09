@@ -194,6 +194,16 @@ impl Client {
     pub fn delete_core_device(&self) -> fluent_builders::DeleteCoreDevice {
         fluent_builders::DeleteCoreDevice::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteDeployment`](crate::client::fluent_builders::DeleteDeployment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::DeleteDeployment::set_deployment_id): <p>The ID of the deployment.</p>
+    /// - On success, responds with [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDeploymentError>`](crate::error::DeleteDeploymentError)
+    pub fn delete_deployment(&self) -> fluent_builders::DeleteDeployment {
+        fluent_builders::DeleteDeployment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeComponent`](crate::client::fluent_builders::DescribeComponent) operation.
     ///
     /// - The fluent builder is configurable:
@@ -240,7 +250,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetComponentVersionArtifact`](crate::client::fluent_builders::GetComponentVersionArtifact) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetComponentVersionArtifact::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetComponentVersionArtifact::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetComponentVersionArtifact::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetComponentVersionArtifact::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
     ///   - [`artifact_name(impl Into<String>)`](crate::client::fluent_builders::GetComponentVersionArtifact::artifact_name) / [`set_artifact_name(Option<String>)`](crate::client::fluent_builders::GetComponentVersionArtifact::set_artifact_name): <p>The name of the artifact.</p>  <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     /// - On success, responds with [`GetComponentVersionArtifactOutput`](crate::output::GetComponentVersionArtifactOutput) with field(s):
     ///   - [`pre_signed_url(Option<String>)`](crate::output::GetComponentVersionArtifactOutput::pre_signed_url): <p>The URL of the artifact.</p>
@@ -342,7 +352,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponentVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListComponentVersions::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListComponentVersions::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListComponentVersions::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListComponentVersions::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponentVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListComponentVersions::set_max_results): <p>The maximum number of results to be returned per paginated request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponentVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponentVersions::set_next_token): <p>The token to be used for the next set of paginated results.</p>
     /// - On success, responds with [`ListComponentVersionsOutput`](crate::output::ListComponentVersionsOutput) with field(s):
@@ -356,7 +366,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCoreDevices::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListCoreDevices::thing_group_arn) / [`set_thing_group_arn(Option<String>)`](crate::client::fluent_builders::ListCoreDevices::set_thing_group_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+    ///   - [`thing_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListCoreDevices::thing_group_arn) / [`set_thing_group_arn(Option<String>)`](crate::client::fluent_builders::ListCoreDevices::set_thing_group_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
     ///   - [`status(CoreDeviceStatus)`](crate::client::fluent_builders::ListCoreDevices::status) / [`set_status(Option<CoreDeviceStatus>)`](crate::client::fluent_builders::ListCoreDevices::set_status): <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>  <ul>   <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>   <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>  </ul>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCoreDevices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCoreDevices::set_max_results): <p>The maximum number of results to be returned per paginated request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCoreDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCoreDevices::set_next_token): <p>The token to be used for the next set of paginated results.</p>
@@ -756,9 +766,12 @@ pub mod fluent_builders {
     /// <li> <p>Python 2.7 – <code>python2.7</code> </p> </li>
     /// <li> <p>Python 3.7 – <code>python3.7</code> </p> </li>
     /// <li> <p>Python 3.8 – <code>python3.8</code> </p> </li>
+    /// <li> <p>Python 3.9 – <code>python3.9</code> </p> </li>
     /// <li> <p>Java 8 – <code>java8</code> </p> </li>
+    /// <li> <p>Java 11 – <code>java11</code> </p> </li>
     /// <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li>
     /// <li> <p>Node.js 12 – <code>nodejs12.x</code> </p> </li>
+    /// <li> <p>Node.js 14 – <code>nodejs14.x</code> </p> </li>
     /// </ul> <p>To create a component from a Lambda function, specify <code>lambdaFunction</code> when you call this operation.</p> <note>
     /// <p>IoT Greengrass currently supports Lambda functions on only Linux core devices.</p>
     /// </note> </li>
@@ -1134,6 +1147,63 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteDeployment`.
+    ///
+    /// <p>Deletes a deployment. To delete an active deployment, you must first cancel it. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.</p>
+    /// <p>Deleting a deployment doesn't affect core devices that run that deployment, because core devices store the deployment's configuration on the device. Additionally, core devices can roll back to a previous deployment that has been deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteDeployment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_deployment_input::Builder,
+    }
+    impl DeleteDeployment {
+        /// Creates a new `DeleteDeployment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDeploymentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDeploymentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the deployment.</p>
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
+            self
+        }
+        /// <p>The ID of the deployment.</p>
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeComponent`.
     ///
     /// <p>Retrieves metadata for a version of a component.</p>
@@ -1300,7 +1370,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComponentVersionArtifact`.
     ///
-    /// <p>Gets the pre-signed URL to download a public component artifact. Core devices call this operation to identify the URL that they can use to download an artifact to install.</p>
+    /// <p>Gets the pre-signed URL to download a public or a Lambda component artifact. Core devices call this operation to identify the URL that they can use to download an artifact to install.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentVersionArtifact {
         handle: std::sync::Arc<super::Handle>,
@@ -1340,12 +1410,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1422,7 +1492,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCoreDevice`.
     ///
-    /// <p>Retrieves metadata for a Greengrass core device.</p>
+    /// <p>Retrieves metadata for a Greengrass core device.</p> <note>
+    /// <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p>
+    /// <p>Core devices send status updates at the following times:</p>
+    /// <ul>
+    /// <li> <p>When the IoT Greengrass Core software starts</p> </li>
+    /// <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li>
+    /// <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li>
+    /// <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li>
+    /// </ul>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreDevice {
         handle: std::sync::Arc<super::Handle>,
@@ -1796,12 +1875,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListComponentVersionsPaginator {
             crate::paginator::ListComponentVersionsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1829,7 +1908,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCoreDevices`.
     ///
-    /// <p>Retrieves a paginated list of Greengrass core devices.</p>
+    /// <p>Retrieves a paginated list of Greengrass core devices.</p> <note>
+    /// <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p>
+    /// <p>Core devices send status updates at the following times:</p>
+    /// <ul>
+    /// <li> <p>When the IoT Greengrass Core software starts</p> </li>
+    /// <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li>
+    /// <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li>
+    /// <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li>
+    /// </ul>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoreDevices {
         handle: std::sync::Arc<super::Handle>,
@@ -1875,12 +1963,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListCoreDevicesPaginator {
             crate::paginator::ListCoreDevicesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
         pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.thing_group_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
         pub fn set_thing_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2116,7 +2204,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstalledComponents`.
     ///
-    /// <p>Retrieves a paginated list of the components that a Greengrass core device runs.</p>
+    /// <p>Retrieves a paginated list of the components that a Greengrass core device runs. This list doesn't include components that are deployed from local deployments or components that are deployed as dependencies of other components.</p> <note>
+    /// <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p>
+    /// <p>Core devices send status updates at the following times:</p>
+    /// <ul>
+    /// <li> <p>When the IoT Greengrass Core software starts</p> </li>
+    /// <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li>
+    /// <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li>
+    /// <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li>
+    /// </ul>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstalledComponents {
         handle: std::sync::Arc<super::Handle>,

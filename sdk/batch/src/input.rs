@@ -3172,12 +3172,12 @@ pub mod submit_job_input {
             self.job_queue = input;
             self
         }
-        /// <p>The share identifier for the job.</p>
+        /// <p>The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
         pub fn share_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.share_identifier = Some(input.into());
             self
         }
-        /// <p>The share identifier for the job.</p>
+        /// <p>The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
         pub fn set_share_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4816,7 +4816,7 @@ pub struct SubmitJobInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub job_queue: std::option::Option<std::string::String>,
-    /// <p>The share identifier for the job.</p>
+    /// <p>The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     pub share_identifier: std::option::Option<std::string::String>,
     /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
@@ -4855,7 +4855,7 @@ impl SubmitJobInput {
     pub fn job_queue(&self) -> std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>The share identifier for the job.</p>
+    /// <p>The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     pub fn share_identifier(&self) -> std::option::Option<&str> {
         self.share_identifier.as_deref()
     }

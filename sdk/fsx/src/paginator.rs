@@ -459,6 +459,14 @@ impl DescribeStorageVirtualMachinesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `storage_virtual_machines`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeStorageVirtualMachinesPaginatorItems {
+        crate::paginator::DescribeStorageVirtualMachinesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -544,6 +552,14 @@ impl DescribeVolumesPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `volumes`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeVolumesPaginatorItems {
+        crate::paginator::DescribeVolumesPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -693,6 +709,56 @@ impl ListTagsForResourcePaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `DescribeStorageVirtualMachinesPaginator`
+///
+/// This is created with [`.items()`](DescribeStorageVirtualMachinesPaginator::items)
+pub struct DescribeStorageVirtualMachinesPaginatorItems(DescribeStorageVirtualMachinesPaginator);
+
+impl DescribeStorageVirtualMachinesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::StorageVirtualMachine,
+            aws_smithy_http::result::SdkError<crate::error::DescribeStorageVirtualMachinesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_storage_virtual_machines_output_storage_virtual_machines(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `DescribeVolumesPaginator`
+///
+/// This is created with [`.items()`](DescribeVolumesPaginator::items)
+pub struct DescribeVolumesPaginatorItems(DescribeVolumesPaginator);
+
+impl DescribeVolumesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Volume,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVolumesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_describe_volumes_output_volumes(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

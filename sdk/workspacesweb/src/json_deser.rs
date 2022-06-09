@@ -2580,6 +2580,22 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "disconnectTimeoutInMinutes" => {
+                                builder = builder.set_disconnect_timeout_in_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "idleDisconnectTimeoutInMinutes" => {
+                                builder = builder.set_idle_disconnect_timeout_in_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3710,6 +3726,22 @@ where
                                             .map(|u| crate::model::EnabledType::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "disconnectTimeoutInMinutes" => {
+                                builder = builder.set_disconnect_timeout_in_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "idleDisconnectTimeoutInMinutes" => {
+                                builder = builder.set_idle_disconnect_timeout_in_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -4697,12 +4697,12 @@ pub mod update_metric_set_input {
             self.metric_set_frequency = input;
             self
         }
-        /// <p>Contains information about source data used to generate a metric.</p>
+        /// <p>Contains information about source data used to generate metrics.</p>
         pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
             self.metric_source = Some(input);
             self
         }
-        /// <p>Contains information about source data used to generate a metric.</p>
+        /// <p>Contains information about source data used to generate metrics.</p>
         pub fn set_metric_source(
             mut self,
             input: std::option::Option<crate::model::MetricSource>,
@@ -4853,7 +4853,7 @@ pub struct UpdateMetricSetInput {
     pub dimension_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The dataset's interval.</p>
     pub metric_set_frequency: std::option::Option<crate::model::Frequency>,
-    /// <p>Contains information about source data used to generate a metric.</p>
+    /// <p>Contains information about source data used to generate metrics.</p>
     pub metric_source: std::option::Option<crate::model::MetricSource>,
 }
 impl UpdateMetricSetInput {
@@ -4885,7 +4885,7 @@ impl UpdateMetricSetInput {
     pub fn metric_set_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
         self.metric_set_frequency.as_ref()
     }
-    /// <p>Contains information about source data used to generate a metric.</p>
+    /// <p>Contains information about source data used to generate metrics.</p>
     pub fn metric_source(&self) -> std::option::Option<&crate::model::MetricSource> {
         self.metric_source.as_ref()
     }

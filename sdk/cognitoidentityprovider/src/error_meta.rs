@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
@@ -3533,6 +3533,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::VerifyUserAttributeErrorKind::AliasExistsException(inner) => {
+                    Error::AliasExistsException(inner)
+                }
                 crate::error::VerifyUserAttributeErrorKind::CodeMismatchException(inner) => {
                     Error::CodeMismatchException(inner)
                 }

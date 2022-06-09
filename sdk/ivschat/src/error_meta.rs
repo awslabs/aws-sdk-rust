@@ -128,6 +128,9 @@ where
                 crate::error::DeleteRoomErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
+                crate::error::DeleteRoomErrorKind::PendingVerification(inner) => {
+                    Error::PendingVerification(inner)
+                }
                 crate::error::DeleteRoomErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
@@ -313,6 +316,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateRoomErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateRoomErrorKind::PendingVerification(inner) => {
+                    Error::PendingVerification(inner)
                 }
                 crate::error::UpdateRoomErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)

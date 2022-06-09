@@ -48,3 +48,53 @@ pub(crate) fn reflens_structure_crate_output_list_tasks_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_agents_output_agents(
+    input: crate::output::ListAgentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AgentListEntry>> {
+    let input = match input.agents {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_locations_output_locations(
+    input: crate::output::ListLocationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LocationListEntry>> {
+    let input = match input.locations {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_tags_for_resource_output_tags(
+    input: crate::output::ListTagsForResourceOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TagListEntry>> {
+    let input = match input.tags {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_task_executions_output_task_executions(
+    input: crate::output::ListTaskExecutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>> {
+    let input = match input.task_executions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_tasks_output_tasks(
+    input: crate::output::ListTasksOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TaskListEntry>> {
+    let input = match input.tasks {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

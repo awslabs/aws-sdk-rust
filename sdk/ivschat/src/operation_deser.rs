@@ -372,6 +372,23 @@ pub fn parse_delete_room_error(
                 tmp
             }),
         },
+        "PendingVerification" => crate::error::DeleteRoomError {
+            meta: generic,
+            kind: crate::error::DeleteRoomErrorKind::PendingVerification({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pending_verification::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pending_verification_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoomError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::DeleteRoomError {
             meta: generic,
             kind: crate::error::DeleteRoomErrorKind::ResourceNotFoundException({
@@ -1064,6 +1081,23 @@ pub fn parse_update_room_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoomError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PendingVerification" => crate::error::UpdateRoomError {
+            meta: generic,
+            kind: crate::error::UpdateRoomErrorKind::PendingVerification({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pending_verification::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pending_verification_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoomError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

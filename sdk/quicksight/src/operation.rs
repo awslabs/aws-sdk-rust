@@ -3662,6 +3662,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIpRestriction {
     }
 }
 
+/// Operation shape for `UpdatePublicSharingSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_public_sharing_settings`](crate::client::Client::update_public_sharing_settings).
+///
+/// See [`crate::client::fluent_builders::UpdatePublicSharingSettings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdatePublicSharingSettings {
+    _private: (),
+}
+impl UpdatePublicSharingSettings {
+    /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput)
+    pub fn builder() -> crate::input::update_public_sharing_settings_input::Builder {
+        crate::input::update_public_sharing_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdatePublicSharingSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdatePublicSharingSettings {
+    type Output = std::result::Result<
+        crate::output::UpdatePublicSharingSettingsOutput,
+        crate::error::UpdatePublicSharingSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_public_sharing_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_public_sharing_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

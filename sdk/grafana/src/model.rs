@@ -1947,6 +1947,8 @@ pub enum Role {
     Admin,
     /// Role Editor.
     Editor,
+    /// Role Viewer.
+    Viewer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1955,6 +1957,7 @@ impl std::convert::From<&str> for Role {
         match s {
             "ADMIN" => Role::Admin,
             "EDITOR" => Role::Editor,
+            "VIEWER" => Role::Viewer,
             other => Role::Unknown(other.to_owned()),
         }
     }
@@ -1972,12 +1975,13 @@ impl Role {
         match self {
             Role::Admin => "ADMIN",
             Role::Editor => "EDITOR",
+            Role::Viewer => "VIEWER",
             Role::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ADMIN", "EDITOR"]
+        &["ADMIN", "EDITOR", "VIEWER"]
     }
 }
 impl AsRef<str> for Role {

@@ -1942,6 +1942,32 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListOrganizationServiceAccessStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListOrganizationServiceAccessStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListOrganizationServiceAccessStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2140,6 +2166,36 @@ where
                 crate::error::RestoreCoreNetworkPolicyVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::RestoreCoreNetworkPolicyVersionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::StartOrganizationServiceAccessUpdateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StartOrganizationServiceAccessUpdateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::StartOrganizationServiceAccessUpdateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

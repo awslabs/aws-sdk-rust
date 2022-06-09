@@ -4944,12 +4944,16 @@ pub mod create_job_input {
             self.presigned_url_config = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -5069,7 +5073,9 @@ pub mod create_job_input {
         ///
         /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
         ///
-        /// <p>Parameters of a managed template that you can specify to create the job document.</p>
+        /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
+        /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+        /// </note>
         pub fn document_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5080,7 +5086,9 @@ pub mod create_job_input {
             self.document_parameters = Some(hash_map);
             self
         }
-        /// <p>Parameters of a managed template that you can specify to create the job document.</p>
+        /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
+        /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+        /// </note>
         pub fn set_document_parameters(
             mut self,
             input: std::option::Option<
@@ -26480,12 +26488,16 @@ pub mod list_jobs_input {
             self.status = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -46320,7 +46332,9 @@ impl std::fmt::Debug for ListJobTemplatesInput {
 pub struct ListJobsInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// </note>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -46342,7 +46356,9 @@ impl ListJobsInput {
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// </note>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -50433,7 +50449,9 @@ pub struct CreateJobInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     pub presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// </note>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>Allows you to create a staged rollout of the job.</p>
     pub job_executions_rollout_config:
@@ -50454,7 +50472,9 @@ pub struct CreateJobInput {
     pub job_template_arn: std::option::Option<std::string::String>,
     /// <p>Allows you to create the criteria to retry a job.</p>
     pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
-    /// <p>Parameters of a managed template that you can specify to create the job document.</p>
+    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// </note>
     pub document_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -50488,7 +50508,9 @@ impl CreateJobInput {
     pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
         self.presigned_url_config.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// </note>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -50528,7 +50550,9 @@ impl CreateJobInput {
     ) -> std::option::Option<&crate::model::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
-    /// <p>Parameters of a managed template that you can specify to create the job document.</p>
+    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// </note>
     pub fn document_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

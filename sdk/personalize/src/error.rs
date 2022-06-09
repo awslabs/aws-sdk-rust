@@ -1307,6 +1307,8 @@ pub enum CreateRecommenderErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
@@ -1320,6 +1322,7 @@ impl std::fmt::Display for CreateRecommenderError {
             CreateRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateRecommenderErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1397,6 +1400,13 @@ impl CreateRecommenderError {
             CreateRecommenderErrorKind::ResourceAlreadyExistsException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateRecommenderErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRecommenderErrorKind::ResourceInUseException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateRecommenderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1418,6 +1428,7 @@ impl std::error::Error for CreateRecommenderError {
             CreateRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateRecommenderErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),

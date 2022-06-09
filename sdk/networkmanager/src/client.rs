@@ -900,6 +900,20 @@ impl Client {
     pub fn list_core_networks(&self) -> fluent_builders::ListCoreNetworks {
         fluent_builders::ListCoreNetworks::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListOrganizationServiceAccessStatus`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::set_max_results): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::set_next_token): (undocumented)
+    /// - On success, responds with [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput) with field(s):
+    ///   - [`organization_status(Option<OrganizationStatus>)`](crate::output::ListOrganizationServiceAccessStatusOutput::organization_status): (undocumented)
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationServiceAccessStatusOutput::next_token): (undocumented)
+    /// - On failure, responds with [`SdkError<ListOrganizationServiceAccessStatusError>`](crate::error::ListOrganizationServiceAccessStatusError)
+    pub fn list_organization_service_access_status(
+        &self,
+    ) -> fluent_builders::ListOrganizationServiceAccessStatus {
+        fluent_builders::ListOrganizationServiceAccessStatus::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -968,6 +982,18 @@ impl Client {
         &self,
     ) -> fluent_builders::RestoreCoreNetworkPolicyVersion {
         fluent_builders::RestoreCoreNetworkPolicyVersion::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartOrganizationServiceAccessUpdate`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`action(impl Into<String>)`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate::action) / [`set_action(Option<String>)`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate::set_action): (undocumented)
+    /// - On success, responds with [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput) with field(s):
+    ///   - [`organization_status(Option<OrganizationStatus>)`](crate::output::StartOrganizationServiceAccessUpdateOutput::organization_status): (undocumented)
+    /// - On failure, responds with [`SdkError<StartOrganizationServiceAccessUpdateError>`](crate::error::StartOrganizationServiceAccessUpdateError)
+    pub fn start_organization_service_access_update(
+        &self,
+    ) -> fluent_builders::StartOrganizationServiceAccessUpdate {
+        fluent_builders::StartOrganizationServiceAccessUpdate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartRouteAnalysis`](crate::client::fluent_builders::StartRouteAnalysis) operation.
     ///
@@ -1275,7 +1301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateCustomerGateway`.
     ///
     /// <p>Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>
-    /// <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway. The transit gateway must be registered in your global network. When you register a transit gateway, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p>
+    /// <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core network registered in your global network. When you register a transit gateway or core network, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p>
     /// <p>You cannot associate a customer gateway with more than one device and link. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCustomerGateway {
@@ -1791,7 +1817,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConnectPeer`.
     ///
-    /// <p>Creates a core network connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>
+    /// <p>Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectPeer {
         handle: std::sync::Arc<super::Handle>,
@@ -2509,7 +2535,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSiteToSiteVpnAttachment`.
     ///
-    /// <p>Creates a site-to-site VPN attachment on an edge location of a core network.</p>
+    /// <p>Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSiteToSiteVpnAttachment {
         handle: std::sync::Arc<super::Handle>,
@@ -3094,7 +3120,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGlobalNetwork`.
     ///
-    /// <p>Deletes an existing global network. You must first delete all global network objects (devices, links, and sites) and deregister all transit gateways.</p>
+    /// <p>Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGlobalNetwork {
         handle: std::sync::Arc<super::Handle>,
@@ -4164,7 +4190,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCoreNetwork`.
     ///
-    /// <p>Returns information about a core network. By default it returns the LIVE policy.</p>
+    /// <p>Returns information about the LIVE policy for a core network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreNetwork {
         handle: std::sync::Arc<super::Handle>,
@@ -6673,6 +6699,70 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListOrganizationServiceAccessStatus`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListOrganizationServiceAccessStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_organization_service_access_status_input::Builder,
+    }
+    impl ListOrganizationServiceAccessStatus {
+        /// Creates a new `ListOrganizationServiceAccessStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListOrganizationServiceAccessStatusOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListOrganizationServiceAccessStatusError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for a specified resource.</p>
@@ -7079,6 +7169,60 @@ pub mod fluent_builders {
         /// <p>The ID of the policy version to restore.</p>
         pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartOrganizationServiceAccessUpdate`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartOrganizationServiceAccessUpdate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_organization_service_access_update_input::Builder,
+    }
+    impl StartOrganizationServiceAccessUpdate {
+        /// Creates a new `StartOrganizationServiceAccessUpdate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartOrganizationServiceAccessUpdateOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartOrganizationServiceAccessUpdateError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action(input);
             self
         }
     }

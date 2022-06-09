@@ -12605,14 +12605,14 @@ pub mod generate_embed_url_for_anonymous_user_input {
         ///
         /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
         ///
-        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
         pub fn authorized_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorized_resource_arns.unwrap_or_default();
             v.push(input.into());
             self.authorized_resource_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
         pub fn set_authorized_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -23821,6 +23821,177 @@ impl UpdateIpRestrictionInput {
     }
 }
 
+/// See [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput)
+pub mod update_public_sharing_settings_input {
+    /// A builder for [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) public_sharing_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
+            self
+        }
+        /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+        pub fn public_sharing_enabled(mut self, input: bool) -> Self {
+            self.public_sharing_enabled = Some(input);
+            self
+        }
+        /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+        pub fn set_public_sharing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.public_sharing_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdatePublicSharingSettingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdatePublicSharingSettingsInput {
+                aws_account_id: self.aws_account_id,
+                public_sharing_enabled: self.public_sharing_enabled.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdatePublicSharingSettingsInputOperationOutputAlias =
+    crate::operation::UpdatePublicSharingSettings;
+#[doc(hidden)]
+pub type UpdatePublicSharingSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdatePublicSharingSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdatePublicSharingSettings`](crate::operation::UpdatePublicSharingSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdatePublicSharingSettings,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdatePublicSharingSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_295 = &_input.aws_account_id;
+                let input_295 = input_295.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "aws_account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_295, false);
+                if aws_account_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "aws_account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/accounts/{AwsAccountId}/public-sharing-settings",
+                    AwsAccountId = aws_account_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdatePublicSharingSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_public_sharing_settings(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdatePublicSharingSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdatePublicSharingSettings",
+            "quicksight",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput)
+    pub fn builder() -> crate::input::update_public_sharing_settings_input::Builder {
+        crate::input::update_public_sharing_settings_input::Builder::default()
+    }
+}
+
 /// See [`UpdateTemplateInput`](crate::input::UpdateTemplateInput)
 pub mod update_template_input {
     /// A builder for [`UpdateTemplateInput`](crate::input::UpdateTemplateInput)
@@ -23936,28 +24107,28 @@ impl UpdateTemplateInput {
                 _input: &crate::input::UpdateTemplateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_295 = &_input.aws_account_id;
-                let input_295 = input_295.as_ref().ok_or(
+                let input_296 = &_input.aws_account_id;
+                let input_296 = input_296.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_295, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_296, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_296 = &_input.template_id;
-                let input_296 = input_296.as_ref().ok_or(
+                let input_297 = &_input.template_id;
+                let input_297 = input_297.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_296, false);
+                let template_id = aws_smithy_http::label::fmt_string(input_297, false);
                 if template_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
@@ -24146,42 +24317,42 @@ impl UpdateTemplateAliasInput {
                 _input: &crate::input::UpdateTemplateAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_297 = &_input.aws_account_id;
-                let input_297 = input_297.as_ref().ok_or(
+                let input_298 = &_input.aws_account_id;
+                let input_298 = input_298.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_297, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_298, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_298 = &_input.template_id;
-                let input_298 = input_298.as_ref().ok_or(
+                let input_299 = &_input.template_id;
+                let input_299 = input_299.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_298, false);
+                let template_id = aws_smithy_http::label::fmt_string(input_299, false);
                 if template_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_299 = &_input.alias_name;
-                let input_299 = input_299.as_ref().ok_or(
+                let input_300 = &_input.alias_name;
+                let input_300 = input_300.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "alias_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_299, false);
+                let alias_name = aws_smithy_http::label::fmt_string(input_300, false);
                 if alias_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "alias_name",
@@ -24392,28 +24563,28 @@ impl UpdateTemplatePermissionsInput {
                 _input: &crate::input::UpdateTemplatePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_300 = &_input.aws_account_id;
-                let input_300 = input_300.as_ref().ok_or(
+                let input_301 = &_input.aws_account_id;
+                let input_301 = input_301.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_300, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_301, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_301 = &_input.template_id;
-                let input_301 = input_301.as_ref().ok_or(
+                let input_302 = &_input.template_id;
+                let input_302 = input_302.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_301, false);
+                let template_id = aws_smithy_http::label::fmt_string(input_302, false);
                 if template_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
@@ -24637,28 +24808,28 @@ impl UpdateThemeInput {
                 _input: &crate::input::UpdateThemeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_302 = &_input.aws_account_id;
-                let input_302 = input_302.as_ref().ok_or(
+                let input_303 = &_input.aws_account_id;
+                let input_303 = input_303.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_302, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_303, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_303 = &_input.theme_id;
-                let input_303 = input_303.as_ref().ok_or(
+                let input_304 = &_input.theme_id;
+                let input_304 = input_304.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "theme_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_303, false);
+                let theme_id = aws_smithy_http::label::fmt_string(input_304, false);
                 if theme_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "theme_id",
@@ -24847,42 +25018,42 @@ impl UpdateThemeAliasInput {
                 _input: &crate::input::UpdateThemeAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_304 = &_input.aws_account_id;
-                let input_304 = input_304.as_ref().ok_or(
+                let input_305 = &_input.aws_account_id;
+                let input_305 = input_305.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_304, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_305, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_305 = &_input.theme_id;
-                let input_305 = input_305.as_ref().ok_or(
+                let input_306 = &_input.theme_id;
+                let input_306 = input_306.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "theme_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_305, false);
+                let theme_id = aws_smithy_http::label::fmt_string(input_306, false);
                 if theme_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "theme_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_306 = &_input.alias_name;
-                let input_306 = input_306.as_ref().ok_or(
+                let input_307 = &_input.alias_name;
+                let input_307 = input_307.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "alias_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_306, false);
+                let alias_name = aws_smithy_http::label::fmt_string(input_307, false);
                 if alias_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "alias_name",
@@ -25092,28 +25263,28 @@ impl UpdateThemePermissionsInput {
                 _input: &crate::input::UpdateThemePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_307 = &_input.aws_account_id;
-                let input_307 = input_307.as_ref().ok_or(
+                let input_308 = &_input.aws_account_id;
+                let input_308 = input_308.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_307, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_308, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_308 = &_input.theme_id;
-                let input_308 = input_308.as_ref().ok_or(
+                let input_309 = &_input.theme_id;
+                let input_309 = input_309.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "theme_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_308, false);
+                let theme_id = aws_smithy_http::label::fmt_string(input_309, false);
                 if theme_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "theme_id",
@@ -25436,42 +25607,42 @@ impl UpdateUserInput {
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_309 = &_input.aws_account_id;
-                let input_309 = input_309.as_ref().ok_or(
+                let input_310 = &_input.aws_account_id;
+                let input_310 = input_310.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_309, false);
+                let aws_account_id = aws_smithy_http::label::fmt_string(input_310, false);
                 if aws_account_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "aws_account_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_310 = &_input.namespace;
-                let input_310 = input_310.as_ref().ok_or(
+                let input_311 = &_input.namespace;
+                let input_311 = input_311.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "namespace",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_310, false);
+                let namespace = aws_smithy_http::label::fmt_string(input_311, false);
                 if namespace.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "namespace",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_311 = &_input.user_name;
-                let input_311 = input_311.as_ref().ok_or(
+                let input_312 = &_input.user_name;
+                let input_312 = input_312.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_name = aws_smithy_http::label::fmt_string(input_311, false);
+                let user_name = aws_smithy_http::label::fmt_string(input_312, false);
                 if user_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_name",
@@ -25970,6 +26141,34 @@ impl std::fmt::Debug for UpdateTemplateInput {
         formatter.field("source_entity", &self.source_entity);
         formatter.field("version_description", &self.version_description);
         formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePublicSharingSettingsInput {
+    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    pub aws_account_id: std::option::Option<std::string::String>,
+    /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+    pub public_sharing_enabled: bool,
+}
+impl UpdatePublicSharingSettingsInput {
+    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+    pub fn public_sharing_enabled(&self) -> bool {
+        self.public_sharing_enabled
+    }
+}
+impl std::fmt::Debug for UpdatePublicSharingSettingsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePublicSharingSettingsInput");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("public_sharing_enabled", &self.public_sharing_enabled);
         formatter.finish()
     }
 }
@@ -28382,7 +28581,7 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
     /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
     pub session_tags: std::option::Option<std::vec::Vec<crate::model::SessionTag>>,
-    /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     pub authorized_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The configuration of the experience you are embedding.</p>
     pub experience_configuration:
@@ -28406,7 +28605,7 @@ impl GenerateEmbedUrlForAnonymousUserInput {
     pub fn session_tags(&self) -> std::option::Option<&[crate::model::SessionTag]> {
         self.session_tags.as_deref()
     }
-    /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     pub fn authorized_resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.authorized_resource_arns.as_deref()
     }

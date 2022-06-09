@@ -860,6 +860,24 @@ pub fn parse_create_identity_provider_error(
                 tmp
             }),
         },
+        "ServiceQuotaExceededException" => crate::error::CreateIdentityProviderError {
+            meta: generic,
+            kind: crate::error::CreateIdentityProviderErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIdentityProviderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::CreateIdentityProviderError {
             meta: generic,
             kind: crate::error::CreateIdentityProviderErrorKind::ThrottlingException({

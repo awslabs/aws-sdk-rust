@@ -158,6 +158,10 @@ pub struct UserSettings {
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
+    /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    pub disconnect_timeout_in_minutes: std::option::Option<i32>,
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    pub idle_disconnect_timeout_in_minutes: std::option::Option<i32>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -188,6 +192,14 @@ impl UserSettings {
     pub fn print_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.print_allowed.as_ref()
     }
+    /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    pub fn disconnect_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.disconnect_timeout_in_minutes
+    }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    pub fn idle_disconnect_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.idle_disconnect_timeout_in_minutes
+    }
 }
 impl std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -199,6 +211,14 @@ impl std::fmt::Debug for UserSettings {
         formatter.field("download_allowed", &self.download_allowed);
         formatter.field("upload_allowed", &self.upload_allowed);
         formatter.field("print_allowed", &self.print_allowed);
+        formatter.field(
+            "disconnect_timeout_in_minutes",
+            &self.disconnect_timeout_in_minutes,
+        );
+        formatter.field(
+            "idle_disconnect_timeout_in_minutes",
+            &self.idle_disconnect_timeout_in_minutes,
+        );
         formatter.finish()
     }
 }
@@ -215,6 +235,8 @@ pub mod user_settings {
         pub(crate) download_allowed: std::option::Option<crate::model::EnabledType>,
         pub(crate) upload_allowed: std::option::Option<crate::model::EnabledType>,
         pub(crate) print_allowed: std::option::Option<crate::model::EnabledType>,
+        pub(crate) disconnect_timeout_in_minutes: std::option::Option<i32>,
+        pub(crate) idle_disconnect_timeout_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The ARN of the user settings.</p>
@@ -314,6 +336,32 @@ pub mod user_settings {
             self.print_allowed = input;
             self
         }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.disconnect_timeout_in_minutes = Some(input);
+            self
+        }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn set_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.disconnect_timeout_in_minutes = input;
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn idle_disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.idle_disconnect_timeout_in_minutes = Some(input);
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn set_idle_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.idle_disconnect_timeout_in_minutes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserSettings`](crate::model::UserSettings)
         pub fn build(self) -> crate::model::UserSettings {
             crate::model::UserSettings {
@@ -324,6 +372,8 @@ pub mod user_settings {
                 download_allowed: self.download_allowed,
                 upload_allowed: self.upload_allowed,
                 print_allowed: self.print_allowed,
+                disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
+                idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             }
         }
     }
@@ -477,7 +527,7 @@ impl std::fmt::Debug for Portal {
         formatter.field("browser_type", &self.browser_type);
         formatter.field("portal_status", &self.portal_status);
         formatter.field("portal_endpoint", &self.portal_endpoint);
-        formatter.field("display_name", &self.display_name);
+        formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_date", &self.creation_date);
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
         formatter.field("user_settings_arn", &self.user_settings_arn);
@@ -1125,9 +1175,12 @@ impl std::fmt::Debug for IdentityProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityProvider");
         formatter.field("identity_provider_arn", &self.identity_provider_arn);
-        formatter.field("identity_provider_name", &self.identity_provider_name);
+        formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
         formatter.field("identity_provider_type", &self.identity_provider_type);
-        formatter.field("identity_provider_details", &self.identity_provider_details);
+        formatter.field(
+            "identity_provider_details",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
@@ -1415,7 +1468,7 @@ impl std::fmt::Debug for BrowserSettings {
         let mut formatter = f.debug_struct("BrowserSettings");
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
         formatter.field("associated_portal_arns", &self.associated_portal_arns);
-        formatter.field("browser_policy", &self.browser_policy);
+        formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1514,8 +1567,8 @@ impl Tag {
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
+        formatter.field("key", &"*** Sensitive Data Redacted ***");
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1581,6 +1634,10 @@ pub struct UserSettingsSummary {
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
+    /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    pub disconnect_timeout_in_minutes: std::option::Option<i32>,
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    pub idle_disconnect_timeout_in_minutes: std::option::Option<i32>,
 }
 impl UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
@@ -1607,6 +1664,14 @@ impl UserSettingsSummary {
     pub fn print_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.print_allowed.as_ref()
     }
+    /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    pub fn disconnect_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.disconnect_timeout_in_minutes
+    }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    pub fn idle_disconnect_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.idle_disconnect_timeout_in_minutes
+    }
 }
 impl std::fmt::Debug for UserSettingsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1617,6 +1682,14 @@ impl std::fmt::Debug for UserSettingsSummary {
         formatter.field("download_allowed", &self.download_allowed);
         formatter.field("upload_allowed", &self.upload_allowed);
         formatter.field("print_allowed", &self.print_allowed);
+        formatter.field(
+            "disconnect_timeout_in_minutes",
+            &self.disconnect_timeout_in_minutes,
+        );
+        formatter.field(
+            "idle_disconnect_timeout_in_minutes",
+            &self.idle_disconnect_timeout_in_minutes,
+        );
         formatter.finish()
     }
 }
@@ -1632,6 +1705,8 @@ pub mod user_settings_summary {
         pub(crate) download_allowed: std::option::Option<crate::model::EnabledType>,
         pub(crate) upload_allowed: std::option::Option<crate::model::EnabledType>,
         pub(crate) print_allowed: std::option::Option<crate::model::EnabledType>,
+        pub(crate) disconnect_timeout_in_minutes: std::option::Option<i32>,
+        pub(crate) idle_disconnect_timeout_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The ARN of the user settings.</p>
@@ -1712,6 +1787,32 @@ pub mod user_settings_summary {
             self.print_allowed = input;
             self
         }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.disconnect_timeout_in_minutes = Some(input);
+            self
+        }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn set_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.disconnect_timeout_in_minutes = input;
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn idle_disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.idle_disconnect_timeout_in_minutes = Some(input);
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn set_idle_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.idle_disconnect_timeout_in_minutes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserSettingsSummary`](crate::model::UserSettingsSummary)
         pub fn build(self) -> crate::model::UserSettingsSummary {
             crate::model::UserSettingsSummary {
@@ -1721,6 +1822,8 @@ pub mod user_settings_summary {
                 download_allowed: self.download_allowed,
                 upload_allowed: self.upload_allowed,
                 print_allowed: self.print_allowed,
+                disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
+                idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             }
         }
     }
@@ -2006,7 +2109,7 @@ impl std::fmt::Debug for PortalSummary {
         formatter.field("browser_type", &self.browser_type);
         formatter.field("portal_status", &self.portal_status);
         formatter.field("portal_endpoint", &self.portal_endpoint);
-        formatter.field("display_name", &self.display_name);
+        formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_date", &self.creation_date);
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
         formatter.field("user_settings_arn", &self.user_settings_arn);
@@ -2303,7 +2406,7 @@ impl std::fmt::Debug for IdentityProviderSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityProviderSummary");
         formatter.field("identity_provider_arn", &self.identity_provider_arn);
-        formatter.field("identity_provider_name", &self.identity_provider_name);
+        formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.finish()
     }

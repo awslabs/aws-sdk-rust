@@ -94,10 +94,10 @@ impl Client {
     /// Constructs a fluent builder for the [`AddDraftAppVersionResourceMappings`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`resource_mappings(Vec<ResourceMapping>)`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings::resource_mappings) / [`set_resource_mappings(Option<Vec<ResourceMapping>>)`](crate::client::fluent_builders::AddDraftAppVersionResourceMappings::set_resource_mappings): <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     /// - On success, responds with [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::AddDraftAppVersionResourceMappingsOutput::app_arn): <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::AddDraftAppVersionResourceMappingsOutput::app_arn): <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::AddDraftAppVersionResourceMappingsOutput::app_version): <p>The version of the application.</p>
     ///   - [`resource_mappings(Option<Vec<ResourceMapping>>)`](crate::output::AddDraftAppVersionResourceMappingsOutput::resource_mappings): <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     /// - On failure, responds with [`SdkError<AddDraftAppVersionResourceMappingsError>`](crate::error::AddDraftAppVersionResourceMappingsError)
@@ -111,9 +111,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_name): <p>The name for the application.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApp::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApp::set_description): <p>The optional description for an app.</p>
-    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApp::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::CreateApp::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApp::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::CreateApp::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApp::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApp::set_tags): <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApp::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApp::set_client_token): <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    ///   - [`assessment_schedule(AppAssessmentScheduleType)`](crate::client::fluent_builders::CreateApp::assessment_schedule) / [`set_assessment_schedule(Option<AppAssessmentScheduleType>)`](crate::client::fluent_builders::CreateApp::set_assessment_schedule): <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
     ///   - [`app(Option<App>)`](crate::output::CreateAppOutput::app): <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
@@ -126,7 +127,7 @@ impl Client {
     ///   - [`recommendation_ids(Vec<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::recommendation_ids) / [`set_recommendation_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_recommendation_ids): <p>Identifiers for the recommendations used to create a recommendation template.</p>
     ///   - [`format(TemplateFormat)`](crate::client::fluent_builders::CreateRecommendationTemplate::format) / [`set_format(Option<TemplateFormat>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_format): <p>The format for the recommendation template.</p>  <dl>   <dt>   CfnJson  </dt>   <dd>    <p>The template is CloudFormation JSON.</p>   </dd>   <dt>   CfnYaml  </dt>   <dd>    <p>The template is CloudFormation YAML.</p>   </dd>  </dl>
     ///   - [`recommendation_types(Vec<RenderRecommendationType>)`](crate::client::fluent_builders::CreateRecommendationTemplate::recommendation_types) / [`set_recommendation_types(Option<Vec<RenderRecommendationType>>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_recommendation_types): <p>An array of strings that specify the recommendation template type or types.</p>  <dl>   <dt>   Alarm  </dt>   <dd>    <p>The template is an <code>AlarmRecommendation</code> template.</p>   </dd>   <dt>   Sop  </dt>   <dd>    <p>The template is a <code>SopRecommendation</code> template.</p>   </dd>   <dt>   Test  </dt>   <dd>    <p>The template is a <code>TestRecommendation</code> template.</p>   </dd>  </dl>
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_name): <p>The name for the recommendation template.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_client_token): <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecommendationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecommendationTemplate::set_tags): <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
@@ -156,11 +157,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteApp`](crate::client::fluent_builders::DeleteApp) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteApp::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteApp::set_force_delete): <p>A boolean option to force the deletion of a Resilience Hub application. </p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_client_token): <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::DeleteAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::DeleteAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
     pub fn delete_app(&self) -> fluent_builders::DeleteApp {
         fluent_builders::DeleteApp::new(self.handle.clone())
@@ -168,10 +169,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteAppAssessment`](crate::client::fluent_builders::DeleteAppAssessment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppAssessment::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppAssessment::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppAssessment::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppAssessment::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteAppAssessment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteAppAssessment::set_client_token): <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     /// - On success, responds with [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput) with field(s):
-    ///   - [`assessment_arn(Option<String>)`](crate::output::DeleteAppAssessmentOutput::assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(Option<String>)`](crate::output::DeleteAppAssessmentOutput::assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`assessment_status(Option<AssessmentStatus>)`](crate::output::DeleteAppAssessmentOutput::assessment_status): <p>The current status of the assessment for the resiliency policy.</p>
     /// - On failure, responds with [`SdkError<DeleteAppAssessmentError>`](crate::error::DeleteAppAssessmentError)
     pub fn delete_app_assessment(&self) -> fluent_builders::DeleteAppAssessment {
@@ -192,10 +193,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteResiliencyPolicy`](crate::client::fluent_builders::DeleteResiliencyPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResiliencyPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DeleteResiliencyPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResiliencyPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DeleteResiliencyPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteResiliencyPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteResiliencyPolicy::set_client_token): <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     /// - On success, responds with [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput) with field(s):
-    ///   - [`policy_arn(Option<String>)`](crate::output::DeleteResiliencyPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`policy_arn(Option<String>)`](crate::output::DeleteResiliencyPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteResiliencyPolicyError>`](crate::error::DeleteResiliencyPolicyError)
     pub fn delete_resiliency_policy(&self) -> fluent_builders::DeleteResiliencyPolicy {
         fluent_builders::DeleteResiliencyPolicy::new(self.handle.clone())
@@ -203,7 +204,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeApp`](crate::client::fluent_builders::DescribeApp) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`DescribeAppOutput`](crate::output::DescribeAppOutput) with field(s):
     ///   - [`app(Option<App>)`](crate::output::DescribeAppOutput::app): <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::error::DescribeAppError)
@@ -213,7 +214,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAppAssessment`](crate::client::fluent_builders::DescribeAppAssessment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppAssessment::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppAssessment::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppAssessment::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppAssessment::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput) with field(s):
     ///   - [`assessment(Option<AppAssessment>)`](crate::output::DescribeAppAssessmentOutput::assessment): <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     /// - On failure, responds with [`SdkError<DescribeAppAssessmentError>`](crate::error::DescribeAppAssessmentError)
@@ -223,11 +224,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAppVersionResourcesResolutionStatus`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::set_app_version): <p>The version of the application.</p>
     ///   - [`resolution_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::resolution_id) / [`set_resolution_id(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus::set_resolution_id): <p>The identifier for a specific resolution.</p>
     /// - On success, responds with [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput::app_version): <p>The version of the application.</p>
     ///   - [`resolution_id(Option<String>)`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput::resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`status(Option<ResourceResolutionStatusType>)`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput::status): <p>The status of the action.</p>
@@ -241,10 +242,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAppVersionTemplate`](crate::client::fluent_builders::DescribeAppVersionTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionTemplate::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionTemplate::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionTemplate::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionTemplate::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::DescribeAppVersionTemplate::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::DescribeAppVersionTemplate::set_app_version): <p>The version of the application.</p>
     /// - On success, responds with [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::DescribeAppVersionTemplateOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::DescribeAppVersionTemplateOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::DescribeAppVersionTemplateOutput::app_version): <p>The version of the application.</p>
     ///   - [`app_template_body(Option<String>)`](crate::output::DescribeAppVersionTemplateOutput::app_template_body): <p>The body of the template.</p>
     /// - On failure, responds with [`SdkError<DescribeAppVersionTemplateError>`](crate::error::DescribeAppVersionTemplateError)
@@ -254,9 +255,9 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeDraftAppVersionResourcesImportStatus`](crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput::app_version): <p>The version of the application.</p>
     ///   - [`status(Option<ResourceImportStatusType>)`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput::status): <p>The status of the action.</p>
     ///   - [`status_change_time(Option<DateTime>)`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput::status_change_time): <p>The timestamp for when the status last changed.</p>
@@ -270,7 +271,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeResiliencyPolicy`](crate::client::fluent_builders::DescribeResiliencyPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResiliencyPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DescribeResiliencyPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResiliencyPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DescribeResiliencyPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput) with field(s):
     ///   - [`policy(Option<ResiliencyPolicy>)`](crate::output::DescribeResiliencyPolicyOutput::policy): <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     /// - On failure, responds with [`SdkError<DescribeResiliencyPolicyError>`](crate::error::DescribeResiliencyPolicyError)
@@ -280,13 +281,15 @@ impl Client {
     /// Constructs a fluent builder for the [`ImportResourcesToDraftAppVersion`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`source_arns(Vec<String>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::source_arns) / [`set_source_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::set_source_arns): <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
+    ///   - [`terraform_sources(Vec<TerraformSource>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::terraform_sources) / [`set_terraform_sources(Option<Vec<TerraformSource>>)`](crate::client::fluent_builders::ImportResourcesToDraftAppVersion::set_terraform_sources): <p> A list of terraform file s3 URLs you need to import. </p>
     /// - On success, responds with [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::ImportResourcesToDraftAppVersionOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::ImportResourcesToDraftAppVersionOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::ImportResourcesToDraftAppVersionOutput::app_version): <p>The version of the application.</p>
     ///   - [`source_arns(Option<Vec<String>>)`](crate::output::ImportResourcesToDraftAppVersionOutput::source_arns): <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
     ///   - [`status(Option<ResourceImportStatusType>)`](crate::output::ImportResourcesToDraftAppVersionOutput::status): <p>The status of the action.</p>
+    ///   - [`terraform_sources(Option<Vec<TerraformSource>>)`](crate::output::ImportResourcesToDraftAppVersionOutput::terraform_sources): <p> A list of terraform file s3 URLs you need to import. </p>
     /// - On failure, responds with [`SdkError<ImportResourcesToDraftAppVersionError>`](crate::error::ImportResourcesToDraftAppVersionError)
     pub fn import_resources_to_draft_app_version(
         &self,
@@ -297,7 +300,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAlarmRecommendations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListAlarmRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListAlarmRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListAlarmRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListAlarmRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlarmRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlarmRecommendations::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlarmRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlarmRecommendations::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// - On success, responds with [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput) with field(s):
@@ -311,7 +314,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppAssessments::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppAssessments::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppAssessments::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppAssessments::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppAssessments::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`assessment_name(impl Into<String>)`](crate::client::fluent_builders::ListAppAssessments::assessment_name) / [`set_assessment_name(Option<String>)`](crate::client::fluent_builders::ListAppAssessments::set_assessment_name): <p>The name for the assessment.</p>
     ///   - [`assessment_status(Vec<AssessmentStatus>)`](crate::client::fluent_builders::ListAppAssessments::assessment_status) / [`set_assessment_status(Option<Vec<AssessmentStatus>>)`](crate::client::fluent_builders::ListAppAssessments::set_assessment_status): <p>The current status of the assessment for the resiliency policy.</p>
     ///   - [`compliance_status(ComplianceStatus)`](crate::client::fluent_builders::ListAppAssessments::compliance_status) / [`set_compliance_status(Option<ComplianceStatus>)`](crate::client::fluent_builders::ListAppAssessments::set_compliance_status): <p>The current status of compliance for the resiliency policy.</p>
@@ -332,7 +335,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppComponentCompliances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppComponentCompliances::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppComponentCompliances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppComponentCompliances::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppComponentCompliances::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListAppComponentCompliances::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppComponentCompliances::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListAppComponentCompliances::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput) with field(s):
     ///   - [`component_compliances(Option<Vec<AppComponentCompliance>>)`](crate::output::ListAppComponentCompliancesOutput::component_compliances): <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppComponentCompliancesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -344,7 +347,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppComponentRecommendations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppComponentRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListAppComponentRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppComponentRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListAppComponentRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppComponentRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppComponentRecommendations::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppComponentRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppComponentRecommendations::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// - On success, responds with [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput) with field(s):
@@ -363,7 +366,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApps::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApps::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApps::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListApps::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListApps::set_name): <p>The name for the one of the listed applications.</p>
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListApps::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListApps::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListApps::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListApps::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`ListAppsOutput`](crate::output::ListAppsOutput) with field(s):
     ///   - [`app_summaries(Option<Vec<AppSummary>>)`](crate::output::ListAppsOutput::app_summaries): <p>Summaries for the Resilience Hub application.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -375,7 +378,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppVersionResourceMappings::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::set_app_version): <p>The version of the application.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppVersionResourceMappings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppVersionResourceMappings::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -392,7 +395,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppVersionResources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResources::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppVersionResources::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResources::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppVersionResources::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResources::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::ListAppVersionResources::set_app_version): <p>The version of the application.</p>
     ///   - [`resolution_id(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResources::resolution_id) / [`set_resolution_id(Option<String>)`](crate::client::fluent_builders::ListAppVersionResources::set_resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppVersionResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppVersionResources::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -409,7 +412,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppVersions::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppVersions::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppVersions::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListAppVersions::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppVersions::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppVersions::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// - On success, responds with [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput) with field(s):
@@ -423,7 +426,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecommendationTemplates::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecommendationTemplates::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListRecommendationTemplates::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecommendationTemplates::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListRecommendationTemplates::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`reverse_order(bool)`](crate::client::fluent_builders::ListRecommendationTemplates::reverse_order) / [`set_reverse_order(Option<bool>)`](crate::client::fluent_builders::ListRecommendationTemplates::set_reverse_order): <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     ///   - [`status(Vec<RecommendationTemplateStatus>)`](crate::client::fluent_builders::ListRecommendationTemplates::status) / [`set_status(Option<Vec<RecommendationTemplateStatus>>)`](crate::client::fluent_builders::ListRecommendationTemplates::set_status): <p>The status of the action.</p>
     ///   - [`recommendation_template_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecommendationTemplates::recommendation_template_arn) / [`set_recommendation_template_arn(Option<String>)`](crate::client::fluent_builders::ListRecommendationTemplates::set_recommendation_template_arn): <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -457,7 +460,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSopRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSopRecommendations::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSopRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSopRecommendations::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListSopRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListSopRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListSopRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListSopRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListSopRecommendationsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`sop_recommendations(Option<Vec<SopRecommendation>>)`](crate::output::ListSopRecommendationsOutput::sop_recommendations): <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
@@ -496,7 +499,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTestRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTestRecommendations::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTestRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTestRecommendations::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListTestRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListTestRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`assessment_arn(impl Into<String>)`](crate::client::fluent_builders::ListTestRecommendations::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::client::fluent_builders::ListTestRecommendations::set_assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListTestRecommendationsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`test_recommendations(Option<Vec<TestRecommendation>>)`](crate::output::ListTestRecommendationsOutput::test_recommendations): <p>The test recommendations for the Resilience Hub application.</p>
@@ -508,7 +511,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::set_app_version): <p>The version of the application.</p>
     ///   - [`resolution_id(impl Into<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::resolution_id) / [`set_resolution_id(Option<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::set_resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::set_next_token): <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -526,9 +529,9 @@ impl Client {
     /// Constructs a fluent builder for the [`PublishAppVersion`](crate::client::fluent_builders::PublishAppVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::PublishAppVersion::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::PublishAppVersion::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::PublishAppVersion::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::PublishAppVersion::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     /// - On success, responds with [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::PublishAppVersionOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::PublishAppVersionOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::PublishAppVersionOutput::app_version): <p>The version of the application.</p>
     /// - On failure, responds with [`SdkError<PublishAppVersionError>`](crate::error::PublishAppVersionError)
     pub fn publish_app_version(&self) -> fluent_builders::PublishAppVersion {
@@ -537,10 +540,10 @@ impl Client {
     /// Constructs a fluent builder for the [`PutDraftAppVersionTemplate`](crate::client::fluent_builders::PutDraftAppVersionTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::PutDraftAppVersionTemplate::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::PutDraftAppVersionTemplate::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::PutDraftAppVersionTemplate::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::PutDraftAppVersionTemplate::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_template_body(impl Into<String>)`](crate::client::fluent_builders::PutDraftAppVersionTemplate::app_template_body) / [`set_app_template_body(Option<String>)`](crate::client::fluent_builders::PutDraftAppVersionTemplate::set_app_template_body): <p>A JSON string that contains the body of the app template.</p>
     /// - On success, responds with [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::PutDraftAppVersionTemplateOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::PutDraftAppVersionTemplateOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::PutDraftAppVersionTemplateOutput::app_version): <p>The version of the application.</p>
     /// - On failure, responds with [`SdkError<PutDraftAppVersionTemplateError>`](crate::error::PutDraftAppVersionTemplateError)
     pub fn put_draft_app_version_template(&self) -> fluent_builders::PutDraftAppVersionTemplate {
@@ -549,13 +552,14 @@ impl Client {
     /// Constructs a fluent builder for the [`RemoveDraftAppVersionResourceMappings`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`resource_names(Vec<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::resource_names) / [`set_resource_names(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_resource_names): <p>The names of the resources to remove from the resource mappings.</p>
     ///   - [`logical_stack_names(Vec<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::logical_stack_names) / [`set_logical_stack_names(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_logical_stack_names): <p>The names of the CloudFormation stacks to remove from the resource mappings.</p>
     ///   - [`app_registry_app_names(Vec<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::app_registry_app_names) / [`set_app_registry_app_names(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_app_registry_app_names): <p>The names of the registered applications to remove from the resource mappings.</p>
     ///   - [`resource_group_names(Vec<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::resource_group_names) / [`set_resource_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_resource_group_names): <p>The names of the resource groups to remove from the resource mappings.</p>
+    ///   - [`terraform_source_names(Vec<String>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::terraform_source_names) / [`set_terraform_source_names(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings::set_terraform_source_names): <p> </p>
     /// - On success, responds with [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::RemoveDraftAppVersionResourceMappingsOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::RemoveDraftAppVersionResourceMappingsOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::RemoveDraftAppVersionResourceMappingsOutput::app_version): <p>The version of the application.</p>
     /// - On failure, responds with [`SdkError<RemoveDraftAppVersionResourceMappingsError>`](crate::error::RemoveDraftAppVersionResourceMappingsError)
     pub fn remove_draft_app_version_resource_mappings(
@@ -566,10 +570,10 @@ impl Client {
     /// Constructs a fluent builder for the [`ResolveAppVersionResources`](crate::client::fluent_builders::ResolveAppVersionResources) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ResolveAppVersionResources::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ResolveAppVersionResources::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ResolveAppVersionResources::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ResolveAppVersionResources::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::ResolveAppVersionResources::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::ResolveAppVersionResources::set_app_version): <p>The version of the application.</p>
     /// - On success, responds with [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput) with field(s):
-    ///   - [`app_arn(Option<String>)`](crate::output::ResolveAppVersionResourcesOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(Option<String>)`](crate::output::ResolveAppVersionResourcesOutput::app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(Option<String>)`](crate::output::ResolveAppVersionResourcesOutput::app_version): <p>The version of the application.</p>
     ///   - [`resolution_id(Option<String>)`](crate::output::ResolveAppVersionResourcesOutput::resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`status(Option<ResourceResolutionStatusType>)`](crate::output::ResolveAppVersionResourcesOutput::status): <p>The status of the action.</p>
@@ -580,7 +584,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartAppAssessment`](crate::client::fluent_builders::StartAppAssessment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::StartAppAssessment::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::StartAppAssessment::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::StartAppAssessment::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::StartAppAssessment::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`app_version(impl Into<String>)`](crate::client::fluent_builders::StartAppAssessment::app_version) / [`set_app_version(Option<String>)`](crate::client::fluent_builders::StartAppAssessment::set_app_version): <p>The version of the application.</p>
     ///   - [`assessment_name(impl Into<String>)`](crate::client::fluent_builders::StartAppAssessment::assessment_name) / [`set_assessment_name(Option<String>)`](crate::client::fluent_builders::StartAppAssessment::set_assessment_name): <p>The name for the assessment.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartAppAssessment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartAppAssessment::set_client_token): <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -616,10 +620,11 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateApp`](crate::client::fluent_builders::UpdateApp) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_app_arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_description): <p>The optional description for an app.</p>
-    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`clear_resiliency_policy_arn(bool)`](crate::client::fluent_builders::UpdateApp::clear_resiliency_policy_arn) / [`set_clear_resiliency_policy_arn(Option<bool>)`](crate::client::fluent_builders::UpdateApp::set_clear_resiliency_policy_arn): <p>Specifies if the resiliency policy ARN should be cleared.</p>
+    ///   - [`assessment_schedule(AppAssessmentScheduleType)`](crate::client::fluent_builders::UpdateApp::assessment_schedule) / [`set_assessment_schedule(Option<AppAssessmentScheduleType>)`](crate::client::fluent_builders::UpdateApp::set_assessment_schedule): <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     /// - On success, responds with [`UpdateAppOutput`](crate::output::UpdateAppOutput) with field(s):
     ///   - [`app(Option<App>)`](crate::output::UpdateAppOutput::app): <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     /// - On failure, responds with [`SdkError<UpdateAppError>`](crate::error::UpdateAppError)
@@ -629,7 +634,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateResiliencyPolicy`](crate::client::fluent_builders::UpdateResiliencyPolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::set_policy_name): <p>The name of the policy</p>
     ///   - [`policy_description(impl Into<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::policy_description) / [`set_policy_description(Option<String>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::set_policy_description): <p>The description for the policy.</p>
     ///   - [`data_location_constraint(DataLocationConstraint)`](crate::client::fluent_builders::UpdateResiliencyPolicy::data_location_constraint) / [`set_data_location_constraint(Option<DataLocationConstraint>)`](crate::client::fluent_builders::UpdateResiliencyPolicy::set_data_location_constraint): <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
@@ -694,12 +699,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -785,12 +790,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
@@ -826,6 +831,22 @@ pub mod fluent_builders {
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+        pub fn assessment_schedule(
+            mut self,
+            input: crate::model::AppAssessmentScheduleType,
+        ) -> Self {
+            self.inner = self.inner.assessment_schedule(input);
+            self
+        }
+        /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+        pub fn set_assessment_schedule(
+            mut self,
+            input: std::option::Option<crate::model::AppAssessmentScheduleType>,
+        ) -> Self {
+            self.inner = self.inner.set_assessment_schedule(input);
             self
         }
     }
@@ -989,12 +1010,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recommendation_types(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1252,12 +1273,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1325,12 +1346,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1460,12 +1481,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
@@ -1523,12 +1544,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1576,12 +1597,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1634,12 +1655,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1710,12 +1731,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1775,12 +1796,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1828,12 +1849,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
@@ -1881,12 +1902,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1906,6 +1927,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_source_arns(input);
+            self
+        }
+        /// Appends an item to `terraformSources`.
+        ///
+        /// To override the contents of this collection use [`set_terraform_sources`](Self::set_terraform_sources).
+        ///
+        /// <p> A list of terraform file s3 URLs you need to import. </p>
+        pub fn terraform_sources(mut self, input: crate::model::TerraformSource) -> Self {
+            self.inner = self.inner.terraform_sources(input);
+            self
+        }
+        /// <p> A list of terraform file s3 URLs you need to import. </p>
+        pub fn set_terraform_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
+        ) -> Self {
+            self.inner = self.inner.set_terraform_sources(input);
             self
         }
     }
@@ -1957,12 +1995,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAlarmRecommendationsPaginator {
             crate::paginator::ListAlarmRecommendationsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2039,12 +2077,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAppAssessmentsPaginator {
             crate::paginator::ListAppAssessmentsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2204,12 +2242,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2266,12 +2304,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAppComponentRecommendationsPaginator {
             crate::paginator::ListAppComponentRecommendationsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2378,12 +2416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2437,12 +2475,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAppVersionResourceMappingsPaginator {
             crate::paginator::ListAppVersionResourceMappingsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2526,12 +2564,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAppVersionResourcesPaginator {
             crate::paginator::ListAppVersionResourcesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2628,12 +2666,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAppVersionsPaginator {
             crate::paginator::ListAppVersionsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2707,12 +2745,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListRecommendationTemplatesPaginator {
             crate::paginator::ListRecommendationTemplatesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2941,12 +2979,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3145,12 +3183,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3214,12 +3252,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3310,12 +3348,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3363,12 +3401,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3431,12 +3469,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3509,6 +3547,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_names(input);
             self
         }
+        /// Appends an item to `terraformSourceNames`.
+        ///
+        /// To override the contents of this collection use [`set_terraform_source_names`](Self::set_terraform_source_names).
+        ///
+        /// <p> </p>
+        pub fn terraform_source_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.terraform_source_names(input.into());
+            self
+        }
+        /// <p> </p>
+        pub fn set_terraform_source_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_terraform_source_names(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ResolveAppVersionResources`.
     ///
@@ -3552,12 +3607,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3615,12 +3670,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3870,12 +3925,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3890,12 +3945,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
@@ -3908,6 +3963,22 @@ pub mod fluent_builders {
         /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
         pub fn set_clear_resiliency_policy_arn(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_clear_resiliency_policy_arn(input);
+            self
+        }
+        /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+        pub fn assessment_schedule(
+            mut self,
+            input: crate::model::AppAssessmentScheduleType,
+        ) -> Self {
+            self.inner = self.inner.assessment_schedule(input);
+            self
+        }
+        /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+        pub fn set_assessment_schedule(
+            mut self,
+            input: std::option::Option<crate::model::AppAssessmentScheduleType>,
+        ) -> Self {
+            self.inner = self.inner.set_assessment_schedule(input);
             self
         }
     }
@@ -3953,12 +4024,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self

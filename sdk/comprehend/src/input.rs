@@ -331,14 +331,14 @@ pub mod batch_detect_key_phrases_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -839,12 +839,12 @@ pub mod classify_document_input {
             self.text = input;
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+        /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+        /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -993,12 +993,12 @@ pub mod contains_pii_entities_input {
             self.text = input;
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4687,12 +4687,14 @@ pub mod detect_entities_input {
         }
         /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
         /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+        /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
         /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+        /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -4999,12 +5001,12 @@ pub mod detect_pii_entities_input {
             self.text = input;
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -9836,12 +9838,12 @@ pub mod start_pii_entities_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -10361,12 +10363,12 @@ pub mod start_targeted_sentiment_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -13050,7 +13052,7 @@ pub struct StartTargetedSentimentDetectionJobInput {
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -13082,7 +13084,7 @@ impl StartTargetedSentimentDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -13225,7 +13227,7 @@ pub struct StartPiiEntitiesDetectionJobInput {
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -13258,7 +13260,7 @@ impl StartPiiEntitiesDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The language of the input documents.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -14363,7 +14365,7 @@ impl std::fmt::Debug for DetectSentimentInput {
 pub struct DetectPiiEntitiesInput {
     /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectPiiEntitiesInput {
@@ -14371,7 +14373,7 @@ impl DetectPiiEntitiesInput {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -14424,6 +14426,7 @@ pub struct DetectEntitiesInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
     /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+    /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesInput {
@@ -14438,6 +14441,7 @@ impl DetectEntitiesInput {
     }
     /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
     /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+    /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
@@ -15149,7 +15153,7 @@ impl std::fmt::Debug for CreateDocumentClassifierInput {
 pub struct ContainsPiiEntitiesInput {
     /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl ContainsPiiEntitiesInput {
@@ -15157,7 +15161,7 @@ impl ContainsPiiEntitiesInput {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents.</p>
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -15177,7 +15181,7 @@ impl std::fmt::Debug for ContainsPiiEntitiesInput {
 pub struct ClassifyDocumentInput {
     /// <p>The document text to be analyzed.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl ClassifyDocumentInput {
@@ -15185,7 +15189,7 @@ impl ClassifyDocumentInput {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
@@ -15259,13 +15263,13 @@ impl std::fmt::Debug for BatchDetectSentimentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectKeyPhrasesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectKeyPhrasesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }

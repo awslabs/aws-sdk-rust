@@ -16418,6 +16418,23 @@ pub fn parse_verify_user_attribute_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AliasExistsException" => crate::error::VerifyUserAttributeError {
+            meta: generic,
+            kind: crate::error::VerifyUserAttributeErrorKind::AliasExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::alias_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_alias_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyUserAttributeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CodeMismatchException" => crate::error::VerifyUserAttributeError {
             meta: generic,
             kind: crate::error::VerifyUserAttributeErrorKind::CodeMismatchException({

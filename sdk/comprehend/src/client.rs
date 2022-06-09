@@ -117,7 +117,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchDetectKeyPhrases`](crate::client::fluent_builders::BatchDetectKeyPhrases) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::BatchDetectKeyPhrases::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     /// - On success, responds with [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput) with field(s):
     ///   - [`result_list(Option<Vec<BatchDetectKeyPhrasesItemResult>>)`](crate::output::BatchDetectKeyPhrasesOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -154,7 +154,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::ClassifyDocument::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::ClassifyDocument::set_text): <p>The document text to be analyzed.</p>
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::ClassifyDocument::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::ClassifyDocument::set_endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::ClassifyDocument::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::ClassifyDocument::set_endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     /// - On success, responds with [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput) with field(s):
     ///   - [`classes(Option<Vec<DocumentClass>>)`](crate::output::ClassifyDocumentOutput::classes): <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
     ///   - [`labels(Option<Vec<DocumentLabel>>)`](crate::output::ClassifyDocumentOutput::labels): <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
@@ -166,7 +166,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::ContainsPiiEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::ContainsPiiEntities::set_text): <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::ContainsPiiEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::ContainsPiiEntities::set_language_code): <p>The language of the input documents.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::ContainsPiiEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::ContainsPiiEntities::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     /// - On success, responds with [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput) with field(s):
     ///   - [`labels(Option<Vec<EntityLabel>>)`](crate::output::ContainsPiiEntitiesOutput::labels): <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
     /// - On failure, responds with [`SdkError<ContainsPiiEntitiesError>`](crate::error::ContainsPiiEntitiesError)
@@ -431,7 +431,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectEntities::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>  <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_endpoint_arn): <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>  <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_endpoint_arn): <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>  <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>  <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     /// - On success, responds with [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesOutput::entities): <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>  <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
     /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::error::DetectEntitiesError)
@@ -453,7 +453,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectPiiEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectPiiEntities::set_text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectPiiEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectPiiEntities::set_language_code): <p>The language of the input documents.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectPiiEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectPiiEntities::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     /// - On success, responds with [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<PiiEntity>>)`](crate::output::DetectPiiEntitiesOutput::entities): <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
     /// - On failure, responds with [`SdkError<DetectPiiEntitiesError>`](crate::error::DetectPiiEntitiesError)
@@ -837,7 +837,7 @@ impl Client {
     ///   - [`redaction_config(RedactionConfig)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::redaction_config) / [`set_redaction_config(Option<RedactionConfig>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_redaction_config): <p>Provides configuration parameters for PII entity redaction.</p>  <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_job_name): <p>The identifier of the job.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_language_code): <p>The language of the input documents.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob::set_tags): <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     /// - On success, responds with [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput) with field(s):
@@ -877,7 +877,7 @@ impl Client {
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_output_data_config): <p>Specifies where to send the output files. </p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_job_name): <p>The identifier of the job.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     ///   - [`volume_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::volume_kms_key_id) / [`set_volume_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_volume_kms_key_id): <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_vpc_config): <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
@@ -1238,12 +1238,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1463,12 +1463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+        /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+        /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint_arn(input);
             self
@@ -1526,12 +1526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1782,7 +1782,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Creates a model-specific endpoint for synchronous inference for a previously trained custom model </p>
+    /// <p>Creates a model-specific endpoint for synchronous inference for a previously trained custom model For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint {
         handle: std::sync::Arc<super::Handle>,
@@ -2170,7 +2170,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Deletes a model-specific endpoint for a previously-trained custom model. All endpoints must be deleted in order for the model to be deleted.</p>
+    /// <p>Deletes a model-specific endpoint for a previously-trained custom model. All endpoints must be deleted in order for the model to be deleted. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint {
         handle: std::sync::Arc<super::Handle>,
@@ -2511,7 +2511,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEndpoint`.
     ///
-    /// <p>Gets the properties associated with a specific endpoint. Use this operation to get the status of an endpoint.</p>
+    /// <p>Gets the properties associated with a specific endpoint. Use this operation to get the status of an endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoint {
         handle: std::sync::Arc<super::Handle>,
@@ -3166,12 +3166,14 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
         /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+        /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
         /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+        /// <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint_arn(input);
             self
@@ -3295,12 +3297,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3892,7 +3894,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEndpoints`.
     ///
-    /// <p>Gets a list of all existing endpoints that you've created.</p>
+    /// <p>Gets a list of all existing endpoints that you've created. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpoints {
         handle: std::sync::Arc<super::Handle>,
@@ -5779,12 +5781,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6085,12 +6087,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6606,7 +6608,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopSentimentDetectionJob`.
     ///
     /// <p>Stops a sentiment detection job in progress.</p>
-    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.</p>
     /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
     /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6662,7 +6664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTargetedSentimentDetectionJob`.
     ///
     /// <p>Stops a targeted sentiment detection job in progress.</p>
-    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.</p>
     /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
     /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6971,7 +6973,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
-    /// <p>Updates information about the specified endpoint.</p>
+    /// <p>Updates information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpoint {
         handle: std::sync::Arc<super::Handle>,

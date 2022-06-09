@@ -851,7 +851,7 @@ impl Client {
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     ///   - [`page_size(i32)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`portfolio_share_type(PortfolioShareType)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_portfolio_share_type): <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>   <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>  </ul>
+    ///   - [`portfolio_share_type(PortfolioShareType)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_portfolio_share_type): <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>   <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>  </ul>
     /// - On success, responds with [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput) with field(s):
     ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::output::ListAcceptedPortfolioSharesOutput::portfolio_details): <p>Information about the portfolios.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::ListAcceptedPortfolioSharesOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -6622,7 +6622,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAcceptedPortfolioShares`.
     ///
-    /// <p>Lists all portfolios for which sharing was accepted by this account.</p>
+    /// <p>Lists all imported portfolios for which account-to-account shares were accepted by this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios for which organizational shares were accepted by this account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAcceptedPortfolioShares {
         handle: std::sync::Arc<super::Handle>,
@@ -6713,9 +6713,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
-        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
-        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
         /// </ul>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.inner = self.inner.portfolio_share_type(input);
@@ -6723,9 +6723,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
-        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
-        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
         /// </ul>
         pub fn set_portfolio_share_type(
             mut self,

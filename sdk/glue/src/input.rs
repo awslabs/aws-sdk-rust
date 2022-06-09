@@ -4775,6 +4775,9 @@ pub mod create_job_input {
         pub(crate) glue_version: std::option::Option<std::string::String>,
         pub(crate) number_of_workers: std::option::Option<i32>,
         pub(crate) worker_type: std::option::Option<crate::model::WorkerType>,
+        pub(crate) code_gen_configuration_nodes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+        >,
     }
     impl Builder {
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -5065,6 +5068,34 @@ pub mod create_job_input {
             self.worker_type = input;
             self
         }
+        /// Adds a key-value pair to `code_gen_configuration_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_code_gen_configuration_nodes`](Self::set_code_gen_configuration_nodes).
+        ///
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn code_gen_configuration_nodes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::CodeGenConfigurationNode,
+        ) -> Self {
+            let mut hash_map = self.code_gen_configuration_nodes.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.code_gen_configuration_nodes = Some(hash_map);
+            self
+        }
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn set_code_gen_configuration_nodes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::CodeGenConfigurationNode,
+                >,
+            >,
+        ) -> Self {
+            self.code_gen_configuration_nodes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput)
         pub fn build(
             self,
@@ -5090,6 +5121,7 @@ pub mod create_job_input {
                 glue_version: self.glue_version,
                 number_of_workers: self.number_of_workers,
                 worker_type: self.worker_type,
+                code_gen_configuration_nodes: self.code_gen_configuration_nodes,
             })
         }
     }
@@ -39648,6 +39680,10 @@ pub struct CreateJobInput {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
+    /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    pub code_gen_configuration_nodes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+    >,
 }
 impl CreateJobInput {
     /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -39756,6 +39792,14 @@ impl CreateJobInput {
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
+    /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    pub fn code_gen_configuration_nodes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
+    > {
+        self.code_gen_configuration_nodes.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39779,6 +39823,10 @@ impl std::fmt::Debug for CreateJobInput {
         formatter.field("glue_version", &self.glue_version);
         formatter.field("number_of_workers", &self.number_of_workers);
         formatter.field("worker_type", &self.worker_type);
+        formatter.field(
+            "code_gen_configuration_nodes",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }

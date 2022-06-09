@@ -163,6 +163,9 @@ pub enum Error {
     StreamingDistributionNotDisabled(crate::error::StreamingDistributionNotDisabled),
     /// <p>The CloudFront function failed.</p>
     TestFunctionFailed(crate::error::TestFunctionFailed),
+    /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooLongCspInResponseHeadersPolicy(crate::error::TooLongCspInResponseHeadersPolicy),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
     /// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -381,6 +384,7 @@ impl std::fmt::Display for Error {
             Error::StreamingDistributionAlreadyExists(inner) => inner.fmt(f),
             Error::StreamingDistributionNotDisabled(inner) => inner.fmt(f),
             Error::TestFunctionFailed(inner) => inner.fmt(f),
+            Error::TooLongCspInResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::TooManyCacheBehaviors(inner) => inner.fmt(f),
             Error::TooManyCachePolicies(inner) => inner.fmt(f),
             Error::TooManyCertificates(inner) => inner.fmt(f),
@@ -949,6 +953,7 @@ where
                 crate::error::CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::CreateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
                 crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
                 crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(inner) => Error::TooManyResponseHeadersPolicies(inner),
                 crate::error::CreateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -2965,6 +2970,7 @@ where
                 crate::error::UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
                 crate::error::UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
                 crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
                 crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
                 crate::error::UpdateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }

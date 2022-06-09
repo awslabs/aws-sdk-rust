@@ -1071,7 +1071,7 @@ pub struct AdminDisableProviderForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminDisableProviderForUserErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -2239,7 +2239,7 @@ pub struct AdminLinkProviderForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminLinkProviderForUserErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -3261,7 +3261,7 @@ pub struct AdminRespondToAuthChallengeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminRespondToAuthChallengeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -4400,7 +4400,7 @@ pub struct AdminUpdateUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminUpdateUserAttributesErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -5601,7 +5601,7 @@ pub struct ConfirmSignUpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmSignUpErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -12929,7 +12929,7 @@ pub struct RespondToAuthChallengeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RespondToAuthChallengeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -15738,7 +15738,7 @@ pub struct UpdateUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserAttributesErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
@@ -16768,6 +16768,8 @@ pub struct VerifyUserAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyUserAttributeErrorKind {
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
@@ -16796,6 +16798,7 @@ pub enum VerifyUserAttributeErrorKind {
 impl std::fmt::Display for VerifyUserAttributeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            VerifyUserAttributeErrorKind::AliasExistsException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::ExpiredCodeException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
@@ -16860,6 +16863,13 @@ impl VerifyUserAttributeError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::AliasExistsException`.
+    pub fn is_alias_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyUserAttributeErrorKind::AliasExistsException(_)
+        )
     }
     /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
@@ -16942,6 +16952,7 @@ impl VerifyUserAttributeError {
 impl std::error::Error for VerifyUserAttributeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            VerifyUserAttributeErrorKind::AliasExistsException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::CodeMismatchException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::ExpiredCodeException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::InternalErrorException(_inner) => Some(_inner),
@@ -17662,6 +17673,70 @@ impl CodeMismatchException {
     }
 }
 
+/// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AliasExistsException {
+    /// <p>The message sent to the user when an alias exists.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AliasExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AliasExistsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AliasExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AliasExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AliasExistsException")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AliasExistsException {}
+/// See [`AliasExistsException`](crate::error::AliasExistsException)
+pub mod alias_exists_exception {
+    /// A builder for [`AliasExistsException`](crate::error::AliasExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The message sent to the user when an alias exists.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message sent to the user when an alias exists.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AliasExistsException`](crate::error::AliasExistsException)
+        pub fn build(self) -> crate::error::AliasExistsException {
+            crate::error::AliasExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AliasExistsException {
+    /// Creates a new builder-style object to manufacture [`AliasExistsException`](crate::error::AliasExistsException)
+    pub fn builder() -> crate::error::alias_exists_exception::Builder {
+        crate::error::alias_exists_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17688,8 +17763,8 @@ impl std::fmt::Display for SoftwareTokenMfaNotFoundException {
             f,
             "SoftwareTokenMfaNotFoundException [SoftwareTokenMFANotFoundException]"
         )?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -17752,8 +17827,8 @@ impl InvalidUserPoolConfigurationException {
 impl std::fmt::Display for InvalidUserPoolConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUserPoolConfigurationException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -17819,8 +17894,8 @@ impl std::fmt::Display for EnableSoftwareTokenMfaException {
             f,
             "EnableSoftwareTokenMfaException [EnableSoftwareTokenMFAException]"
         )?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -17883,8 +17958,8 @@ impl ScopeDoesNotExistException {
 impl std::fmt::Display for ScopeDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScopeDoesNotExistException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -17947,8 +18022,8 @@ impl InvalidOAuthFlowException {
 impl std::fmt::Display for InvalidOAuthFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOAuthFlowException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -18011,8 +18086,8 @@ impl ConcurrentModificationException {
 impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -18075,8 +18150,8 @@ impl UserPoolTaggingException {
 impl std::fmt::Display for UserPoolTaggingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserPoolTaggingException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -18139,8 +18214,8 @@ impl UserImportInProgressException {
 impl std::fmt::Display for UserImportInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserImportInProgressException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -18203,8 +18278,8 @@ impl InvalidSmsRoleTrustRelationshipException {
 impl std::fmt::Display for InvalidSmsRoleTrustRelationshipException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSmsRoleTrustRelationshipException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -18267,8 +18342,8 @@ impl InvalidSmsRoleAccessPolicyException {
 impl std::fmt::Display for InvalidSmsRoleAccessPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSmsRoleAccessPolicyException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -18331,8 +18406,8 @@ impl InvalidEmailRoleAccessPolicyException {
 impl std::fmt::Display for InvalidEmailRoleAccessPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEmailRoleAccessPolicyException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -18395,8 +18470,8 @@ impl UserLambdaValidationException {
 impl std::fmt::Display for UserLambdaValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserLambdaValidationException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -18459,8 +18534,8 @@ impl UnexpectedLambdaException {
 impl std::fmt::Display for UnexpectedLambdaException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnexpectedLambdaException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -18504,7 +18579,7 @@ impl UnexpectedLambdaException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaResponseException {
-    /// <p>The message returned when Amazon Cognito hrows an invalid Lambda response exception.</p>
+    /// <p>The message returned when Amazon Cognito throws an invalid Lambda response exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLambdaResponseException {
@@ -18523,8 +18598,8 @@ impl InvalidLambdaResponseException {
 impl std::fmt::Display for InvalidLambdaResponseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLambdaResponseException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -18539,12 +18614,12 @@ pub mod invalid_lambda_response_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when Amazon Cognito hrows an invalid Lambda response exception.</p>
+        /// <p>The message returned when Amazon Cognito throws an invalid Lambda response exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when Amazon Cognito hrows an invalid Lambda response exception.</p>
+        /// <p>The message returned when Amazon Cognito throws an invalid Lambda response exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -18587,8 +18662,8 @@ impl CodeDeliveryFailureException {
 impl std::fmt::Display for CodeDeliveryFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CodeDeliveryFailureException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -18625,70 +18700,6 @@ impl CodeDeliveryFailureException {
     /// Creates a new builder-style object to manufacture [`CodeDeliveryFailureException`](crate::error::CodeDeliveryFailureException)
     pub fn builder() -> crate::error::code_delivery_failure_exception::Builder {
         crate::error::code_delivery_failure_exception::Builder::default()
-    }
-}
-
-/// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AliasExistsException {
-    /// <p>The message sent to the user when an alias exists.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AliasExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl AliasExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AliasExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AliasExistsException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AliasExistsException {}
-/// See [`AliasExistsException`](crate::error::AliasExistsException)
-pub mod alias_exists_exception {
-    /// A builder for [`AliasExistsException`](crate::error::AliasExistsException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The message sent to the user when an alias exists.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The message sent to the user when an alias exists.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AliasExistsException`](crate::error::AliasExistsException)
-        pub fn build(self) -> crate::error::AliasExistsException {
-            crate::error::AliasExistsException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AliasExistsException {
-    /// Creates a new builder-style object to manufacture [`AliasExistsException`](crate::error::AliasExistsException)
-    pub fn builder() -> crate::error::alias_exists_exception::Builder {
-        crate::error::alias_exists_exception::Builder::default()
     }
 }
 

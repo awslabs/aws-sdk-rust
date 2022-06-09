@@ -2293,6 +2293,8 @@ pub mod create_container_service_input {
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
         pub(crate) deployment: std::option::Option<crate::model::ContainerServiceDeploymentRequest>,
+        pub(crate) private_registry_access:
+            std::option::Option<crate::model::PrivateRegistryAccessRequest>,
     }
     impl Builder {
         /// <p>The name for the container service.</p>
@@ -2444,6 +2446,24 @@ pub mod create_container_service_input {
             self.deployment = input;
             self
         }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn private_registry_access(
+            mut self,
+            input: crate::model::PrivateRegistryAccessRequest,
+        ) -> Self {
+            self.private_registry_access = Some(input);
+            self
+        }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn set_private_registry_access(
+            mut self,
+            input: std::option::Option<crate::model::PrivateRegistryAccessRequest>,
+        ) -> Self {
+            self.private_registry_access = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateContainerServiceInput`](crate::input::CreateContainerServiceInput)
         pub fn build(
             self,
@@ -2458,6 +2478,7 @@ pub mod create_container_service_input {
                 tags: self.tags,
                 public_domain_names: self.public_domain_names,
                 deployment: self.deployment,
+                private_registry_access: self.private_registry_access,
             })
         }
     }
@@ -11656,12 +11677,12 @@ pub mod get_blueprints_input {
         pub(crate) page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.include_inactive = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.include_inactive = input;
             self
@@ -11955,12 +11976,12 @@ pub mod get_bucket_bundles_input {
         pub(crate) include_inactive: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.include_inactive = Some(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.include_inactive = input;
             self
@@ -12538,12 +12559,12 @@ pub mod get_bundles_input {
         pub(crate) page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.include_inactive = Some(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.include_inactive = input;
             self
@@ -19550,6 +19571,7 @@ pub mod get_relational_database_bundles_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
+        pub(crate) include_inactive: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -19564,6 +19586,16 @@ pub mod get_relational_database_bundles_input {
             self.page_token = input;
             self
         }
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+        pub fn include_inactive(mut self, input: bool) -> Self {
+            self.include_inactive = Some(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+        pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_inactive = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseBundlesInput`](crate::input::GetRelationalDatabaseBundlesInput)
         pub fn build(
             self,
@@ -19573,6 +19605,7 @@ pub mod get_relational_database_bundles_input {
         > {
             Ok(crate::input::GetRelationalDatabaseBundlesInput {
                 page_token: self.page_token,
+                include_inactive: self.include_inactive,
             })
         }
     }
@@ -25619,6 +25652,8 @@ pub mod update_container_service_input {
         pub(crate) public_domain_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
+        pub(crate) private_registry_access:
+            std::option::Option<crate::model::PrivateRegistryAccessRequest>,
     }
     impl Builder {
         /// <p>The name of the container service to update.</p>
@@ -25705,6 +25740,24 @@ pub mod update_container_service_input {
             self.public_domain_names = input;
             self
         }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn private_registry_access(
+            mut self,
+            input: crate::model::PrivateRegistryAccessRequest,
+        ) -> Self {
+            self.private_registry_access = Some(input);
+            self
+        }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn set_private_registry_access(
+            mut self,
+            input: std::option::Option<crate::model::PrivateRegistryAccessRequest>,
+        ) -> Self {
+            self.private_registry_access = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateContainerServiceInput`](crate::input::UpdateContainerServiceInput)
         pub fn build(
             self,
@@ -25718,6 +25771,7 @@ pub mod update_container_service_input {
                 scale: self.scale,
                 is_disabled: self.is_disabled,
                 public_domain_names: self.public_domain_names,
+                private_registry_access: self.private_registry_access,
             })
         }
     }
@@ -27431,6 +27485,9 @@ pub struct UpdateContainerServiceInput {
     pub public_domain_names: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+    /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+    /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub private_registry_access: std::option::Option<crate::model::PrivateRegistryAccessRequest>,
 }
 impl UpdateContainerServiceInput {
     /// <p>The name of the container service to update.</p>
@@ -27465,6 +27522,13 @@ impl UpdateContainerServiceInput {
     > {
         self.public_domain_names.as_ref()
     }
+    /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+    /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn private_registry_access(
+        &self,
+    ) -> std::option::Option<&crate::model::PrivateRegistryAccessRequest> {
+        self.private_registry_access.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateContainerServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27474,6 +27538,7 @@ impl std::fmt::Debug for UpdateContainerServiceInput {
         formatter.field("scale", &self.scale);
         formatter.field("is_disabled", &self.is_disabled);
         formatter.field("public_domain_names", &self.public_domain_names);
+        formatter.field("private_registry_access", &self.private_registry_access);
         formatter.finish()
     }
 }
@@ -28768,6 +28833,8 @@ pub struct GetRelationalDatabaseBundlesInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub include_inactive: std::option::Option<bool>,
 }
 impl GetRelationalDatabaseBundlesInput {
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -28775,11 +28842,16 @@ impl GetRelationalDatabaseBundlesInput {
     pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn include_inactive(&self) -> std::option::Option<bool> {
+        self.include_inactive
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseBundlesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseBundlesInput");
         formatter.field("page_token", &self.page_token);
+        formatter.field("include_inactive", &self.include_inactive);
         formatter.finish()
     }
 }
@@ -30158,14 +30230,14 @@ impl std::fmt::Debug for GetCertificatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBundlesInput {
-    /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub include_inactive: std::option::Option<bool>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
 impl GetBundlesInput {
-    /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn include_inactive(&self) -> std::option::Option<bool> {
         self.include_inactive
     }
@@ -30329,11 +30401,11 @@ impl std::fmt::Debug for GetBucketMetricDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketBundlesInput {
-    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub include_inactive: std::option::Option<bool>,
 }
 impl GetBucketBundlesInput {
-    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn include_inactive(&self) -> std::option::Option<bool> {
         self.include_inactive
     }
@@ -30371,14 +30443,14 @@ impl std::fmt::Debug for GetBucketAccessKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintsInput {
-    /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
     pub include_inactive: std::option::Option<bool>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
 impl GetBlueprintsInput {
-    /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
     pub fn include_inactive(&self) -> std::option::Option<bool> {
         self.include_inactive
     }
@@ -32608,6 +32680,9 @@ pub struct CreateContainerServiceInput {
     /// <p>An object that describes a deployment for the container service.</p>
     /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
     pub deployment: std::option::Option<crate::model::ContainerServiceDeploymentRequest>,
+    /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+    /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub private_registry_access: std::option::Option<crate::model::PrivateRegistryAccessRequest>,
 }
 impl CreateContainerServiceInput {
     /// <p>The name for the container service.</p>
@@ -32668,6 +32743,13 @@ impl CreateContainerServiceInput {
     ) -> std::option::Option<&crate::model::ContainerServiceDeploymentRequest> {
         self.deployment.as_ref()
     }
+    /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+    /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn private_registry_access(
+        &self,
+    ) -> std::option::Option<&crate::model::PrivateRegistryAccessRequest> {
+        self.private_registry_access.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateContainerServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32678,6 +32760,7 @@ impl std::fmt::Debug for CreateContainerServiceInput {
         formatter.field("tags", &self.tags);
         formatter.field("public_domain_names", &self.public_domain_names);
         formatter.field("deployment", &self.deployment);
+        formatter.field("private_registry_access", &self.private_registry_access);
         formatter.finish()
     }
 }

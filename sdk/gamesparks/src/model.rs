@@ -1156,6 +1156,8 @@ pub struct StageDeploymentDetails {
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the deployment was last updated.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The result of the deployment.</p>
+    pub deployment_result: std::option::Option<crate::model::DeploymentResult>,
 }
 impl StageDeploymentDetails {
     /// <p>The identifier of the deployment.</p>
@@ -1182,6 +1184,10 @@ impl StageDeploymentDetails {
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
+    /// <p>The result of the deployment.</p>
+    pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
+        self.deployment_result.as_ref()
+    }
 }
 impl std::fmt::Debug for StageDeploymentDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1192,6 +1198,7 @@ impl std::fmt::Debug for StageDeploymentDetails {
         formatter.field("deployment_state", &self.deployment_state);
         formatter.field("created", &self.created);
         formatter.field("last_updated", &self.last_updated);
+        formatter.field("deployment_result", &self.deployment_result);
         formatter.finish()
     }
 }
@@ -1207,6 +1214,7 @@ pub mod stage_deployment_details {
         pub(crate) deployment_state: std::option::Option<crate::model::DeploymentState>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deployment_result: std::option::Option<crate::model::DeploymentResult>,
     }
     impl Builder {
         /// <p>The identifier of the deployment.</p>
@@ -1284,6 +1292,19 @@ pub mod stage_deployment_details {
             self.last_updated = input;
             self
         }
+        /// <p>The result of the deployment.</p>
+        pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
+            self.deployment_result = Some(input);
+            self
+        }
+        /// <p>The result of the deployment.</p>
+        pub fn set_deployment_result(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentResult>,
+        ) -> Self {
+            self.deployment_result = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StageDeploymentDetails`](crate::model::StageDeploymentDetails)
         pub fn build(self) -> crate::model::StageDeploymentDetails {
             crate::model::StageDeploymentDetails {
@@ -1293,6 +1314,7 @@ pub mod stage_deployment_details {
                 deployment_state: self.deployment_state,
                 created: self.created,
                 last_updated: self.last_updated,
+                deployment_result: self.deployment_result,
             }
         }
     }
@@ -1301,6 +1323,141 @@ impl StageDeploymentDetails {
     /// Creates a new builder-style object to manufacture [`StageDeploymentDetails`](crate::model::StageDeploymentDetails)
     pub fn builder() -> crate::model::stage_deployment_details::Builder {
         crate::model::stage_deployment_details::Builder::default()
+    }
+}
+
+/// <p>The result of the deployment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeploymentResult {
+    /// <p>The type of deployment result.</p>
+    pub result_code: std::option::Option<crate::model::ResultCode>,
+    /// <p>Details about the deployment result.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl DeploymentResult {
+    /// <p>The type of deployment result.</p>
+    pub fn result_code(&self) -> std::option::Option<&crate::model::ResultCode> {
+        self.result_code.as_ref()
+    }
+    /// <p>Details about the deployment result.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for DeploymentResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeploymentResult");
+        formatter.field("result_code", &self.result_code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`DeploymentResult`](crate::model::DeploymentResult)
+pub mod deployment_result {
+    /// A builder for [`DeploymentResult`](crate::model::DeploymentResult)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_code: std::option::Option<crate::model::ResultCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of deployment result.</p>
+        pub fn result_code(mut self, input: crate::model::ResultCode) -> Self {
+            self.result_code = Some(input);
+            self
+        }
+        /// <p>The type of deployment result.</p>
+        pub fn set_result_code(
+            mut self,
+            input: std::option::Option<crate::model::ResultCode>,
+        ) -> Self {
+            self.result_code = input;
+            self
+        }
+        /// <p>Details about the deployment result.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Details about the deployment result.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeploymentResult`](crate::model::DeploymentResult)
+        pub fn build(self) -> crate::model::DeploymentResult {
+            crate::model::DeploymentResult {
+                result_code: self.result_code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl DeploymentResult {
+    /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult)
+    pub fn builder() -> crate::model::deployment_result::Builder {
+        crate::model::deployment_result::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResultCode {
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidRoleFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    #[allow(missing_docs)] // documentation missing in model
+    UnspecifiedFailure,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResultCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "INVALID_ROLE_FAILURE" => ResultCode::InvalidRoleFailure,
+            "SUCCESS" => ResultCode::Success,
+            "UNSPECIFIED_FAILURE" => ResultCode::UnspecifiedFailure,
+            other => ResultCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResultCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResultCode::from(s))
+    }
+}
+impl ResultCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResultCode::InvalidRoleFailure => "INVALID_ROLE_FAILURE",
+            ResultCode::Success => "SUCCESS",
+            ResultCode::UnspecifiedFailure => "UNSPECIFIED_FAILURE",
+            ResultCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["INVALID_ROLE_FAILURE", "SUCCESS", "UNSPECIFIED_FAILURE"]
+    }
+}
+impl AsRef<str> for ResultCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1693,6 +1850,8 @@ pub struct StageDeploymentSummary {
     pub deployment_state: std::option::Option<crate::model::DeploymentState>,
     /// <p>The timestamp of when the deployment was last updated.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The result of the deployment.</p>
+    pub deployment_result: std::option::Option<crate::model::DeploymentResult>,
 }
 impl StageDeploymentSummary {
     /// <p>The identifier of the deployment.</p>
@@ -1715,6 +1874,10 @@ impl StageDeploymentSummary {
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
+    /// <p>The result of the deployment.</p>
+    pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
+        self.deployment_result.as_ref()
+    }
 }
 impl std::fmt::Debug for StageDeploymentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1724,6 +1887,7 @@ impl std::fmt::Debug for StageDeploymentSummary {
         formatter.field("deployment_action", &self.deployment_action);
         formatter.field("deployment_state", &self.deployment_state);
         formatter.field("last_updated", &self.last_updated);
+        formatter.field("deployment_result", &self.deployment_result);
         formatter.finish()
     }
 }
@@ -1738,6 +1902,7 @@ pub mod stage_deployment_summary {
         pub(crate) deployment_action: std::option::Option<crate::model::DeploymentAction>,
         pub(crate) deployment_state: std::option::Option<crate::model::DeploymentState>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deployment_result: std::option::Option<crate::model::DeploymentResult>,
     }
     impl Builder {
         /// <p>The identifier of the deployment.</p>
@@ -1802,6 +1967,19 @@ pub mod stage_deployment_summary {
             self.last_updated = input;
             self
         }
+        /// <p>The result of the deployment.</p>
+        pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
+            self.deployment_result = Some(input);
+            self
+        }
+        /// <p>The result of the deployment.</p>
+        pub fn set_deployment_result(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentResult>,
+        ) -> Self {
+            self.deployment_result = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StageDeploymentSummary`](crate::model::StageDeploymentSummary)
         pub fn build(self) -> crate::model::StageDeploymentSummary {
             crate::model::StageDeploymentSummary {
@@ -1810,6 +1988,7 @@ pub mod stage_deployment_summary {
                 deployment_action: self.deployment_action,
                 deployment_state: self.deployment_state,
                 last_updated: self.last_updated,
+                deployment_result: self.deployment_result,
             }
         }
     }

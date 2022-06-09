@@ -1050,6 +1050,732 @@ impl S3Config {
     }
 }
 
+/// <p>Provides a summary of the monitor properties used in the <code>ListMonitors</code> operation. To get a complete set of properties, call the <code>DescribeMonitor</code> operation, and provide the listed <code>MonitorArn</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MonitorSummary {
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub monitor_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the monitor resource.</p>
+    pub monitor_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the monitor. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>When the monitor resource was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - When the resource stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p> </li>
+    /// </ul>
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl MonitorSummary {
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+    /// <p>The name of the monitor resource.</p>
+    pub fn monitor_name(&self) -> std::option::Option<&str> {
+        self.monitor_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The status of the monitor. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>When the monitor resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - When the resource stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p> </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+}
+impl std::fmt::Debug for MonitorSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MonitorSummary");
+        formatter.field("monitor_arn", &self.monitor_arn);
+        formatter.field("monitor_name", &self.monitor_name);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.finish()
+    }
+}
+/// See [`MonitorSummary`](crate::model::MonitorSummary)
+pub mod monitor_summary {
+    /// A builder for [`MonitorSummary`](crate::model::MonitorSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitor_arn: std::option::Option<std::string::String>,
+        pub(crate) monitor_name: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_arn = input;
+            self
+        }
+        /// <p>The name of the monitor resource.</p>
+        pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the monitor resource.</p>
+        pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The status of the monitor. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the monitor. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>When the monitor resource was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>When the monitor resource was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>STOPPED</code> - When the resource stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p> </li>
+        /// </ul>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>STOPPED</code> - When the resource stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p> </li>
+        /// </ul>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonitorSummary`](crate::model::MonitorSummary)
+        pub fn build(self) -> crate::model::MonitorSummary {
+            crate::model::MonitorSummary {
+                monitor_arn: self.monitor_arn,
+                monitor_name: self.monitor_name,
+                resource_arn: self.resource_arn,
+                status: self.status,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+            }
+        }
+    }
+}
+impl MonitorSummary {
+    /// Creates a new builder-style object to manufacture [`MonitorSummary`](crate::model::MonitorSummary)
+    pub fn builder() -> crate::model::monitor_summary::Builder {
+        crate::model::monitor_summary::Builder::default()
+    }
+}
+
+/// <p>Describes the results of a monitor evaluation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PredictorMonitorEvaluation {
+    /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub monitor_arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
+    pub evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
+    pub evaluation_state: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
+    pub window_start_datetime: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
+    pub window_end_datetime: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Provides details about a predictor event, such as a retraining.</p>
+    pub predictor_event: std::option::Option<crate::model::PredictorEvent>,
+    /// <p>The source of the data the monitor resource used during the evaluation.</p>
+    pub monitor_data_source: std::option::Option<crate::model::MonitorDataSource>,
+    /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+    pub metric_results: std::option::Option<std::vec::Vec<crate::model::MetricResult>>,
+    /// <p>The number of items considered during the evaluation.</p>
+    pub num_items_evaluated: std::option::Option<i64>,
+    /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl PredictorMonitorEvaluation {
+    /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
+    pub fn evaluation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.evaluation_time.as_ref()
+    }
+    /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
+    pub fn evaluation_state(&self) -> std::option::Option<&str> {
+        self.evaluation_state.as_deref()
+    }
+    /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
+    pub fn window_start_datetime(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.window_start_datetime.as_ref()
+    }
+    /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
+    pub fn window_end_datetime(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.window_end_datetime.as_ref()
+    }
+    /// <p>Provides details about a predictor event, such as a retraining.</p>
+    pub fn predictor_event(&self) -> std::option::Option<&crate::model::PredictorEvent> {
+        self.predictor_event.as_ref()
+    }
+    /// <p>The source of the data the monitor resource used during the evaluation.</p>
+    pub fn monitor_data_source(&self) -> std::option::Option<&crate::model::MonitorDataSource> {
+        self.monitor_data_source.as_ref()
+    }
+    /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+    pub fn metric_results(&self) -> std::option::Option<&[crate::model::MetricResult]> {
+        self.metric_results.as_deref()
+    }
+    /// <p>The number of items considered during the evaluation.</p>
+    pub fn num_items_evaluated(&self) -> std::option::Option<i64> {
+        self.num_items_evaluated
+    }
+    /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for PredictorMonitorEvaluation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictorMonitorEvaluation");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("monitor_arn", &self.monitor_arn);
+        formatter.field("evaluation_time", &self.evaluation_time);
+        formatter.field("evaluation_state", &self.evaluation_state);
+        formatter.field("window_start_datetime", &self.window_start_datetime);
+        formatter.field("window_end_datetime", &self.window_end_datetime);
+        formatter.field("predictor_event", &self.predictor_event);
+        formatter.field("monitor_data_source", &self.monitor_data_source);
+        formatter.field("metric_results", &self.metric_results);
+        formatter.field("num_items_evaluated", &self.num_items_evaluated);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation)
+pub mod predictor_monitor_evaluation {
+    /// A builder for [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) monitor_arn: std::option::Option<std::string::String>,
+        pub(crate) evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) evaluation_state: std::option::Option<std::string::String>,
+        pub(crate) window_start_datetime: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) window_end_datetime: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) predictor_event: std::option::Option<crate::model::PredictorEvent>,
+        pub(crate) monitor_data_source: std::option::Option<crate::model::MonitorDataSource>,
+        pub(crate) metric_results: std::option::Option<std::vec::Vec<crate::model::MetricResult>>,
+        pub(crate) num_items_evaluated: std::option::Option<i64>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
+        pub fn evaluation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.evaluation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
+        pub fn set_evaluation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.evaluation_time = input;
+            self
+        }
+        /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
+        pub fn evaluation_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_state = Some(input.into());
+            self
+        }
+        /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
+        pub fn set_evaluation_state(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_state = input;
+            self
+        }
+        /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
+        pub fn window_start_datetime(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.window_start_datetime = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
+        pub fn set_window_start_datetime(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.window_start_datetime = input;
+            self
+        }
+        /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
+        pub fn window_end_datetime(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.window_end_datetime = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
+        pub fn set_window_end_datetime(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.window_end_datetime = input;
+            self
+        }
+        /// <p>Provides details about a predictor event, such as a retraining.</p>
+        pub fn predictor_event(mut self, input: crate::model::PredictorEvent) -> Self {
+            self.predictor_event = Some(input);
+            self
+        }
+        /// <p>Provides details about a predictor event, such as a retraining.</p>
+        pub fn set_predictor_event(
+            mut self,
+            input: std::option::Option<crate::model::PredictorEvent>,
+        ) -> Self {
+            self.predictor_event = input;
+            self
+        }
+        /// <p>The source of the data the monitor resource used during the evaluation.</p>
+        pub fn monitor_data_source(mut self, input: crate::model::MonitorDataSource) -> Self {
+            self.monitor_data_source = Some(input);
+            self
+        }
+        /// <p>The source of the data the monitor resource used during the evaluation.</p>
+        pub fn set_monitor_data_source(
+            mut self,
+            input: std::option::Option<crate::model::MonitorDataSource>,
+        ) -> Self {
+            self.monitor_data_source = input;
+            self
+        }
+        /// Appends an item to `metric_results`.
+        ///
+        /// To override the contents of this collection use [`set_metric_results`](Self::set_metric_results).
+        ///
+        /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+        pub fn metric_results(mut self, input: crate::model::MetricResult) -> Self {
+            let mut v = self.metric_results.unwrap_or_default();
+            v.push(input);
+            self.metric_results = Some(v);
+            self
+        }
+        /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+        pub fn set_metric_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricResult>>,
+        ) -> Self {
+            self.metric_results = input;
+            self
+        }
+        /// <p>The number of items considered during the evaluation.</p>
+        pub fn num_items_evaluated(mut self, input: i64) -> Self {
+            self.num_items_evaluated = Some(input);
+            self
+        }
+        /// <p>The number of items considered during the evaluation.</p>
+        pub fn set_num_items_evaluated(mut self, input: std::option::Option<i64>) -> Self {
+            self.num_items_evaluated = input;
+            self
+        }
+        /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation)
+        pub fn build(self) -> crate::model::PredictorMonitorEvaluation {
+            crate::model::PredictorMonitorEvaluation {
+                resource_arn: self.resource_arn,
+                monitor_arn: self.monitor_arn,
+                evaluation_time: self.evaluation_time,
+                evaluation_state: self.evaluation_state,
+                window_start_datetime: self.window_start_datetime,
+                window_end_datetime: self.window_end_datetime,
+                predictor_event: self.predictor_event,
+                monitor_data_source: self.monitor_data_source,
+                metric_results: self.metric_results,
+                num_items_evaluated: self.num_items_evaluated,
+                message: self.message,
+            }
+        }
+    }
+}
+impl PredictorMonitorEvaluation {
+    /// Creates a new builder-style object to manufacture [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation)
+    pub fn builder() -> crate::model::predictor_monitor_evaluation::Builder {
+        crate::model::predictor_monitor_evaluation::Builder::default()
+    }
+}
+
+/// <p>An individual metric Forecast calculated when monitoring predictor usage. You can compare the value for this metric to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+/// <p>For more information about metrics generated by Forecast see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Evaluating Predictor Accuracy</a> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricResult {
+    /// <p>The name of the metric.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The value for the metric.</p>
+    pub metric_value: std::option::Option<f64>,
+}
+impl MetricResult {
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The value for the metric.</p>
+    pub fn metric_value(&self) -> std::option::Option<f64> {
+        self.metric_value
+    }
+}
+impl std::fmt::Debug for MetricResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricResult");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("metric_value", &self.metric_value);
+        formatter.finish()
+    }
+}
+/// See [`MetricResult`](crate::model::MetricResult)
+pub mod metric_result {
+    /// A builder for [`MetricResult`](crate::model::MetricResult)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) metric_value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The name of the metric.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The value for the metric.</p>
+        pub fn metric_value(mut self, input: f64) -> Self {
+            self.metric_value = Some(input);
+            self
+        }
+        /// <p>The value for the metric.</p>
+        pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.metric_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricResult`](crate::model::MetricResult)
+        pub fn build(self) -> crate::model::MetricResult {
+            crate::model::MetricResult {
+                metric_name: self.metric_name,
+                metric_value: self.metric_value,
+            }
+        }
+    }
+}
+impl MetricResult {
+    /// Creates a new builder-style object to manufacture [`MetricResult`](crate::model::MetricResult)
+    pub fn builder() -> crate::model::metric_result::Builder {
+        crate::model::metric_result::Builder::default()
+    }
+}
+
+/// <p>The source of the data the monitor used during the evaluation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MonitorDataSource {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
+    pub dataset_import_job_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
+    pub forecast_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
+    pub predictor_arn: std::option::Option<std::string::String>,
+}
+impl MonitorDataSource {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for MonitorDataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MonitorDataSource");
+        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
+        formatter.field("forecast_arn", &self.forecast_arn);
+        formatter.field("predictor_arn", &self.predictor_arn);
+        formatter.finish()
+    }
+}
+/// See [`MonitorDataSource`](crate::model::MonitorDataSource)
+pub mod monitor_data_source {
+    /// A builder for [`MonitorDataSource`](crate::model::MonitorDataSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
+        pub(crate) forecast_arn: std::option::Option<std::string::String>,
+        pub(crate) predictor_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
+        pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_import_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
+        pub fn set_dataset_import_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_import_job_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forecast_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
+        pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forecast_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.predictor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
+        pub fn set_predictor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.predictor_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonitorDataSource`](crate::model::MonitorDataSource)
+        pub fn build(self) -> crate::model::MonitorDataSource {
+            crate::model::MonitorDataSource {
+                dataset_import_job_arn: self.dataset_import_job_arn,
+                forecast_arn: self.forecast_arn,
+                predictor_arn: self.predictor_arn,
+            }
+        }
+    }
+}
+impl MonitorDataSource {
+    /// Creates a new builder-style object to manufacture [`MonitorDataSource`](crate::model::MonitorDataSource)
+    pub fn builder() -> crate::model::monitor_data_source::Builder {
+        crate::model::monitor_data_source::Builder::default()
+    }
+}
+
+/// <p>Provides details about a predictor event, such as a retraining.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PredictorEvent {
+    /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
+    pub detail: std::option::Option<std::string::String>,
+    /// <p>The timestamp for when the event occurred.</p>
+    pub datetime: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl PredictorEvent {
+    /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
+    pub fn detail(&self) -> std::option::Option<&str> {
+        self.detail.as_deref()
+    }
+    /// <p>The timestamp for when the event occurred.</p>
+    pub fn datetime(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.datetime.as_ref()
+    }
+}
+impl std::fmt::Debug for PredictorEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictorEvent");
+        formatter.field("detail", &self.detail);
+        formatter.field("datetime", &self.datetime);
+        formatter.finish()
+    }
+}
+/// See [`PredictorEvent`](crate::model::PredictorEvent)
+pub mod predictor_event {
+    /// A builder for [`PredictorEvent`](crate::model::PredictorEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detail: std::option::Option<std::string::String>,
+        pub(crate) datetime: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
+        pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detail = Some(input.into());
+            self
+        }
+        /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
+        pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detail = input;
+            self
+        }
+        /// <p>The timestamp for when the event occurred.</p>
+        pub fn datetime(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.datetime = Some(input);
+            self
+        }
+        /// <p>The timestamp for when the event occurred.</p>
+        pub fn set_datetime(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.datetime = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PredictorEvent`](crate::model::PredictorEvent)
+        pub fn build(self) -> crate::model::PredictorEvent {
+            crate::model::PredictorEvent {
+                detail: self.detail,
+                datetime: self.datetime,
+            }
+        }
+    }
+}
+impl PredictorEvent {
+    /// Creates a new builder-style object to manufacture [`PredictorEvent`](crate::model::PredictorEvent)
+    pub fn builder() -> crate::model::predictor_event::Builder {
+        crate::model::predictor_event::Builder::default()
+    }
+}
+
 /// <p>Provides a summary of the forecast properties used in the <code>ListForecasts</code> operation. To get the complete set of properties, call the <code>DescribeForecast</code> operation, and provide the <code>ForecastArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2281,7 +3007,7 @@ impl AsRef<str> for TimeSeriesGranularity {
     }
 }
 
-/// <p>Provides a summary of the dataset properties used in the <code>ListDatasets</code> operation. To get the complete set of properties, call the <code>DescribeDataset</code> operation, and provide the <code>DatasetArn</code>.</p>
+/// <p>Provides a summary of the dataset properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
@@ -2295,7 +3021,7 @@ pub struct DatasetSummary {
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>When the dataset was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
@@ -2319,7 +3045,7 @@ impl DatasetSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -2406,12 +3132,12 @@ pub mod dataset_summary {
             self.creation_time = input;
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2581,7 +3307,7 @@ impl AsRef<str> for DatasetType {
     }
 }
 
-/// <p>Provides a summary of the dataset import job properties used in the <code>ListDatasetImportJobs</code> operation. To get the complete set of properties, call the <code>DescribeDatasetImportJob</code> operation, and provide the <code>DatasetImportJobArn</code>.</p>
+/// <p>Provides a summary of the dataset import job properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImportJobSummary {
@@ -2874,7 +3600,7 @@ impl DataSource {
     }
 }
 
-/// <p>Provides a summary of the dataset group properties used in the <code>ListDatasetGroups</code> operation. To get the complete set of properties, call the <code>DescribeDatasetGroup</code> operation, and provide the <code>DatasetGroupArn</code>.</p>
+/// <p>Provides a summary of the dataset group properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroupSummary {
@@ -2884,7 +3610,7 @@ pub struct DatasetGroupSummary {
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetGroupSummary {
@@ -2900,7 +3626,7 @@ impl DatasetGroupSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -2966,12 +3692,12 @@ pub mod dataset_group_summary {
             self.creation_time = input;
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5935,6 +6661,200 @@ impl EvaluationParameters {
     }
 }
 
+/// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Baseline {
+    /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    pub predictor_baseline: std::option::Option<crate::model::PredictorBaseline>,
+}
+impl Baseline {
+    /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    pub fn predictor_baseline(&self) -> std::option::Option<&crate::model::PredictorBaseline> {
+        self.predictor_baseline.as_ref()
+    }
+}
+impl std::fmt::Debug for Baseline {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Baseline");
+        formatter.field("predictor_baseline", &self.predictor_baseline);
+        formatter.finish()
+    }
+}
+/// See [`Baseline`](crate::model::Baseline)
+pub mod baseline {
+    /// A builder for [`Baseline`](crate::model::Baseline)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) predictor_baseline: std::option::Option<crate::model::PredictorBaseline>,
+    }
+    impl Builder {
+        /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+        pub fn predictor_baseline(mut self, input: crate::model::PredictorBaseline) -> Self {
+            self.predictor_baseline = Some(input);
+            self
+        }
+        /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+        pub fn set_predictor_baseline(
+            mut self,
+            input: std::option::Option<crate::model::PredictorBaseline>,
+        ) -> Self {
+            self.predictor_baseline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Baseline`](crate::model::Baseline)
+        pub fn build(self) -> crate::model::Baseline {
+            crate::model::Baseline {
+                predictor_baseline: self.predictor_baseline,
+            }
+        }
+    }
+}
+impl Baseline {
+    /// Creates a new builder-style object to manufacture [`Baseline`](crate::model::Baseline)
+    pub fn builder() -> crate::model::baseline::Builder {
+        crate::model::baseline::Builder::default()
+    }
+}
+
+/// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PredictorBaseline {
+    /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    pub baseline_metrics: std::option::Option<std::vec::Vec<crate::model::BaselineMetric>>,
+}
+impl PredictorBaseline {
+    /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    pub fn baseline_metrics(&self) -> std::option::Option<&[crate::model::BaselineMetric]> {
+        self.baseline_metrics.as_deref()
+    }
+}
+impl std::fmt::Debug for PredictorBaseline {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictorBaseline");
+        formatter.field("baseline_metrics", &self.baseline_metrics);
+        formatter.finish()
+    }
+}
+/// See [`PredictorBaseline`](crate::model::PredictorBaseline)
+pub mod predictor_baseline {
+    /// A builder for [`PredictorBaseline`](crate::model::PredictorBaseline)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) baseline_metrics:
+            std::option::Option<std::vec::Vec<crate::model::BaselineMetric>>,
+    }
+    impl Builder {
+        /// Appends an item to `baseline_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_baseline_metrics`](Self::set_baseline_metrics).
+        ///
+        /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+        pub fn baseline_metrics(mut self, input: crate::model::BaselineMetric) -> Self {
+            let mut v = self.baseline_metrics.unwrap_or_default();
+            v.push(input);
+            self.baseline_metrics = Some(v);
+            self
+        }
+        /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+        pub fn set_baseline_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BaselineMetric>>,
+        ) -> Self {
+            self.baseline_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PredictorBaseline`](crate::model::PredictorBaseline)
+        pub fn build(self) -> crate::model::PredictorBaseline {
+            crate::model::PredictorBaseline {
+                baseline_metrics: self.baseline_metrics,
+            }
+        }
+    }
+}
+impl PredictorBaseline {
+    /// Creates a new builder-style object to manufacture [`PredictorBaseline`](crate::model::PredictorBaseline)
+    pub fn builder() -> crate::model::predictor_baseline::Builder {
+        crate::model::predictor_baseline::Builder::default()
+    }
+}
+
+/// <p>An individual metric that you can use for comparison as you evaluate your monitoring results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BaselineMetric {
+    /// <p>The name of the metric.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The value for the metric.</p>
+    pub value: std::option::Option<f64>,
+}
+impl BaselineMetric {
+    /// <p>The name of the metric.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the metric.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+}
+impl std::fmt::Debug for BaselineMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BaselineMetric");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`BaselineMetric`](crate::model::BaselineMetric)
+pub mod baseline_metric {
+    /// A builder for [`BaselineMetric`](crate::model::BaselineMetric)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The name of the metric.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The value for the metric.</p>
+        pub fn value(mut self, input: f64) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The value for the metric.</p>
+        pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BaselineMetric`](crate::model::BaselineMetric)
+        pub fn build(self) -> crate::model::BaselineMetric {
+            crate::model::BaselineMetric {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl BaselineMetric {
+    /// Creates a new builder-style object to manufacture [`BaselineMetric`](crate::model::BaselineMetric)
+    pub fn builder() -> crate::model::baseline_metric::Builder {
+        crate::model::baseline_metric::Builder::default()
+    }
+}
+
 /// <p>Defines the fields of a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5998,13 +6918,14 @@ impl Schema {
     }
 }
 
-/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <code>Schema</code> object contains an array of <code>SchemaAttribute</code> objects.</p>
+/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of <code>SchemaAttribute</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaAttribute {
     /// <p>The name of the dataset field.</p>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The data type of the field.</p>
+    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     pub attribute_type: std::option::Option<crate::model::AttributeType>,
 }
 impl SchemaAttribute {
@@ -6013,6 +6934,7 @@ impl SchemaAttribute {
         self.attribute_name.as_deref()
     }
     /// <p>The data type of the field.</p>
+    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
         self.attribute_type.as_ref()
     }
@@ -6049,11 +6971,13 @@ pub mod schema_attribute {
             self
         }
         /// <p>The data type of the field.</p>
+        /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
         pub fn attribute_type(mut self, input: crate::model::AttributeType) -> Self {
             self.attribute_type = Some(input);
             self
         }
         /// <p>The data type of the field.</p>
+        /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
         pub fn set_attribute_type(
             mut self,
             input: std::option::Option<crate::model::AttributeType>,
@@ -6144,7 +7068,7 @@ impl AsRef<str> for AttributeType {
     }
 }
 
-/// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with the <code>CreateDatasetImportJob</code> operation.</p>
+/// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
@@ -6407,6 +7331,413 @@ impl Statistics {
     }
 }
 
+/// <p>The time boundary Forecast uses to align and aggregate your data to match your forecast frequency. Provide the unit of time and the time boundary as a key value pair. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>. </p>
+/// <p>For more information about aggregation, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html">Data Aggregation for Different Forecast Frequencies</a>. For more information setting a custom time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeAlignmentBoundary {
+    /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
+    pub month: std::option::Option<crate::model::Month>,
+    /// <p>The day of the month to use for time alignment during aggregation.</p>
+    pub day_of_month: std::option::Option<i32>,
+    /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
+    pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
+    /// <p>The hour of day to use for time alignment during aggregation.</p>
+    pub hour: std::option::Option<i32>,
+}
+impl TimeAlignmentBoundary {
+    /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
+    pub fn month(&self) -> std::option::Option<&crate::model::Month> {
+        self.month.as_ref()
+    }
+    /// <p>The day of the month to use for time alignment during aggregation.</p>
+    pub fn day_of_month(&self) -> std::option::Option<i32> {
+        self.day_of_month
+    }
+    /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
+    pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
+        self.day_of_week.as_ref()
+    }
+    /// <p>The hour of day to use for time alignment during aggregation.</p>
+    pub fn hour(&self) -> std::option::Option<i32> {
+        self.hour
+    }
+}
+impl std::fmt::Debug for TimeAlignmentBoundary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeAlignmentBoundary");
+        formatter.field("month", &self.month);
+        formatter.field("day_of_month", &self.day_of_month);
+        formatter.field("day_of_week", &self.day_of_week);
+        formatter.field("hour", &self.hour);
+        formatter.finish()
+    }
+}
+/// See [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary)
+pub mod time_alignment_boundary {
+    /// A builder for [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) month: std::option::Option<crate::model::Month>,
+        pub(crate) day_of_month: std::option::Option<i32>,
+        pub(crate) day_of_week: std::option::Option<crate::model::DayOfWeek>,
+        pub(crate) hour: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
+        pub fn month(mut self, input: crate::model::Month) -> Self {
+            self.month = Some(input);
+            self
+        }
+        /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
+        pub fn set_month(mut self, input: std::option::Option<crate::model::Month>) -> Self {
+            self.month = input;
+            self
+        }
+        /// <p>The day of the month to use for time alignment during aggregation.</p>
+        pub fn day_of_month(mut self, input: i32) -> Self {
+            self.day_of_month = Some(input);
+            self
+        }
+        /// <p>The day of the month to use for time alignment during aggregation.</p>
+        pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
+            self.day_of_month = input;
+            self
+        }
+        /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
+        pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
+            self.day_of_week = Some(input);
+            self
+        }
+        /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
+        pub fn set_day_of_week(
+            mut self,
+            input: std::option::Option<crate::model::DayOfWeek>,
+        ) -> Self {
+            self.day_of_week = input;
+            self
+        }
+        /// <p>The hour of day to use for time alignment during aggregation.</p>
+        pub fn hour(mut self, input: i32) -> Self {
+            self.hour = Some(input);
+            self
+        }
+        /// <p>The hour of day to use for time alignment during aggregation.</p>
+        pub fn set_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary)
+        pub fn build(self) -> crate::model::TimeAlignmentBoundary {
+            crate::model::TimeAlignmentBoundary {
+                month: self.month,
+                day_of_month: self.day_of_month,
+                day_of_week: self.day_of_week,
+                hour: self.hour,
+            }
+        }
+    }
+}
+impl TimeAlignmentBoundary {
+    /// Creates a new builder-style object to manufacture [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary)
+    pub fn builder() -> crate::model::time_alignment_boundary::Builder {
+        crate::model::time_alignment_boundary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DayOfWeek {
+    #[allow(missing_docs)] // documentation missing in model
+    Friday,
+    #[allow(missing_docs)] // documentation missing in model
+    Monday,
+    #[allow(missing_docs)] // documentation missing in model
+    Saturday,
+    #[allow(missing_docs)] // documentation missing in model
+    Sunday,
+    #[allow(missing_docs)] // documentation missing in model
+    Thursday,
+    #[allow(missing_docs)] // documentation missing in model
+    Tuesday,
+    #[allow(missing_docs)] // documentation missing in model
+    Wednesday,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DayOfWeek {
+    fn from(s: &str) -> Self {
+        match s {
+            "FRIDAY" => DayOfWeek::Friday,
+            "MONDAY" => DayOfWeek::Monday,
+            "SATURDAY" => DayOfWeek::Saturday,
+            "SUNDAY" => DayOfWeek::Sunday,
+            "THURSDAY" => DayOfWeek::Thursday,
+            "TUESDAY" => DayOfWeek::Tuesday,
+            "WEDNESDAY" => DayOfWeek::Wednesday,
+            other => DayOfWeek::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DayOfWeek {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DayOfWeek::from(s))
+    }
+}
+impl DayOfWeek {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DayOfWeek::Friday => "FRIDAY",
+            DayOfWeek::Monday => "MONDAY",
+            DayOfWeek::Saturday => "SATURDAY",
+            DayOfWeek::Sunday => "SUNDAY",
+            DayOfWeek::Thursday => "THURSDAY",
+            DayOfWeek::Tuesday => "TUESDAY",
+            DayOfWeek::Wednesday => "WEDNESDAY",
+            DayOfWeek::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FRIDAY",
+            "MONDAY",
+            "SATURDAY",
+            "SUNDAY",
+            "THURSDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+        ]
+    }
+}
+impl AsRef<str> for DayOfWeek {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Month {
+    #[allow(missing_docs)] // documentation missing in model
+    April,
+    #[allow(missing_docs)] // documentation missing in model
+    August,
+    #[allow(missing_docs)] // documentation missing in model
+    December,
+    #[allow(missing_docs)] // documentation missing in model
+    February,
+    #[allow(missing_docs)] // documentation missing in model
+    January,
+    #[allow(missing_docs)] // documentation missing in model
+    July,
+    #[allow(missing_docs)] // documentation missing in model
+    June,
+    #[allow(missing_docs)] // documentation missing in model
+    March,
+    #[allow(missing_docs)] // documentation missing in model
+    May,
+    #[allow(missing_docs)] // documentation missing in model
+    November,
+    #[allow(missing_docs)] // documentation missing in model
+    October,
+    #[allow(missing_docs)] // documentation missing in model
+    September,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Month {
+    fn from(s: &str) -> Self {
+        match s {
+            "APRIL" => Month::April,
+            "AUGUST" => Month::August,
+            "DECEMBER" => Month::December,
+            "FEBRUARY" => Month::February,
+            "JANUARY" => Month::January,
+            "JULY" => Month::July,
+            "JUNE" => Month::June,
+            "MARCH" => Month::March,
+            "MAY" => Month::May,
+            "NOVEMBER" => Month::November,
+            "OCTOBER" => Month::October,
+            "SEPTEMBER" => Month::September,
+            other => Month::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Month {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Month::from(s))
+    }
+}
+impl Month {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Month::April => "APRIL",
+            Month::August => "AUGUST",
+            Month::December => "DECEMBER",
+            Month::February => "FEBRUARY",
+            Month::January => "JANUARY",
+            Month::July => "JULY",
+            Month::June => "JUNE",
+            Month::March => "MARCH",
+            Month::May => "MAY",
+            Month::November => "NOVEMBER",
+            Month::October => "OCTOBER",
+            Month::September => "SEPTEMBER",
+            Month::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "APRIL",
+            "AUGUST",
+            "DECEMBER",
+            "FEBRUARY",
+            "JANUARY",
+            "JULY",
+            "JUNE",
+            "MARCH",
+            "MAY",
+            "NOVEMBER",
+            "OCTOBER",
+            "SEPTEMBER",
+        ]
+    }
+}
+impl AsRef<str> for Month {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides information about the monitor resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MonitorInfo {
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub monitor_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the monitor. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub status: std::option::Option<std::string::String>,
+}
+impl MonitorInfo {
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+    /// <p>The status of the monitor. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for MonitorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MonitorInfo");
+        formatter.field("monitor_arn", &self.monitor_arn);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`MonitorInfo`](crate::model::MonitorInfo)
+pub mod monitor_info {
+    /// A builder for [`MonitorInfo`](crate::model::MonitorInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitor_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_arn = input;
+            self
+        }
+        /// <p>The status of the monitor. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the monitor. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonitorInfo`](crate::model::MonitorInfo)
+        pub fn build(self) -> crate::model::MonitorInfo {
+            crate::model::MonitorInfo {
+                monitor_arn: self.monitor_arn,
+                status: self.status,
+            }
+        }
+    }
+}
+impl MonitorInfo {
+    /// Creates a new builder-style object to manufacture [`MonitorInfo`](crate::model::MonitorInfo)
+    pub fn builder() -> crate::model::monitor_info::Builder {
+        crate::model::monitor_info::Builder::default()
+    }
+}
+
 /// <p>Provides information about the Explainability resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6635,6 +7966,7 @@ pub struct AdditionalDataset {
     /// <p> <b>Weather Index</b> </p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
     /// <p> <b>Holidays</b> </p>
+    /// <p> <b>Holidays</b> </p>
     /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
     /// <ul>
     /// <li> <p>"AL" - ALBANIA</p> </li>
@@ -6715,6 +8047,7 @@ impl AdditionalDataset {
     }
     /// <p> <b>Weather Index</b> </p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
+    /// <p> <b>Holidays</b> </p>
     /// <p> <b>Holidays</b> </p>
     /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
     /// <ul>
@@ -6830,6 +8163,7 @@ pub mod additional_dataset {
         /// <p> <b>Weather Index</b> </p>
         /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
         /// <p> <b>Holidays</b> </p>
+        /// <p> <b>Holidays</b> </p>
         /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
         /// <ul>
         /// <li> <p>"AL" - ALBANIA</p> </li>
@@ -6911,6 +8245,7 @@ pub mod additional_dataset {
         }
         /// <p> <b>Weather Index</b> </p>
         /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
+        /// <p> <b>Holidays</b> </p>
         /// <p> <b>Holidays</b> </p>
         /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
         /// <ul>
@@ -7161,5 +8496,59 @@ impl AttributeConfig {
     /// Creates a new builder-style object to manufacture [`AttributeConfig`](crate::model::AttributeConfig)
     pub fn builder() -> crate::model::attribute_config::Builder {
         crate::model::attribute_config::Builder::default()
+    }
+}
+
+/// <p>The configuration details for the predictor monitor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MonitorConfig {
+    /// <p>The name of the monitor resource.</p>
+    pub monitor_name: std::option::Option<std::string::String>,
+}
+impl MonitorConfig {
+    /// <p>The name of the monitor resource.</p>
+    pub fn monitor_name(&self) -> std::option::Option<&str> {
+        self.monitor_name.as_deref()
+    }
+}
+impl std::fmt::Debug for MonitorConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MonitorConfig");
+        formatter.field("monitor_name", &self.monitor_name);
+        formatter.finish()
+    }
+}
+/// See [`MonitorConfig`](crate::model::MonitorConfig)
+pub mod monitor_config {
+    /// A builder for [`MonitorConfig`](crate::model::MonitorConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitor_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the monitor resource.</p>
+        pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the monitor resource.</p>
+        pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonitorConfig`](crate::model::MonitorConfig)
+        pub fn build(self) -> crate::model::MonitorConfig {
+            crate::model::MonitorConfig {
+                monitor_name: self.monitor_name,
+            }
+        }
+    }
+}
+impl MonitorConfig {
+    /// Creates a new builder-style object to manufacture [`MonitorConfig`](crate::model::MonitorConfig)
+    pub fn builder() -> crate::model::monitor_config::Builder {
+        crate::model::monitor_config::Builder::default()
     }
 }

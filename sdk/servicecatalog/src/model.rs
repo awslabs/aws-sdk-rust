@@ -6074,7 +6074,7 @@ pub struct LaunchPathSummary {
     pub constraint_summaries: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
     /// <p>The tags associated with this product path.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The name of the portfolio to which the user was assigned.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl LaunchPathSummary {
@@ -6090,7 +6090,7 @@ impl LaunchPathSummary {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The name of the portfolio to which the user was assigned.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -6166,12 +6166,12 @@ pub mod launch_path_summary {
             self.tags = input;
             self
         }
-        /// <p>The name of the portfolio to which the user was assigned.</p>
+        /// <p>The name of the portfolio that contains the product. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the portfolio to which the user was assigned.</p>
+        /// <p>The name of the portfolio that contains the product. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

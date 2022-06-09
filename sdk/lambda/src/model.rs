@@ -1962,6 +1962,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs14x,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs16x,
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs43,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs43edge,
@@ -2006,6 +2008,7 @@ impl std::convert::From<&str> for Runtime {
             "nodejs10.x" => Runtime::Nodejs10x,
             "nodejs12.x" => Runtime::Nodejs12x,
             "nodejs14.x" => Runtime::Nodejs14x,
+            "nodejs16.x" => Runtime::Nodejs16x,
             "nodejs4.3" => Runtime::Nodejs43,
             "nodejs4.3-edge" => Runtime::Nodejs43edge,
             "nodejs6.10" => Runtime::Nodejs610,
@@ -2047,6 +2050,7 @@ impl Runtime {
             Runtime::Nodejs10x => "nodejs10.x",
             Runtime::Nodejs12x => "nodejs12.x",
             Runtime::Nodejs14x => "nodejs14.x",
+            Runtime::Nodejs16x => "nodejs16.x",
             Runtime::Nodejs43 => "nodejs4.3",
             Runtime::Nodejs43edge => "nodejs4.3-edge",
             Runtime::Nodejs610 => "nodejs6.10",
@@ -2079,6 +2083,7 @@ impl Runtime {
             "nodejs10.x",
             "nodejs12.x",
             "nodejs14.x",
+            "nodejs16.x",
             "nodejs4.3",
             "nodejs4.3-edge",
             "nodejs6.10",
@@ -5305,7 +5310,7 @@ pub struct EventSourceMappingConfiguration {
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -5406,7 +5411,7 @@ impl EventSourceMappingConfiguration {
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -5795,7 +5800,7 @@ pub mod event_source_mapping_configuration {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: crate::model::FunctionResponseType,
@@ -5805,7 +5810,7 @@ pub mod event_source_mapping_configuration {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,

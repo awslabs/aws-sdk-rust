@@ -48,3 +48,53 @@ pub(crate) fn reflens_structure_crate_output_list_users_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_changesets_output_changesets(
+    input: crate::output::ListChangesetsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ChangesetSummary>> {
+    let input = match input.changesets {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_datasets_output_datasets(
+    input: crate::output::ListDatasetsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Dataset>> {
+    let input = match input.datasets {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_data_views_output_data_views(
+    input: crate::output::ListDataViewsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DataViewSummary>> {
+    let input = match input.data_views {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_permission_groups_output_permission_groups(
+    input: crate::output::ListPermissionGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PermissionGroup>> {
+    let input = match input.permission_groups {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_users_output_users(
+    input: crate::output::ListUsersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::User>> {
+    let input = match input.users {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

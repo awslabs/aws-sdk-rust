@@ -5,9 +5,9 @@
 pub struct MeshRef {
     /// <p>The name of the service mesh.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -23,11 +23,11 @@ impl MeshRef {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -86,22 +86,22 @@ pub mod mesh_ref {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -420,9 +420,9 @@ pub struct ResourceMetadata {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
 }
 impl ResourceMetadata {
@@ -446,11 +446,11 @@ impl ResourceMetadata {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -539,22 +539,22 @@ pub mod resource_metadata {
             self.last_updated_at = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -589,17 +589,24 @@ impl ResourceMetadata {
 pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     pub egress_filter: std::option::Option<crate::model::EgressFilter>,
+    /// <p>An object that represents the service discovery information for a service mesh.</p>
+    pub service_discovery: std::option::Option<crate::model::MeshServiceDiscovery>,
 }
 impl MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     pub fn egress_filter(&self) -> std::option::Option<&crate::model::EgressFilter> {
         self.egress_filter.as_ref()
     }
+    /// <p>An object that represents the service discovery information for a service mesh.</p>
+    pub fn service_discovery(&self) -> std::option::Option<&crate::model::MeshServiceDiscovery> {
+        self.service_discovery.as_ref()
+    }
 }
 impl std::fmt::Debug for MeshSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeshSpec");
         formatter.field("egress_filter", &self.egress_filter);
+        formatter.field("service_discovery", &self.service_discovery);
         formatter.finish()
     }
 }
@@ -610,6 +617,7 @@ pub mod mesh_spec {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) egress_filter: std::option::Option<crate::model::EgressFilter>,
+        pub(crate) service_discovery: std::option::Option<crate::model::MeshServiceDiscovery>,
     }
     impl Builder {
         /// <p>The egress filter rules for the service mesh.</p>
@@ -625,10 +633,24 @@ pub mod mesh_spec {
             self.egress_filter = input;
             self
         }
+        /// <p>An object that represents the service discovery information for a service mesh.</p>
+        pub fn service_discovery(mut self, input: crate::model::MeshServiceDiscovery) -> Self {
+            self.service_discovery = Some(input);
+            self
+        }
+        /// <p>An object that represents the service discovery information for a service mesh.</p>
+        pub fn set_service_discovery(
+            mut self,
+            input: std::option::Option<crate::model::MeshServiceDiscovery>,
+        ) -> Self {
+            self.service_discovery = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MeshSpec`](crate::model::MeshSpec)
         pub fn build(self) -> crate::model::MeshSpec {
             crate::model::MeshSpec {
                 egress_filter: self.egress_filter,
+                service_discovery: self.service_discovery,
             }
         }
     }
@@ -637,6 +659,126 @@ impl MeshSpec {
     /// Creates a new builder-style object to manufacture [`MeshSpec`](crate::model::MeshSpec)
     pub fn builder() -> crate::model::mesh_spec::Builder {
         crate::model::mesh_spec::Builder::default()
+    }
+}
+
+/// <p>An object that represents the service discovery information for a service mesh.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MeshServiceDiscovery {
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub ip_preference: std::option::Option<crate::model::IpPreference>,
+}
+impl MeshServiceDiscovery {
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
+        self.ip_preference.as_ref()
+    }
+}
+impl std::fmt::Debug for MeshServiceDiscovery {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MeshServiceDiscovery");
+        formatter.field("ip_preference", &self.ip_preference);
+        formatter.finish()
+    }
+}
+/// See [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery)
+pub mod mesh_service_discovery {
+    /// A builder for [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ip_preference: std::option::Option<crate::model::IpPreference>,
+    }
+    impl Builder {
+        /// <p>The IP version to use to control traffic within the mesh.</p>
+        pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
+            self.ip_preference = Some(input);
+            self
+        }
+        /// <p>The IP version to use to control traffic within the mesh.</p>
+        pub fn set_ip_preference(
+            mut self,
+            input: std::option::Option<crate::model::IpPreference>,
+        ) -> Self {
+            self.ip_preference = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery)
+        pub fn build(self) -> crate::model::MeshServiceDiscovery {
+            crate::model::MeshServiceDiscovery {
+                ip_preference: self.ip_preference,
+            }
+        }
+    }
+}
+impl MeshServiceDiscovery {
+    /// Creates a new builder-style object to manufacture [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery)
+    pub fn builder() -> crate::model::mesh_service_discovery::Builder {
+        crate::model::mesh_service_discovery::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum IpPreference {
+    #[allow(missing_docs)] // documentation missing in model
+    IPv4Only,
+    #[allow(missing_docs)] // documentation missing in model
+    IPv4Preferred,
+    #[allow(missing_docs)] // documentation missing in model
+    IPv6Only,
+    #[allow(missing_docs)] // documentation missing in model
+    IPv6Preferred,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for IpPreference {
+    fn from(s: &str) -> Self {
+        match s {
+            "IPv4_ONLY" => IpPreference::IPv4Only,
+            "IPv4_PREFERRED" => IpPreference::IPv4Preferred,
+            "IPv6_ONLY" => IpPreference::IPv6Only,
+            "IPv6_PREFERRED" => IpPreference::IPv6Preferred,
+            other => IpPreference::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for IpPreference {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IpPreference::from(s))
+    }
+}
+impl IpPreference {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IpPreference::IPv4Only => "IPv4_ONLY",
+            IpPreference::IPv4Preferred => "IPv4_PREFERRED",
+            IpPreference::IPv6Only => "IPv6_ONLY",
+            IpPreference::IPv6Preferred => "IPv6_PREFERRED",
+            IpPreference::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["IPv4_ONLY", "IPv4_PREFERRED", "IPv6_ONLY", "IPv6_PREFERRED"]
+    }
+}
+impl AsRef<str> for IpPreference {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -833,9 +975,9 @@ pub struct VirtualServiceRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual service.</p>
     pub virtual_service_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -855,11 +997,11 @@ impl VirtualServiceRef {
     pub fn virtual_service_name(&self) -> std::option::Option<&str> {
         self.virtual_service_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -933,22 +1075,22 @@ pub mod virtual_service_ref {
             self.virtual_service_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1516,9 +1658,9 @@ pub struct VirtualRouterRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1538,11 +1680,11 @@ impl VirtualRouterRef {
     pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -1616,22 +1758,22 @@ pub mod virtual_router_ref {
             self.virtual_router_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2235,9 +2377,9 @@ pub struct RouteRef {
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the route.</p>
     pub route_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the route.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2261,11 +2403,11 @@ impl RouteRef {
     pub fn route_name(&self) -> std::option::Option<&str> {
         self.route_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -2351,22 +2493,22 @@ pub mod route_ref {
             self.route_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5312,9 +5454,9 @@ pub struct VirtualNodeRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual node.</p>
     pub virtual_node_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -5334,11 +5476,11 @@ impl VirtualNodeRef {
     pub fn virtual_node_name(&self) -> std::option::Option<&str> {
         self.virtual_node_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -5412,22 +5554,22 @@ pub mod virtual_node_ref {
             self.virtual_node_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8178,7 +8320,7 @@ impl ListenerTlsValidationContextTrust {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ListenerTlsCertificate {
-    /// <p>A reference to an object that represents an AWS Certicate Manager (ACM) certificate.</p>
+    /// <p>A reference to an object that represents an Certificate Manager certificate.</p>
     Acm(crate::model::ListenerTlsAcmCertificate),
     /// <p>A reference to an object that represents a local file certificate.</p>
     File(crate::model::ListenerTlsFileCertificate),
@@ -8240,7 +8382,7 @@ impl ListenerTlsCertificate {
     }
 }
 
-/// <p>An object that represents an AWS Certicate Manager (ACM) certificate.</p>
+/// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsAcmCertificate {
@@ -8421,6 +8563,8 @@ pub struct AwsCloudMapServiceDiscovery {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
 impl AwsCloudMapServiceDiscovery {
     /// <p>The name of the Cloud Map namespace to use.</p>
@@ -8435,6 +8579,10 @@ impl AwsCloudMapServiceDiscovery {
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AwsCloudMapInstanceAttribute]> {
         self.attributes.as_deref()
     }
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
+        self.ip_preference.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsCloudMapServiceDiscovery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8442,6 +8590,7 @@ impl std::fmt::Debug for AwsCloudMapServiceDiscovery {
         formatter.field("namespace_name", &self.namespace_name);
         formatter.field("service_name", &self.service_name);
         formatter.field("attributes", &self.attributes);
+        formatter.field("ip_preference", &self.ip_preference);
         formatter.finish()
     }
 }
@@ -8455,6 +8604,7 @@ pub mod aws_cloud_map_service_discovery {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
+        pub(crate) ip_preference: std::option::Option<crate::model::IpPreference>,
     }
     impl Builder {
         /// <p>The name of the Cloud Map namespace to use.</p>
@@ -8499,12 +8649,26 @@ pub mod aws_cloud_map_service_discovery {
             self.attributes = input;
             self
         }
+        /// <p>The IP version to use to control traffic within the mesh.</p>
+        pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
+            self.ip_preference = Some(input);
+            self
+        }
+        /// <p>The IP version to use to control traffic within the mesh.</p>
+        pub fn set_ip_preference(
+            mut self,
+            input: std::option::Option<crate::model::IpPreference>,
+        ) -> Self {
+            self.ip_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery)
         pub fn build(self) -> crate::model::AwsCloudMapServiceDiscovery {
             crate::model::AwsCloudMapServiceDiscovery {
                 namespace_name: self.namespace_name,
                 service_name: self.service_name,
                 attributes: self.attributes,
+                ip_preference: self.ip_preference,
             }
         }
     }
@@ -8517,7 +8681,7 @@ impl AwsCloudMapServiceDiscovery {
 }
 
 /// <p>An object that represents the Cloud Map attribute information for your virtual node.</p> <note>
-/// <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
+/// <p>Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8599,6 +8763,8 @@ pub struct DnsServiceDiscovery {
     pub hostname: std::option::Option<std::string::String>,
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub response_type: std::option::Option<crate::model::DnsResponseType>,
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
 impl DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
@@ -8609,12 +8775,17 @@ impl DnsServiceDiscovery {
     pub fn response_type(&self) -> std::option::Option<&crate::model::DnsResponseType> {
         self.response_type.as_ref()
     }
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
+        self.ip_preference.as_ref()
+    }
 }
 impl std::fmt::Debug for DnsServiceDiscovery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DnsServiceDiscovery");
         formatter.field("hostname", &self.hostname);
         formatter.field("response_type", &self.response_type);
+        formatter.field("ip_preference", &self.ip_preference);
         formatter.finish()
     }
 }
@@ -8626,6 +8797,7 @@ pub mod dns_service_discovery {
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
         pub(crate) response_type: std::option::Option<crate::model::DnsResponseType>,
+        pub(crate) ip_preference: std::option::Option<crate::model::IpPreference>,
     }
     impl Builder {
         /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
@@ -8651,11 +8823,25 @@ pub mod dns_service_discovery {
             self.response_type = input;
             self
         }
+        /// <p>The IP version to use to control traffic within the mesh.</p>
+        pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
+            self.ip_preference = Some(input);
+            self
+        }
+        /// <p>The IP version to use to control traffic within the mesh.</p>
+        pub fn set_ip_preference(
+            mut self,
+            input: std::option::Option<crate::model::IpPreference>,
+        ) -> Self {
+            self.ip_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery)
         pub fn build(self) -> crate::model::DnsServiceDiscovery {
             crate::model::DnsServiceDiscovery {
                 hostname: self.hostname,
                 response_type: self.response_type,
+                ip_preference: self.ip_preference,
             }
         }
     }
@@ -8730,9 +8916,9 @@ pub struct VirtualGatewayRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -8752,11 +8938,11 @@ impl VirtualGatewayRef {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -8830,22 +9016,22 @@ pub mod virtual_gateway_ref {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11389,9 +11575,9 @@ pub struct GatewayRouteRef {
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -11415,11 +11601,11 @@ impl GatewayRouteRef {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -11508,22 +11694,22 @@ pub mod gateway_route_ref {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,

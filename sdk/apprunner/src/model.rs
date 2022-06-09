@@ -1727,7 +1727,9 @@ pub struct CodeRepository {
     pub repository_url: std::option::Option<std::string::String>,
     /// <p>The version that should be used within the source code repository.</p>
     pub source_code_version: std::option::Option<crate::model::SourceCodeVersion>,
-    /// <p>Configuration for building and running the service from a source code repository.</p>
+    /// <p>Configuration for building and running the service from a source code repository.</p> <note>
+    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// </note>
     pub code_configuration: std::option::Option<crate::model::CodeConfiguration>,
 }
 impl CodeRepository {
@@ -1739,7 +1741,9 @@ impl CodeRepository {
     pub fn source_code_version(&self) -> std::option::Option<&crate::model::SourceCodeVersion> {
         self.source_code_version.as_ref()
     }
-    /// <p>Configuration for building and running the service from a source code repository.</p>
+    /// <p>Configuration for building and running the service from a source code repository.</p> <note>
+    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// </note>
     pub fn code_configuration(&self) -> std::option::Option<&crate::model::CodeConfiguration> {
         self.code_configuration.as_ref()
     }
@@ -1790,12 +1794,16 @@ pub mod code_repository {
             self.source_code_version = input;
             self
         }
-        /// <p>Configuration for building and running the service from a source code repository.</p>
+        /// <p>Configuration for building and running the service from a source code repository.</p> <note>
+        /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+        /// </note>
         pub fn code_configuration(mut self, input: crate::model::CodeConfiguration) -> Self {
             self.code_configuration = Some(input);
             self
         }
-        /// <p>Configuration for building and running the service from a source code repository.</p>
+        /// <p>Configuration for building and running the service from a source code repository.</p> <note>
+        /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+        /// </note>
         pub fn set_code_configuration(
             mut self,
             input: std::option::Option<crate::model::CodeConfiguration>,

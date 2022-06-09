@@ -1081,14 +1081,18 @@ pub mod create_vpc_connector_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
+        /// <p> App Runner currently only provides support for IPv4. </p>
+        /// </note>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
+        /// <p> App Runner currently only provides support for IPv4. </p>
+        /// </note>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5876,7 +5880,9 @@ impl std::fmt::Debug for DeleteAutoScalingConfigurationInput {
 pub struct CreateVpcConnectorInput {
     /// <p>A name for the VPC connector.</p>
     pub vpc_connector_name: std::option::Option<std::string::String>,
-    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
+    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// </note>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5888,7 +5894,9 @@ impl CreateVpcConnectorInput {
     pub fn vpc_connector_name(&self) -> std::option::Option<&str> {
         self.vpc_connector_name.as_deref()
     }
-    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
+    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// </note>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }

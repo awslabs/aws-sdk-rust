@@ -48,3 +48,53 @@ pub(crate) fn reflens_structure_crate_output_list_scheduling_policies_output_nex
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_describe_compute_environments_output_compute_environments(
+    input: crate::output::DescribeComputeEnvironmentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>> {
+    let input = match input.compute_environments {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_job_definitions_output_job_definitions(
+    input: crate::output::DescribeJobDefinitionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::JobDefinition>> {
+    let input = match input.job_definitions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_job_queues_output_job_queues(
+    input: crate::output::DescribeJobQueuesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::JobQueueDetail>> {
+    let input = match input.job_queues {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_jobs_output_job_summary_list(
+    input: crate::output::ListJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::JobSummary>> {
+    let input = match input.job_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_scheduling_policies_output_scheduling_policies(
+    input: crate::output::ListSchedulingPoliciesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>> {
+    let input = match input.scheduling_policies {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

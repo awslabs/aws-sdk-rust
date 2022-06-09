@@ -12933,6 +12933,9 @@ pub struct DescribeNotebookInstanceOutput {
     pub root_access: std::option::Option<crate::model::RootAccess>,
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
     pub platform_identifier: std::option::Option<std::string::String>,
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub instance_metadata_service_configuration:
+        std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
 }
 impl DescribeNotebookInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
@@ -13029,6 +13032,12 @@ impl DescribeNotebookInstanceOutput {
     pub fn platform_identifier(&self) -> std::option::Option<&str> {
         self.platform_identifier.as_deref()
     }
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub fn instance_metadata_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataServiceConfiguration> {
+        self.instance_metadata_service_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeNotebookInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13060,6 +13069,10 @@ impl std::fmt::Debug for DescribeNotebookInstanceOutput {
         );
         formatter.field("root_access", &self.root_access);
         formatter.field("platform_identifier", &self.platform_identifier);
+        formatter.field(
+            "instance_metadata_service_configuration",
+            &self.instance_metadata_service_configuration,
+        );
         formatter.finish()
     }
 }
@@ -13094,6 +13107,8 @@ pub mod describe_notebook_instance_output {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) root_access: std::option::Option<crate::model::RootAccess>,
         pub(crate) platform_identifier: std::option::Option<std::string::String>,
+        pub(crate) instance_metadata_service_configuration:
+            std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
@@ -13394,6 +13409,22 @@ pub mod describe_notebook_instance_output {
             self.platform_identifier = input;
             self
         }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn instance_metadata_service_configuration(
+            mut self,
+            input: crate::model::InstanceMetadataServiceConfiguration,
+        ) -> Self {
+            self.instance_metadata_service_configuration = Some(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn set_instance_metadata_service_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
+        ) -> Self {
+            self.instance_metadata_service_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeNotebookInstanceOutput`](crate::output::DescribeNotebookInstanceOutput)
         pub fn build(self) -> crate::output::DescribeNotebookInstanceOutput {
             crate::output::DescribeNotebookInstanceOutput {
@@ -13419,6 +13450,8 @@ pub mod describe_notebook_instance_output {
                 additional_code_repositories: self.additional_code_repositories,
                 root_access: self.root_access,
                 platform_identifier: self.platform_identifier,
+                instance_metadata_service_configuration: self
+                    .instance_metadata_service_configuration,
             }
         }
     }
@@ -18735,7 +18768,7 @@ pub struct DescribeEndpointConfigOutput {
     pub endpoint_config_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub production_variants: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
-    /// <p></p>
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub data_capture_config: std::option::Option<crate::model::DataCaptureConfig>,
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -18757,7 +18790,7 @@ impl DescribeEndpointConfigOutput {
     pub fn production_variants(&self) -> std::option::Option<&[crate::model::ProductionVariant]> {
         self.production_variants.as_deref()
     }
-    /// <p></p>
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(&self) -> std::option::Option<&crate::model::DataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
@@ -18850,12 +18883,12 @@ pub mod describe_endpoint_config_output {
             self.production_variants = input;
             self
         }
-        /// <p></p>
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
         pub fn data_capture_config(mut self, input: crate::model::DataCaptureConfig) -> Self {
             self.data_capture_config = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
         pub fn set_data_capture_config(
             mut self,
             input: std::option::Option<crate::model::DataCaptureConfig>,
@@ -18933,7 +18966,7 @@ pub struct DescribeEndpointOutput {
     /// <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
     pub production_variants:
         std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
-    /// <p></p>
+    /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub data_capture_config: std::option::Option<crate::model::DataCaptureConfigSummary>,
     /// <p>The status of the endpoint.</p>
     /// <ul>
@@ -18979,7 +19012,7 @@ impl DescribeEndpointOutput {
     ) -> std::option::Option<&[crate::model::ProductionVariantSummary]> {
         self.production_variants.as_deref()
     }
-    /// <p></p>
+    /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn data_capture_config(
         &self,
     ) -> std::option::Option<&crate::model::DataCaptureConfigSummary> {
@@ -19129,7 +19162,7 @@ pub mod describe_endpoint_output {
             self.production_variants = input;
             self
         }
-        /// <p></p>
+        /// <p>The currently active data capture configuration used by your Endpoint.</p>
         pub fn data_capture_config(
             mut self,
             input: crate::model::DataCaptureConfigSummary,
@@ -19137,7 +19170,7 @@ pub mod describe_endpoint_output {
             self.data_capture_config = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The currently active data capture configuration used by your Endpoint.</p>
         pub fn set_data_capture_config(
             mut self,
             input: std::option::Option<crate::model::DataCaptureConfigSummary>,

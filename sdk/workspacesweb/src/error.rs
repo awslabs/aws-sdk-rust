@@ -760,6 +760,8 @@ pub enum CreateIdentityProviderErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>There is a throttling error.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There is a validation error.</p>
@@ -774,6 +776,7 @@ impl std::fmt::Display for CreateIdentityProviderError {
             CreateIdentityProviderErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateIdentityProviderErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateIdentityProviderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateIdentityProviderErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateIdentityProviderErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateIdentityProviderErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateIdentityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -858,6 +861,13 @@ impl CreateIdentityProviderError {
             CreateIdentityProviderErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateIdentityProviderErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
@@ -880,6 +890,7 @@ impl std::error::Error for CreateIdentityProviderError {
             CreateIdentityProviderErrorKind::ConflictException(_inner) => Some(_inner),
             CreateIdentityProviderErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateIdentityProviderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateIdentityProviderErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateIdentityProviderErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateIdentityProviderErrorKind::ValidationException(_inner) => Some(_inner),
             CreateIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),

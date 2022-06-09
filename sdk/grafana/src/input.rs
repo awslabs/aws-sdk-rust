@@ -551,6 +551,202 @@ impl CreateWorkspaceInput {
     }
 }
 
+/// See [`CreateWorkspaceApiKeyInput`](crate::input::CreateWorkspaceApiKeyInput)
+pub mod create_workspace_api_key_input {
+    /// A builder for [`CreateWorkspaceApiKeyInput`](crate::input::CreateWorkspaceApiKeyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) key_role: std::option::Option<std::string::String>,
+        pub(crate) seconds_to_live: std::option::Option<i32>,
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
+            self
+        }
+        /// <p>Specifies the permission level of the key.</p>
+        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        pub fn key_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_role = Some(input.into());
+            self
+        }
+        /// <p>Specifies the permission level of the key.</p>
+        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        pub fn set_key_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_role = input;
+            self
+        }
+        /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+        pub fn seconds_to_live(mut self, input: i32) -> Self {
+            self.seconds_to_live = Some(input);
+            self
+        }
+        /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+        pub fn set_seconds_to_live(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_to_live = input;
+            self
+        }
+        /// <p>The ID of the workspace in which to create an API key.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the workspace in which to create an API key.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::input::CreateWorkspaceApiKeyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateWorkspaceApiKeyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateWorkspaceApiKeyInput {
+                key_name: self.key_name,
+                key_role: self.key_role,
+                seconds_to_live: self.seconds_to_live,
+                workspace_id: self.workspace_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateWorkspaceApiKeyInputOperationOutputAlias = crate::operation::CreateWorkspaceApiKey;
+#[doc(hidden)]
+pub type CreateWorkspaceApiKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateWorkspaceApiKeyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateWorkspaceApiKey`](crate::operation::CreateWorkspaceApiKey)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWorkspaceApiKey,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateWorkspaceApiKeyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_3 = &_input.workspace_id;
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/apikeys",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWorkspaceApiKeyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_workspace_api_key(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWorkspaceApiKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWorkspaceApiKey",
+            "grafana",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceApiKeyInput`](crate::input::CreateWorkspaceApiKeyInput)
+    pub fn builder() -> crate::input::create_workspace_api_key_input::Builder {
+        crate::input::create_workspace_api_key_input::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput)
 pub mod delete_workspace_input {
     /// A builder for [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput)
@@ -607,14 +803,14 @@ impl DeleteWorkspaceInput {
                 _input: &crate::input::DeleteWorkspaceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_3 = &_input.workspace_id;
-                let input_3 = input_3.as_ref().ok_or(
+                let input_4 = &_input.workspace_id;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -693,6 +889,175 @@ impl DeleteWorkspaceInput {
     }
 }
 
+/// See [`DeleteWorkspaceApiKeyInput`](crate::input::DeleteWorkspaceApiKeyInput)
+pub mod delete_workspace_api_key_input {
+    /// A builder for [`DeleteWorkspaceApiKeyInput`](crate::input::DeleteWorkspaceApiKeyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the API key to delete.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the API key to delete.</p>
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
+            self
+        }
+        /// <p>The ID of the workspace to delete.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the workspace to delete.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::input::DeleteWorkspaceApiKeyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteWorkspaceApiKeyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteWorkspaceApiKeyInput {
+                key_name: self.key_name,
+                workspace_id: self.workspace_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteWorkspaceApiKeyInputOperationOutputAlias = crate::operation::DeleteWorkspaceApiKey;
+#[doc(hidden)]
+pub type DeleteWorkspaceApiKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteWorkspaceApiKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceApiKey`](crate::operation::DeleteWorkspaceApiKey)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteWorkspaceApiKey,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteWorkspaceApiKeyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_5 = &_input.workspace_id;
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_6 = &_input.key_name;
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "key_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let key_name = aws_smithy_http::label::fmt_string(input_6, false);
+                if key_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "key_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/apikeys/{keyName}",
+                    workspaceId = workspace_id,
+                    keyName = key_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWorkspaceApiKeyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWorkspaceApiKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWorkspaceApiKey",
+            "grafana",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyInput`](crate::input::DeleteWorkspaceApiKeyInput)
+    pub fn builder() -> crate::input::delete_workspace_api_key_input::Builder {
+        crate::input::delete_workspace_api_key_input::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput)
 pub mod describe_workspace_input {
     /// A builder for [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput)
@@ -749,14 +1114,14 @@ impl DescribeWorkspaceInput {
                 _input: &crate::input::DescribeWorkspaceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.workspace_id;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_7 = &_input.workspace_id;
+                let input_7 = input_7.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_7, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -893,14 +1258,14 @@ impl DescribeWorkspaceAuthenticationInput {
                 _input: &crate::input::DescribeWorkspaceAuthenticationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.workspace_id;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_8 = &_input.workspace_id;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -1050,28 +1415,28 @@ impl DisassociateLicenseInput {
                 _input: &crate::input::DisassociateLicenseInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_6 = &_input.workspace_id;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_9 = &_input.workspace_id;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_7 = &_input.license_type;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_10 = &_input.license_type;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "license_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let license_type = aws_smithy_http::label::fmt_string(input_7, false);
+                let license_type = aws_smithy_http::label::fmt_string(input_10, false);
                 if license_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "license_type",
@@ -1267,14 +1632,14 @@ impl ListPermissionsInput {
                 _input: &crate::input::ListPermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.workspace_id;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_11 = &_input.workspace_id;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -1294,23 +1659,23 @@ impl ListPermissionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.max_results {
+                if let Some(inner_12) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
                     );
                 }
-                if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                if let Some(inner_13) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
-                if let Some(inner_11) = &_input.user_type {
-                    query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_11));
+                if let Some(inner_14) = &_input.user_type {
+                    query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_14));
                 }
-                if let Some(inner_12) = &_input.user_id {
-                    query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_12));
+                if let Some(inner_15) = &_input.user_id {
+                    query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_15));
                 }
-                if let Some(inner_13) = &_input.group_id {
-                    query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_16) = &_input.group_id {
+                    query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_16));
                 }
                 Ok(())
             }
@@ -1435,14 +1800,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.resource_arn;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_17 = &_input.resource_arn;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -1593,14 +1958,14 @@ impl ListWorkspacesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.max_results {
+                if let Some(inner_18) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
                     );
                 }
-                if let Some(inner_16) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                if let Some(inner_19) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
                 }
                 Ok(())
             }
@@ -1754,14 +2119,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.resource_arn;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_20 = &_input.resource_arn;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -1927,14 +2292,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.resource_arn;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_21 = &_input.resource_arn;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_21, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -1950,9 +2315,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_19) = &_input.tag_keys {
-                    for inner_20 in inner_19 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_20));
+                if let Some(inner_22) = &_input.tag_keys {
+                    for inner_23 in inner_22 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_23));
                     }
                 }
                 Ok(())
@@ -2100,14 +2465,14 @@ impl UpdatePermissionsInput {
                 _input: &crate::input::UpdatePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.workspace_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_24 = &_input.workspace_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_24, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -2439,14 +2804,14 @@ impl UpdateWorkspaceInput {
                 _input: &crate::input::UpdateWorkspaceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.workspace_id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_25 = &_input.workspace_id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_25, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -2637,14 +3002,14 @@ impl UpdateWorkspaceAuthenticationInput {
                 _input: &crate::input::UpdateWorkspaceAuthenticationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.workspace_id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_26 = &_input.workspace_id;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_26, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -3238,6 +3603,78 @@ impl DescribeWorkspaceAuthenticationInput {
 impl std::fmt::Debug for DescribeWorkspaceAuthenticationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceAuthenticationInput");
+        formatter.field("workspace_id", &self.workspace_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWorkspaceApiKeyInput {
+    /// <p>The name of the API key to delete.</p>
+    pub key_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the workspace to delete.</p>
+    pub workspace_id: std::option::Option<std::string::String>,
+}
+impl DeleteWorkspaceApiKeyInput {
+    /// <p>The name of the API key to delete.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>The ID of the workspace to delete.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteWorkspaceApiKeyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWorkspaceApiKeyInput");
+        formatter.field("key_name", &self.key_name);
+        formatter.field("workspace_id", &self.workspace_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorkspaceApiKeyInput {
+    /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+    pub key_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the permission level of the key.</p>
+    /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    pub key_role: std::option::Option<std::string::String>,
+    /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    pub seconds_to_live: std::option::Option<i32>,
+    /// <p>The ID of the workspace in which to create an API key.</p>
+    pub workspace_id: std::option::Option<std::string::String>,
+}
+impl CreateWorkspaceApiKeyInput {
+    /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>Specifies the permission level of the key.</p>
+    /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    pub fn key_role(&self) -> std::option::Option<&str> {
+        self.key_role.as_deref()
+    }
+    /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    pub fn seconds_to_live(&self) -> std::option::Option<i32> {
+        self.seconds_to_live
+    }
+    /// <p>The ID of the workspace in which to create an API key.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateWorkspaceApiKeyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWorkspaceApiKeyInput");
+        formatter.field("key_name", &self.key_name);
+        formatter.field("key_role", &self.key_role);
+        formatter.field("seconds_to_live", &self.seconds_to_live);
         formatter.field("workspace_id", &self.workspace_id);
         formatter.finish()
     }

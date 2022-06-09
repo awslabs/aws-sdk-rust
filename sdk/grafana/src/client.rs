@@ -124,6 +124,21 @@ impl Client {
     pub fn create_workspace(&self) -> fluent_builders::CreateWorkspace {
         fluent_builders::CreateWorkspace::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateWorkspaceApiKey`](crate::client::fluent_builders::CreateWorkspaceApiKey) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_name): <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+    ///   - [`key_role(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_role) / [`set_key_role(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_role): <p>Specifies the permission level of the key.</p>  <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    ///   - [`seconds_to_live(i32)`](crate::client::fluent_builders::CreateWorkspaceApiKey::seconds_to_live) / [`set_seconds_to_live(Option<i32>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_seconds_to_live): <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace in which to create an API key.</p>
+    /// - On success, responds with [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput) with field(s):
+    ///   - [`key_name(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key_name): <p>The name of the key that was created.</p>
+    ///   - [`key(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key): <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    ///   - [`workspace_id(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace that the key is valid for.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkspaceApiKeyError>`](crate::error::CreateWorkspaceApiKeyError)
+    pub fn create_workspace_api_key(&self) -> fluent_builders::CreateWorkspaceApiKey {
+        fluent_builders::CreateWorkspaceApiKey::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
     ///
     /// - The fluent builder is configurable:
@@ -133,6 +148,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
     pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace {
         fluent_builders::DeleteWorkspace::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteWorkspaceApiKey`](crate::client::fluent_builders::DeleteWorkspaceApiKey) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::set_key_name): <p>The name of the API key to delete.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace to delete.</p>
+    /// - On success, responds with [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput) with field(s):
+    ///   - [`key_name(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the API key that was deleted.</p>
+    ///   - [`workspace_id(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace where the key was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteWorkspaceApiKeyError>`](crate::error::DeleteWorkspaceApiKeyError)
+    pub fn delete_workspace_api_key(&self) -> fluent_builders::DeleteWorkspaceApiKey {
+        fluent_builders::DeleteWorkspaceApiKey::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeWorkspace`](crate::client::fluent_builders::DescribeWorkspace) operation.
     ///
@@ -602,6 +629,91 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateWorkspaceApiKey`.
+    ///
+    /// <p>Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html"> https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateWorkspaceApiKey {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_workspace_api_key_input::Builder,
+    }
+    impl CreateWorkspaceApiKey {
+        /// Creates a new `CreateWorkspaceApiKey`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWorkspaceApiKeyOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceApiKeyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(input.into());
+            self
+        }
+        /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_name(input);
+            self
+        }
+        /// <p>Specifies the permission level of the key.</p>
+        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        pub fn key_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_role(input.into());
+            self
+        }
+        /// <p>Specifies the permission level of the key.</p>
+        /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+        pub fn set_key_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_role(input);
+            self
+        }
+        /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+        pub fn seconds_to_live(mut self, input: i32) -> Self {
+            self.inner = self.inner.seconds_to_live(input);
+            self
+        }
+        /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+        pub fn set_seconds_to_live(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_seconds_to_live(input);
+            self
+        }
+        /// <p>The ID of the workspace in which to create an API key.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace in which to create an API key.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// <p>Deletes an Amazon Managed Grafana workspace.</p>
@@ -643,6 +755,69 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// <p>The ID of the workspace to delete.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The ID of the workspace to delete.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteWorkspaceApiKey`.
+    ///
+    /// <p>Deletes an API key for a workspace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteWorkspaceApiKey {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_workspace_api_key_input::Builder,
+    }
+    impl DeleteWorkspaceApiKey {
+        /// Creates a new `DeleteWorkspaceApiKey`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWorkspaceApiKeyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceApiKeyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the API key to delete.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(input.into());
+            self
+        }
+        /// <p>The name of the API key to delete.</p>
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_name(input);
+            self
         }
         /// <p>The ID of the workspace to delete.</p>
         pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {

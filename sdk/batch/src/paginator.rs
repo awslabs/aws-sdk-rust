@@ -22,6 +22,14 @@ impl DescribeComputeEnvironmentsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `compute_environments`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeComputeEnvironmentsPaginatorItems {
+        crate::paginator::DescribeComputeEnvironmentsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -107,6 +115,14 @@ impl DescribeJobDefinitionsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `job_definitions`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeJobDefinitionsPaginatorItems {
+        crate::paginator::DescribeJobDefinitionsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -196,6 +212,14 @@ impl DescribeJobQueuesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `job_queues`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeJobQueuesPaginatorItems {
+        crate::paginator::DescribeJobQueuesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -281,6 +305,14 @@ impl ListJobsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `job_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListJobsPaginatorItems {
+        crate::paginator::ListJobsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -370,6 +402,14 @@ impl ListSchedulingPoliciesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `scheduling_policies`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListSchedulingPoliciesPaginatorItems {
+        crate::paginator::ListSchedulingPoliciesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -431,5 +471,128 @@ impl ListSchedulingPoliciesPaginator {
                 }
             })
         })
+    }
+}
+
+/// Flattened paginator for `DescribeComputeEnvironmentsPaginator`
+///
+/// This is created with [`.items()`](DescribeComputeEnvironmentsPaginator::items)
+pub struct DescribeComputeEnvironmentsPaginatorItems(DescribeComputeEnvironmentsPaginator);
+
+impl DescribeComputeEnvironmentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ComputeEnvironmentDetail,
+            aws_smithy_http::result::SdkError<crate::error::DescribeComputeEnvironmentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_compute_environments_output_compute_environments(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `DescribeJobDefinitionsPaginator`
+///
+/// This is created with [`.items()`](DescribeJobDefinitionsPaginator::items)
+pub struct DescribeJobDefinitionsPaginatorItems(DescribeJobDefinitionsPaginator);
+
+impl DescribeJobDefinitionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::JobDefinition,
+            aws_smithy_http::result::SdkError<crate::error::DescribeJobDefinitionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_job_definitions_output_job_definitions(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `DescribeJobQueuesPaginator`
+///
+/// This is created with [`.items()`](DescribeJobQueuesPaginator::items)
+pub struct DescribeJobQueuesPaginatorItems(DescribeJobQueuesPaginator);
+
+impl DescribeJobQueuesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::JobQueueDetail,
+            aws_smithy_http::result::SdkError<crate::error::DescribeJobQueuesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_describe_job_queues_output_job_queues(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListJobsPaginator`
+///
+/// This is created with [`.items()`](ListJobsPaginator::items)
+pub struct ListJobsPaginatorItems(ListJobsPaginator);
+
+impl ListJobsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::JobSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListJobsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_jobs_output_job_summary_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListSchedulingPoliciesPaginator`
+///
+/// This is created with [`.items()`](ListSchedulingPoliciesPaginator::items)
+pub struct ListSchedulingPoliciesPaginatorItems(ListSchedulingPoliciesPaginator);
+
+impl ListSchedulingPoliciesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::SchedulingPolicyListingDetail,
+            aws_smithy_http::result::SdkError<crate::error::ListSchedulingPoliciesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_scheduling_policies_output_scheduling_policies(page).unwrap_or_default().into_iter())
     }
 }

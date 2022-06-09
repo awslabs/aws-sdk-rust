@@ -159,7 +159,7 @@ impl Client {
     ///   - [`portal_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityProvider::portal_arn) / [`set_portal_arn(Option<String>)`](crate::client::fluent_builders::CreateIdentityProvider::set_portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`identity_provider_name(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityProvider::identity_provider_name) / [`set_identity_provider_name(Option<String>)`](crate::client::fluent_builders::CreateIdentityProvider::set_identity_provider_name): <p>The identity provider name.</p>
     ///   - [`identity_provider_type(IdentityProviderType)`](crate::client::fluent_builders::CreateIdentityProvider::identity_provider_type) / [`set_identity_provider_type(Option<IdentityProviderType>)`](crate::client::fluent_builders::CreateIdentityProvider::set_identity_provider_type): <p>The identity provider type.</p>
-    ///   - [`identity_provider_details(HashMap<String, String>)`](crate::client::fluent_builders::CreateIdentityProvider::identity_provider_details) / [`set_identity_provider_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIdentityProvider::set_identity_provider_details): <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>  <ul>   <li> <p>For Google and Login with Amazon:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For Facebook:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>api_version</code> </p> </li>    </ul> </li>   <li> <p>For Sign in with Apple:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>team_id</code> </p> </li>     <li> <p> <code>key_id</code> </p> </li>     <li> <p> <code>private_key</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For OIDC providers:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>attributes_request_method</code> </p> </li>     <li> <p> <code>oidc_issuer</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>    </ul> </li>   <li> <p>For SAML providers:</p>    <ul>     <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>     <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>    </ul> </li>  </ul>
+    ///   - [`identity_provider_details(HashMap<String, String>)`](crate::client::fluent_builders::CreateIdentityProvider::identity_provider_details) / [`set_identity_provider_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIdentityProvider::set_identity_provider_details): <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>  <ul>   <li> <p>For Google and Login with Amazon:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For Facebook:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>api_version</code> </p> </li>    </ul> </li>   <li> <p>For Sign in with Apple:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>team_id</code> </p> </li>     <li> <p> <code>key_id</code> </p> </li>     <li> <p> <code>private_key</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For OIDC providers:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>attributes_request_method</code> </p> </li>     <li> <p> <code>oidc_issuer</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>    </ul> </li>   <li> <p>For SAML providers:</p>    <ul>     <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>     <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>    </ul> </li>  </ul>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityProvider::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIdentityProvider::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     /// - On success, responds with [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput) with field(s):
     ///   - [`identity_provider_arn(Option<String>)`](crate::output::CreateIdentityProviderOutput::identity_provider_arn): <p>The ARN of the identity provider.</p>
@@ -217,6 +217,8 @@ impl Client {
     ///   - [`upload_allowed(EnabledType)`](crate::client::fluent_builders::CreateUserSettings::upload_allowed) / [`set_upload_allowed(Option<EnabledType>)`](crate::client::fluent_builders::CreateUserSettings::set_upload_allowed): <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     ///   - [`print_allowed(EnabledType)`](crate::client::fluent_builders::CreateUserSettings::print_allowed) / [`set_print_allowed(Option<EnabledType>)`](crate::client::fluent_builders::CreateUserSettings::set_print_allowed): <p>Specifies whether the user can print to the local device.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUserSettings::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUserSettings::set_tags): <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
+    ///   - [`disconnect_timeout_in_minutes(i32)`](crate::client::fluent_builders::CreateUserSettings::disconnect_timeout_in_minutes) / [`set_disconnect_timeout_in_minutes(Option<i32>)`](crate::client::fluent_builders::CreateUserSettings::set_disconnect_timeout_in_minutes): <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    ///   - [`idle_disconnect_timeout_in_minutes(i32)`](crate::client::fluent_builders::CreateUserSettings::idle_disconnect_timeout_in_minutes) / [`set_idle_disconnect_timeout_in_minutes(Option<i32>)`](crate::client::fluent_builders::CreateUserSettings::set_idle_disconnect_timeout_in_minutes): <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateUserSettings::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateUserSettings::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     /// - On success, responds with [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput) with field(s):
     ///   - [`user_settings_arn(Option<String>)`](crate::output::CreateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
@@ -554,7 +556,7 @@ impl Client {
     ///   - [`identity_provider_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::identity_provider_arn) / [`set_identity_provider_arn(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_identity_provider_arn): <p>The ARN of the identity provider.</p>
     ///   - [`identity_provider_name(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::identity_provider_name) / [`set_identity_provider_name(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_identity_provider_name): <p>The name of the identity provider.</p>
     ///   - [`identity_provider_type(IdentityProviderType)`](crate::client::fluent_builders::UpdateIdentityProvider::identity_provider_type) / [`set_identity_provider_type(Option<IdentityProviderType>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_identity_provider_type): <p>The type of the identity provider.</p>
-    ///   - [`identity_provider_details(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityProvider::identity_provider_details) / [`set_identity_provider_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_identity_provider_details): <p>The details of the identity provider.</p>
+    ///   - [`identity_provider_details(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityProvider::identity_provider_details) / [`set_identity_provider_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_identity_provider_details): <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p>  <ul>   <li> <p>For Google and Login with Amazon:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For Facebook:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>api_version</code> </p> </li>    </ul> </li>   <li> <p>For Sign in with Apple:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>team_id</code> </p> </li>     <li> <p> <code>key_id</code> </p> </li>     <li> <p> <code>private_key</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For OIDC providers:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>attributes_request_method</code> </p> </li>     <li> <p> <code>oidc_issuer</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>    </ul> </li>   <li> <p>For SAML providers:</p>    <ul>     <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>     <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>    </ul> </li>  </ul>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     /// - On success, responds with [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput) with field(s):
     ///   - [`identity_provider(Option<IdentityProvider>)`](crate::output::UpdateIdentityProviderOutput::identity_provider): <p>The identity provider.</p>
@@ -609,6 +611,8 @@ impl Client {
     ///   - [`download_allowed(EnabledType)`](crate::client::fluent_builders::UpdateUserSettings::download_allowed) / [`set_download_allowed(Option<EnabledType>)`](crate::client::fluent_builders::UpdateUserSettings::set_download_allowed): <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     ///   - [`upload_allowed(EnabledType)`](crate::client::fluent_builders::UpdateUserSettings::upload_allowed) / [`set_upload_allowed(Option<EnabledType>)`](crate::client::fluent_builders::UpdateUserSettings::set_upload_allowed): <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     ///   - [`print_allowed(EnabledType)`](crate::client::fluent_builders::UpdateUserSettings::print_allowed) / [`set_print_allowed(Option<EnabledType>)`](crate::client::fluent_builders::UpdateUserSettings::set_print_allowed): <p>Specifies whether the user can print to the local device.</p>
+    ///   - [`disconnect_timeout_in_minutes(i32)`](crate::client::fluent_builders::UpdateUserSettings::disconnect_timeout_in_minutes) / [`set_disconnect_timeout_in_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateUserSettings::set_disconnect_timeout_in_minutes): <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    ///   - [`idle_disconnect_timeout_in_minutes(i32)`](crate::client::fluent_builders::UpdateUserSettings::idle_disconnect_timeout_in_minutes) / [`set_idle_disconnect_timeout_in_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateUserSettings::set_idle_disconnect_timeout_in_minutes): <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateUserSettings::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateUserSettings::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     /// - On success, responds with [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput) with field(s):
     ///   - [`user_settings(Option<UserSettings>)`](crate::output::UpdateUserSettingsOutput::user_settings): <p>The user settings.</p>
@@ -1130,7 +1134,7 @@ pub mod fluent_builders {
         /// <li> <p>For SAML providers:</p>
         /// <ul>
         /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
-        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn identity_provider_details(
@@ -1179,7 +1183,7 @@ pub mod fluent_builders {
         /// <li> <p>For SAML providers:</p>
         /// <ul>
         /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
-        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn set_identity_provider_details(
@@ -1649,6 +1653,32 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.disconnect_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn set_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_disconnect_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn idle_disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_disconnect_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn set_idle_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_idle_disconnect_timeout_in_minutes(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
@@ -3455,7 +3485,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateIdentityProvider`.
     ///
-    /// <p>Updates the identity provider.</p>
+    /// <p>Updates the identity provider. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProvider {
         handle: std::sync::Arc<super::Handle>,
@@ -3538,7 +3568,47 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_provider_details`](Self::set_identity_provider_details).
         ///
-        /// <p>The details of the identity provider.</p>
+        /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p>
+        /// <ul>
+        /// <li> <p>For Google and Login with Amazon:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
+        /// <ul>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
+        /// </ul> </li>
+        /// </ul>
         pub fn identity_provider_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -3547,7 +3617,47 @@ pub mod fluent_builders {
             self.inner = self.inner.identity_provider_details(k.into(), v.into());
             self
         }
-        /// <p>The details of the identity provider.</p>
+        /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p>
+        /// <ul>
+        /// <li> <p>For Google and Login with Amazon:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
+        /// <ul>
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
+        /// <ul>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
+        /// </ul> </li>
+        /// </ul>
         pub fn set_identity_provider_details(
             mut self,
             input: std::option::Option<
@@ -3965,6 +4075,32 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::EnabledType>,
         ) -> Self {
             self.inner = self.inner.set_print_allowed(input);
+            self
+        }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.disconnect_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+        pub fn set_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_disconnect_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn idle_disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_disconnect_timeout_in_minutes(input);
+            self
+        }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+        pub fn set_idle_disconnect_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_idle_disconnect_timeout_in_minutes(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>

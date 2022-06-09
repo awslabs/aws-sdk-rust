@@ -360,12 +360,12 @@ pub mod create_export_task_input {
             self.from = input;
             self
         }
-        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
         pub fn to(mut self, input: i64) -> Self {
             self.to = Some(input);
             self
         }
-        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
             self.to = input;
             self
@@ -6059,13 +6059,13 @@ pub mod put_retention_policy_input {
             self.log_group_name = input;
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
         /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.retention_in_days = Some(input);
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
         /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_in_days = input;
@@ -7528,7 +7528,7 @@ impl std::fmt::Debug for PutSubscriptionFilterInput {
 pub struct PutRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub retention_in_days: std::option::Option<i32>,
 }
@@ -7537,7 +7537,7 @@ impl PutRetentionPolicyInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(&self) -> std::option::Option<i32> {
         self.retention_in_days
@@ -8709,7 +8709,7 @@ pub struct CreateExportTaskInput {
     pub log_stream_name_prefix: std::option::Option<std::string::String>,
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
     pub from: std::option::Option<i64>,
-    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
     pub to: std::option::Option<i64>,
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
     pub destination: std::option::Option<std::string::String>,
@@ -8733,7 +8733,7 @@ impl CreateExportTaskInput {
     pub fn from(&self) -> std::option::Option<i64> {
         self.from
     }
-    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
     pub fn to(&self) -> std::option::Option<i64> {
         self.to
     }

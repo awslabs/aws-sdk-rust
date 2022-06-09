@@ -872,6 +872,9 @@ where
                 crate::error::UpdateReplicationSetErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
+                crate::error::UpdateReplicationSetErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::UpdateReplicationSetErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }

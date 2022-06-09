@@ -78,3 +78,23 @@ pub(crate) fn reflens_structure_crate_output_list_tags_for_resource_output_next_
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_describe_storage_virtual_machines_output_storage_virtual_machines(
+    input: crate::output::DescribeStorageVirtualMachinesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>> {
+    let input = match input.storage_virtual_machines {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_volumes_output_volumes(
+    input: crate::output::DescribeVolumesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Volume>> {
+    let input = match input.volumes {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

@@ -3207,7 +3207,7 @@ impl Hdr10Plus {
     }
 }
 
-/// With AWS Elemental MediaConvert, you can create profile 5 Dolby Vision outputs from MXF and IMF sources that contain mastering information as frame-interleaved Dolby Vision metadata.
+/// With AWS Elemental MediaConvert, you can create profile 5 or 8.1 Dolby Vision outputs from MXF and IMF sources.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DolbyVision {
@@ -3215,9 +3215,9 @@ pub struct DolbyVision {
     pub l6_metadata: std::option::Option<crate::model::DolbyVisionLevel6Metadata>,
     /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
     pub l6_mode: std::option::Option<crate::model::DolbyVisionLevel6Mode>,
-    /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+    /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
     pub mapping: std::option::Option<crate::model::DolbyVisionMapping>,
-    /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
+    /// Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
     pub profile: std::option::Option<crate::model::DolbyVisionProfile>,
 }
 impl DolbyVision {
@@ -3229,11 +3229,11 @@ impl DolbyVision {
     pub fn l6_mode(&self) -> std::option::Option<&crate::model::DolbyVisionLevel6Mode> {
         self.l6_mode.as_ref()
     }
-    /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+    /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
     pub fn mapping(&self) -> std::option::Option<&crate::model::DolbyVisionMapping> {
         self.mapping.as_ref()
     }
-    /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
+    /// Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
     pub fn profile(&self) -> std::option::Option<&crate::model::DolbyVisionProfile> {
         self.profile.as_ref()
     }
@@ -3286,12 +3286,12 @@ pub mod dolby_vision {
             self.l6_mode = input;
             self
         }
-        /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+        /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
         pub fn mapping(mut self, input: crate::model::DolbyVisionMapping) -> Self {
             self.mapping = Some(input);
             self
         }
-        /// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+        /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
         pub fn set_mapping(
             mut self,
             input: std::option::Option<crate::model::DolbyVisionMapping>,
@@ -3299,12 +3299,12 @@ pub mod dolby_vision {
             self.mapping = input;
             self
         }
-        /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
+        /// Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
         pub fn profile(mut self, input: crate::model::DolbyVisionProfile) -> Self {
             self.profile = Some(input);
             self
         }
-        /// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
+        /// Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
         pub fn set_profile(
             mut self,
             input: std::option::Option<crate::model::DolbyVisionProfile>,
@@ -3330,7 +3330,7 @@ impl DolbyVision {
     }
 }
 
-/// Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
+/// Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3385,7 +3385,7 @@ impl AsRef<str> for DolbyVisionProfile {
     }
 }
 
-/// Required when you set Dolby Vision Profile (Profile) to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP), content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+/// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -16049,7 +16049,7 @@ impl AsRef<str> for H264RateControlMode {
     }
 }
 
-/// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
+/// Settings for quality-defined variable bitrate encoding with the H.264 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264QvbrSettings {
@@ -18529,7 +18529,7 @@ impl AsRef<str> for Av1RateControlMode {
     }
 }
 
-/// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
+/// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Av1QvbrSettings {
@@ -19558,7 +19558,7 @@ pub struct MpdSettings {
     pub audio_duration: std::option::Option<crate::model::MpdAudioDuration>,
     /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub caption_container_type: std::option::Option<crate::model::MpdCaptionContainerType>,
-    /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub klv_metadata: std::option::Option<crate::model::MpdKlvMetadata>,
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
@@ -19587,7 +19587,7 @@ impl MpdSettings {
     ) -> std::option::Option<&crate::model::MpdCaptionContainerType> {
         self.caption_container_type.as_ref()
     }
-    /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn klv_metadata(&self) -> std::option::Option<&crate::model::MpdKlvMetadata> {
         self.klv_metadata.as_ref()
     }
@@ -19688,12 +19688,12 @@ pub mod mpd_settings {
             self.caption_container_type = input;
             self
         }
-        /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
         pub fn klv_metadata(mut self, input: crate::model::MpdKlvMetadata) -> Self {
             self.klv_metadata = Some(input);
             self
         }
-        /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
         pub fn set_klv_metadata(
             mut self,
             input: std::option::Option<crate::model::MpdKlvMetadata>,
@@ -19926,7 +19926,7 @@ impl AsRef<str> for MpdScte35Esam {
     }
 }
 
-/// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+/// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -21740,7 +21740,7 @@ pub struct M2tsSettings {
     pub force_ts_video_ebp_order: std::option::Option<crate::model::M2tsForceTsVideoEbpOrder>,
     /// The length, in seconds, of each fragment. Only used with EBP markers.
     pub fragment_time: f64,
-    /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub klv_metadata: std::option::Option<crate::model::M2tsKlvMetadata>,
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
     pub max_pcr_interval: i32,
@@ -21778,7 +21778,7 @@ pub struct M2tsSettings {
     pub segmentation_style: std::option::Option<crate::model::M2tsSegmentationStyle>,
     /// Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
     pub segmentation_time: f64,
-    /// Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+    /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
     pub timed_metadata_pid: i32,
     /// Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
     pub transport_stream_id: i32,
@@ -21856,7 +21856,7 @@ impl M2tsSettings {
     pub fn fragment_time(&self) -> f64 {
         self.fragment_time
     }
-    /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn klv_metadata(&self) -> std::option::Option<&crate::model::M2tsKlvMetadata> {
         self.klv_metadata.as_ref()
     }
@@ -21934,7 +21934,7 @@ impl M2tsSettings {
     pub fn segmentation_time(&self) -> f64 {
         self.segmentation_time
     }
-    /// Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+    /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
     pub fn timed_metadata_pid(&self) -> i32 {
         self.timed_metadata_pid
     }
@@ -22258,12 +22258,12 @@ pub mod m2ts_settings {
             self.fragment_time = input;
             self
         }
-        /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
         pub fn klv_metadata(mut self, input: crate::model::M2tsKlvMetadata) -> Self {
             self.klv_metadata = Some(input);
             self
         }
-        /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
         pub fn set_klv_metadata(
             mut self,
             input: std::option::Option<crate::model::M2tsKlvMetadata>,
@@ -22475,12 +22475,12 @@ pub mod m2ts_settings {
             self.segmentation_time = input;
             self
         }
-        /// Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+        /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
         pub fn timed_metadata_pid(mut self, input: i32) -> Self {
             self.timed_metadata_pid = Some(input);
             self
         }
-        /// Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+        /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
         pub fn set_timed_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.timed_metadata_pid = input;
             self
@@ -22965,7 +22965,7 @@ impl AsRef<str> for M2tsNielsenId3 {
     }
 }
 
-/// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+/// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -24013,7 +24013,7 @@ pub struct CmfcSettings {
         std::option::Option<crate::model::CmfcDescriptiveVideoServiceFlag>,
     /// Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
     pub i_frame_only_manifest: std::option::Option<crate::model::CmfcIFrameOnlyManifest>,
-    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub klv_metadata: std::option::Option<crate::model::CmfcKlvMetadata>,
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
@@ -24051,7 +24051,7 @@ impl CmfcSettings {
     ) -> std::option::Option<&crate::model::CmfcIFrameOnlyManifest> {
         self.i_frame_only_manifest.as_ref()
     }
-    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn klv_metadata(&self) -> std::option::Option<&crate::model::CmfcKlvMetadata> {
         self.klv_metadata.as_ref()
     }
@@ -24190,12 +24190,12 @@ pub mod cmfc_settings {
             self.i_frame_only_manifest = input;
             self
         }
-        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
         pub fn klv_metadata(mut self, input: crate::model::CmfcKlvMetadata) -> Self {
             self.klv_metadata = Some(input);
             self
         }
-        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
         pub fn set_klv_metadata(
             mut self,
             input: std::option::Option<crate::model::CmfcKlvMetadata>,
@@ -24431,7 +24431,7 @@ impl AsRef<str> for CmfcScte35Esam {
     }
 }
 
-/// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+/// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -25954,13 +25954,13 @@ impl CaptionDestinationSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebvttDestinationSettings {
-    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+    /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub accessibility: std::option::Option<crate::model::WebvttAccessibilitySubs>,
     /// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
     pub style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
 }
 impl WebvttDestinationSettings {
-    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+    /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub fn accessibility(&self) -> std::option::Option<&crate::model::WebvttAccessibilitySubs> {
         self.accessibility.as_ref()
     }
@@ -25987,12 +25987,12 @@ pub mod webvtt_destination_settings {
         pub(crate) style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
     }
     impl Builder {
-        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+        /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn accessibility(mut self, input: crate::model::WebvttAccessibilitySubs) -> Self {
             self.accessibility = Some(input);
             self
         }
-        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+        /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn set_accessibility(
             mut self,
             input: std::option::Option<crate::model::WebvttAccessibilitySubs>,
@@ -26088,7 +26088,7 @@ impl AsRef<str> for WebvttStylePassthrough {
     }
 }
 
-/// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+/// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -26660,13 +26660,13 @@ impl AsRef<str> for SccDestinationFramerate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImscDestinationSettings {
-    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+    /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub accessibility: std::option::Option<crate::model::ImscAccessibilitySubs>,
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
 }
 impl ImscDestinationSettings {
-    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+    /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub fn accessibility(&self) -> std::option::Option<&crate::model::ImscAccessibilitySubs> {
         self.accessibility.as_ref()
     }
@@ -26693,12 +26693,12 @@ pub mod imsc_destination_settings {
         pub(crate) style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
     }
     impl Builder {
-        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+        /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn accessibility(mut self, input: crate::model::ImscAccessibilitySubs) -> Self {
             self.accessibility = Some(input);
             self
         }
-        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+        /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn set_accessibility(
             mut self,
             input: std::option::Option<crate::model::ImscAccessibilitySubs>,
@@ -26790,7 +26790,7 @@ impl AsRef<str> for ImscStylePassthrough {
     }
 }
 
-/// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+/// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -45450,6 +45450,8 @@ pub struct AutomatedAbrSettings {
     pub max_renditions: i32,
     /// Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default.
     pub min_abr_bitrate: i32,
+    /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
+    pub rules: std::option::Option<std::vec::Vec<crate::model::AutomatedAbrRule>>,
 }
 impl AutomatedAbrSettings {
     /// Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
@@ -45464,6 +45466,10 @@ impl AutomatedAbrSettings {
     pub fn min_abr_bitrate(&self) -> i32 {
         self.min_abr_bitrate
     }
+    /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
+    pub fn rules(&self) -> std::option::Option<&[crate::model::AutomatedAbrRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for AutomatedAbrSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45471,6 +45477,7 @@ impl std::fmt::Debug for AutomatedAbrSettings {
         formatter.field("max_abr_bitrate", &self.max_abr_bitrate);
         formatter.field("max_renditions", &self.max_renditions);
         formatter.field("min_abr_bitrate", &self.min_abr_bitrate);
+        formatter.field("rules", &self.rules);
         formatter.finish()
     }
 }
@@ -45483,6 +45490,7 @@ pub mod automated_abr_settings {
         pub(crate) max_abr_bitrate: std::option::Option<i32>,
         pub(crate) max_renditions: std::option::Option<i32>,
         pub(crate) min_abr_bitrate: std::option::Option<i32>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::AutomatedAbrRule>>,
     }
     impl Builder {
         /// Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
@@ -45515,12 +45523,32 @@ pub mod automated_abr_settings {
             self.min_abr_bitrate = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
+        pub fn rules(mut self, input: crate::model::AutomatedAbrRule) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input);
+            self.rules = Some(v);
+            self
+        }
+        /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AutomatedAbrRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutomatedAbrSettings`](crate::model::AutomatedAbrSettings)
         pub fn build(self) -> crate::model::AutomatedAbrSettings {
             crate::model::AutomatedAbrSettings {
                 max_abr_bitrate: self.max_abr_bitrate.unwrap_or_default(),
                 max_renditions: self.max_renditions.unwrap_or_default(),
                 min_abr_bitrate: self.min_abr_bitrate.unwrap_or_default(),
+                rules: self.rules,
             }
         }
     }
@@ -45529,6 +45557,613 @@ impl AutomatedAbrSettings {
     /// Creates a new builder-style object to manufacture [`AutomatedAbrSettings`](crate::model::AutomatedAbrSettings)
     pub fn builder() -> crate::model::automated_abr_settings::Builder {
         crate::model::automated_abr_settings::Builder::default()
+    }
+}
+
+/// Specify one or more Automated ABR rule types. Note: Force include and Allowed renditions are mutually exclusive.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutomatedAbrRule {
+    /// When customer adds the allowed renditions rule for auto ABR ladder, they are required to add at leat one rendition to allowedRenditions list
+    pub allowed_renditions: std::option::Option<std::vec::Vec<crate::model::AllowedRenditionSize>>,
+    /// When customer adds the force include renditions rule for auto ABR ladder, they are required to add at leat one rendition to forceIncludeRenditions list
+    pub force_include_renditions:
+        std::option::Option<std::vec::Vec<crate::model::ForceIncludeRenditionSize>>,
+    /// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
+    pub min_bottom_rendition_size: std::option::Option<crate::model::MinBottomRenditionSize>,
+    /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution.
+    pub min_top_rendition_size: std::option::Option<crate::model::MinTopRenditionSize>,
+    /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+    pub r#type: std::option::Option<crate::model::RuleType>,
+}
+impl AutomatedAbrRule {
+    /// When customer adds the allowed renditions rule for auto ABR ladder, they are required to add at leat one rendition to allowedRenditions list
+    pub fn allowed_renditions(&self) -> std::option::Option<&[crate::model::AllowedRenditionSize]> {
+        self.allowed_renditions.as_deref()
+    }
+    /// When customer adds the force include renditions rule for auto ABR ladder, they are required to add at leat one rendition to forceIncludeRenditions list
+    pub fn force_include_renditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ForceIncludeRenditionSize]> {
+        self.force_include_renditions.as_deref()
+    }
+    /// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
+    pub fn min_bottom_rendition_size(
+        &self,
+    ) -> std::option::Option<&crate::model::MinBottomRenditionSize> {
+        self.min_bottom_rendition_size.as_ref()
+    }
+    /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution.
+    pub fn min_top_rendition_size(
+        &self,
+    ) -> std::option::Option<&crate::model::MinTopRenditionSize> {
+        self.min_top_rendition_size.as_ref()
+    }
+    /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleType> {
+        self.r#type.as_ref()
+    }
+}
+impl std::fmt::Debug for AutomatedAbrRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedAbrRule");
+        formatter.field("allowed_renditions", &self.allowed_renditions);
+        formatter.field("force_include_renditions", &self.force_include_renditions);
+        formatter.field("min_bottom_rendition_size", &self.min_bottom_rendition_size);
+        formatter.field("min_top_rendition_size", &self.min_top_rendition_size);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AutomatedAbrRule`](crate::model::AutomatedAbrRule)
+pub mod automated_abr_rule {
+    /// A builder for [`AutomatedAbrRule`](crate::model::AutomatedAbrRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) allowed_renditions:
+            std::option::Option<std::vec::Vec<crate::model::AllowedRenditionSize>>,
+        pub(crate) force_include_renditions:
+            std::option::Option<std::vec::Vec<crate::model::ForceIncludeRenditionSize>>,
+        pub(crate) min_bottom_rendition_size:
+            std::option::Option<crate::model::MinBottomRenditionSize>,
+        pub(crate) min_top_rendition_size: std::option::Option<crate::model::MinTopRenditionSize>,
+        pub(crate) r#type: std::option::Option<crate::model::RuleType>,
+    }
+    impl Builder {
+        /// Appends an item to `allowed_renditions`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_renditions`](Self::set_allowed_renditions).
+        ///
+        /// When customer adds the allowed renditions rule for auto ABR ladder, they are required to add at leat one rendition to allowedRenditions list
+        pub fn allowed_renditions(mut self, input: crate::model::AllowedRenditionSize) -> Self {
+            let mut v = self.allowed_renditions.unwrap_or_default();
+            v.push(input);
+            self.allowed_renditions = Some(v);
+            self
+        }
+        /// When customer adds the allowed renditions rule for auto ABR ladder, they are required to add at leat one rendition to allowedRenditions list
+        pub fn set_allowed_renditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AllowedRenditionSize>>,
+        ) -> Self {
+            self.allowed_renditions = input;
+            self
+        }
+        /// Appends an item to `force_include_renditions`.
+        ///
+        /// To override the contents of this collection use [`set_force_include_renditions`](Self::set_force_include_renditions).
+        ///
+        /// When customer adds the force include renditions rule for auto ABR ladder, they are required to add at leat one rendition to forceIncludeRenditions list
+        pub fn force_include_renditions(
+            mut self,
+            input: crate::model::ForceIncludeRenditionSize,
+        ) -> Self {
+            let mut v = self.force_include_renditions.unwrap_or_default();
+            v.push(input);
+            self.force_include_renditions = Some(v);
+            self
+        }
+        /// When customer adds the force include renditions rule for auto ABR ladder, they are required to add at leat one rendition to forceIncludeRenditions list
+        pub fn set_force_include_renditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ForceIncludeRenditionSize>>,
+        ) -> Self {
+            self.force_include_renditions = input;
+            self
+        }
+        /// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
+        pub fn min_bottom_rendition_size(
+            mut self,
+            input: crate::model::MinBottomRenditionSize,
+        ) -> Self {
+            self.min_bottom_rendition_size = Some(input);
+            self
+        }
+        /// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
+        pub fn set_min_bottom_rendition_size(
+            mut self,
+            input: std::option::Option<crate::model::MinBottomRenditionSize>,
+        ) -> Self {
+            self.min_bottom_rendition_size = input;
+            self
+        }
+        /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution.
+        pub fn min_top_rendition_size(mut self, input: crate::model::MinTopRenditionSize) -> Self {
+            self.min_top_rendition_size = Some(input);
+            self
+        }
+        /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution.
+        pub fn set_min_top_rendition_size(
+            mut self,
+            input: std::option::Option<crate::model::MinTopRenditionSize>,
+        ) -> Self {
+            self.min_top_rendition_size = input;
+            self
+        }
+        /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+        pub fn r#type(mut self, input: crate::model::RuleType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RuleType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutomatedAbrRule`](crate::model::AutomatedAbrRule)
+        pub fn build(self) -> crate::model::AutomatedAbrRule {
+            crate::model::AutomatedAbrRule {
+                allowed_renditions: self.allowed_renditions,
+                force_include_renditions: self.force_include_renditions,
+                min_bottom_rendition_size: self.min_bottom_rendition_size,
+                min_top_rendition_size: self.min_top_rendition_size,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AutomatedAbrRule {
+    /// Creates a new builder-style object to manufacture [`AutomatedAbrRule`](crate::model::AutomatedAbrRule)
+    pub fn builder() -> crate::model::automated_abr_rule::Builder {
+        crate::model::automated_abr_rule::Builder::default()
+    }
+}
+
+/// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RuleType {
+    #[allow(missing_docs)] // documentation missing in model
+    AllowedRenditions,
+    #[allow(missing_docs)] // documentation missing in model
+    ForceIncludeRenditions,
+    #[allow(missing_docs)] // documentation missing in model
+    MinBottomRenditionSize,
+    #[allow(missing_docs)] // documentation missing in model
+    MinTopRenditionSize,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RuleType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOWED_RENDITIONS" => RuleType::AllowedRenditions,
+            "FORCE_INCLUDE_RENDITIONS" => RuleType::ForceIncludeRenditions,
+            "MIN_BOTTOM_RENDITION_SIZE" => RuleType::MinBottomRenditionSize,
+            "MIN_TOP_RENDITION_SIZE" => RuleType::MinTopRenditionSize,
+            other => RuleType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RuleType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RuleType::from(s))
+    }
+}
+impl RuleType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RuleType::AllowedRenditions => "ALLOWED_RENDITIONS",
+            RuleType::ForceIncludeRenditions => "FORCE_INCLUDE_RENDITIONS",
+            RuleType::MinBottomRenditionSize => "MIN_BOTTOM_RENDITION_SIZE",
+            RuleType::MinTopRenditionSize => "MIN_TOP_RENDITION_SIZE",
+            RuleType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALLOWED_RENDITIONS",
+            "FORCE_INCLUDE_RENDITIONS",
+            "MIN_BOTTOM_RENDITION_SIZE",
+            "MIN_TOP_RENDITION_SIZE",
+        ]
+    }
+}
+impl AsRef<str> for RuleType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MinTopRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub height: i32,
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub width: i32,
+}
+impl MinTopRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
+}
+impl std::fmt::Debug for MinTopRenditionSize {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MinTopRenditionSize");
+        formatter.field("height", &self.height);
+        formatter.field("width", &self.width);
+        formatter.finish()
+    }
+}
+/// See [`MinTopRenditionSize`](crate::model::MinTopRenditionSize)
+pub mod min_top_rendition_size {
+    /// A builder for [`MinTopRenditionSize`](crate::model::MinTopRenditionSize)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) height: std::option::Option<i32>,
+        pub(crate) width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
+            self
+        }
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MinTopRenditionSize`](crate::model::MinTopRenditionSize)
+        pub fn build(self) -> crate::model::MinTopRenditionSize {
+            crate::model::MinTopRenditionSize {
+                height: self.height.unwrap_or_default(),
+                width: self.width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl MinTopRenditionSize {
+    /// Creates a new builder-style object to manufacture [`MinTopRenditionSize`](crate::model::MinTopRenditionSize)
+    pub fn builder() -> crate::model::min_top_rendition_size::Builder {
+        crate::model::min_top_rendition_size::Builder::default()
+    }
+}
+
+/// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MinBottomRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub height: i32,
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub width: i32,
+}
+impl MinBottomRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
+}
+impl std::fmt::Debug for MinBottomRenditionSize {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MinBottomRenditionSize");
+        formatter.field("height", &self.height);
+        formatter.field("width", &self.width);
+        formatter.finish()
+    }
+}
+/// See [`MinBottomRenditionSize`](crate::model::MinBottomRenditionSize)
+pub mod min_bottom_rendition_size {
+    /// A builder for [`MinBottomRenditionSize`](crate::model::MinBottomRenditionSize)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) height: std::option::Option<i32>,
+        pub(crate) width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
+            self
+        }
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MinBottomRenditionSize`](crate::model::MinBottomRenditionSize)
+        pub fn build(self) -> crate::model::MinBottomRenditionSize {
+            crate::model::MinBottomRenditionSize {
+                height: self.height.unwrap_or_default(),
+                width: self.width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl MinBottomRenditionSize {
+    /// Creates a new builder-style object to manufacture [`MinBottomRenditionSize`](crate::model::MinBottomRenditionSize)
+    pub fn builder() -> crate::model::min_bottom_rendition_size::Builder {
+        crate::model::min_bottom_rendition_size::Builder::default()
+    }
+}
+
+/// Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForceIncludeRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub height: i32,
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub width: i32,
+}
+impl ForceIncludeRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
+}
+impl std::fmt::Debug for ForceIncludeRenditionSize {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ForceIncludeRenditionSize");
+        formatter.field("height", &self.height);
+        formatter.field("width", &self.width);
+        formatter.finish()
+    }
+}
+/// See [`ForceIncludeRenditionSize`](crate::model::ForceIncludeRenditionSize)
+pub mod force_include_rendition_size {
+    /// A builder for [`ForceIncludeRenditionSize`](crate::model::ForceIncludeRenditionSize)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) height: std::option::Option<i32>,
+        pub(crate) width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
+            self
+        }
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ForceIncludeRenditionSize`](crate::model::ForceIncludeRenditionSize)
+        pub fn build(self) -> crate::model::ForceIncludeRenditionSize {
+            crate::model::ForceIncludeRenditionSize {
+                height: self.height.unwrap_or_default(),
+                width: self.width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ForceIncludeRenditionSize {
+    /// Creates a new builder-style object to manufacture [`ForceIncludeRenditionSize`](crate::model::ForceIncludeRenditionSize)
+    pub fn builder() -> crate::model::force_include_rendition_size::Builder {
+        crate::model::force_include_rendition_size::Builder::default()
+    }
+}
+
+/// Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AllowedRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub height: i32,
+    /// Set to ENABLED to force a rendition to be included.
+    pub required: std::option::Option<crate::model::RequiredFlag>,
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub width: i32,
+}
+impl AllowedRenditionSize {
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Set to ENABLED to force a rendition to be included.
+    pub fn required(&self) -> std::option::Option<&crate::model::RequiredFlag> {
+        self.required.as_ref()
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
+}
+impl std::fmt::Debug for AllowedRenditionSize {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AllowedRenditionSize");
+        formatter.field("height", &self.height);
+        formatter.field("required", &self.required);
+        formatter.field("width", &self.width);
+        formatter.finish()
+    }
+}
+/// See [`AllowedRenditionSize`](crate::model::AllowedRenditionSize)
+pub mod allowed_rendition_size {
+    /// A builder for [`AllowedRenditionSize`](crate::model::AllowedRenditionSize)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) height: std::option::Option<i32>,
+        pub(crate) required: std::option::Option<crate::model::RequiredFlag>,
+        pub(crate) width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
+            self
+        }
+        /// Use Height to define the video resolution height, in pixels, for this rule.
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
+            self
+        }
+        /// Set to ENABLED to force a rendition to be included.
+        pub fn required(mut self, input: crate::model::RequiredFlag) -> Self {
+            self.required = Some(input);
+            self
+        }
+        /// Set to ENABLED to force a rendition to be included.
+        pub fn set_required(
+            mut self,
+            input: std::option::Option<crate::model::RequiredFlag>,
+        ) -> Self {
+            self.required = input;
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
+            self
+        }
+        /// Use Width to define the video resolution width, in pixels, for this rule.
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AllowedRenditionSize`](crate::model::AllowedRenditionSize)
+        pub fn build(self) -> crate::model::AllowedRenditionSize {
+            crate::model::AllowedRenditionSize {
+                height: self.height.unwrap_or_default(),
+                required: self.required,
+                width: self.width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AllowedRenditionSize {
+    /// Creates a new builder-style object to manufacture [`AllowedRenditionSize`](crate::model::AllowedRenditionSize)
+    pub fn builder() -> crate::model::allowed_rendition_size::Builder {
+        crate::model::allowed_rendition_size::Builder::default()
+    }
+}
+
+/// Set to ENABLED to force a rendition to be included.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RequiredFlag {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RequiredFlag {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => RequiredFlag::Disabled,
+            "ENABLED" => RequiredFlag::Enabled,
+            other => RequiredFlag::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RequiredFlag {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RequiredFlag::from(s))
+    }
+}
+impl RequiredFlag {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RequiredFlag::Disabled => "DISABLED",
+            RequiredFlag::Enabled => "ENABLED",
+            RequiredFlag::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for RequiredFlag {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

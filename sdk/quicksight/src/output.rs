@@ -868,6 +868,79 @@ impl UpdateTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePublicSharingSettingsOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+}
+impl UpdatePublicSharingSettingsOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
+impl std::fmt::Debug for UpdatePublicSharingSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePublicSharingSettingsOutput");
+        formatter.field("request_id", &self.request_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput)
+pub mod update_public_sharing_settings_output {
+    /// A builder for [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput)
+        pub fn build(self) -> crate::output::UpdatePublicSharingSettingsOutput {
+            crate::output::UpdatePublicSharingSettingsOutput {
+                request_id: self.request_id,
+                status: self.status.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl UpdatePublicSharingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput)
+    pub fn builder() -> crate::output::update_public_sharing_settings_output::Builder {
+        crate::output::update_public_sharing_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpRestrictionOutput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub aws_account_id: std::option::Option<std::string::String>,

@@ -1879,7 +1879,7 @@ pub struct UpdateEventSourceMappingOutput {
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -1980,7 +1980,7 @@ impl UpdateEventSourceMappingOutput {
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -2369,7 +2369,7 @@ pub mod update_event_source_mapping_output {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: crate::model::FunctionResponseType,
@@ -2379,7 +2379,7 @@ pub mod update_event_source_mapping_output {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
@@ -7676,7 +7676,7 @@ pub struct GetEventSourceMappingOutput {
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -7777,7 +7777,7 @@ impl GetEventSourceMappingOutput {
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -8166,7 +8166,7 @@ pub mod get_event_source_mapping_output {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: crate::model::FunctionResponseType,
@@ -8176,7 +8176,7 @@ pub mod get_event_source_mapping_output {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
@@ -8775,7 +8775,7 @@ pub struct DeleteEventSourceMappingOutput {
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -8876,7 +8876,7 @@ impl DeleteEventSourceMappingOutput {
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -9265,7 +9265,7 @@ pub mod delete_event_source_mapping_output {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: crate::model::FunctionResponseType,
@@ -9275,7 +9275,7 @@ pub mod delete_event_source_mapping_output {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
@@ -10320,7 +10320,7 @@ pub struct CreateEventSourceMappingOutput {
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -10421,7 +10421,7 @@ impl CreateEventSourceMappingOutput {
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -10810,7 +10810,7 @@ pub mod create_event_source_mapping_output {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: crate::model::FunctionResponseType,
@@ -10820,7 +10820,7 @@ pub mod create_event_source_mapping_output {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,

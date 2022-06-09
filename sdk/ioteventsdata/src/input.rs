@@ -152,6 +152,153 @@ impl BatchAcknowledgeAlarmInput {
     }
 }
 
+/// See [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput)
+pub mod batch_delete_detector_input {
+    /// A builder for [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detectors:
+            std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
+    }
+    impl Builder {
+        /// Appends an item to `detectors`.
+        ///
+        /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
+        ///
+        /// <p>The list of one or more detectors to be deleted.</p>
+        pub fn detectors(mut self, input: crate::model::DeleteDetectorRequest) -> Self {
+            let mut v = self.detectors.unwrap_or_default();
+            v.push(input);
+            self.detectors = Some(v);
+            self
+        }
+        /// <p>The list of one or more detectors to be deleted.</p>
+        pub fn set_detectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
+        ) -> Self {
+            self.detectors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::BatchDeleteDetectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchDeleteDetectorInput {
+                detectors: self.detectors,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchDeleteDetectorInputOperationOutputAlias = crate::operation::BatchDeleteDetector;
+#[doc(hidden)]
+pub type BatchDeleteDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl BatchDeleteDetectorInput {
+    /// Consumes the builder and constructs an Operation<[`BatchDeleteDetector`](crate::operation::BatchDeleteDetector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchDeleteDetector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchDeleteDetectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/detectors/delete").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchDeleteDetectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_detector(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchDeleteDetector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchDeleteDetector",
+            "ioteventsdata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput)
+    pub fn builder() -> crate::input::batch_delete_detector_input::Builder {
+        crate::input::batch_delete_detector_input::Builder::default()
+    }
+}
+
 /// See [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput)
 pub mod batch_disable_alarm_input {
     /// A builder for [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput)
@@ -2035,6 +2182,27 @@ impl std::fmt::Debug for BatchDisableAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisableAlarmInput");
         formatter.field("disable_action_requests", &self.disable_action_requests);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDeleteDetectorInput {
+    /// <p>The list of one or more detectors to be deleted.</p>
+    pub detectors: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
+}
+impl BatchDeleteDetectorInput {
+    /// <p>The list of one or more detectors to be deleted.</p>
+    pub fn detectors(&self) -> std::option::Option<&[crate::model::DeleteDetectorRequest]> {
+        self.detectors.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchDeleteDetectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDeleteDetectorInput");
+        formatter.field("detectors", &self.detectors);
         formatter.finish()
     }
 }

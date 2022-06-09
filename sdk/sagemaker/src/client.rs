@@ -217,11 +217,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`auto_ml_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_name): <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
-    ///   - [`input_data_config(Vec<AutoMlChannel>)`](crate::client::fluent_builders::CreateAutoMLJob::input_data_config) / [`set_input_data_config(Option<Vec<AutoMlChannel>>)`](crate::client::fluent_builders::CreateAutoMLJob::set_input_data_config): <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+    ///   - [`input_data_config(Vec<AutoMlChannel>)`](crate::client::fluent_builders::CreateAutoMLJob::input_data_config) / [`set_input_data_config(Option<Vec<AutoMlChannel>>)`](crate::client::fluent_builders::CreateAutoMLJob::set_input_data_config): <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
     ///   - [`output_data_config(AutoMlOutputDataConfig)`](crate::client::fluent_builders::CreateAutoMLJob::output_data_config) / [`set_output_data_config(Option<AutoMlOutputDataConfig>)`](crate::client::fluent_builders::CreateAutoMLJob::set_output_data_config): <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-    ///   - [`problem_type(ProblemType)`](crate::client::fluent_builders::CreateAutoMLJob::problem_type) / [`set_problem_type(Option<ProblemType>)`](crate::client::fluent_builders::CreateAutoMLJob::set_problem_type): <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+    ///   - [`problem_type(ProblemType)`](crate::client::fluent_builders::CreateAutoMLJob::problem_type) / [`set_problem_type(Option<ProblemType>)`](crate::client::fluent_builders::CreateAutoMLJob::set_problem_type): <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
     ///   - [`auto_ml_job_objective(AutoMlJobObjective)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_objective) / [`set_auto_ml_job_objective(Option<AutoMlJobObjective>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_objective): <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
-    ///   - [`auto_ml_job_config(AutoMlJobConfig)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_config) / [`set_auto_ml_job_config(Option<AutoMlJobConfig>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_config): <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+    ///   - [`auto_ml_job_config(AutoMlJobConfig)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_config) / [`set_auto_ml_job_config(Option<AutoMlJobConfig>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_config): <p>A collection of settings used to configure an AutoML job.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAutoMLJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateAutoMLJob::set_role_arn): <p>The ARN of the role that is used to access the data.</p>
     ///   - [`generate_candidate_definitions_only(bool)`](crate::client::fluent_builders::CreateAutoMLJob::generate_candidate_definitions_only) / [`set_generate_candidate_definitions_only(bool)`](crate::client::fluent_builders::CreateAutoMLJob::set_generate_candidate_definitions_only): <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAutoMLJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAutoMLJob::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
@@ -368,7 +368,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_endpoint_config_name): <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
     ///   - [`production_variants(Vec<ProductionVariant>)`](crate::client::fluent_builders::CreateEndpointConfig::production_variants) / [`set_production_variants(Option<Vec<ProductionVariant>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_production_variants): <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    ///   - [`data_capture_config(DataCaptureConfig)`](crate::client::fluent_builders::CreateEndpointConfig::data_capture_config) / [`set_data_capture_config(Option<DataCaptureConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_data_capture_config): <p></p>
+    ///   - [`data_capture_config(DataCaptureConfig)`](crate::client::fluent_builders::CreateEndpointConfig::data_capture_config) / [`set_data_capture_config(Option<DataCaptureConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_data_capture_config): <p>Configuration to control how SageMaker captures inference data.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpointConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
     ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
@@ -595,7 +595,7 @@ impl Client {
     ///   - [`customer_metadata_properties(HashMap<String, String>)`](crate::client::fluent_builders::CreateModelPackage::customer_metadata_properties) / [`set_customer_metadata_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateModelPackage::set_customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
     ///   - [`drift_check_baselines(DriftCheckBaselines)`](crate::client::fluent_builders::CreateModelPackage::drift_check_baselines) / [`set_drift_check_baselines(Option<DriftCheckBaselines>)`](crate::client::fluent_builders::CreateModelPackage::set_drift_check_baselines): <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_domain): <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
-    ///   - [`task(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::task) / [`set_task(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_task): <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    ///   - [`task(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::task) / [`set_task(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_task): <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>  <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
     ///   - [`sample_payload_url(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::sample_payload_url) / [`set_sample_payload_url(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_sample_payload_url): <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     ///   - [`additional_inference_specifications(Vec<AdditionalInferenceSpecificationDefinition>)`](crate::client::fluent_builders::CreateModelPackage::additional_inference_specifications) / [`set_additional_inference_specifications(Option<Vec<AdditionalInferenceSpecificationDefinition>>)`](crate::client::fluent_builders::CreateModelPackage::set_additional_inference_specifications): <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
     /// - On success, responds with [`CreateModelPackageOutput`](crate::output::CreateModelPackageOutput) with field(s):
@@ -667,6 +667,7 @@ impl Client {
     ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::CreateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     ///   - [`root_access(RootAccess)`](crate::client::fluent_builders::CreateNotebookInstance::root_access) / [`set_root_access(Option<RootAccess>)`](crate::client::fluent_builders::CreateNotebookInstance::set_root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>  </note>
     ///   - [`platform_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::platform_identifier) / [`set_platform_identifier(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
+    ///   - [`instance_metadata_service_configuration(InstanceMetadataServiceConfiguration)`](crate::client::fluent_builders::CreateNotebookInstance::instance_metadata_service_configuration) / [`set_instance_metadata_service_configuration(Option<InstanceMetadataServiceConfiguration>)`](crate::client::fluent_builders::CreateNotebookInstance::set_instance_metadata_service_configuration): <p>Information on the IMDS configuration of the notebook instance</p>
     /// - On success, responds with [`CreateNotebookInstanceOutput`](crate::output::CreateNotebookInstanceOutput) with field(s):
     ///   - [`notebook_instance_arn(Option<String>)`](crate::output::CreateNotebookInstanceOutput::notebook_instance_arn): <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     /// - On failure, responds with [`SdkError<CreateNotebookInstanceError>`](crate::error::CreateNotebookInstanceError)
@@ -1634,7 +1635,7 @@ impl Client {
     ///   - [`endpoint_arn(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     ///   - [`endpoint_config_name(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_config_name): <p>The name of the endpoint configuration associated with this endpoint.</p>
     ///   - [`production_variants(Option<Vec<ProductionVariantSummary>>)`](crate::output::DescribeEndpointOutput::production_variants): <p> An array of <code>ProductionVariantSummary</code> objects, one for each model hosted behind this endpoint. </p>
-    ///   - [`data_capture_config(Option<DataCaptureConfigSummary>)`](crate::output::DescribeEndpointOutput::data_capture_config): <p></p>
+    ///   - [`data_capture_config(Option<DataCaptureConfigSummary>)`](crate::output::DescribeEndpointOutput::data_capture_config): <p>The currently active data capture configuration used by your Endpoint.</p>
     ///   - [`endpoint_status(Option<EndpointStatus>)`](crate::output::DescribeEndpointOutput::endpoint_status): <p>The status of the endpoint.</p>  <ul>   <li> <p> <code>OutOfService</code>: Endpoint is not available to take incoming requests.</p> </li>   <li> <p> <code>Creating</code>: <code>CreateEndpoint</code> is executing.</p> </li>   <li> <p> <code>Updating</code>: <code>UpdateEndpoint</code> or <code>UpdateEndpointWeightsAndCapacities</code> is executing.</p> </li>   <li> <p> <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled until it has completed. This maintenance operation does not change any customer-specified values such as VPC config, KMS encryption, model, instance type, or instance count.</p> </li>   <li> <p> <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled and is undergoing variant weight or capacity changes as part of an <code>UpdateEndpointWeightsAndCapacities</code> call or when the <code>UpdateEndpointWeightsAndCapacities</code> operation is called explicitly.</p> </li>   <li> <p> <code>InService</code>: Endpoint is available to process incoming requests.</p> </li>   <li> <p> <code>Deleting</code>: <code>DeleteEndpoint</code> is executing.</p> </li>   <li> <p> <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <code>DeleteEndpoint</code> is the only operation that can be performed on a failed endpoint.</p> </li>  </ul>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeEndpointOutput::failure_reason): <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEndpointOutput::creation_time): <p>A timestamp that shows when the endpoint was created.</p>
@@ -1654,7 +1655,7 @@ impl Client {
     ///   - [`endpoint_config_name(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_name): <p>Name of the SageMaker endpoint configuration.</p>
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     ///   - [`production_variants(Option<Vec<ProductionVariant>>)`](crate::output::DescribeEndpointConfigOutput::production_variants): <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    ///   - [`data_capture_config(Option<DataCaptureConfig>)`](crate::output::DescribeEndpointConfigOutput::data_capture_config): <p></p>
+    ///   - [`data_capture_config(Option<DataCaptureConfig>)`](crate::output::DescribeEndpointConfigOutput::data_capture_config): <p>Configuration to control how SageMaker captures inference data.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeEndpointConfigOutput::kms_key_id): <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEndpointConfigOutput::creation_time): <p>A timestamp that shows when the endpoint configuration was created.</p>
     ///   - [`async_inference_config(Option<AsyncInferenceConfig>)`](crate::output::DescribeEndpointConfigOutput::async_inference_config): <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
@@ -2046,6 +2047,7 @@ impl Client {
     ///   - [`additional_code_repositories(Option<Vec<String>>)`](crate::output::DescribeNotebookInstanceOutput::additional_code_repositories): <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     ///   - [`root_access(Option<RootAccess>)`](crate::output::DescribeNotebookInstanceOutput::root_access): <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>   <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>  </note>
     ///   - [`platform_identifier(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
+    ///   - [`instance_metadata_service_configuration(Option<InstanceMetadataServiceConfiguration>)`](crate::output::DescribeNotebookInstanceOutput::instance_metadata_service_configuration): <p>Information on the IMDS configuration of the notebook instance</p>
     /// - On failure, responds with [`SdkError<DescribeNotebookInstanceError>`](crate::error::DescribeNotebookInstanceError)
     pub fn describe_notebook_instance(&self) -> fluent_builders::DescribeNotebookInstance {
         fluent_builders::DescribeNotebookInstance::new(self.handle.clone())
@@ -4015,6 +4017,7 @@ impl Client {
     ///   - [`disassociate_default_code_repository(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_default_code_repository) / [`set_disassociate_default_code_repository(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_default_code_repository): <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     ///   - [`disassociate_additional_code_repositories(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_additional_code_repositories) / [`set_disassociate_additional_code_repositories(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_additional_code_repositories): <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     ///   - [`root_access(RootAccess)`](crate::client::fluent_builders::UpdateNotebookInstance::root_access) / [`set_root_access(Option<RootAccess>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>  </note>
+    ///   - [`instance_metadata_service_configuration(InstanceMetadataServiceConfiguration)`](crate::client::fluent_builders::UpdateNotebookInstance::instance_metadata_service_configuration) / [`set_instance_metadata_service_configuration(Option<InstanceMetadataServiceConfiguration>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_instance_metadata_service_configuration): <p>Information on the IMDS configuration of the notebook instance</p>
     /// - On success, responds with [`UpdateNotebookInstanceOutput`](crate::output::UpdateNotebookInstanceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNotebookInstanceError>`](crate::error::UpdateNotebookInstanceError)
@@ -5183,12 +5186,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
         pub fn input_data_config(mut self, input: crate::model::AutoMlChannel) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
@@ -5209,12 +5212,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+        /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
         pub fn problem_type(mut self, input: crate::model::ProblemType) -> Self {
             self.inner = self.inner.problem_type(input);
             self
         }
-        /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+        /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
         pub fn set_problem_type(
             mut self,
             input: std::option::Option<crate::model::ProblemType>,
@@ -5235,12 +5238,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_ml_job_objective(input);
             self
         }
-        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+        /// <p>A collection of settings used to configure an AutoML job.</p>
         pub fn auto_ml_job_config(mut self, input: crate::model::AutoMlJobConfig) -> Self {
             self.inner = self.inner.auto_ml_job_config(input);
             self
         }
-        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+        /// <p>A collection of settings used to configure an AutoML job.</p>
         pub fn set_auto_ml_job_config(
             mut self,
             input: std::option::Option<crate::model::AutoMlJobConfig>,
@@ -6543,12 +6546,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_production_variants(input);
             self
         }
-        /// <p></p>
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
         pub fn data_capture_config(mut self, input: crate::model::DataCaptureConfig) -> Self {
             self.inner = self.inner.data_capture_config(input);
             self
         }
-        /// <p></p>
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
         pub fn set_data_capture_config(
             mut self,
             input: std::option::Option<crate::model::DataCaptureConfig>,
@@ -8738,12 +8741,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+        /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
         pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task(input.into());
             self
         }
-        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+        /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task(input);
             self
@@ -9419,6 +9424,24 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_platform_identifier(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn instance_metadata_service_configuration(
+            mut self,
+            input: crate::model::InstanceMetadataServiceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.instance_metadata_service_configuration(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn set_instance_metadata_service_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_instance_metadata_service_configuration(input);
             self
         }
     }
@@ -10708,7 +10731,7 @@ pub mod fluent_builders {
     /// <p>In the request body, you provide the following:</p>
     /// <ul>
     /// <li> <p> <code>TransformJobName</code> - Identifies the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing Amazon SageMaker model in the same Amazon Web Services Region and Amazon Web Services account. For information on creating a model, see <code>CreateModel</code>.</p> </li>
+    /// <li> <p> <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing Amazon SageMaker model in the same Amazon Web Services Region and Amazon Web Services account. For information on creating a model, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.</p> </li>
     /// <li> <p> <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p> </li>
     /// <li> <p> <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p> </li>
     /// <li> <p> <code>TransformResources</code> - Identifies the ML compute instances for the transform job.</p> </li>
@@ -28821,6 +28844,24 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RootAccess>,
         ) -> Self {
             self.inner = self.inner.set_root_access(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn instance_metadata_service_configuration(
+            mut self,
+            input: crate::model::InstanceMetadataServiceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.instance_metadata_service_configuration(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn set_instance_metadata_service_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_instance_metadata_service_configuration(input);
             self
         }
     }

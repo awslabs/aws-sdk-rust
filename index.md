@@ -290,6 +290,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | CloudWatch RUM | [aws-sdk-rum](https://crates.io/crates/aws-sdk-rum) ([docs](https://docs.rs/aws-sdk-rum)) |
 | CodeArtifact | [aws-sdk-codeartifact](https://crates.io/crates/aws-sdk-codeartifact) ([docs](https://docs.rs/aws-sdk-codeartifact)) |
 | EC2 Image Builder | [aws-sdk-imagebuilder](https://crates.io/crates/aws-sdk-imagebuilder) ([docs](https://docs.rs/aws-sdk-imagebuilder)) |
+| EMR Serverless | [aws-sdk-emrserverless](https://crates.io/crates/aws-sdk-emrserverless) ([docs](https://docs.rs/aws-sdk-emrserverless)) |
 | Elastic Disaster Recovery Service | [aws-sdk-drs](https://crates.io/crates/aws-sdk-drs) ([docs](https://docs.rs/aws-sdk-drs)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancing](https://crates.io/crates/aws-sdk-elasticloadbalancing) ([docs](https://docs.rs/aws-sdk-elasticloadbalancing)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancingv2](https://crates.io/crates/aws-sdk-elasticloadbalancingv2) ([docs](https://docs.rs/aws-sdk-elasticloadbalancingv2)) |

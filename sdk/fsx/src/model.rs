@@ -3598,7 +3598,7 @@ impl AsRef<str> for OntapDeploymentType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LustreFileSystemConfiguration {
-    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
     /// <p>This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .</p>
@@ -3638,9 +3638,11 @@ pub struct LustreFileSystemConfiguration {
     pub data_compression_type: std::option::Option<crate::model::DataCompressionType>,
     /// <p>The Lustre logging configuration. Lustre logging writes the enabled log events for your file system to Amazon CloudWatch Logs.</p>
     pub log_configuration: std::option::Option<crate::model::LustreLogConfiguration>,
+    /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub root_squash_configuration: std::option::Option<crate::model::LustreRootSquashConfiguration>,
 }
 impl LustreFileSystemConfiguration {
-    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
@@ -3703,6 +3705,12 @@ impl LustreFileSystemConfiguration {
     pub fn log_configuration(&self) -> std::option::Option<&crate::model::LustreLogConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub fn root_squash_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LustreRootSquashConfiguration> {
+        self.root_squash_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for LustreFileSystemConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3733,6 +3741,7 @@ impl std::fmt::Debug for LustreFileSystemConfiguration {
         formatter.field("drive_cache_type", &self.drive_cache_type);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("root_squash_configuration", &self.root_squash_configuration);
         formatter.finish()
     }
 }
@@ -3754,9 +3763,11 @@ pub mod lustre_file_system_configuration {
         pub(crate) drive_cache_type: std::option::Option<crate::model::DriveCacheType>,
         pub(crate) data_compression_type: std::option::Option<crate::model::DataCompressionType>,
         pub(crate) log_configuration: std::option::Option<crate::model::LustreLogConfiguration>,
+        pub(crate) root_squash_configuration:
+            std::option::Option<crate::model::LustreRootSquashConfiguration>,
     }
     impl Builder {
-        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn weekly_maintenance_start_time(
             mut self,
             input: impl Into<std::string::String>,
@@ -3764,7 +3775,7 @@ pub mod lustre_file_system_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
-        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3933,6 +3944,22 @@ pub mod lustre_file_system_configuration {
             self.log_configuration = input;
             self
         }
+        /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+        pub fn root_squash_configuration(
+            mut self,
+            input: crate::model::LustreRootSquashConfiguration,
+        ) -> Self {
+            self.root_squash_configuration = Some(input);
+            self
+        }
+        /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+        pub fn set_root_squash_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LustreRootSquashConfiguration>,
+        ) -> Self {
+            self.root_squash_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration)
         pub fn build(self) -> crate::model::LustreFileSystemConfiguration {
             crate::model::LustreFileSystemConfiguration {
@@ -3947,6 +3974,7 @@ pub mod lustre_file_system_configuration {
                 drive_cache_type: self.drive_cache_type,
                 data_compression_type: self.data_compression_type,
                 log_configuration: self.log_configuration,
+                root_squash_configuration: self.root_squash_configuration,
             }
         }
     }
@@ -3955,6 +3983,125 @@ impl LustreFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration)
     pub fn builder() -> crate::model::lustre_file_system_configuration::Builder {
         crate::model::lustre_file_system_configuration::Builder::default()
+    }
+}
+
+/// <p>The configuration for Lustre root squash used to restrict root-level access from clients that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code> parameter to enable root squash. To learn more about Lustre root squash, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html">Lustre root squash</a>.</p>
+/// <p>You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LustreRootSquashConfiguration {
+    /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
+    /// <ul>
+    /// <li> <p>A non-zero value for UID and GID enables root squash. The UID and GID values can be different, but each must be a non-zero value.</p> </li>
+    /// <li> <p>A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables root squash.</p> </li>
+    /// </ul>
+    /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
+    pub root_squash: std::option::Option<std::string::String>,
+    /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
+    /// <ul>
+    /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
+    /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
+    /// </ul>
+    pub no_squash_nids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LustreRootSquashConfiguration {
+    /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
+    /// <ul>
+    /// <li> <p>A non-zero value for UID and GID enables root squash. The UID and GID values can be different, but each must be a non-zero value.</p> </li>
+    /// <li> <p>A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables root squash.</p> </li>
+    /// </ul>
+    /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
+    pub fn root_squash(&self) -> std::option::Option<&str> {
+        self.root_squash.as_deref()
+    }
+    /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
+    /// <ul>
+    /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
+    /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
+    /// </ul>
+    pub fn no_squash_nids(&self) -> std::option::Option<&[std::string::String]> {
+        self.no_squash_nids.as_deref()
+    }
+}
+impl std::fmt::Debug for LustreRootSquashConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LustreRootSquashConfiguration");
+        formatter.field("root_squash", &self.root_squash);
+        formatter.field("no_squash_nids", &self.no_squash_nids);
+        formatter.finish()
+    }
+}
+/// See [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+pub mod lustre_root_squash_configuration {
+    /// A builder for [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) root_squash: std::option::Option<std::string::String>,
+        pub(crate) no_squash_nids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
+        /// <ul>
+        /// <li> <p>A non-zero value for UID and GID enables root squash. The UID and GID values can be different, but each must be a non-zero value.</p> </li>
+        /// <li> <p>A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables root squash.</p> </li>
+        /// </ul>
+        /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
+        pub fn root_squash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_squash = Some(input.into());
+            self
+        }
+        /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
+        /// <ul>
+        /// <li> <p>A non-zero value for UID and GID enables root squash. The UID and GID values can be different, but each must be a non-zero value.</p> </li>
+        /// <li> <p>A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables root squash.</p> </li>
+        /// </ul>
+        /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
+        pub fn set_root_squash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_squash = input;
+            self
+        }
+        /// Appends an item to `no_squash_nids`.
+        ///
+        /// To override the contents of this collection use [`set_no_squash_nids`](Self::set_no_squash_nids).
+        ///
+        /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
+        /// <ul>
+        /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
+        /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
+        /// </ul>
+        pub fn no_squash_nids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.no_squash_nids.unwrap_or_default();
+            v.push(input.into());
+            self.no_squash_nids = Some(v);
+            self
+        }
+        /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
+        /// <ul>
+        /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
+        /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
+        /// </ul>
+        pub fn set_no_squash_nids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.no_squash_nids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+        pub fn build(self) -> crate::model::LustreRootSquashConfiguration {
+            crate::model::LustreRootSquashConfiguration {
+                root_squash: self.root_squash,
+                no_squash_nids: self.no_squash_nids,
+            }
+        }
+    }
+}
+impl LustreRootSquashConfiguration {
+    /// Creates a new builder-style object to manufacture [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+    pub fn builder() -> crate::model::lustre_root_squash_configuration::Builder {
+        crate::model::lustre_root_squash_configuration::Builder::default()
     }
 }
 
@@ -9099,6 +9246,8 @@ pub struct UpdateFileSystemLustreConfiguration {
     pub data_compression_type: std::option::Option<crate::model::DataCompressionType>,
     /// <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub log_configuration: std::option::Option<crate::model::LustreLogCreateConfiguration>,
+    /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub root_squash_configuration: std::option::Option<crate::model::LustreRootSquashConfiguration>,
 }
 impl UpdateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -9140,6 +9289,12 @@ impl UpdateFileSystemLustreConfiguration {
     ) -> std::option::Option<&crate::model::LustreLogCreateConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub fn root_squash_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LustreRootSquashConfiguration> {
+        self.root_squash_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFileSystemLustreConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9159,6 +9314,7 @@ impl std::fmt::Debug for UpdateFileSystemLustreConfiguration {
         formatter.field("auto_import_policy", &self.auto_import_policy);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("root_squash_configuration", &self.root_squash_configuration);
         formatter.finish()
     }
 }
@@ -9175,6 +9331,8 @@ pub mod update_file_system_lustre_configuration {
         pub(crate) data_compression_type: std::option::Option<crate::model::DataCompressionType>,
         pub(crate) log_configuration:
             std::option::Option<crate::model::LustreLogCreateConfiguration>,
+        pub(crate) root_squash_configuration:
+            std::option::Option<crate::model::LustreRootSquashConfiguration>,
     }
     impl Builder {
         /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -9290,6 +9448,22 @@ pub mod update_file_system_lustre_configuration {
             self.log_configuration = input;
             self
         }
+        /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+        pub fn root_squash_configuration(
+            mut self,
+            input: crate::model::LustreRootSquashConfiguration,
+        ) -> Self {
+            self.root_squash_configuration = Some(input);
+            self
+        }
+        /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+        pub fn set_root_squash_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LustreRootSquashConfiguration>,
+        ) -> Self {
+            self.root_squash_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration)
         pub fn build(self) -> crate::model::UpdateFileSystemLustreConfiguration {
             crate::model::UpdateFileSystemLustreConfiguration {
@@ -9299,6 +9473,7 @@ pub mod update_file_system_lustre_configuration {
                 auto_import_policy: self.auto_import_policy,
                 data_compression_type: self.data_compression_type,
                 log_configuration: self.log_configuration,
+                root_squash_configuration: self.root_squash_configuration,
             }
         }
     }
@@ -15424,6 +15599,8 @@ pub struct CreateFileSystemLustreConfiguration {
     pub data_compression_type: std::option::Option<crate::model::DataCompressionType>,
     /// <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub log_configuration: std::option::Option<crate::model::LustreLogCreateConfiguration>,
+    /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub root_squash_configuration: std::option::Option<crate::model::LustreRootSquashConfiguration>,
 }
 impl CreateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -15516,6 +15693,12 @@ impl CreateFileSystemLustreConfiguration {
     ) -> std::option::Option<&crate::model::LustreLogCreateConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub fn root_squash_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LustreRootSquashConfiguration> {
+        self.root_squash_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFileSystemLustreConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15545,6 +15728,7 @@ impl std::fmt::Debug for CreateFileSystemLustreConfiguration {
         formatter.field("drive_cache_type", &self.drive_cache_type);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("root_squash_configuration", &self.root_squash_configuration);
         formatter.finish()
     }
 }
@@ -15568,6 +15752,8 @@ pub mod create_file_system_lustre_configuration {
         pub(crate) data_compression_type: std::option::Option<crate::model::DataCompressionType>,
         pub(crate) log_configuration:
             std::option::Option<crate::model::LustreLogCreateConfiguration>,
+        pub(crate) root_squash_configuration:
+            std::option::Option<crate::model::LustreRootSquashConfiguration>,
     }
     impl Builder {
         /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -15805,6 +15991,22 @@ pub mod create_file_system_lustre_configuration {
             self.log_configuration = input;
             self
         }
+        /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+        pub fn root_squash_configuration(
+            mut self,
+            input: crate::model::LustreRootSquashConfiguration,
+        ) -> Self {
+            self.root_squash_configuration = Some(input);
+            self
+        }
+        /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+        pub fn set_root_squash_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LustreRootSquashConfiguration>,
+        ) -> Self {
+            self.root_squash_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration)
         pub fn build(self) -> crate::model::CreateFileSystemLustreConfiguration {
             crate::model::CreateFileSystemLustreConfiguration {
@@ -15821,6 +16023,7 @@ pub mod create_file_system_lustre_configuration {
                 drive_cache_type: self.drive_cache_type,
                 data_compression_type: self.data_compression_type,
                 log_configuration: self.log_configuration,
+                root_squash_configuration: self.root_squash_configuration,
             }
         }
     }
@@ -16215,7 +16418,7 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
     /// </ul>
-    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
+    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     pub deployment_type: std::option::Option<crate::model::OntapDeploymentType>,
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
     /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
@@ -16251,7 +16454,7 @@ impl CreateFileSystemOntapConfiguration {
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
     /// </ul>
-    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
+    /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
@@ -16369,7 +16572,7 @@ pub mod create_file_system_ontap_configuration {
         /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
         /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
         /// </ul>
-        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
+        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
         pub fn deployment_type(mut self, input: crate::model::OntapDeploymentType) -> Self {
             self.deployment_type = Some(input);
             self
@@ -16379,7 +16582,7 @@ pub mod create_file_system_ontap_configuration {
         /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
         /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
         /// </ul>
-        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
+        /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OntapDeploymentType>,

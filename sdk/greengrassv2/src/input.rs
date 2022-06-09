@@ -1417,6 +1417,151 @@ impl DeleteCoreDeviceInput {
     }
 }
 
+/// See [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
+pub mod delete_deployment_input {
+    /// A builder for [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the deployment.</p>
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the deployment.</p>
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteDeploymentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteDeploymentInput {
+                deployment_id: self.deployment_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteDeploymentInputOperationOutputAlias = crate::operation::DeleteDeployment;
+#[doc(hidden)]
+pub type DeleteDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDeployment`](crate::operation::DeleteDeployment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDeployment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteDeploymentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_6 = &_input.deployment_id;
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "deployment_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let deployment_id = aws_smithy_http::label::fmt_string(input_6, false);
+                if deployment_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "deployment_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/greengrass/v2/deployments/{deploymentId}",
+                    deploymentId = deployment_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteDeploymentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDeployment",
+            "greengrassv2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
+    pub fn builder() -> crate::input::delete_deployment_input::Builder {
+        crate::input::delete_deployment_input::Builder::default()
+    }
+}
+
 /// See [`DescribeComponentInput`](crate::input::DescribeComponentInput)
 pub mod describe_component_input {
     /// A builder for [`DescribeComponentInput`](crate::input::DescribeComponentInput)
@@ -1471,14 +1616,14 @@ impl DescribeComponentInput {
                 _input: &crate::input::DescribeComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_6 = &_input.arn;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_7 = &_input.arn;
+                let input_7 = input_7.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let arn = aws_smithy_http::label::fmt_string(input_7, false);
                 if arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
@@ -1739,14 +1884,14 @@ impl GetComponentInput {
                 _input: &crate::input::GetComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.arn;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_8 = &_input.arn;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let arn = aws_smithy_http::label::fmt_string(input_7, false);
+                let arn = aws_smithy_http::label::fmt_string(input_8, false);
                 if arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
@@ -1762,10 +1907,10 @@ impl GetComponentInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_8) = &_input.recipe_output_format {
+                if let Some(inner_9) = &_input.recipe_output_format {
                     query.push_kv(
                         "recipeOutputFormat",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
+                        &aws_smithy_http::query::fmt_string(&inner_9),
                     );
                 }
                 Ok(())
@@ -1845,12 +1990,12 @@ pub mod get_component_version_artifact_input {
         pub(crate) artifact_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1909,28 +2054,28 @@ impl GetComponentVersionArtifactInput {
                 _input: &crate::input::GetComponentVersionArtifactInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.arn;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_10 = &_input.arn;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let arn = aws_smithy_http::label::fmt_string(input_9, false);
+                let arn = aws_smithy_http::label::fmt_string(input_10, false);
                 if arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_10 = &_input.artifact_name;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_11 = &_input.artifact_name;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "artifact_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let artifact_name = aws_smithy_http::label::fmt_string(input_10, true);
+                let artifact_name = aws_smithy_http::label::fmt_string(input_11, true);
                 if artifact_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "artifact_name",
@@ -2066,14 +2211,14 @@ impl GetConnectivityInfoInput {
                 _input: &crate::input::GetConnectivityInfoInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.thing_name;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_12 = &_input.thing_name;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_12, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -2211,14 +2356,14 @@ impl GetCoreDeviceInput {
                 _input: &crate::input::GetCoreDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.core_device_thing_name;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_13 = &_input.core_device_thing_name;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_13, false);
                 if core_device_thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
@@ -2356,14 +2501,14 @@ impl GetDeploymentInput {
                 _input: &crate::input::GetDeploymentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.deployment_id;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_14 = &_input.deployment_id;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let deployment_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let deployment_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if deployment_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_id",
@@ -2639,14 +2784,14 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
                 _input: &crate::input::ListClientDevicesAssociatedWithCoreDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.core_device_thing_name;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_15 = &_input.core_device_thing_name;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_15, false);
                 if core_device_thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
@@ -2666,14 +2811,14 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.max_results {
+                if let Some(inner_16) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                     );
                 }
-                if let Some(inner_16) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                if let Some(inner_17) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
                 }
                 Ok(())
             }
@@ -2836,17 +2981,17 @@ impl ListComponentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_17) = &_input.scope {
-                    query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_17));
+                if let Some(inner_18) = &_input.scope {
+                    query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
-                if let Some(inner_18) = &_input.max_results {
+                if let Some(inner_19) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                     );
                 }
-                if let Some(inner_19) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                if let Some(inner_20) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
                 }
                 Ok(())
             }
@@ -2926,12 +3071,12 @@ pub mod list_component_versions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2995,14 +3140,14 @@ impl ListComponentVersionsInput {
                 _input: &crate::input::ListComponentVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.arn;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_21 = &_input.arn;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let arn = aws_smithy_http::label::fmt_string(input_20, false);
+                let arn = aws_smithy_http::label::fmt_string(input_21, false);
                 if arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "arn",
@@ -3022,14 +3167,14 @@ impl ListComponentVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.max_results {
+                if let Some(inner_22) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
                     );
                 }
-                if let Some(inner_22) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
+                if let Some(inner_23) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
                 }
                 Ok(())
             }
@@ -3110,12 +3255,12 @@ pub mod list_core_devices_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
         pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_group_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
         pub fn set_thing_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3212,23 +3357,23 @@ impl ListCoreDevicesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_23) = &_input.thing_group_arn {
+                if let Some(inner_24) = &_input.thing_group_arn {
                     query.push_kv(
                         "thingGroupArn",
-                        &aws_smithy_http::query::fmt_string(&inner_23),
+                        &aws_smithy_http::query::fmt_string(&inner_24),
                     );
                 }
-                if let Some(inner_24) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_24));
+                if let Some(inner_25) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
-                if let Some(inner_25) = &_input.max_results {
+                if let Some(inner_26) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
                     );
                 }
-                if let Some(inner_26) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                if let Some(inner_27) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
                 Ok(())
             }
@@ -3410,23 +3555,23 @@ impl ListDeploymentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.target_arn {
-                    query.push_kv("targetArn", &aws_smithy_http::query::fmt_string(&inner_27));
+                if let Some(inner_28) = &_input.target_arn {
+                    query.push_kv("targetArn", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
-                if let Some(inner_28) = &_input.history_filter {
+                if let Some(inner_29) = &_input.history_filter {
                     query.push_kv(
                         "historyFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
+                        &aws_smithy_http::query::fmt_string(&inner_29),
                     );
                 }
-                if let Some(inner_29) = &_input.max_results {
+                if let Some(inner_30) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
                     );
                 }
-                if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_31) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 Ok(())
             }
@@ -3579,14 +3724,14 @@ impl ListEffectiveDeploymentsInput {
                 _input: &crate::input::ListEffectiveDeploymentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.core_device_thing_name;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_32 = &_input.core_device_thing_name;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_32, false);
                 if core_device_thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
@@ -3606,14 +3751,14 @@ impl ListEffectiveDeploymentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.max_results {
+                if let Some(inner_33) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
                     );
                 }
-                if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                if let Some(inner_34) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 Ok(())
             }
@@ -3766,14 +3911,14 @@ impl ListInstalledComponentsInput {
                 _input: &crate::input::ListInstalledComponentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_34 = &_input.core_device_thing_name;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_35 = &_input.core_device_thing_name;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_34, false);
+                let core_device_thing_name = aws_smithy_http::label::fmt_string(input_35, false);
                 if core_device_thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_device_thing_name",
@@ -3793,14 +3938,14 @@ impl ListInstalledComponentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.max_results {
+                if let Some(inner_36) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_35).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
                     );
                 }
-                if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 Ok(())
             }
@@ -3925,14 +4070,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_37 = &_input.resource_arn;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_38 = &_input.resource_arn;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_37, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_38, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4258,14 +4403,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.resource_arn;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_39 = &_input.resource_arn;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_38, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4431,14 +4576,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.resource_arn;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_40 = &_input.resource_arn;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4454,9 +4599,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_40) = &_input.tag_keys {
-                    for inner_41 in inner_40 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_41));
+                if let Some(inner_41) = &_input.tag_keys {
+                    for inner_42 in inner_41 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
                     }
                 }
                 Ok(())
@@ -4604,14 +4749,14 @@ impl UpdateConnectivityInfoInput {
                 _input: &crate::input::UpdateConnectivityInfoInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.thing_name;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_43 = &_input.thing_name;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_43, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -4969,7 +5114,7 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDevicesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
     pub thing_group_arn: std::option::Option<std::string::String>,
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
@@ -4983,7 +5128,7 @@ pub struct ListCoreDevicesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDevicesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
     pub fn thing_group_arn(&self) -> std::option::Option<&str> {
         self.thing_group_arn.as_deref()
     }
@@ -5019,7 +5164,7 @@ impl std::fmt::Debug for ListCoreDevicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentVersionsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: std::option::Option<i32>,
@@ -5027,7 +5172,7 @@ pub struct ListComponentVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentVersionsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -5200,14 +5345,14 @@ impl std::fmt::Debug for GetConnectivityInfoInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentVersionArtifactInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     pub artifact_name: std::option::Option<std::string::String>,
 }
 impl GetComponentVersionArtifactInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -5282,6 +5427,27 @@ impl std::fmt::Debug for DescribeComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentInput");
         formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDeploymentInput {
+    /// <p>The ID of the deployment.</p>
+    pub deployment_id: std::option::Option<std::string::String>,
+}
+impl DeleteDeploymentInput {
+    /// <p>The ID of the deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteDeploymentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDeploymentInput");
+        formatter.field("deployment_id", &self.deployment_id);
         formatter.finish()
     }
 }

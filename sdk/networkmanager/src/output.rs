@@ -599,6 +599,63 @@ impl StartRouteAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartOrganizationServiceAccessUpdateOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub organization_status: std::option::Option<crate::model::OrganizationStatus>,
+}
+impl StartOrganizationServiceAccessUpdateOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn organization_status(&self) -> std::option::Option<&crate::model::OrganizationStatus> {
+        self.organization_status.as_ref()
+    }
+}
+impl std::fmt::Debug for StartOrganizationServiceAccessUpdateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartOrganizationServiceAccessUpdateOutput");
+        formatter.field("organization_status", &self.organization_status);
+        formatter.finish()
+    }
+}
+/// See [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput)
+pub mod start_organization_service_access_update_output {
+    /// A builder for [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_status: std::option::Option<crate::model::OrganizationStatus>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn organization_status(mut self, input: crate::model::OrganizationStatus) -> Self {
+            self.organization_status = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_organization_status(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationStatus>,
+        ) -> Self {
+            self.organization_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput)
+        pub fn build(self) -> crate::output::StartOrganizationServiceAccessUpdateOutput {
+            crate::output::StartOrganizationServiceAccessUpdateOutput {
+                organization_status: self.organization_status,
+            }
+        }
+    }
+}
+impl StartOrganizationServiceAccessUpdateOutput {
+    /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput)
+    pub fn builder() -> crate::output::start_organization_service_access_update_output::Builder {
+        crate::output::start_organization_service_access_update_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreCoreNetworkPolicyVersionOutput {
     /// <p>Describes the restored core network policy.</p>
     pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
@@ -923,6 +980,82 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOrganizationServiceAccessStatusOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub organization_status: std::option::Option<crate::model::OrganizationStatus>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationServiceAccessStatusOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn organization_status(&self) -> std::option::Option<&crate::model::OrganizationStatus> {
+        self.organization_status.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListOrganizationServiceAccessStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListOrganizationServiceAccessStatusOutput");
+        formatter.field("organization_status", &self.organization_status);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput)
+pub mod list_organization_service_access_status_output {
+    /// A builder for [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_status: std::option::Option<crate::model::OrganizationStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn organization_status(mut self, input: crate::model::OrganizationStatus) -> Self {
+            self.organization_status = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_organization_status(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationStatus>,
+        ) -> Self {
+            self.organization_status = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput)
+        pub fn build(self) -> crate::output::ListOrganizationServiceAccessStatusOutput {
+            crate::output::ListOrganizationServiceAccessStatusOutput {
+                organization_status: self.organization_status,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListOrganizationServiceAccessStatusOutput {
+    /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput)
+    pub fn builder() -> crate::output::list_organization_service_access_status_output::Builder {
+        crate::output::list_organization_service_access_status_output::Builder::default()
     }
 }
 

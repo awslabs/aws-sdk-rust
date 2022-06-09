@@ -18,32 +18,32 @@ pub mod create_api_key_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the <code>ApiKey</code>.</p>
+        /// <p>The name of the ApiKey.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the <code>ApiKey</code>.</p>
+        /// <p>The name of the ApiKey.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the <code>ApiKey</code>.</p>
+        /// <p>The description of the ApiKey.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the <code>ApiKey</code>.</p>
+        /// <p>The description of the ApiKey.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Specifies whether the <code>ApiKey</code> can be used by callers.</p>
+        /// <p>Specifies whether the ApiKey can be used by callers.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specifies whether the <code>ApiKey</code> can be used by callers.</p>
+        /// <p>Specifies whether the ApiKey can be used by callers.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -58,12 +58,12 @@ pub mod create_api_key_input {
             self.generate_distinct_id = input;
             self
         }
-        /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
+        /// <p>Specifies a value of the API key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
+        /// <p>Specifies a value of the API key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -269,32 +269,32 @@ pub mod create_authorizer_input {
         pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the authorizer.</p>
+        /// <p>The name of the authorizer.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the authorizer.</p>
+        /// <p>The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+        /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
         pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+        /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -306,14 +306,14 @@ pub mod create_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_provider_ar_ns`](Self::set_provider_ar_ns).
         ///
-        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
         pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
-        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
         pub fn set_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -357,22 +357,12 @@ pub mod create_authorizer_input {
             self.authorizer_credentials = input;
             self
         }
-        /// <p>The identity source for which authorization is requested. </p>
-        /// <ul>
-        /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
-        /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-        /// </ul>
-        /// <p></p>
+        /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_source = Some(input.into());
             self
         }
-        /// <p>The identity source for which authorization is requested. </p>
-        /// <ul>
-        /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
-        /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-        /// </ul>
-        /// <p></p>
+        /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -571,12 +561,12 @@ pub mod create_base_path_mapping_input {
         pub(crate) stage: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to create.</p>
+        /// <p>The domain name of the BasePathMapping resource to create.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to create.</p>
+        /// <p>The domain name of the BasePathMapping resource to create.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -591,12 +581,12 @@ pub mod create_base_path_mapping_input {
             self.base_path = input;
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -776,32 +766,32 @@ pub mod create_deployment_input {
         pub(crate) tracing_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>The name of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+        /// <p>The name of the Stage resource for the Deployment resource to create.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>The name of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+        /// <p>The name of the Stage resource for the Deployment resource to create.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
-        /// <p>The description of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+        /// <p>The description of the Stage resource for the Deployment resource to create.</p>
         pub fn stage_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_description = Some(input.into());
             self
         }
-        /// <p>The description of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+        /// <p>The description of the Stage resource for the Deployment resource to create.</p>
         pub fn set_stage_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -809,32 +799,32 @@ pub mod create_deployment_input {
             self.stage_description = input;
             self
         }
-        /// <p>The description for the <code>Deployment</code> resource to create.</p>
+        /// <p>The description for the Deployment resource to create.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description for the <code>Deployment</code> resource to create.</p>
+        /// <p>The description for the Deployment resource to create.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Enables a cache cluster for the <code>Stage</code> resource specified in the input.</p>
+        /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
         pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
             self.cache_cluster_enabled = Some(input);
             self
         }
-        /// <p>Enables a cache cluster for the <code>Stage</code> resource specified in the input.</p>
+        /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
         pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cache_cluster_enabled = input;
             self
         }
-        /// <p>Specifies the cache cluster size for the <code>Stage</code> resource specified in the input, if a cache cluster is enabled.</p>
+        /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
         pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
             self.cache_cluster_size = Some(input);
             self
         }
-        /// <p>Specifies the cache cluster size for the <code>Stage</code> resource specified in the input, if a cache cluster is enabled.</p>
+        /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -846,7 +836,7 @@ pub mod create_deployment_input {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>A map that defines the stage variables for the <code>Stage</code> resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+        /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -857,7 +847,7 @@ pub mod create_deployment_input {
             self.variables = Some(hash_map);
             self
         }
-        /// <p>A map that defines the stage variables for the <code>Stage</code> resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+        /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -880,12 +870,12 @@ pub mod create_deployment_input {
             self.canary_settings = input;
             self
         }
-        /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+        /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
         pub fn tracing_enabled(mut self, input: bool) -> Self {
             self.tracing_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+        /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
         pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tracing_enabled = input;
             self
@@ -1050,22 +1040,22 @@ pub mod create_documentation_part_input {
         pub(crate) properties: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
+        /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
         pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
+        /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -1073,12 +1063,12 @@ pub mod create_documentation_part_input {
             self.location = input;
             self
         }
-        /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+        /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
         pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.properties = Some(input.into());
             self
         }
-        /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+        /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -1241,22 +1231,22 @@ pub mod create_documentation_version_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The version identifier of the new snapshot.</p>
+        /// <p>The version identifier of the new snapshot.</p>
         pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_version = Some(input.into());
             self
         }
-        /// <p>[Required] The version identifier of the new snapshot.</p>
+        /// <p>The version identifier of the new snapshot.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1455,12 +1445,12 @@ pub mod create_domain_name_input {
         pub(crate) ownership_verification_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+        /// <p>The name of the DomainName resource.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+        /// <p>The name of the DomainName resource.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1556,7 +1546,7 @@ pub mod create_domain_name_input {
             self.regional_certificate_arn = input;
             self
         }
-        /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
+        /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
         pub fn endpoint_configuration(
             mut self,
             input: crate::model::EndpointConfiguration,
@@ -1564,7 +1554,7 @@ pub mod create_domain_name_input {
             self.endpoint_configuration = Some(input);
             self
         }
-        /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
+        /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -1597,12 +1587,12 @@ pub mod create_domain_name_input {
             self.tags = input;
             self
         }
-        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
             self.security_policy = Some(input);
             self
         }
-        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::SecurityPolicy>,
@@ -1610,7 +1600,7 @@ pub mod create_domain_name_input {
             self.security_policy = input;
             self
         }
-        /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
+        /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn mutual_tls_authentication(
             mut self,
             input: crate::model::MutualTlsAuthenticationInput,
@@ -1618,7 +1608,7 @@ pub mod create_domain_name_input {
             self.mutual_tls_authentication = Some(input);
             self
         }
-        /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
+        /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
@@ -1789,22 +1779,22 @@ pub mod create_model_input {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> will be created.</p>
+        /// <p>The RestApi identifier under which the Model will be created.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> will be created.</p>
+        /// <p>The RestApi identifier under which the Model will be created.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the model. Must be alphanumeric.</p>
+        /// <p>The name of the model. Must be alphanumeric.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the model. Must be alphanumeric.</p>
+        /// <p>The name of the model. Must be alphanumeric.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1819,22 +1809,22 @@ pub mod create_model_input {
             self.description = input;
             self
         }
-        /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
+        /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
+        /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
         }
-        /// <p>[Required] The content-type for the model.</p>
+        /// <p>The content-type for the model.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>[Required] The content-type for the model.</p>
+        /// <p>The content-type for the model.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1996,22 +1986,22 @@ pub mod create_request_validator_input {
         pub(crate) validate_request_parameters: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>The name of the to-be-created <code>RequestValidator</code>.</p>
+        /// <p>The name of the to-be-created RequestValidator.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the to-be-created <code>RequestValidator</code>.</p>
+        /// <p>The name of the to-be-created RequestValidator.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2193,22 +2183,22 @@ pub mod create_resource_input {
         pub(crate) path_part: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The parent resource's identifier.</p>
+        /// <p>The parent resource's identifier.</p>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
-        /// <p>[Required] The parent resource's identifier.</p>
+        /// <p>The parent resource's identifier.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
@@ -2402,22 +2392,22 @@ pub mod create_rest_api_input {
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>[Required] The name of the <code>RestApi</code>.</p>
+        /// <p>The name of the RestApi.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>RestApi</code>.</p>
+        /// <p>The name of the RestApi.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the <code>RestApi</code>.</p>
+        /// <p>The description of the RestApi.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the <code>RestApi</code>.</p>
+        /// <p>The description of the RestApi.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2432,12 +2422,12 @@ pub mod create_rest_api_input {
             self.version = input;
             self
         }
-        /// <p>The ID of the <code>RestApi</code> that you want to clone from.</p>
+        /// <p>The ID of the RestApi that you want to clone from.</p>
         pub fn clone_from(mut self, input: impl Into<std::string::String>) -> Self {
             self.clone_from = Some(input.into());
             self
         }
-        /// <p>The ID of the <code>RestApi</code> that you want to clone from.</p>
+        /// <p>The ID of the RestApi that you want to clone from.</p>
         pub fn set_clone_from(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.clone_from = input;
             self
@@ -2446,14 +2436,14 @@ pub mod create_rest_api_input {
         ///
         /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
         ///
-        /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
+        /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
-        /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
+        /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2471,22 +2461,12 @@ pub mod create_rest_api_input {
             self.minimum_compression_size = input;
             self
         }
-        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
-        /// <ul>
-        /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
-        /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
-        /// </ul>
-        /// <p></p>
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
         pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
             self.api_key_source = Some(input);
             self
         }
-        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
-        /// <ul>
-        /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
-        /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
-        /// </ul>
-        /// <p></p>
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -2494,7 +2474,7 @@ pub mod create_rest_api_input {
             self.api_key_source = input;
             self
         }
-        /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
+        /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
         pub fn endpoint_configuration(
             mut self,
             input: crate::model::EndpointConfiguration,
@@ -2502,7 +2482,7 @@ pub mod create_rest_api_input {
             self.endpoint_configuration = Some(input);
             self
         }
-        /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
+        /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -2510,12 +2490,12 @@ pub mod create_rest_api_input {
             self.endpoint_configuration = input;
             self
         }
-        /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -2545,12 +2525,12 @@ pub mod create_rest_api_input {
             self.tags = input;
             self
         }
-        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
         pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
-        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -2713,32 +2693,32 @@ pub mod create_stage_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name for the <code>Stage</code> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+        /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name for the <code>Stage</code> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+        /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Deployment</code> resource for the <code>Stage</code> resource.</p>
+        /// <p>The identifier of the Deployment resource for the Stage resource.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Deployment</code> resource for the <code>Stage</code> resource.</p>
+        /// <p>The identifier of the Deployment resource for the Stage resource.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2746,12 +2726,12 @@ pub mod create_stage_input {
             self.deployment_id = input;
             self
         }
-        /// <p>The description of the <code>Stage</code> resource.</p>
+        /// <p>The description of the Stage resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the <code>Stage</code> resource.</p>
+        /// <p>The description of the Stage resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2783,7 +2763,7 @@ pub mod create_stage_input {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>A map that defines the stage variables for the new <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+        /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -2794,7 +2774,7 @@ pub mod create_stage_input {
             self.variables = Some(hash_map);
             self
         }
-        /// <p>A map that defines the stage variables for the new <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+        /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -2830,12 +2810,12 @@ pub mod create_stage_input {
             self.canary_settings = input;
             self
         }
-        /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+        /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
         pub fn tracing_enabled(mut self, input: bool) -> Self {
             self.tracing_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+        /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
         pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tracing_enabled = input;
             self
@@ -3032,12 +3012,12 @@ pub mod create_usage_plan_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The name of the usage plan.</p>
+        /// <p>The name of the usage plan.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the usage plan.</p>
+        /// <p>The name of the usage plan.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3260,12 +3240,12 @@ pub mod create_usage_plan_key_input {
         pub(crate) key_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-created <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-created <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3273,22 +3253,22 @@ pub mod create_usage_plan_key_input {
             self.usage_plan_id = input;
             self
         }
-        /// <p>[Required] The identifier of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+        /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+        /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
-        /// <p>[Required] The type of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+        /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
         pub fn key_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_type = Some(input.into());
             self
         }
-        /// <p>[Required] The type of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+        /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
         pub fn set_key_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_type = input;
             self
@@ -3450,12 +3430,12 @@ pub mod create_vpc_link_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The name used to label and identify the VPC link.</p>
+        /// <p>The name used to label and identify the VPC link.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>[Required] The name used to label and identify the VPC link.</p>
+        /// <p>The name used to label and identify the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3474,14 +3454,14 @@ pub mod create_vpc_link_input {
         ///
         /// To override the contents of this collection use [`set_target_arns`](Self::set_target_arns).
         ///
-        /// <p>[Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
             v.push(input.into());
             self.target_arns = Some(v);
             self
         }
-        /// <p>[Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn set_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3648,12 +3628,12 @@ pub mod delete_api_key_input {
         pub(crate) api_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be deleted.</p>
+        /// <p>The identifier of the ApiKey resource to be deleted.</p>
         pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be deleted.</p>
+        /// <p>The identifier of the ApiKey resource to be deleted.</p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -3791,22 +3771,22 @@ pub mod delete_authorizer_input {
         pub(crate) authorizer_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+        /// <p>The identifier of the Authorizer resource.</p>
         pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+        /// <p>The identifier of the Authorizer resource.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3967,23 +3947,23 @@ pub mod delete_base_path_mapping_input {
         pub(crate) base_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to delete.</p>
+        /// <p>The domain name of the BasePathMapping resource to delete.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to delete.</p>
+        /// <p>The domain name of the BasePathMapping resource to delete.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>[Required] The base path name of the <code>BasePathMapping</code> resource to delete.</p>
+        /// <p>The base path name of the BasePathMapping resource to delete.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
         pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_path = Some(input.into());
             self
         }
-        /// <p>[Required] The base path name of the <code>BasePathMapping</code> resource to delete.</p>
+        /// <p>The base path name of the BasePathMapping resource to delete.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
@@ -4141,12 +4121,12 @@ pub mod delete_client_certificate_input {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be deleted.</p>
+        /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
         pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_certificate_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be deleted.</p>
+        /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4292,22 +4272,22 @@ pub mod delete_deployment_input {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Deployment</code> resource to delete.</p>
+        /// <p>The identifier of the Deployment resource to delete.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Deployment</code> resource to delete.</p>
+        /// <p>The identifier of the Deployment resource to delete.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4468,22 +4448,22 @@ pub mod delete_documentation_part_input {
         pub(crate) documentation_part_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
+        /// <p>The identifier of the to-be-deleted documentation part.</p>
         pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_part_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
+        /// <p>The identifier of the to-be-deleted documentation part.</p>
         pub fn set_documentation_part_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4645,22 +4625,22 @@ pub mod delete_documentation_version_input {
         pub(crate) documentation_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
+        /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
         pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_version = Some(input.into());
             self
         }
-        /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
+        /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4821,12 +4801,12 @@ pub mod delete_domain_name_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The name of the <code>DomainName</code> resource to be deleted.</p>
+        /// <p>The name of the DomainName resource to be deleted.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>DomainName</code> resource to be deleted.</p>
+        /// <p>The name of the DomainName resource to be deleted.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4968,26 +4948,22 @@ pub mod delete_gateway_response_input {
         pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -5149,32 +5125,32 @@ pub mod delete_integration_input {
         pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
+        /// <p>Specifies a delete integration request's resource identifier.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
+        /// <p>Specifies a delete integration request's resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
+        /// <p>Specifies a delete integration request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
+        /// <p>Specifies a delete integration request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -5350,42 +5326,42 @@ pub mod delete_integration_response_input {
         pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
+        /// <p>Specifies a delete integration response request's resource identifier.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
+        /// <p>Specifies a delete integration response request's resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+        /// <p>Specifies a delete integration response request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+        /// <p>Specifies a delete integration response request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] Specifies a delete integration response request's status code.</p>
+        /// <p>Specifies a delete integration response request's status code.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a delete integration response request's status code.</p>
+        /// <p>Specifies a delete integration response request's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -5569,32 +5545,32 @@ pub mod delete_method_input {
         pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -5770,42 +5746,42 @@ pub mod delete_method_response_input {
         pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The Resource identifier for the MethodResponse resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The Resource identifier for the MethodResponse resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] The status code identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The status code identifier for the MethodResponse resource.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] The status code identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The status code identifier for the MethodResponse resource.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -5987,22 +5963,22 @@ pub mod delete_model_input {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the model to delete.</p>
+        /// <p>The name of the model to delete.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the model to delete.</p>
+        /// <p>The name of the model to delete.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -6160,22 +6136,22 @@ pub mod delete_request_validator_input {
         pub(crate) request_validator_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>RequestValidator</code> to be deleted.</p>
+        /// <p>The identifier of the RequestValidator to be deleted.</p>
         pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_validator_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>RequestValidator</code> to be deleted.</p>
+        /// <p>The identifier of the RequestValidator to be deleted.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6336,22 +6312,22 @@ pub mod delete_resource_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+        /// <p>The identifier of the Resource resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+        /// <p>The identifier of the Resource resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -6508,12 +6484,12 @@ pub mod delete_rest_api_input {
         pub(crate) rest_api_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -6651,22 +6627,22 @@ pub mod delete_stage_input {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> resource to delete.</p>
+        /// <p>The name of the Stage resource to delete.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> resource to delete.</p>
+        /// <p>The name of the Stage resource to delete.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -6823,12 +6799,12 @@ pub mod delete_usage_plan_input {
         pub(crate) usage_plan_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
+        /// <p>The Id of the to-be-deleted usage plan.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
+        /// <p>The Id of the to-be-deleted usage plan.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6973,12 +6949,12 @@ pub mod delete_usage_plan_key_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-deleted <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-deleted <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6986,12 +6962,12 @@ pub mod delete_usage_plan_key_input {
             self.usage_plan_id = input;
             self
         }
-        /// <p>[Required] The Id of the <code>UsagePlanKey</code> resource to be deleted.</p>
+        /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the <code>UsagePlanKey</code> resource to be deleted.</p>
+        /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -7148,12 +7124,12 @@ pub mod delete_vpc_link_input {
         pub(crate) vpc_link_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+        /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
         pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_link_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+        /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -7291,12 +7267,12 @@ pub mod flush_stage_authorizers_cache_input {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -7465,22 +7441,22 @@ pub mod flush_stage_cache_input {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the stage to flush its cache.</p>
+        /// <p>The name of the stage to flush its cache.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the stage to flush its cache.</p>
+        /// <p>The name of the stage to flush its cache.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -7640,12 +7616,12 @@ pub mod generate_client_certificate_input {
         >,
     }
     impl Builder {
-        /// <p>The description of the <code>ClientCertificate</code>.</p>
+        /// <p>The description of the ClientCertificate.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the <code>ClientCertificate</code>.</p>
+        /// <p>The description of the ClientCertificate.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7924,12 +7900,12 @@ pub mod get_api_key_input {
         pub(crate) include_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>ApiKey</code> resource.</p>
+        /// <p>The identifier of the ApiKey resource.</p>
         pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>ApiKey</code> resource.</p>
+        /// <p>The identifier of the ApiKey resource.</p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -8292,22 +8268,22 @@ pub mod get_authorizer_input {
         pub(crate) authorizer_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+        /// <p>The identifier of the Authorizer resource.</p>
         pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+        /// <p>The identifier of the Authorizer resource.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8469,12 +8445,12 @@ pub mod get_authorizers_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -8655,22 +8631,22 @@ pub mod get_base_path_mapping_input {
         pub(crate) base_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to be described.</p>
+        /// <p>The domain name of the BasePathMapping resource to be described.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to be described.</p>
+        /// <p>The domain name of the BasePathMapping resource to be described.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+        /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
         pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_path = Some(input.into());
             self
         }
-        /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+        /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
             self
@@ -8829,12 +8805,12 @@ pub mod get_base_path_mappings_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The domain name of a <code>BasePathMapping</code> resource.</p>
+        /// <p>The domain name of a BasePathMapping resource.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The domain name of a <code>BasePathMapping</code> resource.</p>
+        /// <p>The domain name of a BasePathMapping resource.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -9014,12 +8990,12 @@ pub mod get_client_certificate_input {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be described.</p>
+        /// <p>The identifier of the ClientCertificate resource to be described.</p>
         pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_certificate_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be described.</p>
+        /// <p>The identifier of the ClientCertificate resource to be described.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9321,22 +9297,22 @@ pub mod get_deployment_input {
         pub(crate) embed: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Deployment</code> resource to get information about.</p>
+        /// <p>The identifier of the Deployment resource to get information about.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Deployment</code> resource to get information about.</p>
+        /// <p>The identifier of the Deployment resource to get information about.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9348,14 +9324,14 @@ pub mod get_deployment_input {
         ///
         /// To override the contents of this collection use [`set_embed`](Self::set_embed).
         ///
-        /// <p>A query parameter to retrieve the specified embedded resources of the returned <code>Deployment</code> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+        /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
         pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed.unwrap_or_default();
             v.push(input.into());
             self.embed = Some(v);
             self
         }
-        /// <p>A query parameter to retrieve the specified embedded resources of the returned <code>Deployment</code> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+        /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
         pub fn set_embed(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9531,12 +9507,12 @@ pub mod get_deployments_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -9717,22 +9693,22 @@ pub mod get_documentation_part_input {
         pub(crate) documentation_part_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_part_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_documentation_part_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9898,12 +9874,12 @@ pub mod get_documentation_parts_input {
         pub(crate) location_status: std::option::Option<crate::model::LocationStatusType>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -9961,12 +9937,12 @@ pub mod get_documentation_parts_input {
             self.limit = input;
             self
         }
-        /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <code>DocumentationPart</code> resources with content and <code>UNDOCUMENTED</code> for <code>DocumentationPart</code> resources without content.</p>
+        /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
         pub fn location_status(mut self, input: crate::model::LocationStatusType) -> Self {
             self.location_status = Some(input);
             self
         }
-        /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <code>DocumentationPart</code> resources with content and <code>UNDOCUMENTED</code> for <code>DocumentationPart</code> resources without content.</p>
+        /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
         pub fn set_location_status(
             mut self,
             input: std::option::Option<crate::model::LocationStatusType>,
@@ -10149,22 +10125,22 @@ pub mod get_documentation_version_input {
         pub(crate) documentation_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
+        /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
         pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_version = Some(input.into());
             self
         }
-        /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
+        /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10327,12 +10303,12 @@ pub mod get_documentation_versions_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -10513,12 +10489,12 @@ pub mod get_domain_name_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+        /// <p>The name of the DomainName resource.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+        /// <p>The name of the DomainName resource.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -10821,32 +10797,32 @@ pub mod get_export_input {
         pub(crate) accepts: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> that will be exported.</p>
+        /// <p>The name of the Stage that will be exported.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> that will be exported.</p>
+        /// <p>The name of the Stage that will be exported.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
-        /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+        /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
         pub fn export_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.export_type = Some(input.into());
             self
         }
-        /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+        /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
         pub fn set_export_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_type = input;
             self
@@ -11054,26 +11030,22 @@ pub mod get_gateway_response_input {
         pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -11235,32 +11207,32 @@ pub mod get_gateway_responses_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>The current pagination position in the paged result set. The <code>GatewayResponse</code> collection does not support pagination and the position does not apply here.</p>
+        /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
         pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
             self.position = Some(input.into());
             self
         }
-        /// <p>The current pagination position in the paged result set. The <code>GatewayResponse</code> collection does not support pagination and the position does not apply here.</p>
+        /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
         }
-        /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <code>GatewayResponses</code> collection does not support pagination and the limit does not apply here.</p>
+        /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <code>GatewayResponses</code> collection does not support pagination and the limit does not apply here.</p>
+        /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -11422,32 +11394,32 @@ pub mod get_integration_input {
         pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a get integration request's resource identifier</p>
+        /// <p>Specifies a get integration request's resource identifier</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a get integration request's resource identifier</p>
+        /// <p>Specifies a get integration request's resource identifier</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a get integration request's HTTP method.</p>
+        /// <p>Specifies a get integration request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a get integration request's HTTP method.</p>
+        /// <p>Specifies a get integration request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -11623,42 +11595,42 @@ pub mod get_integration_response_input {
         pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
+        /// <p>Specifies a get integration response request's resource identifier.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
+        /// <p>Specifies a get integration response request's resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
+        /// <p>Specifies a get integration response request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
+        /// <p>Specifies a get integration response request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] Specifies a get integration response request's status code.</p>
+        /// <p>Specifies a get integration response request's status code.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a get integration response request's status code.</p>
+        /// <p>Specifies a get integration response request's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -11841,32 +11813,32 @@ pub mod get_method_input {
         pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies the method request's HTTP method type.</p>
+        /// <p>Specifies the method request's HTTP method type.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies the method request's HTTP method type.</p>
+        /// <p>Specifies the method request's HTTP method type.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -12038,42 +12010,42 @@ pub mod get_method_response_input {
         pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The Resource identifier for the MethodResponse resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The Resource identifier for the MethodResponse resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+        /// <p>The status code for the MethodResponse resource.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+        /// <p>The status code for the MethodResponse resource.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -12256,22 +12228,22 @@ pub mod get_model_input {
         pub(crate) flatten: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> exists.</p>
+        /// <p>The RestApi identifier under which the Model exists.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> exists.</p>
+        /// <p>The RestApi identifier under which the Model exists.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the model as an identifier.</p>
+        /// <p>The name of the model as an identifier.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the model as an identifier.</p>
+        /// <p>The name of the model as an identifier.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -12451,12 +12423,12 @@ pub mod get_models_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -12633,22 +12605,22 @@ pub mod get_model_template_input {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the model for which to generate a template.</p>
+        /// <p>The name of the model for which to generate a template.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the model for which to generate a template.</p>
+        /// <p>The name of the model for which to generate a template.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -12806,22 +12778,22 @@ pub mod get_request_validator_input {
         pub(crate) request_validator_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>RequestValidator</code> to be retrieved.</p>
+        /// <p>The identifier of the RequestValidator to be retrieved.</p>
         pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_validator_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>RequestValidator</code> to be retrieved.</p>
+        /// <p>The identifier of the RequestValidator to be retrieved.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12983,12 +12955,12 @@ pub mod get_request_validators_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -13170,22 +13142,22 @@ pub mod get_resource_input {
         pub(crate) embed: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier for the <code>Resource</code> resource.</p>
+        /// <p>The identifier for the Resource resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier for the <code>Resource</code> resource.</p>
+        /// <p>The identifier for the Resource resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -13194,14 +13166,14 @@ pub mod get_resource_input {
         ///
         /// To override the contents of this collection use [`set_embed`](Self::set_embed).
         ///
-        /// <p>A query parameter to retrieve the specified resources embedded in the returned <code>Resource</code> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+        /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
         pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed.unwrap_or_default();
             v.push(input.into());
             self.embed = Some(v);
             self
         }
-        /// <p>A query parameter to retrieve the specified resources embedded in the returned <code>Resource</code> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+        /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
         pub fn set_embed(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13378,12 +13350,12 @@ pub mod get_resources_input {
         pub(crate) embed: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -13412,14 +13384,14 @@ pub mod get_resources_input {
         ///
         /// To override the contents of this collection use [`set_embed`](Self::set_embed).
         ///
-        /// <p>A query parameter used to retrieve the specified resources embedded in the returned <code>Resources</code> resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+        /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
         pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed.unwrap_or_default();
             v.push(input.into());
             self.embed = Some(v);
             self
         }
-        /// <p>A query parameter used to retrieve the specified resources embedded in the returned <code>Resources</code> resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+        /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
         pub fn set_embed(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13588,12 +13560,12 @@ pub mod get_rest_api_input {
         pub(crate) rest_api_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -13891,32 +13863,32 @@ pub mod get_sdk_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> that the SDK will use.</p>
+        /// <p>The name of the Stage that the SDK will use.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> that the SDK will use.</p>
+        /// <p>The name of the Stage that the SDK will use.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
-        /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+        /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
         pub fn sdk_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.sdk_type = Some(input.into());
             self
         }
-        /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+        /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
         pub fn set_sdk_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sdk_type = input;
             self
@@ -14111,12 +14083,12 @@ pub mod get_sdk_type_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the queried <code>SdkType</code> instance.</p>
+        /// <p>The identifier of the queried SdkType instance.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the queried <code>SdkType</code> instance.</p>
+        /// <p>The identifier of the queried SdkType instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14407,22 +14379,22 @@ pub mod get_stage_input {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> resource to get information about.</p>
+        /// <p>The name of the Stage resource to get information about.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> resource to get information about.</p>
+        /// <p>The name of the Stage resource to get information about.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -14576,12 +14548,12 @@ pub mod get_stages_input {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -14748,12 +14720,12 @@ pub mod get_tags_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The ARN of a resource that can be tagged.</p>
+        /// <p>The ARN of a resource that can be tagged.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>[Required] The ARN of a resource that can be tagged.</p>
+        /// <p>The ARN of a resource that can be tagged.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -14930,12 +14902,12 @@ pub mod get_usage_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+        /// <p>The Id of the usage plan associated with the usage data.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+        /// <p>The Id of the usage plan associated with the usage data.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14953,22 +14925,22 @@ pub mod get_usage_input {
             self.key_id = input;
             self
         }
-        /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+        /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date = Some(input.into());
             self
         }
-        /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+        /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
         }
-        /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+        /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date = Some(input.into());
             self
         }
-        /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+        /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
@@ -15156,12 +15128,12 @@ pub mod get_usage_plan_input {
         pub(crate) usage_plan_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>UsagePlan</code> resource to be retrieved.</p>
+        /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>UsagePlan</code> resource to be retrieved.</p>
+        /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15306,12 +15278,12 @@ pub mod get_usage_plan_key_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15319,12 +15291,12 @@ pub mod get_usage_plan_key_input {
             self.usage_plan_id = input;
             self
         }
-        /// <p>[Required] The key Id of the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>[Required] The key Id of the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -15484,12 +15456,12 @@ pub mod get_usage_plan_keys_input {
         pub(crate) name_query: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+        /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15857,12 +15829,12 @@ pub mod get_vpc_link_input {
         pub(crate) vpc_link_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+        /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
         pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_link_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+        /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -16157,12 +16129,12 @@ pub mod import_api_keys_input {
         pub(crate) fail_on_warnings: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
+        /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
         pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
+        /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
         pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
@@ -16180,12 +16152,12 @@ pub mod import_api_keys_input {
             self.format = input;
             self
         }
-        /// <p>A query parameter to indicate whether to rollback <code>ApiKey</code> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+        /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
         pub fn fail_on_warnings(mut self, input: bool) -> Self {
             self.fail_on_warnings = Some(input);
             self
         }
-        /// <p>A query parameter to indicate whether to rollback <code>ApiKey</code> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+        /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
         pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
             self.fail_on_warnings = input;
             self
@@ -16345,22 +16317,22 @@ pub mod import_documentation_parts_input {
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <code>DocumentationParts</code> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+        /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
         pub fn mode(mut self, input: crate::model::PutMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <code>DocumentationParts</code> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+        /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::PutMode>) -> Self {
             self.mode = input;
             self
@@ -16375,12 +16347,12 @@ pub mod import_documentation_parts_input {
             self.fail_on_warnings = input;
             self
         }
-        /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+        /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
         pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+        /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
         pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
@@ -16576,13 +16548,11 @@ pub mod import_rest_api_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
-        /// <p> To exclude <code>DocumentationParts</code> from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
+        /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
         /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
         /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
         /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-        /// <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code></pre>
         /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-        /// <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code></pre>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -16594,13 +16564,11 @@ pub mod import_rest_api_input {
             self
         }
         /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
-        /// <p> To exclude <code>DocumentationParts</code> from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
+        /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
         /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
         /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
         /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-        /// <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code></pre>
         /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-        /// <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code></pre>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -16610,12 +16578,12 @@ pub mod import_rest_api_input {
             self.parameters = input;
             self
         }
-        /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+        /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
         pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+        /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
         pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
@@ -16788,26 +16756,22 @@ pub mod put_gateway_response_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -16815,12 +16779,12 @@ pub mod put_gateway_response_input {
             self.response_type = input;
             self
         }
-        /// The HTTP status code of the <code>GatewayResponse</code>.
+        /// <p>The HTTP status code of the GatewayResponse.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// The HTTP status code of the <code>GatewayResponse</code>.
+        /// <p>The HTTP status code of the GatewayResponse.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -16829,9 +16793,7 @@ pub mod put_gateway_response_input {
         ///
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
-        /// <p></p>
-        /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-        /// <p></p>
+        /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -16842,9 +16804,7 @@ pub mod put_gateway_response_input {
             self.response_parameters = Some(hash_map);
             self
         }
-        /// <p></p>
-        /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-        /// <p></p>
+        /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -16858,9 +16818,7 @@ pub mod put_gateway_response_input {
         ///
         /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
         ///
-        /// <p></p>
-        /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-        /// <p></p>
+        /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -16871,9 +16829,7 @@ pub mod put_gateway_response_input {
             self.response_templates = Some(hash_map);
             self
         }
-        /// <p></p>
-        /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-        /// <p></p>
+        /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -17072,42 +17028,42 @@ pub mod put_integration_input {
         pub(crate) tls_config: std::option::Option<crate::model::TlsConfig>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a put integration request's resource ID.</p>
+        /// <p>Specifies a put integration request's resource ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a put integration request's resource ID.</p>
+        /// <p>Specifies a put integration request's resource ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a put integration request's HTTP method.</p>
+        /// <p>Specifies the HTTP method for the integration.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a put integration request's HTTP method.</p>
+        /// <p>Specifies the HTTP method for the integration.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] Specifies a put integration input's type.</p>
+        /// <p>Specifies a put integration input's type.</p>
         pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>[Required] Specifies a put integration input's type.</p>
+        /// <p>Specifies a put integration input's type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -17115,12 +17071,12 @@ pub mod put_integration_input {
             self.r#type = input;
             self
         }
-        /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
+        /// <p>The HTTP method for the integration.</p>
         pub fn integration_http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.integration_http_method = Some(input.into());
             self
         }
-        /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
+        /// <p>The HTTP method for the integration.</p>
         pub fn set_integration_http_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17128,20 +17084,12 @@ pub mod put_integration_input {
             self.integration_http_method = input;
             self
         }
-        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
-        /// <ul>
-        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
-        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
-        /// </ul>
+        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
-        /// <ul>
-        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
-        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
-        /// </ul>
+        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -17159,12 +17107,12 @@ pub mod put_integration_input {
             self.connection_type = input;
             self
         }
-        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+        /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
-        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+        /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17233,21 +17181,11 @@ pub mod put_integration_input {
             self
         }
         /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
-        /// <ul>
-        /// <li><p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through to the integration back end without transformation.</p></li>
-        /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
-        /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
-        /// </ul>
         pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
             self.passthrough_behavior = Some(input.into());
             self
         }
         /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
-        /// <ul>
-        /// <li><p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through to the integration back end without transformation.</p></li>
-        /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
-        /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
-        /// </ul>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17272,14 +17210,14 @@ pub mod put_integration_input {
         ///
         /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).
         ///
-        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
         pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
             v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
-        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
         pub fn set_cache_key_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17288,20 +17226,12 @@ pub mod put_integration_input {
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-        /// <ul>
-        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
-        /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
         pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
             self.content_handling = Some(input);
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-        /// <ul>
-        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
-        /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
         pub fn set_content_handling(
             mut self,
@@ -17320,12 +17250,12 @@ pub mod put_integration_input {
             self.timeout_in_millis = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies the TLS configuration for an integration.</p>
         pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
             self.tls_config = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies the TLS configuration for an integration.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfig>,
@@ -17540,42 +17470,42 @@ pub mod put_integration_response_input {
         pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
+        /// <p>Specifies a put integration response request's resource identifier.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
+        /// <p>Specifies a put integration response request's resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
+        /// <p>Specifies a put integration response request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
+        /// <p>Specifies a put integration response request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
+        /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
+        /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -17644,20 +17574,12 @@ pub mod put_integration_response_input {
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-        /// <ul>
-        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
-        /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
         pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
             self.content_handling = Some(input);
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-        /// <ul>
-        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
-        /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
         pub fn set_content_handling(
             mut self,
@@ -17875,42 +17797,42 @@ pub mod put_method_input {
         pub(crate) authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the new <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the new Method resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the new <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the new Method resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies the method request's HTTP method type.</p>
+        /// <p>Specifies the method request's HTTP method type.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies the method request's HTTP method type.</p>
+        /// <p>Specifies the method request's HTTP method type.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+        /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
         pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorization_type = Some(input.into());
             self
         }
-        /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+        /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17918,12 +17840,12 @@ pub mod put_method_input {
             self.authorization_type = input;
             self
         }
-        /// <p>Specifies the identifier of an <code>Authorizer</code> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+        /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
         pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_id = Some(input.into());
             self
         }
-        /// <p>Specifies the identifier of an <code>Authorizer</code> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+        /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17931,12 +17853,12 @@ pub mod put_method_input {
             self.authorizer_id = input;
             self
         }
-        /// <p>Specifies whether the method required a valid <code>ApiKey</code>.</p>
+        /// <p>Specifies whether the method required a valid ApiKey.</p>
         pub fn api_key_required(mut self, input: bool) -> Self {
             self.api_key_required = Some(input);
             self
         }
-        /// <p>Specifies whether the method required a valid <code>ApiKey</code>.</p>
+        /// <p>Specifies whether the method required a valid ApiKey.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
@@ -17958,14 +17880,14 @@ pub mod put_method_input {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or body-mapping templates.</p>
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
         pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
             hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or body-mapping templates.</p>
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -17977,7 +17899,7 @@ pub mod put_method_input {
         ///
         /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
         ///
-        /// <p>Specifies the <code>Model</code> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+        /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -17988,7 +17910,7 @@ pub mod put_method_input {
             self.request_models = Some(hash_map);
             self
         }
-        /// <p>Specifies the <code>Model</code> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+        /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -17998,12 +17920,12 @@ pub mod put_method_input {
             self.request_models = input;
             self
         }
-        /// <p>The identifier of a <code>RequestValidator</code> for validating the method request.</p>
+        /// <p>The identifier of a RequestValidator for validating the method request.</p>
         pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_validator_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a <code>RequestValidator</code> for validating the method request.</p>
+        /// <p>The identifier of a RequestValidator for validating the method request.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18224,42 +18146,42 @@ pub mod put_method_response_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] The method response's status code.</p>
+        /// <p>The method response's status code.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] The method response's status code.</p>
+        /// <p>The method response's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -18287,7 +18209,7 @@ pub mod put_method_response_input {
         ///
         /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
         ///
-        /// <p>Specifies the <code>Model</code> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+        /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -18298,7 +18220,7 @@ pub mod put_method_response_input {
             self.response_models = Some(hash_map);
             self
         }
-        /// <p>Specifies the <code>Model</code> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+        /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -18506,12 +18428,12 @@ pub mod put_rest_api_input {
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -18540,7 +18462,7 @@ pub mod put_rest_api_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Custom header parameters as part of the request. For example, to exclude <code>DocumentationParts</code> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+        /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -18551,7 +18473,7 @@ pub mod put_rest_api_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Custom header parameters as part of the request. For example, to exclude <code>DocumentationParts</code> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+        /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -18561,12 +18483,12 @@ pub mod put_rest_api_input {
             self.parameters = input;
             self
         }
-        /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+        /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
         pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+        /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
         pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
@@ -18753,12 +18675,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The ARN of a resource that can be tagged.</p>
+        /// <p>The ARN of a resource that can be tagged.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>[Required] The ARN of a resource that can be tagged.</p>
+        /// <p>The ARN of a resource that can be tagged.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -18767,7 +18689,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+        /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -18778,7 +18700,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+        /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -18950,22 +18872,22 @@ pub mod test_invoke_authorizer_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a test invoke authorizer request's <code>Authorizer</code> ID.</p>
+        /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
         pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a test invoke authorizer request's <code>Authorizer</code> ID.</p>
+        /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18977,7 +18899,7 @@ pub mod test_invoke_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
-        /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+        /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
         pub fn headers(
             mut self,
             k: impl Into<std::string::String>,
@@ -18988,7 +18910,7 @@ pub mod test_invoke_authorizer_input {
             self.headers = Some(hash_map);
             self
         }
-        /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+        /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
         pub fn set_headers(
             mut self,
             input: std::option::Option<
@@ -19002,7 +18924,7 @@ pub mod test_invoke_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
         ///
-        /// <p>[Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+        /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
         pub fn multi_value_headers(
             mut self,
             k: impl Into<std::string::String>,
@@ -19013,7 +18935,7 @@ pub mod test_invoke_authorizer_input {
             self.multi_value_headers = Some(hash_map);
             self
         }
-        /// <p>[Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+        /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
         pub fn set_multi_value_headers(
             mut self,
             input: std::option::Option<
@@ -19023,12 +18945,12 @@ pub mod test_invoke_authorizer_input {
             self.multi_value_headers = input;
             self
         }
-        /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+        /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
         pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.path_with_query_string = Some(input.into());
             self
         }
-        /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+        /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
         pub fn set_path_with_query_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19036,12 +18958,12 @@ pub mod test_invoke_authorizer_input {
             self.path_with_query_string = input;
             self
         }
-        /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
+        /// <p>The simulated request body of an incoming invocation request.</p>
         pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
             self.body = Some(input.into());
             self
         }
-        /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
+        /// <p>The simulated request body of an incoming invocation request.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -19050,7 +18972,7 @@ pub mod test_invoke_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
         ///
-        /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+        /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
         pub fn stage_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -19061,7 +18983,7 @@ pub mod test_invoke_authorizer_input {
             self.stage_variables = Some(hash_map);
             self
         }
-        /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+        /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
         pub fn set_stage_variables(
             mut self,
             input: std::option::Option<
@@ -19075,7 +18997,7 @@ pub mod test_invoke_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_additional_context`](Self::set_additional_context).
         ///
-        /// <p>[Optional] A key-value map of additional context variables.</p>
+        /// <p>A key-value map of additional context variables.</p>
         pub fn additional_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -19086,7 +19008,7 @@ pub mod test_invoke_authorizer_input {
             self.additional_context = Some(hash_map);
             self
         }
-        /// <p>[Optional] A key-value map of additional context variables.</p>
+        /// <p>A key-value map of additional context variables.</p>
         pub fn set_additional_context(
             mut self,
             input: std::option::Option<
@@ -19284,32 +19206,32 @@ pub mod test_invoke_method_input {
         >,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
+        /// <p>Specifies a test invoke method request's resource ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
+        /// <p>Specifies a test invoke method request's resource ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+        /// <p>Specifies a test invoke method request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+        /// <p>Specifies a test invoke method request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -19387,12 +19309,12 @@ pub mod test_invoke_method_input {
             self.multi_value_headers = input;
             self
         }
-        /// <p>A <code>ClientCertificate</code> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+        /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
         pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_certificate_id = Some(input.into());
             self
         }
-        /// <p>A <code>ClientCertificate</code> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+        /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19404,7 +19326,7 @@ pub mod test_invoke_method_input {
         ///
         /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
         ///
-        /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+        /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
         pub fn stage_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -19415,7 +19337,7 @@ pub mod test_invoke_method_input {
             self.stage_variables = Some(hash_map);
             self
         }
-        /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+        /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
         pub fn set_stage_variables(
             mut self,
             input: std::option::Option<
@@ -19614,12 +19536,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>[Required] The ARN of a resource that can be tagged.</p>
+        /// <p>The ARN of a resource that can be tagged.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>[Required] The ARN of a resource that can be tagged.</p>
+        /// <p>The ARN of a resource that can be tagged.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -19628,14 +19550,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>[Required] The Tag keys to delete.</p>
+        /// <p>The Tag keys to delete.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>[Required] The Tag keys to delete.</p>
+        /// <p>The Tag keys to delete.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19794,14 +19716,14 @@ pub mod update_account_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -19942,12 +19864,12 @@ pub mod update_api_key_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be updated.</p>
+        /// <p>The identifier of the ApiKey resource to be updated.</p>
         pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be updated.</p>
+        /// <p>The identifier of the ApiKey resource to be updated.</p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -19956,14 +19878,14 @@ pub mod update_api_key_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -20121,22 +20043,22 @@ pub mod update_authorizer_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+        /// <p>The identifier of the Authorizer resource.</p>
         pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+        /// <p>The identifier of the Authorizer resource.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20148,14 +20070,14 @@ pub mod update_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -20333,23 +20255,23 @@ pub mod update_base_path_mapping_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to change.</p>
+        /// <p>The domain name of the BasePathMapping resource to change.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to change.</p>
+        /// <p>The domain name of the BasePathMapping resource to change.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>[Required] The base path of the <code>BasePathMapping</code> resource to change.</p>
+        /// <p>The base path of the BasePathMapping resource to change.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
         pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_path = Some(input.into());
             self
         }
-        /// <p>[Required] The base path of the <code>BasePathMapping</code> resource to change.</p>
+        /// <p>The base path of the BasePathMapping resource to change.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
@@ -20359,14 +20281,14 @@ pub mod update_base_path_mapping_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -20545,12 +20467,12 @@ pub mod update_client_certificate_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be updated.</p>
+        /// <p>The identifier of the ClientCertificate resource to be updated.</p>
         pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_certificate_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be updated.</p>
+        /// <p>The identifier of the ClientCertificate resource to be updated.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20562,14 +20484,14 @@ pub mod update_client_certificate_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -20734,22 +20656,22 @@ pub mod update_deployment_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>The replacement identifier for the <code>Deployment</code> resource to change information about.</p>
+        /// <p>The replacement identifier for the Deployment resource to change information about.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>The replacement identifier for the <code>Deployment</code> resource to change information about.</p>
+        /// <p>The replacement identifier for the Deployment resource to change information about.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20761,14 +20683,14 @@ pub mod update_deployment_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -20946,22 +20868,22 @@ pub mod update_documentation_part_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
+        /// <p>The identifier of the to-be-updated documentation part.</p>
         pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_part_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
+        /// <p>The identifier of the to-be-updated documentation part.</p>
         pub fn set_documentation_part_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20973,14 +20895,14 @@ pub mod update_documentation_part_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -21161,22 +21083,22 @@ pub mod update_documentation_version_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>..</p>
+        /// <p>The string identifier of the associated RestApi..</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>..</p>
+        /// <p>The string identifier of the associated RestApi..</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
+        /// <p>The version identifier of the to-be-updated documentation version.</p>
         pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.documentation_version = Some(input.into());
             self
         }
-        /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
+        /// <p>The version identifier of the to-be-updated documentation version.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21188,14 +21110,14 @@ pub mod update_documentation_version_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -21375,12 +21297,12 @@ pub mod update_domain_name_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The name of the <code>DomainName</code> resource to be changed.</p>
+        /// <p>The name of the DomainName resource to be changed.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>DomainName</code> resource to be changed.</p>
+        /// <p>The name of the DomainName resource to be changed.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -21389,14 +21311,14 @@ pub mod update_domain_name_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -21558,26 +21480,22 @@ pub mod update_gateway_response_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
         }
-        /// <p>[Required] </p>
-        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-        /// <p></p>
+        /// <p>The response type of the associated GatewayResponse.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -21589,14 +21507,14 @@ pub mod update_gateway_response_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -21777,32 +21695,32 @@ pub mod update_integration_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Represents an update integration request's resource identifier.</p>
+        /// <p>Represents an update integration request's resource identifier.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Represents an update integration request's resource identifier.</p>
+        /// <p>Represents an update integration request's resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Represents an update integration request's HTTP method.</p>
+        /// <p>Represents an update integration request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Represents an update integration request's HTTP method.</p>
+        /// <p>Represents an update integration request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -21811,14 +21729,14 @@ pub mod update_integration_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -22014,42 +21932,42 @@ pub mod update_integration_response_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
+        /// <p>Specifies an update integration response request's resource identifier.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
+        /// <p>Specifies an update integration response request's resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
+        /// <p>Specifies an update integration response request's HTTP method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
+        /// <p>Specifies an update integration response request's HTTP method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] Specifies an update integration response request's status code.</p>
+        /// <p>Specifies an update integration response request's status code.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] Specifies an update integration response request's status code.</p>
+        /// <p>Specifies an update integration response request's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -22058,14 +21976,14 @@ pub mod update_integration_response_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -22271,32 +22189,32 @@ pub mod update_method_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+        /// <p>The Resource identifier for the Method resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -22305,14 +22223,14 @@ pub mod update_method_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -22508,42 +22426,42 @@ pub mod update_method_response_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The Resource identifier for the MethodResponse resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+        /// <p>The Resource identifier for the MethodResponse resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_method = Some(input.into());
             self
         }
-        /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+        /// <p>The HTTP verb of the Method resource.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
         }
-        /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+        /// <p>The status code for the MethodResponse resource.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+        /// <p>The status code for the MethodResponse resource.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -22552,14 +22470,14 @@ pub mod update_method_response_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -22763,22 +22681,22 @@ pub mod update_model_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the model to update.</p>
+        /// <p>The name of the model to update.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the model to update.</p>
+        /// <p>The name of the model to update.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -22787,14 +22705,14 @@ pub mod update_model_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -22972,22 +22890,22 @@ pub mod update_request_validator_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of <code>RequestValidator</code> to be updated.</p>
+        /// <p>The identifier of RequestValidator to be updated.</p>
         pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_validator_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of <code>RequestValidator</code> to be updated.</p>
+        /// <p>The identifier of RequestValidator to be updated.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22999,14 +22917,14 @@ pub mod update_request_validator_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -23186,22 +23104,22 @@ pub mod update_resource_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+        /// <p>The identifier of the Resource resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+        /// <p>The identifier of the Resource resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -23210,14 +23128,14 @@ pub mod update_resource_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -23394,12 +23312,12 @@ pub mod update_rest_api_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -23408,14 +23326,14 @@ pub mod update_rest_api_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -23573,22 +23491,22 @@ pub mod update_stage_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+        /// <p>The string identifier of the associated RestApi.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> resource to change information about.</p>
+        /// <p>The name of the Stage resource to change information about.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>[Required] The name of the <code>Stage</code> resource to change information about.</p>
+        /// <p>The name of the Stage resource to change information about.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -23597,14 +23515,14 @@ pub mod update_stage_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -23782,12 +23700,12 @@ pub mod update_usage_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+        /// <p>The Id of the usage plan associated with the usage data.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+        /// <p>The Id of the usage plan associated with the usage data.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23795,12 +23713,12 @@ pub mod update_usage_input {
             self.usage_plan_id = input;
             self
         }
-        /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+        /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+        /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -23809,14 +23727,14 @@ pub mod update_usage_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -23993,12 +23911,12 @@ pub mod update_usage_plan_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The Id of the to-be-updated usage plan.</p>
+        /// <p>The Id of the to-be-updated usage plan.</p>
         pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_plan_id = Some(input.into());
             self
         }
-        /// <p>[Required] The Id of the to-be-updated usage plan.</p>
+        /// <p>The Id of the to-be-updated usage plan.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24010,14 +23928,14 @@ pub mod update_usage_plan_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -24178,12 +24096,12 @@ pub mod update_vpc_link_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+        /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
         pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_link_id = Some(input.into());
             self
         }
-        /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+        /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -24192,14 +24110,14 @@ pub mod update_vpc_link_input {
         ///
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
             v.push(input);
             self.patch_operations = Some(v);
             self
         }
-        /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+        /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
         pub fn set_patch_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
@@ -24345,21 +24263,21 @@ impl UpdateVpcLinkInput {
     }
 }
 
-/// <p>Updates an existing <code>VpcLink</code> of a specified identifier.</p>
+/// <p>Updates an existing VpcLink of a specified identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcLinkInput {
-    /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateVpcLinkInput {
-    /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn vpc_link_id(&self) -> std::option::Option<&str> {
         self.vpc_link_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24377,17 +24295,17 @@ impl std::fmt::Debug for UpdateVpcLinkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsagePlanInput {
-    /// <p>[Required] The Id of the to-be-updated usage plan.</p>
+    /// <p>The Id of the to-be-updated usage plan.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateUsagePlanInput {
-    /// <p>[Required] The Id of the to-be-updated usage plan.</p>
+    /// <p>The Id of the to-be-updated usage plan.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24405,23 +24323,23 @@ impl std::fmt::Debug for UpdateUsagePlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsageInput {
-    /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+    /// <p>The Id of the usage plan associated with the usage data.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateUsageInput {
-    /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+    /// <p>The Id of the usage plan associated with the usage data.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
-    /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24436,27 +24354,27 @@ impl std::fmt::Debug for UpdateUsageInput {
     }
 }
 
-/// <p>Requests API Gateway to change information about a <code>Stage</code> resource.</p>
+/// <p>Requests API Gateway to change information about a Stage resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the <code>Stage</code> resource to change information about.</p>
+    /// <p>The name of the Stage resource to change information about.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the <code>Stage</code> resource to change information about.</p>
+    /// <p>The name of the Stage resource to change information about.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24471,21 +24389,21 @@ impl std::fmt::Debug for UpdateStageInput {
     }
 }
 
-/// <p>Request to update an existing <code>RestApi</code> resource in your collection.</p>
+/// <p>Request to update an existing RestApi resource in your collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24499,27 +24417,27 @@ impl std::fmt::Debug for UpdateRestApiInput {
     }
 }
 
-/// <p>Request to change information about a <code>Resource</code> resource.</p>
+/// <p>Request to change information about a Resource resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+    /// <p>The identifier of the Resource resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+    /// <p>The identifier of the Resource resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24534,27 +24452,27 @@ impl std::fmt::Debug for UpdateResourceInput {
     }
 }
 
-/// <p>Updates a <code>RequestValidator</code> of a given <code>RestApi</code>.</p>
+/// <p>Updates a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of <code>RequestValidator</code> to be updated.</p>
+    /// <p>The identifier of RequestValidator to be updated.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of <code>RequestValidator</code> to be updated.</p>
+    /// <p>The identifier of RequestValidator to be updated.</p>
     pub fn request_validator_id(&self) -> std::option::Option<&str> {
         self.request_validator_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24569,27 +24487,27 @@ impl std::fmt::Debug for UpdateRequestValidatorInput {
     }
 }
 
-/// <p>Request to update an existing model in an existing <code>RestApi</code> resource.</p>
+/// <p>Request to update an existing model in an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the model to update.</p>
+    /// <p>The name of the model to update.</p>
     pub model_name: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateModelInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the model to update.</p>
+    /// <p>The name of the model to update.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24604,39 +24522,39 @@ impl std::fmt::Debug for UpdateModelInput {
     }
 }
 
-/// <p>A request to update an existing <code>MethodResponse</code> resource.</p>
+/// <p>A request to update an existing MethodResponse resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+    /// <p>The status code for the MethodResponse resource.</p>
     pub status_code: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+    /// <p>The status code for the MethodResponse resource.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24653,33 +24571,33 @@ impl std::fmt::Debug for UpdateMethodResponseInput {
     }
 }
 
-/// <p>Request to update an existing <code>Method</code> resource.</p>
+/// <p>Request to update an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24699,35 +24617,35 @@ impl std::fmt::Debug for UpdateMethodInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
+    /// <p>Specifies an update integration response request's resource identifier.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
+    /// <p>Specifies an update integration response request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies an update integration response request's status code.</p>
+    /// <p>Specifies an update integration response request's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
+    /// <p>Specifies an update integration response request's resource identifier.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
+    /// <p>Specifies an update integration response request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] Specifies an update integration response request's status code.</p>
+    /// <p>Specifies an update integration response request's status code.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24748,29 +24666,29 @@ impl std::fmt::Debug for UpdateIntegrationResponseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Represents an update integration request's resource identifier.</p>
+    /// <p>Represents an update integration request's resource identifier.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Represents an update integration request's HTTP method.</p>
+    /// <p>Represents an update integration request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Represents an update integration request's resource identifier.</p>
+    /// <p>Represents an update integration request's resource identifier.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Represents an update integration request's HTTP method.</p>
+    /// <p>Represents an update integration request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24786,31 +24704,27 @@ impl std::fmt::Debug for UpdateIntegrationInput {
     }
 }
 
-/// <p>Updates a <code>GatewayResponse</code> of a specified response type on the given <code>RestApi</code>.</p>
+/// <p>Updates a GatewayResponse of a specified response type on the given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
         self.response_type.as_ref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24825,21 +24739,21 @@ impl std::fmt::Debug for UpdateGatewayResponseInput {
     }
 }
 
-/// <p>A request to change information about the <code>DomainName</code> resource.</p>
+/// <p>A request to change information about the DomainName resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource to be changed.</p>
+    /// <p>The name of the DomainName resource to be changed.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource to be changed.</p>
+    /// <p>The name of the DomainName resource to be changed.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24857,23 +24771,23 @@ impl std::fmt::Debug for UpdateDomainNameInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>..</p>
+    /// <p>The string identifier of the associated RestApi..</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
+    /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub documentation_version: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>..</p>
+    /// <p>The string identifier of the associated RestApi..</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
+    /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub fn documentation_version(&self) -> std::option::Option<&str> {
         self.documentation_version.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24892,23 +24806,23 @@ impl std::fmt::Debug for UpdateDocumentationVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
+    /// <p>The identifier of the to-be-updated documentation part.</p>
     pub documentation_part_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
+    /// <p>The identifier of the to-be-updated documentation part.</p>
     pub fn documentation_part_id(&self) -> std::option::Option<&str> {
         self.documentation_part_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24923,27 +24837,27 @@ impl std::fmt::Debug for UpdateDocumentationPartInput {
     }
 }
 
-/// <p>Requests API Gateway to change information about a <code>Deployment</code> resource.</p>
+/// <p>Requests API Gateway to change information about a Deployment resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>The replacement identifier for the <code>Deployment</code> resource to change information about.</p>
+    /// <p>The replacement identifier for the Deployment resource to change information about.</p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>The replacement identifier for the <code>Deployment</code> resource to change information about.</p>
+    /// <p>The replacement identifier for the Deployment resource to change information about.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24958,21 +24872,21 @@ impl std::fmt::Debug for UpdateDeploymentInput {
     }
 }
 
-/// <p>A request to change information about an <code>ClientCertificate</code> resource.</p>
+/// <p>A request to change information about an ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClientCertificateInput {
-    /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be updated.</p>
+    /// <p>The identifier of the ClientCertificate resource to be updated.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateClientCertificateInput {
-    /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be updated.</p>
+    /// <p>The identifier of the ClientCertificate resource to be updated.</p>
     pub fn client_certificate_id(&self) -> std::option::Option<&str> {
         self.client_certificate_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -24986,29 +24900,29 @@ impl std::fmt::Debug for UpdateClientCertificateInput {
     }
 }
 
-/// <p>A request to change information about the <code>BasePathMapping</code> resource.</p>
+/// <p>A request to change information about the BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to change.</p>
+    /// <p>The domain name of the BasePathMapping resource to change.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>[Required] The base path of the <code>BasePathMapping</code> resource to change.</p>
+    /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub base_path: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to change.</p>
+    /// <p>The domain name of the BasePathMapping resource to change.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>[Required] The base path of the <code>BasePathMapping</code> resource to change.</p>
+    /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -25023,27 +24937,27 @@ impl std::fmt::Debug for UpdateBasePathMappingInput {
     }
 }
 
-/// <p>Request to update an existing <code>Authorizer</code> resource.</p>
+/// <p>Request to update an existing Authorizer resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+    /// <p>The identifier of the Authorizer resource.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+    /// <p>The identifier of the Authorizer resource.</p>
     pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -25058,21 +24972,21 @@ impl std::fmt::Debug for UpdateAuthorizerInput {
     }
 }
 
-/// <p>A request to change information about an <code>ApiKey</code> resource.</p>
+/// <p>A request to change information about an ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiKeyInput {
-    /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be updated.</p>
+    /// <p>The identifier of the ApiKey resource to be updated.</p>
     pub api_key: std::option::Option<std::string::String>,
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateApiKeyInput {
-    /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be updated.</p>
+    /// <p>The identifier of the ApiKey resource to be updated.</p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -25086,15 +25000,15 @@ impl std::fmt::Debug for UpdateApiKeyInput {
     }
 }
 
-/// <p>Requests API Gateway to change information about the current <code>Account</code> resource.</p>
+/// <p>Requests API Gateway to change information about the current Account resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountInput {
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateAccountInput {
-    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
         self.patch_operations.as_deref()
     }
@@ -25111,17 +25025,17 @@ impl std::fmt::Debug for UpdateAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    /// <p>The ARN of a resource that can be tagged.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>[Required] The Tag keys to delete.</p>
+    /// <p>The Tag keys to delete.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    /// <p>The ARN of a resource that can be tagged.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>[Required] The Tag keys to delete.</p>
+    /// <p>The Tag keys to delete.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -25135,15 +25049,15 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-/// <p>Make a request to simulate the execution of a <code>Method</code>.</p>
+/// <p>Make a request to simulate the invocation of a Method.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
+    /// <p>Specifies a test invoke method request's resource ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+    /// <p>Specifies a test invoke method request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub path_with_query_string: std::option::Option<std::string::String>,
@@ -25156,22 +25070,22 @@ pub struct TestInvokeMethodInput {
     pub multi_value_headers: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>A <code>ClientCertificate</code> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+    /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
-    /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TestInvokeMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
+    /// <p>Specifies a test invoke method request's resource ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+    /// <p>Specifies a test invoke method request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
@@ -25198,11 +25112,11 @@ impl TestInvokeMethodInput {
     > {
         self.multi_value_headers.as_ref()
     }
-    /// <p>A <code>ClientCertificate</code> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+    /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
     pub fn client_certificate_id(&self) -> std::option::Option<&str> {
         self.client_certificate_id.as_deref()
     }
-    /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub fn stage_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -25226,49 +25140,49 @@ impl std::fmt::Debug for TestInvokeMethodInput {
     }
 }
 
-/// <p>Make a request to simulate the execution of an <code>Authorizer</code>.</p>
+/// <p>Make a request to simulate the invocation of an Authorizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a test invoke authorizer request's <code>Authorizer</code> ID.</p>
+    /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
-    /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+    /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
     pub headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>[Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub multi_value_headers: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub path_with_query_string: std::option::Option<std::string::String>,
-    /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
+    /// <p>The simulated request body of an incoming invocation request.</p>
     pub body: std::option::Option<std::string::String>,
-    /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>[Optional] A key-value map of additional context variables.</p>
+    /// <p>A key-value map of additional context variables.</p>
     pub additional_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TestInvokeAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a test invoke authorizer request's <code>Authorizer</code> ID.</p>
+    /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
     pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
-    /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+    /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
     pub fn headers(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.headers.as_ref()
     }
-    /// <p>[Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub fn multi_value_headers(
         &self,
     ) -> std::option::Option<
@@ -25276,22 +25190,22 @@ impl TestInvokeAuthorizerInput {
     > {
         self.multi_value_headers.as_ref()
     }
-    /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub fn path_with_query_string(&self) -> std::option::Option<&str> {
         self.path_with_query_string.as_deref()
     }
-    /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
+    /// <p>The simulated request body of an incoming invocation request.</p>
     pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
-    /// <p>A key-value map of stage variables to simulate an invocation on a deployed <code>Stage</code>.</p>
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub fn stage_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.stage_variables.as_ref()
     }
-    /// <p>[Optional] A key-value map of additional context variables.</p>
+    /// <p>A key-value map of additional context variables.</p>
     pub fn additional_context(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -25318,18 +25232,18 @@ impl std::fmt::Debug for TestInvokeAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    /// <p>The ARN of a resource that can be tagged.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    /// <p>The ARN of a resource that can be tagged.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -25350,20 +25264,20 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".</p>
     pub mode: std::option::Option<crate::model::PutMode>,
     /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fail_on_warnings: bool,
-    /// <p>Custom header parameters as part of the request. For example, to exclude <code>DocumentationParts</code> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+    /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl PutRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -25375,14 +25289,14 @@ impl PutRestApiInput {
     pub fn fail_on_warnings(&self) -> bool {
         self.fail_on_warnings
     }
-    /// <p>Custom header parameters as part of the request. For example, to exclude <code>DocumentationParts</code> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+    /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
     }
-    /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
     }
@@ -25399,39 +25313,39 @@ impl std::fmt::Debug for PutRestApiInput {
     }
 }
 
-/// <p>Request to add a <code>MethodResponse</code> to an existing <code>Method</code> resource.</p>
+/// <p>Request to add a MethodResponse to an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] The method response's status code.</p>
+    /// <p>The method response's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-    /// <p>Specifies the <code>Model</code> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+    /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] The method response's status code.</p>
+    /// <p>The method response's status code.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -25441,7 +25355,7 @@ impl PutMethodResponseInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.response_parameters.as_ref()
     }
-    /// <p>Specifies the <code>Model</code> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+    /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub fn response_models(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -25462,57 +25376,57 @@ impl std::fmt::Debug for PutMethodResponseInput {
     }
 }
 
-/// <p>Request to add a method to an existing <code>Resource</code> resource.</p>
+/// <p>Request to add a method to an existing Resource resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the new <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the new Method resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies the method request's HTTP method type.</p>
+    /// <p>Specifies the method request's HTTP method type.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     pub authorization_type: std::option::Option<std::string::String>,
-    /// <p>Specifies the identifier of an <code>Authorizer</code> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the method required a valid <code>ApiKey</code>.</p>
+    /// <p>Specifies whether the method required a valid ApiKey.</p>
     pub api_key_required: bool,
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
     pub operation_name: std::option::Option<std::string::String>,
-    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or body-mapping templates.</p>
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-    /// <p>Specifies the <code>Model</code> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+    /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier of a <code>RequestValidator</code> for validating the method request.</p>
+    /// <p>The identifier of a RequestValidator for validating the method request.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the new <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the new Method resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies the method request's HTTP method type.</p>
+    /// <p>Specifies the method request's HTTP method type.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     pub fn authorization_type(&self) -> std::option::Option<&str> {
         self.authorization_type.as_deref()
     }
-    /// <p>Specifies the identifier of an <code>Authorizer</code> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
     pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
-    /// <p>Specifies whether the method required a valid <code>ApiKey</code>.</p>
+    /// <p>Specifies whether the method required a valid ApiKey.</p>
     pub fn api_key_required(&self) -> bool {
         self.api_key_required
     }
@@ -25520,20 +25434,20 @@ impl PutMethodInput {
     pub fn operation_name(&self) -> std::option::Option<&str> {
         self.operation_name.as_deref()
     }
-    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or body-mapping templates.</p>
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
     pub fn request_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.request_parameters.as_ref()
     }
-    /// <p>Specifies the <code>Model</code> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <code>Model</code> name as the value.</p>
+    /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub fn request_models(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.request_models.as_ref()
     }
-    /// <p>The identifier of a <code>RequestValidator</code> for validating the method request.</p>
+    /// <p>The identifier of a RequestValidator for validating the method request.</p>
     pub fn request_validator_id(&self) -> std::option::Option<&str> {
         self.request_validator_id.as_deref()
     }
@@ -25564,13 +25478,13 @@ impl std::fmt::Debug for PutMethodInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
+    /// <p>Specifies a put integration response request's resource identifier.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
+    /// <p>Specifies a put integration response request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
+    /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Specifies the selection pattern of a put integration response.</p>
     pub selection_pattern: std::option::Option<std::string::String>,
@@ -25581,27 +25495,23 @@ pub struct PutIntegrationResponseInput {
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-    /// <ul>
-    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
-    /// </ul>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
 impl PutIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
+    /// <p>Specifies a put integration response request's resource identifier.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
+    /// <p>Specifies a put integration response request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
+    /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -25624,10 +25534,6 @@ impl PutIntegrationResponseInput {
         self.response_templates.as_ref()
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-    /// <ul>
-    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
-    /// </ul>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
         self.content_handling.as_ref()
@@ -25652,25 +25558,21 @@ impl std::fmt::Debug for PutIntegrationResponseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a put integration request's resource ID.</p>
+    /// <p>Specifies a put integration request's resource ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a put integration request's HTTP method.</p>
+    /// <p>Specifies the HTTP method for the integration.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a put integration input's type.</p>
+    /// <p>Specifies a put integration input's type.</p>
     pub r#type: std::option::Option<crate::model::IntegrationType>,
-    /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
+    /// <p>The HTTP method for the integration.</p>
     pub integration_http_method: std::option::Option<std::string::String>,
-    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
-    /// <ul>
-    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
-    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
-    /// </ul>
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
     pub uri: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
-    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether credentials are required for a put integration.</p>
     pub credentials: std::option::Option<std::string::String>,
@@ -25681,54 +25583,41 @@ pub struct PutIntegrationInput {
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
-    /// <ul>
-    /// <li><p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through to the integration back end without transformation.</p></li>
-    /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
-    /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
-    /// </ul>
     pub passthrough_behavior: std::option::Option<std::string::String>,
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
     pub cache_namespace: std::option::Option<std::string::String>,
-    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
     pub cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-    /// <ul>
-    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
-    /// </ul>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
     pub timeout_in_millis: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
 impl PutIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a put integration request's resource ID.</p>
+    /// <p>Specifies a put integration request's resource ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a put integration request's HTTP method.</p>
+    /// <p>Specifies the HTTP method for the integration.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] Specifies a put integration input's type.</p>
+    /// <p>Specifies a put integration input's type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::IntegrationType> {
         self.r#type.as_ref()
     }
-    /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
+    /// <p>The HTTP method for the integration.</p>
     pub fn integration_http_method(&self) -> std::option::Option<&str> {
         self.integration_http_method.as_deref()
     }
-    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
-    /// <ul>
-    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
-    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
-    /// </ul>
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -25736,7 +25625,7 @@ impl PutIntegrationInput {
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
         self.connection_type.as_ref()
     }
-    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
@@ -25759,11 +25648,6 @@ impl PutIntegrationInput {
         self.request_templates.as_ref()
     }
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
-    /// <ul>
-    /// <li><p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through to the integration back end without transformation.</p></li>
-    /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
-    /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
-    /// </ul>
     pub fn passthrough_behavior(&self) -> std::option::Option<&str> {
         self.passthrough_behavior.as_deref()
     }
@@ -25771,15 +25655,11 @@ impl PutIntegrationInput {
     pub fn cache_namespace(&self) -> std::option::Option<&str> {
         self.cache_namespace.as_deref()
     }
-    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
     pub fn cache_key_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.cache_key_parameters.as_deref()
     }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-    /// <ul>
-    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
-    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
-    /// </ul>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
     pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
         self.content_handling.as_ref()
@@ -25788,7 +25668,7 @@ impl PutIntegrationInput {
     pub fn timeout_in_millis(&self) -> std::option::Option<i32> {
         self.timeout_in_millis
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies the TLS configuration for an integration.</p>
     pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
         self.tls_config.as_ref()
     }
@@ -25817,56 +25697,44 @@ impl std::fmt::Debug for PutIntegrationInput {
     }
 }
 
-/// <p>Creates a customization of a <code>GatewayResponse</code> of a specified response type and status code on the given <code>RestApi</code>.</p>
+/// <p>Creates a customization of a GatewayResponse of a specified response type and status code on the given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
-    /// The HTTP status code of the <code>GatewayResponse</code>.
+    /// <p>The HTTP status code of the GatewayResponse.</p>
     pub status_code: std::option::Option<std::string::String>,
-    /// <p></p>
-    /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-    /// <p></p>
+    /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p></p>
-    /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-    /// <p></p>
+    /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse</p>
     pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
         self.response_type.as_ref()
     }
-    /// The HTTP status code of the <code>GatewayResponse</code>.
+    /// <p>The HTTP status code of the GatewayResponse.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
-    /// <p></p>
-    /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-    /// <p></p>
+    /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub fn response_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.response_parameters.as_ref()
     }
-    /// <p></p>
-    /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
-    /// <p></p>
+    /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub fn response_templates(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -25893,16 +25761,14 @@ pub struct ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fail_on_warnings: bool,
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
-    /// <p> To exclude <code>DocumentationParts</code> from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
+    /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code></pre>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    /// <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code></pre>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportRestApiInput {
@@ -25911,20 +25777,18 @@ impl ImportRestApiInput {
         self.fail_on_warnings
     }
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
-    /// <p> To exclude <code>DocumentationParts</code> from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
+    /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code></pre>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    /// <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code></pre>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
     }
-    /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
     }
@@ -25943,21 +25807,21 @@ impl std::fmt::Debug for ImportRestApiInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDocumentationPartsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <code>DocumentationParts</code> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
     pub mode: std::option::Option<crate::model::PutMode>,
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fail_on_warnings: bool,
-    /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportDocumentationPartsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <code>DocumentationParts</code> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::PutMode> {
         self.mode.as_ref()
     }
@@ -25965,7 +25829,7 @@ impl ImportDocumentationPartsInput {
     pub fn fail_on_warnings(&self) -> bool {
         self.fail_on_warnings
     }
-    /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
     }
@@ -25985,15 +25849,15 @@ impl std::fmt::Debug for ImportDocumentationPartsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportApiKeysInput {
-    /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
+    /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
     pub format: std::option::Option<crate::model::ApiKeysFormat>,
-    /// <p>A query parameter to indicate whether to rollback <code>ApiKey</code> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+    /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
     pub fail_on_warnings: bool,
 }
 impl ImportApiKeysInput {
-    /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
+    /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
     }
@@ -26001,7 +25865,7 @@ impl ImportApiKeysInput {
     pub fn format(&self) -> std::option::Option<&crate::model::ApiKeysFormat> {
         self.format.as_ref()
     }
-    /// <p>A query parameter to indicate whether to rollback <code>ApiKey</code> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+    /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
     pub fn fail_on_warnings(&self) -> bool {
         self.fail_on_warnings
     }
@@ -26016,7 +25880,7 @@ impl std::fmt::Debug for ImportApiKeysInput {
     }
 }
 
-/// <p>Gets the <code>VpcLinks</code> collection under the caller's account in a selected region.</p>
+/// <p>Gets the VpcLinks collection under the caller's account in a selected region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinksInput {
@@ -26048,11 +25912,11 @@ impl std::fmt::Debug for GetVpcLinksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinkInput {
-    /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl GetVpcLinkInput {
-    /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn vpc_link_id(&self) -> std::option::Option<&str> {
         self.vpc_link_id.as_deref()
     }
@@ -26104,7 +25968,7 @@ impl std::fmt::Debug for GetUsagePlansInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanKeysInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -26114,7 +25978,7 @@ pub struct GetUsagePlanKeysInput {
     pub name_query: std::option::Option<std::string::String>,
 }
 impl GetUsagePlanKeysInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
@@ -26146,17 +26010,17 @@ impl std::fmt::Debug for GetUsagePlanKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanKeyInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The key Id of the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl GetUsagePlanKeyInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
-    /// <p>[Required] The key Id of the to-be-retrieved <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
@@ -26174,11 +26038,11 @@ impl std::fmt::Debug for GetUsagePlanKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanInput {
-    /// <p>[Required] The identifier of the <code>UsagePlan</code> resource to be retrieved.</p>
+    /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
 }
 impl GetUsagePlanInput {
-    /// <p>[Required] The identifier of the <code>UsagePlan</code> resource to be retrieved.</p>
+    /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
@@ -26195,13 +26059,13 @@ impl std::fmt::Debug for GetUsagePlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageInput {
-    /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+    /// <p>The Id of the usage plan associated with the usage data.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The Id of the API key associated with the resultant usage data.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+    /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
     pub start_date: std::option::Option<std::string::String>,
-    /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+    /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -26209,7 +26073,7 @@ pub struct GetUsageInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetUsageInput {
-    /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+    /// <p>The Id of the usage plan associated with the usage data.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
@@ -26217,11 +26081,11 @@ impl GetUsageInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+    /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
     pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
-    /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+    /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
     pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
@@ -26247,11 +26111,11 @@ impl std::fmt::Debug for GetUsageInput {
     }
 }
 
-/// <p>Gets the <code>Tags</code> collection for a given resource.</p>
+/// <p>Gets the Tags collection for a given resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
-    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    /// <p>The ARN of a resource that can be tagged.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -26259,7 +26123,7 @@ pub struct GetTagsInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetTagsInput {
-    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    /// <p>The ARN of a resource that can be tagged.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -26282,17 +26146,17 @@ impl std::fmt::Debug for GetTagsInput {
     }
 }
 
-/// <p>Requests API Gateway to get information about one or more <code>Stage</code> resources.</p>
+/// <p>Requests API Gateway to get information about one or more Stage resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStagesInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The stages' deployment identifiers.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl GetStagesInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -26310,21 +26174,21 @@ impl std::fmt::Debug for GetStagesInput {
     }
 }
 
-/// <p>Requests API Gateway to get information about a <code>Stage</code> resource.</p>
+/// <p>Requests API Gateway to get information about a Stage resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the <code>Stage</code> resource to get information about.</p>
+    /// <p>The name of the Stage resource to get information about.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl GetStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the <code>Stage</code> resource to get information about.</p>
+    /// <p>The name of the Stage resource to get information about.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
@@ -26338,7 +26202,7 @@ impl std::fmt::Debug for GetStageInput {
     }
 }
 
-/// <p>Get the <code>SdkTypes</code> collection.</p>
+/// <p>Get the SdkTypes collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkTypesInput {
@@ -26366,15 +26230,15 @@ impl std::fmt::Debug for GetSdkTypesInput {
     }
 }
 
-/// <p>Get an <code>SdkType</code> instance.</p>
+/// <p>Get an SdkType instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkTypeInput {
-    /// <p>[Required] The identifier of the queried <code>SdkType</code> instance.</p>
+    /// <p>The identifier of the queried SdkType instance.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSdkTypeInput {
-    /// <p>[Required] The identifier of the queried <code>SdkType</code> instance.</p>
+    /// <p>The identifier of the queried SdkType instance.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -26387,30 +26251,30 @@ impl std::fmt::Debug for GetSdkTypeInput {
     }
 }
 
-/// <p>Request a new generated client SDK for a <code>RestApi</code> and <code>Stage</code>.</p>
+/// <p>Request a new generated client SDK for a RestApi and Stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the <code>Stage</code> that the SDK will use.</p>
+    /// <p>The name of the Stage that the SDK will use.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+    /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
     pub sdk_type: std::option::Option<std::string::String>,
     /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>, a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetSdkInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the <code>Stage</code> that the SDK will use.</p>
+    /// <p>The name of the Stage that the SDK will use.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+    /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
     pub fn sdk_type(&self) -> std::option::Option<&str> {
         self.sdk_type.as_deref()
     }
@@ -26433,7 +26297,7 @@ impl std::fmt::Debug for GetSdkInput {
     }
 }
 
-/// <p>The GET request to list existing <code>RestApis</code> defined for your collection.</p>
+/// <p>The GET request to list existing RestApis defined for your collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRestApisInput {
@@ -26461,15 +26325,15 @@ impl std::fmt::Debug for GetRestApisInput {
     }
 }
 
-/// <p>The GET request to list an existing <code>RestApi</code> defined for your collection. </p>
+/// <p>The GET request to list an existing RestApi defined for your collection. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
 }
 impl GetRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -26486,17 +26350,17 @@ impl std::fmt::Debug for GetRestApiInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A query parameter used to retrieve the specified resources embedded in the returned <code>Resources</code> resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+    /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetResourcesInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -26508,7 +26372,7 @@ impl GetResourcesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A query parameter used to retrieve the specified resources embedded in the returned <code>Resources</code> resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+    /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
     pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
         self.embed.as_deref()
     }
@@ -26528,23 +26392,23 @@ impl std::fmt::Debug for GetResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier for the <code>Resource</code> resource.</p>
+    /// <p>The identifier for the Resource resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>A query parameter to retrieve the specified resources embedded in the returned <code>Resource</code> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+    /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier for the <code>Resource</code> resource.</p>
+    /// <p>The identifier for the Resource resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>A query parameter to retrieve the specified resources embedded in the returned <code>Resource</code> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <code>Method</code> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+    /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
     pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
         self.embed.as_deref()
     }
@@ -26559,11 +26423,11 @@ impl std::fmt::Debug for GetResourceInput {
     }
 }
 
-/// <p>Gets the <code>RequestValidators</code> collection of a given <code>RestApi</code>.</p>
+/// <p>Gets the RequestValidators collection of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestValidatorsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -26571,7 +26435,7 @@ pub struct GetRequestValidatorsInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetRequestValidatorsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -26594,21 +26458,21 @@ impl std::fmt::Debug for GetRequestValidatorsInput {
     }
 }
 
-/// <p>Gets a <code>RequestValidator</code> of a given <code>RestApi</code>.</p>
+/// <p>Gets a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>RequestValidator</code> to be retrieved.</p>
+    /// <p>The identifier of the RequestValidator to be retrieved.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
 }
 impl GetRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>RequestValidator</code> to be retrieved.</p>
+    /// <p>The identifier of the RequestValidator to be retrieved.</p>
     pub fn request_validator_id(&self) -> std::option::Option<&str> {
         self.request_validator_id.as_deref()
     }
@@ -26626,17 +26490,17 @@ impl std::fmt::Debug for GetRequestValidatorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelTemplateInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the model for which to generate a template.</p>
+    /// <p>The name of the model for which to generate a template.</p>
     pub model_name: std::option::Option<std::string::String>,
 }
 impl GetModelTemplateInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the model for which to generate a template.</p>
+    /// <p>The name of the model for which to generate a template.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -26650,11 +26514,11 @@ impl std::fmt::Debug for GetModelTemplateInput {
     }
 }
 
-/// <p>Request to list existing <code>Models</code> defined for a <code>RestApi</code> resource.</p>
+/// <p>Request to list existing Models defined for a RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -26662,7 +26526,7 @@ pub struct GetModelsInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetModelsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -26685,23 +26549,23 @@ impl std::fmt::Debug for GetModelsInput {
     }
 }
 
-/// <p>Request to list information about a model in an existing <code>RestApi</code> resource.</p>
+/// <p>Request to list information about a model in an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelInput {
-    /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> exists.</p>
+    /// <p>The RestApi identifier under which the Model exists.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the model as an identifier.</p>
+    /// <p>The name of the model as an identifier.</p>
     pub model_name: std::option::Option<std::string::String>,
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub flatten: bool,
 }
 impl GetModelInput {
-    /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> exists.</p>
+    /// <p>The RestApi identifier under which the Model exists.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the model as an identifier.</p>
+    /// <p>The name of the model as an identifier.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -26720,33 +26584,33 @@ impl std::fmt::Debug for GetModelInput {
     }
 }
 
-/// <p>Request to describe a <code>MethodResponse</code> resource.</p>
+/// <p>Request to describe a MethodResponse resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+    /// <p>The status code for the MethodResponse resource.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
 impl GetMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] The status code for the <code>MethodResponse</code> resource.</p>
+    /// <p>The status code for the MethodResponse resource.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -26762,27 +26626,27 @@ impl std::fmt::Debug for GetMethodResponseInput {
     }
 }
 
-/// <p>Request to describe an existing <code>Method</code> resource.</p>
+/// <p>Request to describe an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies the method request's HTTP method type.</p>
+    /// <p>Specifies the method request's HTTP method type.</p>
     pub http_method: std::option::Option<std::string::String>,
 }
 impl GetMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies the method request's HTTP method type.</p>
+    /// <p>Specifies the method request's HTTP method type.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
@@ -26801,29 +26665,29 @@ impl std::fmt::Debug for GetMethodInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
+    /// <p>Specifies a get integration response request's resource identifier.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
+    /// <p>Specifies a get integration response request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a get integration response request's status code.</p>
+    /// <p>Specifies a get integration response request's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
 impl GetIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
+    /// <p>Specifies a get integration response request's resource identifier.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
+    /// <p>Specifies a get integration response request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] Specifies a get integration response request's status code.</p>
+    /// <p>Specifies a get integration response request's status code.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -26843,23 +26707,23 @@ impl std::fmt::Debug for GetIntegrationResponseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a get integration request's resource identifier</p>
+    /// <p>Specifies a get integration request's resource identifier</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a get integration request's HTTP method.</p>
+    /// <p>Specifies a get integration request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
 }
 impl GetIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a get integration request's resource identifier</p>
+    /// <p>Specifies a get integration request's resource identifier</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a get integration request's HTTP method.</p>
+    /// <p>Specifies a get integration request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
@@ -26874,27 +26738,27 @@ impl std::fmt::Debug for GetIntegrationInput {
     }
 }
 
-/// <p>Gets the <code>GatewayResponses</code> collection on the given <code>RestApi</code>. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default <code>GatewayResponses</code> collection for the supported response types.</p>
+/// <p>Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponsesInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>The current pagination position in the paged result set. The <code>GatewayResponse</code> collection does not support pagination and the position does not apply here.</p>
+    /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub position: std::option::Option<std::string::String>,
-    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <code>GatewayResponses</code> collection does not support pagination and the limit does not apply here.</p>
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
     pub limit: std::option::Option<i32>,
 }
 impl GetGatewayResponsesInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>The current pagination position in the paged result set. The <code>GatewayResponse</code> collection does not support pagination and the position does not apply here.</p>
+    /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
     }
-    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <code>GatewayResponses</code> collection does not support pagination and the limit does not apply here.</p>
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -26909,25 +26773,21 @@ impl std::fmt::Debug for GetGatewayResponsesInput {
     }
 }
 
-/// <p>Gets a <code>GatewayResponse</code> of a specified response type on the given <code>RestApi</code>.</p>
+/// <p>Gets a GatewayResponse of a specified response type on the given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
 impl GetGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
         self.response_type.as_ref()
     }
@@ -26941,15 +26801,15 @@ impl std::fmt::Debug for GetGatewayResponseInput {
     }
 }
 
-/// <p>Request a new export of a <code>RestApi</code> for a particular <code>Stage</code>.</p>
+/// <p>Request a new export of a RestApi for a particular Stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the <code>Stage</code> that will be exported.</p>
+    /// <p>The name of the Stage that will be exported.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+    /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
     pub export_type: std::option::Option<std::string::String>,
     /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
     pub parameters:
@@ -26958,15 +26818,15 @@ pub struct GetExportInput {
     pub accepts: std::option::Option<std::string::String>,
 }
 impl GetExportInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the <code>Stage</code> that will be exported.</p>
+    /// <p>The name of the Stage that will be exported.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+    /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
     pub fn export_type(&self) -> std::option::Option<&str> {
         self.export_type.as_deref()
     }
@@ -26994,7 +26854,7 @@ impl std::fmt::Debug for GetExportInput {
     }
 }
 
-/// <p>Request to describe a collection of <code>DomainName</code> resources.</p>
+/// <p>Request to describe a collection of DomainName resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNamesInput {
@@ -27022,15 +26882,15 @@ impl std::fmt::Debug for GetDomainNamesInput {
     }
 }
 
-/// <p>Request to get the name of a <code>DomainName</code> resource.</p>
+/// <p>Request to get the name of a DomainName resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+    /// <p>The name of the DomainName resource.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+    /// <p>The name of the DomainName resource.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -27047,7 +26907,7 @@ impl std::fmt::Debug for GetDomainNameInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationVersionsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -27055,7 +26915,7 @@ pub struct GetDocumentationVersionsInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetDocumentationVersionsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -27082,17 +26942,17 @@ impl std::fmt::Debug for GetDocumentationVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
+    /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub documentation_version: std::option::Option<std::string::String>,
 }
 impl GetDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
+    /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub fn documentation_version(&self) -> std::option::Option<&str> {
         self.documentation_version.as_deref()
     }
@@ -27110,7 +26970,7 @@ impl std::fmt::Debug for GetDocumentationVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationPartsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub r#type: std::option::Option<crate::model::DocumentationPartType>,
@@ -27122,11 +26982,11 @@ pub struct GetDocumentationPartsInput {
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <code>DocumentationPart</code> resources with content and <code>UNDOCUMENTED</code> for <code>DocumentationPart</code> resources without content.</p>
+    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub location_status: std::option::Option<crate::model::LocationStatusType>,
 }
 impl GetDocumentationPartsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -27150,7 +27010,7 @@ impl GetDocumentationPartsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <code>DocumentationPart</code> resources with content and <code>UNDOCUMENTED</code> for <code>DocumentationPart</code> resources without content.</p>
+    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub fn location_status(&self) -> std::option::Option<&crate::model::LocationStatusType> {
         self.location_status.as_ref()
     }
@@ -27173,17 +27033,17 @@ impl std::fmt::Debug for GetDocumentationPartsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub documentation_part_id: std::option::Option<std::string::String>,
 }
 impl GetDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn documentation_part_id(&self) -> std::option::Option<&str> {
         self.documentation_part_id.as_deref()
     }
@@ -27197,11 +27057,11 @@ impl std::fmt::Debug for GetDocumentationPartInput {
     }
 }
 
-/// <p>Requests API Gateway to get information about a <code>Deployments</code> collection.</p>
+/// <p>Requests API Gateway to get information about a Deployments collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -27209,7 +27069,7 @@ pub struct GetDeploymentsInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetDeploymentsInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -27232,27 +27092,27 @@ impl std::fmt::Debug for GetDeploymentsInput {
     }
 }
 
-/// <p>Requests API Gateway to get information about a <code>Deployment</code> resource.</p>
+/// <p>Requests API Gateway to get information about a Deployment resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Deployment</code> resource to get information about.</p>
+    /// <p>The identifier of the Deployment resource to get information about.</p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>A query parameter to retrieve the specified embedded resources of the returned <code>Deployment</code> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+    /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Deployment</code> resource to get information about.</p>
+    /// <p>The identifier of the Deployment resource to get information about.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>A query parameter to retrieve the specified embedded resources of the returned <code>Deployment</code> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+    /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
     pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
         self.embed.as_deref()
     }
@@ -27267,7 +27127,7 @@ impl std::fmt::Debug for GetDeploymentInput {
     }
 }
 
-/// <p>A request to get information about a collection of <code>ClientCertificate</code> resources.</p>
+/// <p>A request to get information about a collection of ClientCertificate resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClientCertificatesInput {
@@ -27295,15 +27155,15 @@ impl std::fmt::Debug for GetClientCertificatesInput {
     }
 }
 
-/// <p>A request to get information about the current <code>ClientCertificate</code> resource.</p>
+/// <p>A request to get information about the current ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClientCertificateInput {
-    /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be described.</p>
+    /// <p>The identifier of the ClientCertificate resource to be described.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl GetClientCertificateInput {
-    /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be described.</p>
+    /// <p>The identifier of the ClientCertificate resource to be described.</p>
     pub fn client_certificate_id(&self) -> std::option::Option<&str> {
         self.client_certificate_id.as_deref()
     }
@@ -27316,11 +27176,11 @@ impl std::fmt::Debug for GetClientCertificateInput {
     }
 }
 
-/// <p>A request to get information about a collection of <code>BasePathMapping</code> resources.</p>
+/// <p>A request to get information about a collection of BasePathMapping resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBasePathMappingsInput {
-    /// <p>[Required] The domain name of a <code>BasePathMapping</code> resource.</p>
+    /// <p>The domain name of a BasePathMapping resource.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -27328,7 +27188,7 @@ pub struct GetBasePathMappingsInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetBasePathMappingsInput {
-    /// <p>[Required] The domain name of a <code>BasePathMapping</code> resource.</p>
+    /// <p>The domain name of a BasePathMapping resource.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -27351,21 +27211,21 @@ impl std::fmt::Debug for GetBasePathMappingsInput {
     }
 }
 
-/// <p>Request to describe a <code>BasePathMapping</code> resource.</p>
+/// <p>Request to describe a BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to be described.</p>
+    /// <p>The domain name of the BasePathMapping resource to be described.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub base_path: std::option::Option<std::string::String>,
 }
 impl GetBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to be described.</p>
+    /// <p>The domain name of the BasePathMapping resource to be described.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
     }
@@ -27379,11 +27239,11 @@ impl std::fmt::Debug for GetBasePathMappingInput {
     }
 }
 
-/// <p>Request to describe an existing <code>Authorizers</code> resource.</p>
+/// <p>Request to describe an existing Authorizers resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizersInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
@@ -27391,7 +27251,7 @@ pub struct GetAuthorizersInput {
     pub limit: std::option::Option<i32>,
 }
 impl GetAuthorizersInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -27414,21 +27274,21 @@ impl std::fmt::Debug for GetAuthorizersInput {
     }
 }
 
-/// <p>Request to describe an existing <code>Authorizer</code> resource.</p>
+/// <p>Request to describe an existing Authorizer resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+    /// <p>The identifier of the Authorizer resource.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
 }
 impl GetAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+    /// <p>The identifier of the Authorizer resource.</p>
     pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
@@ -27442,7 +27302,7 @@ impl std::fmt::Debug for GetAuthorizerInput {
     }
 }
 
-/// <p>A request to get information about the current <code>ApiKeys</code> resource.</p>
+/// <p>A request to get information about the current ApiKeys resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiKeysInput {
@@ -27491,17 +27351,17 @@ impl std::fmt::Debug for GetApiKeysInput {
     }
 }
 
-/// <p>A request to get information about the current <code>ApiKey</code> resource.</p>
+/// <p>A request to get information about the current ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiKeyInput {
-    /// <p>[Required] The identifier of the <code>ApiKey</code> resource.</p>
+    /// <p>The identifier of the ApiKey resource.</p>
     pub api_key: std::option::Option<std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub include_value: std::option::Option<bool>,
 }
 impl GetApiKeyInput {
-    /// <p>[Required] The identifier of the <code>ApiKey</code> resource.</p>
+    /// <p>The identifier of the ApiKey resource.</p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
@@ -27519,7 +27379,7 @@ impl std::fmt::Debug for GetApiKeyInput {
     }
 }
 
-/// <p>Requests API Gateway to get information about the current <code>Account</code> resource.</p>
+/// <p>Requests API Gateway to get information about the current Account resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountInput {}
@@ -27530,18 +27390,18 @@ impl std::fmt::Debug for GetAccountInput {
     }
 }
 
-/// <p>A request to generate a <code>ClientCertificate</code> resource.</p>
+/// <p>A request to generate a ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateClientCertificateInput {
-    /// <p>The description of the <code>ClientCertificate</code>.</p>
+    /// <p>The description of the ClientCertificate.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GenerateClientCertificateInput {
-    /// <p>The description of the <code>ClientCertificate</code>.</p>
+    /// <p>The description of the ClientCertificate.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -27566,17 +27426,17 @@ impl std::fmt::Debug for GenerateClientCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageCacheInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the stage to flush its cache.</p>
+    /// <p>The name of the stage to flush its cache.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl FlushStageCacheInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the stage to flush its cache.</p>
+    /// <p>The name of the stage to flush its cache.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
@@ -27594,13 +27454,13 @@ impl std::fmt::Debug for FlushStageCacheInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageAuthorizersCacheInput {
-    /// <p>The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the stage to flush.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl FlushStageAuthorizersCacheInput {
-    /// <p>The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -27618,15 +27478,15 @@ impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
     }
 }
 
-/// <p>Deletes an existing <code>VpcLink</code> of a specified identifier.</p>
+/// <p>Deletes an existing VpcLink of a specified identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcLinkInput {
-    /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl DeleteVpcLinkInput {
-    /// <p>[Required] The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn vpc_link_id(&self) -> std::option::Option<&str> {
         self.vpc_link_id.as_deref()
     }
@@ -27643,17 +27503,17 @@ impl std::fmt::Debug for DeleteVpcLinkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanKeyInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-deleted <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The Id of the <code>UsagePlanKey</code> resource to be deleted.</p>
+    /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl DeleteUsagePlanKeyInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-deleted <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
-    /// <p>[Required] The Id of the <code>UsagePlanKey</code> resource to be deleted.</p>
+    /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
@@ -27671,11 +27531,11 @@ impl std::fmt::Debug for DeleteUsagePlanKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanInput {
-    /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
+    /// <p>The Id of the to-be-deleted usage plan.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
 }
 impl DeleteUsagePlanInput {
-    /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
+    /// <p>The Id of the to-be-deleted usage plan.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
@@ -27688,21 +27548,21 @@ impl std::fmt::Debug for DeleteUsagePlanInput {
     }
 }
 
-/// <p>Requests API Gateway to delete a <code>Stage</code> resource.</p>
+/// <p>Requests API Gateway to delete a Stage resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the <code>Stage</code> resource to delete.</p>
+    /// <p>The name of the Stage resource to delete.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl DeleteStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the <code>Stage</code> resource to delete.</p>
+    /// <p>The name of the Stage resource to delete.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
@@ -27720,11 +27580,11 @@ impl std::fmt::Debug for DeleteStageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
 }
 impl DeleteRestApiInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -27737,21 +27597,21 @@ impl std::fmt::Debug for DeleteRestApiInput {
     }
 }
 
-/// <p>Request to delete a <code>Resource</code>.</p>
+/// <p>Request to delete a Resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+    /// <p>The identifier of the Resource resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Resource</code> resource.</p>
+    /// <p>The identifier of the Resource resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -27765,21 +27625,21 @@ impl std::fmt::Debug for DeleteResourceInput {
     }
 }
 
-/// <p>Deletes a specified <code>RequestValidator</code> of a given <code>RestApi</code>.</p>
+/// <p>Deletes a specified RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>RequestValidator</code> to be deleted.</p>
+    /// <p>The identifier of the RequestValidator to be deleted.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
 }
 impl DeleteRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>RequestValidator</code> to be deleted.</p>
+    /// <p>The identifier of the RequestValidator to be deleted.</p>
     pub fn request_validator_id(&self) -> std::option::Option<&str> {
         self.request_validator_id.as_deref()
     }
@@ -27793,21 +27653,21 @@ impl std::fmt::Debug for DeleteRequestValidatorInput {
     }
 }
 
-/// <p>Request to delete an existing model in an existing <code>RestApi</code> resource.</p>
+/// <p>Request to delete an existing model in an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the model to delete.</p>
+    /// <p>The name of the model to delete.</p>
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the model to delete.</p>
+    /// <p>The name of the model to delete.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -27821,33 +27681,33 @@ impl std::fmt::Debug for DeleteModelInput {
     }
 }
 
-/// <p>A request to delete an existing <code>MethodResponse</code> resource.</p>
+/// <p>A request to delete an existing MethodResponse resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] The status code identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The status code identifier for the MethodResponse resource.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
 impl DeleteMethodResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] The status code identifier for the <code>MethodResponse</code> resource.</p>
+    /// <p>The status code identifier for the MethodResponse resource.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -27863,27 +27723,27 @@ impl std::fmt::Debug for DeleteMethodResponseInput {
     }
 }
 
-/// <p>Request to delete an existing <code>Method</code> resource.</p>
+/// <p>Request to delete an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub http_method: std::option::Option<std::string::String>,
 }
 impl DeleteMethodInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The <code>Resource</code> identifier for the <code>Method</code> resource.</p>
+    /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] The HTTP verb of the <code>Method</code> resource.</p>
+    /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
@@ -27902,29 +27762,29 @@ impl std::fmt::Debug for DeleteMethodInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
+    /// <p>Specifies a delete integration response request's resource identifier.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+    /// <p>Specifies a delete integration response request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a delete integration response request's status code.</p>
+    /// <p>Specifies a delete integration response request's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
+    /// <p>Specifies a delete integration response request's resource identifier.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+    /// <p>Specifies a delete integration response request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
-    /// <p>[Required] Specifies a delete integration response request's status code.</p>
+    /// <p>Specifies a delete integration response request's status code.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -27944,23 +27804,23 @@ impl std::fmt::Debug for DeleteIntegrationResponseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
+    /// <p>Specifies a delete integration request's resource identifier.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
+    /// <p>Specifies a delete integration request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
+    /// <p>Specifies a delete integration request's resource identifier.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
+    /// <p>Specifies a delete integration request's HTTP method.</p>
     pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
@@ -27975,25 +27835,21 @@ impl std::fmt::Debug for DeleteIntegrationInput {
     }
 }
 
-/// <p>Clears any customization of a <code>GatewayResponse</code> of a specified response type on the given <code>RestApi</code> and resets it with the default settings.</p>
+/// <p>Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with the default settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
 impl DeleteGatewayResponseInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] </p>
-    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
-    /// <p></p>
+    /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
         self.response_type.as_ref()
     }
@@ -28007,15 +27863,15 @@ impl std::fmt::Debug for DeleteGatewayResponseInput {
     }
 }
 
-/// <p>A request to delete the <code>DomainName</code> resource.</p>
+/// <p>A request to delete the DomainName resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource to be deleted.</p>
+    /// <p>The name of the DomainName resource to be deleted.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource to be deleted.</p>
+    /// <p>The name of the DomainName resource to be deleted.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -28032,17 +27888,17 @@ impl std::fmt::Debug for DeleteDomainNameInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
+    /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
     pub documentation_version: std::option::Option<std::string::String>,
 }
 impl DeleteDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
+    /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
     pub fn documentation_version(&self) -> std::option::Option<&str> {
         self.documentation_version.as_deref()
     }
@@ -28060,17 +27916,17 @@ impl std::fmt::Debug for DeleteDocumentationVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
+    /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub documentation_part_id: std::option::Option<std::string::String>,
 }
 impl DeleteDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
+    /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub fn documentation_part_id(&self) -> std::option::Option<&str> {
         self.documentation_part_id.as_deref()
     }
@@ -28084,21 +27940,21 @@ impl std::fmt::Debug for DeleteDocumentationPartInput {
     }
 }
 
-/// <p>Requests API Gateway to delete a <code>Deployment</code> resource.</p>
+/// <p>Requests API Gateway to delete a Deployment resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Deployment</code> resource to delete.</p>
+    /// <p>The identifier of the Deployment resource to delete.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Deployment</code> resource to delete.</p>
+    /// <p>The identifier of the Deployment resource to delete.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -28112,15 +27968,15 @@ impl std::fmt::Debug for DeleteDeploymentInput {
     }
 }
 
-/// <p>A request to delete the <code>ClientCertificate</code> resource.</p>
+/// <p>A request to delete the ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientCertificateInput {
-    /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be deleted.</p>
+    /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteClientCertificateInput {
-    /// <p>[Required] The identifier of the <code>ClientCertificate</code> resource to be deleted.</p>
+    /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
     pub fn client_certificate_id(&self) -> std::option::Option<&str> {
         self.client_certificate_id.as_deref()
     }
@@ -28133,22 +27989,22 @@ impl std::fmt::Debug for DeleteClientCertificateInput {
     }
 }
 
-/// <p>A request to delete the <code>BasePathMapping</code> resource.</p>
+/// <p>A request to delete the BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to delete.</p>
+    /// <p>The domain name of the BasePathMapping resource to delete.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>[Required] The base path name of the <code>BasePathMapping</code> resource to delete.</p>
+    /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub base_path: std::option::Option<std::string::String>,
 }
 impl DeleteBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to delete.</p>
+    /// <p>The domain name of the BasePathMapping resource to delete.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>[Required] The base path name of the <code>BasePathMapping</code> resource to delete.</p>
+    /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
@@ -28163,21 +28019,21 @@ impl std::fmt::Debug for DeleteBasePathMappingInput {
     }
 }
 
-/// <p>Request to delete an existing <code>Authorizer</code> resource.</p>
+/// <p>Request to delete an existing Authorizer resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+    /// <p>The identifier of the Authorizer resource.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
 }
 impl DeleteAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Authorizer</code> resource.</p>
+    /// <p>The identifier of the Authorizer resource.</p>
     pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
@@ -28191,15 +28047,15 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
     }
 }
 
-/// <p>A request to delete the <code>ApiKey</code> resource.</p>
+/// <p>A request to delete the ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiKeyInput {
-    /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be deleted.</p>
+    /// <p>The identifier of the ApiKey resource to be deleted.</p>
     pub api_key: std::option::Option<std::string::String>,
 }
 impl DeleteApiKeyInput {
-    /// <p>[Required] The identifier of the <code>ApiKey</code> resource to be deleted.</p>
+    /// <p>The identifier of the ApiKey resource to be deleted.</p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
@@ -28216,18 +28072,18 @@ impl std::fmt::Debug for DeleteApiKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcLinkInput {
-    /// <p>[Required] The name used to label and identify the VPC link.</p>
+    /// <p>The name used to label and identify the VPC link.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the VPC link.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>[Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
     pub target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateVpcLinkInput {
-    /// <p>[Required] The name used to label and identify the VPC link.</p>
+    /// <p>The name used to label and identify the VPC link.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -28235,7 +28091,7 @@ impl CreateVpcLinkInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>[Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
     pub fn target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.target_arns.as_deref()
     }
@@ -28262,23 +28118,23 @@ impl std::fmt::Debug for CreateVpcLinkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsagePlanKeyInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-created <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+    /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The type of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+    /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub key_type: std::option::Option<std::string::String>,
 }
 impl CreateUsagePlanKeyInput {
-    /// <p>[Required] The Id of the <code>UsagePlan</code> resource representing the usage plan containing the to-be-created <code>UsagePlanKey</code> resource representing a plan customer.</p>
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
     pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
-    /// <p>[Required] The identifier of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+    /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>[Required] The type of a <code>UsagePlanKey</code> resource for a plan customer.</p>
+    /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub fn key_type(&self) -> std::option::Option<&str> {
         self.key_type.as_deref()
     }
@@ -28297,7 +28153,7 @@ impl std::fmt::Debug for CreateUsagePlanKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsagePlanInput {
-    /// <p>[Required] The name of the usage plan.</p>
+    /// <p>The name of the usage plan.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the usage plan.</p>
     pub description: std::option::Option<std::string::String>,
@@ -28312,7 +28168,7 @@ pub struct CreateUsagePlanInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateUsagePlanInput {
-    /// <p>[Required] The name of the usage plan.</p>
+    /// <p>The name of the usage plan.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -28353,49 +28209,49 @@ impl std::fmt::Debug for CreateUsagePlanInput {
     }
 }
 
-/// <p>Requests API Gateway to create a <code>Stage</code> resource.</p>
+/// <p>Requests API Gateway to create a Stage resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name for the <code>Stage</code> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>[Required] The identifier of the <code>Deployment</code> resource for the <code>Stage</code> resource.</p>
+    /// <p>The identifier of the Deployment resource for the Stage resource.</p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>The description of the <code>Stage</code> resource.</p>
+    /// <p>The description of the Stage resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Whether cache clustering is enabled for the stage.</p>
     pub cache_cluster_enabled: bool,
     /// <p>The stage's cache cluster size.</p>
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-    /// <p>A map that defines the stage variables for the new <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>The canary deployment settings of this stage.</p>
     pub canary_settings: std::option::Option<crate::model::CanarySettings>,
-    /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub tracing_enabled: bool,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStageInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name for the <code>Stage</code> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>[Required] The identifier of the <code>Deployment</code> resource for the <code>Stage</code> resource.</p>
+    /// <p>The identifier of the Deployment resource for the Stage resource.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>The description of the <code>Stage</code> resource.</p>
+    /// <p>The description of the Stage resource.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -28407,7 +28263,7 @@ impl CreateStageInput {
     pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
         self.cache_cluster_size.as_ref()
     }
-    /// <p>A map that defines the stage variables for the new <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub fn variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -28422,7 +28278,7 @@ impl CreateStageInput {
     pub fn canary_settings(&self) -> std::option::Option<&crate::model::CanarySettings> {
         self.canary_settings.as_ref()
     }
-    /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub fn tracing_enabled(&self) -> bool {
         self.tracing_enabled
     }
@@ -28452,45 +28308,40 @@ impl std::fmt::Debug for CreateStageInput {
     }
 }
 
-/// <p>The POST Request to add a new <code>RestApi</code> resource to your collection.</p>
+/// <p>The POST Request to add a new RestApi resource to your collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRestApiInput {
-    /// <p>[Required] The name of the <code>RestApi</code>.</p>
+    /// <p>The name of the RestApi.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the <code>RestApi</code>.</p>
+    /// <p>The description of the RestApi.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The ID of the <code>RestApi</code> that you want to clone from.</p>
+    /// <p>The ID of the RestApi that you want to clone from.</p>
     pub clone_from: std::option::Option<std::string::String>,
-    /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
+    /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
     pub binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub minimum_compression_size: std::option::Option<i32>,
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
-    /// <ul>
-    /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
-    /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
-    /// </ul>
-    /// <p></p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-    /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-    /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
     pub disable_execute_api_endpoint: bool,
 }
 impl CreateRestApiInput {
-    /// <p>[Required] The name of the <code>RestApi</code>.</p>
+    /// <p>The name of the RestApi.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the <code>RestApi</code>.</p>
+    /// <p>The description of the RestApi.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -28498,11 +28349,11 @@ impl CreateRestApiInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The ID of the <code>RestApi</code> that you want to clone from.</p>
+    /// <p>The ID of the RestApi that you want to clone from.</p>
     pub fn clone_from(&self) -> std::option::Option<&str> {
         self.clone_from.as_deref()
     }
-    /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
+    /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
     pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
         self.binary_media_types.as_deref()
     }
@@ -28510,22 +28361,17 @@ impl CreateRestApiInput {
     pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
         self.minimum_compression_size
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
-    /// <ul>
-    /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
-    /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
-    /// </ul>
-    /// <p></p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
         self.api_key_source.as_ref()
     }
-    /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
     pub fn endpoint_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
-    /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -28536,7 +28382,7 @@ impl CreateRestApiInput {
     {
         self.tags.as_ref()
     }
-    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
     }
@@ -28562,23 +28408,23 @@ impl std::fmt::Debug for CreateRestApiInput {
     }
 }
 
-/// <p>Requests API Gateway to create a <code>Resource</code> resource.</p>
+/// <p>Requests API Gateway to create a Resource resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The parent resource's identifier.</p>
+    /// <p>The parent resource's identifier.</p>
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The last path segment for this resource.</p>
     pub path_part: std::option::Option<std::string::String>,
 }
 impl CreateResourceInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The parent resource's identifier.</p>
+    /// <p>The parent resource's identifier.</p>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
@@ -28597,13 +28443,13 @@ impl std::fmt::Debug for CreateResourceInput {
     }
 }
 
-/// <p>Creates a <code>RequestValidator</code> of a given <code>RestApi</code>.</p>
+/// <p>Creates a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>The name of the to-be-created <code>RequestValidator</code>.</p>
+    /// <p>The name of the to-be-created RequestValidator.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
     pub validate_request_body: bool,
@@ -28611,11 +28457,11 @@ pub struct CreateRequestValidatorInput {
     pub validate_request_parameters: bool,
 }
 impl CreateRequestValidatorInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>The name of the to-be-created <code>RequestValidator</code>.</p>
+    /// <p>The name of the to-be-created RequestValidator.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -28642,27 +28488,27 @@ impl std::fmt::Debug for CreateRequestValidatorInput {
     }
 }
 
-/// <p>Request to add a new <code>Model</code> to an existing <code>RestApi</code> resource.</p>
+/// <p>Request to add a new Model to an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelInput {
-    /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> will be created.</p>
+    /// <p>The RestApi identifier under which the Model will be created.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the model. Must be alphanumeric.</p>
+    /// <p>The name of the model. Must be alphanumeric.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>[Required] The content-type for the model.</p>
+    /// <p>The content-type for the model.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl CreateModelInput {
-    /// <p>[Required] The <code>RestApi</code> identifier under which the <code>Model</code> will be created.</p>
+    /// <p>The RestApi identifier under which the Model will be created.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the model. Must be alphanumeric.</p>
+    /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -28670,11 +28516,11 @@ impl CreateModelInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>[Required] The content-type for the model.</p>
+    /// <p>The content-type for the model.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -28695,7 +28541,7 @@ impl std::fmt::Debug for CreateModelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+    /// <p>The name of the DomainName resource.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
     pub certificate_name: std::option::Option<std::string::String>,
@@ -28711,20 +28557,20 @@ pub struct CreateDomainNameInput {
     pub regional_certificate_name: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub regional_certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
-    /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl CreateDomainNameInput {
-    /// <p>[Required] The name of the <code>DomainName</code> resource.</p>
+    /// <p>The name of the DomainName resource.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -28756,7 +28602,7 @@ impl CreateDomainNameInput {
     pub fn regional_certificate_arn(&self) -> std::option::Option<&str> {
         self.regional_certificate_arn.as_deref()
     }
-    /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn endpoint_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EndpointConfiguration> {
@@ -28769,11 +28615,11 @@ impl CreateDomainNameInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub fn security_policy(&self) -> std::option::Option<&crate::model::SecurityPolicy> {
         self.security_policy.as_ref()
     }
-    /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn mutual_tls_authentication(
         &self,
     ) -> std::option::Option<&crate::model::MutualTlsAuthenticationInput> {
@@ -28811,9 +28657,9 @@ impl std::fmt::Debug for CreateDomainNameInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The version identifier of the new snapshot.</p>
+    /// <p>The version identifier of the new snapshot.</p>
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>The stage name to be associated with the new documentation snapshot.</p>
     pub stage_name: std::option::Option<std::string::String>,
@@ -28821,11 +28667,11 @@ pub struct CreateDocumentationVersionInput {
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateDocumentationVersionInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The version identifier of the new snapshot.</p>
+    /// <p>The version identifier of the new snapshot.</p>
     pub fn documentation_version(&self) -> std::option::Option<&str> {
         self.documentation_version.as_deref()
     }
@@ -28853,23 +28699,23 @@ impl std::fmt::Debug for CreateDocumentationVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
+    /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
-    /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+    /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub properties: std::option::Option<std::string::String>,
 }
 impl CreateDocumentationPartInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
+    /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::DocumentationPartLocation> {
         self.location.as_ref()
     }
-    /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+    /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
     }
@@ -28884,56 +28730,56 @@ impl std::fmt::Debug for CreateDocumentationPartInput {
     }
 }
 
-/// <p>Requests API Gateway to create a <code>Deployment</code> resource.</p>
+/// <p>Requests API Gateway to create a Deployment resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+    /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>The description of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+    /// <p>The description of the Stage resource for the Deployment resource to create.</p>
     pub stage_description: std::option::Option<std::string::String>,
-    /// <p>The description for the <code>Deployment</code> resource to create.</p>
+    /// <p>The description for the Deployment resource to create.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Enables a cache cluster for the <code>Stage</code> resource specified in the input.</p>
+    /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
     pub cache_cluster_enabled: std::option::Option<bool>,
-    /// <p>Specifies the cache cluster size for the <code>Stage</code> resource specified in the input, if a cache cluster is enabled.</p>
+    /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-    /// <p>A map that defines the stage variables for the <code>Stage</code> resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub canary_settings: std::option::Option<crate::model::DeploymentCanarySettings>,
-    /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub tracing_enabled: std::option::Option<bool>,
 }
 impl CreateDeploymentInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>The name of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+    /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>The description of the <code>Stage</code> resource for the <code>Deployment</code> resource to create.</p>
+    /// <p>The description of the Stage resource for the Deployment resource to create.</p>
     pub fn stage_description(&self) -> std::option::Option<&str> {
         self.stage_description.as_deref()
     }
-    /// <p>The description for the <code>Deployment</code> resource to create.</p>
+    /// <p>The description for the Deployment resource to create.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Enables a cache cluster for the <code>Stage</code> resource specified in the input.</p>
+    /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
     pub fn cache_cluster_enabled(&self) -> std::option::Option<bool> {
         self.cache_cluster_enabled
     }
-    /// <p>Specifies the cache cluster size for the <code>Stage</code> resource specified in the input, if a cache cluster is enabled.</p>
+    /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
     pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
         self.cache_cluster_size.as_ref()
     }
-    /// <p>A map that defines the stage variables for the <code>Stage</code> resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub fn variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -28944,7 +28790,7 @@ impl CreateDeploymentInput {
     pub fn canary_settings(&self) -> std::option::Option<&crate::model::DeploymentCanarySettings> {
         self.canary_settings.as_ref()
     }
-    /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub fn tracing_enabled(&self) -> std::option::Option<bool> {
         self.tracing_enabled
     }
@@ -28965,21 +28811,21 @@ impl std::fmt::Debug for CreateDeploymentInput {
     }
 }
 
-/// <p>Requests API Gateway to create a new <code>BasePathMapping</code> resource.</p>
+/// <p>Requests API Gateway to create a new BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to create.</p>
+    /// <p>The domain name of the BasePathMapping resource to create.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
     pub base_path: std::option::Option<std::string::String>,
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
     pub stage: std::option::Option<std::string::String>,
 }
 impl CreateBasePathMappingInput {
-    /// <p>[Required] The domain name of the <code>BasePathMapping</code> resource to create.</p>
+    /// <p>The domain name of the BasePathMapping resource to create.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -28987,7 +28833,7 @@ impl CreateBasePathMappingInput {
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
     }
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -29007,17 +28853,17 @@ impl std::fmt::Debug for CreateBasePathMappingInput {
     }
 }
 
-/// <p>Request to add a new <code>Authorizer</code> to an existing <code>RestApi</code> resource.</p>
+/// <p>Request to add a new Authorizer to an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
-    /// <p>[Required] The name of the authorizer.</p>
+    /// <p>The name of the authorizer.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
     pub r#type: std::option::Option<crate::model::AuthorizerType>,
-    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
     pub provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub auth_type: std::option::Option<std::string::String>,
@@ -29025,12 +28871,7 @@ pub struct CreateAuthorizerInput {
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
     pub authorizer_credentials: std::option::Option<std::string::String>,
-    /// <p>The identity source for which authorization is requested. </p>
-    /// <ul>
-    /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
-    /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-    /// </ul>
-    /// <p></p>
+    /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</p>
     pub identity_source: std::option::Option<std::string::String>,
     /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
     pub identity_validation_expression: std::option::Option<std::string::String>,
@@ -29038,19 +28879,19 @@ pub struct CreateAuthorizerInput {
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
 }
 impl CreateAuthorizerInput {
-    /// <p>[Required] The string identifier of the associated <code>RestApi</code>.</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>[Required] The name of the authorizer.</p>
+    /// <p>The name of the authorizer.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
         self.r#type.as_ref()
     }
-    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
     pub fn provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.provider_ar_ns.as_deref()
     }
@@ -29066,12 +28907,7 @@ impl CreateAuthorizerInput {
     pub fn authorizer_credentials(&self) -> std::option::Option<&str> {
         self.authorizer_credentials.as_deref()
     }
-    /// <p>The identity source for which authorization is requested. </p>
-    /// <ul>
-    /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
-    /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-    /// </ul>
-    /// <p></p>
+    /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</p>
     pub fn identity_source(&self) -> std::option::Option<&str> {
         self.identity_source.as_deref()
     }
@@ -29107,19 +28943,19 @@ impl std::fmt::Debug for CreateAuthorizerInput {
     }
 }
 
-/// <p>Request to create an <code>ApiKey</code> resource.</p>
+/// <p>Request to create an ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiKeyInput {
-    /// <p>The name of the <code>ApiKey</code>.</p>
+    /// <p>The name of the ApiKey.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the <code>ApiKey</code>.</p>
+    /// <p>The description of the ApiKey.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the <code>ApiKey</code> can be used by callers.</p>
+    /// <p>Specifies whether the ApiKey can be used by callers.</p>
     pub enabled: bool,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
     pub generate_distinct_id: bool,
-    /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
+    /// <p>Specifies a value of the API key.</p>
     pub value: std::option::Option<std::string::String>,
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
     pub stage_keys: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
@@ -29130,15 +28966,15 @@ pub struct CreateApiKeyInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateApiKeyInput {
-    /// <p>The name of the <code>ApiKey</code>.</p>
+    /// <p>The name of the ApiKey.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the <code>ApiKey</code>.</p>
+    /// <p>The description of the ApiKey.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies whether the <code>ApiKey</code> can be used by callers.</p>
+    /// <p>Specifies whether the ApiKey can be used by callers.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -29146,7 +28982,7 @@ impl CreateApiKeyInput {
     pub fn generate_distinct_id(&self) -> bool {
         self.generate_distinct_id
     }
-    /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
+    /// <p>Specifies a value of the API key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }

@@ -14,7 +14,7 @@ pub struct AssociateKmsKeyError {
 pub enum AssociateKmsKeyErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -268,7 +268,7 @@ pub enum CreateExportTaskErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You have reached the maximum number of resources that can be created.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -416,7 +416,7 @@ pub enum CreateLogGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You have reached the maximum number of resources that can be created.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -677,7 +677,7 @@ pub struct DeleteDestinationError {
 pub enum DeleteDestinationErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -803,7 +803,7 @@ pub struct DeleteLogGroupError {
 pub enum DeleteLogGroupErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -929,7 +929,7 @@ pub struct DeleteLogStreamError {
 pub enum DeleteLogStreamErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1055,7 +1055,7 @@ pub struct DeleteMetricFilterError {
 pub enum DeleteMetricFilterErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1411,7 +1411,7 @@ pub struct DeleteRetentionPolicyError {
 pub enum DeleteRetentionPolicyErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1537,7 +1537,7 @@ pub struct DeleteSubscriptionFilterError {
 pub enum DeleteSubscriptionFilterErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2651,7 +2651,7 @@ pub struct DisassociateKmsKeyError {
 pub enum DisassociateKmsKeyErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3475,7 +3475,7 @@ pub struct PutDestinationError {
 pub enum PutDestinationErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3590,7 +3590,7 @@ pub struct PutDestinationPolicyError {
 pub enum PutDestinationPolicyErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3855,7 +3855,7 @@ pub enum PutMetricFilterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You have reached the maximum number of resources that can be created.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4231,7 +4231,7 @@ pub struct PutRetentionPolicyError {
 pub enum PutRetentionPolicyErrorKind {
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4359,7 +4359,7 @@ pub enum PutSubscriptionFilterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You have reached the maximum number of resources that can be created.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Multiple requests to update the same resource were in conflict.</p>
+    /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5366,7 +5366,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Multiple requests to update the same resource were in conflict.</p>
+/// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationAbortedException {

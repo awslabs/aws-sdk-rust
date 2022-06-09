@@ -1930,6 +1930,22 @@ pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlG4DnXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlG512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG516Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG548Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG58Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM516Xlarge,
@@ -2019,6 +2035,14 @@ impl std::convert::From<&str> for AppInstanceType {
             "ml.g4dn.4xlarge" => AppInstanceType::MlG4Dn4Xlarge,
             "ml.g4dn.8xlarge" => AppInstanceType::MlG4Dn8Xlarge,
             "ml.g4dn.xlarge" => AppInstanceType::MlG4DnXlarge,
+            "ml.g5.12xlarge" => AppInstanceType::MlG512Xlarge,
+            "ml.g5.16xlarge" => AppInstanceType::MlG516Xlarge,
+            "ml.g5.24xlarge" => AppInstanceType::MlG524Xlarge,
+            "ml.g5.2xlarge" => AppInstanceType::MlG52Xlarge,
+            "ml.g5.48xlarge" => AppInstanceType::MlG548Xlarge,
+            "ml.g5.4xlarge" => AppInstanceType::MlG54Xlarge,
+            "ml.g5.8xlarge" => AppInstanceType::MlG58Xlarge,
+            "ml.g5.xlarge" => AppInstanceType::MlG5Xlarge,
             "ml.m5.12xlarge" => AppInstanceType::MlM512Xlarge,
             "ml.m5.16xlarge" => AppInstanceType::MlM516Xlarge,
             "ml.m5.24xlarge" => AppInstanceType::MlM524Xlarge,
@@ -2083,6 +2107,14 @@ impl AppInstanceType {
             AppInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
             AppInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
             AppInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            AppInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+            AppInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+            AppInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+            AppInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+            AppInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+            AppInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+            AppInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+            AppInstanceType::MlG5Xlarge => "ml.g5.xlarge",
             AppInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
             AppInstanceType::MlM516Xlarge => "ml.m5.16xlarge",
             AppInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
@@ -2138,6 +2170,14 @@ impl AppInstanceType {
             "ml.g4dn.4xlarge",
             "ml.g4dn.8xlarge",
             "ml.g4dn.xlarge",
+            "ml.g5.12xlarge",
+            "ml.g5.16xlarge",
+            "ml.g5.24xlarge",
+            "ml.g5.2xlarge",
+            "ml.g5.48xlarge",
+            "ml.g5.4xlarge",
+            "ml.g5.8xlarge",
+            "ml.g5.xlarge",
             "ml.m5.12xlarge",
             "ml.m5.16xlarge",
             "ml.m5.24xlarge",
@@ -4136,6 +4176,71 @@ impl NotebookInstanceLifecycleHook {
     /// Creates a new builder-style object to manufacture [`NotebookInstanceLifecycleHook`](crate::model::NotebookInstanceLifecycleHook)
     pub fn builder() -> crate::model::notebook_instance_lifecycle_hook::Builder {
         crate::model::notebook_instance_lifecycle_hook::Builder::default()
+    }
+}
+
+/// <p>Information on the IMDS configuration of the notebook instance</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceMetadataServiceConfiguration {
+    /// <p>Indicates the minimum IMDS version that the notebook instance supports. When passed as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no default.</p>
+    pub minimum_instance_metadata_service_version: std::option::Option<std::string::String>,
+}
+impl InstanceMetadataServiceConfiguration {
+    /// <p>Indicates the minimum IMDS version that the notebook instance supports. When passed as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no default.</p>
+    pub fn minimum_instance_metadata_service_version(&self) -> std::option::Option<&str> {
+        self.minimum_instance_metadata_service_version.as_deref()
+    }
+}
+impl std::fmt::Debug for InstanceMetadataServiceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceMetadataServiceConfiguration");
+        formatter.field(
+            "minimum_instance_metadata_service_version",
+            &self.minimum_instance_metadata_service_version,
+        );
+        formatter.finish()
+    }
+}
+/// See [`InstanceMetadataServiceConfiguration`](crate::model::InstanceMetadataServiceConfiguration)
+pub mod instance_metadata_service_configuration {
+    /// A builder for [`InstanceMetadataServiceConfiguration`](crate::model::InstanceMetadataServiceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) minimum_instance_metadata_service_version:
+            std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates the minimum IMDS version that the notebook instance supports. When passed as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no default.</p>
+        pub fn minimum_instance_metadata_service_version(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.minimum_instance_metadata_service_version = Some(input.into());
+            self
+        }
+        /// <p>Indicates the minimum IMDS version that the notebook instance supports. When passed as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no default.</p>
+        pub fn set_minimum_instance_metadata_service_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_instance_metadata_service_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceMetadataServiceConfiguration`](crate::model::InstanceMetadataServiceConfiguration)
+        pub fn build(self) -> crate::model::InstanceMetadataServiceConfiguration {
+            crate::model::InstanceMetadataServiceConfiguration {
+                minimum_instance_metadata_service_version: self
+                    .minimum_instance_metadata_service_version,
+            }
+        }
+    }
+}
+impl InstanceMetadataServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`InstanceMetadataServiceConfiguration`](crate::model::InstanceMetadataServiceConfiguration)
+    pub fn builder() -> crate::model::instance_metadata_service_configuration::Builder {
+        crate::model::instance_metadata_service_configuration::Builder::default()
     }
 }
 
@@ -16190,7 +16295,7 @@ pub struct TransformOutput {
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateModel</code> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl TransformOutput {
@@ -16215,7 +16320,7 @@ impl TransformOutput {
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateModel</code> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -16288,7 +16393,7 @@ pub mod transform_output {
         /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
         /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateModel</code> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -16301,7 +16406,7 @@ pub mod transform_output {
         /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
         /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateModel</code> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -17307,7 +17412,7 @@ pub struct Endpoint {
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
     pub production_variants:
         std::option::Option<std::vec::Vec<crate::model::ProductionVariantSummary>>,
-    /// <p></p>
+    /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub data_capture_config: std::option::Option<crate::model::DataCaptureConfigSummary>,
     /// <p>The status of the endpoint.</p>
     pub endpoint_status: std::option::Option<crate::model::EndpointStatus>,
@@ -17341,7 +17446,7 @@ impl Endpoint {
     ) -> std::option::Option<&[crate::model::ProductionVariantSummary]> {
         self.production_variants.as_deref()
     }
-    /// <p></p>
+    /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn data_capture_config(
         &self,
     ) -> std::option::Option<&crate::model::DataCaptureConfigSummary> {
@@ -17468,7 +17573,7 @@ pub mod endpoint {
             self.production_variants = input;
             self
         }
-        /// <p></p>
+        /// <p>The currently active data capture configuration used by your Endpoint.</p>
         pub fn data_capture_config(
             mut self,
             input: crate::model::DataCaptureConfigSummary,
@@ -17476,7 +17581,7 @@ pub mod endpoint {
             self.data_capture_config = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The currently active data capture configuration used by your Endpoint.</p>
         pub fn set_data_capture_config(
             mut self,
             input: std::option::Option<crate::model::DataCaptureConfigSummary>,
@@ -18428,39 +18533,39 @@ impl AsRef<str> for EndpointStatus {
     }
 }
 
-/// <p></p>
+/// <p>The currently active data capture configuration used by your Endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCaptureConfigSummary {
-    /// <p></p>
+    /// <p>Whether data capture is enabled or disabled.</p>
     pub enable_capture: bool,
-    /// <p></p>
+    /// <p>Whether data capture is currently functional.</p>
     pub capture_status: std::option::Option<crate::model::CaptureStatus>,
-    /// <p></p>
+    /// <p>The percentage of requests being captured by your Endpoint.</p>
     pub current_sampling_percentage: std::option::Option<i32>,
-    /// <p></p>
+    /// <p>The Amazon S3 location being used to capture the data.</p>
     pub destination_s3_uri: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl DataCaptureConfigSummary {
-    /// <p></p>
+    /// <p>Whether data capture is enabled or disabled.</p>
     pub fn enable_capture(&self) -> bool {
         self.enable_capture
     }
-    /// <p></p>
+    /// <p>Whether data capture is currently functional.</p>
     pub fn capture_status(&self) -> std::option::Option<&crate::model::CaptureStatus> {
         self.capture_status.as_ref()
     }
-    /// <p></p>
+    /// <p>The percentage of requests being captured by your Endpoint.</p>
     pub fn current_sampling_percentage(&self) -> std::option::Option<i32> {
         self.current_sampling_percentage
     }
-    /// <p></p>
+    /// <p>The Amazon S3 location being used to capture the data.</p>
     pub fn destination_s3_uri(&self) -> std::option::Option<&str> {
         self.destination_s3_uri.as_deref()
     }
-    /// <p></p>
+    /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -18492,22 +18597,22 @@ pub mod data_capture_config_summary {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Whether data capture is enabled or disabled.</p>
         pub fn enable_capture(mut self, input: bool) -> Self {
             self.enable_capture = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Whether data capture is enabled or disabled.</p>
         pub fn set_enable_capture(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_capture = input;
             self
         }
-        /// <p></p>
+        /// <p>Whether data capture is currently functional.</p>
         pub fn capture_status(mut self, input: crate::model::CaptureStatus) -> Self {
             self.capture_status = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Whether data capture is currently functional.</p>
         pub fn set_capture_status(
             mut self,
             input: std::option::Option<crate::model::CaptureStatus>,
@@ -18515,22 +18620,22 @@ pub mod data_capture_config_summary {
             self.capture_status = input;
             self
         }
-        /// <p></p>
+        /// <p>The percentage of requests being captured by your Endpoint.</p>
         pub fn current_sampling_percentage(mut self, input: i32) -> Self {
             self.current_sampling_percentage = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The percentage of requests being captured by your Endpoint.</p>
         pub fn set_current_sampling_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.current_sampling_percentage = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon S3 location being used to capture the data.</p>
         pub fn destination_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_s3_uri = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon S3 location being used to capture the data.</p>
         pub fn set_destination_s3_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18538,12 +18643,12 @@ pub mod data_capture_config_summary {
             self.destination_s3_uri = input;
             self
         }
-        /// <p></p>
+        /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -28123,9 +28228,16 @@ impl AsRef<str> for S3DataDistribution {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmSpecification {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+    /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
+    /// </note>
     pub training_image: std::option::Option<std::string::String>,
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+    /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
+    /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
+    /// </note>
     pub algorithm_name: std::option::Option<std::string::String>,
     /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
     /// <p> <b>Pipe mode</b> </p>
@@ -28154,11 +28266,18 @@ pub struct AlgorithmSpecification {
     pub enable_sage_maker_metrics_time_series: bool,
 }
 impl AlgorithmSpecification {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+    /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
+    /// </note>
     pub fn training_image(&self) -> std::option::Option<&str> {
         self.training_image.as_deref()
     }
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+    /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
+    /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
+    /// </note>
     pub fn algorithm_name(&self) -> std::option::Option<&str> {
         self.algorithm_name.as_deref()
     }
@@ -28222,12 +28341,18 @@ pub mod algorithm_specification {
         pub(crate) enable_sage_maker_metrics_time_series: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+        /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+        /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
+        /// </note>
         pub fn training_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.training_image = Some(input.into());
             self
         }
-        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+        /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+        /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
+        /// </note>
         pub fn set_training_image(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28235,12 +28360,20 @@ pub mod algorithm_specification {
             self.training_image = input;
             self
         }
-        /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
+        /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+        /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+        /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
+        /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
+        /// </note>
         pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.algorithm_name = Some(input.into());
             self
         }
-        /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
+        /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+        /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+        /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
+        /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
+        /// </note>
         pub fn set_algorithm_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -47102,7 +47235,9 @@ pub struct MetricDatum {
     pub value: f32,
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
     pub set: std::option::Option<crate::model::MetricSetSource>,
-    /// <p>The name of the standard metric.</p>
+    /// <p>The name of the standard metric. </p> <note>
+    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
+    /// </note>
     pub standard_metric_name: std::option::Option<crate::model::AutoMlMetricExtendedEnum>,
 }
 impl MetricDatum {
@@ -47118,7 +47253,9 @@ impl MetricDatum {
     pub fn set(&self) -> std::option::Option<&crate::model::MetricSetSource> {
         self.set.as_ref()
     }
-    /// <p>The name of the standard metric.</p>
+    /// <p>The name of the standard metric. </p> <note>
+    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
+    /// </note>
     pub fn standard_metric_name(
         &self,
     ) -> std::option::Option<&crate::model::AutoMlMetricExtendedEnum> {
@@ -47184,7 +47321,9 @@ pub mod metric_datum {
             self.set = input;
             self
         }
-        /// <p>The name of the standard metric.</p>
+        /// <p>The name of the standard metric. </p> <note>
+        /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
+        /// </note>
         pub fn standard_metric_name(
             mut self,
             input: crate::model::AutoMlMetricExtendedEnum,
@@ -47192,7 +47331,9 @@ pub mod metric_datum {
             self.standard_metric_name = Some(input);
             self
         }
-        /// <p>The name of the standard metric.</p>
+        /// <p>The name of the standard metric. </p> <note>
+        /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
+        /// </note>
         pub fn set_standard_metric_name(
             mut self,
             input: std::option::Option<crate::model::AutoMlMetricExtendedEnum>,
@@ -62545,45 +62686,59 @@ impl AsyncInferenceClientConfig {
     }
 }
 
-/// <p></p>
+/// <p>Configuration to control how SageMaker captures inference data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCaptureConfig {
-    /// <p></p>
+    /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
     pub enable_capture: bool,
-    /// <p></p>
+    /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
     pub initial_sampling_percentage: std::option::Option<i32>,
-    /// <p></p>
+    /// <p>The Amazon S3 location used to capture the data.</p>
     pub destination_s3_uri: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+    /// <p>The KmsKeyId can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
     pub capture_options: std::option::Option<std::vec::Vec<crate::model::CaptureOption>>,
-    /// <p></p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
     pub capture_content_type_header: std::option::Option<crate::model::CaptureContentTypeHeader>,
 }
 impl DataCaptureConfig {
-    /// <p></p>
+    /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
     pub fn enable_capture(&self) -> bool {
         self.enable_capture
     }
-    /// <p></p>
+    /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
     pub fn initial_sampling_percentage(&self) -> std::option::Option<i32> {
         self.initial_sampling_percentage
     }
-    /// <p></p>
+    /// <p>The Amazon S3 location used to capture the data.</p>
     pub fn destination_s3_uri(&self) -> std::option::Option<&str> {
         self.destination_s3_uri.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+    /// <p>The KmsKeyId can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p></p>
+    /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
     pub fn capture_options(&self) -> std::option::Option<&[crate::model::CaptureOption]> {
         self.capture_options.as_deref()
     }
-    /// <p></p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
     pub fn capture_content_type_header(
         &self,
     ) -> std::option::Option<&crate::model::CaptureContentTypeHeader> {
@@ -62623,32 +62778,32 @@ pub mod data_capture_config {
             std::option::Option<crate::model::CaptureContentTypeHeader>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
         pub fn enable_capture(mut self, input: bool) -> Self {
             self.enable_capture = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
         pub fn set_enable_capture(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_capture = input;
             self
         }
-        /// <p></p>
+        /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
         pub fn initial_sampling_percentage(mut self, input: i32) -> Self {
             self.initial_sampling_percentage = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
         pub fn set_initial_sampling_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.initial_sampling_percentage = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon S3 location used to capture the data.</p>
         pub fn destination_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_s3_uri = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon S3 location used to capture the data.</p>
         pub fn set_destination_s3_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -62656,12 +62811,26 @@ pub mod data_capture_config {
             self.destination_s3_uri = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+        /// <p>The KmsKeyId can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+        /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+        /// <p>The KmsKeyId can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+        /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -62670,14 +62839,14 @@ pub mod data_capture_config {
         ///
         /// To override the contents of this collection use [`set_capture_options`](Self::set_capture_options).
         ///
-        /// <p></p>
+        /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
         pub fn capture_options(mut self, input: crate::model::CaptureOption) -> Self {
             let mut v = self.capture_options.unwrap_or_default();
             v.push(input);
             self.capture_options = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
         pub fn set_capture_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaptureOption>>,
@@ -62685,7 +62854,7 @@ pub mod data_capture_config {
             self.capture_options = input;
             self
         }
-        /// <p></p>
+        /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
         pub fn capture_content_type_header(
             mut self,
             input: crate::model::CaptureContentTypeHeader,
@@ -62693,7 +62862,7 @@ pub mod data_capture_config {
             self.capture_content_type_header = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
         pub fn set_capture_content_type_header(
             mut self,
             input: std::option::Option<crate::model::CaptureContentTypeHeader>,
@@ -62721,21 +62890,21 @@ impl DataCaptureConfig {
     }
 }
 
-/// <p></p>
+/// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptureContentTypeHeader {
-    /// <p></p>
+    /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
     pub csv_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p></p>
+    /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
     pub json_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CaptureContentTypeHeader {
-    /// <p></p>
+    /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
     pub fn csv_content_types(&self) -> std::option::Option<&[std::string::String]> {
         self.csv_content_types.as_deref()
     }
-    /// <p></p>
+    /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
     pub fn json_content_types(&self) -> std::option::Option<&[std::string::String]> {
         self.json_content_types.as_deref()
     }
@@ -62762,14 +62931,14 @@ pub mod capture_content_type_header {
         ///
         /// To override the contents of this collection use [`set_csv_content_types`](Self::set_csv_content_types).
         ///
-        /// <p></p>
+        /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
         pub fn csv_content_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.csv_content_types.unwrap_or_default();
             v.push(input.into());
             self.csv_content_types = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
         pub fn set_csv_content_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -62781,14 +62950,14 @@ pub mod capture_content_type_header {
         ///
         /// To override the contents of this collection use [`set_json_content_types`](Self::set_json_content_types).
         ///
-        /// <p></p>
+        /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
         pub fn json_content_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.json_content_types.unwrap_or_default();
             v.push(input.into());
             self.json_content_types = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
         pub fn set_json_content_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -62812,15 +62981,15 @@ impl CaptureContentTypeHeader {
     }
 }
 
-/// <p></p>
+/// <p>Specifies data Model Monitor will capture.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptureOption {
-    /// <p></p>
+    /// <p>Specify the boundary of data to capture.</p>
     pub capture_mode: std::option::Option<crate::model::CaptureMode>,
 }
 impl CaptureOption {
-    /// <p></p>
+    /// <p>Specify the boundary of data to capture.</p>
     pub fn capture_mode(&self) -> std::option::Option<&crate::model::CaptureMode> {
         self.capture_mode.as_ref()
     }
@@ -62841,12 +63010,12 @@ pub mod capture_option {
         pub(crate) capture_mode: std::option::Option<crate::model::CaptureMode>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Specify the boundary of data to capture.</p>
         pub fn capture_mode(mut self, input: crate::model::CaptureMode) -> Self {
             self.capture_mode = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Specify the boundary of data to capture.</p>
         pub fn set_capture_mode(
             mut self,
             input: std::option::Option<crate::model::CaptureMode>,
@@ -66756,6 +66925,9 @@ pub struct AutoMlJobConfig {
     /// <p>The configuration for splitting the input training dataset.</p>
     /// <p>Type: AutoMLDataSplitConfig</p>
     pub data_split_config: std::option::Option<crate::model::AutoMlDataSplitConfig>,
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
+    pub candidate_generation_config:
+        std::option::Option<crate::model::AutoMlCandidateGenerationConfig>,
 }
 impl AutoMlJobConfig {
     /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -66773,6 +66945,12 @@ impl AutoMlJobConfig {
     pub fn data_split_config(&self) -> std::option::Option<&crate::model::AutoMlDataSplitConfig> {
         self.data_split_config.as_ref()
     }
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
+    pub fn candidate_generation_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoMlCandidateGenerationConfig> {
+        self.candidate_generation_config.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoMlJobConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -66780,6 +66958,10 @@ impl std::fmt::Debug for AutoMlJobConfig {
         formatter.field("completion_criteria", &self.completion_criteria);
         formatter.field("security_config", &self.security_config);
         formatter.field("data_split_config", &self.data_split_config);
+        formatter.field(
+            "candidate_generation_config",
+            &self.candidate_generation_config,
+        );
         formatter.finish()
     }
 }
@@ -66793,6 +66975,8 @@ pub mod auto_ml_job_config {
             std::option::Option<crate::model::AutoMlJobCompletionCriteria>,
         pub(crate) security_config: std::option::Option<crate::model::AutoMlSecurityConfig>,
         pub(crate) data_split_config: std::option::Option<crate::model::AutoMlDataSplitConfig>,
+        pub(crate) candidate_generation_config:
+            std::option::Option<crate::model::AutoMlCandidateGenerationConfig>,
     }
     impl Builder {
         /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -66839,12 +67023,29 @@ pub mod auto_ml_job_config {
             self.data_split_config = input;
             self
         }
+        /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
+        pub fn candidate_generation_config(
+            mut self,
+            input: crate::model::AutoMlCandidateGenerationConfig,
+        ) -> Self {
+            self.candidate_generation_config = Some(input);
+            self
+        }
+        /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
+        pub fn set_candidate_generation_config(
+            mut self,
+            input: std::option::Option<crate::model::AutoMlCandidateGenerationConfig>,
+        ) -> Self {
+            self.candidate_generation_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoMlJobConfig`](crate::model::AutoMlJobConfig)
         pub fn build(self) -> crate::model::AutoMlJobConfig {
             crate::model::AutoMlJobConfig {
                 completion_criteria: self.completion_criteria,
                 security_config: self.security_config,
                 data_split_config: self.data_split_config,
+                candidate_generation_config: self.candidate_generation_config,
             }
         }
     }
@@ -66856,15 +67057,86 @@ impl AutoMlJobConfig {
     }
 }
 
+/// <p>Stores the config information for how a candidate is generated (optional).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoMlCandidateGenerationConfig {
+    /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    pub feature_specification_s3_uri: std::option::Option<std::string::String>,
+}
+impl AutoMlCandidateGenerationConfig {
+    /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    pub fn feature_specification_s3_uri(&self) -> std::option::Option<&str> {
+        self.feature_specification_s3_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for AutoMlCandidateGenerationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoMlCandidateGenerationConfig");
+        formatter.field(
+            "feature_specification_s3_uri",
+            &self.feature_specification_s3_uri,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AutoMlCandidateGenerationConfig`](crate::model::AutoMlCandidateGenerationConfig)
+pub mod auto_ml_candidate_generation_config {
+    /// A builder for [`AutoMlCandidateGenerationConfig`](crate::model::AutoMlCandidateGenerationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_specification_s3_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+        /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+        /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+        pub fn feature_specification_s3_uri(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.feature_specification_s3_uri = Some(input.into());
+            self
+        }
+        /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+        /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+        /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+        pub fn set_feature_specification_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_specification_s3_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoMlCandidateGenerationConfig`](crate::model::AutoMlCandidateGenerationConfig)
+        pub fn build(self) -> crate::model::AutoMlCandidateGenerationConfig {
+            crate::model::AutoMlCandidateGenerationConfig {
+                feature_specification_s3_uri: self.feature_specification_s3_uri,
+            }
+        }
+    }
+}
+impl AutoMlCandidateGenerationConfig {
+    /// Creates a new builder-style object to manufacture [`AutoMlCandidateGenerationConfig`](crate::model::AutoMlCandidateGenerationConfig)
+    pub fn builder() -> crate::model::auto_ml_candidate_generation_config::Builder {
+        crate::model::auto_ml_candidate_generation_config::Builder::default()
+    }
+}
+
 /// <p>This structure specifies how to split the data into train and test datasets. The validation and training datasets must contain the same headers. The validation dataset must be less than 2 GB in size.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlDataSplitConfig {
-    /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+    /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
     pub validation_fraction: std::option::Option<f32>,
 }
 impl AutoMlDataSplitConfig {
-    /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+    /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
     pub fn validation_fraction(&self) -> std::option::Option<f32> {
         self.validation_fraction
     }
@@ -66885,12 +67157,12 @@ pub mod auto_ml_data_split_config {
         pub(crate) validation_fraction: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+        /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
         pub fn validation_fraction(mut self, input: f32) -> Self {
             self.validation_fraction = Some(input);
             self
         }
-        /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be less than 0.5.</p>
+        /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
         pub fn set_validation_fraction(mut self, input: std::option::Option<f32>) -> Self {
             self.validation_fraction = input;
             self
@@ -67107,7 +67379,7 @@ pub struct AutoMlChannel {
     pub target_attribute_name: std::option::Option<std::string::String>,
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+    /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"> <code>How to specify training and validation datasets</code> </a>.</p>
     pub channel_type: std::option::Option<crate::model::AutoMlChannelType>,
 }
 impl AutoMlChannel {
@@ -67127,7 +67399,7 @@ impl AutoMlChannel {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+    /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"> <code>How to specify training and validation datasets</code> </a>.</p>
     pub fn channel_type(&self) -> std::option::Option<&crate::model::AutoMlChannelType> {
         self.channel_type.as_ref()
     }
@@ -67205,12 +67477,12 @@ pub mod auto_ml_channel {
             self.content_type = input;
             self
         }
-        /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+        /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"> <code>How to specify training and validation datasets</code> </a>.</p>
         pub fn channel_type(mut self, input: crate::model::AutoMlChannelType) -> Self {
             self.channel_type = Some(input);
             self
         }
-        /// <p>The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.</p>
+        /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"> <code>How to specify training and validation datasets</code> </a>.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::AutoMlChannelType>,

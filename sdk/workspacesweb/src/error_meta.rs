@@ -238,6 +238,9 @@ where
                 crate::error::CreateIdentityProviderErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateIdentityProviderErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
                 crate::error::CreateIdentityProviderErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }

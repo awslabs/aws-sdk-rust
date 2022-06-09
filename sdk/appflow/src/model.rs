@@ -5316,6 +5316,12 @@ pub struct S3OutputFormatConfig {
     pub prefix_config: std::option::Option<crate::model::PrefixConfig>,
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
+    /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
+    /// <ul>
+    /// <li> <p> <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p> </li>
+    /// <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+    /// </ul>
+    pub preserve_source_data_typing: std::option::Option<bool>,
 }
 impl S3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
@@ -5330,6 +5336,14 @@ impl S3OutputFormatConfig {
     pub fn aggregation_config(&self) -> std::option::Option<&crate::model::AggregationConfig> {
         self.aggregation_config.as_ref()
     }
+    /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
+    /// <ul>
+    /// <li> <p> <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p> </li>
+    /// <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+    /// </ul>
+    pub fn preserve_source_data_typing(&self) -> std::option::Option<bool> {
+        self.preserve_source_data_typing
+    }
 }
 impl std::fmt::Debug for S3OutputFormatConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5337,6 +5351,10 @@ impl std::fmt::Debug for S3OutputFormatConfig {
         formatter.field("file_type", &self.file_type);
         formatter.field("prefix_config", &self.prefix_config);
         formatter.field("aggregation_config", &self.aggregation_config);
+        formatter.field(
+            "preserve_source_data_typing",
+            &self.preserve_source_data_typing,
+        );
         formatter.finish()
     }
 }
@@ -5349,6 +5367,7 @@ pub mod s3_output_format_config {
         pub(crate) file_type: std::option::Option<crate::model::FileType>,
         pub(crate) prefix_config: std::option::Option<crate::model::PrefixConfig>,
         pub(crate) aggregation_config: std::option::Option<crate::model::AggregationConfig>,
+        pub(crate) preserve_source_data_typing: std::option::Option<bool>,
     }
     impl Builder {
         /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
@@ -5387,12 +5406,31 @@ pub mod s3_output_format_config {
             self.aggregation_config = input;
             self
         }
+        /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
+        /// <ul>
+        /// <li> <p> <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p> </li>
+        /// <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+        /// </ul>
+        pub fn preserve_source_data_typing(mut self, input: bool) -> Self {
+            self.preserve_source_data_typing = Some(input);
+            self
+        }
+        /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
+        /// <ul>
+        /// <li> <p> <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p> </li>
+        /// <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+        /// </ul>
+        pub fn set_preserve_source_data_typing(mut self, input: std::option::Option<bool>) -> Self {
+            self.preserve_source_data_typing = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3OutputFormatConfig`](crate::model::S3OutputFormatConfig)
         pub fn build(self) -> crate::model::S3OutputFormatConfig {
             crate::model::S3OutputFormatConfig {
                 file_type: self.file_type,
                 prefix_config: self.prefix_config,
                 aggregation_config: self.aggregation_config,
+                preserve_source_data_typing: self.preserve_source_data_typing,
             }
         }
     }
@@ -7626,16 +7664,19 @@ pub struct ScheduledTriggerProperties {
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
-    /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+    /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
     pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+    /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
     pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
+    /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+    /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
     pub timezone: std::option::Option<std::string::String>,
     /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
     pub schedule_offset: std::option::Option<i64>,
     /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
     pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
+    pub flow_error_deactivation_threshold: std::option::Option<i32>,
 }
 impl ScheduledTriggerProperties {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
@@ -7646,15 +7687,16 @@ impl ScheduledTriggerProperties {
     pub fn data_pull_mode(&self) -> std::option::Option<&crate::model::DataPullMode> {
         self.data_pull_mode.as_ref()
     }
-    /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+    /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
     pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_start_time.as_ref()
     }
-    /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+    /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
     pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_end_time.as_ref()
     }
-    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
+    /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+    /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -7665,6 +7707,10 @@ impl ScheduledTriggerProperties {
     /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
     pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
+    }
+    /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
+    pub fn flow_error_deactivation_threshold(&self) -> std::option::Option<i32> {
+        self.flow_error_deactivation_threshold
     }
 }
 impl std::fmt::Debug for ScheduledTriggerProperties {
@@ -7677,6 +7723,10 @@ impl std::fmt::Debug for ScheduledTriggerProperties {
         formatter.field("timezone", &self.timezone);
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("first_execution_from", &self.first_execution_from);
+        formatter.field(
+            "flow_error_deactivation_threshold",
+            &self.flow_error_deactivation_threshold,
+        );
         formatter.finish()
     }
 }
@@ -7693,6 +7743,7 @@ pub mod scheduled_trigger_properties {
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) schedule_offset: std::option::Option<i64>,
         pub(crate) first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) flow_error_deactivation_threshold: std::option::Option<i32>,
     }
     impl Builder {
         /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
@@ -7721,12 +7772,12 @@ pub mod scheduled_trigger_properties {
             self.data_pull_mode = input;
             self
         }
-        /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+        /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
         pub fn schedule_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_start_time = Some(input);
             self
         }
-        /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+        /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
         pub fn set_schedule_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7734,12 +7785,12 @@ pub mod scheduled_trigger_properties {
             self.schedule_start_time = input;
             self
         }
-        /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+        /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
         pub fn schedule_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_end_time = Some(input);
             self
         }
-        /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+        /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
         pub fn set_schedule_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7747,12 +7798,14 @@ pub mod scheduled_trigger_properties {
             self.schedule_end_time = input;
             self
         }
-        /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
+        /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+        /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.timezone = Some(input.into());
             self
         }
-        /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
+        /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+        /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -7780,6 +7833,19 @@ pub mod scheduled_trigger_properties {
             self.first_execution_from = input;
             self
         }
+        /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
+        pub fn flow_error_deactivation_threshold(mut self, input: i32) -> Self {
+            self.flow_error_deactivation_threshold = Some(input);
+            self
+        }
+        /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
+        pub fn set_flow_error_deactivation_threshold(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.flow_error_deactivation_threshold = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties)
         pub fn build(self) -> crate::model::ScheduledTriggerProperties {
             crate::model::ScheduledTriggerProperties {
@@ -7790,6 +7856,7 @@ pub mod scheduled_trigger_properties {
                 timezone: self.timezone,
                 schedule_offset: self.schedule_offset,
                 first_execution_from: self.first_execution_from,
+                flow_error_deactivation_threshold: self.flow_error_deactivation_threshold,
             }
         }
     }

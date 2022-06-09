@@ -1071,7 +1071,7 @@ pub mod create_event_source_mapping_input {
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
         /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -1084,7 +1084,7 @@ pub mod create_event_source_mapping_input {
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
         /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -11719,7 +11719,7 @@ pub mod update_event_source_mapping_input {
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
         /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -11732,7 +11732,7 @@ pub mod update_event_source_mapping_input {
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
         /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -13612,7 +13612,7 @@ pub struct UpdateEventSourceMappingInput {
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
     /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -13669,7 +13669,7 @@ impl UpdateEventSourceMappingInput {
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
     /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -16148,7 +16148,7 @@ pub struct CreateEventSourceMappingInput {
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
     /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
@@ -16221,7 +16221,7 @@ impl CreateEventSourceMappingInput {
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
     /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>

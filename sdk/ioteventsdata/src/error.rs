@@ -125,6 +125,132 @@ impl std::error::Error for BatchAcknowledgeAlarmError {
     }
 }
 
+/// Error type for the `BatchDeleteDetector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchDeleteDetectorError {
+    /// Kind of error that occurred.
+    pub kind: BatchDeleteDetectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchDeleteDetector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchDeleteDetectorErrorKind {
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request was invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request could not be completed due to throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchDeleteDetectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchDeleteDetectorErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            BatchDeleteDetectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            BatchDeleteDetectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            BatchDeleteDetectorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchDeleteDetectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchDeleteDetectorError {
+    fn code(&self) -> Option<&str> {
+        BatchDeleteDetectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchDeleteDetectorError {
+    /// Creates a new `BatchDeleteDetectorError`.
+    pub fn new(kind: BatchDeleteDetectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchDeleteDetectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchDeleteDetectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchDeleteDetectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchDeleteDetectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchDeleteDetectorErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteDetectorErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteDetectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteDetectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteDetectorErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteDetectorErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDeleteDetectorErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteDetectorErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for BatchDeleteDetectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchDeleteDetectorErrorKind::InternalFailureException(_inner) => Some(_inner),
+            BatchDeleteDetectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            BatchDeleteDetectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            BatchDeleteDetectorErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchDeleteDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `BatchDisableAlarm` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

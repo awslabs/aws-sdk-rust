@@ -388,6 +388,8 @@ pub enum DeleteRoomErrorKind {
     /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
@@ -398,6 +400,7 @@ impl std::fmt::Display for DeleteRoomError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteRoomErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteRoomErrorKind::PendingVerification(_inner) => _inner.fmt(f),
             DeleteRoomErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteRoomErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteRoomErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -458,6 +461,10 @@ impl DeleteRoomError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(&self.kind, DeleteRoomErrorKind::PendingVerification(_))
+    }
     /// Returns `true` if the error kind is `DeleteRoomErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -474,6 +481,7 @@ impl std::error::Error for DeleteRoomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteRoomErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteRoomErrorKind::PendingVerification(_inner) => Some(_inner),
             DeleteRoomErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteRoomErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteRoomErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1279,6 +1287,8 @@ pub enum UpdateRoomErrorKind {
     /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p></p>
+    PendingVerification(crate::error::PendingVerification),
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
@@ -1289,6 +1299,7 @@ impl std::fmt::Display for UpdateRoomError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateRoomErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRoomErrorKind::PendingVerification(_inner) => _inner.fmt(f),
             UpdateRoomErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateRoomErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateRoomErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1349,6 +1360,10 @@ impl UpdateRoomError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::PendingVerification`.
+    pub fn is_pending_verification(&self) -> bool {
+        matches!(&self.kind, UpdateRoomErrorKind::PendingVerification(_))
+    }
     /// Returns `true` if the error kind is `UpdateRoomErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1365,6 +1380,7 @@ impl std::error::Error for UpdateRoomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateRoomErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRoomErrorKind::PendingVerification(_inner) => Some(_inner),
             UpdateRoomErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRoomErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateRoomErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1599,6 +1615,70 @@ impl ResourceNotFoundException {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PendingVerification {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PendingVerification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingVerification");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl PendingVerification {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PendingVerification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PendingVerification")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PendingVerification {}
+/// See [`PendingVerification`](crate::error::PendingVerification)
+pub mod pending_verification {
+    /// A builder for [`PendingVerification`](crate::error::PendingVerification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PendingVerification`](crate::error::PendingVerification)
+        pub fn build(self) -> crate::error::PendingVerification {
+            crate::error::PendingVerification {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PendingVerification {
+    /// Creates a new builder-style object to manufacture [`PendingVerification`](crate::error::PendingVerification)
+    pub fn builder() -> crate::error::pending_verification::Builder {
+        crate::error::pending_verification::Builder::default()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
@@ -1619,8 +1699,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -1683,8 +1763,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -1770,8 +1850,8 @@ impl ThrottlingException {
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -1896,8 +1976,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -1973,70 +2053,6 @@ impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
     pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
         crate::error::service_quota_exceeded_exception::Builder::default()
-    }
-}
-
-/// <p></p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PendingVerification {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PendingVerification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingVerification");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl PendingVerification {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PendingVerification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PendingVerification")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PendingVerification {}
-/// See [`PendingVerification`](crate::error::PendingVerification)
-pub mod pending_verification {
-    /// A builder for [`PendingVerification`](crate::error::PendingVerification)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`PendingVerification`](crate::error::PendingVerification)
-        pub fn build(self) -> crate::error::PendingVerification {
-            crate::error::PendingVerification {
-                message: self.message,
-            }
-        }
-    }
-}
-impl PendingVerification {
-    /// Creates a new builder-style object to manufacture [`PendingVerification`](crate::error::PendingVerification)
-    pub fn builder() -> crate::error::pending_verification::Builder {
-        crate::error::pending_verification::Builder::default()
     }
 }
 

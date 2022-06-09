@@ -22614,6 +22614,8 @@ pub struct DescribeInstanceAttributeOutput {
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The user data.</p>
     pub user_data: std::option::Option<crate::model::AttributeValue>,
+    /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+    pub disable_api_stop: std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeInstanceAttributeOutput {
     /// <p>The security groups associated with the instance.</p>
@@ -22686,6 +22688,10 @@ impl DescribeInstanceAttributeOutput {
     pub fn user_data(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.user_data.as_ref()
     }
+    /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+    pub fn disable_api_stop(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.disable_api_stop.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22709,6 +22715,7 @@ impl std::fmt::Debug for DescribeInstanceAttributeOutput {
         formatter.field("source_dest_check", &self.source_dest_check);
         formatter.field("sriov_net_support", &self.sriov_net_support);
         formatter.field("user_data", &self.user_data);
+        formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.finish()
     }
 }
@@ -22737,6 +22744,7 @@ pub mod describe_instance_attribute_output {
         pub(crate) source_dest_check: std::option::Option<crate::model::AttributeBooleanValue>,
         pub(crate) sriov_net_support: std::option::Option<crate::model::AttributeValue>,
         pub(crate) user_data: std::option::Option<crate::model::AttributeValue>,
+        pub(crate) disable_api_stop: std::option::Option<crate::model::AttributeBooleanValue>,
     }
     impl Builder {
         /// Appends an item to `groups`.
@@ -22971,6 +22979,19 @@ pub mod describe_instance_attribute_output {
             self.user_data = input;
             self
         }
+        /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+        pub fn disable_api_stop(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.disable_api_stop = Some(input);
+            self
+        }
+        /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+        pub fn set_disable_api_stop(
+            mut self,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
+        ) -> Self {
+            self.disable_api_stop = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeInstanceAttributeOutput`](crate::output::DescribeInstanceAttributeOutput)
         pub fn build(self) -> crate::output::DescribeInstanceAttributeOutput {
             crate::output::DescribeInstanceAttributeOutput {
@@ -22990,6 +23011,7 @@ pub mod describe_instance_attribute_output {
                 source_dest_check: self.source_dest_check,
                 sriov_net_support: self.sriov_net_support,
                 user_data: self.user_data,
+                disable_api_stop: self.disable_api_stop,
             }
         }
     }

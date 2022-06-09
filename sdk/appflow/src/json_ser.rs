@@ -2348,6 +2348,12 @@ pub fn serialize_structure_crate_model_scheduled_trigger_properties(
             .key("firstExecutionFrom")
             .date_time(var_460, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_461) = &input.flow_error_deactivation_threshold {
+        object.key("flowErrorDeactivationThreshold").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_461).into()),
+        );
+    }
     Ok(())
 }
 
@@ -2355,20 +2361,20 @@ pub fn serialize_structure_crate_model_o_auth_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OAuthProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_461) = &input.token_url {
-        object.key("tokenUrl").string(var_461.as_str());
+    if let Some(var_462) = &input.token_url {
+        object.key("tokenUrl").string(var_462.as_str());
     }
-    if let Some(var_462) = &input.auth_code_url {
-        object.key("authCodeUrl").string(var_462.as_str());
+    if let Some(var_463) = &input.auth_code_url {
+        object.key("authCodeUrl").string(var_463.as_str());
     }
-    if let Some(var_463) = &input.o_auth_scopes {
-        let mut array_464 = object.key("oAuthScopes").start_array();
-        for item_465 in var_463 {
+    if let Some(var_464) = &input.o_auth_scopes {
+        let mut array_465 = object.key("oAuthScopes").start_array();
+        for item_466 in var_464 {
             {
-                array_464.value().string(item_465.as_str());
+                array_465.value().string(item_466.as_str());
             }
         }
-        array_464.finish();
+        array_465.finish();
     }
     Ok(())
 }
@@ -2377,20 +2383,20 @@ pub fn serialize_structure_crate_model_o_auth2_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OAuth2Properties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_466) = &input.token_url {
-        object.key("tokenUrl").string(var_466.as_str());
+    if let Some(var_467) = &input.token_url {
+        object.key("tokenUrl").string(var_467.as_str());
     }
-    if let Some(var_467) = &input.o_auth2_grant_type {
-        object.key("oAuth2GrantType").string(var_467.as_str());
+    if let Some(var_468) = &input.o_auth2_grant_type {
+        object.key("oAuth2GrantType").string(var_468.as_str());
     }
-    if let Some(var_468) = &input.token_url_custom_properties {
-        let mut object_469 = object.key("tokenUrlCustomProperties").start_object();
-        for (key_470, value_471) in var_468 {
+    if let Some(var_469) = &input.token_url_custom_properties {
+        let mut object_470 = object.key("tokenUrlCustomProperties").start_object();
+        for (key_471, value_472) in var_469 {
             {
-                object_469.key(key_470).string(value_471.as_str());
+                object_470.key(key_471).string(value_472.as_str());
             }
         }
-        object_469.finish();
+        object_470.finish();
     }
     Ok(())
 }
@@ -2399,11 +2405,11 @@ pub fn serialize_structure_crate_model_connector_o_auth_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConnectorOAuthRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_472) = &input.auth_code {
-        object.key("authCode").string(var_472.as_str());
+    if let Some(var_473) = &input.auth_code {
+        object.key("authCode").string(var_473.as_str());
     }
-    if let Some(var_473) = &input.redirect_uri {
-        object.key("redirectUri").string(var_473.as_str());
+    if let Some(var_474) = &input.redirect_uri {
+        object.key("redirectUri").string(var_474.as_str());
     }
     Ok(())
 }
@@ -2412,11 +2418,11 @@ pub fn serialize_structure_crate_model_basic_auth_credentials(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BasicAuthCredentials,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_474) = &input.username {
-        object.key("username").string(var_474.as_str());
+    if let Some(var_475) = &input.username {
+        object.key("username").string(var_475.as_str());
     }
-    if let Some(var_475) = &input.password {
-        object.key("password").string(var_475.as_str());
+    if let Some(var_476) = &input.password {
+        object.key("password").string(var_476.as_str());
     }
     Ok(())
 }
@@ -2425,25 +2431,25 @@ pub fn serialize_structure_crate_model_o_auth_credentials(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OAuthCredentials,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_476) = &input.client_id {
-        object.key("clientId").string(var_476.as_str());
+    if let Some(var_477) = &input.client_id {
+        object.key("clientId").string(var_477.as_str());
     }
-    if let Some(var_477) = &input.client_secret {
-        object.key("clientSecret").string(var_477.as_str());
+    if let Some(var_478) = &input.client_secret {
+        object.key("clientSecret").string(var_478.as_str());
     }
-    if let Some(var_478) = &input.access_token {
-        object.key("accessToken").string(var_478.as_str());
+    if let Some(var_479) = &input.access_token {
+        object.key("accessToken").string(var_479.as_str());
     }
-    if let Some(var_479) = &input.refresh_token {
-        object.key("refreshToken").string(var_479.as_str());
+    if let Some(var_480) = &input.refresh_token {
+        object.key("refreshToken").string(var_480.as_str());
     }
-    if let Some(var_480) = &input.o_auth_request {
-        let mut object_481 = object.key("oAuthRequest").start_object();
+    if let Some(var_481) = &input.o_auth_request {
+        let mut object_482 = object.key("oAuthRequest").start_object();
         crate::json_ser::serialize_structure_crate_model_connector_o_auth_request(
-            &mut object_481,
-            var_480,
+            &mut object_482,
+            var_481,
         )?;
-        object_481.finish();
+        object_482.finish();
     }
     Ok(())
 }
@@ -2452,25 +2458,25 @@ pub fn serialize_structure_crate_model_o_auth2_credentials(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OAuth2Credentials,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_482) = &input.client_id {
-        object.key("clientId").string(var_482.as_str());
+    if let Some(var_483) = &input.client_id {
+        object.key("clientId").string(var_483.as_str());
     }
-    if let Some(var_483) = &input.client_secret {
-        object.key("clientSecret").string(var_483.as_str());
+    if let Some(var_484) = &input.client_secret {
+        object.key("clientSecret").string(var_484.as_str());
     }
-    if let Some(var_484) = &input.access_token {
-        object.key("accessToken").string(var_484.as_str());
+    if let Some(var_485) = &input.access_token {
+        object.key("accessToken").string(var_485.as_str());
     }
-    if let Some(var_485) = &input.refresh_token {
-        object.key("refreshToken").string(var_485.as_str());
+    if let Some(var_486) = &input.refresh_token {
+        object.key("refreshToken").string(var_486.as_str());
     }
-    if let Some(var_486) = &input.o_auth_request {
-        let mut object_487 = object.key("oAuthRequest").start_object();
+    if let Some(var_487) = &input.o_auth_request {
+        let mut object_488 = object.key("oAuthRequest").start_object();
         crate::json_ser::serialize_structure_crate_model_connector_o_auth_request(
-            &mut object_487,
-            var_486,
+            &mut object_488,
+            var_487,
         )?;
-        object_487.finish();
+        object_488.finish();
     }
     Ok(())
 }
@@ -2479,11 +2485,11 @@ pub fn serialize_structure_crate_model_api_key_credentials(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ApiKeyCredentials,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_488) = &input.api_key {
-        object.key("apiKey").string(var_488.as_str());
+    if let Some(var_489) = &input.api_key {
+        object.key("apiKey").string(var_489.as_str());
     }
-    if let Some(var_489) = &input.api_secret_key {
-        object.key("apiSecretKey").string(var_489.as_str());
+    if let Some(var_490) = &input.api_secret_key {
+        object.key("apiSecretKey").string(var_490.as_str());
     }
     Ok(())
 }
@@ -2492,19 +2498,19 @@ pub fn serialize_structure_crate_model_custom_auth_credentials(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CustomAuthCredentials,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_490) = &input.custom_authentication_type {
+    if let Some(var_491) = &input.custom_authentication_type {
         object
             .key("customAuthenticationType")
-            .string(var_490.as_str());
+            .string(var_491.as_str());
     }
-    if let Some(var_491) = &input.credentials_map {
-        let mut object_492 = object.key("credentialsMap").start_object();
-        for (key_493, value_494) in var_491 {
+    if let Some(var_492) = &input.credentials_map {
+        let mut object_493 = object.key("credentialsMap").start_object();
+        for (key_494, value_495) in var_492 {
             {
-                object_492.key(key_493).string(value_494.as_str());
+                object_493.key(key_494).string(value_495.as_str());
             }
         }
-        object_492.finish();
+        object_493.finish();
     }
     Ok(())
 }
@@ -2518,11 +2524,11 @@ pub fn serialize_structure_crate_model_error_handling_config(
             .key("failOnFirstDestinationError")
             .boolean(input.fail_on_first_destination_error);
     }
-    if let Some(var_495) = &input.bucket_prefix {
-        object.key("bucketPrefix").string(var_495.as_str());
+    if let Some(var_496) = &input.bucket_prefix {
+        object.key("bucketPrefix").string(var_496.as_str());
     }
-    if let Some(var_496) = &input.bucket_name {
-        object.key("bucketName").string(var_496.as_str());
+    if let Some(var_497) = &input.bucket_name {
+        object.key("bucketName").string(var_497.as_str());
     }
     Ok(())
 }
@@ -2531,21 +2537,24 @@ pub fn serialize_structure_crate_model_s3_output_format_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3OutputFormatConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_497) = &input.file_type {
-        object.key("fileType").string(var_497.as_str());
+    if let Some(var_498) = &input.file_type {
+        object.key("fileType").string(var_498.as_str());
     }
-    if let Some(var_498) = &input.prefix_config {
-        let mut object_499 = object.key("prefixConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_prefix_config(&mut object_499, var_498)?;
-        object_499.finish();
+    if let Some(var_499) = &input.prefix_config {
+        let mut object_500 = object.key("prefixConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_prefix_config(&mut object_500, var_499)?;
+        object_500.finish();
     }
-    if let Some(var_500) = &input.aggregation_config {
-        let mut object_501 = object.key("aggregationConfig").start_object();
+    if let Some(var_501) = &input.aggregation_config {
+        let mut object_502 = object.key("aggregationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_aggregation_config(
-            &mut object_501,
-            var_500,
+            &mut object_502,
+            var_501,
         )?;
-        object_501.finish();
+        object_502.finish();
+    }
+    if let Some(var_503) = &input.preserve_source_data_typing {
+        object.key("preserveSourceDataTyping").boolean(*var_503);
     }
     Ok(())
 }
@@ -2554,21 +2563,21 @@ pub fn serialize_structure_crate_model_upsolver_s3_output_format_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpsolverS3OutputFormatConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_502) = &input.file_type {
-        object.key("fileType").string(var_502.as_str());
+    if let Some(var_504) = &input.file_type {
+        object.key("fileType").string(var_504.as_str());
     }
-    if let Some(var_503) = &input.prefix_config {
-        let mut object_504 = object.key("prefixConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_prefix_config(&mut object_504, var_503)?;
-        object_504.finish();
-    }
-    if let Some(var_505) = &input.aggregation_config {
-        let mut object_506 = object.key("aggregationConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aggregation_config(
-            &mut object_506,
-            var_505,
-        )?;
+    if let Some(var_505) = &input.prefix_config {
+        let mut object_506 = object.key("prefixConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_prefix_config(&mut object_506, var_505)?;
         object_506.finish();
+    }
+    if let Some(var_507) = &input.aggregation_config {
+        let mut object_508 = object.key("aggregationConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aggregation_config(
+            &mut object_508,
+            var_507,
+        )?;
+        object_508.finish();
     }
     Ok(())
 }
@@ -2577,11 +2586,11 @@ pub fn serialize_structure_crate_model_success_response_handling_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SuccessResponseHandlingConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_507) = &input.bucket_prefix {
-        object.key("bucketPrefix").string(var_507.as_str());
+    if let Some(var_509) = &input.bucket_prefix {
+        object.key("bucketPrefix").string(var_509.as_str());
     }
-    if let Some(var_508) = &input.bucket_name {
-        object.key("bucketName").string(var_508.as_str());
+    if let Some(var_510) = &input.bucket_name {
+        object.key("bucketName").string(var_510.as_str());
     }
     Ok(())
 }
@@ -2590,8 +2599,8 @@ pub fn serialize_structure_crate_model_s3_input_format_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3InputFormatConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_509) = &input.s3_input_file_type {
-        object.key("s3InputFileType").string(var_509.as_str());
+    if let Some(var_511) = &input.s3_input_file_type {
+        object.key("s3InputFileType").string(var_511.as_str());
     }
     Ok(())
 }
@@ -2600,11 +2609,11 @@ pub fn serialize_structure_crate_model_prefix_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PrefixConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_510) = &input.prefix_type {
-        object.key("prefixType").string(var_510.as_str());
+    if let Some(var_512) = &input.prefix_type {
+        object.key("prefixType").string(var_512.as_str());
     }
-    if let Some(var_511) = &input.prefix_format {
-        object.key("prefixFormat").string(var_511.as_str());
+    if let Some(var_513) = &input.prefix_format {
+        object.key("prefixFormat").string(var_513.as_str());
     }
     Ok(())
 }
@@ -2613,8 +2622,8 @@ pub fn serialize_structure_crate_model_aggregation_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AggregationConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_512) = &input.aggregation_type {
-        object.key("aggregationType").string(var_512.as_str());
+    if let Some(var_514) = &input.aggregation_type {
+        object.key("aggregationType").string(var_514.as_str());
     }
     Ok(())
 }

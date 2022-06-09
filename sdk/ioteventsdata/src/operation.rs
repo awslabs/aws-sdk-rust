@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
     }
 }
 
+/// Operation shape for `BatchDeleteDetector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_delete_detector`](crate::client::Client::batch_delete_detector).
+///
+/// See [`crate::client::fluent_builders::BatchDeleteDetector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchDeleteDetector {
+    _private: (),
+}
+impl BatchDeleteDetector {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput)
+    pub fn builder() -> crate::input::batch_delete_detector_input::Builder {
+        crate::input::batch_delete_detector_input::Builder::default()
+    }
+    /// Creates a new `BatchDeleteDetector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDetector {
+    type Output = std::result::Result<
+        crate::output::BatchDeleteDetectorOutput,
+        crate::error::BatchDeleteDetectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_delete_detector_error(response)
+        } else {
+            crate::operation_deser::parse_batch_delete_detector_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchDisableAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

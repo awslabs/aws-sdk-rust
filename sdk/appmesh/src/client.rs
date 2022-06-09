@@ -100,7 +100,7 @@ impl Client {
     ///   - [`spec(GatewayRouteSpec)`](crate::client::fluent_builders::CreateGatewayRoute::spec) / [`set_spec(Option<GatewayRouteSpec>)`](crate::client::fluent_builders::CreateGatewayRoute::set_spec): <p>The gateway route specification to apply.</p>
     ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateGatewayRoute::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateGatewayRoute::set_tags): <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::CreateGatewayRouteOutput::gateway_route): <p>The full description of your gateway route following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateGatewayRouteError>`](crate::error::CreateGatewayRouteError)
@@ -129,7 +129,7 @@ impl Client {
     ///   - [`spec(RouteSpec)`](crate::client::fluent_builders::CreateRoute::spec) / [`set_spec(Option<RouteSpec>)`](crate::client::fluent_builders::CreateRoute::set_spec): <p>The route specification to apply.</p>
     ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateRoute::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateRoute::set_tags): <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`CreateRouteOutput`](crate::output::CreateRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::output::CreateRouteOutput::route): <p>The full description of your mesh following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::error::CreateRouteError)
@@ -144,7 +144,7 @@ impl Client {
     ///   - [`spec(VirtualGatewaySpec)`](crate::client::fluent_builders::CreateVirtualGateway::spec) / [`set_spec(Option<VirtualGatewaySpec>)`](crate::client::fluent_builders::CreateVirtualGateway::set_spec): <p>The virtual gateway specification to apply.</p>
     ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualGateway::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualGateway::set_tags): <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::CreateVirtualGatewayOutput::virtual_gateway): <p>The full description of your virtual gateway following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualGatewayError>`](crate::error::CreateVirtualGatewayError)
@@ -159,7 +159,7 @@ impl Client {
     ///   - [`spec(VirtualNodeSpec)`](crate::client::fluent_builders::CreateVirtualNode::spec) / [`set_spec(Option<VirtualNodeSpec>)`](crate::client::fluent_builders::CreateVirtualNode::set_spec): <p>The virtual node specification to apply.</p>
     ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualNode::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualNode::set_tags): <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::CreateVirtualNodeOutput::virtual_node): <p>The full description of your virtual node following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualNodeError>`](crate::error::CreateVirtualNodeError)
@@ -174,7 +174,7 @@ impl Client {
     ///   - [`spec(VirtualRouterSpec)`](crate::client::fluent_builders::CreateVirtualRouter::spec) / [`set_spec(Option<VirtualRouterSpec>)`](crate::client::fluent_builders::CreateVirtualRouter::set_spec): <p>The virtual router specification to apply.</p>
     ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualRouter::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualRouter::set_tags): <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::CreateVirtualRouterOutput::virtual_router): <p>The full description of your virtual router following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualRouterError>`](crate::error::CreateVirtualRouterError)
@@ -189,7 +189,7 @@ impl Client {
     ///   - [`spec(VirtualServiceSpec)`](crate::client::fluent_builders::CreateVirtualService::spec) / [`set_spec(Option<VirtualServiceSpec>)`](crate::client::fluent_builders::CreateVirtualService::set_spec): <p>The virtual service specification to apply.</p>
     ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualService::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualService::set_tags): <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::CreateVirtualServiceOutput::virtual_service): <p>The full description of your virtual service following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualServiceError>`](crate::error::CreateVirtualServiceError)
@@ -202,7 +202,7 @@ impl Client {
     ///   - [`gateway_route_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::gateway_route_name) / [`set_gateway_route_name(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_gateway_route_name): <p>The name of the gateway route to delete.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_mesh_name): <p>The name of the service mesh to delete the gateway route from.</p>
     ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway to delete the route from.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::DeleteGatewayRouteOutput::gateway_route): <p>The gateway route that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteGatewayRouteError>`](crate::error::DeleteGatewayRouteError)
@@ -225,7 +225,7 @@ impl Client {
     ///   - [`route_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::route_name) / [`set_route_name(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_route_name): <p>The name of the route to delete.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_mesh_name): <p>The name of the service mesh to delete the route in.</p>
     ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_virtual_router_name): <p>The name of the virtual router to delete the route in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DeleteRouteOutput`](crate::output::DeleteRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::output::DeleteRouteOutput::route): <p>The route that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::error::DeleteRouteError)
@@ -237,7 +237,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_virtual_gateway_name): <p>The name of the virtual gateway to delete.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_mesh_name): <p>The name of the service mesh to delete the virtual gateway from.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::DeleteVirtualGatewayOutput::virtual_gateway): <p>The virtual gateway that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualGatewayError>`](crate::error::DeleteVirtualGatewayError)
@@ -249,7 +249,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_node_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::virtual_node_name) / [`set_virtual_node_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_virtual_node_name): <p>The name of the virtual node to delete.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_mesh_name): <p>The name of the service mesh to delete the virtual node in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::DeleteVirtualNodeOutput::virtual_node): <p>The virtual node that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualNodeError>`](crate::error::DeleteVirtualNodeError)
@@ -261,7 +261,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_virtual_router_name): <p>The name of the virtual router to delete.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_mesh_name): <p>The name of the service mesh to delete the virtual router in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::DeleteVirtualRouterOutput::virtual_router): <p>The virtual router that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualRouterError>`](crate::error::DeleteVirtualRouterError)
@@ -273,7 +273,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_service_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::virtual_service_name) / [`set_virtual_service_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_virtual_service_name): <p>The name of the virtual service to delete.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_mesh_name): <p>The name of the service mesh to delete the virtual service in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::DeleteVirtualServiceOutput::virtual_service): <p>The virtual service that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualServiceError>`](crate::error::DeleteVirtualServiceError)
@@ -286,7 +286,7 @@ impl Client {
     ///   - [`gateway_route_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::gateway_route_name) / [`set_gateway_route_name(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_gateway_route_name): <p>The name of the gateway route to describe.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_mesh_name): <p>The name of the service mesh that the gateway route resides in.</p>
     ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::DescribeGatewayRouteOutput::gateway_route): <p>The full description of your gateway route.</p>
     /// - On failure, responds with [`SdkError<DescribeGatewayRouteError>`](crate::error::DescribeGatewayRouteError)
@@ -297,7 +297,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMesh::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeMesh::set_mesh_name): <p>The name of the service mesh to describe.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeMesh::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeMesh::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeMesh::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeMesh::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DescribeMeshOutput`](crate::output::DescribeMeshOutput) with field(s):
     ///   - [`mesh(Option<MeshData>)`](crate::output::DescribeMeshOutput::mesh): <p>The full description of your service mesh.</p>
     /// - On failure, responds with [`SdkError<DescribeMeshError>`](crate::error::DescribeMeshError)
@@ -309,7 +309,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`route_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::route_name) / [`set_route_name(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_route_name): <p>The name of the route to describe.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_mesh_name): <p>The name of the service mesh that the route resides in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_virtual_router_name): <p>The name of the virtual router that the route is associated with.</p>
     /// - On success, responds with [`DescribeRouteOutput`](crate::output::DescribeRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::output::DescribeRouteOutput::route): <p>The full description of your route.</p>
@@ -322,7 +322,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_virtual_gateway_name): <p>The name of the virtual gateway to describe.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_mesh_name): <p>The name of the service mesh that the gateway route resides in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::DescribeVirtualGatewayOutput::virtual_gateway): <p>The full description of your virtual gateway.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualGatewayError>`](crate::error::DescribeVirtualGatewayError)
@@ -334,7 +334,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_node_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::virtual_node_name) / [`set_virtual_node_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_virtual_node_name): <p>The name of the virtual node to describe.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_mesh_name): <p>The name of the service mesh that the virtual node resides in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::DescribeVirtualNodeOutput::virtual_node): <p>The full description of your virtual node.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualNodeError>`](crate::error::DescribeVirtualNodeError)
@@ -346,7 +346,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_virtual_router_name): <p>The name of the virtual router to describe.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_mesh_name): <p>The name of the service mesh that the virtual router resides in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::DescribeVirtualRouterOutput::virtual_router): <p>The full description of your virtual router.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualRouterError>`](crate::error::DescribeVirtualRouterError)
@@ -358,7 +358,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`virtual_service_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::virtual_service_name) / [`set_virtual_service_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_virtual_service_name): <p>The name of the virtual service to describe.</p>
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_mesh_name): <p>The name of the service mesh that the virtual service resides in.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::DescribeVirtualServiceOutput::virtual_service): <p>The full description of your virtual service.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualServiceError>`](crate::error::DescribeVirtualServiceError)
@@ -373,7 +373,7 @@ impl Client {
     ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_virtual_gateway_name): <p>The name of the virtual gateway to list gateway routes in.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListGatewayRoutes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListGatewayRoutes::set_limit): <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput) with field(s):
     ///   - [`gateway_routes(Option<Vec<GatewayRouteRef>>)`](crate::output::ListGatewayRoutesOutput::gateway_routes): <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGatewayRoutesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -402,7 +402,7 @@ impl Client {
     ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_virtual_router_name): <p>The name of the virtual router to list routes in.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListRoutes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListRoutes::set_limit): <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`ListRoutesOutput`](crate::output::ListRoutesOutput) with field(s):
     ///   - [`routes(Option<Vec<RouteRef>>)`](crate::output::ListRoutesOutput::routes): <p>The list of existing routes for the specified service mesh and virtual router.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRoutesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -431,7 +431,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_mesh_name): <p>The name of the service mesh to list virtual gateways in.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualGateways::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualGateways::set_limit): <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput) with field(s):
     ///   - [`virtual_gateways(Option<Vec<VirtualGatewayRef>>)`](crate::output::ListVirtualGatewaysOutput::virtual_gateways): <p>The list of existing virtual gateways for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListVirtualGatewaysOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -446,7 +446,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_mesh_name): <p>The name of the service mesh to list virtual nodes in.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualNodes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualNodes::set_limit): <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput) with field(s):
     ///   - [`virtual_nodes(Option<Vec<VirtualNodeRef>>)`](crate::output::ListVirtualNodesOutput::virtual_nodes): <p>The list of existing virtual nodes for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListVirtualNodesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -461,7 +461,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_mesh_name): <p>The name of the service mesh to list virtual routers in.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualRouters::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualRouters::set_limit): <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput) with field(s):
     ///   - [`virtual_routers(Option<Vec<VirtualRouterRef>>)`](crate::output::ListVirtualRoutersOutput::virtual_routers): <p>The list of existing virtual routers for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListVirtualRoutersOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -476,7 +476,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_mesh_name): <p>The name of the service mesh to list virtual services in.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualServices::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualServices::set_limit): <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput) with field(s):
     ///   - [`virtual_services(Option<Vec<VirtualServiceRef>>)`](crate::output::ListVirtualServicesOutput::virtual_services): <p>The list of existing virtual services for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListVirtualServicesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -514,7 +514,7 @@ impl Client {
     ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway that the gateway route is associated with.</p>
     ///   - [`spec(GatewayRouteSpec)`](crate::client::fluent_builders::UpdateGatewayRoute::spec) / [`set_spec(Option<GatewayRouteSpec>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_spec): <p>The new gateway route specification to apply. This overwrites the existing data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::UpdateGatewayRouteOutput::gateway_route): <p>A full description of the gateway route that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewayRouteError>`](crate::error::UpdateGatewayRouteError)
@@ -541,7 +541,7 @@ impl Client {
     ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_virtual_router_name): <p>The name of the virtual router that the route is associated with.</p>
     ///   - [`spec(RouteSpec)`](crate::client::fluent_builders::UpdateRoute::spec) / [`set_spec(Option<RouteSpec>)`](crate::client::fluent_builders::UpdateRoute::set_spec): <p>The new route specification to apply. This overwrites the existing data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`UpdateRouteOutput`](crate::output::UpdateRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::output::UpdateRouteOutput::route): <p>A full description of the route that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateRouteError>`](crate::error::UpdateRouteError)
@@ -555,7 +555,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_mesh_name): <p>The name of the service mesh that the virtual gateway resides in.</p>
     ///   - [`spec(VirtualGatewaySpec)`](crate::client::fluent_builders::UpdateVirtualGateway::spec) / [`set_spec(Option<VirtualGatewaySpec>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_spec): <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::UpdateVirtualGatewayOutput::virtual_gateway): <p>A full description of the virtual gateway that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualGatewayError>`](crate::error::UpdateVirtualGatewayError)
@@ -569,7 +569,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_mesh_name): <p>The name of the service mesh that the virtual node resides in.</p>
     ///   - [`spec(VirtualNodeSpec)`](crate::client::fluent_builders::UpdateVirtualNode::spec) / [`set_spec(Option<VirtualNodeSpec>)`](crate::client::fluent_builders::UpdateVirtualNode::set_spec): <p>The new virtual node specification to apply. This overwrites the existing data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::UpdateVirtualNodeOutput::virtual_node): <p>A full description of the virtual node that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualNodeError>`](crate::error::UpdateVirtualNodeError)
@@ -583,7 +583,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_mesh_name): <p>The name of the service mesh that the virtual router resides in.</p>
     ///   - [`spec(VirtualRouterSpec)`](crate::client::fluent_builders::UpdateVirtualRouter::spec) / [`set_spec(Option<VirtualRouterSpec>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_spec): <p>The new virtual router specification to apply. This overwrites the existing data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::UpdateVirtualRouterOutput::virtual_router): <p>A full description of the virtual router that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualRouterError>`](crate::error::UpdateVirtualRouterError)
@@ -597,7 +597,7 @@ impl Client {
     ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_mesh_name): <p>The name of the service mesh that the virtual service resides in.</p>
     ///   - [`spec(VirtualServiceSpec)`](crate::client::fluent_builders::UpdateVirtualService::spec) / [`set_spec(Option<VirtualServiceSpec>)`](crate::client::fluent_builders::UpdateVirtualService::set_spec): <p>The new virtual service specification to apply. This overwrites the existing data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_mesh_owner): <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     /// - On success, responds with [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::UpdateVirtualServiceOutput::virtual_service): <p>A full description of the virtual service that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualServiceError>`](crate::error::UpdateVirtualServiceError)
@@ -733,12 +733,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -950,12 +950,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1068,12 +1068,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1087,7 +1087,7 @@ pub mod fluent_builders {
     /// <p>The response metadata for your new virtual node contains the <code>arn</code> that is associated with the virtual node. Set this value to the full ARN; for example, <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>) as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p> <note>
     /// <p>By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself in metrics and traces. You can override this behavior by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own name.</p>
     /// </note>
-    /// <p>For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a> in the AWS App Mesh User Guide.</p>
+    /// <p>For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a> in the App Mesh User Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualNode {
         handle: std::sync::Arc<super::Handle>,
@@ -1190,12 +1190,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1308,12 +1308,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1426,12 +1426,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1515,12 +1515,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_gateway_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1655,12 +1655,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_router_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1731,12 +1731,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1808,12 +1808,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1885,12 +1885,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1961,12 +1961,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2050,12 +2050,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_gateway_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2113,12 +2113,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2186,12 +2186,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2275,12 +2275,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2351,12 +2351,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2427,12 +2427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2503,12 +2503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2605,12 +2605,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2780,12 +2780,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2948,12 +2948,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3037,12 +3037,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3126,12 +3126,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3215,12 +3215,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3467,12 +3467,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3646,12 +3646,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3745,12 +3745,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3844,12 +3844,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3943,12 +3943,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -4042,12 +4042,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self

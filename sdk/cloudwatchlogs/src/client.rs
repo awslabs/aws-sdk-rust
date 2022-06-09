@@ -119,7 +119,7 @@ impl Client {
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_log_group_name): <p>The name of the log group.</p>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_log_stream_name_prefix): <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
     ///   - [`from(i64)`](crate::client::fluent_builders::CreateExportTask::from) / [`set_from(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_from): <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
-    ///   - [`to(i64)`](crate::client::fluent_builders::CreateExportTask::to) / [`set_to(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_to): <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    ///   - [`to(i64)`](crate::client::fluent_builders::CreateExportTask::to) / [`set_to(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_to): <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
     ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination): <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
     ///   - [`destination_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination_prefix) / [`set_destination_prefix(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination_prefix): <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     /// - On success, responds with [`CreateExportTaskOutput`](crate::output::CreateExportTaskOutput) with field(s):
@@ -270,7 +270,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLogGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLogGroups::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     /// - On success, responds with [`DescribeLogGroupsOutput`](crate::output::DescribeLogGroupsOutput) with field(s):
-    ///   - [`log_groups(Option<Vec<LogGroup>>)`](crate::output::DescribeLogGroupsOutput::log_groups): <p>The log groups.</p>  <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
+    ///   - [`log_groups(Option<Vec<LogGroup>>)`](crate::output::DescribeLogGroupsOutput::log_groups): <p>The log groups.</p>  <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeLogGroupsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeLogGroupsError>`](crate::error::DescribeLogGroupsError)
     pub fn describe_log_groups(&self) -> fluent_builders::DescribeLogGroups {
@@ -536,7 +536,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutRetentionPolicy::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutRetentionPolicy::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`retention_in_days(i32)`](crate::client::fluent_builders::PutRetentionPolicy::retention_in_days) / [`set_retention_in_days(Option<i32>)`](crate::client::fluent_builders::PutRetentionPolicy::set_retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>  <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    ///   - [`retention_in_days(i32)`](crate::client::fluent_builders::PutRetentionPolicy::retention_in_days) / [`set_retention_in_days(Option<i32>)`](crate::client::fluent_builders::PutRetentionPolicy::set_retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>  <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     /// - On success, responds with [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutRetentionPolicyError>`](crate::error::PutRetentionPolicyError)
@@ -752,10 +752,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExportTask`.
     ///
-    /// <p>Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination.</p>
+    /// <p>Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination.</p> <important>
+    /// <p>Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported. Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period is not supported.</p>
+    /// <p>Exporting to S3 buckets that are encrypted with AES-256 is supported. </p>
+    /// </important>
     /// <p>This is an asynchronous call. If all the required information is provided, this operation initiates an export task and responds with the ID of the task. After the task has started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a> to get the status of the export task. Each account can only have one active (<code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.</p>
-    /// <p>You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported objects.</p>
-    /// <p>Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to S3 buckets encrypted with SSE-KMS is not supported. </p>
+    /// <p>You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported objects.</p> <note>
+    /// <p>Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log fild data by using Linux utilities.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExportTask {
         handle: std::sync::Arc<super::Handle>,
@@ -841,12 +845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from(input);
             self
         }
-        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
         pub fn to(mut self, input: i64) -> Self {
             self.inner = self.inner.to(input);
             self
         }
-        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_to(input);
             self
@@ -3543,13 +3547,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
         /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.inner = self.inner.retention_in_days(input);
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
         /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_retention_in_days(input);

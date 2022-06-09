@@ -1080,6 +1080,140 @@ impl std::error::Error for CreateForecastExportJobError {
     }
 }
 
+/// Error type for the `CreateMonitor` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateMonitorError {
+    /// Kind of error that occurred.
+    pub kind: CreateMonitorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateMonitor` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateMonitorErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of resources per account has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>There is already a resource with this name. Try again with a different name.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateMonitorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateMonitorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateMonitorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateMonitorErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateMonitorErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CreateMonitorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateMonitorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateMonitorError {
+    fn code(&self) -> Option<&str> {
+        CreateMonitorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateMonitorError {
+    /// Creates a new `CreateMonitorError`.
+    pub fn new(kind: CreateMonitorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateMonitorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateMonitorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateMonitorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateMonitorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateMonitorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, CreateMonitorErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `CreateMonitorErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMonitorErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMonitorErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMonitorErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMonitorErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMonitorErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMonitorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMonitorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateMonitorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateMonitorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateMonitorErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateMonitorErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateMonitorErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CreateMonitorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateMonitorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreatePredictor` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2175,6 +2309,118 @@ impl std::error::Error for DeleteForecastExportJobError {
             DeleteForecastExportJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteForecastExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteForecastExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteMonitor` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteMonitorError {
+    /// Kind of error that occurred.
+    pub kind: DeleteMonitorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteMonitor` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteMonitorErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteMonitorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteMonitorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteMonitorErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteMonitorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteMonitorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteMonitorError {
+    fn code(&self) -> Option<&str> {
+        DeleteMonitorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteMonitorError {
+    /// Creates a new `DeleteMonitorError`.
+    pub fn new(kind: DeleteMonitorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteMonitorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteMonitorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteMonitorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteMonitorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteMonitorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMonitorErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteMonitorErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMonitorErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMonitorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMonitorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteMonitorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteMonitorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteMonitorErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteMonitorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteMonitorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3375,6 +3621,110 @@ impl std::error::Error for DescribeForecastExportJobError {
     }
 }
 
+/// Error type for the `DescribeMonitor` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeMonitorError {
+    /// Kind of error that occurred.
+    pub kind: DescribeMonitorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeMonitor` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeMonitorErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeMonitorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeMonitorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeMonitorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeMonitorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeMonitorError {
+    fn code(&self) -> Option<&str> {
+        DescribeMonitorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeMonitorError {
+    /// Creates a new `DescribeMonitorError`.
+    pub fn new(kind: DescribeMonitorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeMonitorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeMonitorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeMonitorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeMonitorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeMonitorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMonitorErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeMonitorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMonitorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeMonitorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeMonitorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeMonitorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeMonitorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribePredictor` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4412,6 +4762,222 @@ impl std::error::Error for ListForecastsError {
     }
 }
 
+/// Error type for the `ListMonitorEvaluations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMonitorEvaluationsError {
+    /// Kind of error that occurred.
+    pub kind: ListMonitorEvaluationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMonitorEvaluations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMonitorEvaluationsErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid. Tokens expire after 24 hours.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMonitorEvaluationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMonitorEvaluationsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListMonitorEvaluationsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListMonitorEvaluationsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListMonitorEvaluationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMonitorEvaluationsError {
+    fn code(&self) -> Option<&str> {
+        ListMonitorEvaluationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMonitorEvaluationsError {
+    /// Creates a new `ListMonitorEvaluationsError`.
+    pub fn new(kind: ListMonitorEvaluationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMonitorEvaluationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMonitorEvaluationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMonitorEvaluationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMonitorEvaluationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMonitorEvaluationsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitorEvaluationsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMonitorEvaluationsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitorEvaluationsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMonitorEvaluationsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitorEvaluationsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListMonitorEvaluationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMonitorEvaluationsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListMonitorEvaluationsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListMonitorEvaluationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListMonitorEvaluationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListMonitors` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMonitorsError {
+    /// Kind of error that occurred.
+    pub kind: ListMonitorsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMonitors` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMonitorsErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid. Tokens expire after 24 hours.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMonitorsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMonitorsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListMonitorsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListMonitorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMonitorsError {
+    fn code(&self) -> Option<&str> {
+        ListMonitorsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMonitorsError {
+    /// Creates a new `ListMonitorsError`.
+    pub fn new(kind: ListMonitorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMonitorsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMonitorsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMonitorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMonitorsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMonitorsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, ListMonitorsErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `ListMonitorsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitorsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListMonitorsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMonitorsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListMonitorsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListMonitorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListPredictorBacktestExportJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4729,6 +5295,132 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ResumeResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ResumeResourceError {
+    /// Kind of error that occurred.
+    pub kind: ResumeResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ResumeResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ResumeResourceErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of resources per account has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ResumeResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ResumeResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ResumeResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ResumeResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ResumeResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ResumeResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ResumeResourceError {
+    fn code(&self) -> Option<&str> {
+        ResumeResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ResumeResourceError {
+    /// Creates a new `ResumeResourceError`.
+    pub fn new(kind: ResumeResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ResumeResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ResumeResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ResumeResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ResumeResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ResumeResourceErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResumeResourceErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResumeResourceErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResumeResourceErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResumeResourceErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResumeResourceErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResumeResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResumeResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ResumeResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ResumeResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ResumeResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ResumeResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ResumeResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ResumeResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

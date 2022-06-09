@@ -460,6 +460,7 @@ impl Client {
     ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateJob::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateJob::set_glue_version): <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>  <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>  <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateJob::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>  <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateJob::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateJob::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>  </ul>
+    ///   - [`code_gen_configuration_nodes(HashMap<String, CodeGenConfigurationNode>)`](crate::client::fluent_builders::CreateJob::code_gen_configuration_nodes) / [`set_code_gen_configuration_nodes(Option<HashMap<String, CodeGenConfigurationNode>>)`](crate::client::fluent_builders::CreateJob::set_code_gen_configuration_nodes): <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateJobOutput::name): <p>The unique name that was provided for this job definition.</p>
     /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
@@ -5240,6 +5241,32 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::WorkerType>,
         ) -> Self {
             self.inner = self.inner.set_worker_type(input);
+            self
+        }
+        /// Adds a key-value pair to `CodeGenConfigurationNodes`.
+        ///
+        /// To override the contents of this collection use [`set_code_gen_configuration_nodes`](Self::set_code_gen_configuration_nodes).
+        ///
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn code_gen_configuration_nodes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::CodeGenConfigurationNode,
+        ) -> Self {
+            self.inner = self.inner.code_gen_configuration_nodes(k.into(), v);
+            self
+        }
+        /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+        pub fn set_code_gen_configuration_nodes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::CodeGenConfigurationNode,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_code_gen_configuration_nodes(input);
             self
         }
     }

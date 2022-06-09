@@ -4016,6 +4016,13 @@ where
                                     crate::json_deser::deser_structure_crate_model_recommender_update_summary(tokens)?
                                 );
                             }
+                            "modelMetrics" => {
+                                builder = builder.set_model_metrics(
+                                    crate::json_deser::deser_map_com_amazonaws_personalize_metrics(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -1339,6 +1339,18 @@ pub fn serialize_structure_crate_input_update_ip_restriction_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_update_public_sharing_settings_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdatePublicSharingSettingsInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if input.public_sharing_enabled {
+        object
+            .key("PublicSharingEnabled")
+            .boolean(input.public_sharing_enabled);
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_input_update_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateTemplateInput,

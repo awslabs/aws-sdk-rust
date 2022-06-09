@@ -396,7 +396,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateConnectorProfile`.
     ///
-    /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. </p>
+    /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector profile that you create, you can provide the credentials and properties for only one connector.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorProfile {
         handle: std::sync::Arc<super::Handle>,
@@ -874,7 +874,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnectorEntity`.
     ///
-    /// <p> Provides details regarding the entity used with the connector, with a description of the data model for each entity. </p>
+    /// <p> Provides details regarding the entity used with the connector, with a description of the data model for each field in that entity. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectorEntity {
         handle: std::sync::Arc<super::Handle>,

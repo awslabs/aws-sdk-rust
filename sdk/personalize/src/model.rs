@@ -769,6 +769,7 @@ pub struct RecommenderSummary {
     /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
@@ -801,6 +802,7 @@ impl RecommenderSummary {
     /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
@@ -907,6 +909,7 @@ pub mod recommender_summary {
         /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
         /// <ul>
         /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
         /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -916,6 +919,7 @@ pub mod recommender_summary {
         /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
         /// <ul>
         /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
         /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5096,6 +5100,7 @@ pub struct Recommender {
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
@@ -5103,6 +5108,8 @@ pub struct Recommender {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Provides a summary of the latest updates to the recommender. </p>
     pub latest_recommender_update: std::option::Option<crate::model::RecommenderUpdateSummary>,
+    /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
+    pub model_metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
 impl Recommender {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
@@ -5137,6 +5144,7 @@ impl Recommender {
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
@@ -5152,6 +5160,12 @@ impl Recommender {
     ) -> std::option::Option<&crate::model::RecommenderUpdateSummary> {
         self.latest_recommender_update.as_ref()
     }
+    /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
+    pub fn model_metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.model_metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for Recommender {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5166,6 +5180,7 @@ impl std::fmt::Debug for Recommender {
         formatter.field("status", &self.status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("latest_recommender_update", &self.latest_recommender_update);
+        formatter.field("model_metrics", &self.model_metrics);
         formatter.finish()
     }
 }
@@ -5186,6 +5201,8 @@ pub mod recommender {
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) latest_recommender_update:
             std::option::Option<crate::model::RecommenderUpdateSummary>,
+        pub(crate) model_metrics:
+            std::option::Option<std::collections::HashMap<std::string::String, f64>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
@@ -5277,6 +5294,7 @@ pub mod recommender {
         /// <p>A recommender can be in one of the following states:</p>
         /// <ul>
         /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
         /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5287,6 +5305,7 @@ pub mod recommender {
         /// <p>A recommender can be in one of the following states:</p>
         /// <ul>
         /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
         /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5322,6 +5341,25 @@ pub mod recommender {
             self.latest_recommender_update = input;
             self
         }
+        /// Adds a key-value pair to `model_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_model_metrics`](Self::set_model_metrics).
+        ///
+        /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
+        pub fn model_metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
+            let mut hash_map = self.model_metrics.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.model_metrics = Some(hash_map);
+            self
+        }
+        /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
+        pub fn set_model_metrics(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+        ) -> Self {
+            self.model_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Recommender`](crate::model::Recommender)
         pub fn build(self) -> crate::model::Recommender {
             crate::model::Recommender {
@@ -5335,6 +5373,7 @@ pub mod recommender {
                 status: self.status,
                 failure_reason: self.failure_reason,
                 latest_recommender_update: self.latest_recommender_update,
+                model_metrics: self.model_metrics,
             }
         }
     }
@@ -5360,6 +5399,7 @@ pub struct RecommenderUpdateSummary {
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
@@ -5383,6 +5423,7 @@ impl RecommenderUpdateSummary {
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
@@ -5460,6 +5501,7 @@ pub mod recommender_update_summary {
         /// <p>A recommender can be in one of the following states:</p>
         /// <ul>
         /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
         /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5470,6 +5512,7 @@ pub mod recommender_update_summary {
         /// <p>A recommender can be in one of the following states:</p>
         /// <ul>
         /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
         /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {

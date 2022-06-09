@@ -3720,6 +3720,199 @@ impl DisableAlarmActionRequest {
     }
 }
 
+/// <p>Contains error messages associated with the deletion request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDeleteDetectorErrorEntry {
+    /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
+    pub message_id: std::option::Option<std::string::String>,
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::ErrorCode>,
+    /// <p>A message that describes the error.</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchDeleteDetectorErrorEntry {
+    /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchDeleteDetectorErrorEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDeleteDetectorErrorEntry");
+        formatter.field("message_id", &self.message_id);
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+pub mod batch_delete_detector_error_entry {
+    /// A builder for [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::ErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>A message that describes the error.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>A message that describes the error.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+        pub fn build(self) -> crate::model::BatchDeleteDetectorErrorEntry {
+            crate::model::BatchDeleteDetectorErrorEntry {
+                message_id: self.message_id,
+                error_code: self.error_code,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl BatchDeleteDetectorErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+    pub fn builder() -> crate::model::batch_delete_detector_error_entry::Builder {
+        crate::model::batch_delete_detector_error_entry::Builder::default()
+    }
+}
+
+/// <p>Information used to delete the detector model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDetectorRequest {
+    /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    pub message_id: std::option::Option<std::string::String>,
+    /// <p>The name of the detector model that was used to create the detector instance.</p>
+    pub detector_model_name: std::option::Option<std::string::String>,
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
+    pub key_value: std::option::Option<std::string::String>,
+}
+impl DeleteDetectorRequest {
+    /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The name of the detector model that was used to create the detector instance.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteDetectorRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDetectorRequest");
+        formatter.field("message_id", &self.message_id);
+        formatter.field("detector_model_name", &self.detector_model_name);
+        formatter.field("key_value", &self.key_value);
+        formatter.finish()
+    }
+}
+/// See [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+pub mod delete_detector_request {
+    /// A builder for [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) detector_model_name: std::option::Option<std::string::String>,
+        pub(crate) key_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// <p>The name of the detector model that was used to create the detector instance.</p>
+        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_model_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the detector model that was used to create the detector instance.</p>
+        pub fn set_detector_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.detector_model_name = input;
+            self
+        }
+        /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
+        pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_value = Some(input.into());
+            self
+        }
+        /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
+        pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+        pub fn build(self) -> crate::model::DeleteDetectorRequest {
+            crate::model::DeleteDetectorRequest {
+                message_id: self.message_id,
+                detector_model_name: self.detector_model_name,
+                key_value: self.key_value,
+            }
+        }
+    }
+}
+impl DeleteDetectorRequest {
+    /// Creates a new builder-style object to manufacture [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+    pub fn builder() -> crate::model::delete_detector_request::Builder {
+        crate::model::delete_detector_request::Builder::default()
+    }
+}
+
 /// <p>Information needed to acknowledge the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

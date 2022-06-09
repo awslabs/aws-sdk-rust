@@ -188,7 +188,7 @@ impl AsRef<str> for ResourceType {
 pub struct MessageReviewHandler {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
     pub uri: std::option::Option<std::string::String>,
-    /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error or times out. If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
+    /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
     pub fallback_result: std::option::Option<crate::model::FallbackResult>,
 }
 impl MessageReviewHandler {
@@ -196,7 +196,7 @@ impl MessageReviewHandler {
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
-    /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error or times out. If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
+    /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
     pub fn fallback_result(&self) -> std::option::Option<&crate::model::FallbackResult> {
         self.fallback_result.as_ref()
     }
@@ -229,12 +229,12 @@ pub mod message_review_handler {
             self.uri = input;
             self
         }
-        /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error or times out. If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
+        /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
         pub fn fallback_result(mut self, input: crate::model::FallbackResult) -> Self {
             self.fallback_result = Some(input);
             self
         }
-        /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error or times out. If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
+        /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
         pub fn set_fallback_result(
             mut self,
             input: std::option::Option<crate::model::FallbackResult>,

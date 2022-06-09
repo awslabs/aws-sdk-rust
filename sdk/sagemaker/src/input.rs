@@ -1871,14 +1871,14 @@ pub mod create_auto_ml_job_input {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
         pub fn input_data_config(mut self, input: crate::model::AutoMlChannel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
             v.push(input);
             self.input_data_config = Some(v);
             self
         }
-        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
@@ -1899,12 +1899,12 @@ pub mod create_auto_ml_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+        /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
         pub fn problem_type(mut self, input: crate::model::ProblemType) -> Self {
             self.problem_type = Some(input);
             self
         }
-        /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+        /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
         pub fn set_problem_type(
             mut self,
             input: std::option::Option<crate::model::ProblemType>,
@@ -1925,12 +1925,12 @@ pub mod create_auto_ml_job_input {
             self.auto_ml_job_objective = input;
             self
         }
-        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+        /// <p>A collection of settings used to configure an AutoML job.</p>
         pub fn auto_ml_job_config(mut self, input: crate::model::AutoMlJobConfig) -> Self {
             self.auto_ml_job_config = Some(input);
             self
         }
-        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+        /// <p>A collection of settings used to configure an AutoML job.</p>
         pub fn set_auto_ml_job_config(
             mut self,
             input: std::option::Option<crate::model::AutoMlJobConfig>,
@@ -4140,12 +4140,12 @@ pub mod create_endpoint_config_input {
             self.production_variants = input;
             self
         }
-        /// <p></p>
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
         pub fn data_capture_config(mut self, input: crate::model::DataCaptureConfig) -> Self {
             self.data_capture_config = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
         pub fn set_data_capture_config(
             mut self,
             input: std::option::Option<crate::model::DataCaptureConfig>,
@@ -7697,12 +7697,14 @@ pub mod create_model_package_input {
             self.domain = input;
             self
         }
-        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+        /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
         pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
             self.task = Some(input.into());
             self
         }
-        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+        /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task = input;
             self
@@ -8588,6 +8590,8 @@ pub mod create_notebook_instance_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) root_access: std::option::Option<crate::model::RootAccess>,
         pub(crate) platform_identifier: std::option::Option<std::string::String>,
+        pub(crate) instance_metadata_service_configuration:
+            std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
     }
     impl Builder {
         /// <p>The name of the new notebook instance.</p>
@@ -8815,6 +8819,22 @@ pub mod create_notebook_instance_input {
             self.platform_identifier = input;
             self
         }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn instance_metadata_service_configuration(
+            mut self,
+            input: crate::model::InstanceMetadataServiceConfiguration,
+        ) -> Self {
+            self.instance_metadata_service_configuration = Some(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn set_instance_metadata_service_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
+        ) -> Self {
+            self.instance_metadata_service_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateNotebookInstanceInput`](crate::input::CreateNotebookInstanceInput)
         pub fn build(
             self,
@@ -8838,6 +8858,8 @@ pub mod create_notebook_instance_input {
                 additional_code_repositories: self.additional_code_repositories,
                 root_access: self.root_access,
                 platform_identifier: self.platform_identifier,
+                instance_metadata_service_configuration: self
+                    .instance_metadata_service_configuration,
             })
         }
     }
@@ -47200,6 +47222,8 @@ pub mod update_notebook_instance_input {
         pub(crate) disassociate_default_code_repository: std::option::Option<bool>,
         pub(crate) disassociate_additional_code_repositories: std::option::Option<bool>,
         pub(crate) root_access: std::option::Option<crate::model::RootAccess>,
+        pub(crate) instance_metadata_service_configuration:
+            std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
     }
     impl Builder {
         /// <p>The name of the notebook instance to update.</p>
@@ -47393,6 +47417,22 @@ pub mod update_notebook_instance_input {
             self.root_access = input;
             self
         }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn instance_metadata_service_configuration(
+            mut self,
+            input: crate::model::InstanceMetadataServiceConfiguration,
+        ) -> Self {
+            self.instance_metadata_service_configuration = Some(input);
+            self
+        }
+        /// <p>Information on the IMDS configuration of the notebook instance</p>
+        pub fn set_instance_metadata_service_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
+        ) -> Self {
+            self.instance_metadata_service_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateNotebookInstanceInput`](crate::input::UpdateNotebookInstanceInput)
         pub fn build(
             self,
@@ -47422,6 +47462,8 @@ pub mod update_notebook_instance_input {
                     .disassociate_additional_code_repositories
                     .unwrap_or_default(),
                 root_access: self.root_access,
+                instance_metadata_service_configuration: self
+                    .instance_metadata_service_configuration,
             })
         }
     }
@@ -50182,6 +50224,9 @@ pub struct UpdateNotebookInstanceInput {
     /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
     /// </note>
     pub root_access: std::option::Option<crate::model::RootAccess>,
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub instance_metadata_service_configuration:
+        std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
 }
 impl UpdateNotebookInstanceInput {
     /// <p>The name of the notebook instance to update.</p>
@@ -50242,6 +50287,12 @@ impl UpdateNotebookInstanceInput {
     pub fn root_access(&self) -> std::option::Option<&crate::model::RootAccess> {
         self.root_access.as_ref()
     }
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub fn instance_metadata_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataServiceConfiguration> {
+        self.instance_metadata_service_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50274,6 +50325,10 @@ impl std::fmt::Debug for UpdateNotebookInstanceInput {
             &self.disassociate_additional_code_repositories,
         );
         formatter.field("root_access", &self.root_access);
+        formatter.field(
+            "instance_metadata_service_configuration",
+            &self.instance_metadata_service_configuration,
+        );
         formatter.finish()
     }
 }
@@ -58900,6 +58955,9 @@ pub struct CreateNotebookInstanceInput {
     pub root_access: std::option::Option<crate::model::RootAccess>,
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
     pub platform_identifier: std::option::Option<std::string::String>,
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub instance_metadata_service_configuration:
+        std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
 }
 impl CreateNotebookInstanceInput {
     /// <p>The name of the new notebook instance.</p>
@@ -58971,6 +59029,12 @@ impl CreateNotebookInstanceInput {
     pub fn platform_identifier(&self) -> std::option::Option<&str> {
         self.platform_identifier.as_deref()
     }
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub fn instance_metadata_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataServiceConfiguration> {
+        self.instance_metadata_service_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58993,6 +59057,10 @@ impl std::fmt::Debug for CreateNotebookInstanceInput {
         );
         formatter.field("root_access", &self.root_access);
         formatter.field("platform_identifier", &self.platform_identifier);
+        formatter.field(
+            "instance_metadata_service_configuration",
+            &self.instance_metadata_service_configuration,
+        );
         formatter.finish()
     }
 }
@@ -59227,7 +59295,8 @@ pub struct CreateModelPackageInput {
     pub drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
     /// <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+    /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
     pub task: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub sample_payload_url: std::option::Option<std::string::String>,
@@ -59316,7 +59385,8 @@ impl CreateModelPackageInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+    /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
     pub fn task(&self) -> std::option::Option<&str> {
         self.task.as_deref()
     }
@@ -60365,7 +60435,7 @@ pub struct CreateEndpointConfigInput {
     pub endpoint_config_name: std::option::Option<std::string::String>,
     /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub production_variants: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
-    /// <p></p>
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub data_capture_config: std::option::Option<crate::model::DataCaptureConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -60395,7 +60465,7 @@ impl CreateEndpointConfigInput {
     pub fn production_variants(&self) -> std::option::Option<&[crate::model::ProductionVariant]> {
         self.production_variants.as_deref()
     }
-    /// <p></p>
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(&self) -> std::option::Option<&crate::model::DataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
@@ -61014,15 +61084,15 @@ impl std::fmt::Debug for CreateCodeRepositoryInput {
 pub struct CreateAutoMlJobInput {
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
     pub auto_ml_job_name: std::option::Option<std::string::String>,
-    /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+    /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
     pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
-    /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+    /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
     pub problem_type: std::option::Option<crate::model::ProblemType>,
     /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
     pub auto_ml_job_objective: std::option::Option<crate::model::AutoMlJobObjective>,
-    /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+    /// <p>A collection of settings used to configure an AutoML job.</p>
     pub auto_ml_job_config: std::option::Option<crate::model::AutoMlJobConfig>,
     /// <p>The ARN of the role that is used to access the data.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -61038,7 +61108,7 @@ impl CreateAutoMlJobInput {
     pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
         self.auto_ml_job_name.as_deref()
     }
-    /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+    /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
     pub fn input_data_config(&self) -> std::option::Option<&[crate::model::AutoMlChannel]> {
         self.input_data_config.as_deref()
     }
@@ -61046,7 +61116,7 @@ impl CreateAutoMlJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::AutoMlOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+    /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
     pub fn problem_type(&self) -> std::option::Option<&crate::model::ProblemType> {
         self.problem_type.as_ref()
     }
@@ -61054,7 +61124,7 @@ impl CreateAutoMlJobInput {
     pub fn auto_ml_job_objective(&self) -> std::option::Option<&crate::model::AutoMlJobObjective> {
         self.auto_ml_job_objective.as_ref()
     }
-    /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+    /// <p>A collection of settings used to configure an AutoML job.</p>
     pub fn auto_ml_job_config(&self) -> std::option::Option<&crate::model::AutoMlJobConfig> {
         self.auto_ml_job_config.as_ref()
     }

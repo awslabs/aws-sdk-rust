@@ -284,6 +284,196 @@ impl ListDatasetsPaginator {
     }
 }
 
+/// Paginator for [`ListExplainabilities`](crate::operation::ListExplainabilities)
+pub struct ListExplainabilitiesPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_explainabilities_input::Builder,
+}
+
+impl ListExplainabilitiesPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_explainabilities_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `explainabilities`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListExplainabilitiesPaginatorItems {
+        crate::paginator::ListExplainabilitiesPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListExplainabilitiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExplainabilitiesError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_explainabilities_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`ListExplainabilityExports`](crate::operation::ListExplainabilityExports)
+pub struct ListExplainabilityExportsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_explainability_exports_input::Builder,
+}
+
+impl ListExplainabilityExportsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_explainability_exports_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `explainability_exports`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListExplainabilityExportsPaginatorItems {
+        crate::paginator::ListExplainabilityExportsPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListExplainabilityExportsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExplainabilityExportsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_explainability_exports_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
 /// Paginator for [`ListForecastExportJobs`](crate::operation::ListForecastExportJobs)
 pub struct ListForecastExportJobsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -451,6 +641,196 @@ impl ListForecastsPaginator {
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_forecasts_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`ListMonitorEvaluations`](crate::operation::ListMonitorEvaluations)
+pub struct ListMonitorEvaluationsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_monitor_evaluations_input::Builder,
+}
+
+impl ListMonitorEvaluationsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_monitor_evaluations_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `predictor_monitor_evaluations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListMonitorEvaluationsPaginatorItems {
+        crate::paginator::ListMonitorEvaluationsPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListMonitorEvaluationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitorEvaluationsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_monitor_evaluations_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`ListMonitors`](crate::operation::ListMonitors)
+pub struct ListMonitorsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_monitors_input::Builder,
+}
+
+impl ListMonitorsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_monitors_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `monitors`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListMonitorsPaginatorItems {
+        crate::paginator::ListMonitorsPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListMonitorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitorsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_monitors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
@@ -741,6 +1121,58 @@ impl ListDatasetsPaginatorItems {
     }
 }
 
+/// Flattened paginator for `ListExplainabilitiesPaginator`
+///
+/// This is created with [`.items()`](ListExplainabilitiesPaginator::items)
+pub struct ListExplainabilitiesPaginatorItems(ListExplainabilitiesPaginator);
+
+impl ListExplainabilitiesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ExplainabilitySummary,
+            aws_smithy_http::result::SdkError<crate::error::ListExplainabilitiesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_explainabilities_output_explainabilities(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListExplainabilityExportsPaginator`
+///
+/// This is created with [`.items()`](ListExplainabilityExportsPaginator::items)
+pub struct ListExplainabilityExportsPaginatorItems(ListExplainabilityExportsPaginator);
+
+impl ListExplainabilityExportsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ExplainabilityExportSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListExplainabilityExportsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_explainability_exports_output_explainability_exports(page).unwrap_or_default().into_iter())
+    }
+}
+
 /// Flattened paginator for `ListForecastExportJobsPaginator`
 ///
 /// This is created with [`.items()`](ListForecastExportJobsPaginator::items)
@@ -785,6 +1217,56 @@ impl ListForecastsPaginatorItems {
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
             crate::lens::lens_structure_crate_output_list_forecasts_output_forecasts(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListMonitorEvaluationsPaginator`
+///
+/// This is created with [`.items()`](ListMonitorEvaluationsPaginator::items)
+pub struct ListMonitorEvaluationsPaginatorItems(ListMonitorEvaluationsPaginator);
+
+impl ListMonitorEvaluationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::PredictorMonitorEvaluation,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitorEvaluationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_monitor_evaluations_output_predictor_monitor_evaluations(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListMonitorsPaginator`
+///
+/// This is created with [`.items()`](ListMonitorsPaginator::items)
+pub struct ListMonitorsPaginatorItems(ListMonitorsPaginator);
+
+impl ListMonitorsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::MonitorSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitorsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_monitors_output_monitors(page)
                 .unwrap_or_default()
                 .into_iter()
         })

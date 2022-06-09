@@ -437,7 +437,7 @@ impl Client {
     ///   - [`document(impl Into<String>)`](crate::client::fluent_builders::CreateJob::document) / [`set_document(Option<String>)`](crate::client::fluent_builders::CreateJob::set_document): <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateJob::set_description): <p>A short text description of the job.</p>
     ///   - [`presigned_url_config(PresignedUrlConfig)`](crate::client::fluent_builders::CreateJob::presigned_url_config) / [`set_presigned_url_config(Option<PresignedUrlConfig>)`](crate::client::fluent_builders::CreateJob::set_presigned_url_config): <p>Configuration information for pre-signed S3 URLs.</p>
-    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::CreateJob::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::CreateJob::set_target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::CreateJob::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::CreateJob::set_target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>   <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>  </note>
     ///   - [`job_executions_rollout_config(JobExecutionsRolloutConfig)`](crate::client::fluent_builders::CreateJob::job_executions_rollout_config) / [`set_job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::client::fluent_builders::CreateJob::set_job_executions_rollout_config): <p>Allows you to create a staged rollout of the job.</p>
     ///   - [`abort_config(AbortConfig)`](crate::client::fluent_builders::CreateJob::abort_config) / [`set_abort_config(Option<AbortConfig>)`](crate::client::fluent_builders::CreateJob::set_abort_config): <p>Allows you to create the criteria to abort a job.</p>
     ///   - [`timeout_config(TimeoutConfig)`](crate::client::fluent_builders::CreateJob::timeout_config) / [`set_timeout_config(Option<TimeoutConfig>)`](crate::client::fluent_builders::CreateJob::set_timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
@@ -445,7 +445,7 @@ impl Client {
     ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::CreateJob::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::CreateJob::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
     ///   - [`job_template_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJob::job_template_arn) / [`set_job_template_arn(Option<String>)`](crate::client::fluent_builders::CreateJob::set_job_template_arn): <p>The ARN of the job template used to create the job.</p>
     ///   - [`job_executions_retry_config(JobExecutionsRetryConfig)`](crate::client::fluent_builders::CreateJob::job_executions_retry_config) / [`set_job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::client::fluent_builders::CreateJob::set_job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
-    ///   - [`document_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::document_parameters) / [`set_document_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_document_parameters): <p>Parameters of a managed template that you can specify to create the job document.</p>
+    ///   - [`document_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::document_parameters) / [`set_document_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_document_parameters): <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>   <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>  </note>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CreateJobOutput::job_arn): <p>The job ARN.</p>
     ///   - [`job_id(Option<String>)`](crate::output::CreateJobOutput::job_id): <p>The unique identifier you assigned to this job.</p>
@@ -1377,7 +1377,7 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::DescribeManagedJobTemplateOutput::description): <p>The unique description of a managed template.</p>
     ///   - [`template_version(Option<String>)`](crate::output::DescribeManagedJobTemplateOutput::template_version): <p>The version for a managed template.</p>
     ///   - [`environments(Option<Vec<String>>)`](crate::output::DescribeManagedJobTemplateOutput::environments): <p>A list of environments that are supported with the managed job template.</p>
-    ///   - [`document_parameters(Option<Vec<DocumentParameter>>)`](crate::output::DescribeManagedJobTemplateOutput::document_parameters): <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
+    ///   - [`document_parameters(Option<Vec<DocumentParameter>>)`](crate::output::DescribeManagedJobTemplateOutput::document_parameters): <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>   <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>  </note>
     ///   - [`document(Option<String>)`](crate::output::DescribeManagedJobTemplateOutput::document): <p>The document schema for a managed job template.</p>
     /// - On failure, responds with [`SdkError<DescribeManagedJobTemplateError>`](crate::error::DescribeManagedJobTemplateError)
     pub fn describe_managed_job_template(&self) -> fluent_builders::DescribeManagedJobTemplate {
@@ -2163,7 +2163,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`status(JobStatus)`](crate::client::fluent_builders::ListJobs::status) / [`set_status(Option<JobStatus>)`](crate::client::fluent_builders::ListJobs::set_status): <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::ListJobs::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::ListJobs::set_target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::ListJobs::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::ListJobs::set_target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>   <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>  </note>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobs::set_max_results): <p>The maximum number of results to return per request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>The token to retrieve the next set of results.</p>
     ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::ListJobs::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::ListJobs::set_thing_group_name): <p>A filter that limits the returned jobs to those for the specified group.</p>
@@ -5760,12 +5760,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_presigned_url_config(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.inner = self.inner.target_selection(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -5883,7 +5887,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
         ///
-        /// <p>Parameters of a managed template that you can specify to create the job document.</p>
+        /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
+        /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+        /// </note>
         pub fn document_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5892,7 +5898,9 @@ pub mod fluent_builders {
             self.inner = self.inner.document_parameters(k.into(), v.into());
             self
         }
-        /// <p>Parameters of a managed template that you can specify to create the job document.</p>
+        /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
+        /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+        /// </note>
         pub fn set_document_parameters(
             mut self,
             input: std::option::Option<
@@ -15349,12 +15357,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.inner = self.inner.target_selection(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
+        /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+        /// </note>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,

@@ -1907,12 +1907,12 @@ pub mod put_resource_policy_input {
             self.resource_policy = input;
             self
         }
-        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
         pub fn block_public_policy(mut self, input: bool) -> Self {
             self.block_public_policy = Some(input);
             self
         }
-        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+        /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
@@ -4532,7 +4532,7 @@ pub struct PutResourcePolicyInput {
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
     pub block_public_policy: std::option::Option<bool>,
 }
 impl PutResourcePolicyInput {
@@ -4545,7 +4545,7 @@ impl PutResourcePolicyInput {
     pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal.</p>
     pub fn block_public_policy(&self) -> std::option::Option<bool> {
         self.block_public_policy
     }

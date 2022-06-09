@@ -267,6 +267,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateForecastExportJob 
     }
 }
 
+/// Operation shape for `CreateMonitor`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_monitor`](crate::client::Client::create_monitor).
+///
+/// See [`crate::client::fluent_builders::CreateMonitor`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateMonitor {
+    _private: (),
+}
+impl CreateMonitor {
+    /// Creates a new builder-style object to manufacture [`CreateMonitorInput`](crate::input::CreateMonitorInput)
+    pub fn builder() -> crate::input::create_monitor_input::Builder {
+        crate::input::create_monitor_input::Builder::default()
+    }
+    /// Creates a new `CreateMonitor` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateMonitor {
+    type Output =
+        std::result::Result<crate::output::CreateMonitorOutput, crate::error::CreateMonitorError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_monitor_error(response)
+        } else {
+            crate::operation_deser::parse_create_monitor_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreatePredictor`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -565,6 +597,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteForecastExportJob 
             crate::operation_deser::parse_delete_forecast_export_job_error(response)
         } else {
             crate::operation_deser::parse_delete_forecast_export_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteMonitor`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_monitor`](crate::client::Client::delete_monitor).
+///
+/// See [`crate::client::fluent_builders::DeleteMonitor`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteMonitor {
+    _private: (),
+}
+impl DeleteMonitor {
+    /// Creates a new builder-style object to manufacture [`DeleteMonitorInput`](crate::input::DeleteMonitorInput)
+    pub fn builder() -> crate::input::delete_monitor_input::Builder {
+        crate::input::delete_monitor_input::Builder::default()
+    }
+    /// Creates a new `DeleteMonitor` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteMonitor {
+    type Output =
+        std::result::Result<crate::output::DeleteMonitorOutput, crate::error::DeleteMonitorError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_monitor_error(response)
+        } else {
+            crate::operation_deser::parse_delete_monitor_response(response)
         }
     }
 }
@@ -943,6 +1007,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeForecastExportJo
     }
 }
 
+/// Operation shape for `DescribeMonitor`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_monitor`](crate::client::Client::describe_monitor).
+///
+/// See [`crate::client::fluent_builders::DescribeMonitor`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeMonitor {
+    _private: (),
+}
+impl DescribeMonitor {
+    /// Creates a new builder-style object to manufacture [`DescribeMonitorInput`](crate::input::DescribeMonitorInput)
+    pub fn builder() -> crate::input::describe_monitor_input::Builder {
+        crate::input::describe_monitor_input::Builder::default()
+    }
+    /// Creates a new `DescribeMonitor` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeMonitor {
+    type Output = std::result::Result<
+        crate::output::DescribeMonitorOutput,
+        crate::error::DescribeMonitorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_monitor_error(response)
+        } else {
+            crate::operation_deser::parse_describe_monitor_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribePredictor`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1279,6 +1377,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListForecasts {
     }
 }
 
+/// Operation shape for `ListMonitorEvaluations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_monitor_evaluations`](crate::client::Client::list_monitor_evaluations).
+///
+/// See [`crate::client::fluent_builders::ListMonitorEvaluations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMonitorEvaluations {
+    _private: (),
+}
+impl ListMonitorEvaluations {
+    /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsInput`](crate::input::ListMonitorEvaluationsInput)
+    pub fn builder() -> crate::input::list_monitor_evaluations_input::Builder {
+        crate::input::list_monitor_evaluations_input::Builder::default()
+    }
+    /// Creates a new `ListMonitorEvaluations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMonitorEvaluations {
+    type Output = std::result::Result<
+        crate::output::ListMonitorEvaluationsOutput,
+        crate::error::ListMonitorEvaluationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitor_evaluations_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitor_evaluations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMonitors`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_monitors`](crate::client::Client::list_monitors).
+///
+/// See [`crate::client::fluent_builders::ListMonitors`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMonitors {
+    _private: (),
+}
+impl ListMonitors {
+    /// Creates a new builder-style object to manufacture [`ListMonitorsInput`](crate::input::ListMonitorsInput)
+    pub fn builder() -> crate::input::list_monitors_input::Builder {
+        crate::input::list_monitors_input::Builder::default()
+    }
+    /// Creates a new `ListMonitors` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMonitors {
+    type Output =
+        std::result::Result<crate::output::ListMonitorsOutput, crate::error::ListMonitorsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitors_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitors_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListPredictorBacktestExportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1375,6 +1539,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ResumeResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`resume_resource`](crate::client::Client::resume_resource).
+///
+/// See [`crate::client::fluent_builders::ResumeResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ResumeResource {
+    _private: (),
+}
+impl ResumeResource {
+    /// Creates a new builder-style object to manufacture [`ResumeResourceInput`](crate::input::ResumeResourceInput)
+    pub fn builder() -> crate::input::resume_resource_input::Builder {
+        crate::input::resume_resource_input::Builder::default()
+    }
+    /// Creates a new `ResumeResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ResumeResource {
+    type Output =
+        std::result::Result<crate::output::ResumeResourceOutput, crate::error::ResumeResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_resume_resource_error(response)
+        } else {
+            crate::operation_deser::parse_resume_resource_response(response)
         }
     }
 }

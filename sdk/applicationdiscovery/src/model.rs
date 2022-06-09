@@ -95,7 +95,7 @@ impl AgentConfigurationStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTask {
-    /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS account.</p>
+    /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
     pub import_task_id: std::option::Option<std::string::String>,
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -125,7 +125,7 @@ pub struct ImportTask {
     pub errors_and_failed_entries_zip: std::option::Option<std::string::String>,
 }
 impl ImportTask {
-    /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS account.</p>
+    /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
     pub fn import_task_id(&self) -> std::option::Option<&str> {
         self.import_task_id.as_deref()
     }
@@ -229,12 +229,12 @@ pub mod import_task {
         pub(crate) errors_and_failed_entries_zip: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS account.</p>
+        /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
         pub fn import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.import_task_id = Some(input.into());
             self
         }
-        /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS account.</p>
+        /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
         pub fn set_import_task_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -521,19 +521,19 @@ impl AsRef<str> for ImportStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportFilter {
-    /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.</p>
+    /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.</p>
+    /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Supported condition: <code>EQUALS</code> </p>
     pub condition: std::option::Option<std::string::String>,
 }
 impl ExportFilter {
-    /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.</p>
+    /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.</p>
+    /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -562,12 +562,12 @@ pub mod export_filter {
         pub(crate) condition: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.</p>
+        /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.</p>
+        /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -576,14 +576,14 @@ pub mod export_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.</p>
+        /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.</p>
+        /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -995,7 +995,7 @@ impl AsRef<str> for OrderString {
 }
 
 /// <p>A filter that can use conditional operators.</p>
-/// <p>For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying Discovered Configuration Items</a> in the <i>AWS Application Discovery Service User Guide</i>. </p>
+/// <p>For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying Discovered Configuration Items</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
@@ -1156,6 +1156,174 @@ impl ConfigurationItemType {
 impl AsRef<str> for ConfigurationItemType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p> The inventory data for installed Migration Evaluator collectors. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomerMeCollectorInfo {
+    /// <p> The number of active Migration Evaluator collectors. </p>
+    pub active_me_collectors: i32,
+    /// <p> The number of healthy Migration Evaluator collectors. </p>
+    pub healthy_me_collectors: i32,
+    /// <p> The number of deny-listed Migration Evaluator collectors. </p>
+    pub deny_listed_me_collectors: i32,
+    /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
+    pub shutdown_me_collectors: i32,
+    /// <p> The number of unhealthy Migration Evaluator collectors. </p>
+    pub unhealthy_me_collectors: i32,
+    /// <p> The total number of Migration Evaluator collectors. </p>
+    pub total_me_collectors: i32,
+    /// <p> The number of unknown Migration Evaluator collectors. </p>
+    pub unknown_me_collectors: i32,
+}
+impl CustomerMeCollectorInfo {
+    /// <p> The number of active Migration Evaluator collectors. </p>
+    pub fn active_me_collectors(&self) -> i32 {
+        self.active_me_collectors
+    }
+    /// <p> The number of healthy Migration Evaluator collectors. </p>
+    pub fn healthy_me_collectors(&self) -> i32 {
+        self.healthy_me_collectors
+    }
+    /// <p> The number of deny-listed Migration Evaluator collectors. </p>
+    pub fn deny_listed_me_collectors(&self) -> i32 {
+        self.deny_listed_me_collectors
+    }
+    /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
+    pub fn shutdown_me_collectors(&self) -> i32 {
+        self.shutdown_me_collectors
+    }
+    /// <p> The number of unhealthy Migration Evaluator collectors. </p>
+    pub fn unhealthy_me_collectors(&self) -> i32 {
+        self.unhealthy_me_collectors
+    }
+    /// <p> The total number of Migration Evaluator collectors. </p>
+    pub fn total_me_collectors(&self) -> i32 {
+        self.total_me_collectors
+    }
+    /// <p> The number of unknown Migration Evaluator collectors. </p>
+    pub fn unknown_me_collectors(&self) -> i32 {
+        self.unknown_me_collectors
+    }
+}
+impl std::fmt::Debug for CustomerMeCollectorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomerMeCollectorInfo");
+        formatter.field("active_me_collectors", &self.active_me_collectors);
+        formatter.field("healthy_me_collectors", &self.healthy_me_collectors);
+        formatter.field("deny_listed_me_collectors", &self.deny_listed_me_collectors);
+        formatter.field("shutdown_me_collectors", &self.shutdown_me_collectors);
+        formatter.field("unhealthy_me_collectors", &self.unhealthy_me_collectors);
+        formatter.field("total_me_collectors", &self.total_me_collectors);
+        formatter.field("unknown_me_collectors", &self.unknown_me_collectors);
+        formatter.finish()
+    }
+}
+/// See [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+pub mod customer_me_collector_info {
+    /// A builder for [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active_me_collectors: std::option::Option<i32>,
+        pub(crate) healthy_me_collectors: std::option::Option<i32>,
+        pub(crate) deny_listed_me_collectors: std::option::Option<i32>,
+        pub(crate) shutdown_me_collectors: std::option::Option<i32>,
+        pub(crate) unhealthy_me_collectors: std::option::Option<i32>,
+        pub(crate) total_me_collectors: std::option::Option<i32>,
+        pub(crate) unknown_me_collectors: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The number of active Migration Evaluator collectors. </p>
+        pub fn active_me_collectors(mut self, input: i32) -> Self {
+            self.active_me_collectors = Some(input);
+            self
+        }
+        /// <p> The number of active Migration Evaluator collectors. </p>
+        pub fn set_active_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.active_me_collectors = input;
+            self
+        }
+        /// <p> The number of healthy Migration Evaluator collectors. </p>
+        pub fn healthy_me_collectors(mut self, input: i32) -> Self {
+            self.healthy_me_collectors = Some(input);
+            self
+        }
+        /// <p> The number of healthy Migration Evaluator collectors. </p>
+        pub fn set_healthy_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.healthy_me_collectors = input;
+            self
+        }
+        /// <p> The number of deny-listed Migration Evaluator collectors. </p>
+        pub fn deny_listed_me_collectors(mut self, input: i32) -> Self {
+            self.deny_listed_me_collectors = Some(input);
+            self
+        }
+        /// <p> The number of deny-listed Migration Evaluator collectors. </p>
+        pub fn set_deny_listed_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.deny_listed_me_collectors = input;
+            self
+        }
+        /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
+        pub fn shutdown_me_collectors(mut self, input: i32) -> Self {
+            self.shutdown_me_collectors = Some(input);
+            self
+        }
+        /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
+        pub fn set_shutdown_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.shutdown_me_collectors = input;
+            self
+        }
+        /// <p> The number of unhealthy Migration Evaluator collectors. </p>
+        pub fn unhealthy_me_collectors(mut self, input: i32) -> Self {
+            self.unhealthy_me_collectors = Some(input);
+            self
+        }
+        /// <p> The number of unhealthy Migration Evaluator collectors. </p>
+        pub fn set_unhealthy_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.unhealthy_me_collectors = input;
+            self
+        }
+        /// <p> The total number of Migration Evaluator collectors. </p>
+        pub fn total_me_collectors(mut self, input: i32) -> Self {
+            self.total_me_collectors = Some(input);
+            self
+        }
+        /// <p> The total number of Migration Evaluator collectors. </p>
+        pub fn set_total_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_me_collectors = input;
+            self
+        }
+        /// <p> The number of unknown Migration Evaluator collectors. </p>
+        pub fn unknown_me_collectors(mut self, input: i32) -> Self {
+            self.unknown_me_collectors = Some(input);
+            self
+        }
+        /// <p> The number of unknown Migration Evaluator collectors. </p>
+        pub fn set_unknown_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.unknown_me_collectors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+        pub fn build(self) -> crate::model::CustomerMeCollectorInfo {
+            crate::model::CustomerMeCollectorInfo {
+                active_me_collectors: self.active_me_collectors.unwrap_or_default(),
+                healthy_me_collectors: self.healthy_me_collectors.unwrap_or_default(),
+                deny_listed_me_collectors: self.deny_listed_me_collectors.unwrap_or_default(),
+                shutdown_me_collectors: self.shutdown_me_collectors.unwrap_or_default(),
+                unhealthy_me_collectors: self.unhealthy_me_collectors.unwrap_or_default(),
+                total_me_collectors: self.total_me_collectors.unwrap_or_default(),
+                unknown_me_collectors: self.unknown_me_collectors.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CustomerMeCollectorInfo {
+    /// Creates a new builder-style object to manufacture [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+    pub fn builder() -> crate::model::customer_me_collector_info::Builder {
+        crate::model::customer_me_collector_info::Builder::default()
     }
 }
 
@@ -2151,12 +2319,21 @@ pub struct ContinuousExportDescription {
     pub status: std::option::Option<crate::model::ContinuousExportStatus>,
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
     /// <ul>
-    /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your AWS administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up AWS Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
+    /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your Amazon Web Services administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up Amazon Web Services Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
     /// <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of streams or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p> </li>
     /// <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the Application Discovery Service User Guide.</p> </li>
     /// <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is missing one or more of the Kinesis data delivery streams.</p> </li>
-    /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact AWS Support.</p> </li>
-    /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of Amazon S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
+    /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact Amazon Web Services Support.</p> </li>
+    /// <li> <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation permissions to start continuous export. For more information, see <a href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html"> Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer Guide</i>. </p> <p>You can use one of the following two ways to resolve this issue.</p>
+    /// <ol>
+    /// <li> <p>If you don’t want to use the Lake Formation permission model, you can change the default Data Catalog settings to use only Amazon Web Services Identity and Access Management (IAM) access control for new databases. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+    /// <li> <p>You can give the service-linked IAM roles AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html"> Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>. </p>
+    /// <ol>
+    /// <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport - Grant database creator permissions, which gives the role database creation ability and implicit permissions for any created tables. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html"> Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+    /// <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant describe permissions for all tables in the database.</p> </li>
+    /// </ol> </li>
+    /// </ol> </li>
+    /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
     pub status_detail: std::option::Option<std::string::String>,
@@ -2195,12 +2372,21 @@ impl ContinuousExportDescription {
     }
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
     /// <ul>
-    /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your AWS administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up AWS Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
+    /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your Amazon Web Services administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up Amazon Web Services Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
     /// <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of streams or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p> </li>
     /// <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the Application Discovery Service User Guide.</p> </li>
     /// <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is missing one or more of the Kinesis data delivery streams.</p> </li>
-    /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact AWS Support.</p> </li>
-    /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of Amazon S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
+    /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact Amazon Web Services Support.</p> </li>
+    /// <li> <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation permissions to start continuous export. For more information, see <a href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html"> Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer Guide</i>. </p> <p>You can use one of the following two ways to resolve this issue.</p>
+    /// <ol>
+    /// <li> <p>If you don’t want to use the Lake Formation permission model, you can change the default Data Catalog settings to use only Amazon Web Services Identity and Access Management (IAM) access control for new databases. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+    /// <li> <p>You can give the service-linked IAM roles AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html"> Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>. </p>
+    /// <ol>
+    /// <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport - Grant database creator permissions, which gives the role database creation ability and implicit permissions for any created tables. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html"> Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+    /// <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant describe permissions for all tables in the database.</p> </li>
+    /// </ol> </li>
+    /// </ol> </li>
+    /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
     pub fn status_detail(&self) -> std::option::Option<&str> {
@@ -2308,12 +2494,21 @@ pub mod continuous_export_description {
         }
         /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
         /// <ul>
-        /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your AWS administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up AWS Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
+        /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your Amazon Web Services administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up Amazon Web Services Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
         /// <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of streams or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p> </li>
         /// <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the Application Discovery Service User Guide.</p> </li>
         /// <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is missing one or more of the Kinesis data delivery streams.</p> </li>
-        /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact AWS Support.</p> </li>
-        /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of Amazon S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
+        /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact Amazon Web Services Support.</p> </li>
+        /// <li> <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation permissions to start continuous export. For more information, see <a href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html"> Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer Guide</i>. </p> <p>You can use one of the following two ways to resolve this issue.</p>
+        /// <ol>
+        /// <li> <p>If you don’t want to use the Lake Formation permission model, you can change the default Data Catalog settings to use only Amazon Web Services Identity and Access Management (IAM) access control for new databases. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+        /// <li> <p>You can give the service-linked IAM roles AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html"> Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>. </p>
+        /// <ol>
+        /// <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport - Grant database creator permissions, which gives the role database creation ability and implicit permissions for any created tables. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html"> Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+        /// <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant describe permissions for all tables in the database.</p> </li>
+        /// </ol> </li>
+        /// </ol> </li>
+        /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
         /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
         /// </ul>
         pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2322,12 +2517,21 @@ pub mod continuous_export_description {
         }
         /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
         /// <ul>
-        /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your AWS administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up AWS Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
+        /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your Amazon Web Services administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up Amazon Web Services Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
         /// <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of streams or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p> </li>
         /// <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the Application Discovery Service User Guide.</p> </li>
         /// <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is missing one or more of the Kinesis data delivery streams.</p> </li>
-        /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact AWS Support.</p> </li>
-        /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of Amazon S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
+        /// <li> <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an internal failure. Try again later. If this problem persists, contact Amazon Web Services Support.</p> </li>
+        /// <li> <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation permissions to start continuous export. For more information, see <a href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html"> Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer Guide</i>. </p> <p>You can use one of the following two ways to resolve this issue.</p>
+        /// <ol>
+        /// <li> <p>If you don’t want to use the Lake Formation permission model, you can change the default Data Catalog settings to use only Amazon Web Services Identity and Access Management (IAM) access control for new databases. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+        /// <li> <p>You can give the service-linked IAM roles AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html"> Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>. </p>
+        /// <ol>
+        /// <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport - Grant database creator permissions, which gives the role database creation ability and implicit permissions for any created tables. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html"> Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer Guide</i>.</p> </li>
+        /// <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant describe permissions for all tables in the database.</p> </li>
+        /// </ol> </li>
+        /// </ol> </li>
+        /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
         /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
         /// </ul>
         pub fn set_status_detail(
@@ -2522,7 +2726,7 @@ impl AsRef<str> for ContinuousExportStatus {
     }
 }
 
-/// <p>Information about agents or connectors associated with the user’s AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.</p>
+/// <p>Information about agents or connectors associated with the user’s Amazon Web Services account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentInfo {
@@ -2919,7 +3123,9 @@ impl AgentNetworkInfo {
     }
 }
 
-/// <p>Metadata that help you categorize IT assets.</p>
+/// <p>Metadata that help you categorize IT assets.</p> <important>
+/// <p>Do not store sensitive information (like personal data) in tags.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {

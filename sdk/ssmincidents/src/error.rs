@@ -3542,6 +3542,8 @@ pub struct UpdateReplicationSetError {
 pub enum UpdateReplicationSetErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource causes an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource which doesn't exist. </p>
@@ -3557,6 +3559,7 @@ impl std::fmt::Display for UpdateReplicationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateReplicationSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateReplicationSetErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateReplicationSetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateReplicationSetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateReplicationSetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -3622,6 +3625,13 @@ impl UpdateReplicationSetError {
             UpdateReplicationSetErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReplicationSetErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -3655,6 +3665,7 @@ impl std::error::Error for UpdateReplicationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateReplicationSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateReplicationSetErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateReplicationSetErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateReplicationSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateReplicationSetErrorKind::ThrottlingException(_inner) => Some(_inner),

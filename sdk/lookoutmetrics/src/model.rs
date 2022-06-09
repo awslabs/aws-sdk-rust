@@ -140,43 +140,49 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>Contains information about source data used to generate a metric.</p>
+/// <p>Contains information about source data used to generate metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricSource {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
     pub s3_source_config: std::option::Option<crate::model::S3SourceConfig>,
-    /// <p>An object containing information about the AppFlow configuration.</p>
+    /// <p>Details about an AppFlow datasource.</p>
     pub app_flow_config: std::option::Option<crate::model::AppFlowConfig>,
-    /// <p>An object containing information about the Amazon CloudWatch monitoring configuration.</p>
+    /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
     pub cloud_watch_config: std::option::Option<crate::model::CloudWatchConfig>,
-    /// <p>An object containing information about the Amazon Relational Database Service (RDS) configuration.</p>
+    /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
     pub rds_source_config: std::option::Option<crate::model::RdsSourceConfig>,
-    /// <p>An object containing information about the Amazon Redshift database configuration.</p>
+    /// <p>Details about an Amazon Redshift database datasource.</p>
     pub redshift_source_config: std::option::Option<crate::model::RedshiftSourceConfig>,
+    /// <p>Details about an Amazon Athena datasource.</p>
+    pub athena_source_config: std::option::Option<crate::model::AthenaSourceConfig>,
 }
 impl MetricSource {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
     pub fn s3_source_config(&self) -> std::option::Option<&crate::model::S3SourceConfig> {
         self.s3_source_config.as_ref()
     }
-    /// <p>An object containing information about the AppFlow configuration.</p>
+    /// <p>Details about an AppFlow datasource.</p>
     pub fn app_flow_config(&self) -> std::option::Option<&crate::model::AppFlowConfig> {
         self.app_flow_config.as_ref()
     }
-    /// <p>An object containing information about the Amazon CloudWatch monitoring configuration.</p>
+    /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
     pub fn cloud_watch_config(&self) -> std::option::Option<&crate::model::CloudWatchConfig> {
         self.cloud_watch_config.as_ref()
     }
-    /// <p>An object containing information about the Amazon Relational Database Service (RDS) configuration.</p>
+    /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
     pub fn rds_source_config(&self) -> std::option::Option<&crate::model::RdsSourceConfig> {
         self.rds_source_config.as_ref()
     }
-    /// <p>An object containing information about the Amazon Redshift database configuration.</p>
+    /// <p>Details about an Amazon Redshift database datasource.</p>
     pub fn redshift_source_config(
         &self,
     ) -> std::option::Option<&crate::model::RedshiftSourceConfig> {
         self.redshift_source_config.as_ref()
+    }
+    /// <p>Details about an Amazon Athena datasource.</p>
+    pub fn athena_source_config(&self) -> std::option::Option<&crate::model::AthenaSourceConfig> {
+        self.athena_source_config.as_ref()
     }
 }
 impl std::fmt::Debug for MetricSource {
@@ -187,6 +193,7 @@ impl std::fmt::Debug for MetricSource {
         formatter.field("cloud_watch_config", &self.cloud_watch_config);
         formatter.field("rds_source_config", &self.rds_source_config);
         formatter.field("redshift_source_config", &self.redshift_source_config);
+        formatter.field("athena_source_config", &self.athena_source_config);
         formatter.finish()
     }
 }
@@ -201,6 +208,7 @@ pub mod metric_source {
         pub(crate) cloud_watch_config: std::option::Option<crate::model::CloudWatchConfig>,
         pub(crate) rds_source_config: std::option::Option<crate::model::RdsSourceConfig>,
         pub(crate) redshift_source_config: std::option::Option<crate::model::RedshiftSourceConfig>,
+        pub(crate) athena_source_config: std::option::Option<crate::model::AthenaSourceConfig>,
     }
     impl Builder {
         /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
@@ -216,12 +224,12 @@ pub mod metric_source {
             self.s3_source_config = input;
             self
         }
-        /// <p>An object containing information about the AppFlow configuration.</p>
+        /// <p>Details about an AppFlow datasource.</p>
         pub fn app_flow_config(mut self, input: crate::model::AppFlowConfig) -> Self {
             self.app_flow_config = Some(input);
             self
         }
-        /// <p>An object containing information about the AppFlow configuration.</p>
+        /// <p>Details about an AppFlow datasource.</p>
         pub fn set_app_flow_config(
             mut self,
             input: std::option::Option<crate::model::AppFlowConfig>,
@@ -229,12 +237,12 @@ pub mod metric_source {
             self.app_flow_config = input;
             self
         }
-        /// <p>An object containing information about the Amazon CloudWatch monitoring configuration.</p>
+        /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
         pub fn cloud_watch_config(mut self, input: crate::model::CloudWatchConfig) -> Self {
             self.cloud_watch_config = Some(input);
             self
         }
-        /// <p>An object containing information about the Amazon CloudWatch monitoring configuration.</p>
+        /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
         pub fn set_cloud_watch_config(
             mut self,
             input: std::option::Option<crate::model::CloudWatchConfig>,
@@ -242,12 +250,12 @@ pub mod metric_source {
             self.cloud_watch_config = input;
             self
         }
-        /// <p>An object containing information about the Amazon Relational Database Service (RDS) configuration.</p>
+        /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
         pub fn rds_source_config(mut self, input: crate::model::RdsSourceConfig) -> Self {
             self.rds_source_config = Some(input);
             self
         }
-        /// <p>An object containing information about the Amazon Relational Database Service (RDS) configuration.</p>
+        /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
         pub fn set_rds_source_config(
             mut self,
             input: std::option::Option<crate::model::RdsSourceConfig>,
@@ -255,17 +263,30 @@ pub mod metric_source {
             self.rds_source_config = input;
             self
         }
-        /// <p>An object containing information about the Amazon Redshift database configuration.</p>
+        /// <p>Details about an Amazon Redshift database datasource.</p>
         pub fn redshift_source_config(mut self, input: crate::model::RedshiftSourceConfig) -> Self {
             self.redshift_source_config = Some(input);
             self
         }
-        /// <p>An object containing information about the Amazon Redshift database configuration.</p>
+        /// <p>Details about an Amazon Redshift database datasource.</p>
         pub fn set_redshift_source_config(
             mut self,
             input: std::option::Option<crate::model::RedshiftSourceConfig>,
         ) -> Self {
             self.redshift_source_config = input;
+            self
+        }
+        /// <p>Details about an Amazon Athena datasource.</p>
+        pub fn athena_source_config(mut self, input: crate::model::AthenaSourceConfig) -> Self {
+            self.athena_source_config = Some(input);
+            self
+        }
+        /// <p>Details about an Amazon Athena datasource.</p>
+        pub fn set_athena_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AthenaSourceConfig>,
+        ) -> Self {
+            self.athena_source_config = input;
             self
         }
         /// Consumes the builder and constructs a [`MetricSource`](crate::model::MetricSource)
@@ -276,6 +297,7 @@ pub mod metric_source {
                 cloud_watch_config: self.cloud_watch_config,
                 rds_source_config: self.rds_source_config,
                 redshift_source_config: self.redshift_source_config,
+                athena_source_config: self.athena_source_config,
             }
         }
     }
@@ -284,6 +306,246 @@ impl MetricSource {
     /// Creates a new builder-style object to manufacture [`MetricSource`](crate::model::MetricSource)
     pub fn builder() -> crate::model::metric_source::Builder {
         crate::model::metric_source::Builder::default()
+    }
+}
+
+/// <p>Details about an Amazon Athena datasource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AthenaSourceConfig {
+    /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The database's name.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The database's data catalog.</p>
+    pub data_catalog: std::option::Option<std::string::String>,
+    /// <p>The database's table name.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>The database's work group name.</p>
+    pub work_group_name: std::option::Option<std::string::String>,
+    /// <p>The database's results path.</p>
+    pub s3_results_path: std::option::Option<std::string::String>,
+    /// <p>Settings for backtest mode.</p>
+    pub back_test_configuration: std::option::Option<crate::model::BackTestConfiguration>,
+}
+impl AthenaSourceConfig {
+    /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The database's name.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The database's data catalog.</p>
+    pub fn data_catalog(&self) -> std::option::Option<&str> {
+        self.data_catalog.as_deref()
+    }
+    /// <p>The database's table name.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The database's work group name.</p>
+    pub fn work_group_name(&self) -> std::option::Option<&str> {
+        self.work_group_name.as_deref()
+    }
+    /// <p>The database's results path.</p>
+    pub fn s3_results_path(&self) -> std::option::Option<&str> {
+        self.s3_results_path.as_deref()
+    }
+    /// <p>Settings for backtest mode.</p>
+    pub fn back_test_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BackTestConfiguration> {
+        self.back_test_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for AthenaSourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AthenaSourceConfig");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("data_catalog", &self.data_catalog);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("work_group_name", &self.work_group_name);
+        formatter.field("s3_results_path", &self.s3_results_path);
+        formatter.field("back_test_configuration", &self.back_test_configuration);
+        formatter.finish()
+    }
+}
+/// See [`AthenaSourceConfig`](crate::model::AthenaSourceConfig)
+pub mod athena_source_config {
+    /// A builder for [`AthenaSourceConfig`](crate::model::AthenaSourceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) data_catalog: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) work_group_name: std::option::Option<std::string::String>,
+        pub(crate) s3_results_path: std::option::Option<std::string::String>,
+        pub(crate) back_test_configuration:
+            std::option::Option<crate::model::BackTestConfiguration>,
+    }
+    impl Builder {
+        /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The database's name.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The database's name.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The database's data catalog.</p>
+        pub fn data_catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_catalog = Some(input.into());
+            self
+        }
+        /// <p>The database's data catalog.</p>
+        pub fn set_data_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_catalog = input;
+            self
+        }
+        /// <p>The database's table name.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>The database's table name.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>The database's work group name.</p>
+        pub fn work_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group_name = Some(input.into());
+            self
+        }
+        /// <p>The database's work group name.</p>
+        pub fn set_work_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.work_group_name = input;
+            self
+        }
+        /// <p>The database's results path.</p>
+        pub fn s3_results_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_results_path = Some(input.into());
+            self
+        }
+        /// <p>The database's results path.</p>
+        pub fn set_s3_results_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_results_path = input;
+            self
+        }
+        /// <p>Settings for backtest mode.</p>
+        pub fn back_test_configuration(
+            mut self,
+            input: crate::model::BackTestConfiguration,
+        ) -> Self {
+            self.back_test_configuration = Some(input);
+            self
+        }
+        /// <p>Settings for backtest mode.</p>
+        pub fn set_back_test_configuration(
+            mut self,
+            input: std::option::Option<crate::model::BackTestConfiguration>,
+        ) -> Self {
+            self.back_test_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AthenaSourceConfig`](crate::model::AthenaSourceConfig)
+        pub fn build(self) -> crate::model::AthenaSourceConfig {
+            crate::model::AthenaSourceConfig {
+                role_arn: self.role_arn,
+                database_name: self.database_name,
+                data_catalog: self.data_catalog,
+                table_name: self.table_name,
+                work_group_name: self.work_group_name,
+                s3_results_path: self.s3_results_path,
+                back_test_configuration: self.back_test_configuration,
+            }
+        }
+    }
+}
+impl AthenaSourceConfig {
+    /// Creates a new builder-style object to manufacture [`AthenaSourceConfig`](crate::model::AthenaSourceConfig)
+    pub fn builder() -> crate::model::athena_source_config::Builder {
+        crate::model::athena_source_config::Builder::default()
+    }
+}
+
+/// <p>Settings for backtest mode.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BackTestConfiguration {
+    /// <p>Run a backtest instead of monitoring new data.</p>
+    pub run_back_test_mode: std::option::Option<bool>,
+}
+impl BackTestConfiguration {
+    /// <p>Run a backtest instead of monitoring new data.</p>
+    pub fn run_back_test_mode(&self) -> std::option::Option<bool> {
+        self.run_back_test_mode
+    }
+}
+impl std::fmt::Debug for BackTestConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BackTestConfiguration");
+        formatter.field("run_back_test_mode", &self.run_back_test_mode);
+        formatter.finish()
+    }
+}
+/// See [`BackTestConfiguration`](crate::model::BackTestConfiguration)
+pub mod back_test_configuration {
+    /// A builder for [`BackTestConfiguration`](crate::model::BackTestConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_back_test_mode: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Run a backtest instead of monitoring new data.</p>
+        pub fn run_back_test_mode(mut self, input: bool) -> Self {
+            self.run_back_test_mode = Some(input);
+            self
+        }
+        /// <p>Run a backtest instead of monitoring new data.</p>
+        pub fn set_run_back_test_mode(mut self, input: std::option::Option<bool>) -> Self {
+            self.run_back_test_mode = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BackTestConfiguration`](crate::model::BackTestConfiguration)
+        pub fn build(self) -> crate::model::BackTestConfiguration {
+            crate::model::BackTestConfiguration {
+                run_back_test_mode: self.run_back_test_mode,
+            }
+        }
+    }
+}
+impl BackTestConfiguration {
+    /// Creates a new builder-style object to manufacture [`BackTestConfiguration`](crate::model::BackTestConfiguration)
+    pub fn builder() -> crate::model::back_test_configuration::Builder {
+        crate::model::back_test_configuration::Builder::default()
     }
 }
 
@@ -6036,6 +6298,8 @@ pub struct SnsConfiguration {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the target SNS topic.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
+    /// <p>The format of the SNS topic.</p>
+    pub sns_format: std::option::Option<crate::model::SnsFormat>,
 }
 impl SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
@@ -6046,12 +6310,17 @@ impl SnsConfiguration {
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
+    /// <p>The format of the SNS topic.</p>
+    pub fn sns_format(&self) -> std::option::Option<&crate::model::SnsFormat> {
+        self.sns_format.as_ref()
+    }
 }
 impl std::fmt::Debug for SnsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnsConfiguration");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("sns_topic_arn", &self.sns_topic_arn);
+        formatter.field("sns_format", &self.sns_format);
         formatter.finish()
     }
 }
@@ -6063,6 +6332,7 @@ pub mod sns_configuration {
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+        pub(crate) sns_format: std::option::Option<crate::model::SnsFormat>,
     }
     impl Builder {
         /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
@@ -6088,11 +6358,25 @@ pub mod sns_configuration {
             self.sns_topic_arn = input;
             self
         }
+        /// <p>The format of the SNS topic.</p>
+        pub fn sns_format(mut self, input: crate::model::SnsFormat) -> Self {
+            self.sns_format = Some(input);
+            self
+        }
+        /// <p>The format of the SNS topic.</p>
+        pub fn set_sns_format(
+            mut self,
+            input: std::option::Option<crate::model::SnsFormat>,
+        ) -> Self {
+            self.sns_format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SnsConfiguration`](crate::model::SnsConfiguration)
         pub fn build(self) -> crate::model::SnsConfiguration {
             crate::model::SnsConfiguration {
                 role_arn: self.role_arn,
                 sns_topic_arn: self.sns_topic_arn,
+                sns_format: self.sns_format,
             }
         }
     }
@@ -6101,5 +6385,64 @@ impl SnsConfiguration {
     /// Creates a new builder-style object to manufacture [`SnsConfiguration`](crate::model::SnsConfiguration)
     pub fn builder() -> crate::model::sns_configuration::Builder {
         crate::model::sns_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnsFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
+    LongText,
+    #[allow(missing_docs)] // documentation missing in model
+    ShortText,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnsFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "JSON" => SnsFormat::Json,
+            "LONG_TEXT" => SnsFormat::LongText,
+            "SHORT_TEXT" => SnsFormat::ShortText,
+            other => SnsFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnsFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnsFormat::from(s))
+    }
+}
+impl SnsFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnsFormat::Json => "JSON",
+            SnsFormat::LongText => "LONG_TEXT",
+            SnsFormat::ShortText => "SHORT_TEXT",
+            SnsFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JSON", "LONG_TEXT", "SHORT_TEXT"]
+    }
+}
+impl AsRef<str> for SnsFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }

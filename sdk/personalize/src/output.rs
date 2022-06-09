@@ -1554,7 +1554,7 @@ impl ListBatchInferenceJobsOutput {
 pub struct GetSolutionMetricsOutput {
     /// <p>The same solution version ARN as specified in the request.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>The metrics for the solution version.</p>
+    /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
     pub metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
 impl GetSolutionMetricsOutput {
@@ -1562,7 +1562,7 @@ impl GetSolutionMetricsOutput {
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>The metrics for the solution version.</p>
+    /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
     pub fn metrics(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
@@ -1605,14 +1605,14 @@ pub mod get_solution_metrics_output {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>The metrics for the solution version.</p>
+        /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
         pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
             hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
-        /// <p>The metrics for the solution version.</p>
+        /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,

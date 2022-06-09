@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p></p>
     ConflictErrorException(crate::error::ConflictErrorException),

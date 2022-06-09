@@ -3561,6 +3561,20 @@ pub fn parse_create_response_headers_policy_error(
                                                     }
             tmp
         })},
+        "TooLongCSPInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_long_csp_in_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_long_csp_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "TooManyCustomHeadersInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -12516,6 +12530,20 @@ pub fn parse_update_response_headers_policy_error(
                     #[allow(unused_mut)]let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_response_headers_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooLongCSPInResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_long_csp_in_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_long_csp_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
                 }
             ;

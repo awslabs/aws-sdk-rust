@@ -383,11 +383,11 @@ impl UpdateResourceServerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityProviderOutput {
-    /// <p>The identity provider object.</p>
+    /// <p>The IdP object.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl UpdateIdentityProviderOutput {
-    /// <p>The identity provider object.</p>
+    /// <p>The IdP object.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -408,12 +408,12 @@ pub mod update_identity_provider_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The identity provider object.</p>
+        /// <p>The IdP object.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The identity provider object.</p>
+        /// <p>The IdP object.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -1371,7 +1371,7 @@ impl ResendConfirmationCodeOutput {
 pub struct ListUsersInGroupOutput {
     /// <p>The users returned in the request to list users.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::UserType>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersInGroupOutput {
@@ -1379,7 +1379,7 @@ impl ListUsersInGroupOutput {
     pub fn users(&self) -> std::option::Option<&[crate::model::UserType]> {
         self.users.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1421,12 +1421,12 @@ pub mod list_users_in_group_output {
             self.users = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1947,13 +1947,13 @@ impl ListResourceServersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersOutput {
-    /// <p>A list of identity provider objects.</p>
+    /// <p>A list of IdP objects.</p>
     pub providers: std::option::Option<std::vec::Vec<crate::model::ProviderDescription>>,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProvidersOutput {
-    /// <p>A list of identity provider objects.</p>
+    /// <p>A list of IdP objects.</p>
     pub fn providers(&self) -> std::option::Option<&[crate::model::ProviderDescription]> {
         self.providers.as_deref()
     }
@@ -1984,14 +1984,14 @@ pub mod list_identity_providers_output {
         ///
         /// To override the contents of this collection use [`set_providers`](Self::set_providers).
         ///
-        /// <p>A list of identity provider objects.</p>
+        /// <p>A list of IdP objects.</p>
         pub fn providers(mut self, input: crate::model::ProviderDescription) -> Self {
             let mut v = self.providers.unwrap_or_default();
             v.push(input);
             self.providers = Some(v);
             self
         }
-        /// <p>A list of identity provider objects.</p>
+        /// <p>A list of IdP objects.</p>
         pub fn set_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProviderDescription>>,
@@ -2206,7 +2206,9 @@ pub struct InitiateAuthOutput {
     /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
     /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. </p> <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
@@ -2230,7 +2232,9 @@ impl InitiateAuthOutput {
     /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
     /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. </p> <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
@@ -2290,7 +2294,9 @@ pub mod initiate_auth_output {
         /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
         /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. </p> <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
@@ -2307,7 +2313,9 @@ pub mod initiate_auth_output {
         /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
         /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. </p> <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn set_challenge_name(
@@ -2891,11 +2899,11 @@ impl GetSigningCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityProviderByIdentifierOutput {
-    /// <p>The identity provider object.</p>
+    /// <p>The IdP object.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl GetIdentityProviderByIdentifierOutput {
-    /// <p>The identity provider object.</p>
+    /// <p>The IdP object.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -2916,12 +2924,12 @@ pub mod get_identity_provider_by_identifier_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The identity provider object.</p>
+        /// <p>The IdP object.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The identity provider object.</p>
+        /// <p>The IdP object.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -3132,7 +3140,7 @@ impl GetCsvHeaderOutput {
     }
 }
 
-/// <p>Respresents the response from the server regarding the request to reset a password.</p>
+/// <p>Represents the response from the server regarding the request to reset a password.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForgotPasswordOutput {
@@ -3571,11 +3579,11 @@ impl DescribeResourceServerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderOutput {
-    /// <p>The identity provider that was deleted.</p>
+    /// <p>The IdP that was deleted.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl DescribeIdentityProviderOutput {
-    /// <p>The identity provider that was deleted.</p>
+    /// <p>The IdP that was deleted.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -3596,12 +3604,12 @@ pub mod describe_identity_provider_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The identity provider that was deleted.</p>
+        /// <p>The IdP that was deleted.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The identity provider that was deleted.</p>
+        /// <p>The IdP that was deleted.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -4153,11 +4161,11 @@ impl CreateResourceServerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIdentityProviderOutput {
-    /// <p>The newly created identity provider object.</p>
+    /// <p>The newly created IdP object.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl CreateIdentityProviderOutput {
-    /// <p>The newly created identity provider object.</p>
+    /// <p>The newly created IdP object.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -4178,12 +4186,12 @@ pub mod create_identity_provider_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The newly created identity provider object.</p>
+        /// <p>The newly created IdP object.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The newly created identity provider object.</p>
+        /// <p>The newly created IdP object.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -5185,7 +5193,9 @@ pub struct AdminInitiateAuthOutput {
     /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
@@ -5210,7 +5220,9 @@ impl AdminInitiateAuthOutput {
     /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
-    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p> <note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
@@ -5271,7 +5283,9 @@ pub mod admin_initiate_auth_output {
         /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
         /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
@@ -5288,7 +5302,9 @@ pub mod admin_initiate_auth_output {
         /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
         /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
-        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p> <note>
+        /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+        /// </note> </li>
         /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn set_challenge_name(

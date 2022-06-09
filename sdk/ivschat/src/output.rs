@@ -13,7 +13,7 @@ pub struct UpdateRoomOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
     pub maximum_message_rate_per_second: i32,
     /// <p>Maximum number of characters in a single message, from the request.</p>
     pub maximum_message_length: i32,
@@ -44,7 +44,7 @@ impl UpdateRoomOutput {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
     pub fn maximum_message_rate_per_second(&self) -> i32 {
         self.maximum_message_rate_per_second
     }
@@ -159,12 +159,12 @@ pub mod update_room_output {
             self.update_time = input;
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
         pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
             self.maximum_message_rate_per_second = Some(input);
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
         pub fn set_maximum_message_rate_per_second(
             mut self,
             input: std::option::Option<i32>,
@@ -526,7 +526,7 @@ pub struct GetRoomOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub maximum_message_rate_per_second: i32,
     /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub maximum_message_length: i32,
@@ -557,7 +557,7 @@ impl GetRoomOutput {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(&self) -> i32 {
         self.maximum_message_rate_per_second
     }
@@ -672,12 +672,12 @@ pub mod get_room_output {
             self.update_time = input;
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
         pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
             self.maximum_message_rate_per_second = Some(input);
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
         pub fn set_maximum_message_rate_per_second(
             mut self,
             input: std::option::Option<i32>,
@@ -884,7 +884,7 @@ pub struct CreateRoomOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
     pub maximum_message_rate_per_second: i32,
     /// <p>Maximum number of characters in a single message, from the request.</p>
     pub maximum_message_length: i32,
@@ -915,7 +915,7 @@ impl CreateRoomOutput {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
     pub fn maximum_message_rate_per_second(&self) -> i32 {
         self.maximum_message_rate_per_second
     }
@@ -1030,12 +1030,12 @@ pub mod create_room_output {
             self.update_time = input;
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
         pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
             self.maximum_message_rate_per_second = Some(input);
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
         pub fn set_maximum_message_rate_per_second(
             mut self,
             input: std::option::Option<i32>,

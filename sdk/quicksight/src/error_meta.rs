@@ -3624,6 +3624,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePublicSharingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdatePublicSharingSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdatePublicSharingSettingsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

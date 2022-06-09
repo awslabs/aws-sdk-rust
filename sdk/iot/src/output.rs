@@ -11430,7 +11430,9 @@ pub struct DescribeManagedJobTemplateOutput {
     pub template_version: std::option::Option<std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// </note>
     pub document_parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
     /// <p>The document schema for a managed job template.</p>
     pub document: std::option::Option<std::string::String>,
@@ -11456,7 +11458,9 @@ impl DescribeManagedJobTemplateOutput {
     pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
         self.environments.as_deref()
     }
-    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// </note>
     pub fn document_parameters(&self) -> std::option::Option<&[crate::model::DocumentParameter]> {
         self.document_parameters.as_deref()
     }
@@ -11563,14 +11567,18 @@ pub mod describe_managed_job_template_output {
         ///
         /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
         ///
-        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
+        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
+        /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+        /// </note>
         pub fn document_parameters(mut self, input: crate::model::DocumentParameter) -> Self {
             let mut v = self.document_parameters.unwrap_or_default();
             v.push(input);
             self.document_parameters = Some(v);
             self
         }
-        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
+        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
+        /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+        /// </note>
         pub fn set_document_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,

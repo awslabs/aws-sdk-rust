@@ -412,7 +412,7 @@ pub enum CreateChangeSetErrorKind {
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -528,7 +528,7 @@ pub enum CreateStackErrorKind {
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
@@ -647,7 +647,7 @@ pub enum CreateStackInstancesErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
@@ -800,7 +800,7 @@ pub enum CreateStackSetErrorKind {
     /// <p>The specified resource exists, but has been changed.</p>
     CreatedButModifiedException(crate::error::CreatedButModifiedException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified name is already in use.</p>
     NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
@@ -3652,7 +3652,7 @@ pub enum ImportStacksToStackSetErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
@@ -7400,7 +7400,7 @@ impl StackNotFoundException {
 }
 
 /// <p>The quota for the resource has already been reached.</p>
-/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

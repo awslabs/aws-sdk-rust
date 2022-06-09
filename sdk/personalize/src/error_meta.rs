@@ -353,6 +353,9 @@ where
                 crate::error::CreateRecommenderErrorKind::ResourceAlreadyExistsException(inner) => {
                     Error::ResourceAlreadyExistsException(inner)
                 }
+                crate::error::CreateRecommenderErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
                 crate::error::CreateRecommenderErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

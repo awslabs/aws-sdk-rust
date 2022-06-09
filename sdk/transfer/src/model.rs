@@ -839,6 +839,12 @@ pub struct ProtocolDetails {
     /// </note> </li>
     /// </ul>
     pub tls_session_resumption_mode: std::option::Option<crate::model::TlsSessionResumptionMode>,
+    /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket.</p>
+    /// <p>Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can result in errors even when the file is otherwise successfully uploaded.</p>
+    /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> <note>
+    /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.</p>
+    /// </note>
+    pub set_stat_option: std::option::Option<crate::model::SetStatOption>,
 }
 impl ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. For example: </p>
@@ -862,6 +868,14 @@ impl ProtocolDetails {
     ) -> std::option::Option<&crate::model::TlsSessionResumptionMode> {
         self.tls_session_resumption_mode.as_ref()
     }
+    /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket.</p>
+    /// <p>Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can result in errors even when the file is otherwise successfully uploaded.</p>
+    /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> <note>
+    /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.</p>
+    /// </note>
+    pub fn set_stat_option(&self) -> std::option::Option<&crate::model::SetStatOption> {
+        self.set_stat_option.as_ref()
+    }
 }
 impl std::fmt::Debug for ProtocolDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -871,6 +885,7 @@ impl std::fmt::Debug for ProtocolDetails {
             "tls_session_resumption_mode",
             &self.tls_session_resumption_mode,
         );
+        formatter.field("set_stat_option", &self.set_stat_option);
         formatter.finish()
     }
 }
@@ -883,6 +898,7 @@ pub mod protocol_details {
         pub(crate) passive_ip: std::option::Option<std::string::String>,
         pub(crate) tls_session_resumption_mode:
             std::option::Option<crate::model::TlsSessionResumptionMode>,
+        pub(crate) set_stat_option: std::option::Option<crate::model::SetStatOption>,
     }
     impl Builder {
         /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. For example: </p>
@@ -933,11 +949,33 @@ pub mod protocol_details {
             self.tls_session_resumption_mode = input;
             self
         }
+        /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket.</p>
+        /// <p>Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can result in errors even when the file is otherwise successfully uploaded.</p>
+        /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> <note>
+        /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.</p>
+        /// </note>
+        pub fn set_stat_option(mut self, input: crate::model::SetStatOption) -> Self {
+            self.set_stat_option = Some(input);
+            self
+        }
+        /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket.</p>
+        /// <p>Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can result in errors even when the file is otherwise successfully uploaded.</p>
+        /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> <note>
+        /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.</p>
+        /// </note>
+        pub fn set_set_stat_option(
+            mut self,
+            input: std::option::Option<crate::model::SetStatOption>,
+        ) -> Self {
+            self.set_stat_option = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProtocolDetails`](crate::model::ProtocolDetails)
         pub fn build(self) -> crate::model::ProtocolDetails {
             crate::model::ProtocolDetails {
                 passive_ip: self.passive_ip,
                 tls_session_resumption_mode: self.tls_session_resumption_mode,
+                set_stat_option: self.set_stat_option,
             }
         }
     }
@@ -946,6 +984,61 @@ impl ProtocolDetails {
     /// Creates a new builder-style object to manufacture [`ProtocolDetails`](crate::model::ProtocolDetails)
     pub fn builder() -> crate::model::protocol_details::Builder {
         crate::model::protocol_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SetStatOption {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    EnableNoOp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SetStatOption {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => SetStatOption::Default,
+            "ENABLE_NO_OP" => SetStatOption::EnableNoOp,
+            other => SetStatOption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SetStatOption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SetStatOption::from(s))
+    }
+}
+impl SetStatOption {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SetStatOption::Default => "DEFAULT",
+            SetStatOption::EnableNoOp => "ENABLE_NO_OP",
+            SetStatOption::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "ENABLE_NO_OP"]
+    }
+}
+impl AsRef<str> for SetStatOption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

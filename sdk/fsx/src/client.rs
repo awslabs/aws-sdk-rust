@@ -4338,6 +4338,7 @@ pub mod fluent_builders {
     /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
     /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
     /// <li> <p> <code>DataCompressionType</code> </p> </li>
+    /// <li> <p> <code>LustreRootSquashConfiguration</code> </p> </li>
     /// <li> <p> <code>StorageCapacity</code> </p> </li>
     /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
     /// </ul>

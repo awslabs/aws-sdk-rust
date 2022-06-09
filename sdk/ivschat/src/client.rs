@@ -111,7 +111,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_name): <p>Room name. The value does not need to be unique.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::CreateRoom::maximum_message_rate_per_second) / [`set_maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::CreateRoom::set_maximum_message_rate_per_second): <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+    ///   - [`maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::CreateRoom::maximum_message_rate_per_second) / [`set_maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::CreateRoom::set_maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
     ///   - [`maximum_message_length(i32)`](crate::client::fluent_builders::CreateRoom::maximum_message_length) / [`set_maximum_message_length(i32)`](crate::client::fluent_builders::CreateRoom::set_maximum_message_length): <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     ///   - [`message_review_handler(MessageReviewHandler)`](crate::client::fluent_builders::CreateRoom::message_review_handler) / [`set_message_review_handler(Option<MessageReviewHandler>)`](crate::client::fluent_builders::CreateRoom::set_message_review_handler): <p>Configuration information for optional review of messages.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoom::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoom::set_tags): <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
@@ -121,7 +121,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::CreateRoomOutput::name): <p>Room name, from the request (if specified).</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::CreateRoomOutput::create_time): <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::output::CreateRoomOutput::update_time): <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::CreateRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::CreateRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
     ///   - [`maximum_message_length(i32)`](crate::output::CreateRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message, from the request.</p>
     ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::output::CreateRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRoomOutput::tags): <p>Tags attached to the resource, from the request.</p>
@@ -173,7 +173,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::GetRoomOutput::name): <p>Room name. The value does not need to be unique.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::GetRoomOutput::create_time): <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::output::GetRoomOutput::update_time): <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::GetRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::GetRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     ///   - [`maximum_message_length(i32)`](crate::output::GetRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::output::GetRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRoomOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -245,7 +245,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_identifier): <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_name): <p>Room name. The value does not need to be unique.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::UpdateRoom::maximum_message_rate_per_second) / [`set_maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::UpdateRoom::set_maximum_message_rate_per_second): <p>The maximum number of messages per second that a client can send to the room. Default: 10.</p>
+    ///   - [`maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::UpdateRoom::maximum_message_rate_per_second) / [`set_maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::UpdateRoom::set_maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     ///   - [`maximum_message_length(i32)`](crate::client::fluent_builders::UpdateRoom::maximum_message_length) / [`set_maximum_message_length(i32)`](crate::client::fluent_builders::UpdateRoom::set_maximum_message_length): <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     ///   - [`message_review_handler(MessageReviewHandler)`](crate::client::fluent_builders::UpdateRoom::message_review_handler) / [`set_message_review_handler(Option<MessageReviewHandler>)`](crate::client::fluent_builders::UpdateRoom::set_message_review_handler): <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
     /// - On success, responds with [`UpdateRoomOutput`](crate::output::UpdateRoomOutput) with field(s):
@@ -254,7 +254,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::UpdateRoomOutput::name): <p>Room name, from the request.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::UpdateRoomOutput::create_time): <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateRoomOutput::update_time): <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::UpdateRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that a client can send to the room, from the request.</p>
+    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::UpdateRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request.</p>
     ///   - [`maximum_message_length(i32)`](crate::output::UpdateRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message, from the request.</p>
     ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::output::UpdateRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateRoomOutput::tags): <p>Tags attached to the resource.</p>
@@ -440,12 +440,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
         pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_message_rate_per_second(input);
             self
         }
-        /// <p>Maximum number of messages per second that a client can send to the room. Default: 10.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
         pub fn set_maximum_message_rate_per_second(
             mut self,
             input: std::option::Option<i32>,
@@ -1200,12 +1200,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The maximum number of messages per second that a client can send to the room. Default: 10.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
         pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_message_rate_per_second(input);
             self
         }
-        /// <p>The maximum number of messages per second that a client can send to the room. Default: 10.</p>
+        /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
         pub fn set_maximum_message_rate_per_second(
             mut self,
             input: std::option::Option<i32>,

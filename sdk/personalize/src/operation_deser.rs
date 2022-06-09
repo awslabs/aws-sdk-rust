@@ -1295,6 +1295,23 @@ pub fn parse_create_recommender_error(
                 tmp
             }),
         },
+        "ResourceInUseException" => crate::error::CreateRecommenderError {
+            meta: generic,
+            kind: crate::error::CreateRecommenderErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::CreateRecommenderError {
             meta: generic,
             kind: crate::error::CreateRecommenderErrorKind::ResourceNotFoundException({

@@ -1985,6 +1985,8 @@ pub struct Speaker {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    pub last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Speaker {
     /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2011,6 +2013,10 @@ impl Speaker {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    pub fn last_accessed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_accessed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for Speaker {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2021,6 +2027,7 @@ impl std::fmt::Debug for Speaker {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("last_accessed_at", &self.last_accessed_at);
         formatter.finish()
     }
 }
@@ -2036,6 +2043,7 @@ pub mod speaker {
         pub(crate) status: std::option::Option<crate::model::SpeakerStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2113,6 +2121,19 @@ pub mod speaker {
             self.updated_at = input;
             self
         }
+        /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+        pub fn last_accessed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_accessed_at = Some(input);
+            self
+        }
+        /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+        pub fn set_last_accessed_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_accessed_at = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Speaker`](crate::model::Speaker)
         pub fn build(self) -> crate::model::Speaker {
             crate::model::Speaker {
@@ -2122,6 +2143,7 @@ pub mod speaker {
                 status: self.status,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
+                last_accessed_at: self.last_accessed_at,
             }
         }
     }
@@ -2212,6 +2234,8 @@ pub struct SpeakerSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    pub last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SpeakerSummary {
     /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2238,6 +2262,10 @@ impl SpeakerSummary {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    pub fn last_accessed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_accessed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for SpeakerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2248,6 +2276,7 @@ impl std::fmt::Debug for SpeakerSummary {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("last_accessed_at", &self.last_accessed_at);
         formatter.finish()
     }
 }
@@ -2263,6 +2292,7 @@ pub mod speaker_summary {
         pub(crate) status: std::option::Option<crate::model::SpeakerStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2340,6 +2370,19 @@ pub mod speaker_summary {
             self.updated_at = input;
             self
         }
+        /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+        pub fn last_accessed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_accessed_at = Some(input);
+            self
+        }
+        /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+        pub fn set_last_accessed_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_accessed_at = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SpeakerSummary`](crate::model::SpeakerSummary)
         pub fn build(self) -> crate::model::SpeakerSummary {
             crate::model::SpeakerSummary {
@@ -2349,6 +2392,7 @@ pub mod speaker_summary {
                 status: self.status,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
+                last_accessed_at: self.last_accessed_at,
             }
         }
     }
@@ -3758,6 +3802,8 @@ pub enum AuthenticationDecision {
     #[allow(missing_docs)] // documentation missing in model
     Reject,
     #[allow(missing_docs)] // documentation missing in model
+    SpeakerExpired,
+    #[allow(missing_docs)] // documentation missing in model
     SpeakerIdNotProvided,
     #[allow(missing_docs)] // documentation missing in model
     SpeakerNotEnrolled,
@@ -3772,6 +3818,7 @@ impl std::convert::From<&str> for AuthenticationDecision {
             "ACCEPT" => AuthenticationDecision::Accept,
             "NOT_ENOUGH_SPEECH" => AuthenticationDecision::NotEnoughSpeech,
             "REJECT" => AuthenticationDecision::Reject,
+            "SPEAKER_EXPIRED" => AuthenticationDecision::SpeakerExpired,
             "SPEAKER_ID_NOT_PROVIDED" => AuthenticationDecision::SpeakerIdNotProvided,
             "SPEAKER_NOT_ENROLLED" => AuthenticationDecision::SpeakerNotEnrolled,
             "SPEAKER_OPTED_OUT" => AuthenticationDecision::SpeakerOptedOut,
@@ -3793,6 +3840,7 @@ impl AuthenticationDecision {
             AuthenticationDecision::Accept => "ACCEPT",
             AuthenticationDecision::NotEnoughSpeech => "NOT_ENOUGH_SPEECH",
             AuthenticationDecision::Reject => "REJECT",
+            AuthenticationDecision::SpeakerExpired => "SPEAKER_EXPIRED",
             AuthenticationDecision::SpeakerIdNotProvided => "SPEAKER_ID_NOT_PROVIDED",
             AuthenticationDecision::SpeakerNotEnrolled => "SPEAKER_NOT_ENROLLED",
             AuthenticationDecision::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
@@ -3805,6 +3853,7 @@ impl AuthenticationDecision {
             "ACCEPT",
             "NOT_ENOUGH_SPEECH",
             "REJECT",
+            "SPEAKER_EXPIRED",
             "SPEAKER_ID_NOT_PROVIDED",
             "SPEAKER_NOT_ENROLLED",
             "SPEAKER_OPTED_OUT",

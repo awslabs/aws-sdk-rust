@@ -741,6 +741,8 @@ pub struct GetDiscoverySummaryOutput {
     pub agent_summary: std::option::Option<crate::model::CustomerAgentInfo>,
     /// <p>Details about discovered connectors, including connector status and health.</p>
     pub connector_summary: std::option::Option<crate::model::CustomerConnectorInfo>,
+    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    pub me_collector_summary: std::option::Option<crate::model::CustomerMeCollectorInfo>,
 }
 impl GetDiscoverySummaryOutput {
     /// <p>The number of servers discovered.</p>
@@ -767,6 +769,12 @@ impl GetDiscoverySummaryOutput {
     pub fn connector_summary(&self) -> std::option::Option<&crate::model::CustomerConnectorInfo> {
         self.connector_summary.as_ref()
     }
+    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    pub fn me_collector_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerMeCollectorInfo> {
+        self.me_collector_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDiscoverySummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -780,6 +788,7 @@ impl std::fmt::Debug for GetDiscoverySummaryOutput {
         formatter.field("servers_mappedto_tags", &self.servers_mappedto_tags);
         formatter.field("agent_summary", &self.agent_summary);
         formatter.field("connector_summary", &self.connector_summary);
+        formatter.field("me_collector_summary", &self.me_collector_summary);
         formatter.finish()
     }
 }
@@ -795,6 +804,7 @@ pub mod get_discovery_summary_output {
         pub(crate) servers_mappedto_tags: std::option::Option<i64>,
         pub(crate) agent_summary: std::option::Option<crate::model::CustomerAgentInfo>,
         pub(crate) connector_summary: std::option::Option<crate::model::CustomerConnectorInfo>,
+        pub(crate) me_collector_summary: std::option::Option<crate::model::CustomerMeCollectorInfo>,
     }
     impl Builder {
         /// <p>The number of servers discovered.</p>
@@ -866,6 +876,22 @@ pub mod get_discovery_summary_output {
             self.connector_summary = input;
             self
         }
+        /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+        pub fn me_collector_summary(
+            mut self,
+            input: crate::model::CustomerMeCollectorInfo,
+        ) -> Self {
+            self.me_collector_summary = Some(input);
+            self
+        }
+        /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+        pub fn set_me_collector_summary(
+            mut self,
+            input: std::option::Option<crate::model::CustomerMeCollectorInfo>,
+        ) -> Self {
+            self.me_collector_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDiscoverySummaryOutput`](crate::output::GetDiscoverySummaryOutput)
         pub fn build(self) -> crate::output::GetDiscoverySummaryOutput {
             crate::output::GetDiscoverySummaryOutput {
@@ -877,6 +903,7 @@ pub mod get_discovery_summary_output {
                 servers_mappedto_tags: self.servers_mappedto_tags.unwrap_or_default(),
                 agent_summary: self.agent_summary,
                 connector_summary: self.connector_summary,
+                me_collector_summary: self.me_collector_summary,
             }
         }
     }

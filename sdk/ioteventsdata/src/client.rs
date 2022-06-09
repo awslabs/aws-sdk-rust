@@ -101,6 +101,16 @@ impl Client {
     pub fn batch_acknowledge_alarm(&self) -> fluent_builders::BatchAcknowledgeAlarm {
         fluent_builders::BatchAcknowledgeAlarm::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchDeleteDetector`](crate::client::fluent_builders::BatchDeleteDetector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detectors(Vec<DeleteDetectorRequest>)`](crate::client::fluent_builders::BatchDeleteDetector::detectors) / [`set_detectors(Option<Vec<DeleteDetectorRequest>>)`](crate::client::fluent_builders::BatchDeleteDetector::set_detectors): <p>The list of one or more detectors to be deleted.</p>
+    /// - On success, responds with [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput) with field(s):
+    ///   - [`batch_delete_detector_error_entries(Option<Vec<BatchDeleteDetectorErrorEntry>>)`](crate::output::BatchDeleteDetectorOutput::batch_delete_detector_error_entries): <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteDetectorError>`](crate::error::BatchDeleteDetectorError)
+    pub fn batch_delete_detector(&self) -> fluent_builders::BatchDeleteDetector {
+        fluent_builders::BatchDeleteDetector::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`BatchDisableAlarm`](crate::client::fluent_builders::BatchDisableAlarm) operation.
     ///
     /// - The fluent builder is configurable:
@@ -279,6 +289,66 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
         ) -> Self {
             self.inner = self.inner.set_acknowledge_action_requests(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchDeleteDetector`.
+    ///
+    /// <p>Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a> API call.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchDeleteDetector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_delete_detector_input::Builder,
+    }
+    impl BatchDeleteDetector {
+        /// Creates a new `BatchDeleteDetector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchDeleteDetectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchDeleteDetectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `detectors`.
+        ///
+        /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
+        ///
+        /// <p>The list of one or more detectors to be deleted.</p>
+        pub fn detectors(mut self, input: crate::model::DeleteDetectorRequest) -> Self {
+            self.inner = self.inner.detectors(input);
+            self
+        }
+        /// <p>The list of one or more detectors to be deleted.</p>
+        pub fn set_detectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_detectors(input);
             self
         }
     }

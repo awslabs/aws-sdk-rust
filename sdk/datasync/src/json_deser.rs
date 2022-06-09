@@ -739,6 +739,36 @@ pub fn deser_operation_crate_operation_describe_location_efs(
                             )?,
                         );
                     }
+                    "AccessPointArn" => {
+                        builder = builder.set_access_point_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "FileSystemAccessRoleArn" => {
+                        builder = builder.set_file_system_access_role_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "InTransitEncryption" => {
+                        builder = builder.set_in_transit_encryption(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::EfsInTransitEncryption::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

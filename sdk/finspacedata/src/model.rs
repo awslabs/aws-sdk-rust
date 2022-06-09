@@ -3369,7 +3369,7 @@ impl PermissionGroupParams {
 /// <li> <p> <code>ViewDatasetDetails</code> </p> </li>
 /// <li> <p> <code>ReadDatasetDetails</code> </p> </li>
 /// <li> <p> <code>AddDatasetData</code> </p> </li>
-/// <li> <p> <code>CreateSnapshot</code> </p> </li>
+/// <li> <p> <code>CreateDataView</code> </p> </li>
 /// <li> <p> <code>EditDatasetMetadata</code> </p> </li>
 /// <li> <p> <code>DeleteDataset</code> </p> </li>
 /// </ul>

@@ -22,6 +22,16 @@ impl ListClientDevicesAssociatedWithCoreDevicePaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `associated_client_devices`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(
+        self,
+    ) -> crate::paginator::ListClientDevicesAssociatedWithCoreDevicePaginatorItems {
+        crate::paginator::ListClientDevicesAssociatedWithCoreDevicePaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -111,6 +121,14 @@ impl ListComponentsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `components`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListComponentsPaginatorItems {
+        crate::paginator::ListComponentsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -196,6 +214,14 @@ impl ListComponentVersionsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `component_versions`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListComponentVersionsPaginatorItems {
+        crate::paginator::ListComponentVersionsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -285,6 +311,14 @@ impl ListCoreDevicesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `core_devices`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListCoreDevicesPaginatorItems {
+        crate::paginator::ListCoreDevicesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -370,6 +404,14 @@ impl ListDeploymentsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `deployments`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListDeploymentsPaginatorItems {
+        crate::paginator::ListDeploymentsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -459,6 +501,14 @@ impl ListEffectiveDeploymentsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `effective_deployments`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListEffectiveDeploymentsPaginatorItems {
+        crate::paginator::ListEffectiveDeploymentsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -546,6 +596,14 @@ impl ListInstalledComponentsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `installed_components`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListInstalledComponentsPaginatorItems {
+        crate::paginator::ListInstalledComponentsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -607,5 +665,182 @@ impl ListInstalledComponentsPaginator {
                 }
             })
         })
+    }
+}
+
+/// Flattened paginator for `ListClientDevicesAssociatedWithCoreDevicePaginator`
+///
+/// This is created with [`.items()`](ListClientDevicesAssociatedWithCoreDevicePaginator::items)
+pub struct ListClientDevicesAssociatedWithCoreDevicePaginatorItems(
+    ListClientDevicesAssociatedWithCoreDevicePaginator,
+);
+
+impl ListClientDevicesAssociatedWithCoreDevicePaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::AssociatedClientDevice,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListClientDevicesAssociatedWithCoreDeviceError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_client_devices_associated_with_core_device_output_associated_client_devices(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListComponentsPaginator`
+///
+/// This is created with [`.items()`](ListComponentsPaginator::items)
+pub struct ListComponentsPaginatorItems(ListComponentsPaginator);
+
+impl ListComponentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Component,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_components_output_components(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListComponentVersionsPaginator`
+///
+/// This is created with [`.items()`](ListComponentVersionsPaginator::items)
+pub struct ListComponentVersionsPaginatorItems(ListComponentVersionsPaginator);
+
+impl ListComponentVersionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ComponentVersionListItem,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentVersionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_component_versions_output_component_versions(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListCoreDevicesPaginator`
+///
+/// This is created with [`.items()`](ListCoreDevicesPaginator::items)
+pub struct ListCoreDevicesPaginatorItems(ListCoreDevicesPaginator);
+
+impl ListCoreDevicesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CoreDevice,
+            aws_smithy_http::result::SdkError<crate::error::ListCoreDevicesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_core_devices_output_core_devices(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListDeploymentsPaginator`
+///
+/// This is created with [`.items()`](ListDeploymentsPaginator::items)
+pub struct ListDeploymentsPaginatorItems(ListDeploymentsPaginator);
+
+impl ListDeploymentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Deployment,
+            aws_smithy_http::result::SdkError<crate::error::ListDeploymentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_deployments_output_deployments(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListEffectiveDeploymentsPaginator`
+///
+/// This is created with [`.items()`](ListEffectiveDeploymentsPaginator::items)
+pub struct ListEffectiveDeploymentsPaginatorItems(ListEffectiveDeploymentsPaginator);
+
+impl ListEffectiveDeploymentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::EffectiveDeployment,
+            aws_smithy_http::result::SdkError<crate::error::ListEffectiveDeploymentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_effective_deployments_output_effective_deployments(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListInstalledComponentsPaginator`
+///
+/// This is created with [`.items()`](ListInstalledComponentsPaginator::items)
+pub struct ListInstalledComponentsPaginatorItems(ListInstalledComponentsPaginator);
+
+impl ListInstalledComponentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::InstalledComponent,
+            aws_smithy_http::result::SdkError<crate::error::ListInstalledComponentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_installed_components_output_installed_components(page).unwrap_or_default().into_iter())
     }
 }

@@ -12,7 +12,7 @@ pub struct AssociateConfigurationItemsToApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateConfigurationItemsToApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -174,7 +174,7 @@ pub struct BatchDeleteImportDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteImportDataErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -311,7 +311,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -448,7 +448,7 @@ pub struct CreateTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTagsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -596,7 +596,7 @@ pub struct DeleteApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -733,7 +733,7 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -881,7 +881,7 @@ pub struct DescribeAgentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAgentsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1018,7 +1018,7 @@ pub struct DescribeConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1157,7 +1157,7 @@ pub struct DescribeContinuousExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeContinuousExportsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1330,7 +1330,7 @@ pub struct DescribeExportConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1502,7 +1502,7 @@ pub struct DescribeExportTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportTasksErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1639,7 +1639,7 @@ pub struct DescribeImportTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImportTasksErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1776,7 +1776,7 @@ pub struct DescribeTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTagsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -1924,7 +1924,7 @@ pub struct DisassociateConfigurationItemsFromApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateConfigurationItemsFromApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -2092,7 +2092,7 @@ pub struct ExportConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -2240,7 +2240,7 @@ pub struct GetDiscoverySummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDiscoverySummaryErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -2377,7 +2377,7 @@ pub struct ListConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -2525,7 +2525,7 @@ pub struct ListServerNeighborsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServerNeighborsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -2662,7 +2662,7 @@ pub struct StartContinuousExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartContinuousExportErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p></p>
     ConflictErrorException(crate::error::ConflictErrorException),
@@ -2832,7 +2832,7 @@ pub struct StartDataCollectionByAgentIdsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDataCollectionByAgentIdsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -2992,7 +2992,7 @@ pub struct StartExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExportTaskErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -3140,7 +3140,7 @@ pub struct StartImportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartImportTaskErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -3288,7 +3288,7 @@ pub struct StopContinuousExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopContinuousExportErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -3458,7 +3458,7 @@ pub struct StopDataCollectionByAgentIdsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDataCollectionByAgentIdsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -3615,7 +3615,7 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
@@ -3995,7 +3995,7 @@ impl HomeRegionNotSetException {
     }
 }
 
-/// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+/// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationErrorException {

@@ -11,7 +11,7 @@ pub enum Error {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),

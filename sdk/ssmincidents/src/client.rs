@@ -126,7 +126,7 @@ impl Client {
     ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
     ///   - [`event_time(DateTime)`](crate::client::fluent_builders::CreateTimelineEvent::event_time) / [`set_event_time(Option<DateTime>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_time): <p>The time that the event occurred.</p>
     ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_type): <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
-    ///   - [`event_data(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_data) / [`set_event_data(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_data): <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+    ///   - [`event_data(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_data) / [`set_event_data(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_data): <p>A short description of the event.</p>
     /// - On success, responds with [`CreateTimelineEventOutput`](crate::output::CreateTimelineEventOutput) with field(s):
     ///   - [`incident_record_arn(Option<String>)`](crate::output::CreateTimelineEventOutput::incident_record_arn): <p>The ARN of the incident record that you added the event to.</p>
     ///   - [`event_id(Option<String>)`](crate::output::CreateTimelineEventOutput::event_id): <p>The ID of the event for easy reference later. </p>
@@ -789,12 +789,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+        /// <p>A short description of the event.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data(input.into());
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+        /// <p>A short description of the event.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_data(input);
             self
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p>Adds a resource policy to the specified response plan.</p>
+    /// <p>Adds a resource policy to the specified response plan. The resource policy is used to share the response plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting up cross-account functionality</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy {
         handle: std::sync::Arc<super::Handle>,

@@ -67,6 +67,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
     }
 }
 
+/// Operation shape for `CreateWorkspaceApiKey`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_workspace_api_key`](crate::client::Client::create_workspace_api_key).
+///
+/// See [`crate::client::fluent_builders::CreateWorkspaceApiKey`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateWorkspaceApiKey {
+    _private: (),
+}
+impl CreateWorkspaceApiKey {
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceApiKeyInput`](crate::input::CreateWorkspaceApiKeyInput)
+    pub fn builder() -> crate::input::create_workspace_api_key_input::Builder {
+        crate::input::create_workspace_api_key_input::Builder::default()
+    }
+    /// Creates a new `CreateWorkspaceApiKey` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaceApiKey {
+    type Output = std::result::Result<
+        crate::output::CreateWorkspaceApiKeyOutput,
+        crate::error::CreateWorkspaceApiKeyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_workspace_api_key_error(response)
+        } else {
+            crate::operation_deser::parse_create_workspace_api_key_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteWorkspace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -97,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
             crate::operation_deser::parse_delete_workspace_error(response)
         } else {
             crate::operation_deser::parse_delete_workspace_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteWorkspaceApiKey`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_workspace_api_key`](crate::client::Client::delete_workspace_api_key).
+///
+/// See [`crate::client::fluent_builders::DeleteWorkspaceApiKey`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteWorkspaceApiKey {
+    _private: (),
+}
+impl DeleteWorkspaceApiKey {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyInput`](crate::input::DeleteWorkspaceApiKeyInput)
+    pub fn builder() -> crate::input::delete_workspace_api_key_input::Builder {
+        crate::input::delete_workspace_api_key_input::Builder::default()
+    }
+    /// Creates a new `DeleteWorkspaceApiKey` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspaceApiKey {
+    type Output = std::result::Result<
+        crate::output::DeleteWorkspaceApiKeyOutput,
+        crate::error::DeleteWorkspaceApiKeyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_workspace_api_key_error(response)
+        } else {
+            crate::operation_deser::parse_delete_workspace_api_key_response(response)
         }
     }
 }

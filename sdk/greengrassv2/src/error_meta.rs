@@ -189,6 +189,9 @@ where
                 crate::error::CreateDeploymentErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
+                crate::error::CreateDeploymentErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::CreateDeploymentErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -271,6 +274,41 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteCoreDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDeploymentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteDeploymentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteDeploymentErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteDeploymentErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::DeleteDeploymentErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::DeleteDeploymentErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteDeploymentErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteDeploymentErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DeleteDeploymentErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -534,6 +572,9 @@ where
                 }
                 crate::error::ListComponentsErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
+                }
+                crate::error::ListComponentsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListComponentsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)

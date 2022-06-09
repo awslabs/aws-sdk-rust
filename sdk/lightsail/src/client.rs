@@ -258,6 +258,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContainerService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContainerService::set_tags): <p>The tag keys and optional values to add to the container service during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>  <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     ///   - [`public_domain_names(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::CreateContainerService::public_domain_names) / [`set_public_domain_names(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateContainerService::set_public_domain_names): <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>  <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>  <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>   <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>  </important>  <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     ///   - [`deployment(ContainerServiceDeploymentRequest)`](crate::client::fluent_builders::CreateContainerService::deployment) / [`set_deployment(Option<ContainerServiceDeploymentRequest>)`](crate::client::fluent_builders::CreateContainerService::set_deployment): <p>An object that describes a deployment for the container service.</p>  <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
+    ///   - [`private_registry_access(PrivateRegistryAccessRequest)`](crate::client::fluent_builders::CreateContainerService::private_registry_access) / [`set_private_registry_access(Option<PrivateRegistryAccessRequest>)`](crate::client::fluent_builders::CreateContainerService::set_private_registry_access): <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>  <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// - On success, responds with [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput) with field(s):
     ///   - [`container_service(Option<ContainerService>)`](crate::output::CreateContainerServiceOutput::container_service): <p>An object that describes a container service.</p>
     /// - On failure, responds with [`SdkError<CreateContainerServiceError>`](crate::error::CreateContainerServiceError)
@@ -884,7 +885,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetBlueprints`](crate::client::fluent_builders::GetBlueprints) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBlueprints::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBlueprints::set_include_inactive): <p>A Boolean value indicating whether to include inactive results in your request.</p>
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBlueprints::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBlueprints::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBlueprints::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBlueprints::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     /// - On success, responds with [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput) with field(s):
     ///   - [`blueprints(Option<Vec<Blueprint>>)`](crate::output::GetBlueprintsOutput::blueprints): <p>An array of key-value pairs that contains information about the available blueprints.</p>
@@ -906,7 +907,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetBucketBundles`](crate::client::fluent_builders::GetBucketBundles) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBucketBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBucketBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBucketBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBucketBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     /// - On success, responds with [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput) with field(s):
     ///   - [`bundles(Option<Vec<BucketBundle>>)`](crate::output::GetBucketBundlesOutput::bundles): <p>An object that describes bucket bundles.</p>
     /// - On failure, responds with [`SdkError<GetBucketBundlesError>`](crate::error::GetBucketBundlesError)
@@ -947,7 +948,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetBundles`](crate::client::fluent_builders::GetBundles) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBundles::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBundles::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     /// - On success, responds with [`GetBundlesOutput`](crate::output::GetBundlesOutput) with field(s):
     ///   - [`bundles(Option<Vec<Bundle>>)`](crate::output::GetBundlesOutput::bundles): <p>An array of key-value pairs that contains information about the available bundles.</p>
@@ -1448,6 +1449,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseBundles::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseBundles::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetRelationalDatabaseBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetRelationalDatabaseBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     /// - On success, responds with [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput) with field(s):
     ///   - [`bundles(Option<Vec<RelationalDatabaseBundle>>)`](crate::output::GetRelationalDatabaseBundlesOutput::bundles): <p>An object describing the result of your get relational database bundles request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabaseBundlesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -1887,6 +1889,7 @@ impl Client {
     ///   - [`scale(i32)`](crate::client::fluent_builders::UpdateContainerService::scale) / [`set_scale(Option<i32>)`](crate::client::fluent_builders::UpdateContainerService::set_scale): <p>The scale for the container service.</p>  <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     ///   - [`is_disabled(bool)`](crate::client::fluent_builders::UpdateContainerService::is_disabled) / [`set_is_disabled(Option<bool>)`](crate::client::fluent_builders::UpdateContainerService::set_is_disabled): <p>A Boolean value to indicate whether the container service is disabled.</p>
     ///   - [`public_domain_names(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::UpdateContainerService::public_domain_names) / [`set_public_domain_names(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::UpdateContainerService::set_public_domain_names): <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>  <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>  <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>   <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>  </important>  <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
+    ///   - [`private_registry_access(PrivateRegistryAccessRequest)`](crate::client::fluent_builders::UpdateContainerService::private_registry_access) / [`set_private_registry_access(Option<PrivateRegistryAccessRequest>)`](crate::client::fluent_builders::UpdateContainerService::set_private_registry_access): <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>  <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// - On success, responds with [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput) with field(s):
     ///   - [`container_service(Option<ContainerService>)`](crate::output::UpdateContainerServiceOutput::container_service): <p>An object that describes a container service.</p>
     /// - On failure, responds with [`SdkError<UpdateContainerServiceError>`](crate::error::UpdateContainerServiceError)
@@ -3253,6 +3256,24 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ContainerServiceDeploymentRequest>,
         ) -> Self {
             self.inner = self.inner.set_deployment(input);
+            self
+        }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn private_registry_access(
+            mut self,
+            input: crate::model::PrivateRegistryAccessRequest,
+        ) -> Self {
+            self.inner = self.inner.private_registry_access(input);
+            self
+        }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn set_private_registry_access(
+            mut self,
+            input: std::option::Option<crate::model::PrivateRegistryAccessRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_private_registry_access(input);
             self
         }
     }
@@ -7819,12 +7840,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.inner = self.inner.include_inactive(input);
             self
         }
-        /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_inactive(input);
             self
@@ -7941,12 +7962,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.inner = self.inner.include_inactive(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_inactive(input);
             self
@@ -8198,7 +8219,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBundles`.
     ///
-    /// <p>Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual private server (or <i>instance</i>).</p>
+    /// <p>Returns the bundles that you can apply to an Amazon Lightsail instance when you create it.</p>
+    /// <p>A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of vCPUs, amount of storage space, and monthly network data transfer quota.</p> <note>
+    /// <p>Bundles are referred to as <i>instance plans</i> in the Lightsail console.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBundles {
         handle: std::sync::Arc<super::Handle>,
@@ -8238,12 +8262,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.inner = self.inner.include_inactive(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_inactive(input);
             self
@@ -11303,6 +11327,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_page_token(input);
             self
         }
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+        pub fn include_inactive(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_inactive(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+        pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_inactive(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetRelationalDatabaseEvents`.
     ///
@@ -14176,6 +14210,24 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_public_domain_names(input);
+            self
+        }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn private_registry_access(
+            mut self,
+            input: crate::model::PrivateRegistryAccessRequest,
+        ) -> Self {
+            self.inner = self.inner.private_registry_access(input);
+            self
+        }
+        /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+        /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn set_private_registry_access(
+            mut self,
+            input: std::option::Option<crate::model::PrivateRegistryAccessRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_private_registry_access(input);
             self
         }
     }

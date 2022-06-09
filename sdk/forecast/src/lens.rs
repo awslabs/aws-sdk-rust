@@ -29,6 +29,26 @@ pub(crate) fn reflens_structure_crate_output_list_datasets_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_explainabilities_output_next_token(
+    input: &crate::output::ListExplainabilitiesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_explainability_exports_output_next_token(
+    input: &crate::output::ListExplainabilityExportsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_forecast_export_jobs_output_next_token(
     input: &crate::output::ListForecastExportJobsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -41,6 +61,26 @@ pub(crate) fn reflens_structure_crate_output_list_forecast_export_jobs_output_ne
 
 pub(crate) fn reflens_structure_crate_output_list_forecasts_output_next_token(
     input: &crate::output::ListForecastsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_monitor_evaluations_output_next_token(
+    input: &crate::output::ListMonitorEvaluationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_monitors_output_next_token(
+    input: &crate::output::ListMonitorsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -99,6 +139,26 @@ pub(crate) fn lens_structure_crate_output_list_datasets_output_datasets(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_explainabilities_output_explainabilities(
+    input: crate::output::ListExplainabilitiesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ExplainabilitySummary>> {
+    let input = match input.explainabilities {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_explainability_exports_output_explainability_exports(
+    input: crate::output::ListExplainabilityExportsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ExplainabilityExportSummary>> {
+    let input = match input.explainability_exports {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_forecast_export_jobs_output_forecast_export_jobs(
     input: crate::output::ListForecastExportJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ForecastExportJobSummary>> {
@@ -113,6 +173,26 @@ pub(crate) fn lens_structure_crate_output_list_forecasts_output_forecasts(
     input: crate::output::ListForecastsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ForecastSummary>> {
     let input = match input.forecasts {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_monitor_evaluations_output_predictor_monitor_evaluations(
+    input: crate::output::ListMonitorEvaluationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PredictorMonitorEvaluation>> {
+    let input = match input.predictor_monitor_evaluations {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_monitors_output_monitors(
+    input: crate::output::ListMonitorsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MonitorSummary>> {
+    let input = match input.monitors {
         None => return None,
         Some(t) => t,
     };

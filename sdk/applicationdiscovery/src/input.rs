@@ -994,14 +994,14 @@ pub mod describe_agents_input {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_ids.unwrap_or_default();
             v.push(input.into());
             self.agent_ids = Some(v);
             self
         }
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2682,7 +2682,7 @@ pub mod list_configurations_input {
         ///
         /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
         /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
@@ -2691,7 +2691,7 @@ pub mod list_configurations_input {
         }
         /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
         /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2723,14 +2723,14 @@ pub mod list_configurations_input {
         ///
         /// To override the contents of this collection use [`set_order_by`](Self::set_order_by).
         ///
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn order_by(mut self, input: crate::model::OrderByElement) -> Self {
             let mut v = self.order_by.unwrap_or_default();
             v.push(input);
             self.order_by = Some(v);
             self
         }
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
         pub fn set_order_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
@@ -3204,14 +3204,14 @@ pub mod start_data_collection_by_agent_ids_input {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_ids.unwrap_or_default();
             v.push(input.into());
             self.agent_ids = Some(v);
             self
         }
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3583,14 +3583,14 @@ pub mod start_import_task_input {
             self
         }
         /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+        /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn import_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.import_url = Some(input.into());
             self
         }
         /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+        /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_url = input;
@@ -4276,7 +4276,7 @@ pub struct StartImportTaskInput {
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-    /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub import_url: std::option::Option<std::string::String>,
 }
@@ -4291,7 +4291,7 @@ impl StartImportTaskInput {
         self.name.as_deref()
     }
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-    /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub fn import_url(&self) -> std::option::Option<&str> {
         self.import_url.as_deref()
@@ -4353,11 +4353,11 @@ impl std::fmt::Debug for StartExportTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
     pub fn agent_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_ids.as_deref()
     }
@@ -4441,13 +4441,13 @@ pub struct ListConfigurationsInput {
     pub configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub max_results: i32,
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub order_by: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
 }
 impl ListConfigurationsInput {
@@ -4457,7 +4457,7 @@ impl ListConfigurationsInput {
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -4469,7 +4469,7 @@ impl ListConfigurationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn order_by(&self) -> std::option::Option<&[crate::model::OrderByElement]> {
         self.order_by.as_deref()
     }
@@ -4752,7 +4752,7 @@ impl std::fmt::Debug for DescribeConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentsInput {
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
@@ -4763,7 +4763,7 @@ pub struct DescribeAgentsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAgentsInput {
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
     pub fn agent_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_ids.as_deref()
     }

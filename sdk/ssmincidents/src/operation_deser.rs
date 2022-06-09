@@ -3223,6 +3223,25 @@ pub fn parse_update_replication_set_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::UpdateReplicationSetError {
+                meta: generic,
+                kind: crate::error::UpdateReplicationSetErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateReplicationSetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::UpdateReplicationSetError {
             meta: generic,
             kind: crate::error::UpdateReplicationSetErrorKind::InternalServerException({

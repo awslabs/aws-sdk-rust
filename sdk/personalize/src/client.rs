@@ -527,7 +527,7 @@ impl Client {
     ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::GetSolutionMetrics::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::GetSolutionMetrics::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
     /// - On success, responds with [`GetSolutionMetricsOutput`](crate::output::GetSolutionMetricsOutput) with field(s):
     ///   - [`solution_version_arn(Option<String>)`](crate::output::GetSolutionMetricsOutput::solution_version_arn): <p>The same solution version ARN as specified in the request.</p>
-    ///   - [`metrics(Option<HashMap<String, f64>>)`](crate::output::GetSolutionMetricsOutput::metrics): <p>The metrics for the solution version.</p>
+    ///   - [`metrics(Option<HashMap<String, f64>>)`](crate::output::GetSolutionMetricsOutput::metrics): <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
     /// - On failure, responds with [`SdkError<GetSolutionMetricsError>`](crate::error::GetSolutionMetricsError)
     pub fn get_solution_metrics(&self) -> fluent_builders::GetSolutionMetrics {
         fluent_builders::GetSolutionMetrics::new(self.handle.clone())
@@ -1951,6 +1951,7 @@ pub mod fluent_builders {
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     /// <p>To get the recommender status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>.</p> <note>
@@ -3540,9 +3541,11 @@ pub mod fluent_builders {
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the <code>failureReason</code> key, which describes why.</p>
+    /// <p>The <code>modelMetrics</code> key is null when the recommender is being created or deleted.</p>
     /// <p>For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecommender {

@@ -683,6 +683,79 @@ impl BatchDisableAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDeleteDetectorOutput {
+    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    pub batch_delete_detector_error_entries:
+        std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
+}
+impl BatchDeleteDetectorOutput {
+    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    pub fn batch_delete_detector_error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDeleteDetectorErrorEntry]> {
+        self.batch_delete_detector_error_entries.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchDeleteDetectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDeleteDetectorOutput");
+        formatter.field(
+            "batch_delete_detector_error_entries",
+            &self.batch_delete_detector_error_entries,
+        );
+        formatter.finish()
+    }
+}
+/// See [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput)
+pub mod batch_delete_detector_output {
+    /// A builder for [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_delete_detector_error_entries:
+            std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
+    }
+    impl Builder {
+        /// Appends an item to `batch_delete_detector_error_entries`.
+        ///
+        /// To override the contents of this collection use [`set_batch_delete_detector_error_entries`](Self::set_batch_delete_detector_error_entries).
+        ///
+        /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+        pub fn batch_delete_detector_error_entries(
+            mut self,
+            input: crate::model::BatchDeleteDetectorErrorEntry,
+        ) -> Self {
+            let mut v = self.batch_delete_detector_error_entries.unwrap_or_default();
+            v.push(input);
+            self.batch_delete_detector_error_entries = Some(v);
+            self
+        }
+        /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+        pub fn set_batch_delete_detector_error_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
+        ) -> Self {
+            self.batch_delete_detector_error_entries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput)
+        pub fn build(self) -> crate::output::BatchDeleteDetectorOutput {
+            crate::output::BatchDeleteDetectorOutput {
+                batch_delete_detector_error_entries: self.batch_delete_detector_error_entries,
+            }
+        }
+    }
+}
+impl BatchDeleteDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput)
+    pub fn builder() -> crate::output::batch_delete_detector_output::Builder {
+        crate::output::batch_delete_detector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAcknowledgeAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,

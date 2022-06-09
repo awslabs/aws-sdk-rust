@@ -759,6 +759,8 @@ pub struct CreateDeploymentError {
 pub enum CreateDeploymentErrorKind {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is already in progress. This exception occurs when you use a client token for multiple requests while IoT Greengrass is still processing an earlier request that uses the same client token.</p>
@@ -776,6 +778,7 @@ impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateDeploymentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::RequestAlreadyInProgressException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -842,6 +845,10 @@ impl CreateDeploymentError {
             CreateDeploymentErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -882,6 +889,7 @@ impl std::error::Error for CreateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateDeploymentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::RequestAlreadyInProgressException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -1172,6 +1180,151 @@ impl std::error::Error for DeleteCoreDeviceError {
             DeleteCoreDeviceErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteCoreDeviceErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteCoreDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDeploymentError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDeploymentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDeploymentErrorKind {
+    /// <p>You don't have permission to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteDeploymentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDeploymentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDeploymentError {
+    fn code(&self) -> Option<&str> {
+        DeleteDeploymentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDeploymentError {
+    /// Creates a new `DeleteDeploymentError`.
+    pub fn new(kind: DeleteDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDeploymentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDeploymentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDeploymentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDeploymentErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteDeploymentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDeploymentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2312,6 +2465,8 @@ pub enum ListComponentsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
@@ -2324,6 +2479,7 @@ impl std::fmt::Display for ListComponentsError {
         match &self.kind {
             ListComponentsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListComponentsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListComponentsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListComponentsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ListComponentsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListComponentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2394,6 +2550,13 @@ impl ListComponentsError {
             ListComponentsErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentsErrorKind::ResourceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListComponentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ThrottlingException(_))
@@ -2408,6 +2571,7 @@ impl std::error::Error for ListComponentsError {
         match &self.kind {
             ListComponentsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListComponentsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListComponentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListComponentsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListComponentsErrorKind::ValidationException(_inner) => Some(_inner),
             ListComponentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),

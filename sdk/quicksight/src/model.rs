@@ -18469,6 +18469,8 @@ pub struct AccountSettings {
     pub default_namespace: std::option::Option<std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
+    /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    pub public_sharing_enabled: bool,
 }
 impl AccountSettings {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
@@ -18487,6 +18489,10 @@ impl AccountSettings {
     pub fn notification_email(&self) -> std::option::Option<&str> {
         self.notification_email.as_deref()
     }
+    /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    pub fn public_sharing_enabled(&self) -> bool {
+        self.public_sharing_enabled
+    }
 }
 impl std::fmt::Debug for AccountSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18495,6 +18501,7 @@ impl std::fmt::Debug for AccountSettings {
         formatter.field("edition", &self.edition);
         formatter.field("default_namespace", &self.default_namespace);
         formatter.field("notification_email", &self.notification_email);
+        formatter.field("public_sharing_enabled", &self.public_sharing_enabled);
         formatter.finish()
     }
 }
@@ -18508,6 +18515,7 @@ pub mod account_settings {
         pub(crate) edition: std::option::Option<crate::model::Edition>,
         pub(crate) default_namespace: std::option::Option<std::string::String>,
         pub(crate) notification_email: std::option::Option<std::string::String>,
+        pub(crate) public_sharing_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
@@ -18556,6 +18564,16 @@ pub mod account_settings {
             self.notification_email = input;
             self
         }
+        /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+        pub fn public_sharing_enabled(mut self, input: bool) -> Self {
+            self.public_sharing_enabled = Some(input);
+            self
+        }
+        /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+        pub fn set_public_sharing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.public_sharing_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccountSettings`](crate::model::AccountSettings)
         pub fn build(self) -> crate::model::AccountSettings {
             crate::model::AccountSettings {
@@ -18563,6 +18581,7 @@ pub mod account_settings {
                 edition: self.edition,
                 default_namespace: self.default_namespace,
                 notification_email: self.notification_email,
+                public_sharing_enabled: self.public_sharing_enabled.unwrap_or_default(),
             }
         }
     }

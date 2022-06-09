@@ -1983,6 +1983,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCoreNetworks {
     }
 }
 
+/// Operation shape for `ListOrganizationServiceAccessStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_organization_service_access_status`](crate::client::Client::list_organization_service_access_status).
+///
+/// See [`crate::client::fluent_builders::ListOrganizationServiceAccessStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListOrganizationServiceAccessStatus {
+    _private: (),
+}
+impl ListOrganizationServiceAccessStatus {
+    /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusInput`](crate::input::ListOrganizationServiceAccessStatusInput)
+    pub fn builder() -> crate::input::list_organization_service_access_status_input::Builder {
+        crate::input::list_organization_service_access_status_input::Builder::default()
+    }
+    /// Creates a new `ListOrganizationServiceAccessStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationServiceAccessStatus {
+    type Output = std::result::Result<
+        crate::output::ListOrganizationServiceAccessStatusOutput,
+        crate::error::ListOrganizationServiceAccessStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_organization_service_access_status_error(response)
+        } else {
+            crate::operation_deser::parse_list_organization_service_access_status_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2183,6 +2217,42 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreCoreNetworkPolicy
             crate::operation_deser::parse_restore_core_network_policy_version_error(response)
         } else {
             crate::operation_deser::parse_restore_core_network_policy_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartOrganizationServiceAccessUpdate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_organization_service_access_update`](crate::client::Client::start_organization_service_access_update).
+///
+/// See [`crate::client::fluent_builders::StartOrganizationServiceAccessUpdate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartOrganizationServiceAccessUpdate {
+    _private: (),
+}
+impl StartOrganizationServiceAccessUpdate {
+    /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateInput`](crate::input::StartOrganizationServiceAccessUpdateInput)
+    pub fn builder() -> crate::input::start_organization_service_access_update_input::Builder {
+        crate::input::start_organization_service_access_update_input::Builder::default()
+    }
+    /// Creates a new `StartOrganizationServiceAccessUpdate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartOrganizationServiceAccessUpdate {
+    type Output = std::result::Result<
+        crate::output::StartOrganizationServiceAccessUpdateOutput,
+        crate::error::StartOrganizationServiceAccessUpdateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_organization_service_access_update_error(response)
+        } else {
+            crate::operation_deser::parse_start_organization_service_access_update_response(
+                response,
+            )
         }
     }
 }

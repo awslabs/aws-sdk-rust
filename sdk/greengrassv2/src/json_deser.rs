@@ -2028,6 +2028,27 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_greengrassv2_string_map(tokens)?
                                 );
                             }
+                            "vendorGuidance" => {
+                                builder = builder.set_vendor_guidance(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::VendorGuidance::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "vendorGuidanceMessage" => {
+                                builder = builder.set_vendor_guidance_message(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3922,6 +3943,27 @@ where
                                     aws_smithy_json::deserialize::token::expect_blob_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "vendorGuidance" => {
+                                builder = builder.set_vendor_guidance(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::VendorGuidance::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "message" => {
+                                builder = builder.set_message(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

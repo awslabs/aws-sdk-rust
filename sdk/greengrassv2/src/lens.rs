@@ -68,3 +68,73 @@ pub(crate) fn reflens_structure_crate_output_list_installed_components_output_ne
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_client_devices_associated_with_core_device_output_associated_client_devices(
+    input: crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AssociatedClientDevice>> {
+    let input = match input.associated_client_devices {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_components_output_components(
+    input: crate::output::ListComponentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Component>> {
+    let input = match input.components {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_component_versions_output_component_versions(
+    input: crate::output::ListComponentVersionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ComponentVersionListItem>> {
+    let input = match input.component_versions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_core_devices_output_core_devices(
+    input: crate::output::ListCoreDevicesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::CoreDevice>> {
+    let input = match input.core_devices {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_deployments_output_deployments(
+    input: crate::output::ListDeploymentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Deployment>> {
+    let input = match input.deployments {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_effective_deployments_output_effective_deployments(
+    input: crate::output::ListEffectiveDeploymentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::EffectiveDeployment>> {
+    let input = match input.effective_deployments {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_installed_components_output_installed_components(
+    input: crate::output::ListInstalledComponentsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::InstalledComponent>> {
+    let input = match input.installed_components {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

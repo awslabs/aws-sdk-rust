@@ -1039,7 +1039,7 @@ impl Client {
     ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_namespace): <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     ///   - [`session_tags(Vec<SessionTag>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_tags) / [`set_session_tags(Option<Vec<SessionTag>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_tags): <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>  <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
-    ///   - [`authorized_resource_arns(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::authorized_resource_arns) / [`set_authorized_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_authorized_resource_arns): <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    ///   - [`authorized_resource_arns(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::authorized_resource_arns) / [`set_authorized_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_authorized_resource_arns): <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     ///   - [`experience_configuration(AnonymousUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::experience_configuration) / [`set_experience_configuration(Option<AnonymousUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_experience_configuration): <p>The configuration of the experience you are embedding.</p>
     /// - On success, responds with [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::embed_url): <p>The embed URL for the dashboard.</p>
@@ -1876,6 +1876,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateIpRestrictionError>`](crate::error::UpdateIpRestrictionError)
     pub fn update_ip_restriction(&self) -> fluent_builders::UpdateIpRestriction {
         fluent_builders::UpdateIpRestriction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdatePublicSharingSettings`](crate::client::fluent_builders::UpdatePublicSharingSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePublicSharingSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePublicSharingSettings::set_aws_account_id): <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    ///   - [`public_sharing_enabled(bool)`](crate::client::fluent_builders::UpdatePublicSharingSettings::public_sharing_enabled) / [`set_public_sharing_enabled(bool)`](crate::client::fluent_builders::UpdatePublicSharingSettings::set_public_sharing_enabled): <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+    /// - On success, responds with [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::UpdatePublicSharingSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    ///   - [`status(i32)`](crate::output::UpdatePublicSharingSettingsOutput::status): <p>The HTTP status of the request.</p>
+    /// - On failure, responds with [`SdkError<UpdatePublicSharingSettingsError>`](crate::error::UpdatePublicSharingSettingsError)
+    pub fn update_public_sharing_settings(&self) -> fluent_builders::UpdatePublicSharingSettings {
+        fluent_builders::UpdatePublicSharingSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateTemplate`](crate::client::fluent_builders::UpdateTemplate) operation.
     ///
@@ -7339,7 +7351,7 @@ pub mod fluent_builders {
     /// <p>The following rules apply to the generated URL:</p>
     /// <ul>
     /// <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li>
-    /// <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).</p> </li>
+    /// <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours. </p> </li>
     /// <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p>
@@ -7439,12 +7451,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
         ///
-        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
         pub fn authorized_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.authorized_resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
         pub fn set_authorized_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7475,7 +7487,7 @@ pub mod fluent_builders {
     /// <p>The following rules apply to the generated URL:</p>
     /// <ul>
     /// <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li>
-    /// <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).</p> </li>
+    /// <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p> </li>
     /// <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p>
@@ -12436,6 +12448,74 @@ pub mod fluent_builders {
         /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdatePublicSharingSettings`.
+    ///
+    /// <p>Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon QuickSight dashboard.</p>
+    /// <p>To use this operation, enable session capacity pricing on your Amazon QuickSight account.</p>
+    /// <p>Before you can enable public sharing on your account, you need to allow public sharing permissions to an administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon QuickSight with IAM</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdatePublicSharingSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_public_sharing_settings_input::Builder,
+    }
+    impl UpdatePublicSharingSettings {
+        /// Creates a new `UpdatePublicSharingSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdatePublicSharingSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdatePublicSharingSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+        pub fn public_sharing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.public_sharing_enabled(input);
+            self
+        }
+        /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+        pub fn set_public_sharing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_public_sharing_enabled(input);
             self
         }
     }

@@ -466,7 +466,7 @@ impl Client {
     ///   - [`timestamp_column(TimestampColumn)`](crate::client::fluent_builders::UpdateMetricSet::timestamp_column) / [`set_timestamp_column(Option<TimestampColumn>)`](crate::client::fluent_builders::UpdateMetricSet::set_timestamp_column): <p>The timestamp column.</p>
     ///   - [`dimension_list(Vec<String>)`](crate::client::fluent_builders::UpdateMetricSet::dimension_list) / [`set_dimension_list(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateMetricSet::set_dimension_list): <p>The dimension list.</p>
     ///   - [`metric_set_frequency(Frequency)`](crate::client::fluent_builders::UpdateMetricSet::metric_set_frequency) / [`set_metric_set_frequency(Option<Frequency>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_set_frequency): <p>The dataset's interval.</p>
-    ///   - [`metric_source(MetricSource)`](crate::client::fluent_builders::UpdateMetricSet::metric_source) / [`set_metric_source(Option<MetricSource>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_source): <p>Contains information about source data used to generate a metric.</p>
+    ///   - [`metric_source(MetricSource)`](crate::client::fluent_builders::UpdateMetricSet::metric_source) / [`set_metric_source(Option<MetricSource>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_source): <p>Contains information about source data used to generate metrics.</p>
     /// - On success, responds with [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::output::UpdateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<UpdateMetricSetError>`](crate::error::UpdateMetricSetError)
@@ -2810,12 +2810,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_set_frequency(input);
             self
         }
-        /// <p>Contains information about source data used to generate a metric.</p>
+        /// <p>Contains information about source data used to generate metrics.</p>
         pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
             self.inner = self.inner.metric_source(input);
             self
         }
-        /// <p>Contains information about source data used to generate a metric.</p>
+        /// <p>Contains information about source data used to generate metrics.</p>
         pub fn set_metric_source(
             mut self,
             input: std::option::Option<crate::model::MetricSource>,

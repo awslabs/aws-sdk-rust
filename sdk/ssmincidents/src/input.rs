@@ -489,12 +489,12 @@ pub mod create_timeline_event_input {
             self.event_type = input;
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+        /// <p>A short description of the event.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_data = Some(input.into());
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+        /// <p>A short description of the event.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_data = input;
             self
@@ -6149,7 +6149,7 @@ pub struct CreateTimelineEventInput {
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub event_type: std::option::Option<std::string::String>,
-    /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+    /// <p>A short description of the event.</p>
     pub event_data: std::option::Option<std::string::String>,
 }
 impl CreateTimelineEventInput {
@@ -6169,7 +6169,7 @@ impl CreateTimelineEventInput {
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
-    /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+    /// <p>A short description of the event.</p>
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
     }

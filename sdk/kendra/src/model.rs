@@ -2456,6 +2456,8 @@ pub struct DataSourceConfiguration {
     pub box_configuration: std::option::Option<crate::model::BoxConfiguration>,
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
     pub quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
+    /// <p>Provides the configuration information to connect to Jira as your data source.</p>
+    pub jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2534,6 +2536,10 @@ impl DataSourceConfiguration {
     pub fn quip_configuration(&self) -> std::option::Option<&crate::model::QuipConfiguration> {
         self.quip_configuration.as_ref()
     }
+    /// <p>Provides the configuration information to connect to Jira as your data source.</p>
+    pub fn jira_configuration(&self) -> std::option::Option<&crate::model::JiraConfiguration> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2555,6 +2561,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
         formatter.field("slack_configuration", &self.slack_configuration);
         formatter.field("box_configuration", &self.box_configuration);
         formatter.field("quip_configuration", &self.quip_configuration);
+        formatter.field("jira_configuration", &self.jira_configuration);
         formatter.finish()
     }
 }
@@ -2586,6 +2593,7 @@ pub mod data_source_configuration {
         pub(crate) slack_configuration: std::option::Option<crate::model::SlackConfiguration>,
         pub(crate) box_configuration: std::option::Option<crate::model::BoxConfiguration>,
         pub(crate) quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
+        pub(crate) jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
     }
     impl Builder {
         /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2797,6 +2805,19 @@ pub mod data_source_configuration {
             self.quip_configuration = input;
             self
         }
+        /// <p>Provides the configuration information to connect to Jira as your data source.</p>
+        pub fn jira_configuration(mut self, input: crate::model::JiraConfiguration) -> Self {
+            self.jira_configuration = Some(input);
+            self
+        }
+        /// <p>Provides the configuration information to connect to Jira as your data source.</p>
+        pub fn set_jira_configuration(
+            mut self,
+            input: std::option::Option<crate::model::JiraConfiguration>,
+        ) -> Self {
+            self.jira_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
@@ -2814,6 +2835,7 @@ pub mod data_source_configuration {
                 slack_configuration: self.slack_configuration,
                 box_configuration: self.box_configuration,
                 quip_configuration: self.quip_configuration,
+                jira_configuration: self.jira_configuration,
             }
         }
     }
@@ -2822,6 +2844,739 @@ impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JiraConfiguration {
+    /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    pub jira_account_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+    /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+    /// </ul>
+    pub secret_arn: std::option::Option<std::string::String>,
+    /// <p>Specify to use the change log option to update your index.</p>
+    pub use_change_log: bool,
+    /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
+    pub project: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    pub issue_type: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    pub status: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
+    pub issue_sub_entity_filter: std::option::Option<std::vec::Vec<crate::model::IssueSubEntity>>,
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub attachment_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub comment_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub issue_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub project_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub work_log_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+}
+impl JiraConfiguration {
+    /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    pub fn jira_account_url(&self) -> std::option::Option<&str> {
+        self.jira_account_url.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+    /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+    /// </ul>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>Specify to use the change log option to update your index.</p>
+    pub fn use_change_log(&self) -> bool {
+        self.use_change_log
+    }
+    /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
+    pub fn project(&self) -> std::option::Option<&[std::string::String]> {
+        self.project.as_deref()
+    }
+    /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    pub fn issue_type(&self) -> std::option::Option<&[std::string::String]> {
+        self.issue_type.as_deref()
+    }
+    /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    pub fn status(&self) -> std::option::Option<&[std::string::String]> {
+        self.status.as_deref()
+    }
+    /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
+    pub fn issue_sub_entity_filter(&self) -> std::option::Option<&[crate::model::IssueSubEntity]> {
+        self.issue_sub_entity_filter.as_deref()
+    }
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn attachment_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.attachment_field_mappings.as_deref()
+    }
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn comment_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.comment_field_mappings.as_deref()
+    }
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn issue_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.issue_field_mappings.as_deref()
+    }
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn project_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.project_field_mappings.as_deref()
+    }
+    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn work_log_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.work_log_field_mappings.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_patterns.as_deref()
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for JiraConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JiraConfiguration");
+        formatter.field("jira_account_url", &self.jira_account_url);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("use_change_log", &self.use_change_log);
+        formatter.field("project", &self.project);
+        formatter.field("issue_type", &self.issue_type);
+        formatter.field("status", &self.status);
+        formatter.field("issue_sub_entity_filter", &self.issue_sub_entity_filter);
+        formatter.field("attachment_field_mappings", &self.attachment_field_mappings);
+        formatter.field("comment_field_mappings", &self.comment_field_mappings);
+        formatter.field("issue_field_mappings", &self.issue_field_mappings);
+        formatter.field("project_field_mappings", &self.project_field_mappings);
+        formatter.field("work_log_field_mappings", &self.work_log_field_mappings);
+        formatter.field("inclusion_patterns", &self.inclusion_patterns);
+        formatter.field("exclusion_patterns", &self.exclusion_patterns);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.finish()
+    }
+}
+/// See [`JiraConfiguration`](crate::model::JiraConfiguration)
+pub mod jira_configuration {
+    /// A builder for [`JiraConfiguration`](crate::model::JiraConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) jira_account_url: std::option::Option<std::string::String>,
+        pub(crate) secret_arn: std::option::Option<std::string::String>,
+        pub(crate) use_change_log: std::option::Option<bool>,
+        pub(crate) project: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) issue_type: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) status: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) issue_sub_entity_filter:
+            std::option::Option<std::vec::Vec<crate::model::IssueSubEntity>>,
+        pub(crate) attachment_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) comment_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) issue_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) project_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) work_log_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+    }
+    impl Builder {
+        /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+        pub fn jira_account_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.jira_account_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+        pub fn set_jira_account_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.jira_account_url = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+        /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+        /// </ul>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+        /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+        /// </ul>
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
+            self
+        }
+        /// <p>Specify to use the change log option to update your index.</p>
+        pub fn use_change_log(mut self, input: bool) -> Self {
+            self.use_change_log = Some(input);
+            self
+        }
+        /// <p>Specify to use the change log option to update your index.</p>
+        pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_change_log = input;
+            self
+        }
+        /// Appends an item to `project`.
+        ///
+        /// To override the contents of this collection use [`set_project`](Self::set_project).
+        ///
+        /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.project.unwrap_or_default();
+            v.push(input.into());
+            self.project = Some(v);
+            self
+        }
+        /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
+        pub fn set_project(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.project = input;
+            self
+        }
+        /// Appends an item to `issue_type`.
+        ///
+        /// To override the contents of this collection use [`set_issue_type`](Self::set_issue_type).
+        ///
+        /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+        pub fn issue_type(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.issue_type.unwrap_or_default();
+            v.push(input.into());
+            self.issue_type = Some(v);
+            self
+        }
+        /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+        pub fn set_issue_type(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.issue_type = input;
+            self
+        }
+        /// Appends an item to `status`.
+        ///
+        /// To override the contents of this collection use [`set_status`](Self::set_status).
+        ///
+        /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.status.unwrap_or_default();
+            v.push(input.into());
+            self.status = Some(v);
+            self
+        }
+        /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `issue_sub_entity_filter`.
+        ///
+        /// To override the contents of this collection use [`set_issue_sub_entity_filter`](Self::set_issue_sub_entity_filter).
+        ///
+        /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
+        pub fn issue_sub_entity_filter(mut self, input: crate::model::IssueSubEntity) -> Self {
+            let mut v = self.issue_sub_entity_filter.unwrap_or_default();
+            v.push(input);
+            self.issue_sub_entity_filter = Some(v);
+            self
+        }
+        /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
+        pub fn set_issue_sub_entity_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IssueSubEntity>>,
+        ) -> Self {
+            self.issue_sub_entity_filter = input;
+            self
+        }
+        /// Appends an item to `attachment_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_attachment_field_mappings`](Self::set_attachment_field_mappings).
+        ///
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn attachment_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.attachment_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.attachment_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn set_attachment_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.attachment_field_mappings = input;
+            self
+        }
+        /// Appends an item to `comment_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_comment_field_mappings`](Self::set_comment_field_mappings).
+        ///
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn comment_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.comment_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.comment_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn set_comment_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.comment_field_mappings = input;
+            self
+        }
+        /// Appends an item to `issue_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_issue_field_mappings`](Self::set_issue_field_mappings).
+        ///
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn issue_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.issue_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.issue_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn set_issue_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.issue_field_mappings = input;
+            self
+        }
+        /// Appends an item to `project_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_project_field_mappings`](Self::set_project_field_mappings).
+        ///
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn project_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.project_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.project_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn set_project_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.project_field_mappings = input;
+            self
+        }
+        /// Appends an item to `work_log_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_work_log_field_mappings`](Self::set_work_log_field_mappings).
+        ///
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn work_log_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.work_log_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.work_log_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        pub fn set_work_log_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.work_log_field_mappings = input;
+            self
+        }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_inclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_exclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_patterns = input;
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JiraConfiguration`](crate::model::JiraConfiguration)
+        pub fn build(self) -> crate::model::JiraConfiguration {
+            crate::model::JiraConfiguration {
+                jira_account_url: self.jira_account_url,
+                secret_arn: self.secret_arn,
+                use_change_log: self.use_change_log.unwrap_or_default(),
+                project: self.project,
+                issue_type: self.issue_type,
+                status: self.status,
+                issue_sub_entity_filter: self.issue_sub_entity_filter,
+                attachment_field_mappings: self.attachment_field_mappings,
+                comment_field_mappings: self.comment_field_mappings,
+                issue_field_mappings: self.issue_field_mappings,
+                project_field_mappings: self.project_field_mappings,
+                work_log_field_mappings: self.work_log_field_mappings,
+                inclusion_patterns: self.inclusion_patterns,
+                exclusion_patterns: self.exclusion_patterns,
+                vpc_configuration: self.vpc_configuration,
+            }
+        }
+    }
+}
+impl JiraConfiguration {
+    /// Creates a new builder-style object to manufacture [`JiraConfiguration`](crate::model::JiraConfiguration)
+    pub fn builder() -> crate::model::jira_configuration::Builder {
+        crate::model::jira_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceVpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+pub mod data_source_vpc_configuration {
+    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
+            crate::model::DataSourceVpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
+/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub data_source_field_name: std::option::Option<std::string::String>,
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub date_field_format: std::option::Option<std::string::String>,
+    /// <p>The name of the field in the index.</p>
+    pub index_field_name: std::option::Option<std::string::String>,
+}
+impl DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
+        self.data_source_field_name.as_deref()
+    }
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub fn date_field_format(&self) -> std::option::Option<&str> {
+        self.date_field_format.as_deref()
+    }
+    /// <p>The name of the field in the index.</p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceToIndexFieldMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
+        formatter.field("data_source_field_name", &self.data_source_field_name);
+        formatter.field("date_field_format", &self.date_field_format);
+        formatter.field("index_field_name", &self.index_field_name);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+pub mod data_source_to_index_field_mapping {
+    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
+        pub(crate) date_field_format: std::option::Option<std::string::String>,
+        pub(crate) index_field_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn set_data_source_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_field_name = input;
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_field_format = Some(input.into());
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn set_date_field_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_field_format = input;
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn set_index_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_field_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
+            crate::model::DataSourceToIndexFieldMapping {
+                data_source_field_name: self.data_source_field_name,
+                date_field_format: self.date_field_format,
+                index_field_name: self.index_field_name,
+            }
+        }
+    }
+}
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum IssueSubEntity {
+    #[allow(missing_docs)] // documentation missing in model
+    Attachments,
+    #[allow(missing_docs)] // documentation missing in model
+    Comments,
+    #[allow(missing_docs)] // documentation missing in model
+    Worklogs,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for IssueSubEntity {
+    fn from(s: &str) -> Self {
+        match s {
+            "ATTACHMENTS" => IssueSubEntity::Attachments,
+            "COMMENTS" => IssueSubEntity::Comments,
+            "WORKLOGS" => IssueSubEntity::Worklogs,
+            other => IssueSubEntity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for IssueSubEntity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IssueSubEntity::from(s))
+    }
+}
+impl IssueSubEntity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IssueSubEntity::Attachments => "ATTACHMENTS",
+            IssueSubEntity::Comments => "COMMENTS",
+            IssueSubEntity::Worklogs => "WORKLOGS",
+            IssueSubEntity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ATTACHMENTS", "COMMENTS", "WORKLOGS"]
+    }
+}
+impl AsRef<str> for IssueSubEntity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3180,198 +3935,6 @@ impl QuipConfiguration {
     /// Creates a new builder-style object to manufacture [`QuipConfiguration`](crate::model::QuipConfiguration)
     pub fn builder() -> crate::model::quip_configuration::Builder {
         crate::model::quip_configuration::Builder::default()
-    }
-}
-
-/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-pub mod data_source_vpc_configuration {
-    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
-            crate::model::DataSourceVpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
-    }
-}
-
-/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub data_source_field_name: std::option::Option<std::string::String>,
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub date_field_format: std::option::Option<std::string::String>,
-    /// <p>The name of the field in the index.</p>
-    pub index_field_name: std::option::Option<std::string::String>,
-}
-impl DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
-        self.data_source_field_name.as_deref()
-    }
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(&self) -> std::option::Option<&str> {
-        self.date_field_format.as_deref()
-    }
-    /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
-        self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-pub mod data_source_to_index_field_mapping {
-    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-        pub(crate) date_field_format: std::option::Option<std::string::String>,
-        pub(crate) index_field_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn set_data_source_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_field_name = input;
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.date_field_format = Some(input.into());
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn set_date_field_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_field_format = input;
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.index_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
-            crate::model::DataSourceToIndexFieldMapping {
-                data_source_field_name: self.data_source_field_name,
-                date_field_format: self.date_field_format,
-                index_field_name: self.index_field_name,
-            }
-        }
-    }
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
     }
 }
 
@@ -17179,6 +17742,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Googledrive,
     #[allow(missing_docs)] // documentation missing in model
+    Jira,
+    #[allow(missing_docs)] // documentation missing in model
     Onedrive,
     #[allow(missing_docs)] // documentation missing in model
     Quip,
@@ -17208,6 +17773,7 @@ impl std::convert::From<&str> for DataSourceType {
             "DATABASE" => DataSourceType::Database,
             "FSX" => DataSourceType::Fsx,
             "GOOGLEDRIVE" => DataSourceType::Googledrive,
+            "JIRA" => DataSourceType::Jira,
             "ONEDRIVE" => DataSourceType::Onedrive,
             "QUIP" => DataSourceType::Quip,
             "S3" => DataSourceType::S3,
@@ -17238,6 +17804,7 @@ impl DataSourceType {
             DataSourceType::Database => "DATABASE",
             DataSourceType::Fsx => "FSX",
             DataSourceType::Googledrive => "GOOGLEDRIVE",
+            DataSourceType::Jira => "JIRA",
             DataSourceType::Onedrive => "ONEDRIVE",
             DataSourceType::Quip => "QUIP",
             DataSourceType::S3 => "S3",
@@ -17259,6 +17826,7 @@ impl DataSourceType {
             "DATABASE",
             "FSX",
             "GOOGLEDRIVE",
+            "JIRA",
             "ONEDRIVE",
             "QUIP",
             "S3",

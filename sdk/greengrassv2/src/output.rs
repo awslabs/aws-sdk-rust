@@ -2088,6 +2088,36 @@ impl DescribeComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDeploymentOutput {}
+impl std::fmt::Debug for DeleteDeploymentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDeploymentOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
+pub mod delete_deployment_output {
+    /// A builder for [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
+        pub fn build(self) -> crate::output::DeleteDeploymentOutput {
+            crate::output::DeleteDeploymentOutput {}
+        }
+    }
+}
+impl DeleteDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
+    pub fn builder() -> crate::output::delete_deployment_output::Builder {
+        crate::output::delete_deployment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreDeviceOutput {}
 impl std::fmt::Debug for DeleteCoreDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -1135,6 +1135,10 @@ pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     BankRouting,
     #[allow(missing_docs)] // documentation missing in model
+    CaHealthNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    CaSocialInsuranceNumber,
+    #[allow(missing_docs)] // documentation missing in model
     CreditDebitCvv,
     #[allow(missing_docs)] // documentation missing in model
     CreditDebitExpiry,
@@ -1147,7 +1151,19 @@ pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     Email,
     #[allow(missing_docs)] // documentation missing in model
+    InternationalBankAccountNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    InAadhaar,
+    #[allow(missing_docs)] // documentation missing in model
+    InNrega,
+    #[allow(missing_docs)] // documentation missing in model
+    InPermanentAccountNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    InVoterNumber,
+    #[allow(missing_docs)] // documentation missing in model
     IpAddress,
+    #[allow(missing_docs)] // documentation missing in model
+    LicensePlate,
     #[allow(missing_docs)] // documentation missing in model
     MacAddress,
     #[allow(missing_docs)] // documentation missing in model
@@ -1163,9 +1179,21 @@ pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     Ssn,
     #[allow(missing_docs)] // documentation missing in model
+    SwiftCode,
+    #[allow(missing_docs)] // documentation missing in model
+    UkNationalHealthServiceNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    UkNationalInsuranceNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    UkUniqueTaxpayerReferenceNumber,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     #[allow(missing_docs)] // documentation missing in model
     Username,
+    #[allow(missing_docs)] // documentation missing in model
+    UsIndividualTaxIdentificationNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    VehicleIdentificationNumber,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1179,13 +1207,21 @@ impl std::convert::From<&str> for PiiEntityType {
             "AWS_SECRET_KEY" => PiiEntityType::AwsSecretKey,
             "BANK_ACCOUNT_NUMBER" => PiiEntityType::BankAccountNumber,
             "BANK_ROUTING" => PiiEntityType::BankRouting,
+            "CA_HEALTH_NUMBER" => PiiEntityType::CaHealthNumber,
+            "CA_SOCIAL_INSURANCE_NUMBER" => PiiEntityType::CaSocialInsuranceNumber,
             "CREDIT_DEBIT_CVV" => PiiEntityType::CreditDebitCvv,
             "CREDIT_DEBIT_EXPIRY" => PiiEntityType::CreditDebitExpiry,
             "CREDIT_DEBIT_NUMBER" => PiiEntityType::CreditDebitNumber,
             "DATE_TIME" => PiiEntityType::DateTime,
             "DRIVER_ID" => PiiEntityType::DriverId,
             "EMAIL" => PiiEntityType::Email,
+            "INTERNATIONAL_BANK_ACCOUNT_NUMBER" => PiiEntityType::InternationalBankAccountNumber,
+            "IN_AADHAAR" => PiiEntityType::InAadhaar,
+            "IN_NREGA" => PiiEntityType::InNrega,
+            "IN_PERMANENT_ACCOUNT_NUMBER" => PiiEntityType::InPermanentAccountNumber,
+            "IN_VOTER_NUMBER" => PiiEntityType::InVoterNumber,
             "IP_ADDRESS" => PiiEntityType::IpAddress,
+            "LICENSE_PLATE" => PiiEntityType::LicensePlate,
             "MAC_ADDRESS" => PiiEntityType::MacAddress,
             "NAME" => PiiEntityType::Name,
             "PASSPORT_NUMBER" => PiiEntityType::PassportNumber,
@@ -1193,8 +1229,16 @@ impl std::convert::From<&str> for PiiEntityType {
             "PHONE" => PiiEntityType::Phone,
             "PIN" => PiiEntityType::Pin,
             "SSN" => PiiEntityType::Ssn,
+            "SWIFT_CODE" => PiiEntityType::SwiftCode,
+            "UK_NATIONAL_HEALTH_SERVICE_NUMBER" => PiiEntityType::UkNationalHealthServiceNumber,
+            "UK_NATIONAL_INSURANCE_NUMBER" => PiiEntityType::UkNationalInsuranceNumber,
+            "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER" => PiiEntityType::UkUniqueTaxpayerReferenceNumber,
             "URL" => PiiEntityType::Url,
             "USERNAME" => PiiEntityType::Username,
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" => {
+                PiiEntityType::UsIndividualTaxIdentificationNumber
+            }
+            "VEHICLE_IDENTIFICATION_NUMBER" => PiiEntityType::VehicleIdentificationNumber,
             other => PiiEntityType::Unknown(other.to_owned()),
         }
     }
@@ -1217,13 +1261,21 @@ impl PiiEntityType {
             PiiEntityType::AwsSecretKey => "AWS_SECRET_KEY",
             PiiEntityType::BankAccountNumber => "BANK_ACCOUNT_NUMBER",
             PiiEntityType::BankRouting => "BANK_ROUTING",
+            PiiEntityType::CaHealthNumber => "CA_HEALTH_NUMBER",
+            PiiEntityType::CaSocialInsuranceNumber => "CA_SOCIAL_INSURANCE_NUMBER",
             PiiEntityType::CreditDebitCvv => "CREDIT_DEBIT_CVV",
             PiiEntityType::CreditDebitExpiry => "CREDIT_DEBIT_EXPIRY",
             PiiEntityType::CreditDebitNumber => "CREDIT_DEBIT_NUMBER",
             PiiEntityType::DateTime => "DATE_TIME",
             PiiEntityType::DriverId => "DRIVER_ID",
             PiiEntityType::Email => "EMAIL",
+            PiiEntityType::InternationalBankAccountNumber => "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            PiiEntityType::InAadhaar => "IN_AADHAAR",
+            PiiEntityType::InNrega => "IN_NREGA",
+            PiiEntityType::InPermanentAccountNumber => "IN_PERMANENT_ACCOUNT_NUMBER",
+            PiiEntityType::InVoterNumber => "IN_VOTER_NUMBER",
             PiiEntityType::IpAddress => "IP_ADDRESS",
+            PiiEntityType::LicensePlate => "LICENSE_PLATE",
             PiiEntityType::MacAddress => "MAC_ADDRESS",
             PiiEntityType::Name => "NAME",
             PiiEntityType::PassportNumber => "PASSPORT_NUMBER",
@@ -1231,8 +1283,16 @@ impl PiiEntityType {
             PiiEntityType::Phone => "PHONE",
             PiiEntityType::Pin => "PIN",
             PiiEntityType::Ssn => "SSN",
+            PiiEntityType::SwiftCode => "SWIFT_CODE",
+            PiiEntityType::UkNationalHealthServiceNumber => "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
+            PiiEntityType::UkNationalInsuranceNumber => "UK_NATIONAL_INSURANCE_NUMBER",
+            PiiEntityType::UkUniqueTaxpayerReferenceNumber => "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
             PiiEntityType::Url => "URL",
             PiiEntityType::Username => "USERNAME",
+            PiiEntityType::UsIndividualTaxIdentificationNumber => {
+                "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"
+            }
+            PiiEntityType::VehicleIdentificationNumber => "VEHICLE_IDENTIFICATION_NUMBER",
             PiiEntityType::Unknown(s) => s.as_ref(),
         }
     }
@@ -1246,13 +1306,21 @@ impl PiiEntityType {
             "AWS_SECRET_KEY",
             "BANK_ACCOUNT_NUMBER",
             "BANK_ROUTING",
+            "CA_HEALTH_NUMBER",
+            "CA_SOCIAL_INSURANCE_NUMBER",
             "CREDIT_DEBIT_CVV",
             "CREDIT_DEBIT_EXPIRY",
             "CREDIT_DEBIT_NUMBER",
             "DATE_TIME",
             "DRIVER_ID",
             "EMAIL",
+            "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            "IN_AADHAAR",
+            "IN_NREGA",
+            "IN_PERMANENT_ACCOUNT_NUMBER",
+            "IN_VOTER_NUMBER",
             "IP_ADDRESS",
+            "LICENSE_PLATE",
             "MAC_ADDRESS",
             "NAME",
             "PASSPORT_NUMBER",
@@ -1260,8 +1328,14 @@ impl PiiEntityType {
             "PHONE",
             "PIN",
             "SSN",
+            "SWIFT_CODE",
+            "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
+            "UK_NATIONAL_INSURANCE_NUMBER",
+            "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
             "URL",
             "USERNAME",
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
+            "VEHICLE_IDENTIFICATION_NUMBER",
         ]
     }
 }
@@ -6928,7 +7002,7 @@ impl EntitiesDetectionJobFilter {
     }
 }
 
-/// <p>Specifies information about the specified endpoint.</p>
+/// <p>Specifies information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointProperties {
@@ -8034,7 +8108,7 @@ pub struct DocumentClassifierProperties {
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Indicates the mode in which the specific classifier was trained. This also indicates the format of input documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot be changed once the classifier is trained.</p>
     pub mode: std::option::Option<crate::model::DocumentClassifierMode>,
@@ -8110,7 +8184,7 @@ impl DocumentClassifierProperties {
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -8364,12 +8438,12 @@ pub mod document_classifier_properties {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -8933,7 +9007,7 @@ impl DocumentClassifierOutputDataConfig {
 }
 
 /// <p>The input properties for training a document classifier. </p>
-/// <p>For more information on how the input file is formatted, see <code>how-document-classification-training-data</code>. </p>
+/// <p>For more information on how the input file is formatted, see <code>prep-classifier-data</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentClassifierInputDataConfig {
@@ -9337,7 +9411,7 @@ pub struct DocumentClassificationJobProperties {
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl DocumentClassificationJobProperties {
@@ -9406,7 +9480,7 @@ impl DocumentClassificationJobProperties {
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -9629,12 +9703,12 @@ pub mod document_classification_job_properties {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,

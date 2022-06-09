@@ -122,6 +122,36 @@ impl StopResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResumeResourceOutput {}
+impl std::fmt::Debug for ResumeResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResumeResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`ResumeResourceOutput`](crate::output::ResumeResourceOutput)
+pub mod resume_resource_output {
+    /// A builder for [`ResumeResourceOutput`](crate::output::ResumeResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ResumeResourceOutput`](crate::output::ResumeResourceOutput)
+        pub fn build(self) -> crate::output::ResumeResourceOutput {
+            crate::output::ResumeResourceOutput {}
+        }
+    }
+}
+impl ResumeResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ResumeResourceOutput`](crate::output::ResumeResourceOutput)
+    pub fn builder() -> crate::output::resume_resource_output::Builder {
+        crate::output::resume_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -353,6 +383,184 @@ impl ListPredictorBacktestExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPredictorBacktestExportJobsOutput`](crate::output::ListPredictorBacktestExportJobsOutput)
     pub fn builder() -> crate::output::list_predictor_backtest_export_jobs_output::Builder {
         crate::output::list_predictor_backtest_export_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMonitorsOutput {
+    /// <p>An array of objects that summarize each monitor's properties.</p>
+    pub monitors: std::option::Option<std::vec::Vec<crate::model::MonitorSummary>>,
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMonitorsOutput {
+    /// <p>An array of objects that summarize each monitor's properties.</p>
+    pub fn monitors(&self) -> std::option::Option<&[crate::model::MonitorSummary]> {
+        self.monitors.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMonitorsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMonitorsOutput");
+        formatter.field("monitors", &self.monitors);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMonitorsOutput`](crate::output::ListMonitorsOutput)
+pub mod list_monitors_output {
+    /// A builder for [`ListMonitorsOutput`](crate::output::ListMonitorsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitors: std::option::Option<std::vec::Vec<crate::model::MonitorSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `monitors`.
+        ///
+        /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
+        ///
+        /// <p>An array of objects that summarize each monitor's properties.</p>
+        pub fn monitors(mut self, input: crate::model::MonitorSummary) -> Self {
+            let mut v = self.monitors.unwrap_or_default();
+            v.push(input);
+            self.monitors = Some(v);
+            self
+        }
+        /// <p>An array of objects that summarize each monitor's properties.</p>
+        pub fn set_monitors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MonitorSummary>>,
+        ) -> Self {
+            self.monitors = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitorsOutput`](crate::output::ListMonitorsOutput)
+        pub fn build(self) -> crate::output::ListMonitorsOutput {
+            crate::output::ListMonitorsOutput {
+                monitors: self.monitors,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMonitorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMonitorsOutput`](crate::output::ListMonitorsOutput)
+    pub fn builder() -> crate::output::list_monitors_output::Builder {
+        crate::output::list_monitors_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMonitorEvaluationsOutput {
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
+    /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+    pub predictor_monitor_evaluations:
+        std::option::Option<std::vec::Vec<crate::model::PredictorMonitorEvaluation>>,
+}
+impl ListMonitorEvaluationsOutput {
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
+    /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+    pub fn predictor_monitor_evaluations(
+        &self,
+    ) -> std::option::Option<&[crate::model::PredictorMonitorEvaluation]> {
+        self.predictor_monitor_evaluations.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMonitorEvaluationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMonitorEvaluationsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "predictor_monitor_evaluations",
+            &self.predictor_monitor_evaluations,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListMonitorEvaluationsOutput`](crate::output::ListMonitorEvaluationsOutput)
+pub mod list_monitor_evaluations_output {
+    /// A builder for [`ListMonitorEvaluationsOutput`](crate::output::ListMonitorEvaluationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) predictor_monitor_evaluations:
+            std::option::Option<std::vec::Vec<crate::model::PredictorMonitorEvaluation>>,
+    }
+    impl Builder {
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `predictor_monitor_evaluations`.
+        ///
+        /// To override the contents of this collection use [`set_predictor_monitor_evaluations`](Self::set_predictor_monitor_evaluations).
+        ///
+        /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
+        /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+        pub fn predictor_monitor_evaluations(
+            mut self,
+            input: crate::model::PredictorMonitorEvaluation,
+        ) -> Self {
+            let mut v = self.predictor_monitor_evaluations.unwrap_or_default();
+            v.push(input);
+            self.predictor_monitor_evaluations = Some(v);
+            self
+        }
+        /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
+        /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+        pub fn set_predictor_monitor_evaluations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PredictorMonitorEvaluation>>,
+        ) -> Self {
+            self.predictor_monitor_evaluations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitorEvaluationsOutput`](crate::output::ListMonitorEvaluationsOutput)
+        pub fn build(self) -> crate::output::ListMonitorEvaluationsOutput {
+            crate::output::ListMonitorEvaluationsOutput {
+                next_token: self.next_token,
+                predictor_monitor_evaluations: self.predictor_monitor_evaluations,
+            }
+        }
+    }
+}
+impl ListMonitorEvaluationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsOutput`](crate::output::ListMonitorEvaluationsOutput)
+    pub fn builder() -> crate::output::list_monitor_evaluations_output::Builder {
+        crate::output::list_monitor_evaluations_output::Builder::default()
     }
 }
 
@@ -2057,6 +2265,269 @@ impl DescribePredictorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeMonitorOutput {
+    /// <p>The name of the monitor.</p>
+    pub monitor_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+    pub monitor_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the monitor resource.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
+    pub last_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The state of the monitor's latest evaluation.</p>
+    pub last_evaluation_state: std::option::Option<std::string::String>,
+    /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+    pub baseline: std::option::Option<crate::model::Baseline>,
+    /// <p>An error message, if any, for the monitor.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The timestamp for when the monitor resource was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp of the latest modification to the monitor.</p>
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+    pub estimated_evaluation_time_remaining_in_minutes: std::option::Option<i64>,
+}
+impl DescribeMonitorOutput {
+    /// <p>The name of the monitor.</p>
+    pub fn monitor_name(&self) -> std::option::Option<&str> {
+        self.monitor_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The status of the monitor resource.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
+    pub fn last_evaluation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_evaluation_time.as_ref()
+    }
+    /// <p>The state of the monitor's latest evaluation.</p>
+    pub fn last_evaluation_state(&self) -> std::option::Option<&str> {
+        self.last_evaluation_state.as_deref()
+    }
+    /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+    pub fn baseline(&self) -> std::option::Option<&crate::model::Baseline> {
+        self.baseline.as_ref()
+    }
+    /// <p>An error message, if any, for the monitor.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The timestamp for when the monitor resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The timestamp of the latest modification to the monitor.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+    pub fn estimated_evaluation_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
+        self.estimated_evaluation_time_remaining_in_minutes
+    }
+}
+impl std::fmt::Debug for DescribeMonitorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeMonitorOutput");
+        formatter.field("monitor_name", &self.monitor_name);
+        formatter.field("monitor_arn", &self.monitor_arn);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("status", &self.status);
+        formatter.field("last_evaluation_time", &self.last_evaluation_time);
+        formatter.field("last_evaluation_state", &self.last_evaluation_state);
+        formatter.field("baseline", &self.baseline);
+        formatter.field("message", &self.message);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field(
+            "estimated_evaluation_time_remaining_in_minutes",
+            &self.estimated_evaluation_time_remaining_in_minutes,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeMonitorOutput`](crate::output::DescribeMonitorOutput)
+pub mod describe_monitor_output {
+    /// A builder for [`DescribeMonitorOutput`](crate::output::DescribeMonitorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitor_name: std::option::Option<std::string::String>,
+        pub(crate) monitor_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) last_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_evaluation_state: std::option::Option<std::string::String>,
+        pub(crate) baseline: std::option::Option<crate::model::Baseline>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) estimated_evaluation_time_remaining_in_minutes: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The name of the monitor.</p>
+        pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the monitor.</p>
+        pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The status of the monitor resource.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the monitor resource.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
+        pub fn last_evaluation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_evaluation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
+        pub fn set_last_evaluation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_evaluation_time = input;
+            self
+        }
+        /// <p>The state of the monitor's latest evaluation.</p>
+        pub fn last_evaluation_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_evaluation_state = Some(input.into());
+            self
+        }
+        /// <p>The state of the monitor's latest evaluation.</p>
+        pub fn set_last_evaluation_state(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_evaluation_state = input;
+            self
+        }
+        /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+        pub fn baseline(mut self, input: crate::model::Baseline) -> Self {
+            self.baseline = Some(input);
+            self
+        }
+        /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+        pub fn set_baseline(mut self, input: std::option::Option<crate::model::Baseline>) -> Self {
+            self.baseline = input;
+            self
+        }
+        /// <p>An error message, if any, for the monitor.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>An error message, if any, for the monitor.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The timestamp for when the monitor resource was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp for when the monitor resource was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The timestamp of the latest modification to the monitor.</p>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of the latest modification to the monitor.</p>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+        pub fn estimated_evaluation_time_remaining_in_minutes(mut self, input: i64) -> Self {
+            self.estimated_evaluation_time_remaining_in_minutes = Some(input);
+            self
+        }
+        /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+        pub fn set_estimated_evaluation_time_remaining_in_minutes(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.estimated_evaluation_time_remaining_in_minutes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMonitorOutput`](crate::output::DescribeMonitorOutput)
+        pub fn build(self) -> crate::output::DescribeMonitorOutput {
+            crate::output::DescribeMonitorOutput {
+                monitor_name: self.monitor_name,
+                monitor_arn: self.monitor_arn,
+                resource_arn: self.resource_arn,
+                status: self.status,
+                last_evaluation_time: self.last_evaluation_time,
+                last_evaluation_state: self.last_evaluation_state,
+                baseline: self.baseline,
+                message: self.message,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+                estimated_evaluation_time_remaining_in_minutes: self
+                    .estimated_evaluation_time_remaining_in_minutes,
+            }
+        }
+    }
+}
+impl DescribeMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMonitorOutput`](crate::output::DescribeMonitorOutput)
+    pub fn builder() -> crate::output::describe_monitor_output::Builder {
+        crate::output::describe_monitor_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastExportJobOutput {
     /// <p>The ARN of the forecast export job.</p>
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
@@ -3745,13 +4216,13 @@ pub struct DescribeDatasetGroupOutput {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+    /// <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>
     /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetGroupOutput {
@@ -3778,7 +4249,7 @@ impl DescribeDatasetGroupOutput {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+    /// <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>
     /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
@@ -3788,7 +4259,7 @@ impl DescribeDatasetGroupOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -3883,7 +4354,7 @@ pub mod describe_dataset_group_output {
         /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+        /// <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>
         /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3897,7 +4368,7 @@ pub mod describe_dataset_group_output {
         /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+        /// <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>
         /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3917,12 +4388,12 @@ pub mod describe_dataset_group_output {
             self.creation_time = input;
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3977,13 +4448,13 @@ pub struct DescribeDatasetOutput {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
     /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the dataset was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetOutput {
@@ -4023,7 +4494,7 @@ impl DescribeDatasetOutput {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
     /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
@@ -4033,7 +4504,7 @@ impl DescribeDatasetOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -4160,7 +4631,7 @@ pub mod describe_dataset_output {
         /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
         /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4174,7 +4645,7 @@ pub mod describe_dataset_output {
         /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
         /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -4194,12 +4665,12 @@ pub mod describe_dataset_output {
             self.creation_time = input;
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4283,6 +4754,10 @@ pub struct DescribeAutoPredictorOutput {
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
     /// <p>Provides the status and ARN of the Predictor Explainability.</p>
     pub explainability_info: std::option::Option<crate::model::ExplainabilityInfo>,
+    /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
+    pub monitor_info: std::option::Option<crate::model::MonitorInfo>,
+    /// <p>The time boundary Forecast uses when aggregating data.</p>
+    pub time_alignment_boundary: std::option::Option<crate::model::TimeAlignmentBoundary>,
 }
 impl DescribeAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor</p>
@@ -4369,6 +4844,16 @@ impl DescribeAutoPredictorOutput {
     pub fn explainability_info(&self) -> std::option::Option<&crate::model::ExplainabilityInfo> {
         self.explainability_info.as_ref()
     }
+    /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
+    pub fn monitor_info(&self) -> std::option::Option<&crate::model::MonitorInfo> {
+        self.monitor_info.as_ref()
+    }
+    /// <p>The time boundary Forecast uses when aggregating data.</p>
+    pub fn time_alignment_boundary(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeAlignmentBoundary> {
+        self.time_alignment_boundary.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAutoPredictorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4396,6 +4881,8 @@ impl std::fmt::Debug for DescribeAutoPredictorOutput {
         formatter.field("last_modification_time", &self.last_modification_time);
         formatter.field("optimization_metric", &self.optimization_metric);
         formatter.field("explainability_info", &self.explainability_info);
+        formatter.field("monitor_info", &self.monitor_info);
+        formatter.field("time_alignment_boundary", &self.time_alignment_boundary);
         formatter.finish()
     }
 }
@@ -4423,6 +4910,9 @@ pub mod describe_auto_predictor_output {
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
         pub(crate) explainability_info: std::option::Option<crate::model::ExplainabilityInfo>,
+        pub(crate) monitor_info: std::option::Option<crate::model::MonitorInfo>,
+        pub(crate) time_alignment_boundary:
+            std::option::Option<crate::model::TimeAlignmentBoundary>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the predictor</p>
@@ -4686,6 +5176,35 @@ pub mod describe_auto_predictor_output {
             self.explainability_info = input;
             self
         }
+        /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
+        pub fn monitor_info(mut self, input: crate::model::MonitorInfo) -> Self {
+            self.monitor_info = Some(input);
+            self
+        }
+        /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
+        pub fn set_monitor_info(
+            mut self,
+            input: std::option::Option<crate::model::MonitorInfo>,
+        ) -> Self {
+            self.monitor_info = input;
+            self
+        }
+        /// <p>The time boundary Forecast uses when aggregating data.</p>
+        pub fn time_alignment_boundary(
+            mut self,
+            input: crate::model::TimeAlignmentBoundary,
+        ) -> Self {
+            self.time_alignment_boundary = Some(input);
+            self
+        }
+        /// <p>The time boundary Forecast uses when aggregating data.</p>
+        pub fn set_time_alignment_boundary(
+            mut self,
+            input: std::option::Option<crate::model::TimeAlignmentBoundary>,
+        ) -> Self {
+            self.time_alignment_boundary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAutoPredictorOutput`](crate::output::DescribeAutoPredictorOutput)
         pub fn build(self) -> crate::output::DescribeAutoPredictorOutput {
             crate::output::DescribeAutoPredictorOutput {
@@ -4706,6 +5225,8 @@ pub mod describe_auto_predictor_output {
                 last_modification_time: self.last_modification_time,
                 optimization_metric: self.optimization_metric,
                 explainability_info: self.explainability_info,
+                monitor_info: self.monitor_info,
+                time_alignment_boundary: self.time_alignment_boundary,
             }
         }
     }
@@ -4804,6 +5325,36 @@ impl DeletePredictorOutput {
     /// Creates a new builder-style object to manufacture [`DeletePredictorOutput`](crate::output::DeletePredictorOutput)
     pub fn builder() -> crate::output::delete_predictor_output::Builder {
         crate::output::delete_predictor_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMonitorOutput {}
+impl std::fmt::Debug for DeleteMonitorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMonitorOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteMonitorOutput`](crate::output::DeleteMonitorOutput)
+pub mod delete_monitor_output {
+    /// A builder for [`DeleteMonitorOutput`](crate::output::DeleteMonitorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteMonitorOutput`](crate::output::DeleteMonitorOutput)
+        pub fn build(self) -> crate::output::DeleteMonitorOutput {
+            crate::output::DeleteMonitorOutput {}
+        }
+    }
+}
+impl DeleteMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMonitorOutput`](crate::output::DeleteMonitorOutput)
+    pub fn builder() -> crate::output::delete_monitor_output::Builder {
+        crate::output::delete_monitor_output::Builder::default()
     }
 }
 
@@ -5134,6 +5685,60 @@ impl CreatePredictorOutput {
     /// Creates a new builder-style object to manufacture [`CreatePredictorOutput`](crate::output::CreatePredictorOutput)
     pub fn builder() -> crate::output::create_predictor_output::Builder {
         crate::output::create_predictor_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMonitorOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub monitor_arn: std::option::Option<std::string::String>,
+}
+impl CreateMonitorOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateMonitorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMonitorOutput");
+        formatter.field("monitor_arn", &self.monitor_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateMonitorOutput`](crate::output::CreateMonitorOutput)
+pub mod create_monitor_output {
+    /// A builder for [`CreateMonitorOutput`](crate::output::CreateMonitorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitor_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitor_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+        pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitor_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMonitorOutput`](crate::output::CreateMonitorOutput)
+        pub fn build(self) -> crate::output::CreateMonitorOutput {
+            crate::output::CreateMonitorOutput {
+                monitor_arn: self.monitor_arn,
+            }
+        }
+    }
+}
+impl CreateMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMonitorOutput`](crate::output::CreateMonitorOutput)
+    pub fn builder() -> crate::output::create_monitor_output::Builder {
+        crate::output::create_monitor_output::Builder::default()
     }
 }
 
