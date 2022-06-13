@@ -63,6 +63,7 @@ body:
     id: version
     attributes:
       label: Version
+      render: text
       description: |
         List the versions & crates of the aws-rust-sdk you are using.
         `cargo install cargo-tree`
