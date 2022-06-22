@@ -13,7 +13,8 @@ name: CI
 env:
   SDK_BATCH_COUNT: 12
   EXAMPLES_BATCH_COUNT: 1
-  RUST_VERSIONS: "1.56.1"
+  RUST_VERSIONS: "1.58.1"
+  RUST_VERSION: "1.58.1"
 
 jobs:
   generate-test-sdk-matrix:
@@ -128,7 +129,7 @@ jobs:
           path: smithy-rs
       - uses: actions-rs/toolchain@v1
         with:
-          toolchain: 1.56.1
+          toolchain: "${{ env.RUST_VERSION }}"
           default: true
       # Pinned to the commit hash of v1.3.0
       - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641

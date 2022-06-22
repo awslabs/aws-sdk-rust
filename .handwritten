@@ -12,6 +12,7 @@
 /.github/
 /.git/
 /tools/
+/aws-models/
 
 # Files
 
