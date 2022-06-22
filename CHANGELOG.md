@@ -1,4 +1,14 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+v0.14.0 (June 22nd, 2022)
+=========================
+**New this release:**
+- 🐛 ([aws-sdk-rust#547](https://github.com/awslabs/aws-sdk-rust/issues/547), [smithy-rs#1458](https://github.com/awslabs/smithy-rs/issues/1458)) Fix bug in profile file credential provider where a missing `default` profile lead to an unintended error.
+- ([smithy-rs#1421](https://github.com/awslabs/smithy-rs/issues/1421)) Add `Debug` implementation to several types in `aws-config`
+- 🐛 ([aws-sdk-rust#558](https://github.com/awslabs/aws-sdk-rust/issues/558), [smithy-rs#1478](https://github.com/awslabs/smithy-rs/issues/1478)) Fix bug in retry policy where user configured timeouts were not retried. With this fix, setting
+    [`with_call_attempt_timeout`](https://docs.rs/aws-smithy-types/0.43.0/aws_smithy_types/timeout/struct.Api.html#method.with_call_attempt_timeout)
+    will lead to a retry when retries are enabled.
+
+
 v0.13.0 (June 9th, 2022)
 ========================
 **New this release:**
