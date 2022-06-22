@@ -68,7 +68,7 @@ impl ActivateKeySigningKeyInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ActivateKeySigningKeyInput,
@@ -257,7 +257,7 @@ impl AssociateVpcWithHostedZoneInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateVpcWithHostedZoneInput,
@@ -433,7 +433,7 @@ impl ChangeResourceRecordSetsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ChangeResourceRecordSetsInput,
@@ -2356,7 +2356,7 @@ impl CreateVpcAssociationAuthorizationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateVpcAssociationAuthorizationInput,
@@ -2529,7 +2529,7 @@ impl DeactivateKeySigningKeyInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeactivateKeySigningKeyInput,
@@ -2832,7 +2832,7 @@ impl DeleteHostedZoneInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteHostedZoneInput,
@@ -2987,7 +2987,7 @@ impl DeleteKeySigningKeyInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteKeySigningKeyInput,
@@ -3283,7 +3283,7 @@ impl DeleteReusableDelegationSetInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReusableDelegationSetInput,
@@ -3753,7 +3753,7 @@ impl DeleteVpcAssociationAuthorizationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVpcAssociationAuthorizationInput,
@@ -3914,7 +3914,7 @@ impl DisableHostedZoneDnssecInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableHostedZoneDnssecInput,
@@ -4087,7 +4087,7 @@ impl DisassociateVpcFromHostedZoneInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateVpcFromHostedZoneInput,
@@ -4247,7 +4247,7 @@ impl EnableHostedZoneDnssecInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableHostedZoneDnssecInput,
@@ -4543,7 +4543,7 @@ impl GetChangeInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetChangeInput,
@@ -4792,7 +4792,7 @@ impl GetDnssecInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDnssecInput,
@@ -5688,7 +5688,7 @@ impl GetHostedZoneInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetHostedZoneInput,
@@ -5964,7 +5964,7 @@ impl GetHostedZoneLimitInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetHostedZoneLimitInput,
@@ -6259,7 +6259,7 @@ impl GetReusableDelegationSetInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetReusableDelegationSetInput,
@@ -6419,7 +6419,7 @@ impl GetReusableDelegationSetLimitInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.delegation_set_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.delegation_set_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetReusableDelegationSetLimitInput,
@@ -8176,7 +8176,7 @@ impl ListResourceRecordSetsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceRecordSetsInput,
@@ -9930,7 +9930,7 @@ impl ListVpcAssociationAuthorizationsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVpcAssociationAuthorizationsInput,
@@ -10888,7 +10888,7 @@ impl UpdateHostedZoneCommentInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
+        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateHostedZoneCommentInput,

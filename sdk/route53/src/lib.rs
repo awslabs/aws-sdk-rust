@@ -39,7 +39,6 @@ pub mod config;
 /// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
-mod hosted_zone_preprocessor;
 mod http_serde;
 /// Input structures for operations.
 pub mod input;
@@ -58,6 +57,7 @@ pub mod output;
 /// Paginators for the service
 pub mod paginator;
 mod rest_xml_wrapped_errors;
+mod route53_resource_id_preprocessor;
 mod xml_deser;
 mod xml_ser;
 /// Crate version number.

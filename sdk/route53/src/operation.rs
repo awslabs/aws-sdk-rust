@@ -913,6 +913,26 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChange {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod get_change_request_test {
+    /// This test validates that change id is correctly trimmed
+    /// Test ID: GetChangeTrimChangeId
+    #[tokio::test]
+    async fn get_change_trim_change_id_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::GetChangeInput::builder()
+            .set_id(Some("/change/SOMECHANGEID".to_string()))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .await
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        pretty_assertions::assert_eq!(http_request.method(), "GET");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/2013-04-01/change/SOMECHANGEID");
+    }
+}
 
 /// Operation shape for `GetCheckerIpRanges`.
 ///
@@ -1312,6 +1332,29 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReusableDelegationSet
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod get_reusable_delegation_set_request_test {
+    /// This test validates that delegation set id is correctly trimmed
+    /// Test ID: GetReusableDelegationSetTrimDelegationSetId
+    #[tokio::test]
+    async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::GetReusableDelegationSetInput::builder()
+            .set_id(Some("/delegationset/DELEGATIONSETID".to_string()))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .await
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        pretty_assertions::assert_eq!(http_request.method(), "GET");
+        pretty_assertions::assert_eq!(
+            http_request.uri().path(),
+            "/2013-04-01/delegationset/DELEGATIONSETID"
+        );
+    }
+}
 
 /// Operation shape for `GetReusableDelegationSetLimit`.
 ///
@@ -1689,10 +1732,10 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRecordSets {
 #[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
 mod list_resource_record_sets_request_test {
-    /// This test validates that that hosted zone is correctly trimmed
-    /// Test ID: ListResourceRecordSetsTrimHostdZone
+    /// This test validates that hosted zone is correctly trimmed
+    /// Test ID: ListResourceRecordSetsTrimHostedZone
     #[tokio::test]
-    async fn list_resource_record_sets_trim_hostd_zone_request() {
+    async fn list_resource_record_sets_trim_hosted_zone_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::ListResourceRecordSetsInput::builder()
             .set_hosted_zone_id(Some("/hostedzone/IDOFMYHOSTEDZONE".to_string()))
