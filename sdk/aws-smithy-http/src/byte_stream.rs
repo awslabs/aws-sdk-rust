@@ -546,31 +546,32 @@ impl Inner<SdkBody> {
     }
 }
 
+const SIZE_HINT_32_BIT_PANIC_MESSAGE: &str = r#"
+You're running a 32-bit system and this stream's length is too large to be represented with a usize.
+Please limit stream length to less than 4.294Gb or run this program on a 64-bit computer architecture.
+"#;
+
 impl<B> futures_core::stream::Stream for Inner<B>
 where
-    B: http_body::Body,
+    B: http_body::Body<Data = Bytes>,
 {
     type Item = Result<Bytes, B::Error>;
 
     fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        match self.project().body.poll_data(cx) {
-            Poll::Ready(Some(Ok(mut data))) => {
-                let len = data.chunk().len();
-                let bytes = data.copy_to_bytes(len);
-                Poll::Ready(Some(Ok(bytes)))
-            }
-            Poll::Ready(None) => Poll::Ready(None),
-            Poll::Ready(Some(Err(e))) => Poll::Ready(Some(Err(e))),
-            Poll::Pending => Poll::Pending,
-        }
+        self.project().body.poll_data(cx)
     }
 
     fn size_hint(&self) -> (usize, Option<usize>) {
         let size_hint = http_body::Body::size_hint(&self.body);
-        (
-            size_hint.lower() as usize,
-            size_hint.upper().map(|u| u as usize),
-        )
+        let lower = size_hint.lower().try_into();
+        let upper = size_hint.upper().map(|u| u.try_into()).transpose();
+
+        match (lower, upper) {
+            (Ok(lower), Ok(upper)) => (lower, upper),
+            (Err(_), _) | (_, Err(_)) => {
+                panic!("{}", SIZE_HINT_32_BIT_PANIC_MESSAGE)
+            }
+        }
     }
 }
 
