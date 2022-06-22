@@ -59,10 +59,11 @@ body:
         Anything else that might be relevant for troubleshooting this bug. Providing context helps us come up with a solution that is most useful in the real world.
     validations:
       required: false
-  - type: input
+  - type: textarea
     id: version
     attributes:
       label: Version
+      render: text
       description: |
         List the versions & crates of the aws-rust-sdk you are using.
         `cargo install cargo-tree`
