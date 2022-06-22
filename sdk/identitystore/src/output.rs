@@ -28,7 +28,7 @@ impl std::fmt::Debug for ListUsersOutput {
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput)
 pub mod list_users_output {
-    ///
+
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -111,7 +111,7 @@ impl std::fmt::Debug for ListGroupsOutput {
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput)
 pub mod list_groups_output {
-    ///
+
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl std::fmt::Debug for DescribeUserOutput {
 }
 /// See [`DescribeUserOutput`](crate::output::DescribeUserOutput)
 pub mod describe_user_output {
-    ///
+
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -268,7 +268,7 @@ impl std::fmt::Debug for DescribeGroupOutput {
 }
 /// See [`DescribeGroupOutput`](crate::output::DescribeGroupOutput)
 pub mod describe_group_output {
-    ///
+
     /// A builder for [`DescribeGroupOutput`](crate::output::DescribeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

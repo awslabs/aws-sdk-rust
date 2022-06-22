@@ -11,7 +11,7 @@ impl std::fmt::Debug for UntagLogGroupOutput {
 }
 /// See [`UntagLogGroupOutput`](crate::output::UntagLogGroupOutput)
 pub mod untag_log_group_output {
-    ///
+
     /// A builder for [`UntagLogGroupOutput`](crate::output::UntagLogGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -52,7 +52,7 @@ impl std::fmt::Debug for TestMetricFilterOutput {
 }
 /// See [`TestMetricFilterOutput`](crate::output::TestMetricFilterOutput)
 pub mod test_metric_filter_output {
-    ///
+
     /// A builder for [`TestMetricFilterOutput`](crate::output::TestMetricFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl std::fmt::Debug for TagLogGroupOutput {
 }
 /// See [`TagLogGroupOutput`](crate::output::TagLogGroupOutput)
 pub mod tag_log_group_output {
-    ///
+
     /// A builder for [`TagLogGroupOutput`](crate::output::TagLogGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -148,7 +148,7 @@ impl std::fmt::Debug for StopQueryOutput {
 }
 /// See [`StopQueryOutput`](crate::output::StopQueryOutput)
 pub mod stop_query_output {
-    ///
+
     /// A builder for [`StopQueryOutput`](crate::output::StopQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -203,7 +203,7 @@ impl std::fmt::Debug for StartQueryOutput {
 }
 /// See [`StartQueryOutput`](crate::output::StartQueryOutput)
 pub mod start_query_output {
-    ///
+
     /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -248,7 +248,7 @@ impl std::fmt::Debug for PutSubscriptionFilterOutput {
 }
 /// See [`PutSubscriptionFilterOutput`](crate::output::PutSubscriptionFilterOutput)
 pub mod put_subscription_filter_output {
-    ///
+
     /// A builder for [`PutSubscriptionFilterOutput`](crate::output::PutSubscriptionFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -279,7 +279,7 @@ impl std::fmt::Debug for PutRetentionPolicyOutput {
 }
 /// See [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput)
 pub mod put_retention_policy_output {
-    ///
+
     /// A builder for [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -320,7 +320,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 pub mod put_resource_policy_output {
-    ///
+
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -378,7 +378,7 @@ impl std::fmt::Debug for PutQueryDefinitionOutput {
 }
 /// See [`PutQueryDefinitionOutput`](crate::output::PutQueryDefinitionOutput)
 pub mod put_query_definition_output {
-    ///
+
     /// A builder for [`PutQueryDefinitionOutput`](crate::output::PutQueryDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -426,7 +426,7 @@ impl std::fmt::Debug for PutMetricFilterOutput {
 }
 /// See [`PutMetricFilterOutput`](crate::output::PutMetricFilterOutput)
 pub mod put_metric_filter_output {
-    ///
+
     /// A builder for [`PutMetricFilterOutput`](crate::output::PutMetricFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -476,7 +476,7 @@ impl std::fmt::Debug for PutLogEventsOutput {
 }
 /// See [`PutLogEventsOutput`](crate::output::PutLogEventsOutput)
 pub mod put_log_events_output {
-    ///
+
     /// A builder for [`PutLogEventsOutput`](crate::output::PutLogEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -543,7 +543,7 @@ impl std::fmt::Debug for PutDestinationPolicyOutput {
 }
 /// See [`PutDestinationPolicyOutput`](crate::output::PutDestinationPolicyOutput)
 pub mod put_destination_policy_output {
-    ///
+
     /// A builder for [`PutDestinationPolicyOutput`](crate::output::PutDestinationPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -584,7 +584,7 @@ impl std::fmt::Debug for PutDestinationOutput {
 }
 /// See [`PutDestinationOutput`](crate::output::PutDestinationOutput)
 pub mod put_destination_output {
-    ///
+
     /// A builder for [`PutDestinationOutput`](crate::output::PutDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -646,7 +646,7 @@ impl std::fmt::Debug for ListTagsLogGroupOutput {
 }
 /// See [`ListTagsLogGroupOutput`](crate::output::ListTagsLogGroupOutput)
 pub mod list_tags_log_group_output {
-    ///
+
     /// A builder for [`ListTagsLogGroupOutput`](crate::output::ListTagsLogGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -734,7 +734,7 @@ impl std::fmt::Debug for GetQueryResultsOutput {
 }
 /// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
 pub mod get_query_results_output {
-    ///
+
     /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl std::fmt::Debug for GetLogRecordOutput {
 }
 /// See [`GetLogRecordOutput`](crate::output::GetLogRecordOutput)
 pub mod get_log_record_output {
-    ///
+
     /// A builder for [`GetLogRecordOutput`](crate::output::GetLogRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -906,7 +906,7 @@ impl std::fmt::Debug for GetLogGroupFieldsOutput {
 }
 /// See [`GetLogGroupFieldsOutput`](crate::output::GetLogGroupFieldsOutput)
 pub mod get_log_group_fields_output {
-    ///
+
     /// A builder for [`GetLogGroupFieldsOutput`](crate::output::GetLogGroupFieldsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -985,7 +985,7 @@ impl std::fmt::Debug for GetLogEventsOutput {
 }
 /// See [`GetLogEventsOutput`](crate::output::GetLogEventsOutput)
 pub mod get_log_events_output {
-    ///
+
     /// A builder for [`GetLogEventsOutput`](crate::output::GetLogEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1095,7 +1095,7 @@ impl std::fmt::Debug for FilterLogEventsOutput {
 }
 /// See [`FilterLogEventsOutput`](crate::output::FilterLogEventsOutput)
 pub mod filter_log_events_output {
-    ///
+
     /// A builder for [`FilterLogEventsOutput`](crate::output::FilterLogEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1185,7 +1185,7 @@ impl std::fmt::Debug for DisassociateKmsKeyOutput {
 }
 /// See [`DisassociateKmsKeyOutput`](crate::output::DisassociateKmsKeyOutput)
 pub mod disassociate_kms_key_output {
-    ///
+
     /// A builder for [`DisassociateKmsKeyOutput`](crate::output::DisassociateKmsKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1233,7 +1233,7 @@ impl std::fmt::Debug for DescribeSubscriptionFiltersOutput {
 }
 /// See [`DescribeSubscriptionFiltersOutput`](crate::output::DescribeSubscriptionFiltersOutput)
 pub mod describe_subscription_filters_output {
-    ///
+
     /// A builder for [`DescribeSubscriptionFiltersOutput`](crate::output::DescribeSubscriptionFiltersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1317,7 +1317,7 @@ impl std::fmt::Debug for DescribeResourcePoliciesOutput {
 }
 /// See [`DescribeResourcePoliciesOutput`](crate::output::DescribeResourcePoliciesOutput)
 pub mod describe_resource_policies_output {
-    ///
+
     /// A builder for [`DescribeResourcePoliciesOutput`](crate::output::DescribeResourcePoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1401,7 +1401,7 @@ impl std::fmt::Debug for DescribeQueryDefinitionsOutput {
 }
 /// See [`DescribeQueryDefinitionsOutput`](crate::output::DescribeQueryDefinitionsOutput)
 pub mod describe_query_definitions_output {
-    ///
+
     /// A builder for [`DescribeQueryDefinitionsOutput`](crate::output::DescribeQueryDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1485,7 +1485,7 @@ impl std::fmt::Debug for DescribeQueriesOutput {
 }
 /// See [`DescribeQueriesOutput`](crate::output::DescribeQueriesOutput)
 pub mod describe_queries_output {
-    ///
+
     /// A builder for [`DescribeQueriesOutput`](crate::output::DescribeQueriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1568,7 +1568,7 @@ impl std::fmt::Debug for DescribeMetricFiltersOutput {
 }
 /// See [`DescribeMetricFiltersOutput`](crate::output::DescribeMetricFiltersOutput)
 pub mod describe_metric_filters_output {
-    ///
+
     /// A builder for [`DescribeMetricFiltersOutput`](crate::output::DescribeMetricFiltersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1651,7 +1651,7 @@ impl std::fmt::Debug for DescribeLogStreamsOutput {
 }
 /// See [`DescribeLogStreamsOutput`](crate::output::DescribeLogStreamsOutput)
 pub mod describe_log_streams_output {
-    ///
+
     /// A builder for [`DescribeLogStreamsOutput`](crate::output::DescribeLogStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1736,7 +1736,7 @@ impl std::fmt::Debug for DescribeLogGroupsOutput {
 }
 /// See [`DescribeLogGroupsOutput`](crate::output::DescribeLogGroupsOutput)
 pub mod describe_log_groups_output {
-    ///
+
     /// A builder for [`DescribeLogGroupsOutput`](crate::output::DescribeLogGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1821,7 +1821,7 @@ impl std::fmt::Debug for DescribeExportTasksOutput {
 }
 /// See [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput)
 pub mod describe_export_tasks_output {
-    ///
+
     /// A builder for [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1904,7 +1904,7 @@ impl std::fmt::Debug for DescribeDestinationsOutput {
 }
 /// See [`DescribeDestinationsOutput`](crate::output::DescribeDestinationsOutput)
 pub mod describe_destinations_output {
-    ///
+
     /// A builder for [`DescribeDestinationsOutput`](crate::output::DescribeDestinationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1970,7 +1970,7 @@ impl std::fmt::Debug for DeleteSubscriptionFilterOutput {
 }
 /// See [`DeleteSubscriptionFilterOutput`](crate::output::DeleteSubscriptionFilterOutput)
 pub mod delete_subscription_filter_output {
-    ///
+
     /// A builder for [`DeleteSubscriptionFilterOutput`](crate::output::DeleteSubscriptionFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2001,7 +2001,7 @@ impl std::fmt::Debug for DeleteRetentionPolicyOutput {
 }
 /// See [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput)
 pub mod delete_retention_policy_output {
-    ///
+
     /// A builder for [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2032,7 +2032,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 pub mod delete_resource_policy_output {
-    ///
+
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2073,7 +2073,7 @@ impl std::fmt::Debug for DeleteQueryDefinitionOutput {
 }
 /// See [`DeleteQueryDefinitionOutput`](crate::output::DeleteQueryDefinitionOutput)
 pub mod delete_query_definition_output {
-    ///
+
     /// A builder for [`DeleteQueryDefinitionOutput`](crate::output::DeleteQueryDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2118,7 +2118,7 @@ impl std::fmt::Debug for DeleteMetricFilterOutput {
 }
 /// See [`DeleteMetricFilterOutput`](crate::output::DeleteMetricFilterOutput)
 pub mod delete_metric_filter_output {
-    ///
+
     /// A builder for [`DeleteMetricFilterOutput`](crate::output::DeleteMetricFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2149,7 +2149,7 @@ impl std::fmt::Debug for DeleteLogStreamOutput {
 }
 /// See [`DeleteLogStreamOutput`](crate::output::DeleteLogStreamOutput)
 pub mod delete_log_stream_output {
-    ///
+
     /// A builder for [`DeleteLogStreamOutput`](crate::output::DeleteLogStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2180,7 +2180,7 @@ impl std::fmt::Debug for DeleteLogGroupOutput {
 }
 /// See [`DeleteLogGroupOutput`](crate::output::DeleteLogGroupOutput)
 pub mod delete_log_group_output {
-    ///
+
     /// A builder for [`DeleteLogGroupOutput`](crate::output::DeleteLogGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2211,7 +2211,7 @@ impl std::fmt::Debug for DeleteDestinationOutput {
 }
 /// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
 pub mod delete_destination_output {
-    ///
+
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl std::fmt::Debug for CreateLogStreamOutput {
 }
 /// See [`CreateLogStreamOutput`](crate::output::CreateLogStreamOutput)
 pub mod create_log_stream_output {
-    ///
+
     /// A builder for [`CreateLogStreamOutput`](crate::output::CreateLogStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2273,7 +2273,7 @@ impl std::fmt::Debug for CreateLogGroupOutput {
 }
 /// See [`CreateLogGroupOutput`](crate::output::CreateLogGroupOutput)
 pub mod create_log_group_output {
-    ///
+
     /// A builder for [`CreateLogGroupOutput`](crate::output::CreateLogGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2314,7 +2314,7 @@ impl std::fmt::Debug for CreateExportTaskOutput {
 }
 /// See [`CreateExportTaskOutput`](crate::output::CreateExportTaskOutput)
 pub mod create_export_task_output {
-    ///
+
     /// A builder for [`CreateExportTaskOutput`](crate::output::CreateExportTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2359,7 +2359,7 @@ impl std::fmt::Debug for CancelExportTaskOutput {
 }
 /// See [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput)
 pub mod cancel_export_task_output {
-    ///
+
     /// A builder for [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2390,7 +2390,7 @@ impl std::fmt::Debug for AssociateKmsKeyOutput {
 }
 /// See [`AssociateKmsKeyOutput`](crate::output::AssociateKmsKeyOutput)
 pub mod associate_kms_key_output {
-    ///
+
     /// A builder for [`AssociateKmsKeyOutput`](crate::output::AssociateKmsKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

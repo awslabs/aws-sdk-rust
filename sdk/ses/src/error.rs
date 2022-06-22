@@ -7358,7 +7358,7 @@ impl std::fmt::Display for TemplateDoesNotExistException {
 impl std::error::Error for TemplateDoesNotExistException {}
 /// See [`TemplateDoesNotExistException`](crate::error::TemplateDoesNotExistException)
 pub mod template_does_not_exist_exception {
-    ///
+
     /// A builder for [`TemplateDoesNotExistException`](crate::error::TemplateDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7447,7 +7447,7 @@ impl std::fmt::Display for InvalidTemplateException {
 impl std::error::Error for InvalidTemplateException {}
 /// See [`InvalidTemplateException`](crate::error::InvalidTemplateException)
 pub mod invalid_template_exception {
-    ///
+
     /// A builder for [`InvalidTemplateException`](crate::error::InvalidTemplateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7536,7 +7536,7 @@ impl std::fmt::Display for RuleSetDoesNotExistException {
 impl std::error::Error for RuleSetDoesNotExistException {}
 /// See [`RuleSetDoesNotExistException`](crate::error::RuleSetDoesNotExistException)
 pub mod rule_set_does_not_exist_exception {
-    ///
+
     /// A builder for [`RuleSetDoesNotExistException`](crate::error::RuleSetDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7622,7 +7622,7 @@ impl std::fmt::Display for RuleDoesNotExistException {
 impl std::error::Error for RuleDoesNotExistException {}
 /// See [`RuleDoesNotExistException`](crate::error::RuleDoesNotExistException)
 pub mod rule_does_not_exist_exception {
-    ///
+
     /// A builder for [`RuleDoesNotExistException`](crate::error::RuleDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7699,7 +7699,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7773,7 +7773,7 @@ impl std::fmt::Display for InvalidSnsTopicException {
 impl std::error::Error for InvalidSnsTopicException {}
 /// See [`InvalidSnsTopicException`](crate::error::InvalidSnsTopicException)
 pub mod invalid_sns_topic_exception {
-    ///
+
     /// A builder for [`InvalidSnsTopicException`](crate::error::InvalidSnsTopicException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7859,7 +7859,7 @@ impl std::fmt::Display for InvalidS3ConfigurationException {
 impl std::error::Error for InvalidS3ConfigurationException {}
 /// See [`InvalidS3ConfigurationException`](crate::error::InvalidS3ConfigurationException)
 pub mod invalid_s3_configuration_exception {
-    ///
+
     /// A builder for [`InvalidS3ConfigurationException`](crate::error::InvalidS3ConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7945,7 +7945,7 @@ impl std::fmt::Display for InvalidLambdaFunctionException {
 impl std::error::Error for InvalidLambdaFunctionException {}
 /// See [`InvalidLambdaFunctionException`](crate::error::InvalidLambdaFunctionException)
 pub mod invalid_lambda_function_exception {
-    ///
+
     /// A builder for [`InvalidLambdaFunctionException`](crate::error::InvalidLambdaFunctionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8031,7 +8031,7 @@ impl std::fmt::Display for FromEmailAddressNotVerifiedException {
 impl std::error::Error for FromEmailAddressNotVerifiedException {}
 /// See [`FromEmailAddressNotVerifiedException`](crate::error::FromEmailAddressNotVerifiedException)
 pub mod from_email_address_not_verified_exception {
-    ///
+
     /// A builder for [`FromEmailAddressNotVerifiedException`](crate::error::FromEmailAddressNotVerifiedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8123,7 +8123,7 @@ impl std::fmt::Display for CustomVerificationEmailTemplateDoesNotExistException 
 impl std::error::Error for CustomVerificationEmailTemplateDoesNotExistException {}
 /// See [`CustomVerificationEmailTemplateDoesNotExistException`](crate::error::CustomVerificationEmailTemplateDoesNotExistException)
 pub mod custom_verification_email_template_does_not_exist_exception {
-    ///
+
     /// A builder for [`CustomVerificationEmailTemplateDoesNotExistException`](crate::error::CustomVerificationEmailTemplateDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8210,7 +8210,7 @@ impl std::fmt::Display for CustomVerificationEmailInvalidContentException {
 impl std::error::Error for CustomVerificationEmailInvalidContentException {}
 /// See [`CustomVerificationEmailInvalidContentException`](crate::error::CustomVerificationEmailInvalidContentException)
 pub mod custom_verification_email_invalid_content_exception {
-    ///
+
     /// A builder for [`CustomVerificationEmailInvalidContentException`](crate::error::CustomVerificationEmailInvalidContentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8284,7 +8284,7 @@ impl std::fmt::Display for TrackingOptionsDoesNotExistException {
 impl std::error::Error for TrackingOptionsDoesNotExistException {}
 /// See [`TrackingOptionsDoesNotExistException`](crate::error::TrackingOptionsDoesNotExistException)
 pub mod tracking_options_does_not_exist_exception {
-    ///
+
     /// A builder for [`TrackingOptionsDoesNotExistException`](crate::error::TrackingOptionsDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8368,7 +8368,7 @@ impl std::fmt::Display for InvalidTrackingOptionsException {
 impl std::error::Error for InvalidTrackingOptionsException {}
 /// See [`InvalidTrackingOptionsException`](crate::error::InvalidTrackingOptionsException)
 pub mod invalid_tracking_options_exception {
-    ///
+
     /// A builder for [`InvalidTrackingOptionsException`](crate::error::InvalidTrackingOptionsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8442,7 +8442,7 @@ impl std::fmt::Display for ConfigurationSetDoesNotExistException {
 impl std::error::Error for ConfigurationSetDoesNotExistException {}
 /// See [`ConfigurationSetDoesNotExistException`](crate::error::ConfigurationSetDoesNotExistException)
 pub mod configuration_set_does_not_exist_exception {
-    ///
+
     /// A builder for [`ConfigurationSetDoesNotExistException`](crate::error::ConfigurationSetDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8541,7 +8541,7 @@ impl std::fmt::Display for InvalidSnsDestinationException {
 impl std::error::Error for InvalidSnsDestinationException {}
 /// See [`InvalidSnsDestinationException`](crate::error::InvalidSnsDestinationException)
 pub mod invalid_sns_destination_exception {
-    ///
+
     /// A builder for [`InvalidSnsDestinationException`](crate::error::InvalidSnsDestinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8652,7 +8652,7 @@ impl std::fmt::Display for InvalidFirehoseDestinationException {
 impl std::error::Error for InvalidFirehoseDestinationException {}
 /// See [`InvalidFirehoseDestinationException`](crate::error::InvalidFirehoseDestinationException)
 pub mod invalid_firehose_destination_exception {
-    ///
+
     /// A builder for [`InvalidFirehoseDestinationException`](crate::error::InvalidFirehoseDestinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8763,7 +8763,7 @@ impl std::fmt::Display for InvalidCloudWatchDestinationException {
 impl std::error::Error for InvalidCloudWatchDestinationException {}
 /// See [`InvalidCloudWatchDestinationException`](crate::error::InvalidCloudWatchDestinationException)
 pub mod invalid_cloud_watch_destination_exception {
-    ///
+
     /// A builder for [`InvalidCloudWatchDestinationException`](crate::error::InvalidCloudWatchDestinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8874,7 +8874,7 @@ impl std::fmt::Display for EventDestinationDoesNotExistException {
 impl std::error::Error for EventDestinationDoesNotExistException {}
 /// See [`EventDestinationDoesNotExistException`](crate::error::EventDestinationDoesNotExistException)
 pub mod event_destination_does_not_exist_exception {
-    ///
+
     /// A builder for [`EventDestinationDoesNotExistException`](crate::error::EventDestinationDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8978,7 +8978,7 @@ impl std::fmt::Display for MissingRenderingAttributeException {
 impl std::error::Error for MissingRenderingAttributeException {}
 /// See [`MissingRenderingAttributeException`](crate::error::MissingRenderingAttributeException)
 pub mod missing_rendering_attribute_exception {
-    ///
+
     /// A builder for [`MissingRenderingAttributeException`](crate::error::MissingRenderingAttributeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9067,7 +9067,7 @@ impl std::fmt::Display for InvalidRenderingParameterException {
 impl std::error::Error for InvalidRenderingParameterException {}
 /// See [`InvalidRenderingParameterException`](crate::error::InvalidRenderingParameterException)
 pub mod invalid_rendering_parameter_exception {
-    ///
+
     /// A builder for [`InvalidRenderingParameterException`](crate::error::InvalidRenderingParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9147,7 +9147,7 @@ impl std::fmt::Display for MessageRejected {
 impl std::error::Error for MessageRejected {}
 /// See [`MessageRejected`](crate::error::MessageRejected)
 pub mod message_rejected {
-    ///
+
     /// A builder for [`MessageRejected`](crate::error::MessageRejected)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9212,7 +9212,7 @@ impl std::fmt::Display for MailFromDomainNotVerifiedException {
 impl std::error::Error for MailFromDomainNotVerifiedException {}
 /// See [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException)
 pub mod mail_from_domain_not_verified_exception {
-    ///
+
     /// A builder for [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9287,7 +9287,7 @@ impl std::fmt::Display for ConfigurationSetSendingPausedException {
 impl std::error::Error for ConfigurationSetSendingPausedException {}
 /// See [`ConfigurationSetSendingPausedException`](crate::error::ConfigurationSetSendingPausedException)
 pub mod configuration_set_sending_paused_exception {
-    ///
+
     /// A builder for [`ConfigurationSetSendingPausedException`](crate::error::ConfigurationSetSendingPausedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9368,7 +9368,7 @@ impl std::fmt::Display for AccountSendingPausedException {
 impl std::error::Error for AccountSendingPausedException {}
 /// See [`AccountSendingPausedException`](crate::error::AccountSendingPausedException)
 pub mod account_sending_paused_exception {
-    ///
+
     /// A builder for [`AccountSendingPausedException`](crate::error::AccountSendingPausedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9433,7 +9433,7 @@ impl std::fmt::Display for ProductionAccessNotGrantedException {
 impl std::error::Error for ProductionAccessNotGrantedException {}
 /// See [`ProductionAccessNotGrantedException`](crate::error::ProductionAccessNotGrantedException)
 pub mod production_access_not_granted_exception {
-    ///
+
     /// A builder for [`ProductionAccessNotGrantedException`](crate::error::ProductionAccessNotGrantedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9498,7 +9498,7 @@ impl std::fmt::Display for InvalidPolicyException {
 impl std::error::Error for InvalidPolicyException {}
 /// See [`InvalidPolicyException`](crate::error::InvalidPolicyException)
 pub mod invalid_policy_exception {
-    ///
+
     /// A builder for [`InvalidPolicyException`](crate::error::InvalidPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9563,7 +9563,7 @@ impl std::fmt::Display for InvalidDeliveryOptionsException {
 impl std::error::Error for InvalidDeliveryOptionsException {}
 /// See [`InvalidDeliveryOptionsException`](crate::error::InvalidDeliveryOptionsException)
 pub mod invalid_delivery_options_exception {
-    ///
+
     /// A builder for [`InvalidDeliveryOptionsException`](crate::error::InvalidDeliveryOptionsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9637,7 +9637,7 @@ impl std::fmt::Display for CannotDeleteException {
 impl std::error::Error for CannotDeleteException {}
 /// See [`CannotDeleteException`](crate::error::CannotDeleteException)
 pub mod cannot_delete_exception {
-    ///
+
     /// A builder for [`CannotDeleteException`](crate::error::CannotDeleteException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9723,7 +9723,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
-    ///
+
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9812,7 +9812,7 @@ impl std::fmt::Display for CustomVerificationEmailTemplateAlreadyExistsException
 impl std::error::Error for CustomVerificationEmailTemplateAlreadyExistsException {}
 /// See [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::error::CustomVerificationEmailTemplateAlreadyExistsException)
 pub mod custom_verification_email_template_already_exists_exception {
-    ///
+
     /// A builder for [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::error::CustomVerificationEmailTemplateAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9908,7 +9908,7 @@ impl std::fmt::Display for TrackingOptionsAlreadyExistsException {
 impl std::error::Error for TrackingOptionsAlreadyExistsException {}
 /// See [`TrackingOptionsAlreadyExistsException`](crate::error::TrackingOptionsAlreadyExistsException)
 pub mod tracking_options_already_exists_exception {
-    ///
+
     /// A builder for [`TrackingOptionsAlreadyExistsException`](crate::error::TrackingOptionsAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10004,7 +10004,7 @@ impl std::fmt::Display for EventDestinationAlreadyExistsException {
 impl std::error::Error for EventDestinationAlreadyExistsException {}
 /// See [`EventDestinationAlreadyExistsException`](crate::error::EventDestinationAlreadyExistsException)
 pub mod event_destination_already_exists_exception {
-    ///
+
     /// A builder for [`EventDestinationAlreadyExistsException`](crate::error::EventDestinationAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10099,7 +10099,7 @@ impl std::fmt::Display for InvalidConfigurationSetException {
 impl std::error::Error for InvalidConfigurationSetException {}
 /// See [`InvalidConfigurationSetException`](crate::error::InvalidConfigurationSetException)
 pub mod invalid_configuration_set_exception {
-    ///
+
     /// A builder for [`InvalidConfigurationSetException`](crate::error::InvalidConfigurationSetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10173,7 +10173,7 @@ impl std::fmt::Display for ConfigurationSetAlreadyExistsException {
 impl std::error::Error for ConfigurationSetAlreadyExistsException {}
 /// See [`ConfigurationSetAlreadyExistsException`](crate::error::ConfigurationSetAlreadyExistsException)
 pub mod configuration_set_already_exists_exception {
-    ///
+
     /// A builder for [`ConfigurationSetAlreadyExistsException`](crate::error::ConfigurationSetAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

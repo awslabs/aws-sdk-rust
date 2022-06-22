@@ -21,7 +21,7 @@ impl std::fmt::Debug for StartExpenseAnalysisOutput {
 }
 /// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
 pub mod start_expense_analysis_output {
-    ///
+
     /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl std::fmt::Debug for StartDocumentTextDetectionOutput {
 }
 /// See [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput)
 pub mod start_document_text_detection_output {
-    ///
+
     /// A builder for [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,7 +131,7 @@ impl std::fmt::Debug for StartDocumentAnalysisOutput {
 }
 /// See [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
 pub mod start_document_analysis_output {
-    ///
+
     /// A builder for [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -231,7 +231,7 @@ impl std::fmt::Debug for GetExpenseAnalysisOutput {
 }
 /// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
 pub mod get_expense_analysis_output {
-    ///
+
     /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -437,7 +437,7 @@ impl std::fmt::Debug for GetDocumentTextDetectionOutput {
 }
 /// See [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput)
 pub mod get_document_text_detection_output {
-    ///
+
     /// A builder for [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl std::fmt::Debug for GetDocumentAnalysisOutput {
 }
 /// See [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput)
 pub mod get_document_analysis_output {
-    ///
+
     /// A builder for [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -819,7 +819,7 @@ impl std::fmt::Debug for DetectDocumentTextOutput {
 }
 /// See [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput)
 pub mod detect_document_text_output {
-    ///
+
     /// A builder for [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl std::fmt::Debug for AnalyzeIdOutput {
 }
 /// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
 pub mod analyze_id_output {
-    ///
+
     /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1032,7 +1032,7 @@ impl std::fmt::Debug for AnalyzeExpenseOutput {
 }
 /// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
 pub mod analyze_expense_output {
-    ///
+
     /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1141,7 +1141,7 @@ impl std::fmt::Debug for AnalyzeDocumentOutput {
 }
 /// See [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput)
 pub mod analyze_document_output {
-    ///
+
     /// A builder for [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

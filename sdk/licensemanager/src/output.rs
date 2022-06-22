@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateServiceSettingsOutput {
 }
 /// See [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput)
 pub mod update_service_settings_output {
-    ///
+
     /// A builder for [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UpdateLicenseSpecificationsForResourceOutput {
 }
 /// See [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput)
 pub mod update_license_specifications_for_resource_output {
-    ///
+
     /// A builder for [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for UpdateLicenseManagerReportGeneratorOutput {
 }
 /// See [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput)
 pub mod update_license_manager_report_generator_output {
-    ///
+
     /// A builder for [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for UpdateLicenseConfigurationOutput {
 }
 /// See [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput)
 pub mod update_license_configuration_output {
-    ///
+
     /// A builder for [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,7 +166,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,7 +221,7 @@ impl std::fmt::Debug for RejectGrantOutput {
 }
 /// See [`RejectGrantOutput`](crate::output::RejectGrantOutput)
 pub mod reject_grant_output {
-    ///
+
     /// A builder for [`RejectGrantOutput`](crate::output::RejectGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl std::fmt::Debug for ListUsageForLicenseConfigurationOutput {
 }
 /// See [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput)
 pub mod list_usage_for_license_configuration_output {
-    ///
+
     /// A builder for [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -400,7 +400,7 @@ impl std::fmt::Debug for ListTokensOutput {
 }
 /// See [`ListTokensOutput`](crate::output::ListTokensOutput)
 pub mod list_tokens_output {
-    ///
+
     /// A builder for [`ListTokensOutput`](crate::output::ListTokensOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -476,7 +476,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -548,7 +548,7 @@ impl std::fmt::Debug for ListResourceInventoryOutput {
 }
 /// See [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput)
 pub mod list_resource_inventory_output {
-    ///
+
     /// A builder for [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -632,7 +632,7 @@ impl std::fmt::Debug for ListReceivedLicensesOutput {
 }
 /// See [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput)
 pub mod list_received_licenses_output {
-    ///
+
     /// A builder for [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -715,7 +715,7 @@ impl std::fmt::Debug for ListReceivedGrantsOutput {
 }
 /// See [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput)
 pub mod list_received_grants_output {
-    ///
+
     /// A builder for [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -798,7 +798,7 @@ impl std::fmt::Debug for ListLicenseVersionsOutput {
 }
 /// See [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput)
 pub mod list_license_versions_output {
-    ///
+
     /// A builder for [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -884,7 +884,7 @@ impl std::fmt::Debug for ListLicenseSpecificationsForResourceOutput {
 }
 /// See [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput)
 pub mod list_license_specifications_for_resource_output {
-    ///
+
     /// A builder for [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -968,7 +968,7 @@ impl std::fmt::Debug for ListLicensesOutput {
 }
 /// See [`ListLicensesOutput`](crate::output::ListLicensesOutput)
 pub mod list_licenses_output {
-    ///
+
     /// A builder for [`ListLicensesOutput`](crate::output::ListLicensesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1051,7 +1051,7 @@ impl std::fmt::Debug for ListLicenseManagerReportGeneratorsOutput {
 }
 /// See [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput)
 pub mod list_license_manager_report_generators_output {
-    ///
+
     /// A builder for [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1138,7 +1138,7 @@ impl std::fmt::Debug for ListLicenseConversionTasksOutput {
 }
 /// See [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput)
 pub mod list_license_conversion_tasks_output {
-    ///
+
     /// A builder for [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1228,7 +1228,7 @@ impl std::fmt::Debug for ListLicenseConfigurationsOutput {
 }
 /// See [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput)
 pub mod list_license_configurations_output {
-    ///
+
     /// A builder for [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1318,7 +1318,7 @@ impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsOutput {
 }
 /// See [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput)
 pub mod list_failures_for_license_configuration_operations_output {
-    ///
+
     /// A builder for [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1406,7 +1406,7 @@ impl std::fmt::Debug for ListDistributedGrantsOutput {
 }
 /// See [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput)
 pub mod list_distributed_grants_output {
-    ///
+
     /// A builder for [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1495,7 +1495,7 @@ impl std::fmt::Debug for ListAssociationsForLicenseConfigurationOutput {
 }
 /// See [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput)
 pub mod list_associations_for_license_configuration_output {
-    ///
+
     /// A builder for [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1616,7 +1616,7 @@ impl std::fmt::Debug for GetServiceSettingsOutput {
 }
 /// See [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput)
 pub mod get_service_settings_output {
-    ///
+
     /// A builder for [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1741,7 +1741,7 @@ impl std::fmt::Debug for GetLicenseUsageOutput {
 }
 /// See [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput)
 pub mod get_license_usage_output {
-    ///
+
     /// A builder for [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1799,7 +1799,7 @@ impl std::fmt::Debug for GetLicenseManagerReportGeneratorOutput {
 }
 /// See [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput)
 pub mod get_license_manager_report_generator_output {
-    ///
+
     /// A builder for [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1923,7 +1923,7 @@ impl std::fmt::Debug for GetLicenseConversionTaskOutput {
 }
 /// See [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput)
 pub mod get_license_conversion_task_output {
-    ///
+
     /// A builder for [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl std::fmt::Debug for GetLicenseConfigurationOutput {
 }
 /// See [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput)
 pub mod get_license_configuration_output {
-    ///
+
     /// A builder for [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2562,7 +2562,7 @@ impl std::fmt::Debug for GetLicenseOutput {
 }
 /// See [`GetLicenseOutput`](crate::output::GetLicenseOutput)
 pub mod get_license_output {
-    ///
+
     /// A builder for [`GetLicenseOutput`](crate::output::GetLicenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2617,7 +2617,7 @@ impl std::fmt::Debug for GetGrantOutput {
 }
 /// See [`GetGrantOutput`](crate::output::GetGrantOutput)
 pub mod get_grant_output {
-    ///
+
     /// A builder for [`GetGrantOutput`](crate::output::GetGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2670,7 +2670,7 @@ impl std::fmt::Debug for GetAccessTokenOutput {
 }
 /// See [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput)
 pub mod get_access_token_output {
-    ///
+
     /// A builder for [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2732,7 +2732,7 @@ impl std::fmt::Debug for ExtendLicenseConsumptionOutput {
 }
 /// See [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput)
 pub mod extend_license_consumption_output {
-    ///
+
     /// A builder for [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2792,7 +2792,7 @@ impl std::fmt::Debug for DeleteTokenOutput {
 }
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput)
 pub mod delete_token_output {
-    ///
+
     /// A builder for [`DeleteTokenOutput`](crate::output::DeleteTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2823,7 +2823,7 @@ impl std::fmt::Debug for DeleteLicenseManagerReportGeneratorOutput {
 }
 /// See [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput)
 pub mod delete_license_manager_report_generator_output {
-    ///
+
     /// A builder for [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2854,7 +2854,7 @@ impl std::fmt::Debug for DeleteLicenseConfigurationOutput {
 }
 /// See [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput)
 pub mod delete_license_configuration_output {
-    ///
+
     /// A builder for [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2902,7 +2902,7 @@ impl std::fmt::Debug for DeleteLicenseOutput {
 }
 /// See [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput)
 pub mod delete_license_output {
-    ///
+
     /// A builder for [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2989,7 +2989,7 @@ impl std::fmt::Debug for DeleteGrantOutput {
 }
 /// See [`DeleteGrantOutput`](crate::output::DeleteGrantOutput)
 pub mod delete_grant_output {
-    ///
+
     /// A builder for [`DeleteGrantOutput`](crate::output::DeleteGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3082,7 +3082,7 @@ impl std::fmt::Debug for CreateTokenOutput {
 }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput)
 pub mod create_token_output {
-    ///
+
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3178,7 +3178,7 @@ impl std::fmt::Debug for CreateLicenseVersionOutput {
 }
 /// See [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput)
 pub mod create_license_version_output {
-    ///
+
     /// A builder for [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3263,7 +3263,7 @@ impl std::fmt::Debug for CreateLicenseManagerReportGeneratorOutput {
 }
 /// See [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput)
 pub mod create_license_manager_report_generator_output {
-    ///
+
     /// A builder for [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3327,7 +3327,7 @@ impl std::fmt::Debug for CreateLicenseConversionTaskForResourceOutput {
 }
 /// See [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput)
 pub mod create_license_conversion_task_for_resource_output {
-    ///
+
     /// A builder for [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3385,7 +3385,7 @@ impl std::fmt::Debug for CreateLicenseConfigurationOutput {
 }
 /// See [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput)
 pub mod create_license_configuration_output {
-    ///
+
     /// A builder for [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3457,7 +3457,7 @@ impl std::fmt::Debug for CreateLicenseOutput {
 }
 /// See [`CreateLicenseOutput`](crate::output::CreateLicenseOutput)
 pub mod create_license_output {
-    ///
+
     /// A builder for [`CreateLicenseOutput`](crate::output::CreateLicenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3553,7 +3553,7 @@ impl std::fmt::Debug for CreateGrantVersionOutput {
 }
 /// See [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput)
 pub mod create_grant_version_output {
-    ///
+
     /// A builder for [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3646,7 +3646,7 @@ impl std::fmt::Debug for CreateGrantOutput {
 }
 /// See [`CreateGrantOutput`](crate::output::CreateGrantOutput)
 pub mod create_grant_output {
-    ///
+
     /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3774,7 +3774,7 @@ impl std::fmt::Debug for CheckoutLicenseOutput {
 }
 /// See [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput)
 pub mod checkout_license_output {
-    ///
+
     /// A builder for [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3978,7 +3978,7 @@ impl std::fmt::Debug for CheckoutBorrowLicenseOutput {
 }
 /// See [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput)
 pub mod checkout_borrow_license_output {
-    ///
+
     /// A builder for [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4129,7 +4129,7 @@ impl std::fmt::Debug for CheckInLicenseOutput {
 }
 /// See [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput)
 pub mod check_in_license_output {
-    ///
+
     /// A builder for [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4184,7 +4184,7 @@ impl std::fmt::Debug for AcceptGrantOutput {
 }
 /// See [`AcceptGrantOutput`](crate::output::AcceptGrantOutput)
 pub mod accept_grant_output {
-    ///
+
     /// A builder for [`AcceptGrantOutput`](crate::output::AcceptGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

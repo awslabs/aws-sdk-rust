@@ -11,7 +11,7 @@ impl std::fmt::Debug for UntagQueueOutput {
 }
 /// See [`UntagQueueOutput`](crate::output::UntagQueueOutput)
 pub mod untag_queue_output {
-    ///
+
     /// A builder for [`UntagQueueOutput`](crate::output::UntagQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for TagQueueOutput {
 }
 /// See [`TagQueueOutput`](crate::output::TagQueueOutput)
 pub mod tag_queue_output {
-    ///
+
     /// A builder for [`TagQueueOutput`](crate::output::TagQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for SetQueueAttributesOutput {
 }
 /// See [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput)
 pub mod set_queue_attributes_output {
-    ///
+
     /// A builder for [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -121,7 +121,7 @@ impl std::fmt::Debug for SendMessageBatchOutput {
 }
 /// See [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput)
 pub mod send_message_batch_output {
-    ///
+
     /// A builder for [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -242,7 +242,7 @@ impl std::fmt::Debug for SendMessageOutput {
 }
 /// See [`SendMessageOutput`](crate::output::SendMessageOutput)
 pub mod send_message_output {
-    ///
+
     /// A builder for [`SendMessageOutput`](crate::output::SendMessageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl std::fmt::Debug for RemovePermissionOutput {
 }
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
 pub mod remove_permission_output {
-    ///
+
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -395,7 +395,7 @@ impl std::fmt::Debug for ReceiveMessageOutput {
 }
 /// See [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput)
 pub mod receive_message_output {
-    ///
+
     /// A builder for [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl std::fmt::Debug for PurgeQueueOutput {
 }
 /// See [`PurgeQueueOutput`](crate::output::PurgeQueueOutput)
 pub mod purge_queue_output {
-    ///
+
     /// A builder for [`PurgeQueueOutput`](crate::output::PurgeQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -494,7 +494,7 @@ impl std::fmt::Debug for ListQueueTagsOutput {
 }
 /// See [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput)
 pub mod list_queue_tags_output {
-    ///
+
     /// A builder for [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -571,7 +571,7 @@ impl std::fmt::Debug for ListQueuesOutput {
 }
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput)
 pub mod list_queues_output {
-    ///
+
     /// A builder for [`ListQueuesOutput`](crate::output::ListQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -654,7 +654,7 @@ impl std::fmt::Debug for ListDeadLetterSourceQueuesOutput {
 }
 /// See [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput)
 pub mod list_dead_letter_source_queues_output {
-    ///
+
     /// A builder for [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -730,7 +730,7 @@ impl std::fmt::Debug for GetQueueUrlOutput {
 }
 /// See [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput)
 pub mod get_queue_url_output {
-    ///
+
     /// A builder for [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -791,7 +791,7 @@ impl std::fmt::Debug for GetQueueAttributesOutput {
 }
 /// See [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput)
 pub mod get_queue_attributes_output {
-    ///
+
     /// A builder for [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -853,7 +853,7 @@ impl std::fmt::Debug for DeleteQueueOutput {
 }
 /// See [`DeleteQueueOutput`](crate::output::DeleteQueueOutput)
 pub mod delete_queue_output {
-    ///
+
     /// A builder for [`DeleteQueueOutput`](crate::output::DeleteQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -903,7 +903,7 @@ impl std::fmt::Debug for DeleteMessageBatchOutput {
 }
 /// See [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput)
 pub mod delete_message_batch_output {
-    ///
+
     /// A builder for [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -979,7 +979,7 @@ impl std::fmt::Debug for DeleteMessageOutput {
 }
 /// See [`DeleteMessageOutput`](crate::output::DeleteMessageOutput)
 pub mod delete_message_output {
-    ///
+
     /// A builder for [`DeleteMessageOutput`](crate::output::DeleteMessageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1020,7 +1020,7 @@ impl std::fmt::Debug for CreateQueueOutput {
 }
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput)
 pub mod create_queue_output {
-    ///
+
     /// A builder for [`CreateQueueOutput`](crate::output::CreateQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1085,7 +1085,7 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchOutput {
 }
 /// See [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput)
 pub mod change_message_visibility_batch_output {
-    ///
+
     /// A builder for [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1167,7 +1167,7 @@ impl std::fmt::Debug for ChangeMessageVisibilityOutput {
 }
 /// See [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput)
 pub mod change_message_visibility_output {
-    ///
+
     /// A builder for [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1198,7 +1198,7 @@ impl std::fmt::Debug for AddPermissionOutput {
 }
 /// See [`AddPermissionOutput`](crate::output::AddPermissionOutput)
 pub mod add_permission_output {
-    ///
+
     /// A builder for [`AddPermissionOutput`](crate::output::AddPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

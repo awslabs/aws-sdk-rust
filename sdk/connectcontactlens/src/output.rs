@@ -38,7 +38,7 @@ impl std::fmt::Debug for ListRealtimeContactAnalysisSegmentsOutput {
 }
 /// See [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput)
 pub mod list_realtime_contact_analysis_segments_output {
-    ///
+
     /// A builder for [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -210,7 +210,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
-    ///
+
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -284,7 +284,7 @@ impl std::fmt::Debug for EndpointAttributes {
 }
 /// See [`EndpointAttributes`](crate::model::EndpointAttributes)
 pub mod endpoint_attributes {
-    ///
+
     /// A builder for [`EndpointAttributes`](crate::model::EndpointAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl std::fmt::Debug for AppInstanceRetentionSettings {
 }
 /// See [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings)
 pub mod app_instance_retention_settings {
-    ///
+
     /// A builder for [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -480,7 +480,7 @@ impl std::fmt::Debug for ChannelRetentionSettings {
 }
 /// See [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings)
 pub mod channel_retention_settings {
-    ///
+
     /// A builder for [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -549,7 +549,7 @@ impl std::fmt::Debug for AppInstanceUserSummary {
 }
 /// See [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary)
 pub mod app_instance_user_summary {
-    ///
+
     /// A builder for [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -666,7 +666,7 @@ impl std::fmt::Debug for AppInstanceUserEndpointSummary {
 }
 /// See [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary)
 pub mod app_instance_user_endpoint_summary {
-    ///
+
     /// A builder for [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -806,7 +806,7 @@ impl std::fmt::Debug for EndpointState {
 }
 /// See [`EndpointState`](crate::model::EndpointState)
 pub mod endpoint_state {
-    ///
+
     /// A builder for [`EndpointState`](crate::model::EndpointState)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1003,7 +1003,7 @@ impl std::fmt::Debug for AppInstanceSummary {
 }
 /// See [`AppInstanceSummary`](crate::model::AppInstanceSummary)
 pub mod app_instance_summary {
-    ///
+
     /// A builder for [`AppInstanceSummary`](crate::model::AppInstanceSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1085,7 +1085,7 @@ impl std::fmt::Debug for AppInstanceAdminSummary {
 }
 /// See [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary)
 pub mod app_instance_admin_summary {
-    ///
+
     /// A builder for [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1145,7 +1145,7 @@ impl std::fmt::Debug for Identity {
 }
 /// See [`Identity`](crate::model::Identity)
 pub mod identity {
-    ///
+
     /// A builder for [`Identity`](crate::model::Identity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1287,7 +1287,7 @@ impl std::fmt::Debug for AppInstanceUserEndpoint {
 }
 /// See [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint)
 pub mod app_instance_user_endpoint {
-    ///
+
     /// A builder for [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1511,7 +1511,7 @@ impl std::fmt::Debug for AppInstanceUser {
 }
 /// See [`AppInstanceUser`](crate::model::AppInstanceUser)
 pub mod app_instance_user {
-    ///
+
     /// A builder for [`AppInstanceUser`](crate::model::AppInstanceUser)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1637,7 +1637,7 @@ impl std::fmt::Debug for AppInstanceAdmin {
 }
 /// See [`AppInstanceAdmin`](crate::model::AppInstanceAdmin)
 pub mod app_instance_admin {
-    ///
+
     /// A builder for [`AppInstanceAdmin`](crate::model::AppInstanceAdmin)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1750,7 +1750,7 @@ impl std::fmt::Debug for AppInstance {
 }
 /// See [`AppInstance`](crate::model::AppInstance)
 pub mod app_instance {
-    ///
+
     /// A builder for [`AppInstance`](crate::model::AppInstance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

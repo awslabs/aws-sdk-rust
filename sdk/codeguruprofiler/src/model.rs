@@ -127,7 +127,7 @@ impl std::fmt::Debug for NotificationConfiguration {
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration)
 pub mod notification_configuration {
-    ///
+
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -207,7 +207,7 @@ impl std::fmt::Debug for Channel {
 }
 /// See [`Channel`](crate::model::Channel)
 pub mod channel {
-    ///
+
     /// A builder for [`Channel`](crate::model::Channel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl std::fmt::Debug for ProfileTime {
 }
 /// See [`ProfileTime`](crate::model::ProfileTime)
 pub mod profile_time {
-    ///
+
     /// A builder for [`ProfileTime`](crate::model::ProfileTime)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -539,7 +539,7 @@ impl std::fmt::Debug for FindingsReportSummary {
 }
 /// See [`FindingsReportSummary`](crate::model::FindingsReportSummary)
 pub mod findings_report_summary {
-    ///
+
     /// A builder for [`FindingsReportSummary`](crate::model::FindingsReportSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -665,7 +665,7 @@ impl std::fmt::Debug for Anomaly {
 }
 /// See [`Anomaly`](crate::model::Anomaly)
 pub mod anomaly {
-    ///
+
     /// A builder for [`Anomaly`](crate::model::Anomaly)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -774,7 +774,7 @@ impl std::fmt::Debug for AnomalyInstance {
 }
 /// See [`AnomalyInstance`](crate::model::AnomalyInstance)
 pub mod anomaly_instance {
-    ///
+
     /// A builder for [`AnomalyInstance`](crate::model::AnomalyInstance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -874,7 +874,7 @@ impl std::fmt::Debug for UserFeedback {
 }
 /// See [`UserFeedback`](crate::model::UserFeedback)
 pub mod user_feedback {
-    ///
+
     /// A builder for [`UserFeedback`](crate::model::UserFeedback)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -943,7 +943,7 @@ impl std::fmt::Debug for Metric {
 }
 /// See [`Metric`](crate::model::Metric)
 pub mod metric {
-    ///
+
     /// A builder for [`Metric`](crate::model::Metric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1117,7 +1117,7 @@ impl std::fmt::Debug for Recommendation {
 }
 /// See [`Recommendation`](crate::model::Recommendation)
 pub mod recommendation {
-    ///
+
     /// A builder for [`Recommendation`](crate::model::Recommendation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1261,7 +1261,7 @@ impl std::fmt::Debug for Match {
 }
 /// See [`Match`](crate::model::Match)
 pub mod r#match {
-    ///
+
     /// A builder for [`Match`](crate::model::Match)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1385,7 +1385,7 @@ impl std::fmt::Debug for Pattern {
 }
 /// See [`Pattern`](crate::model::Pattern)
 pub mod pattern {
-    ///
+
     /// A builder for [`Pattern`](crate::model::Pattern)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1568,7 +1568,7 @@ impl std::fmt::Debug for AgentConfiguration {
 }
 /// See [`AgentConfiguration`](crate::model::AgentConfiguration)
 pub mod agent_configuration {
-    ///
+
     /// A builder for [`AgentConfiguration`](crate::model::AgentConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1867,7 +1867,7 @@ impl std::fmt::Debug for FrameMetricDatum {
 }
 /// See [`FrameMetricDatum`](crate::model::FrameMetricDatum)
 pub mod frame_metric_datum {
-    ///
+
     /// A builder for [`FrameMetricDatum`](crate::model::FrameMetricDatum)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1957,7 +1957,7 @@ impl std::fmt::Debug for FrameMetric {
 }
 /// See [`FrameMetric`](crate::model::FrameMetric)
 pub mod frame_metric {
-    ///
+
     /// A builder for [`FrameMetric`](crate::model::FrameMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2045,7 +2045,7 @@ impl std::fmt::Debug for TimestampStructure {
 }
 /// See [`TimestampStructure`](crate::model::TimestampStructure)
 pub mod timestamp_structure {
-    ///
+
     /// A builder for [`TimestampStructure`](crate::model::TimestampStructure)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2156,7 +2156,7 @@ impl std::fmt::Debug for ProfilingGroupDescription {
 }
 /// See [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription)
 pub mod profiling_group_description {
-    ///
+
     /// A builder for [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2410,7 +2410,7 @@ impl std::fmt::Debug for ProfilingStatus {
 }
 /// See [`ProfilingStatus`](crate::model::ProfilingStatus)
 pub mod profiling_status {
-    ///
+
     /// A builder for [`ProfilingStatus`](crate::model::ProfilingStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2525,7 +2525,7 @@ impl std::fmt::Debug for AggregatedProfileTime {
 }
 /// See [`AggregatedProfileTime`](crate::model::AggregatedProfileTime)
 pub mod aggregated_profile_time {
-    ///
+
     /// A builder for [`AggregatedProfileTime`](crate::model::AggregatedProfileTime)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2607,7 +2607,7 @@ impl std::fmt::Debug for AgentOrchestrationConfig {
 }
 /// See [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig)
 pub mod agent_orchestration_config {
-    ///
+
     /// A builder for [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -417,14 +417,12 @@ impl Client {
     }
 }
 pub mod fluent_builders {
-    //!
-    //!
+
     //! Utilities to ergonomically construct a request to the service.
     //!
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
-    //!
     /// Fluent builder constructing a request to `CancelJob`.
     ///
     /// <p>Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even if no job is canceled. These jobs must be terminated with the <code>TerminateJob</code> operation.</p>

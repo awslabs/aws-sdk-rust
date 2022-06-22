@@ -28,7 +28,7 @@ impl std::fmt::Debug for ListFragmentsOutput {
 }
 /// See [`ListFragmentsOutput`](crate::output::ListFragmentsOutput)
 pub mod list_fragments_output {
-    ///
+
     /// A builder for [`ListFragmentsOutput`](crate::output::ListFragmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -132,7 +132,7 @@ impl std::fmt::Debug for GetMediaForFragmentListOutput {
 }
 /// See [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput)
 pub mod get_media_for_fragment_list_output {
-    ///
+
     /// A builder for [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -231,7 +231,7 @@ impl std::fmt::Debug for GetImagesOutput {
 }
 /// See [`GetImagesOutput`](crate::output::GetImagesOutput)
 pub mod get_images_output {
-    ///
+
     /// A builder for [`GetImagesOutput`](crate::output::GetImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl std::fmt::Debug for GetHlsStreamingSessionUrlOutput {
 }
 /// See [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput)
 pub mod get_hls_streaming_session_url_output {
-    ///
+
     /// A builder for [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -368,7 +368,7 @@ impl std::fmt::Debug for GetDashStreamingSessionUrlOutput {
 }
 /// See [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput)
 pub mod get_dash_streaming_session_url_output {
-    ///
+
     /// A builder for [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -432,7 +432,7 @@ impl std::fmt::Debug for GetClipOutput {
 }
 /// See [`GetClipOutput`](crate::output::GetClipOutput)
 pub mod get_clip_output {
-    ///
+
     /// A builder for [`GetClipOutput`](crate::output::GetClipOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]

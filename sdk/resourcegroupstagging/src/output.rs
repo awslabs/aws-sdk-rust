@@ -27,7 +27,7 @@ impl std::fmt::Debug for UntagResourcesOutput {
 }
 /// See [`UntagResourcesOutput`](crate::output::UntagResourcesOutput)
 pub mod untag_resources_output {
-    ///
+
     /// A builder for [`UntagResourcesOutput`](crate::output::UntagResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl std::fmt::Debug for TagResourcesOutput {
 }
 /// See [`TagResourcesOutput`](crate::output::TagResourcesOutput)
 pub mod tag_resources_output {
-    ///
+
     /// A builder for [`TagResourcesOutput`](crate::output::TagResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -167,7 +167,7 @@ impl std::fmt::Debug for StartReportCreationOutput {
 }
 /// See [`StartReportCreationOutput`](crate::output::StartReportCreationOutput)
 pub mod start_report_creation_output {
-    ///
+
     /// A builder for [`StartReportCreationOutput`](crate::output::StartReportCreationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -215,7 +215,7 @@ impl std::fmt::Debug for GetTagValuesOutput {
 }
 /// See [`GetTagValuesOutput`](crate::output::GetTagValuesOutput)
 pub mod get_tag_values_output {
-    ///
+
     /// A builder for [`GetTagValuesOutput`](crate::output::GetTagValuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -301,7 +301,7 @@ impl std::fmt::Debug for GetTagKeysOutput {
 }
 /// See [`GetTagKeysOutput`](crate::output::GetTagKeysOutput)
 pub mod get_tag_keys_output {
-    ///
+
     /// A builder for [`GetTagKeysOutput`](crate::output::GetTagKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -390,7 +390,7 @@ impl std::fmt::Debug for GetResourcesOutput {
 }
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput)
 pub mod get_resources_output {
-    ///
+
     /// A builder for [`GetResourcesOutput`](crate::output::GetResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -480,7 +480,7 @@ impl std::fmt::Debug for GetComplianceSummaryOutput {
 }
 /// See [`GetComplianceSummaryOutput`](crate::output::GetComplianceSummaryOutput)
 pub mod get_compliance_summary_output {
-    ///
+
     /// A builder for [`GetComplianceSummaryOutput`](crate::output::GetComplianceSummaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -594,7 +594,7 @@ impl std::fmt::Debug for DescribeReportCreationOutput {
 }
 /// See [`DescribeReportCreationOutput`](crate::output::DescribeReportCreationOutput)
 pub mod describe_report_creation_output {
-    ///
+
     /// A builder for [`DescribeReportCreationOutput`](crate::output::DescribeReportCreationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

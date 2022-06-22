@@ -65,7 +65,7 @@ impl std::fmt::Debug for SendCommandOutput {
 }
 /// See [`SendCommandOutput`](crate::output::SendCommandOutput)
 pub mod send_command_output {
-    ///
+
     /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

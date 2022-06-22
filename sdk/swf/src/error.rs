@@ -4139,7 +4139,7 @@ impl std::fmt::Display for UnknownResourceFault {
 impl std::error::Error for UnknownResourceFault {}
 /// See [`UnknownResourceFault`](crate::error::UnknownResourceFault)
 pub mod unknown_resource_fault {
-    ///
+
     /// A builder for [`UnknownResourceFault`](crate::error::UnknownResourceFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4204,7 +4204,7 @@ impl std::fmt::Display for OperationNotPermittedFault {
 impl std::error::Error for OperationNotPermittedFault {}
 /// See [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault)
 pub mod operation_not_permitted_fault {
-    ///
+
     /// A builder for [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4269,7 +4269,7 @@ impl std::fmt::Display for LimitExceededFault {
 impl std::error::Error for LimitExceededFault {}
 /// See [`LimitExceededFault`](crate::error::LimitExceededFault)
 pub mod limit_exceeded_fault {
-    ///
+
     /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4334,7 +4334,7 @@ impl std::fmt::Display for TypeAlreadyExistsFault {
 impl std::error::Error for TypeAlreadyExistsFault {}
 /// See [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault)
 pub mod type_already_exists_fault {
-    ///
+
     /// A builder for [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4399,7 +4399,7 @@ impl std::fmt::Display for DomainAlreadyExistsFault {
 impl std::error::Error for DomainAlreadyExistsFault {}
 /// See [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault)
 pub mod domain_already_exists_fault {
-    ///
+
     /// A builder for [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4464,7 +4464,7 @@ impl std::fmt::Display for TooManyTagsFault {
 impl std::error::Error for TooManyTagsFault {}
 /// See [`TooManyTagsFault`](crate::error::TooManyTagsFault)
 pub mod too_many_tags_fault {
-    ///
+
     /// A builder for [`TooManyTagsFault`](crate::error::TooManyTagsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4529,7 +4529,7 @@ impl std::fmt::Display for WorkflowExecutionAlreadyStartedFault {
 impl std::error::Error for WorkflowExecutionAlreadyStartedFault {}
 /// See [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault)
 pub mod workflow_execution_already_started_fault {
-    ///
+
     /// A builder for [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4594,7 +4594,7 @@ impl std::fmt::Display for TypeDeprecatedFault {
 impl std::error::Error for TypeDeprecatedFault {}
 /// See [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault)
 pub mod type_deprecated_fault {
-    ///
+
     /// A builder for [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4662,7 +4662,7 @@ impl std::fmt::Display for DefaultUndefinedFault {
 impl std::error::Error for DefaultUndefinedFault {}
 /// See [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault)
 pub mod default_undefined_fault {
-    ///
+
     /// A builder for [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4727,7 +4727,7 @@ impl std::fmt::Display for DomainDeprecatedFault {
 impl std::error::Error for DomainDeprecatedFault {}
 /// See [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault)
 pub mod domain_deprecated_fault {
-    ///
+
     /// A builder for [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

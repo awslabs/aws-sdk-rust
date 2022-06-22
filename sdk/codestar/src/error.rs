@@ -2172,7 +2172,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
-    ///
+
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2237,7 +2237,7 @@ impl std::fmt::Display for UserProfileNotFoundException {
 impl std::error::Error for UserProfileNotFoundException {}
 /// See [`UserProfileNotFoundException`](crate::error::UserProfileNotFoundException)
 pub mod user_profile_not_found_exception {
-    ///
+
     /// A builder for [`UserProfileNotFoundException`](crate::error::UserProfileNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2302,7 +2302,7 @@ impl std::fmt::Display for TeamMemberNotFoundException {
 impl std::error::Error for TeamMemberNotFoundException {}
 /// See [`TeamMemberNotFoundException`](crate::error::TeamMemberNotFoundException)
 pub mod team_member_not_found_exception {
-    ///
+
     /// A builder for [`TeamMemberNotFoundException`](crate::error::TeamMemberNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2367,7 +2367,7 @@ impl std::fmt::Display for ProjectNotFoundException {
 impl std::error::Error for ProjectNotFoundException {}
 /// See [`ProjectNotFoundException`](crate::error::ProjectNotFoundException)
 pub mod project_not_found_exception {
-    ///
+
     /// A builder for [`ProjectNotFoundException`](crate::error::ProjectNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2432,7 +2432,7 @@ impl std::fmt::Display for ProjectConfigurationException {
 impl std::error::Error for ProjectConfigurationException {}
 /// See [`ProjectConfigurationException`](crate::error::ProjectConfigurationException)
 pub mod project_configuration_exception {
-    ///
+
     /// A builder for [`ProjectConfigurationException`](crate::error::ProjectConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2497,7 +2497,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2562,7 +2562,7 @@ impl std::fmt::Display for InvalidServiceRoleException {
 impl std::error::Error for InvalidServiceRoleException {}
 /// See [`InvalidServiceRoleException`](crate::error::InvalidServiceRoleException)
 pub mod invalid_service_role_exception {
-    ///
+
     /// A builder for [`InvalidServiceRoleException`](crate::error::InvalidServiceRoleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2627,7 +2627,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
-    ///
+
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2692,7 +2692,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
-    ///
+
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2757,7 +2757,7 @@ impl std::fmt::Display for UserProfileAlreadyExistsException {
 impl std::error::Error for UserProfileAlreadyExistsException {}
 /// See [`UserProfileAlreadyExistsException`](crate::error::UserProfileAlreadyExistsException)
 pub mod user_profile_already_exists_exception {
-    ///
+
     /// A builder for [`UserProfileAlreadyExistsException`](crate::error::UserProfileAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2822,7 +2822,7 @@ impl std::fmt::Display for ProjectCreationFailedException {
 impl std::error::Error for ProjectCreationFailedException {}
 /// See [`ProjectCreationFailedException`](crate::error::ProjectCreationFailedException)
 pub mod project_creation_failed_exception {
-    ///
+
     /// A builder for [`ProjectCreationFailedException`](crate::error::ProjectCreationFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2887,7 +2887,7 @@ impl std::fmt::Display for ProjectAlreadyExistsException {
 impl std::error::Error for ProjectAlreadyExistsException {}
 /// See [`ProjectAlreadyExistsException`](crate::error::ProjectAlreadyExistsException)
 pub mod project_already_exists_exception {
-    ///
+
     /// A builder for [`ProjectAlreadyExistsException`](crate::error::ProjectAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2952,7 +2952,7 @@ impl std::fmt::Display for TeamMemberAlreadyAssociatedException {
 impl std::error::Error for TeamMemberAlreadyAssociatedException {}
 /// See [`TeamMemberAlreadyAssociatedException`](crate::error::TeamMemberAlreadyAssociatedException)
 pub mod team_member_already_associated_exception {
-    ///
+
     /// A builder for [`TeamMemberAlreadyAssociatedException`](crate::error::TeamMemberAlreadyAssociatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -230,7 +230,7 @@ impl std::fmt::Debug for Scope {
 }
 /// See [`Scope`](crate::model::Scope)
 pub mod scope {
-    ///
+
     /// A builder for [`Scope`](crate::model::Scope)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -494,7 +494,7 @@ impl std::fmt::Debug for RecommendationSummary {
 }
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary)
 pub mod recommendation_summary {
-    ///
+
     /// A builder for [`RecommendationSummary`](crate::model::RecommendationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -645,7 +645,7 @@ impl std::fmt::Debug for CurrentPerformanceRiskRatings {
 }
 /// See [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings)
 pub mod current_performance_risk_ratings {
-    ///
+
     /// A builder for [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -751,7 +751,7 @@ impl std::fmt::Debug for SavingsOpportunity {
 }
 /// See [`SavingsOpportunity`](crate::model::SavingsOpportunity)
 pub mod savings_opportunity {
-    ///
+
     /// A builder for [`SavingsOpportunity`](crate::model::SavingsOpportunity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -838,7 +838,7 @@ impl std::fmt::Debug for EstimatedMonthlySavings {
 }
 /// See [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings)
 pub mod estimated_monthly_savings {
-    ///
+
     /// A builder for [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1042,7 +1042,7 @@ impl std::fmt::Debug for Summary {
 }
 /// See [`Summary`](crate::model::Summary)
 pub mod summary {
-    ///
+
     /// A builder for [`Summary`](crate::model::Summary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1138,7 +1138,7 @@ impl std::fmt::Debug for ReasonCodeSummary {
 }
 /// See [`ReasonCodeSummary`](crate::model::ReasonCodeSummary)
 pub mod reason_code_summary {
-    ///
+
     /// A builder for [`ReasonCodeSummary`](crate::model::ReasonCodeSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1370,7 +1370,7 @@ impl std::fmt::Debug for RecommendationPreferencesDetail {
 }
 /// See [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
 pub mod recommendation_preferences_detail {
-    ///
+
     /// A builder for [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1616,7 +1616,7 @@ impl std::fmt::Debug for LambdaFunctionRecommendation {
 }
 /// See [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation)
 pub mod lambda_function_recommendation {
-    ///
+
     /// A builder for [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1992,7 +1992,7 @@ impl std::fmt::Debug for LambdaFunctionMemoryRecommendationOption {
 }
 /// See [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption)
 pub mod lambda_function_memory_recommendation_option {
-    ///
+
     /// A builder for [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2119,7 +2119,7 @@ impl std::fmt::Debug for LambdaFunctionMemoryProjectedMetric {
 }
 /// See [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric)
 pub mod lambda_function_memory_projected_metric {
-    ///
+
     /// A builder for [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2481,7 +2481,7 @@ impl std::fmt::Debug for LambdaFunctionUtilizationMetric {
 }
 /// See [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric)
 pub mod lambda_function_utilization_metric {
-    ///
+
     /// A builder for [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2714,7 +2714,7 @@ impl std::fmt::Debug for LambdaFunctionRecommendationFilter {
 }
 /// See [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter)
 pub mod lambda_function_recommendation_filter {
-    ///
+
     /// A builder for [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2885,7 +2885,7 @@ impl std::fmt::Debug for AccountEnrollmentStatus {
 }
 /// See [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus)
 pub mod account_enrollment_status {
-    ///
+
     /// A builder for [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2995,7 +2995,7 @@ impl std::fmt::Debug for EnrollmentFilter {
 }
 /// See [`EnrollmentFilter`](crate::model::EnrollmentFilter)
 pub mod enrollment_filter {
-    ///
+
     /// A builder for [`EnrollmentFilter`](crate::model::EnrollmentFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3149,7 +3149,7 @@ impl std::fmt::Debug for RecommendedOptionProjectedMetric {
 }
 /// See [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric)
 pub mod recommended_option_projected_metric {
-    ///
+
     /// A builder for [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3276,7 +3276,7 @@ impl std::fmt::Debug for ProjectedMetric {
 }
 /// See [`ProjectedMetric`](crate::model::ProjectedMetric)
 pub mod projected_metric {
-    ///
+
     /// A builder for [`ProjectedMetric`](crate::model::ProjectedMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3517,7 +3517,7 @@ impl std::fmt::Debug for RecommendationPreferences {
 }
 /// See [`RecommendationPreferences`](crate::model::RecommendationPreferences)
 pub mod recommendation_preferences {
-    ///
+
     /// A builder for [`RecommendationPreferences`](crate::model::RecommendationPreferences)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3722,7 +3722,7 @@ impl std::fmt::Debug for GetRecommendationError {
 }
 /// See [`GetRecommendationError`](crate::model::GetRecommendationError)
 pub mod get_recommendation_error {
-    ///
+
     /// A builder for [`GetRecommendationError`](crate::model::GetRecommendationError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3990,7 +3990,7 @@ impl std::fmt::Debug for InstanceRecommendation {
 }
 /// See [`InstanceRecommendation`](crate::model::InstanceRecommendation)
 pub mod instance_recommendation {
-    ///
+
     /// A builder for [`InstanceRecommendation`](crate::model::InstanceRecommendation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4490,7 +4490,7 @@ impl std::fmt::Debug for EffectiveRecommendationPreferences {
 }
 /// See [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
 pub mod effective_recommendation_preferences {
-    ///
+
     /// A builder for [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4626,7 +4626,7 @@ impl std::fmt::Debug for RecommendationSource {
 }
 /// See [`RecommendationSource`](crate::model::RecommendationSource)
 pub mod recommendation_source {
-    ///
+
     /// A builder for [`RecommendationSource`](crate::model::RecommendationSource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4781,7 +4781,7 @@ impl std::fmt::Debug for InstanceRecommendationOption {
 }
 /// See [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption)
 pub mod instance_recommendation_option {
-    ///
+
     /// A builder for [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5168,7 +5168,7 @@ impl std::fmt::Debug for UtilizationMetric {
 }
 /// See [`UtilizationMetric`](crate::model::UtilizationMetric)
 pub mod utilization_metric {
-    ///
+
     /// A builder for [`UtilizationMetric`](crate::model::UtilizationMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5540,7 +5540,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter)
 pub mod filter {
-    ///
+
     /// A builder for [`Filter`](crate::model::Filter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5807,7 +5807,7 @@ impl std::fmt::Debug for VolumeRecommendation {
 }
 /// See [`VolumeRecommendation`](crate::model::VolumeRecommendation)
 pub mod volume_recommendation {
-    ///
+
     /// A builder for [`VolumeRecommendation`](crate::model::VolumeRecommendation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6031,7 +6031,7 @@ impl std::fmt::Debug for VolumeRecommendationOption {
 }
 /// See [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption)
 pub mod volume_recommendation_option {
-    ///
+
     /// A builder for [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6174,7 +6174,7 @@ impl std::fmt::Debug for VolumeConfiguration {
 }
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration)
 pub mod volume_configuration {
-    ///
+
     /// A builder for [`VolumeConfiguration`](crate::model::VolumeConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6324,7 +6324,7 @@ impl std::fmt::Debug for EbsUtilizationMetric {
 }
 /// See [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric)
 pub mod ebs_utilization_metric {
-    ///
+
     /// A builder for [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6559,7 +6559,7 @@ impl std::fmt::Debug for EbsFilter {
 }
 /// See [`EbsFilter`](crate::model::EbsFilter)
 pub mod ebs_filter {
-    ///
+
     /// A builder for [`EbsFilter`](crate::model::EbsFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6813,7 +6813,7 @@ impl std::fmt::Debug for AutoScalingGroupRecommendation {
 }
 /// See [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation)
 pub mod auto_scaling_group_recommendation {
-    ///
+
     /// A builder for [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7153,7 +7153,7 @@ impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
 }
 /// See [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption)
 pub mod auto_scaling_group_recommendation_option {
-    ///
+
     /// A builder for [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7323,7 +7323,7 @@ impl std::fmt::Debug for AutoScalingGroupConfiguration {
 }
 /// See [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration)
 pub mod auto_scaling_group_configuration {
-    ///
+
     /// A builder for [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7435,7 +7435,7 @@ impl std::fmt::Debug for S3Destination {
 }
 /// See [`S3Destination`](crate::model::S3Destination)
 pub mod s3_destination {
-    ///
+
     /// A builder for [`S3Destination`](crate::model::S3Destination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7577,7 +7577,7 @@ impl std::fmt::Debug for S3DestinationConfig {
 }
 /// See [`S3DestinationConfig`](crate::model::S3DestinationConfig)
 pub mod s3_destination_config {
-    ///
+
     /// A builder for [`S3DestinationConfig`](crate::model::S3DestinationConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8764,7 +8764,7 @@ impl std::fmt::Debug for RecommendationExportJob {
 }
 /// See [`RecommendationExportJob`](crate::model::RecommendationExportJob)
 pub mod recommendation_export_job {
-    ///
+
     /// A builder for [`RecommendationExportJob`](crate::model::RecommendationExportJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8969,7 +8969,7 @@ impl std::fmt::Debug for ExportDestination {
 }
 /// See [`ExportDestination`](crate::model::ExportDestination)
 pub mod export_destination {
-    ///
+
     /// A builder for [`ExportDestination`](crate::model::ExportDestination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9044,7 +9044,7 @@ impl std::fmt::Debug for JobFilter {
 }
 /// See [`JobFilter`](crate::model::JobFilter)
 pub mod job_filter {
-    ///
+
     /// A builder for [`JobFilter`](crate::model::JobFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

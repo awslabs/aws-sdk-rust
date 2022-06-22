@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateEndpointOutput {
 }
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
 pub mod update_endpoint_output {
-    ///
+
     /// A builder for [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for StopTrainingEntityRecognizerOutput {
 }
 /// See [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput)
 pub mod stop_training_entity_recognizer_output {
-    ///
+
     /// A builder for [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for StopTrainingDocumentClassifierOutput {
 }
 /// See [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput)
 pub mod stop_training_document_classifier_output {
-    ///
+
     /// A builder for [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -183,7 +183,7 @@ impl std::fmt::Debug for StopTargetedSentimentDetectionJobOutput {
 }
 /// See [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput)
 pub mod stop_targeted_sentiment_detection_job_output {
-    ///
+
     /// A builder for [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -260,7 +260,7 @@ impl std::fmt::Debug for StopSentimentDetectionJobOutput {
 }
 /// See [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput)
 pub mod stop_sentiment_detection_job_output {
-    ///
+
     /// A builder for [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -337,7 +337,7 @@ impl std::fmt::Debug for StopPiiEntitiesDetectionJobOutput {
 }
 /// See [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput)
 pub mod stop_pii_entities_detection_job_output {
-    ///
+
     /// A builder for [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl std::fmt::Debug for StopKeyPhrasesDetectionJobOutput {
 }
 /// See [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput)
 pub mod stop_key_phrases_detection_job_output {
-    ///
+
     /// A builder for [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -491,7 +491,7 @@ impl std::fmt::Debug for StopEventsDetectionJobOutput {
 }
 /// See [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput)
 pub mod stop_events_detection_job_output {
-    ///
+
     /// A builder for [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -568,7 +568,7 @@ impl std::fmt::Debug for StopEntitiesDetectionJobOutput {
 }
 /// See [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput)
 pub mod stop_entities_detection_job_output {
-    ///
+
     /// A builder for [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -645,7 +645,7 @@ impl std::fmt::Debug for StopDominantLanguageDetectionJobOutput {
 }
 /// See [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput)
 pub mod stop_dominant_language_detection_job_output {
-    ///
+
     /// A builder for [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -767,7 +767,7 @@ impl std::fmt::Debug for StartTopicsDetectionJobOutput {
 }
 /// See [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput)
 pub mod start_topics_detection_job_output {
-    ///
+
     /// A builder for [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -939,7 +939,7 @@ impl std::fmt::Debug for StartTargetedSentimentDetectionJobOutput {
 }
 /// See [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput)
 pub mod start_targeted_sentiment_detection_job_output {
-    ///
+
     /// A builder for [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1111,7 +1111,7 @@ impl std::fmt::Debug for StartSentimentDetectionJobOutput {
 }
 /// See [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput)
 pub mod start_sentiment_detection_job_output {
-    ///
+
     /// A builder for [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1271,7 +1271,7 @@ impl std::fmt::Debug for StartPiiEntitiesDetectionJobOutput {
 }
 /// See [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput)
 pub mod start_pii_entities_detection_job_output {
-    ///
+
     /// A builder for [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1431,7 +1431,7 @@ impl std::fmt::Debug for StartKeyPhrasesDetectionJobOutput {
 }
 /// See [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput)
 pub mod start_key_phrases_detection_job_output {
-    ///
+
     /// A builder for [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1591,7 +1591,7 @@ impl std::fmt::Debug for StartEventsDetectionJobOutput {
 }
 /// See [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput)
 pub mod start_events_detection_job_output {
-    ///
+
     /// A builder for [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1755,7 +1755,7 @@ impl std::fmt::Debug for StartEntitiesDetectionJobOutput {
 }
 /// See [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput)
 pub mod start_entities_detection_job_output {
-    ///
+
     /// A builder for [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1931,7 +1931,7 @@ impl std::fmt::Debug for StartDominantLanguageDetectionJobOutput {
 }
 /// See [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput)
 pub mod start_dominant_language_detection_job_output {
-    ///
+
     /// A builder for [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2107,7 +2107,7 @@ impl std::fmt::Debug for StartDocumentClassificationJobOutput {
 }
 /// See [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput)
 pub mod start_document_classification_job_output {
-    ///
+
     /// A builder for [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2231,7 +2231,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 pub mod put_resource_policy_output {
-    ///
+
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2302,7 +2302,7 @@ impl std::fmt::Debug for ListTopicsDetectionJobsOutput {
 }
 /// See [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput)
 pub mod list_topics_detection_jobs_output {
-    ///
+
     /// A builder for [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2398,7 +2398,7 @@ impl std::fmt::Debug for ListTargetedSentimentDetectionJobsOutput {
 }
 /// See [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput)
 pub mod list_targeted_sentiment_detection_jobs_output {
-    ///
+
     /// A builder for [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2491,7 +2491,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2580,7 +2580,7 @@ impl std::fmt::Debug for ListSentimentDetectionJobsOutput {
 }
 /// See [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput)
 pub mod list_sentiment_detection_jobs_output {
-    ///
+
     /// A builder for [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2678,7 +2678,7 @@ impl std::fmt::Debug for ListPiiEntitiesDetectionJobsOutput {
 }
 /// See [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput)
 pub mod list_pii_entities_detection_jobs_output {
-    ///
+
     /// A builder for [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2776,7 +2776,7 @@ impl std::fmt::Debug for ListKeyPhrasesDetectionJobsOutput {
 }
 /// See [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput)
 pub mod list_key_phrases_detection_jobs_output {
-    ///
+
     /// A builder for [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2874,7 +2874,7 @@ impl std::fmt::Debug for ListEventsDetectionJobsOutput {
 }
 /// See [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput)
 pub mod list_events_detection_jobs_output {
-    ///
+
     /// A builder for [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2969,7 +2969,7 @@ impl std::fmt::Debug for ListEntityRecognizerSummariesOutput {
 }
 /// See [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput)
 pub mod list_entity_recognizer_summaries_output {
-    ///
+
     /// A builder for [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3062,7 +3062,7 @@ impl std::fmt::Debug for ListEntityRecognizersOutput {
 }
 /// See [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput)
 pub mod list_entity_recognizers_output {
-    ///
+
     /// A builder for [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3155,7 +3155,7 @@ impl std::fmt::Debug for ListEntitiesDetectionJobsOutput {
 }
 /// See [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput)
 pub mod list_entities_detection_jobs_output {
-    ///
+
     /// A builder for [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3247,7 +3247,7 @@ impl std::fmt::Debug for ListEndpointsOutput {
 }
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
 pub mod list_endpoints_output {
-    ///
+
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3338,7 +3338,7 @@ impl std::fmt::Debug for ListDominantLanguageDetectionJobsOutput {
 }
 /// See [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput)
 pub mod list_dominant_language_detection_jobs_output {
-    ///
+
     /// A builder for [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3437,7 +3437,7 @@ impl std::fmt::Debug for ListDocumentClassifierSummariesOutput {
 }
 /// See [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput)
 pub mod list_document_classifier_summaries_output {
-    ///
+
     /// A builder for [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3530,7 +3530,7 @@ impl std::fmt::Debug for ListDocumentClassifiersOutput {
 }
 /// See [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput)
 pub mod list_document_classifiers_output {
-    ///
+
     /// A builder for [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3623,7 +3623,7 @@ impl std::fmt::Debug for ListDocumentClassificationJobsOutput {
 }
 /// See [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput)
 pub mod list_document_classification_jobs_output {
-    ///
+
     /// A builder for [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3708,7 +3708,7 @@ impl std::fmt::Debug for ImportModelOutput {
 }
 /// See [`ImportModelOutput`](crate::output::ImportModelOutput)
 pub mod import_model_output {
-    ///
+
     /// A builder for [`ImportModelOutput`](crate::output::ImportModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3763,7 +3763,7 @@ impl std::fmt::Debug for DetectSyntaxOutput {
 }
 /// See [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput)
 pub mod detect_syntax_output {
-    ///
+
     /// A builder for [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3834,7 +3834,7 @@ impl std::fmt::Debug for DetectSentimentOutput {
 }
 /// See [`DetectSentimentOutput`](crate::output::DetectSentimentOutput)
 pub mod detect_sentiment_output {
-    ///
+
     /// A builder for [`DetectSentimentOutput`](crate::output::DetectSentimentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3907,7 +3907,7 @@ impl std::fmt::Debug for DetectPiiEntitiesOutput {
 }
 /// See [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput)
 pub mod detect_pii_entities_output {
-    ///
+
     /// A builder for [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3971,7 +3971,7 @@ impl std::fmt::Debug for DetectKeyPhrasesOutput {
 }
 /// See [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput)
 pub mod detect_key_phrases_output {
-    ///
+
     /// A builder for [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4037,7 +4037,7 @@ impl std::fmt::Debug for DetectEntitiesOutput {
 }
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
 pub mod detect_entities_output {
-    ///
+
     /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4103,7 +4103,7 @@ impl std::fmt::Debug for DetectDominantLanguageOutput {
 }
 /// See [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput)
 pub mod detect_dominant_language_output {
-    ///
+
     /// A builder for [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4173,7 +4173,7 @@ impl std::fmt::Debug for DescribeTopicsDetectionJobOutput {
 }
 /// See [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput)
 pub mod describe_topics_detection_job_output {
-    ///
+
     /// A builder for [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4241,7 +4241,7 @@ impl std::fmt::Debug for DescribeTargetedSentimentDetectionJobOutput {
 }
 /// See [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput)
 pub mod describe_targeted_sentiment_detection_job_output {
-    ///
+
     /// A builder for [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4310,7 +4310,7 @@ impl std::fmt::Debug for DescribeSentimentDetectionJobOutput {
 }
 /// See [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput)
 pub mod describe_sentiment_detection_job_output {
-    ///
+
     /// A builder for [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4393,7 +4393,7 @@ impl std::fmt::Debug for DescribeResourcePolicyOutput {
 }
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
 pub mod describe_resource_policy_output {
-    ///
+
     /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4502,7 +4502,7 @@ impl std::fmt::Debug for DescribePiiEntitiesDetectionJobOutput {
 }
 /// See [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput)
 pub mod describe_pii_entities_detection_job_output {
-    ///
+
     /// A builder for [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4570,7 +4570,7 @@ impl std::fmt::Debug for DescribeKeyPhrasesDetectionJobOutput {
 }
 /// See [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput)
 pub mod describe_key_phrases_detection_job_output {
-    ///
+
     /// A builder for [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4638,7 +4638,7 @@ impl std::fmt::Debug for DescribeEventsDetectionJobOutput {
 }
 /// See [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput)
 pub mod describe_events_detection_job_output {
-    ///
+
     /// A builder for [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4705,7 +4705,7 @@ impl std::fmt::Debug for DescribeEntityRecognizerOutput {
 }
 /// See [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput)
 pub mod describe_entity_recognizer_output {
-    ///
+
     /// A builder for [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4773,7 +4773,7 @@ impl std::fmt::Debug for DescribeEntitiesDetectionJobOutput {
 }
 /// See [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput)
 pub mod describe_entities_detection_job_output {
-    ///
+
     /// A builder for [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4835,7 +4835,7 @@ impl std::fmt::Debug for DescribeEndpointOutput {
 }
 /// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
 pub mod describe_endpoint_output {
-    ///
+
     /// A builder for [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4899,7 +4899,7 @@ impl std::fmt::Debug for DescribeDominantLanguageDetectionJobOutput {
 }
 /// See [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput)
 pub mod describe_dominant_language_detection_job_output {
-    ///
+
     /// A builder for [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4968,7 +4968,7 @@ impl std::fmt::Debug for DescribeDocumentClassifierOutput {
 }
 /// See [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput)
 pub mod describe_document_classifier_output {
-    ///
+
     /// A builder for [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5036,7 +5036,7 @@ impl std::fmt::Debug for DescribeDocumentClassificationJobOutput {
 }
 /// See [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput)
 pub mod describe_document_classification_job_output {
-    ///
+
     /// A builder for [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5088,7 +5088,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 pub mod delete_resource_policy_output {
-    ///
+
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5119,7 +5119,7 @@ impl std::fmt::Debug for DeleteEntityRecognizerOutput {
 }
 /// See [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput)
 pub mod delete_entity_recognizer_output {
-    ///
+
     /// A builder for [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5150,7 +5150,7 @@ impl std::fmt::Debug for DeleteEndpointOutput {
 }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
 pub mod delete_endpoint_output {
-    ///
+
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5181,7 +5181,7 @@ impl std::fmt::Debug for DeleteDocumentClassifierOutput {
 }
 /// See [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput)
 pub mod delete_document_classifier_output {
-    ///
+
     /// A builder for [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5222,7 +5222,7 @@ impl std::fmt::Debug for CreateEntityRecognizerOutput {
 }
 /// See [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput)
 pub mod create_entity_recognizer_output {
-    ///
+
     /// A builder for [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5280,7 +5280,7 @@ impl std::fmt::Debug for CreateEndpointOutput {
 }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
 pub mod create_endpoint_output {
-    ///
+
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5335,7 +5335,7 @@ impl std::fmt::Debug for CreateDocumentClassifierOutput {
 }
 /// See [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput)
 pub mod create_document_classifier_output {
-    ///
+
     /// A builder for [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5393,7 +5393,7 @@ impl std::fmt::Debug for ContainsPiiEntitiesOutput {
 }
 /// See [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput)
 pub mod contains_pii_entities_output {
-    ///
+
     /// A builder for [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5464,7 +5464,7 @@ impl std::fmt::Debug for ClassifyDocumentOutput {
 }
 /// See [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput)
 pub mod classify_document_output {
-    ///
+
     /// A builder for [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5556,7 +5556,7 @@ impl std::fmt::Debug for BatchDetectSyntaxOutput {
 }
 /// See [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput)
 pub mod batch_detect_syntax_output {
-    ///
+
     /// A builder for [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5652,7 +5652,7 @@ impl std::fmt::Debug for BatchDetectSentimentOutput {
 }
 /// See [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput)
 pub mod batch_detect_sentiment_output {
-    ///
+
     /// A builder for [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5748,7 +5748,7 @@ impl std::fmt::Debug for BatchDetectKeyPhrasesOutput {
 }
 /// See [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput)
 pub mod batch_detect_key_phrases_output {
-    ///
+
     /// A builder for [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5846,7 +5846,7 @@ impl std::fmt::Debug for BatchDetectEntitiesOutput {
 }
 /// See [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput)
 pub mod batch_detect_entities_output {
-    ///
+
     /// A builder for [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5942,7 +5942,7 @@ impl std::fmt::Debug for BatchDetectDominantLanguageOutput {
 }
 /// See [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput)
 pub mod batch_detect_dominant_language_output {
-    ///
+
     /// A builder for [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

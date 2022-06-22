@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateRoutingControlStatesOutput {
 }
 /// See [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
 pub mod update_routing_control_states_output {
-    ///
+
     /// A builder for [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UpdateRoutingControlStateOutput {
 }
 /// See [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
 pub mod update_routing_control_state_output {
-    ///
+
     /// A builder for [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -90,7 +90,7 @@ impl std::fmt::Debug for ListRoutingControlsOutput {
 }
 /// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
 pub mod list_routing_controls_output {
-    ///
+
     /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -181,7 +181,7 @@ impl std::fmt::Debug for GetRoutingControlStateOutput {
 }
 /// See [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
 pub mod get_routing_control_state_output {
-    ///
+
     /// A builder for [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

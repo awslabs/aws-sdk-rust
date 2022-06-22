@@ -158,7 +158,7 @@ impl std::fmt::Debug for Site {
 }
 /// See [`Site`](crate::model::Site)
 pub mod site {
-    ///
+
     /// A builder for [`Site`](crate::model::Site)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -435,7 +435,7 @@ impl std::fmt::Debug for RackPhysicalProperties {
 }
 /// See [`RackPhysicalProperties`](crate::model::RackPhysicalProperties)
 pub mod rack_physical_properties {
-    ///
+
     /// A builder for [`RackPhysicalProperties`](crate::model::RackPhysicalProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1321,7 +1321,7 @@ impl std::fmt::Debug for Address {
 }
 /// See [`Address`](crate::model::Address)
 pub mod address {
-    ///
+
     /// A builder for [`Address`](crate::model::Address)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1652,7 +1652,7 @@ impl std::fmt::Debug for Outpost {
 }
 /// See [`Outpost`](crate::model::Outpost)
 pub mod outpost {
-    ///
+
     /// A builder for [`Outpost`](crate::model::Outpost)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1993,7 +1993,7 @@ impl std::fmt::Debug for OrderSummary {
 }
 /// See [`OrderSummary`](crate::model::OrderSummary)
 pub mod order_summary {
-    ///
+
     /// A builder for [`OrderSummary`](crate::model::OrderSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2446,7 +2446,7 @@ impl std::fmt::Debug for CatalogItem {
 }
 /// See [`CatalogItem`](crate::model::CatalogItem)
 pub mod catalog_item {
-    ///
+
     /// A builder for [`CatalogItem`](crate::model::CatalogItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2676,7 +2676,7 @@ impl std::fmt::Debug for Ec2Capacity {
 }
 /// See [`Ec2Capacity`](crate::model::Ec2Capacity)
 pub mod ec2_capacity {
-    ///
+
     /// A builder for [`Ec2Capacity`](crate::model::Ec2Capacity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2886,7 +2886,7 @@ impl std::fmt::Debug for AssetInfo {
 }
 /// See [`AssetInfo`](crate::model::AssetInfo)
 pub mod asset_info {
-    ///
+
     /// A builder for [`AssetInfo`](crate::model::AssetInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2983,7 +2983,7 @@ impl std::fmt::Debug for ComputeAttributes {
 }
 /// See [`ComputeAttributes`](crate::model::ComputeAttributes)
 pub mod compute_attributes {
-    ///
+
     /// A builder for [`ComputeAttributes`](crate::model::ComputeAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3089,7 +3089,7 @@ impl std::fmt::Debug for InstanceTypeItem {
 }
 /// See [`InstanceTypeItem`](crate::model::InstanceTypeItem)
 pub mod instance_type_item {
-    ///
+
     /// A builder for [`InstanceTypeItem`](crate::model::InstanceTypeItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3207,7 +3207,7 @@ impl std::fmt::Debug for Order {
 }
 /// See [`Order`](crate::model::Order)
 pub mod order {
-    ///
+
     /// A builder for [`Order`](crate::model::Order)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3450,7 +3450,7 @@ impl std::fmt::Debug for LineItem {
 }
 /// See [`LineItem`](crate::model::LineItem)
 pub mod line_item {
-    ///
+
     /// A builder for [`LineItem`](crate::model::LineItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3605,7 +3605,7 @@ impl std::fmt::Debug for LineItemRequest {
 }
 /// See [`LineItemRequest`](crate::model::LineItemRequest)
 pub mod line_item_request {
-    ///
+
     /// A builder for [`LineItemRequest`](crate::model::LineItemRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

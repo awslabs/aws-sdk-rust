@@ -21,7 +21,7 @@ impl std::fmt::Debug for StartStudioSsoConfigurationRepairOutput {
 }
 /// See [`StartStudioSsoConfigurationRepairOutput`](crate::output::StartStudioSsoConfigurationRepairOutput)
 pub mod start_studio_sso_configuration_repair_output {
-    ///
+
     /// A builder for [`StartStudioSsoConfigurationRepairOutput`](crate::output::StartStudioSsoConfigurationRepairOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl std::fmt::Debug for PutStudioMembersOutput {
 }
 /// See [`PutStudioMembersOutput`](crate::output::PutStudioMembersOutput)
 pub mod put_studio_members_output {
-    ///
+
     /// A builder for [`PutStudioMembersOutput`](crate::output::PutStudioMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -114,7 +114,7 @@ impl std::fmt::Debug for ListStudioMembersOutput {
 }
 /// See [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
 pub mod list_studio_members_output {
-    ///
+
     /// A builder for [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -190,7 +190,7 @@ impl std::fmt::Debug for GetStudioMemberOutput {
 }
 /// See [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
 pub mod get_studio_member_output {
-    ///
+
     /// A builder for [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl std::fmt::Debug for DeleteStudioMemberOutput {
 }
 /// See [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
 pub mod delete_studio_member_output {
-    ///
+
     /// A builder for [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -286,7 +286,7 @@ impl std::fmt::Debug for ListStudiosOutput {
 }
 /// See [`ListStudiosOutput`](crate::output::ListStudiosOutput)
 pub mod list_studios_output {
-    ///
+
     /// A builder for [`ListStudiosOutput`](crate::output::ListStudiosOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -362,7 +362,7 @@ impl std::fmt::Debug for CreateStudioOutput {
 }
 /// See [`CreateStudioOutput`](crate::output::CreateStudioOutput)
 pub mod create_studio_output {
-    ///
+
     /// A builder for [`CreateStudioOutput`](crate::output::CreateStudioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -417,7 +417,7 @@ impl std::fmt::Debug for DeleteStudioOutput {
 }
 /// See [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
 pub mod delete_studio_output {
-    ///
+
     /// A builder for [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -472,7 +472,7 @@ impl std::fmt::Debug for UpdateStudioOutput {
 }
 /// See [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
 pub mod update_studio_output {
-    ///
+
     /// A builder for [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -527,7 +527,7 @@ impl std::fmt::Debug for GetStudioOutput {
 }
 /// See [`GetStudioOutput`](crate::output::GetStudioOutput)
 pub mod get_studio_output {
-    ///
+
     /// A builder for [`GetStudioOutput`](crate::output::GetStudioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -589,7 +589,7 @@ impl std::fmt::Debug for ListStudioComponentsOutput {
 }
 /// See [`ListStudioComponentsOutput`](crate::output::ListStudioComponentsOutput)
 pub mod list_studio_components_output {
-    ///
+
     /// A builder for [`ListStudioComponentsOutput`](crate::output::ListStudioComponentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -666,7 +666,7 @@ impl std::fmt::Debug for CreateStudioComponentOutput {
 }
 /// See [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
 pub mod create_studio_component_output {
-    ///
+
     /// A builder for [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -724,7 +724,7 @@ impl std::fmt::Debug for DeleteStudioComponentOutput {
 }
 /// See [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
 pub mod delete_studio_component_output {
-    ///
+
     /// A builder for [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -782,7 +782,7 @@ impl std::fmt::Debug for UpdateStudioComponentOutput {
 }
 /// See [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
 pub mod update_studio_component_output {
-    ///
+
     /// A builder for [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -840,7 +840,7 @@ impl std::fmt::Debug for GetStudioComponentOutput {
 }
 /// See [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
 pub mod get_studio_component_output {
-    ///
+
     /// A builder for [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl std::fmt::Debug for StopStreamingSessionOutput {
 }
 /// See [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput)
 pub mod stop_streaming_session_output {
-    ///
+
     /// A builder for [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -956,7 +956,7 @@ impl std::fmt::Debug for StartStreamingSessionOutput {
 }
 /// See [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput)
 pub mod start_streaming_session_output {
-    ///
+
     /// A builder for [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1014,7 +1014,7 @@ impl std::fmt::Debug for GetStreamingSessionStreamOutput {
 }
 /// See [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
 pub mod get_streaming_session_stream_output {
-    ///
+
     /// A builder for [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1072,7 +1072,7 @@ impl std::fmt::Debug for CreateStreamingSessionStreamOutput {
 }
 /// See [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
 pub mod create_streaming_session_stream_output {
-    ///
+
     /// A builder for [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1137,7 +1137,7 @@ impl std::fmt::Debug for ListStreamingSessionsOutput {
 }
 /// See [`ListStreamingSessionsOutput`](crate::output::ListStreamingSessionsOutput)
 pub mod list_streaming_sessions_output {
-    ///
+
     /// A builder for [`ListStreamingSessionsOutput`](crate::output::ListStreamingSessionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1213,7 +1213,7 @@ impl std::fmt::Debug for CreateStreamingSessionOutput {
 }
 /// See [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
 pub mod create_streaming_session_output {
-    ///
+
     /// A builder for [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1271,7 +1271,7 @@ impl std::fmt::Debug for DeleteStreamingSessionOutput {
 }
 /// See [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
 pub mod delete_streaming_session_output {
-    ///
+
     /// A builder for [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1329,7 +1329,7 @@ impl std::fmt::Debug for GetStreamingSessionOutput {
 }
 /// See [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
 pub mod get_streaming_session_output {
-    ///
+
     /// A builder for [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1394,7 +1394,7 @@ impl std::fmt::Debug for ListStreamingImagesOutput {
 }
 /// See [`ListStreamingImagesOutput`](crate::output::ListStreamingImagesOutput)
 pub mod list_streaming_images_output {
-    ///
+
     /// A builder for [`ListStreamingImagesOutput`](crate::output::ListStreamingImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1471,7 +1471,7 @@ impl std::fmt::Debug for CreateStreamingImageOutput {
 }
 /// See [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
 pub mod create_streaming_image_output {
-    ///
+
     /// A builder for [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1529,7 +1529,7 @@ impl std::fmt::Debug for DeleteStreamingImageOutput {
 }
 /// See [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
 pub mod delete_streaming_image_output {
-    ///
+
     /// A builder for [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1593,7 +1593,7 @@ impl std::fmt::Debug for UpdateStreamingImageOutput {
 }
 /// See [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
 pub mod update_streaming_image_output {
-    ///
+
     /// A builder for [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1657,7 +1657,7 @@ impl std::fmt::Debug for GetStreamingImageOutput {
 }
 /// See [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
 pub mod get_streaming_image_output {
-    ///
+
     /// A builder for [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1715,7 +1715,7 @@ impl std::fmt::Debug for UpdateLaunchProfileMemberOutput {
 }
 /// See [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
 pub mod update_launch_profile_member_output {
-    ///
+
     /// A builder for [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1763,7 +1763,7 @@ impl std::fmt::Debug for PutLaunchProfileMembersOutput {
 }
 /// See [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
 pub mod put_launch_profile_members_output {
-    ///
+
     /// A builder for [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1811,7 +1811,7 @@ impl std::fmt::Debug for ListLaunchProfileMembersOutput {
 }
 /// See [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput)
 pub mod list_launch_profile_members_output {
-    ///
+
     /// A builder for [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1888,7 +1888,7 @@ impl std::fmt::Debug for GetLaunchProfileMemberOutput {
 }
 /// See [`GetLaunchProfileMemberOutput`](crate::output::GetLaunchProfileMemberOutput)
 pub mod get_launch_profile_member_output {
-    ///
+
     /// A builder for [`GetLaunchProfileMemberOutput`](crate::output::GetLaunchProfileMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1952,7 +1952,7 @@ impl std::fmt::Debug for GetLaunchProfileInitializationOutput {
 }
 /// See [`GetLaunchProfileInitializationOutput`](crate::output::GetLaunchProfileInitializationOutput)
 pub mod get_launch_profile_initialization_output {
-    ///
+
     /// A builder for [`GetLaunchProfileInitializationOutput`](crate::output::GetLaunchProfileInitializationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2034,7 +2034,7 @@ impl std::fmt::Debug for GetLaunchProfileDetailsOutput {
 }
 /// See [`GetLaunchProfileDetailsOutput`](crate::output::GetLaunchProfileDetailsOutput)
 pub mod get_launch_profile_details_output {
-    ///
+
     /// A builder for [`GetLaunchProfileDetailsOutput`](crate::output::GetLaunchProfileDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2129,7 +2129,7 @@ impl std::fmt::Debug for DeleteLaunchProfileMemberOutput {
 }
 /// See [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
 pub mod delete_launch_profile_member_output {
-    ///
+
     /// A builder for [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2177,7 +2177,7 @@ impl std::fmt::Debug for ListLaunchProfilesOutput {
 }
 /// See [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
 pub mod list_launch_profiles_output {
-    ///
+
     /// A builder for [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2253,7 +2253,7 @@ impl std::fmt::Debug for CreateLaunchProfileOutput {
 }
 /// See [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
 pub mod create_launch_profile_output {
-    ///
+
     /// A builder for [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2311,7 +2311,7 @@ impl std::fmt::Debug for DeleteLaunchProfileOutput {
 }
 /// See [`DeleteLaunchProfileOutput`](crate::output::DeleteLaunchProfileOutput)
 pub mod delete_launch_profile_output {
-    ///
+
     /// A builder for [`DeleteLaunchProfileOutput`](crate::output::DeleteLaunchProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2369,7 +2369,7 @@ impl std::fmt::Debug for UpdateLaunchProfileOutput {
 }
 /// See [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
 pub mod update_launch_profile_output {
-    ///
+
     /// A builder for [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2427,7 +2427,7 @@ impl std::fmt::Debug for GetLaunchProfileOutput {
 }
 /// See [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
 pub mod get_launch_profile_output {
-    ///
+
     /// A builder for [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2492,7 +2492,7 @@ impl std::fmt::Debug for ListEulasOutput {
 }
 /// See [`ListEulasOutput`](crate::output::ListEulasOutput)
 pub mod list_eulas_output {
-    ///
+
     /// A builder for [`ListEulasOutput`](crate::output::ListEulasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2568,7 +2568,7 @@ impl std::fmt::Debug for GetEulaOutput {
 }
 /// See [`GetEulaOutput`](crate::output::GetEulaOutput)
 pub mod get_eula_output {
-    ///
+
     /// A builder for [`GetEulaOutput`](crate::output::GetEulaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2628,7 +2628,7 @@ impl std::fmt::Debug for ListEulaAcceptancesOutput {
 }
 /// See [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
 pub mod list_eula_acceptances_output {
-    ///
+
     /// A builder for [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2705,7 +2705,7 @@ impl std::fmt::Debug for AcceptEulasOutput {
 }
 /// See [`AcceptEulasOutput`](crate::output::AcceptEulasOutput)
 pub mod accept_eulas_output {
-    ///
+
     /// A builder for [`AcceptEulasOutput`](crate::output::AcceptEulasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2760,7 +2760,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2791,7 +2791,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2836,7 +2836,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

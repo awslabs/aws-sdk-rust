@@ -133,7 +133,7 @@ impl std::fmt::Debug for Source {
 }
 /// See [`Source`](crate::model::Source)
 pub mod source {
-    ///
+
     /// A builder for [`Source`](crate::model::Source)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -340,7 +340,7 @@ impl std::fmt::Debug for ChefConfiguration {
 }
 /// See [`ChefConfiguration`](crate::model::ChefConfiguration)
 pub mod chef_configuration {
-    ///
+
     /// A builder for [`ChefConfiguration`](crate::model::ChefConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -417,7 +417,7 @@ impl std::fmt::Debug for StackConfigurationManager {
 }
 /// See [`StackConfigurationManager`](crate::model::StackConfigurationManager)
 pub mod stack_configuration_manager {
-    ///
+
     /// A builder for [`StackConfigurationManager`](crate::model::StackConfigurationManager)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -535,7 +535,7 @@ impl std::fmt::Debug for LifecycleEventConfiguration {
 }
 /// See [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration)
 pub mod lifecycle_event_configuration {
-    ///
+
     /// A builder for [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -603,7 +603,7 @@ impl std::fmt::Debug for ShutdownEventConfiguration {
 }
 /// See [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration)
 pub mod shutdown_event_configuration {
-    ///
+
     /// A builder for [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -702,7 +702,7 @@ impl std::fmt::Debug for Recipes {
 }
 /// See [`Recipes`](crate::model::Recipes)
 pub mod recipes {
-    ///
+
     /// A builder for [`Recipes`](crate::model::Recipes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -906,7 +906,7 @@ impl std::fmt::Debug for VolumeConfiguration {
 }
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration)
 pub mod volume_configuration {
-    ///
+
     /// A builder for [`VolumeConfiguration`](crate::model::VolumeConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1054,7 +1054,7 @@ impl std::fmt::Debug for CloudWatchLogsConfiguration {
 }
 /// See [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration)
 pub mod cloud_watch_logs_configuration {
-    ///
+
     /// A builder for [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1207,7 +1207,7 @@ impl std::fmt::Debug for CloudWatchLogsLogStream {
 }
 /// See [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream)
 pub mod cloud_watch_logs_log_stream {
-    ///
+
     /// A builder for [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2326,7 +2326,7 @@ impl std::fmt::Debug for EnvironmentVariable {
 }
 /// See [`EnvironmentVariable`](crate::model::EnvironmentVariable)
 pub mod environment_variable {
-    ///
+
     /// A builder for [`EnvironmentVariable`](crate::model::EnvironmentVariable)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2487,7 +2487,7 @@ impl std::fmt::Debug for SslConfiguration {
 }
 /// See [`SslConfiguration`](crate::model::SslConfiguration)
 pub mod ssl_configuration {
-    ///
+
     /// A builder for [`SslConfiguration`](crate::model::SslConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2663,7 +2663,7 @@ impl std::fmt::Debug for DataSource {
 }
 /// See [`DataSource`](crate::model::DataSource)
 pub mod data_source {
-    ///
+
     /// A builder for [`DataSource`](crate::model::DataSource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2822,7 +2822,7 @@ impl std::fmt::Debug for WeeklyAutoScalingSchedule {
 }
 /// See [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule)
 pub mod weekly_auto_scaling_schedule {
-    ///
+
     /// A builder for [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3114,7 +3114,7 @@ impl std::fmt::Debug for AutoScalingThresholds {
 }
 /// See [`AutoScalingThresholds`](crate::model::AutoScalingThresholds)
 pub mod auto_scaling_thresholds {
-    ///
+
     /// A builder for [`AutoScalingThresholds`](crate::model::AutoScalingThresholds)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3261,7 +3261,7 @@ impl std::fmt::Debug for InstanceIdentity {
 }
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity)
 pub mod instance_identity {
-    ///
+
     /// A builder for [`InstanceIdentity`](crate::model::InstanceIdentity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3349,7 +3349,7 @@ impl std::fmt::Debug for TemporaryCredential {
 }
 /// See [`TemporaryCredential`](crate::model::TemporaryCredential)
 pub mod temporary_credential {
-    ///
+
     /// A builder for [`TemporaryCredential`](crate::model::TemporaryCredential)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3545,7 +3545,7 @@ impl std::fmt::Debug for Volume {
 }
 /// See [`Volume`](crate::model::Volume)
 pub mod volume {
-    ///
+
     /// A builder for [`Volume`](crate::model::Volume)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3807,7 +3807,7 @@ impl std::fmt::Debug for UserProfile {
 }
 /// See [`UserProfile`](crate::model::UserProfile)
 pub mod user_profile {
-    ///
+
     /// A builder for [`UserProfile`](crate::model::UserProfile)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3922,7 +3922,7 @@ impl std::fmt::Debug for TimeBasedAutoScalingConfiguration {
 }
 /// See [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration)
 pub mod time_based_auto_scaling_configuration {
-    ///
+
     /// A builder for [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4031,7 +4031,7 @@ impl std::fmt::Debug for StackSummary {
 }
 /// See [`StackSummary`](crate::model::StackSummary)
 pub mod stack_summary {
-    ///
+
     /// A builder for [`StackSummary`](crate::model::StackSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4282,7 +4282,7 @@ impl std::fmt::Debug for InstancesCount {
 }
 /// See [`InstancesCount`](crate::model::InstancesCount)
 pub mod instances_count {
-    ///
+
     /// A builder for [`InstancesCount`](crate::model::InstancesCount)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4730,7 +4730,7 @@ impl std::fmt::Debug for Stack {
 }
 /// See [`Stack`](crate::model::Stack)
 pub mod stack {
-    ///
+
     /// A builder for [`Stack`](crate::model::Stack)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5136,7 +5136,7 @@ impl std::fmt::Debug for ServiceError {
 }
 /// See [`ServiceError`](crate::model::ServiceError)
 pub mod service_error {
-    ///
+
     /// A builder for [`ServiceError`](crate::model::ServiceError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5310,7 +5310,7 @@ impl std::fmt::Debug for RdsDbInstance {
 }
 /// See [`RdsDbInstance`](crate::model::RdsDbInstance)
 pub mod rds_db_instance {
-    ///
+
     /// A builder for [`RdsDbInstance`](crate::model::RdsDbInstance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5551,7 +5551,7 @@ impl std::fmt::Debug for RaidArray {
 }
 /// See [`RaidArray`](crate::model::RaidArray)
 pub mod raid_array {
-    ///
+
     /// A builder for [`RaidArray`](crate::model::RaidArray)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5800,7 +5800,7 @@ impl std::fmt::Debug for Permission {
 }
 /// See [`Permission`](crate::model::Permission)
 pub mod permission {
-    ///
+
     /// A builder for [`Permission`](crate::model::Permission)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5964,7 +5964,7 @@ impl std::fmt::Debug for OperatingSystem {
 }
 /// See [`OperatingSystem`](crate::model::OperatingSystem)
 pub mod operating_system {
-    ///
+
     /// A builder for [`OperatingSystem`](crate::model::OperatingSystem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6119,7 +6119,7 @@ impl std::fmt::Debug for OperatingSystemConfigurationManager {
 }
 /// See [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager)
 pub mod operating_system_configuration_manager {
-    ///
+
     /// A builder for [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6207,7 +6207,7 @@ impl std::fmt::Debug for SelfUserProfile {
 }
 /// See [`SelfUserProfile`](crate::model::SelfUserProfile)
 pub mod self_user_profile {
-    ///
+
     /// A builder for [`SelfUserProfile`](crate::model::SelfUserProfile)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6322,7 +6322,7 @@ impl std::fmt::Debug for LoadBasedAutoScalingConfiguration {
 }
 /// See [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration)
 pub mod load_based_auto_scaling_configuration {
-    ///
+
     /// A builder for [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6613,7 +6613,7 @@ impl std::fmt::Debug for Layer {
 }
 /// See [`Layer`](crate::model::Layer)
 pub mod layer {
-    ///
+
     /// A builder for [`Layer`](crate::model::Layer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7464,7 +7464,7 @@ impl std::fmt::Debug for Instance {
 }
 /// See [`Instance`](crate::model::Instance)
 pub mod instance {
-    ///
+
     /// A builder for [`Instance`](crate::model::Instance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8197,7 +8197,7 @@ impl std::fmt::Debug for ReportedOs {
 }
 /// See [`ReportedOs`](crate::model::ReportedOs)
 pub mod reported_os {
-    ///
+
     /// A builder for [`ReportedOs`](crate::model::ReportedOs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8297,7 +8297,7 @@ impl std::fmt::Debug for BlockDeviceMapping {
 }
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping)
 pub mod block_device_mapping {
-    ///
+
     /// A builder for [`BlockDeviceMapping`](crate::model::BlockDeviceMapping)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8418,7 +8418,7 @@ impl std::fmt::Debug for EbsBlockDevice {
 }
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice)
 pub mod ebs_block_device {
-    ///
+
     /// A builder for [`EbsBlockDevice`](crate::model::EbsBlockDevice)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8644,7 +8644,7 @@ impl std::fmt::Debug for ElasticLoadBalancer {
 }
 /// See [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer)
 pub mod elastic_load_balancer {
-    ///
+
     /// A builder for [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8853,7 +8853,7 @@ impl std::fmt::Debug for ElasticIp {
 }
 /// See [`ElasticIp`](crate::model::ElasticIp)
 pub mod elastic_ip {
-    ///
+
     /// A builder for [`ElasticIp`](crate::model::ElasticIp)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8977,7 +8977,7 @@ impl std::fmt::Debug for EcsCluster {
 }
 /// See [`EcsCluster`](crate::model::EcsCluster)
 pub mod ecs_cluster {
-    ///
+
     /// A builder for [`EcsCluster`](crate::model::EcsCluster)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9168,7 +9168,7 @@ impl std::fmt::Debug for Deployment {
 }
 /// See [`Deployment`](crate::model::Deployment)
 pub mod deployment {
-    ///
+
     /// A builder for [`Deployment`](crate::model::Deployment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9449,7 +9449,7 @@ impl std::fmt::Debug for DeploymentCommand {
 }
 /// See [`DeploymentCommand`](crate::model::DeploymentCommand)
 pub mod deployment_command {
-    ///
+
     /// A builder for [`DeploymentCommand`](crate::model::DeploymentCommand)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9799,7 +9799,7 @@ impl std::fmt::Debug for Command {
 }
 /// See [`Command`](crate::model::Command)
 pub mod command {
-    ///
+
     /// A builder for [`Command`](crate::model::Command)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10109,7 +10109,7 @@ impl std::fmt::Debug for App {
 }
 /// See [`App`](crate::model::App)
 pub mod app {
-    ///
+
     /// A builder for [`App`](crate::model::App)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10381,7 +10381,7 @@ impl std::fmt::Debug for AgentVersion {
 }
 /// See [`AgentVersion`](crate::model::AgentVersion)
 pub mod agent_version {
-    ///
+
     /// A builder for [`AgentVersion`](crate::model::AgentVersion)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

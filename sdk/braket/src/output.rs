@@ -28,7 +28,7 @@ impl std::fmt::Debug for SearchQuantumTasksOutput {
 }
 /// See [`SearchQuantumTasksOutput`](crate::output::SearchQuantumTasksOutput)
 pub mod search_quantum_tasks_output {
-    ///
+
     /// A builder for [`SearchQuantumTasksOutput`](crate::output::SearchQuantumTasksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl std::fmt::Debug for CreateQuantumTaskOutput {
 }
 /// See [`CreateQuantumTaskOutput`](crate::output::CreateQuantumTaskOutput)
 pub mod create_quantum_task_output {
-    ///
+
     /// A builder for [`CreateQuantumTaskOutput`](crate::output::CreateQuantumTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -170,7 +170,7 @@ impl std::fmt::Debug for CancelQuantumTaskOutput {
 }
 /// See [`CancelQuantumTaskOutput`](crate::output::CancelQuantumTaskOutput)
 pub mod cancel_quantum_task_output {
-    ///
+
     /// A builder for [`CancelQuantumTaskOutput`](crate::output::CancelQuantumTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -324,7 +324,7 @@ impl std::fmt::Debug for GetQuantumTaskOutput {
 }
 /// See [`GetQuantumTaskOutput`](crate::output::GetQuantumTaskOutput)
 pub mod get_quantum_task_output {
-    ///
+
     /// A builder for [`GetQuantumTaskOutput`](crate::output::GetQuantumTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -559,7 +559,7 @@ impl std::fmt::Debug for SearchJobsOutput {
 }
 /// See [`SearchJobsOutput`](crate::output::SearchJobsOutput)
 pub mod search_jobs_output {
-    ///
+
     /// A builder for [`SearchJobsOutput`](crate::output::SearchJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -635,7 +635,7 @@ impl std::fmt::Debug for CreateJobOutput {
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput)
 pub mod create_job_output {
-    ///
+
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -697,7 +697,7 @@ impl std::fmt::Debug for CancelJobOutput {
 }
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput)
 pub mod cancel_job_output {
-    ///
+
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -903,7 +903,7 @@ impl std::fmt::Debug for GetJobOutput {
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput)
 pub mod get_job_output {
-    ///
+
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1271,7 +1271,7 @@ impl std::fmt::Debug for SearchDevicesOutput {
 }
 /// See [`SearchDevicesOutput`](crate::output::SearchDevicesOutput)
 pub mod search_devices_output {
-    ///
+
     /// A builder for [`SearchDevicesOutput`](crate::output::SearchDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1382,7 +1382,7 @@ impl std::fmt::Debug for GetDeviceOutput {
 }
 /// See [`GetDeviceOutput`](crate::output::GetDeviceOutput)
 pub mod get_device_output {
-    ///
+
     /// A builder for [`GetDeviceOutput`](crate::output::GetDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1499,7 +1499,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1530,7 +1530,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1575,7 +1575,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

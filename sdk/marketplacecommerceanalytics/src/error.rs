@@ -223,7 +223,7 @@ impl std::fmt::Display for MarketplaceCommerceAnalyticsException {
 impl std::error::Error for MarketplaceCommerceAnalyticsException {}
 /// See [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException)
 pub mod marketplace_commerce_analytics_exception {
-    ///
+
     /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

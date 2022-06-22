@@ -199,7 +199,7 @@ impl std::fmt::Debug for StartStreamTranscriptionOutput {
 }
 /// See [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
 pub mod start_stream_transcription_output {
-    ///
+
     /// A builder for [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -734,7 +734,7 @@ impl std::fmt::Debug for StartMedicalStreamTranscriptionOutput {
 }
 /// See [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput)
 pub mod start_medical_stream_transcription_output {
-    ///
+
     /// A builder for [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]

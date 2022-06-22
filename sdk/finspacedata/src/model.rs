@@ -214,7 +214,7 @@ impl std::fmt::Debug for SchemaUnion {
 }
 /// See [`SchemaUnion`](crate::model::SchemaUnion)
 pub mod schema_union {
-    ///
+
     /// A builder for [`SchemaUnion`](crate::model::SchemaUnion)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -279,7 +279,7 @@ impl std::fmt::Debug for SchemaDefinition {
 }
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition)
 pub mod schema_definition {
-    ///
+
     /// A builder for [`SchemaDefinition`](crate::model::SchemaDefinition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -384,7 +384,7 @@ impl std::fmt::Debug for ColumnDefinition {
 }
 /// See [`ColumnDefinition`](crate::model::ColumnDefinition)
 pub mod column_definition {
-    ///
+
     /// A builder for [`ColumnDefinition`](crate::model::ColumnDefinition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User)
 pub mod user {
-    ///
+
     /// A builder for [`User`](crate::model::User)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1087,7 +1087,7 @@ impl std::fmt::Debug for PermissionGroup {
 }
 /// See [`PermissionGroup`](crate::model::PermissionGroup)
 pub mod permission_group {
-    ///
+
     /// A builder for [`PermissionGroup`](crate::model::PermissionGroup)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1339,7 +1339,7 @@ impl std::fmt::Debug for DataViewSummary {
 }
 /// See [`DataViewSummary`](crate::model::DataViewSummary)
 pub mod data_view_summary {
-    ///
+
     /// A builder for [`DataViewSummary`](crate::model::DataViewSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1626,7 +1626,7 @@ impl std::fmt::Debug for DataViewDestinationTypeParams {
 }
 /// See [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams)
 pub mod data_view_destination_type_params {
-    ///
+
     /// A builder for [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1837,7 +1837,7 @@ impl std::fmt::Debug for DataViewErrorInfo {
 }
 /// See [`DataViewErrorInfo`](crate::model::DataViewErrorInfo)
 pub mod data_view_error_info {
-    ///
+
     /// A builder for [`DataViewErrorInfo`](crate::model::DataViewErrorInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2177,7 +2177,7 @@ impl std::fmt::Debug for Dataset {
 }
 /// See [`Dataset`](crate::model::Dataset)
 pub mod dataset {
-    ///
+
     /// A builder for [`Dataset`](crate::model::Dataset)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2374,7 +2374,7 @@ impl std::fmt::Debug for DatasetOwnerInfo {
 }
 /// See [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo)
 pub mod dataset_owner_info {
-    ///
+
     /// A builder for [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2569,7 +2569,7 @@ impl std::fmt::Debug for ChangesetSummary {
 }
 /// See [`ChangesetSummary`](crate::model::ChangesetSummary)
 pub mod changeset_summary {
-    ///
+
     /// A builder for [`ChangesetSummary`](crate::model::ChangesetSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2871,7 +2871,7 @@ impl std::fmt::Debug for ChangesetErrorInfo {
 }
 /// See [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo)
 pub mod changeset_error_info {
-    ///
+
     /// A builder for [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3159,7 +3159,7 @@ impl std::fmt::Debug for Credentials {
 }
 /// See [`Credentials`](crate::model::Credentials)
 pub mod credentials {
-    ///
+
     /// A builder for [`Credentials`](crate::model::Credentials)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3319,7 +3319,7 @@ impl std::fmt::Debug for PermissionGroupParams {
 }
 /// See [`PermissionGroupParams`](crate::model::PermissionGroupParams)
 pub mod permission_group_params {
-    ///
+
     /// A builder for [`PermissionGroupParams`](crate::model::PermissionGroupParams)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3409,7 +3409,7 @@ impl std::fmt::Debug for ResourcePermission {
 }
 /// See [`ResourcePermission`](crate::model::ResourcePermission)
 pub mod resource_permission {
-    ///
+
     /// A builder for [`ResourcePermission`](crate::model::ResourcePermission)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

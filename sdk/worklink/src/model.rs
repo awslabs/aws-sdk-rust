@@ -86,7 +86,7 @@ impl std::fmt::Debug for WebsiteCaSummary {
 }
 /// See [`WebsiteCaSummary`](crate::model::WebsiteCaSummary)
 pub mod website_ca_summary {
-    ///
+
     /// A builder for [`WebsiteCaSummary`](crate::model::WebsiteCaSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,7 +197,7 @@ impl std::fmt::Debug for WebsiteAuthorizationProviderSummary {
 }
 /// See [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary)
 pub mod website_authorization_provider_summary {
-    ///
+
     /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -405,7 +405,7 @@ impl std::fmt::Debug for FleetSummary {
 }
 /// See [`FleetSummary`](crate::model::FleetSummary)
 pub mod fleet_summary {
-    ///
+
     /// A builder for [`FleetSummary`](crate::model::FleetSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -669,7 +669,7 @@ impl std::fmt::Debug for DomainSummary {
 }
 /// See [`DomainSummary`](crate::model::DomainSummary)
 pub mod domain_summary {
-    ///
+
     /// A builder for [`DomainSummary`](crate::model::DomainSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -861,7 +861,7 @@ impl std::fmt::Debug for DeviceSummary {
 }
 /// See [`DeviceSummary`](crate::model::DeviceSummary)
 pub mod device_summary {
-    ///
+
     /// A builder for [`DeviceSummary`](crate::model::DeviceSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

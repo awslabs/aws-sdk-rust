@@ -77,7 +77,7 @@ impl std::fmt::Debug for UpdateEndpointOutput {
 }
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
 pub mod update_endpoint_output {
-    ///
+
     /// A builder for [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl std::fmt::Debug for UpdateConnectionOutput {
 }
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
 pub mod update_connection_output {
-    ///
+
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -413,7 +413,7 @@ impl std::fmt::Debug for UpdateArchiveOutput {
 }
 /// See [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput)
 pub mod update_archive_output {
-    ///
+
     /// A builder for [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -528,7 +528,7 @@ impl std::fmt::Debug for UpdateApiDestinationOutput {
 }
 /// See [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput)
 pub mod update_api_destination_output {
-    ///
+
     /// A builder for [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -621,7 +621,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -662,7 +662,7 @@ impl std::fmt::Debug for TestEventPatternOutput {
 }
 /// See [`TestEventPatternOutput`](crate::output::TestEventPatternOutput)
 pub mod test_event_pattern_output {
-    ///
+
     /// A builder for [`TestEventPatternOutput`](crate::output::TestEventPatternOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -707,7 +707,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -769,7 +769,7 @@ impl std::fmt::Debug for StartReplayOutput {
 }
 /// See [`StartReplayOutput`](crate::output::StartReplayOutput)
 pub mod start_replay_output {
-    ///
+
     /// A builder for [`StartReplayOutput`](crate::output::StartReplayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -870,7 +870,7 @@ impl std::fmt::Debug for RemoveTargetsOutput {
 }
 /// See [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput)
 pub mod remove_targets_output {
-    ///
+
     /// A builder for [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -937,7 +937,7 @@ impl std::fmt::Debug for RemovePermissionOutput {
 }
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
 pub mod remove_permission_output {
-    ///
+
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -985,7 +985,7 @@ impl std::fmt::Debug for PutTargetsOutput {
 }
 /// See [`PutTargetsOutput`](crate::output::PutTargetsOutput)
 pub mod put_targets_output {
-    ///
+
     /// A builder for [`PutTargetsOutput`](crate::output::PutTargetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1062,7 +1062,7 @@ impl std::fmt::Debug for PutRuleOutput {
 }
 /// See [`PutRuleOutput`](crate::output::PutRuleOutput)
 pub mod put_rule_output {
-    ///
+
     /// A builder for [`PutRuleOutput`](crate::output::PutRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1107,7 +1107,7 @@ impl std::fmt::Debug for PutPermissionOutput {
 }
 /// See [`PutPermissionOutput`](crate::output::PutPermissionOutput)
 pub mod put_permission_output {
-    ///
+
     /// A builder for [`PutPermissionOutput`](crate::output::PutPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1155,7 +1155,7 @@ impl std::fmt::Debug for PutPartnerEventsOutput {
 }
 /// See [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput)
 pub mod put_partner_events_output {
-    ///
+
     /// A builder for [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,7 +1239,7 @@ impl std::fmt::Debug for PutEventsOutput {
 }
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput)
 pub mod put_events_output {
-    ///
+
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1322,7 +1322,7 @@ impl std::fmt::Debug for ListTargetsByRuleOutput {
 }
 /// See [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput)
 pub mod list_targets_by_rule_output {
-    ///
+
     /// A builder for [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1398,7 +1398,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1467,7 +1467,7 @@ impl std::fmt::Debug for ListRulesOutput {
 }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput)
 pub mod list_rules_output {
-    ///
+
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1550,7 +1550,7 @@ impl std::fmt::Debug for ListRuleNamesByTargetOutput {
 }
 /// See [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput)
 pub mod list_rule_names_by_target_output {
-    ///
+
     /// A builder for [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1633,7 +1633,7 @@ impl std::fmt::Debug for ListReplaysOutput {
 }
 /// See [`ListReplaysOutput`](crate::output::ListReplaysOutput)
 pub mod list_replays_output {
-    ///
+
     /// A builder for [`ListReplaysOutput`](crate::output::ListReplaysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1718,7 +1718,7 @@ impl std::fmt::Debug for ListPartnerEventSourcesOutput {
 }
 /// See [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput)
 pub mod list_partner_event_sources_output {
-    ///
+
     /// A builder for [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1808,7 +1808,7 @@ impl std::fmt::Debug for ListPartnerEventSourceAccountsOutput {
 }
 /// See [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput)
 pub mod list_partner_event_source_accounts_output {
-    ///
+
     /// A builder for [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1895,7 +1895,7 @@ impl std::fmt::Debug for ListEventSourcesOutput {
 }
 /// See [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput)
 pub mod list_event_sources_output {
-    ///
+
     /// A builder for [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1978,7 +1978,7 @@ impl std::fmt::Debug for ListEventBusesOutput {
 }
 /// See [`ListEventBusesOutput`](crate::output::ListEventBusesOutput)
 pub mod list_event_buses_output {
-    ///
+
     /// A builder for [`ListEventBusesOutput`](crate::output::ListEventBusesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2061,7 +2061,7 @@ impl std::fmt::Debug for ListEndpointsOutput {
 }
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
 pub mod list_endpoints_output {
-    ///
+
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2144,7 +2144,7 @@ impl std::fmt::Debug for ListConnectionsOutput {
 }
 /// See [`ListConnectionsOutput`](crate::output::ListConnectionsOutput)
 pub mod list_connections_output {
-    ///
+
     /// A builder for [`ListConnectionsOutput`](crate::output::ListConnectionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2227,7 +2227,7 @@ impl std::fmt::Debug for ListArchivesOutput {
 }
 /// See [`ListArchivesOutput`](crate::output::ListArchivesOutput)
 pub mod list_archives_output {
-    ///
+
     /// A builder for [`ListArchivesOutput`](crate::output::ListArchivesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2310,7 +2310,7 @@ impl std::fmt::Debug for ListApiDestinationsOutput {
 }
 /// See [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput)
 pub mod list_api_destinations_output {
-    ///
+
     /// A builder for [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2377,7 +2377,7 @@ impl std::fmt::Debug for EnableRuleOutput {
 }
 /// See [`EnableRuleOutput`](crate::output::EnableRuleOutput)
 pub mod enable_rule_output {
-    ///
+
     /// A builder for [`EnableRuleOutput`](crate::output::EnableRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2408,7 +2408,7 @@ impl std::fmt::Debug for DisableRuleOutput {
 }
 /// See [`DisableRuleOutput`](crate::output::DisableRuleOutput)
 pub mod disable_rule_output {
-    ///
+
     /// A builder for [`DisableRuleOutput`](crate::output::DisableRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2512,7 +2512,7 @@ impl std::fmt::Debug for DescribeRuleOutput {
 }
 /// See [`DescribeRuleOutput`](crate::output::DescribeRuleOutput)
 pub mod describe_rule_output {
-    ///
+
     /// A builder for [`DescribeRuleOutput`](crate::output::DescribeRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2761,7 +2761,7 @@ impl std::fmt::Debug for DescribeReplayOutput {
 }
 /// See [`DescribeReplayOutput`](crate::output::DescribeReplayOutput)
 pub mod describe_replay_output {
-    ///
+
     /// A builder for [`DescribeReplayOutput`](crate::output::DescribeReplayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2976,7 +2976,7 @@ impl std::fmt::Debug for DescribePartnerEventSourceOutput {
 }
 /// See [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput)
 pub mod describe_partner_event_source_output {
-    ///
+
     /// A builder for [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3078,7 +3078,7 @@ impl std::fmt::Debug for DescribeEventSourceOutput {
 }
 /// See [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput)
 pub mod describe_event_source_output {
-    ///
+
     /// A builder for [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3216,7 +3216,7 @@ impl std::fmt::Debug for DescribeEventBusOutput {
 }
 /// See [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput)
 pub mod describe_event_bus_output {
-    ///
+
     /// A builder for [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3379,7 +3379,7 @@ impl std::fmt::Debug for DescribeEndpointOutput {
 }
 /// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
 pub mod describe_endpoint_output {
-    ///
+
     /// A builder for [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3676,7 +3676,7 @@ impl std::fmt::Debug for DescribeConnectionOutput {
 }
 /// See [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput)
 pub mod describe_connection_output {
-    ///
+
     /// A builder for [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3950,7 +3950,7 @@ impl std::fmt::Debug for DescribeArchiveOutput {
 }
 /// See [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput)
 pub mod describe_archive_output {
-    ///
+
     /// A builder for [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4200,7 +4200,7 @@ impl std::fmt::Debug for DescribeApiDestinationOutput {
 }
 /// See [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput)
 pub mod describe_api_destination_output {
-    ///
+
     /// A builder for [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4377,7 +4377,7 @@ impl std::fmt::Debug for DeleteRuleOutput {
 }
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
 pub mod delete_rule_output {
-    ///
+
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4408,7 +4408,7 @@ impl std::fmt::Debug for DeletePartnerEventSourceOutput {
 }
 /// See [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput)
 pub mod delete_partner_event_source_output {
-    ///
+
     /// A builder for [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4439,7 +4439,7 @@ impl std::fmt::Debug for DeleteEventBusOutput {
 }
 /// See [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput)
 pub mod delete_event_bus_output {
-    ///
+
     /// A builder for [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4470,7 +4470,7 @@ impl std::fmt::Debug for DeleteEndpointOutput {
 }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
 pub mod delete_endpoint_output {
-    ///
+
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4539,7 +4539,7 @@ impl std::fmt::Debug for DeleteConnectionOutput {
 }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
 pub mod delete_connection_output {
-    ///
+
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4647,7 +4647,7 @@ impl std::fmt::Debug for DeleteArchiveOutput {
 }
 /// See [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput)
 pub mod delete_archive_output {
-    ///
+
     /// A builder for [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4678,7 +4678,7 @@ impl std::fmt::Debug for DeleteApiDestinationOutput {
 }
 /// See [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput)
 pub mod delete_api_destination_output {
-    ///
+
     /// A builder for [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4747,7 +4747,7 @@ impl std::fmt::Debug for DeauthorizeConnectionOutput {
 }
 /// See [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput)
 pub mod deauthorize_connection_output {
-    ///
+
     /// A builder for [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4855,7 +4855,7 @@ impl std::fmt::Debug for DeactivateEventSourceOutput {
 }
 /// See [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput)
 pub mod deactivate_event_source_output {
-    ///
+
     /// A builder for [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4896,7 +4896,7 @@ impl std::fmt::Debug for CreatePartnerEventSourceOutput {
 }
 /// See [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput)
 pub mod create_partner_event_source_output {
-    ///
+
     /// A builder for [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4954,7 +4954,7 @@ impl std::fmt::Debug for CreateEventBusOutput {
 }
 /// See [`CreateEventBusOutput`](crate::output::CreateEventBusOutput)
 pub mod create_event_bus_output {
-    ///
+
     /// A builder for [`CreateEventBusOutput`](crate::output::CreateEventBusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5054,7 +5054,7 @@ impl std::fmt::Debug for CreateEndpointOutput {
 }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
 pub mod create_endpoint_output {
-    ///
+
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5220,7 +5220,7 @@ impl std::fmt::Debug for CreateConnectionOutput {
 }
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
 pub mod create_connection_output {
-    ///
+
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5344,7 +5344,7 @@ impl std::fmt::Debug for CreateArchiveOutput {
 }
 /// See [`CreateArchiveOutput`](crate::output::CreateArchiveOutput)
 pub mod create_archive_output {
-    ///
+
     /// A builder for [`CreateArchiveOutput`](crate::output::CreateArchiveOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5459,7 +5459,7 @@ impl std::fmt::Debug for CreateApiDestinationOutput {
 }
 /// See [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput)
 pub mod create_api_destination_output {
-    ///
+
     /// A builder for [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5576,7 +5576,7 @@ impl std::fmt::Debug for CancelReplayOutput {
 }
 /// See [`CancelReplayOutput`](crate::output::CancelReplayOutput)
 pub mod cancel_replay_output {
-    ///
+
     /// A builder for [`CancelReplayOutput`](crate::output::CancelReplayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5645,7 +5645,7 @@ impl std::fmt::Debug for ActivateEventSourceOutput {
 }
 /// See [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput)
 pub mod activate_event_source_output {
-    ///
+
     /// A builder for [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

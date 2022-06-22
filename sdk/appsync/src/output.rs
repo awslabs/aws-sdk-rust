@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateTypeOutput {
 }
 /// See [`UpdateTypeOutput`](crate::output::UpdateTypeOutput)
 pub mod update_type_output {
-    ///
+
     /// A builder for [`UpdateTypeOutput`](crate::output::UpdateTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl std::fmt::Debug for UpdateResolverOutput {
 }
 /// See [`UpdateResolverOutput`](crate::output::UpdateResolverOutput)
 pub mod update_resolver_output {
-    ///
+
     /// A builder for [`UpdateResolverOutput`](crate::output::UpdateResolverOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,7 +131,7 @@ impl std::fmt::Debug for UpdateGraphqlApiOutput {
 }
 /// See [`UpdateGraphqlApiOutput`](crate::output::UpdateGraphqlApiOutput)
 pub mod update_graphql_api_output {
-    ///
+
     /// A builder for [`UpdateGraphqlApiOutput`](crate::output::UpdateGraphqlApiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,7 +191,7 @@ impl std::fmt::Debug for UpdateFunctionOutput {
 }
 /// See [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput)
 pub mod update_function_output {
-    ///
+
     /// A builder for [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -252,7 +252,7 @@ impl std::fmt::Debug for UpdateDomainNameOutput {
 }
 /// See [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
 pub mod update_domain_name_output {
-    ///
+
     /// A builder for [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -310,7 +310,7 @@ impl std::fmt::Debug for UpdateDataSourceOutput {
 }
 /// See [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput)
 pub mod update_data_source_output {
-    ///
+
     /// A builder for [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -368,7 +368,7 @@ impl std::fmt::Debug for UpdateApiKeyOutput {
 }
 /// See [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput)
 pub mod update_api_key_output {
-    ///
+
     /// A builder for [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -423,7 +423,7 @@ impl std::fmt::Debug for UpdateApiCacheOutput {
 }
 /// See [`UpdateApiCacheOutput`](crate::output::UpdateApiCacheOutput)
 pub mod update_api_cache_output {
-    ///
+
     /// A builder for [`UpdateApiCacheOutput`](crate::output::UpdateApiCacheOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -468,7 +468,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -499,7 +499,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -540,7 +540,7 @@ impl std::fmt::Debug for StartSchemaCreationOutput {
 }
 /// See [`StartSchemaCreationOutput`](crate::output::StartSchemaCreationOutput)
 pub mod start_schema_creation_output {
-    ///
+
     /// A builder for [`StartSchemaCreationOutput`](crate::output::StartSchemaCreationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -605,7 +605,7 @@ impl std::fmt::Debug for ListTypesOutput {
 }
 /// See [`ListTypesOutput`](crate::output::ListTypesOutput)
 pub mod list_types_output {
-    ///
+
     /// A builder for [`ListTypesOutput`](crate::output::ListTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -685,7 +685,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -762,7 +762,7 @@ impl std::fmt::Debug for ListResolversByFunctionOutput {
 }
 /// See [`ListResolversByFunctionOutput`](crate::output::ListResolversByFunctionOutput)
 pub mod list_resolvers_by_function_output {
-    ///
+
     /// A builder for [`ListResolversByFunctionOutput`](crate::output::ListResolversByFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -845,7 +845,7 @@ impl std::fmt::Debug for ListResolversOutput {
 }
 /// See [`ListResolversOutput`](crate::output::ListResolversOutput)
 pub mod list_resolvers_output {
-    ///
+
     /// A builder for [`ListResolversOutput`](crate::output::ListResolversOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -928,7 +928,7 @@ impl std::fmt::Debug for ListGraphqlApisOutput {
 }
 /// See [`ListGraphqlApisOutput`](crate::output::ListGraphqlApisOutput)
 pub mod list_graphql_apis_output {
-    ///
+
     /// A builder for [`ListGraphqlApisOutput`](crate::output::ListGraphqlApisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl std::fmt::Debug for ListFunctionsOutput {
 }
 /// See [`ListFunctionsOutput`](crate::output::ListFunctionsOutput)
 pub mod list_functions_output {
-    ///
+
     /// A builder for [`ListFunctionsOutput`](crate::output::ListFunctionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1095,7 +1095,7 @@ impl std::fmt::Debug for ListDomainNamesOutput {
 }
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
 pub mod list_domain_names_output {
-    ///
+
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1179,7 +1179,7 @@ impl std::fmt::Debug for ListDataSourcesOutput {
 }
 /// See [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput)
 pub mod list_data_sources_output {
-    ///
+
     /// A builder for [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1262,7 +1262,7 @@ impl std::fmt::Debug for ListApiKeysOutput {
 }
 /// See [`ListApiKeysOutput`](crate::output::ListApiKeysOutput)
 pub mod list_api_keys_output {
-    ///
+
     /// A builder for [`ListApiKeysOutput`](crate::output::ListApiKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1338,7 +1338,7 @@ impl std::fmt::Debug for GetTypeOutput {
 }
 /// See [`GetTypeOutput`](crate::output::GetTypeOutput)
 pub mod get_type_output {
-    ///
+
     /// A builder for [`GetTypeOutput`](crate::output::GetTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1400,7 +1400,7 @@ impl std::fmt::Debug for GetSchemaCreationStatusOutput {
 }
 /// See [`GetSchemaCreationStatusOutput`](crate::output::GetSchemaCreationStatusOutput)
 pub mod get_schema_creation_status_output {
-    ///
+
     /// A builder for [`GetSchemaCreationStatusOutput`](crate::output::GetSchemaCreationStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1470,7 +1470,7 @@ impl std::fmt::Debug for GetResolverOutput {
 }
 /// See [`GetResolverOutput`](crate::output::GetResolverOutput)
 pub mod get_resolver_output {
-    ///
+
     /// A builder for [`GetResolverOutput`](crate::output::GetResolverOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1527,7 +1527,7 @@ impl std::fmt::Debug for GetIntrospectionSchemaOutput {
 }
 /// See [`GetIntrospectionSchemaOutput`](crate::output::GetIntrospectionSchemaOutput)
 pub mod get_introspection_schema_output {
-    ///
+
     /// A builder for [`GetIntrospectionSchemaOutput`](crate::output::GetIntrospectionSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1584,7 +1584,7 @@ impl std::fmt::Debug for GetGraphqlApiOutput {
 }
 /// See [`GetGraphqlApiOutput`](crate::output::GetGraphqlApiOutput)
 pub mod get_graphql_api_output {
-    ///
+
     /// A builder for [`GetGraphqlApiOutput`](crate::output::GetGraphqlApiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1644,7 +1644,7 @@ impl std::fmt::Debug for GetFunctionOutput {
 }
 /// See [`GetFunctionOutput`](crate::output::GetFunctionOutput)
 pub mod get_function_output {
-    ///
+
     /// A builder for [`GetFunctionOutput`](crate::output::GetFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1705,7 +1705,7 @@ impl std::fmt::Debug for GetDomainNameOutput {
 }
 /// See [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
 pub mod get_domain_name_output {
-    ///
+
     /// A builder for [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1763,7 +1763,7 @@ impl std::fmt::Debug for GetDataSourceOutput {
 }
 /// See [`GetDataSourceOutput`](crate::output::GetDataSourceOutput)
 pub mod get_data_source_output {
-    ///
+
     /// A builder for [`GetDataSourceOutput`](crate::output::GetDataSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1821,7 +1821,7 @@ impl std::fmt::Debug for GetApiCacheOutput {
 }
 /// See [`GetApiCacheOutput`](crate::output::GetApiCacheOutput)
 pub mod get_api_cache_output {
-    ///
+
     /// A builder for [`GetApiCacheOutput`](crate::output::GetApiCacheOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1876,7 +1876,7 @@ impl std::fmt::Debug for GetApiAssociationOutput {
 }
 /// See [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput)
 pub mod get_api_association_output {
-    ///
+
     /// A builder for [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1924,7 +1924,7 @@ impl std::fmt::Debug for FlushApiCacheOutput {
 }
 /// See [`FlushApiCacheOutput`](crate::output::FlushApiCacheOutput)
 pub mod flush_api_cache_output {
-    ///
+
     /// A builder for [`FlushApiCacheOutput`](crate::output::FlushApiCacheOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1955,7 +1955,7 @@ impl std::fmt::Debug for DisassociateApiOutput {
 }
 /// See [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
 pub mod disassociate_api_output {
-    ///
+
     /// A builder for [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1986,7 +1986,7 @@ impl std::fmt::Debug for DeleteTypeOutput {
 }
 /// See [`DeleteTypeOutput`](crate::output::DeleteTypeOutput)
 pub mod delete_type_output {
-    ///
+
     /// A builder for [`DeleteTypeOutput`](crate::output::DeleteTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2017,7 +2017,7 @@ impl std::fmt::Debug for DeleteResolverOutput {
 }
 /// See [`DeleteResolverOutput`](crate::output::DeleteResolverOutput)
 pub mod delete_resolver_output {
-    ///
+
     /// A builder for [`DeleteResolverOutput`](crate::output::DeleteResolverOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2048,7 +2048,7 @@ impl std::fmt::Debug for DeleteGraphqlApiOutput {
 }
 /// See [`DeleteGraphqlApiOutput`](crate::output::DeleteGraphqlApiOutput)
 pub mod delete_graphql_api_output {
-    ///
+
     /// A builder for [`DeleteGraphqlApiOutput`](crate::output::DeleteGraphqlApiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2079,7 +2079,7 @@ impl std::fmt::Debug for DeleteFunctionOutput {
 }
 /// See [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
 pub mod delete_function_output {
-    ///
+
     /// A builder for [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2110,7 +2110,7 @@ impl std::fmt::Debug for DeleteDomainNameOutput {
 }
 /// See [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
 pub mod delete_domain_name_output {
-    ///
+
     /// A builder for [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2141,7 +2141,7 @@ impl std::fmt::Debug for DeleteDataSourceOutput {
 }
 /// See [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput)
 pub mod delete_data_source_output {
-    ///
+
     /// A builder for [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2172,7 +2172,7 @@ impl std::fmt::Debug for DeleteApiKeyOutput {
 }
 /// See [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput)
 pub mod delete_api_key_output {
-    ///
+
     /// A builder for [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2203,7 +2203,7 @@ impl std::fmt::Debug for DeleteApiCacheOutput {
 }
 /// See [`DeleteApiCacheOutput`](crate::output::DeleteApiCacheOutput)
 pub mod delete_api_cache_output {
-    ///
+
     /// A builder for [`DeleteApiCacheOutput`](crate::output::DeleteApiCacheOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2244,7 +2244,7 @@ impl std::fmt::Debug for CreateTypeOutput {
 }
 /// See [`CreateTypeOutput`](crate::output::CreateTypeOutput)
 pub mod create_type_output {
-    ///
+
     /// A builder for [`CreateTypeOutput`](crate::output::CreateTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2299,7 +2299,7 @@ impl std::fmt::Debug for CreateResolverOutput {
 }
 /// See [`CreateResolverOutput`](crate::output::CreateResolverOutput)
 pub mod create_resolver_output {
-    ///
+
     /// A builder for [`CreateResolverOutput`](crate::output::CreateResolverOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2354,7 +2354,7 @@ impl std::fmt::Debug for CreateGraphqlApiOutput {
 }
 /// See [`CreateGraphqlApiOutput`](crate::output::CreateGraphqlApiOutput)
 pub mod create_graphql_api_output {
-    ///
+
     /// A builder for [`CreateGraphqlApiOutput`](crate::output::CreateGraphqlApiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2414,7 +2414,7 @@ impl std::fmt::Debug for CreateFunctionOutput {
 }
 /// See [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
 pub mod create_function_output {
-    ///
+
     /// A builder for [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2475,7 +2475,7 @@ impl std::fmt::Debug for CreateDomainNameOutput {
 }
 /// See [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
 pub mod create_domain_name_output {
-    ///
+
     /// A builder for [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2533,7 +2533,7 @@ impl std::fmt::Debug for CreateDataSourceOutput {
 }
 /// See [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput)
 pub mod create_data_source_output {
-    ///
+
     /// A builder for [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2591,7 +2591,7 @@ impl std::fmt::Debug for CreateApiKeyOutput {
 }
 /// See [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput)
 pub mod create_api_key_output {
-    ///
+
     /// A builder for [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2646,7 +2646,7 @@ impl std::fmt::Debug for CreateApiCacheOutput {
 }
 /// See [`CreateApiCacheOutput`](crate::output::CreateApiCacheOutput)
 pub mod create_api_cache_output {
-    ///
+
     /// A builder for [`CreateApiCacheOutput`](crate::output::CreateApiCacheOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2701,7 +2701,7 @@ impl std::fmt::Debug for AssociateApiOutput {
 }
 /// See [`AssociateApiOutput`](crate::output::AssociateApiOutput)
 pub mod associate_api_output {
-    ///
+
     /// A builder for [`AssociateApiOutput`](crate::output::AssociateApiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -208,7 +208,7 @@ impl std::fmt::Debug for BatchResultErrorEntry {
 }
 /// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
 pub mod batch_result_error_entry {
-    ///
+
     /// A builder for [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -341,7 +341,7 @@ impl std::fmt::Debug for SendMessageBatchResultEntry {
 }
 /// See [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
 pub mod send_message_batch_result_entry {
-    ///
+
     /// A builder for [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -609,7 +609,7 @@ impl std::fmt::Debug for SendMessageBatchRequestEntry {
 }
 /// See [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
 pub mod send_message_batch_request_entry {
-    ///
+
     /// A builder for [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -887,7 +887,7 @@ impl std::fmt::Debug for MessageSystemAttributeValue {
 }
 /// See [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
 pub mod message_system_attribute_value {
-    ///
+
     /// A builder for [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1095,7 +1095,7 @@ impl std::fmt::Debug for MessageAttributeValue {
 }
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue)
 pub mod message_attribute_value {
-    ///
+
     /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1295,7 +1295,7 @@ impl std::fmt::Debug for Message {
 }
 /// See [`Message`](crate::model::Message)
 pub mod message {
-    ///
+
     /// A builder for [`Message`](crate::model::Message)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1580,7 +1580,7 @@ impl std::fmt::Debug for DeleteMessageBatchResultEntry {
 }
 /// See [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
 pub mod delete_message_batch_result_entry {
-    ///
+
     /// A builder for [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1646,7 +1646,7 @@ impl std::fmt::Debug for DeleteMessageBatchRequestEntry {
 }
 /// See [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
 pub mod delete_message_batch_request_entry {
-    ///
+
     /// A builder for [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1722,7 +1722,7 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchResultEntry {
 }
 /// See [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
 pub mod change_message_visibility_batch_result_entry {
-    ///
+
     /// A builder for [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1800,7 +1800,7 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchRequestEntry {
 }
 /// See [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)
 pub mod change_message_visibility_batch_request_entry {
-    ///
+
     /// A builder for [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

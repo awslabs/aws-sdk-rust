@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateVpcAttachmentOutput {
 }
 /// See [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput)
 pub mod update_vpc_attachment_output {
-    ///
+
     /// A builder for [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -79,7 +79,7 @@ impl std::fmt::Debug for UpdateSiteOutput {
 }
 /// See [`UpdateSiteOutput`](crate::output::UpdateSiteOutput)
 pub mod update_site_output {
-    ///
+
     /// A builder for [`UpdateSiteOutput`](crate::output::UpdateSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -143,7 +143,7 @@ impl std::fmt::Debug for UpdateNetworkResourceMetadataOutput {
 }
 /// See [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput)
 pub mod update_network_resource_metadata_output {
-    ///
+
     /// A builder for [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -227,7 +227,7 @@ impl std::fmt::Debug for UpdateLinkOutput {
 }
 /// See [`UpdateLinkOutput`](crate::output::UpdateLinkOutput)
 pub mod update_link_output {
-    ///
+
     /// A builder for [`UpdateLinkOutput`](crate::output::UpdateLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl std::fmt::Debug for UpdateGlobalNetworkOutput {
 }
 /// See [`UpdateGlobalNetworkOutput`](crate::output::UpdateGlobalNetworkOutput)
 pub mod update_global_network_output {
-    ///
+
     /// A builder for [`UpdateGlobalNetworkOutput`](crate::output::UpdateGlobalNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -338,7 +338,7 @@ impl std::fmt::Debug for UpdateDeviceOutput {
 }
 /// See [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput)
 pub mod update_device_output {
-    ///
+
     /// A builder for [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -393,7 +393,7 @@ impl std::fmt::Debug for UpdateCoreNetworkOutput {
 }
 /// See [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput)
 pub mod update_core_network_output {
-    ///
+
     /// A builder for [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -451,7 +451,7 @@ impl std::fmt::Debug for UpdateConnectionOutput {
 }
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
 pub mod update_connection_output {
-    ///
+
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -499,7 +499,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -530,7 +530,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -571,7 +571,7 @@ impl std::fmt::Debug for StartRouteAnalysisOutput {
 }
 /// See [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput)
 pub mod start_route_analysis_output {
-    ///
+
     /// A builder for [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -629,7 +629,7 @@ impl std::fmt::Debug for StartOrganizationServiceAccessUpdateOutput {
 }
 /// See [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput)
 pub mod start_organization_service_access_update_output {
-    ///
+
     /// A builder for [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -687,7 +687,7 @@ impl std::fmt::Debug for RestoreCoreNetworkPolicyVersionOutput {
 }
 /// See [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput)
 pub mod restore_core_network_policy_version_output {
-    ///
+
     /// A builder for [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -745,7 +745,7 @@ impl std::fmt::Debug for RejectAttachmentOutput {
 }
 /// See [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput)
 pub mod reject_attachment_output {
-    ///
+
     /// A builder for [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -808,7 +808,7 @@ impl std::fmt::Debug for RegisterTransitGatewayOutput {
 }
 /// See [`RegisterTransitGatewayOutput`](crate::output::RegisterTransitGatewayOutput)
 pub mod register_transit_gateway_output {
-    ///
+
     /// A builder for [`RegisterTransitGatewayOutput`](crate::output::RegisterTransitGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -860,7 +860,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 pub mod put_resource_policy_output {
-    ///
+
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -901,7 +901,7 @@ impl std::fmt::Debug for PutCoreNetworkPolicyOutput {
 }
 /// See [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput)
 pub mod put_core_network_policy_output {
-    ///
+
     /// A builder for [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -959,7 +959,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1030,7 +1030,7 @@ impl std::fmt::Debug for ListOrganizationServiceAccessStatusOutput {
 }
 /// See [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput)
 pub mod list_organization_service_access_status_output {
-    ///
+
     /// A builder for [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1107,7 +1107,7 @@ impl std::fmt::Debug for ListCoreNetworksOutput {
 }
 /// See [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput)
 pub mod list_core_networks_output {
-    ///
+
     /// A builder for [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1197,7 +1197,7 @@ impl std::fmt::Debug for ListCoreNetworkPolicyVersionsOutput {
 }
 /// See [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput)
 pub mod list_core_network_policy_versions_output {
-    ///
+
     /// A builder for [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1284,7 +1284,7 @@ impl std::fmt::Debug for ListConnectPeersOutput {
 }
 /// See [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput)
 pub mod list_connect_peers_output {
-    ///
+
     /// A builder for [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1368,7 +1368,7 @@ impl std::fmt::Debug for ListAttachmentsOutput {
 }
 /// See [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput)
 pub mod list_attachments_output {
-    ///
+
     /// A builder for [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1444,7 +1444,7 @@ impl std::fmt::Debug for GetVpcAttachmentOutput {
 }
 /// See [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput)
 pub mod get_vpc_attachment_output {
-    ///
+
     /// A builder for [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1515,7 +1515,7 @@ impl std::fmt::Debug for GetTransitGatewayRegistrationsOutput {
 }
 /// See [`GetTransitGatewayRegistrationsOutput`](crate::output::GetTransitGatewayRegistrationsOutput)
 pub mod get_transit_gateway_registrations_output {
-    ///
+
     /// A builder for [`GetTransitGatewayRegistrationsOutput`](crate::output::GetTransitGatewayRegistrationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1608,7 +1608,7 @@ impl std::fmt::Debug for GetTransitGatewayConnectPeerAssociationsOutput {
 }
 /// See [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::output::GetTransitGatewayConnectPeerAssociationsOutput)
 pub mod get_transit_gateway_connect_peer_associations_output {
-    ///
+
     /// A builder for [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::output::GetTransitGatewayConnectPeerAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1699,7 +1699,7 @@ impl std::fmt::Debug for GetSiteToSiteVpnAttachmentOutput {
 }
 /// See [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput)
 pub mod get_site_to_site_vpn_attachment_output {
-    ///
+
     /// A builder for [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1768,7 +1768,7 @@ impl std::fmt::Debug for GetSitesOutput {
 }
 /// See [`GetSitesOutput`](crate::output::GetSitesOutput)
 pub mod get_sites_output {
-    ///
+
     /// A builder for [`GetSitesOutput`](crate::output::GetSitesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1844,7 +1844,7 @@ impl std::fmt::Debug for GetRouteAnalysisOutput {
 }
 /// See [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput)
 pub mod get_route_analysis_output {
-    ///
+
     /// A builder for [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1902,7 +1902,7 @@ impl std::fmt::Debug for GetResourcePolicyOutput {
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
 pub mod get_resource_policy_output {
-    ///
+
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1967,7 +1967,7 @@ impl std::fmt::Debug for GetNetworkTelemetryOutput {
 }
 /// See [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput)
 pub mod get_network_telemetry_output {
-    ///
+
     /// A builder for [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2075,7 +2075,7 @@ impl std::fmt::Debug for GetNetworkRoutesOutput {
 }
 /// See [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput)
 pub mod get_network_routes_output {
-    ///
+
     /// A builder for [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2210,7 +2210,7 @@ impl std::fmt::Debug for GetNetworkResourcesOutput {
 }
 /// See [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput)
 pub mod get_network_resources_output {
-    ///
+
     /// A builder for [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2294,7 +2294,7 @@ impl std::fmt::Debug for GetNetworkResourceRelationshipsOutput {
 }
 /// See [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput)
 pub mod get_network_resource_relationships_output {
-    ///
+
     /// A builder for [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2380,7 +2380,7 @@ impl std::fmt::Debug for GetNetworkResourceCountsOutput {
 }
 /// See [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput)
 pub mod get_network_resource_counts_output {
-    ///
+
     /// A builder for [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2467,7 +2467,7 @@ impl std::fmt::Debug for GetLinksOutput {
 }
 /// See [`GetLinksOutput`](crate::output::GetLinksOutput)
 pub mod get_links_output {
-    ///
+
     /// A builder for [`GetLinksOutput`](crate::output::GetLinksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2550,7 +2550,7 @@ impl std::fmt::Debug for GetLinkAssociationsOutput {
 }
 /// See [`GetLinkAssociationsOutput`](crate::output::GetLinkAssociationsOutput)
 pub mod get_link_associations_output {
-    ///
+
     /// A builder for [`GetLinkAssociationsOutput`](crate::output::GetLinkAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2634,7 +2634,7 @@ impl std::fmt::Debug for GetDevicesOutput {
 }
 /// See [`GetDevicesOutput`](crate::output::GetDevicesOutput)
 pub mod get_devices_output {
-    ///
+
     /// A builder for [`GetDevicesOutput`](crate::output::GetDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2723,7 +2723,7 @@ impl std::fmt::Debug for GetCustomerGatewayAssociationsOutput {
 }
 /// See [`GetCustomerGatewayAssociationsOutput`](crate::output::GetCustomerGatewayAssociationsOutput)
 pub mod get_customer_gateway_associations_output {
-    ///
+
     /// A builder for [`GetCustomerGatewayAssociationsOutput`](crate::output::GetCustomerGatewayAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2803,7 +2803,7 @@ impl std::fmt::Debug for GetCoreNetworkPolicyOutput {
 }
 /// See [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput)
 pub mod get_core_network_policy_output {
-    ///
+
     /// A builder for [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2868,7 +2868,7 @@ impl std::fmt::Debug for GetCoreNetworkChangeSetOutput {
 }
 /// See [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput)
 pub mod get_core_network_change_set_output {
-    ///
+
     /// A builder for [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2945,7 +2945,7 @@ impl std::fmt::Debug for GetCoreNetworkOutput {
 }
 /// See [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput)
 pub mod get_core_network_output {
-    ///
+
     /// A builder for [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3013,7 +3013,7 @@ impl std::fmt::Debug for GetConnectPeerAssociationsOutput {
 }
 /// See [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput)
 pub mod get_connect_peer_associations_output {
-    ///
+
     /// A builder for [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3093,7 +3093,7 @@ impl std::fmt::Debug for GetConnectPeerOutput {
 }
 /// See [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput)
 pub mod get_connect_peer_output {
-    ///
+
     /// A builder for [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3158,7 +3158,7 @@ impl std::fmt::Debug for GetConnectionsOutput {
 }
 /// See [`GetConnectionsOutput`](crate::output::GetConnectionsOutput)
 pub mod get_connections_output {
-    ///
+
     /// A builder for [`GetConnectionsOutput`](crate::output::GetConnectionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3234,7 +3234,7 @@ impl std::fmt::Debug for GetConnectAttachmentOutput {
 }
 /// See [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput)
 pub mod get_connect_attachment_output {
-    ///
+
     /// A builder for [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3282,7 +3282,7 @@ impl std::fmt::Debug for ExecuteCoreNetworkChangeSetOutput {
 }
 /// See [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
 pub mod execute_core_network_change_set_output {
-    ///
+
     /// A builder for [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3329,7 +3329,7 @@ impl std::fmt::Debug for DisassociateTransitGatewayConnectPeerOutput {
 }
 /// See [`DisassociateTransitGatewayConnectPeerOutput`](crate::output::DisassociateTransitGatewayConnectPeerOutput)
 pub mod disassociate_transit_gateway_connect_peer_output {
-    ///
+
     /// A builder for [`DisassociateTransitGatewayConnectPeerOutput`](crate::output::DisassociateTransitGatewayConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3392,7 +3392,7 @@ impl std::fmt::Debug for DisassociateLinkOutput {
 }
 /// See [`DisassociateLinkOutput`](crate::output::DisassociateLinkOutput)
 pub mod disassociate_link_output {
-    ///
+
     /// A builder for [`DisassociateLinkOutput`](crate::output::DisassociateLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3455,7 +3455,7 @@ impl std::fmt::Debug for DisassociateCustomerGatewayOutput {
 }
 /// See [`DisassociateCustomerGatewayOutput`](crate::output::DisassociateCustomerGatewayOutput)
 pub mod disassociate_customer_gateway_output {
-    ///
+
     /// A builder for [`DisassociateCustomerGatewayOutput`](crate::output::DisassociateCustomerGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3519,7 +3519,7 @@ impl std::fmt::Debug for DisassociateConnectPeerOutput {
 }
 /// See [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput)
 pub mod disassociate_connect_peer_output {
-    ///
+
     /// A builder for [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3588,7 +3588,7 @@ impl std::fmt::Debug for DescribeGlobalNetworksOutput {
 }
 /// See [`DescribeGlobalNetworksOutput`](crate::output::DescribeGlobalNetworksOutput)
 pub mod describe_global_networks_output {
-    ///
+
     /// A builder for [`DescribeGlobalNetworksOutput`](crate::output::DescribeGlobalNetworksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3669,7 +3669,7 @@ impl std::fmt::Debug for DeregisterTransitGatewayOutput {
 }
 /// See [`DeregisterTransitGatewayOutput`](crate::output::DeregisterTransitGatewayOutput)
 pub mod deregister_transit_gateway_output {
-    ///
+
     /// A builder for [`DeregisterTransitGatewayOutput`](crate::output::DeregisterTransitGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3731,7 +3731,7 @@ impl std::fmt::Debug for DeleteSiteOutput {
 }
 /// See [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
 pub mod delete_site_output {
-    ///
+
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3774,7 +3774,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 pub mod delete_resource_policy_output {
-    ///
+
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3815,7 +3815,7 @@ impl std::fmt::Debug for DeleteLinkOutput {
 }
 /// See [`DeleteLinkOutput`](crate::output::DeleteLinkOutput)
 pub mod delete_link_output {
-    ///
+
     /// A builder for [`DeleteLinkOutput`](crate::output::DeleteLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3868,7 +3868,7 @@ impl std::fmt::Debug for DeleteGlobalNetworkOutput {
 }
 /// See [`DeleteGlobalNetworkOutput`](crate::output::DeleteGlobalNetworkOutput)
 pub mod delete_global_network_output {
-    ///
+
     /// A builder for [`DeleteGlobalNetworkOutput`](crate::output::DeleteGlobalNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3926,7 +3926,7 @@ impl std::fmt::Debug for DeleteDeviceOutput {
 }
 /// See [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
 pub mod delete_device_output {
-    ///
+
     /// A builder for [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3981,7 +3981,7 @@ impl std::fmt::Debug for DeleteCoreNetworkPolicyVersionOutput {
 }
 /// See [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput)
 pub mod delete_core_network_policy_version_output {
-    ///
+
     /// A builder for [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4039,7 +4039,7 @@ impl std::fmt::Debug for DeleteCoreNetworkOutput {
 }
 /// See [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput)
 pub mod delete_core_network_output {
-    ///
+
     /// A builder for [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4097,7 +4097,7 @@ impl std::fmt::Debug for DeleteConnectPeerOutput {
 }
 /// See [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput)
 pub mod delete_connect_peer_output {
-    ///
+
     /// A builder for [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4155,7 +4155,7 @@ impl std::fmt::Debug for DeleteConnectionOutput {
 }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
 pub mod delete_connection_output {
-    ///
+
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4213,7 +4213,7 @@ impl std::fmt::Debug for DeleteAttachmentOutput {
 }
 /// See [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput)
 pub mod delete_attachment_output {
-    ///
+
     /// A builder for [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4271,7 +4271,7 @@ impl std::fmt::Debug for CreateVpcAttachmentOutput {
 }
 /// See [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput)
 pub mod create_vpc_attachment_output {
-    ///
+
     /// A builder for [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4334,7 +4334,7 @@ impl std::fmt::Debug for CreateSiteToSiteVpnAttachmentOutput {
 }
 /// See [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput)
 pub mod create_site_to_site_vpn_attachment_output {
-    ///
+
     /// A builder for [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4396,7 +4396,7 @@ impl std::fmt::Debug for CreateSiteOutput {
 }
 /// See [`CreateSiteOutput`](crate::output::CreateSiteOutput)
 pub mod create_site_output {
-    ///
+
     /// A builder for [`CreateSiteOutput`](crate::output::CreateSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4449,7 +4449,7 @@ impl std::fmt::Debug for CreateLinkOutput {
 }
 /// See [`CreateLinkOutput`](crate::output::CreateLinkOutput)
 pub mod create_link_output {
-    ///
+
     /// A builder for [`CreateLinkOutput`](crate::output::CreateLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4502,7 +4502,7 @@ impl std::fmt::Debug for CreateGlobalNetworkOutput {
 }
 /// See [`CreateGlobalNetworkOutput`](crate::output::CreateGlobalNetworkOutput)
 pub mod create_global_network_output {
-    ///
+
     /// A builder for [`CreateGlobalNetworkOutput`](crate::output::CreateGlobalNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4560,7 +4560,7 @@ impl std::fmt::Debug for CreateDeviceOutput {
 }
 /// See [`CreateDeviceOutput`](crate::output::CreateDeviceOutput)
 pub mod create_device_output {
-    ///
+
     /// A builder for [`CreateDeviceOutput`](crate::output::CreateDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4615,7 +4615,7 @@ impl std::fmt::Debug for CreateCoreNetworkOutput {
 }
 /// See [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput)
 pub mod create_core_network_output {
-    ///
+
     /// A builder for [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4673,7 +4673,7 @@ impl std::fmt::Debug for CreateConnectPeerOutput {
 }
 /// See [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput)
 pub mod create_connect_peer_output {
-    ///
+
     /// A builder for [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4731,7 +4731,7 @@ impl std::fmt::Debug for CreateConnectionOutput {
 }
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
 pub mod create_connection_output {
-    ///
+
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4789,7 +4789,7 @@ impl std::fmt::Debug for CreateConnectAttachmentOutput {
 }
 /// See [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput)
 pub mod create_connect_attachment_output {
-    ///
+
     /// A builder for [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4853,7 +4853,7 @@ impl std::fmt::Debug for AssociateTransitGatewayConnectPeerOutput {
 }
 /// See [`AssociateTransitGatewayConnectPeerOutput`](crate::output::AssociateTransitGatewayConnectPeerOutput)
 pub mod associate_transit_gateway_connect_peer_output {
-    ///
+
     /// A builder for [`AssociateTransitGatewayConnectPeerOutput`](crate::output::AssociateTransitGatewayConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4916,7 +4916,7 @@ impl std::fmt::Debug for AssociateLinkOutput {
 }
 /// See [`AssociateLinkOutput`](crate::output::AssociateLinkOutput)
 pub mod associate_link_output {
-    ///
+
     /// A builder for [`AssociateLinkOutput`](crate::output::AssociateLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4979,7 +4979,7 @@ impl std::fmt::Debug for AssociateCustomerGatewayOutput {
 }
 /// See [`AssociateCustomerGatewayOutput`](crate::output::AssociateCustomerGatewayOutput)
 pub mod associate_customer_gateway_output {
-    ///
+
     /// A builder for [`AssociateCustomerGatewayOutput`](crate::output::AssociateCustomerGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5043,7 +5043,7 @@ impl std::fmt::Debug for AssociateConnectPeerOutput {
 }
 /// See [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput)
 pub mod associate_connect_peer_output {
-    ///
+
     /// A builder for [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5105,7 +5105,7 @@ impl std::fmt::Debug for AcceptAttachmentOutput {
 }
 /// See [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput)
 pub mod accept_attachment_output {
-    ///
+
     /// A builder for [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

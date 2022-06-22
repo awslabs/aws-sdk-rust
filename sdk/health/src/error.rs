@@ -1325,7 +1325,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
-    ///
+
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1390,7 +1390,7 @@ impl std::fmt::Display for UnsupportedLocale {
 impl std::error::Error for UnsupportedLocale {}
 /// See [`UnsupportedLocale`](crate::error::UnsupportedLocale)
 pub mod unsupported_locale {
-    ///
+
     /// A builder for [`UnsupportedLocale`](crate::error::UnsupportedLocale)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1455,7 +1455,7 @@ impl std::fmt::Display for InvalidPaginationToken {
 impl std::error::Error for InvalidPaginationToken {}
 /// See [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
 pub mod invalid_pagination_token {
-    ///
+
     /// A builder for [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

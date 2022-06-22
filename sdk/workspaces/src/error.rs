@@ -7689,7 +7689,7 @@ impl std::fmt::Display for ResourceUnavailableException {
 impl std::error::Error for ResourceUnavailableException {}
 /// See [`ResourceUnavailableException`](crate::error::ResourceUnavailableException)
 pub mod resource_unavailable_exception {
-    ///
+
     /// A builder for [`ResourceUnavailableException`](crate::error::ResourceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7775,7 +7775,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7852,7 +7852,7 @@ impl std::fmt::Display for OperationNotSupportedException {
 impl std::error::Error for OperationNotSupportedException {}
 /// See [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
 pub mod operation_not_supported_exception {
-    ///
+
     /// A builder for [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7917,7 +7917,7 @@ impl std::fmt::Display for InvalidParameterValuesException {
 impl std::error::Error for InvalidParameterValuesException {}
 /// See [`InvalidParameterValuesException`](crate::error::InvalidParameterValuesException)
 pub mod invalid_parameter_values_exception {
-    ///
+
     /// A builder for [`InvalidParameterValuesException`](crate::error::InvalidParameterValuesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7982,7 +7982,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
-    ///
+
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8047,7 +8047,7 @@ impl std::fmt::Display for ResourceLimitExceededException {
 impl std::error::Error for ResourceLimitExceededException {}
 /// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException)
 pub mod resource_limit_exceeded_exception {
-    ///
+
     /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8112,7 +8112,7 @@ impl std::fmt::Display for InvalidResourceStateException {
 impl std::error::Error for InvalidResourceStateException {}
 /// See [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
 pub mod invalid_resource_state_exception {
-    ///
+
     /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8177,7 +8177,7 @@ impl std::fmt::Display for ResourceAssociatedException {
 impl std::error::Error for ResourceAssociatedException {}
 /// See [`ResourceAssociatedException`](crate::error::ResourceAssociatedException)
 pub mod resource_associated_exception {
-    ///
+
     /// A builder for [`ResourceAssociatedException`](crate::error::ResourceAssociatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8242,7 +8242,7 @@ impl std::fmt::Display for WorkspacesDefaultRoleNotFoundException {
 impl std::error::Error for WorkspacesDefaultRoleNotFoundException {}
 /// See [`WorkspacesDefaultRoleNotFoundException`](crate::error::WorkspacesDefaultRoleNotFoundException)
 pub mod workspaces_default_role_not_found_exception {
-    ///
+
     /// A builder for [`WorkspacesDefaultRoleNotFoundException`](crate::error::WorkspacesDefaultRoleNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8307,7 +8307,7 @@ impl std::fmt::Display for UnsupportedNetworkConfigurationException {
 impl std::error::Error for UnsupportedNetworkConfigurationException {}
 /// See [`UnsupportedNetworkConfigurationException`](crate::error::UnsupportedNetworkConfigurationException)
 pub mod unsupported_network_configuration_exception {
-    ///
+
     /// A builder for [`UnsupportedNetworkConfigurationException`](crate::error::UnsupportedNetworkConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8372,7 +8372,7 @@ impl std::fmt::Display for UnsupportedWorkspaceConfigurationException {
 impl std::error::Error for UnsupportedWorkspaceConfigurationException {}
 /// See [`UnsupportedWorkspaceConfigurationException`](crate::error::UnsupportedWorkspaceConfigurationException)
 pub mod unsupported_workspace_configuration_exception {
-    ///
+
     /// A builder for [`UnsupportedWorkspaceConfigurationException`](crate::error::UnsupportedWorkspaceConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8437,7 +8437,7 @@ impl std::fmt::Display for OperationInProgressException {
 impl std::error::Error for OperationInProgressException {}
 /// See [`OperationInProgressException`](crate::error::OperationInProgressException)
 pub mod operation_in_progress_exception {
-    ///
+
     /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8502,7 +8502,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
-    ///
+
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8567,7 +8567,7 @@ impl std::fmt::Display for ResourceCreationFailedException {
 impl std::error::Error for ResourceCreationFailedException {}
 /// See [`ResourceCreationFailedException`](crate::error::ResourceCreationFailedException)
 pub mod resource_creation_failed_exception {
-    ///
+
     /// A builder for [`ResourceCreationFailedException`](crate::error::ResourceCreationFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

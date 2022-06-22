@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateSiteRackPhysicalPropertiesOutput {
 }
 /// See [`UpdateSiteRackPhysicalPropertiesOutput`](crate::output::UpdateSiteRackPhysicalPropertiesOutput)
 pub mod update_site_rack_physical_properties_output {
-    ///
+
     /// A builder for [`UpdateSiteRackPhysicalPropertiesOutput`](crate::output::UpdateSiteRackPhysicalPropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -81,7 +81,7 @@ impl std::fmt::Debug for UpdateSiteAddressOutput {
 }
 /// See [`UpdateSiteAddressOutput`](crate::output::UpdateSiteAddressOutput)
 pub mod update_site_address_output {
-    ///
+
     /// A builder for [`UpdateSiteAddressOutput`](crate::output::UpdateSiteAddressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -151,7 +151,7 @@ impl std::fmt::Debug for UpdateSiteOutput {
 }
 /// See [`UpdateSiteOutput`](crate::output::UpdateSiteOutput)
 pub mod update_site_output {
-    ///
+
     /// A builder for [`UpdateSiteOutput`](crate::output::UpdateSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl std::fmt::Debug for UpdateOutpostOutput {
 }
 /// See [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput)
 pub mod update_outpost_output {
-    ///
+
     /// A builder for [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -249,7 +249,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -325,7 +325,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -402,7 +402,7 @@ impl std::fmt::Debug for ListSitesOutput {
 }
 /// See [`ListSitesOutput`](crate::output::ListSitesOutput)
 pub mod list_sites_output {
-    ///
+
     /// A builder for [`ListSitesOutput`](crate::output::ListSitesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -485,7 +485,7 @@ impl std::fmt::Debug for ListOutpostsOutput {
 }
 /// See [`ListOutpostsOutput`](crate::output::ListOutpostsOutput)
 pub mod list_outposts_output {
-    ///
+
     /// A builder for [`ListOutpostsOutput`](crate::output::ListOutpostsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -568,7 +568,7 @@ impl std::fmt::Debug for ListOrdersOutput {
 }
 /// See [`ListOrdersOutput`](crate::output::ListOrdersOutput)
 pub mod list_orders_output {
-    ///
+
     /// A builder for [`ListOrdersOutput`](crate::output::ListOrdersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -651,7 +651,7 @@ impl std::fmt::Debug for ListCatalogItemsOutput {
 }
 /// See [`ListCatalogItemsOutput`](crate::output::ListCatalogItemsOutput)
 pub mod list_catalog_items_output {
-    ///
+
     /// A builder for [`ListCatalogItemsOutput`](crate::output::ListCatalogItemsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -734,7 +734,7 @@ impl std::fmt::Debug for ListAssetsOutput {
 }
 /// See [`ListAssetsOutput`](crate::output::ListAssetsOutput)
 pub mod list_assets_output {
-    ///
+
     /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -824,7 +824,7 @@ impl std::fmt::Debug for GetSiteAddressOutput {
 }
 /// See [`GetSiteAddressOutput`](crate::output::GetSiteAddressOutput)
 pub mod get_site_address_output {
-    ///
+
     /// A builder for [`GetSiteAddressOutput`](crate::output::GetSiteAddressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -906,7 +906,7 @@ impl std::fmt::Debug for GetSiteOutput {
 }
 /// See [`GetSiteOutput`](crate::output::GetSiteOutput)
 pub mod get_site_output {
-    ///
+
     /// A builder for [`GetSiteOutput`](crate::output::GetSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -984,7 +984,7 @@ impl std::fmt::Debug for GetOutpostInstanceTypesOutput {
 }
 /// See [`GetOutpostInstanceTypesOutput`](crate::output::GetOutpostInstanceTypesOutput)
 pub mod get_outpost_instance_types_output {
-    ///
+
     /// A builder for [`GetOutpostInstanceTypesOutput`](crate::output::GetOutpostInstanceTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1089,7 +1089,7 @@ impl std::fmt::Debug for GetOutpostOutput {
 }
 /// See [`GetOutpostOutput`](crate::output::GetOutpostOutput)
 pub mod get_outpost_output {
-    ///
+
     /// A builder for [`GetOutpostOutput`](crate::output::GetOutpostOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1144,7 +1144,7 @@ impl std::fmt::Debug for GetOrderOutput {
 }
 /// See [`GetOrderOutput`](crate::output::GetOrderOutput)
 pub mod get_order_output {
-    ///
+
     /// A builder for [`GetOrderOutput`](crate::output::GetOrderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1197,7 +1197,7 @@ impl std::fmt::Debug for GetCatalogItemOutput {
 }
 /// See [`GetCatalogItemOutput`](crate::output::GetCatalogItemOutput)
 pub mod get_catalog_item_output {
-    ///
+
     /// A builder for [`GetCatalogItemOutput`](crate::output::GetCatalogItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1245,7 +1245,7 @@ impl std::fmt::Debug for DeleteSiteOutput {
 }
 /// See [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
 pub mod delete_site_output {
-    ///
+
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1276,7 +1276,7 @@ impl std::fmt::Debug for DeleteOutpostOutput {
 }
 /// See [`DeleteOutpostOutput`](crate::output::DeleteOutpostOutput)
 pub mod delete_outpost_output {
-    ///
+
     /// A builder for [`DeleteOutpostOutput`](crate::output::DeleteOutpostOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1317,7 +1317,7 @@ impl std::fmt::Debug for CreateSiteOutput {
 }
 /// See [`CreateSiteOutput`](crate::output::CreateSiteOutput)
 pub mod create_site_output {
-    ///
+
     /// A builder for [`CreateSiteOutput`](crate::output::CreateSiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1370,7 +1370,7 @@ impl std::fmt::Debug for CreateOutpostOutput {
 }
 /// See [`CreateOutpostOutput`](crate::output::CreateOutpostOutput)
 pub mod create_outpost_output {
-    ///
+
     /// A builder for [`CreateOutpostOutput`](crate::output::CreateOutpostOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1425,7 +1425,7 @@ impl std::fmt::Debug for CreateOrderOutput {
 }
 /// See [`CreateOrderOutput`](crate::output::CreateOrderOutput)
 pub mod create_order_output {
-    ///
+
     /// A builder for [`CreateOrderOutput`](crate::output::CreateOrderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1468,7 +1468,7 @@ impl std::fmt::Debug for CancelOrderOutput {
 }
 /// See [`CancelOrderOutput`](crate::output::CancelOrderOutput)
 pub mod cancel_order_output {
-    ///
+
     /// A builder for [`CancelOrderOutput`](crate::output::CancelOrderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

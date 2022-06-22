@@ -28,7 +28,7 @@ impl std::fmt::Debug for GetAppMonitorDataOutput {
 }
 /// See [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput)
 pub mod get_app_monitor_data_output {
-    ///
+
     /// A builder for [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for CreateAppMonitorOutput {
 }
 /// See [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput)
 pub mod create_app_monitor_output {
-    ///
+
     /// A builder for [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -164,7 +164,7 @@ impl std::fmt::Debug for ListAppMonitorsOutput {
 }
 /// See [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput)
 pub mod list_app_monitors_output {
-    ///
+
     /// A builder for [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -231,7 +231,7 @@ impl std::fmt::Debug for DeleteAppMonitorOutput {
 }
 /// See [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
 pub mod delete_app_monitor_output {
-    ///
+
     /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -262,7 +262,7 @@ impl std::fmt::Debug for UpdateAppMonitorOutput {
 }
 /// See [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
 pub mod update_app_monitor_output {
-    ///
+
     /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -303,7 +303,7 @@ impl std::fmt::Debug for GetAppMonitorOutput {
 }
 /// See [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput)
 pub mod get_app_monitor_output {
-    ///
+
     /// A builder for [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -351,7 +351,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -382,7 +382,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -413,7 +413,7 @@ impl std::fmt::Debug for PutRumEventsOutput {
 }
 /// See [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
 pub mod put_rum_events_output {
-    ///
+
     /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -465,7 +465,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

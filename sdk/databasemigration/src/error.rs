@@ -6443,7 +6443,7 @@ impl std::fmt::Display for ResourceQuotaExceededFault {
 impl std::error::Error for ResourceQuotaExceededFault {}
 /// See [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault)
 pub mod resource_quota_exceeded_fault {
-    ///
+
     /// A builder for [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6508,7 +6508,7 @@ impl std::fmt::Display for ResourceNotFoundFault {
 impl std::error::Error for ResourceNotFoundFault {}
 /// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
 pub mod resource_not_found_fault {
-    ///
+
     /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6573,7 +6573,7 @@ impl std::fmt::Display for KmsKeyNotAccessibleFault {
 impl std::error::Error for KmsKeyNotAccessibleFault {}
 /// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
 pub mod kms_key_not_accessible_fault {
-    ///
+
     /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6638,7 +6638,7 @@ impl std::fmt::Display for InvalidResourceStateFault {
 impl std::error::Error for InvalidResourceStateFault {}
 /// See [`InvalidResourceStateFault`](crate::error::InvalidResourceStateFault)
 pub mod invalid_resource_state_fault {
-    ///
+
     /// A builder for [`InvalidResourceStateFault`](crate::error::InvalidResourceStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6703,7 +6703,7 @@ impl std::fmt::Display for AccessDeniedFault {
 impl std::error::Error for AccessDeniedFault {}
 /// See [`AccessDeniedFault`](crate::error::AccessDeniedFault)
 pub mod access_denied_fault {
-    ///
+
     /// A builder for [`AccessDeniedFault`](crate::error::AccessDeniedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6768,7 +6768,7 @@ impl std::fmt::Display for S3ResourceNotFoundFault {
 impl std::error::Error for S3ResourceNotFoundFault {}
 /// See [`S3ResourceNotFoundFault`](crate::error::S3ResourceNotFoundFault)
 pub mod s3_resource_not_found_fault {
-    ///
+
     /// A builder for [`S3ResourceNotFoundFault`](crate::error::S3ResourceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6833,7 +6833,7 @@ impl std::fmt::Display for S3AccessDeniedFault {
 impl std::error::Error for S3AccessDeniedFault {}
 /// See [`S3AccessDeniedFault`](crate::error::S3AccessDeniedFault)
 pub mod s3_access_denied_fault {
-    ///
+
     /// A builder for [`S3AccessDeniedFault`](crate::error::S3AccessDeniedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6907,7 +6907,7 @@ impl std::fmt::Display for ResourceAlreadyExistsFault {
 impl std::error::Error for ResourceAlreadyExistsFault {}
 /// See [`ResourceAlreadyExistsFault`](crate::error::ResourceAlreadyExistsFault)
 pub mod resource_already_exists_fault {
-    ///
+
     /// A builder for [`ResourceAlreadyExistsFault`](crate::error::ResourceAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6984,7 +6984,7 @@ impl std::fmt::Display for KmsNotFoundFault {
 impl std::error::Error for KmsNotFoundFault {}
 /// See [`KmsNotFoundFault`](crate::error::KmsNotFoundFault)
 pub mod kms_not_found_fault {
-    ///
+
     /// A builder for [`KmsNotFoundFault`](crate::error::KmsNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7049,7 +7049,7 @@ impl std::fmt::Display for KmsInvalidStateFault {
 impl std::error::Error for KmsInvalidStateFault {}
 /// See [`KmsInvalidStateFault`](crate::error::KmsInvalidStateFault)
 pub mod kms_invalid_state_fault {
-    ///
+
     /// A builder for [`KmsInvalidStateFault`](crate::error::KmsInvalidStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7114,7 +7114,7 @@ impl std::fmt::Display for KmsFault {
 impl std::error::Error for KmsFault {}
 /// See [`KmsFault`](crate::error::KmsFault)
 pub mod kms_fault {
-    ///
+
     /// A builder for [`KmsFault`](crate::error::KmsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7179,7 +7179,7 @@ impl std::fmt::Display for KmsDisabledFault {
 impl std::error::Error for KmsDisabledFault {}
 /// See [`KmsDisabledFault`](crate::error::KmsDisabledFault)
 pub mod kms_disabled_fault {
-    ///
+
     /// A builder for [`KmsDisabledFault`](crate::error::KmsDisabledFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7244,7 +7244,7 @@ impl std::fmt::Display for KmsAccessDeniedFault {
 impl std::error::Error for KmsAccessDeniedFault {}
 /// See [`KmsAccessDeniedFault`](crate::error::KmsAccessDeniedFault)
 pub mod kms_access_denied_fault {
-    ///
+
     /// A builder for [`KmsAccessDeniedFault`](crate::error::KmsAccessDeniedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7309,7 +7309,7 @@ impl std::fmt::Display for SubnetAlreadyInUse {
 impl std::error::Error for SubnetAlreadyInUse {}
 /// See [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
 pub mod subnet_already_in_use {
-    ///
+
     /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7374,7 +7374,7 @@ impl std::fmt::Display for ReplicationSubnetGroupDoesNotCoverEnoughAZs {
 impl std::error::Error for ReplicationSubnetGroupDoesNotCoverEnoughAZs {}
 /// See [`ReplicationSubnetGroupDoesNotCoverEnoughAZs`](crate::error::ReplicationSubnetGroupDoesNotCoverEnoughAZs)
 pub mod replication_subnet_group_does_not_cover_enough_a_zs {
-    ///
+
     /// A builder for [`ReplicationSubnetGroupDoesNotCoverEnoughAZs`](crate::error::ReplicationSubnetGroupDoesNotCoverEnoughAZs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7439,7 +7439,7 @@ impl std::fmt::Display for InvalidSubnet {
 impl std::error::Error for InvalidSubnet {}
 /// See [`InvalidSubnet`](crate::error::InvalidSubnet)
 pub mod invalid_subnet {
-    ///
+
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7504,7 +7504,7 @@ impl std::fmt::Display for UpgradeDependencyFailureFault {
 impl std::error::Error for UpgradeDependencyFailureFault {}
 /// See [`UpgradeDependencyFailureFault`](crate::error::UpgradeDependencyFailureFault)
 pub mod upgrade_dependency_failure_fault {
-    ///
+
     /// A builder for [`UpgradeDependencyFailureFault`](crate::error::UpgradeDependencyFailureFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7569,7 +7569,7 @@ impl std::fmt::Display for StorageQuotaExceededFault {
 impl std::error::Error for StorageQuotaExceededFault {}
 /// See [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
 pub mod storage_quota_exceeded_fault {
-    ///
+
     /// A builder for [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7634,7 +7634,7 @@ impl std::fmt::Display for InsufficientResourceCapacityFault {
 impl std::error::Error for InsufficientResourceCapacityFault {}
 /// See [`InsufficientResourceCapacityFault`](crate::error::InsufficientResourceCapacityFault)
 pub mod insufficient_resource_capacity_fault {
-    ///
+
     /// A builder for [`InsufficientResourceCapacityFault`](crate::error::InsufficientResourceCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7699,7 +7699,7 @@ impl std::fmt::Display for SnsNoAuthorizationFault {
 impl std::error::Error for SnsNoAuthorizationFault {}
 /// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
 pub mod sns_no_authorization_fault {
-    ///
+
     /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7764,7 +7764,7 @@ impl std::fmt::Display for SnsInvalidTopicFault {
 impl std::error::Error for SnsInvalidTopicFault {}
 /// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
 pub mod sns_invalid_topic_fault {
-    ///
+
     /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7829,7 +7829,7 @@ impl std::fmt::Display for KmsThrottlingFault {
 impl std::error::Error for KmsThrottlingFault {}
 /// See [`KmsThrottlingFault`](crate::error::KmsThrottlingFault)
 pub mod kms_throttling_fault {
-    ///
+
     /// A builder for [`KmsThrottlingFault`](crate::error::KmsThrottlingFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7894,7 +7894,7 @@ impl std::fmt::Display for InvalidCertificateFault {
 impl std::error::Error for InvalidCertificateFault {}
 /// See [`InvalidCertificateFault`](crate::error::InvalidCertificateFault)
 pub mod invalid_certificate_fault {
-    ///
+
     /// A builder for [`InvalidCertificateFault`](crate::error::InvalidCertificateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

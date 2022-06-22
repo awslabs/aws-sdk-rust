@@ -97,7 +97,7 @@ impl std::fmt::Debug for MssPackage {
 }
 /// See [`MssPackage`](crate::model::MssPackage)
 pub mod mss_package {
-    ///
+
     /// A builder for [`MssPackage`](crate::model::MssPackage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl std::fmt::Debug for StreamSelection {
 }
 /// See [`StreamSelection`](crate::model::StreamSelection)
 pub mod stream_selection {
-    ///
+
     /// A builder for [`StreamSelection`](crate::model::StreamSelection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -353,7 +353,7 @@ impl std::fmt::Debug for MssEncryption {
 }
 /// See [`MssEncryption`](crate::model::MssEncryption)
 pub mod mss_encryption {
-    ///
+
     /// A builder for [`MssEncryption`](crate::model::MssEncryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -452,7 +452,7 @@ impl std::fmt::Debug for SpekeKeyProvider {
 }
 /// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
 pub mod speke_key_provider {
-    ///
+
     /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl std::fmt::Debug for EncryptionContractConfiguration {
 }
 /// See [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration)
 pub mod encryption_contract_configuration {
-    ///
+
     /// A builder for [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -856,7 +856,7 @@ impl std::fmt::Debug for HlsPackage {
 }
 /// See [`HlsPackage`](crate::model::HlsPackage)
 pub mod hls_package {
-    ///
+
     /// A builder for [`HlsPackage`](crate::model::HlsPackage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1169,7 +1169,7 @@ impl std::fmt::Debug for HlsEncryption {
 }
 /// See [`HlsEncryption`](crate::model::HlsEncryption)
 pub mod hls_encryption {
-    ///
+
     /// A builder for [`HlsEncryption`](crate::model::HlsEncryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1685,7 +1685,7 @@ impl std::fmt::Debug for DashPackage {
 }
 /// See [`DashPackage`](crate::model::DashPackage)
 pub mod dash_package {
-    ///
+
     /// A builder for [`DashPackage`](crate::model::DashPackage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2266,7 +2266,7 @@ impl std::fmt::Debug for DashEncryption {
 }
 /// See [`DashEncryption`](crate::model::DashEncryption)
 pub mod dash_encryption {
-    ///
+
     /// A builder for [`DashEncryption`](crate::model::DashEncryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2369,7 +2369,7 @@ impl std::fmt::Debug for CmafPackage {
 }
 /// See [`CmafPackage`](crate::model::CmafPackage)
 pub mod cmaf_package {
-    ///
+
     /// A builder for [`CmafPackage`](crate::model::CmafPackage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2545,7 +2545,7 @@ impl std::fmt::Debug for HlsManifest {
 }
 /// See [`HlsManifest`](crate::model::HlsManifest)
 pub mod hls_manifest {
-    ///
+
     /// A builder for [`HlsManifest`](crate::model::HlsManifest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2718,7 +2718,7 @@ impl std::fmt::Debug for CmafEncryption {
 }
 /// See [`CmafEncryption`](crate::model::CmafEncryption)
 pub mod cmaf_encryption {
-    ///
+
     /// A builder for [`CmafEncryption`](crate::model::CmafEncryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2818,7 +2818,7 @@ impl std::fmt::Debug for Authorization {
 }
 /// See [`Authorization`](crate::model::Authorization)
 pub mod authorization {
-    ///
+
     /// A builder for [`Authorization`](crate::model::Authorization)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2922,7 +2922,7 @@ impl std::fmt::Debug for CmafPackageCreateOrUpdateParameters {
 }
 /// See [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters)
 pub mod cmaf_package_create_or_update_parameters {
-    ///
+
     /// A builder for [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3116,7 +3116,7 @@ impl std::fmt::Debug for HlsManifestCreateOrUpdateParameters {
 }
 /// See [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters)
 pub mod hls_manifest_create_or_update_parameters {
-    ///
+
     /// A builder for [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3297,7 +3297,7 @@ impl std::fmt::Debug for IngressAccessLogs {
 }
 /// See [`IngressAccessLogs`](crate::model::IngressAccessLogs)
 pub mod ingress_access_logs {
-    ///
+
     /// A builder for [`IngressAccessLogs`](crate::model::IngressAccessLogs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3355,7 +3355,7 @@ impl std::fmt::Debug for HlsIngest {
 }
 /// See [`HlsIngest`](crate::model::HlsIngest)
 pub mod hls_ingest {
-    ///
+
     /// A builder for [`HlsIngest`](crate::model::HlsIngest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3441,7 +3441,7 @@ impl std::fmt::Debug for IngestEndpoint {
 }
 /// See [`IngestEndpoint`](crate::model::IngestEndpoint)
 pub mod ingest_endpoint {
-    ///
+
     /// A builder for [`IngestEndpoint`](crate::model::IngestEndpoint)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3532,7 +3532,7 @@ impl std::fmt::Debug for EgressAccessLogs {
 }
 /// See [`EgressAccessLogs`](crate::model::EgressAccessLogs)
 pub mod egress_access_logs {
-    ///
+
     /// A builder for [`EgressAccessLogs`](crate::model::EgressAccessLogs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3699,7 +3699,7 @@ impl std::fmt::Debug for OriginEndpoint {
 }
 /// See [`OriginEndpoint`](crate::model::OriginEndpoint)
 pub mod origin_endpoint {
-    ///
+
     /// A builder for [`OriginEndpoint`](crate::model::OriginEndpoint)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4037,7 +4037,7 @@ impl std::fmt::Debug for HarvestJob {
 }
 /// See [`HarvestJob`](crate::model::HarvestJob)
 pub mod harvest_job {
-    ///
+
     /// A builder for [`HarvestJob`](crate::model::HarvestJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4267,7 +4267,7 @@ impl std::fmt::Debug for S3Destination {
 }
 /// See [`S3Destination`](crate::model::S3Destination)
 pub mod s3_destination {
-    ///
+
     /// A builder for [`S3Destination`](crate::model::S3Destination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4392,7 +4392,7 @@ impl std::fmt::Debug for Channel {
 }
 /// See [`Channel`](crate::model::Channel)
 pub mod channel {
-    ///
+
     /// A builder for [`Channel`](crate::model::Channel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

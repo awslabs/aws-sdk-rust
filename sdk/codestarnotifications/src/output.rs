@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateNotificationRuleOutput {
 }
 /// See [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput)
 pub mod update_notification_rule_output {
-    ///
+
     /// A builder for [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -83,7 +83,7 @@ impl std::fmt::Debug for UnsubscribeOutput {
 }
 /// See [`UnsubscribeOutput`](crate::output::UnsubscribeOutput)
 pub mod unsubscribe_output {
-    ///
+
     /// A builder for [`UnsubscribeOutput`](crate::output::UnsubscribeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl std::fmt::Debug for SubscribeOutput {
 }
 /// See [`SubscribeOutput`](crate::output::SubscribeOutput)
 pub mod subscribe_output {
-    ///
+
     /// A builder for [`SubscribeOutput`](crate::output::SubscribeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -270,7 +270,7 @@ impl std::fmt::Debug for ListTargetsOutput {
 }
 /// See [`ListTargetsOutput`](crate::output::ListTargetsOutput)
 pub mod list_targets_output {
-    ///
+
     /// A builder for [`ListTargetsOutput`](crate::output::ListTargetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -430,7 +430,7 @@ impl std::fmt::Debug for ListNotificationRulesOutput {
 }
 /// See [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput)
 pub mod list_notification_rules_output {
-    ///
+
     /// A builder for [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl std::fmt::Debug for ListEventTypesOutput {
 }
 /// See [`ListEventTypesOutput`](crate::output::ListEventTypesOutput)
 pub mod list_event_types_output {
-    ///
+
     /// A builder for [`ListEventTypesOutput`](crate::output::ListEventTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -664,7 +664,7 @@ impl std::fmt::Debug for DescribeNotificationRuleOutput {
 }
 /// See [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput)
 pub mod describe_notification_rule_output {
-    ///
+
     /// A builder for [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -876,7 +876,7 @@ impl std::fmt::Debug for DeleteTargetOutput {
 }
 /// See [`DeleteTargetOutput`](crate::output::DeleteTargetOutput)
 pub mod delete_target_output {
-    ///
+
     /// A builder for [`DeleteTargetOutput`](crate::output::DeleteTargetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -917,7 +917,7 @@ impl std::fmt::Debug for DeleteNotificationRuleOutput {
 }
 /// See [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput)
 pub mod delete_notification_rule_output {
-    ///
+
     /// A builder for [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -970,7 +970,7 @@ impl std::fmt::Debug for CreateNotificationRuleOutput {
 }
 /// See [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput)
 pub mod create_notification_rule_output {
-    ///
+
     /// A builder for [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

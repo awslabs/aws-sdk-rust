@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateThingRuntimeConfigurationOutput {
 }
 /// See [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput)
 pub mod update_thing_runtime_configuration_output {
-    ///
+
     /// A builder for [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UpdateSubscriptionDefinitionOutput {
 }
 /// See [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput)
 pub mod update_subscription_definition_output {
-    ///
+
     /// A builder for [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for UpdateResourceDefinitionOutput {
 }
 /// See [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput)
 pub mod update_resource_definition_output {
-    ///
+
     /// A builder for [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for UpdateLoggerDefinitionOutput {
 }
 /// See [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput)
 pub mod update_logger_definition_output {
-    ///
+
     /// A builder for [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -165,7 +165,7 @@ impl std::fmt::Debug for UpdateGroupCertificateConfigurationOutput {
 }
 /// See [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput)
 pub mod update_group_certificate_configuration_output {
-    ///
+
     /// A builder for [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -248,7 +248,7 @@ impl std::fmt::Debug for UpdateGroupOutput {
 }
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
 pub mod update_group_output {
-    ///
+
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -279,7 +279,7 @@ impl std::fmt::Debug for UpdateFunctionDefinitionOutput {
 }
 /// See [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput)
 pub mod update_function_definition_output {
-    ///
+
     /// A builder for [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -310,7 +310,7 @@ impl std::fmt::Debug for UpdateDeviceDefinitionOutput {
 }
 /// See [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput)
 pub mod update_device_definition_output {
-    ///
+
     /// A builder for [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -341,7 +341,7 @@ impl std::fmt::Debug for UpdateCoreDefinitionOutput {
 }
 /// See [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput)
 pub mod update_core_definition_output {
-    ///
+
     /// A builder for [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -372,7 +372,7 @@ impl std::fmt::Debug for UpdateConnectorDefinitionOutput {
 }
 /// See [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput)
 pub mod update_connector_definition_output {
-    ///
+
     /// A builder for [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl std::fmt::Debug for UpdateConnectivityInfoOutput {
 }
 /// See [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
 pub mod update_connectivity_info_output {
-    ///
+
     /// A builder for [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -477,7 +477,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -508,7 +508,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -539,7 +539,7 @@ impl std::fmt::Debug for StopBulkDeploymentOutput {
 }
 /// See [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput)
 pub mod stop_bulk_deployment_output {
-    ///
+
     /// A builder for [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -587,7 +587,7 @@ impl std::fmt::Debug for StartBulkDeploymentOutput {
 }
 /// See [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput)
 pub mod start_bulk_deployment_output {
-    ///
+
     /// A builder for [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -667,7 +667,7 @@ impl std::fmt::Debug for ResetDeploymentsOutput {
 }
 /// See [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput)
 pub mod reset_deployments_output {
-    ///
+
     /// A builder for [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -744,7 +744,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -821,7 +821,7 @@ impl std::fmt::Debug for ListSubscriptionDefinitionVersionsOutput {
 }
 /// See [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput)
 pub mod list_subscription_definition_versions_output {
-    ///
+
     /// A builder for [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -904,7 +904,7 @@ impl std::fmt::Debug for ListSubscriptionDefinitionsOutput {
 }
 /// See [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput)
 pub mod list_subscription_definitions_output {
-    ///
+
     /// A builder for [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -988,7 +988,7 @@ impl std::fmt::Debug for ListResourceDefinitionVersionsOutput {
 }
 /// See [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput)
 pub mod list_resource_definition_versions_output {
-    ///
+
     /// A builder for [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1071,7 +1071,7 @@ impl std::fmt::Debug for ListResourceDefinitionsOutput {
 }
 /// See [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput)
 pub mod list_resource_definitions_output {
-    ///
+
     /// A builder for [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1155,7 +1155,7 @@ impl std::fmt::Debug for ListLoggerDefinitionVersionsOutput {
 }
 /// See [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput)
 pub mod list_logger_definition_versions_output {
-    ///
+
     /// A builder for [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1238,7 +1238,7 @@ impl std::fmt::Debug for ListLoggerDefinitionsOutput {
 }
 /// See [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput)
 pub mod list_logger_definitions_output {
-    ///
+
     /// A builder for [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1322,7 +1322,7 @@ impl std::fmt::Debug for ListGroupVersionsOutput {
 }
 /// See [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput)
 pub mod list_group_versions_output {
-    ///
+
     /// A builder for [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1405,7 +1405,7 @@ impl std::fmt::Debug for ListGroupsOutput {
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput)
 pub mod list_groups_output {
-    ///
+
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1487,7 +1487,7 @@ impl std::fmt::Debug for ListGroupCertificateAuthoritiesOutput {
 }
 /// See [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput)
 pub mod list_group_certificate_authorities_output {
-    ///
+
     /// A builder for [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1564,7 +1564,7 @@ impl std::fmt::Debug for ListFunctionDefinitionVersionsOutput {
 }
 /// See [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput)
 pub mod list_function_definition_versions_output {
-    ///
+
     /// A builder for [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1647,7 +1647,7 @@ impl std::fmt::Debug for ListFunctionDefinitionsOutput {
 }
 /// See [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput)
 pub mod list_function_definitions_output {
-    ///
+
     /// A builder for [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1731,7 +1731,7 @@ impl std::fmt::Debug for ListDeviceDefinitionVersionsOutput {
 }
 /// See [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput)
 pub mod list_device_definition_versions_output {
-    ///
+
     /// A builder for [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1814,7 +1814,7 @@ impl std::fmt::Debug for ListDeviceDefinitionsOutput {
 }
 /// See [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput)
 pub mod list_device_definitions_output {
-    ///
+
     /// A builder for [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1898,7 +1898,7 @@ impl std::fmt::Debug for ListDeploymentsOutput {
 }
 /// See [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput)
 pub mod list_deployments_output {
-    ///
+
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1981,7 +1981,7 @@ impl std::fmt::Debug for ListCoreDefinitionVersionsOutput {
 }
 /// See [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput)
 pub mod list_core_definition_versions_output {
-    ///
+
     /// A builder for [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2064,7 +2064,7 @@ impl std::fmt::Debug for ListCoreDefinitionsOutput {
 }
 /// See [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput)
 pub mod list_core_definitions_output {
-    ///
+
     /// A builder for [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2148,7 +2148,7 @@ impl std::fmt::Debug for ListConnectorDefinitionVersionsOutput {
 }
 /// See [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput)
 pub mod list_connector_definition_versions_output {
-    ///
+
     /// A builder for [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2231,7 +2231,7 @@ impl std::fmt::Debug for ListConnectorDefinitionsOutput {
 }
 /// See [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput)
 pub mod list_connector_definitions_output {
-    ///
+
     /// A builder for [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2315,7 +2315,7 @@ impl std::fmt::Debug for ListBulkDeploymentsOutput {
 }
 /// See [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput)
 pub mod list_bulk_deployments_output {
-    ///
+
     /// A builder for [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2399,7 +2399,7 @@ impl std::fmt::Debug for ListBulkDeploymentDetailedReportsOutput {
 }
 /// See [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput)
 pub mod list_bulk_deployment_detailed_reports_output {
-    ///
+
     /// A builder for [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2478,7 +2478,7 @@ impl std::fmt::Debug for GetThingRuntimeConfigurationOutput {
 }
 /// See [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput)
 pub mod get_thing_runtime_configuration_output {
-    ///
+
     /// A builder for [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2571,7 +2571,7 @@ impl std::fmt::Debug for GetSubscriptionDefinitionVersionOutput {
 }
 /// See [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput)
 pub mod get_subscription_definition_version_output {
-    ///
+
     /// A builder for [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2745,7 +2745,7 @@ impl std::fmt::Debug for GetSubscriptionDefinitionOutput {
 }
 /// See [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput)
 pub mod get_subscription_definition_output {
-    ///
+
     /// A builder for [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2920,7 +2920,7 @@ impl std::fmt::Debug for GetServiceRoleForAccountOutput {
 }
 /// See [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
 pub mod get_service_role_for_account_output {
-    ///
+
     /// A builder for [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3018,7 +3018,7 @@ impl std::fmt::Debug for GetResourceDefinitionVersionOutput {
 }
 /// See [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput)
 pub mod get_resource_definition_version_output {
-    ///
+
     /// A builder for [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3180,7 +3180,7 @@ impl std::fmt::Debug for GetResourceDefinitionOutput {
 }
 /// See [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput)
 pub mod get_resource_definition_output {
-    ///
+
     /// A builder for [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3376,7 +3376,7 @@ impl std::fmt::Debug for GetLoggerDefinitionVersionOutput {
 }
 /// See [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput)
 pub mod get_logger_definition_version_output {
-    ///
+
     /// A builder for [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3538,7 +3538,7 @@ impl std::fmt::Debug for GetLoggerDefinitionOutput {
 }
 /// See [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput)
 pub mod get_logger_definition_output {
-    ///
+
     /// A builder for [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3734,7 +3734,7 @@ impl std::fmt::Debug for GetGroupVersionOutput {
 }
 /// See [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput)
 pub mod get_group_version_output {
-    ///
+
     /// A builder for [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3863,7 +3863,7 @@ impl std::fmt::Debug for GetGroupCertificateConfigurationOutput {
 }
 /// See [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput)
 pub mod get_group_certificate_configuration_output {
-    ///
+
     /// A builder for [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3976,7 +3976,7 @@ impl std::fmt::Debug for GetGroupCertificateAuthorityOutput {
 }
 /// See [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput)
 pub mod get_group_certificate_authority_output {
-    ///
+
     /// A builder for [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4123,7 +4123,7 @@ impl std::fmt::Debug for GetGroupOutput {
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput)
 pub mod get_group_output {
-    ///
+
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4326,7 +4326,7 @@ impl std::fmt::Debug for GetFunctionDefinitionVersionOutput {
 }
 /// See [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput)
 pub mod get_function_definition_version_output {
-    ///
+
     /// A builder for [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4500,7 +4500,7 @@ impl std::fmt::Debug for GetFunctionDefinitionOutput {
 }
 /// See [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput)
 pub mod get_function_definition_output {
-    ///
+
     /// A builder for [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4703,7 +4703,7 @@ impl std::fmt::Debug for GetDeviceDefinitionVersionOutput {
 }
 /// See [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput)
 pub mod get_device_definition_version_output {
-    ///
+
     /// A builder for [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4877,7 +4877,7 @@ impl std::fmt::Debug for GetDeviceDefinitionOutput {
 }
 /// See [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput)
 pub mod get_device_definition_output {
-    ///
+
     /// A builder for [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5073,7 +5073,7 @@ impl std::fmt::Debug for GetDeploymentStatusOutput {
 }
 /// See [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput)
 pub mod get_deployment_status_output {
-    ///
+
     /// A builder for [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5229,7 +5229,7 @@ impl std::fmt::Debug for GetCoreDefinitionVersionOutput {
 }
 /// See [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput)
 pub mod get_core_definition_version_output {
-    ///
+
     /// A builder for [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5403,7 +5403,7 @@ impl std::fmt::Debug for GetCoreDefinitionOutput {
 }
 /// See [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput)
 pub mod get_core_definition_output {
-    ///
+
     /// A builder for [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5606,7 +5606,7 @@ impl std::fmt::Debug for GetConnectorDefinitionVersionOutput {
 }
 /// See [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput)
 pub mod get_connector_definition_version_output {
-    ///
+
     /// A builder for [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5780,7 +5780,7 @@ impl std::fmt::Debug for GetConnectorDefinitionOutput {
 }
 /// See [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput)
 pub mod get_connector_definition_output {
-    ///
+
     /// A builder for [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5955,7 +5955,7 @@ impl std::fmt::Debug for GetConnectivityInfoOutput {
 }
 /// See [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
 pub mod get_connectivity_info_output {
-    ///
+
     /// A builder for [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6075,7 +6075,7 @@ impl std::fmt::Debug for GetBulkDeploymentStatusOutput {
 }
 /// See [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput)
 pub mod get_bulk_deployment_status_output {
-    ///
+
     /// A builder for [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6236,7 +6236,7 @@ impl std::fmt::Debug for GetAssociatedRoleOutput {
 }
 /// See [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput)
 pub mod get_associated_role_output {
-    ///
+
     /// A builder for [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6306,7 +6306,7 @@ impl std::fmt::Debug for DisassociateServiceRoleFromAccountOutput {
 }
 /// See [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
 pub mod disassociate_service_role_from_account_output {
-    ///
+
     /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6364,7 +6364,7 @@ impl std::fmt::Debug for DisassociateRoleFromGroupOutput {
 }
 /// See [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput)
 pub mod disassociate_role_from_group_output {
-    ///
+
     /// A builder for [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6412,7 +6412,7 @@ impl std::fmt::Debug for DeleteSubscriptionDefinitionOutput {
 }
 /// See [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput)
 pub mod delete_subscription_definition_output {
-    ///
+
     /// A builder for [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6443,7 +6443,7 @@ impl std::fmt::Debug for DeleteResourceDefinitionOutput {
 }
 /// See [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput)
 pub mod delete_resource_definition_output {
-    ///
+
     /// A builder for [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6474,7 +6474,7 @@ impl std::fmt::Debug for DeleteLoggerDefinitionOutput {
 }
 /// See [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput)
 pub mod delete_logger_definition_output {
-    ///
+
     /// A builder for [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6505,7 +6505,7 @@ impl std::fmt::Debug for DeleteGroupOutput {
 }
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
 pub mod delete_group_output {
-    ///
+
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6536,7 +6536,7 @@ impl std::fmt::Debug for DeleteFunctionDefinitionOutput {
 }
 /// See [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput)
 pub mod delete_function_definition_output {
-    ///
+
     /// A builder for [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6567,7 +6567,7 @@ impl std::fmt::Debug for DeleteDeviceDefinitionOutput {
 }
 /// See [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput)
 pub mod delete_device_definition_output {
-    ///
+
     /// A builder for [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6598,7 +6598,7 @@ impl std::fmt::Debug for DeleteCoreDefinitionOutput {
 }
 /// See [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput)
 pub mod delete_core_definition_output {
-    ///
+
     /// A builder for [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6629,7 +6629,7 @@ impl std::fmt::Debug for DeleteConnectorDefinitionOutput {
 }
 /// See [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput)
 pub mod delete_connector_definition_output {
-    ///
+
     /// A builder for [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6691,7 +6691,7 @@ impl std::fmt::Debug for CreateSubscriptionDefinitionVersionOutput {
 }
 /// See [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput)
 pub mod create_subscription_definition_version_output {
-    ///
+
     /// A builder for [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6827,7 +6827,7 @@ impl std::fmt::Debug for CreateSubscriptionDefinitionOutput {
 }
 /// See [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput)
 pub mod create_subscription_definition_output {
-    ///
+
     /// A builder for [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6980,7 +6980,7 @@ impl std::fmt::Debug for CreateSoftwareUpdateJobOutput {
 }
 /// See [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput)
 pub mod create_software_update_job_output {
-    ///
+
     /// A builder for [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7083,7 +7083,7 @@ impl std::fmt::Debug for CreateResourceDefinitionVersionOutput {
 }
 /// See [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput)
 pub mod create_resource_definition_version_output {
-    ///
+
     /// A builder for [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7219,7 +7219,7 @@ impl std::fmt::Debug for CreateResourceDefinitionOutput {
 }
 /// See [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput)
 pub mod create_resource_definition_output {
-    ///
+
     /// A builder for [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7379,7 +7379,7 @@ impl std::fmt::Debug for CreateLoggerDefinitionVersionOutput {
 }
 /// See [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput)
 pub mod create_logger_definition_version_output {
-    ///
+
     /// A builder for [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7515,7 +7515,7 @@ impl std::fmt::Debug for CreateLoggerDefinitionOutput {
 }
 /// See [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput)
 pub mod create_logger_definition_output {
-    ///
+
     /// A builder for [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7675,7 +7675,7 @@ impl std::fmt::Debug for CreateGroupVersionOutput {
 }
 /// See [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput)
 pub mod create_group_version_output {
-    ///
+
     /// A builder for [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7772,7 +7772,7 @@ impl std::fmt::Debug for CreateGroupCertificateAuthorityOutput {
 }
 /// See [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput)
 pub mod create_group_certificate_authority_output {
-    ///
+
     /// A builder for [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7875,7 +7875,7 @@ impl std::fmt::Debug for CreateGroupOutput {
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput)
 pub mod create_group_output {
-    ///
+
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8035,7 +8035,7 @@ impl std::fmt::Debug for CreateFunctionDefinitionVersionOutput {
 }
 /// See [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput)
 pub mod create_function_definition_version_output {
-    ///
+
     /// A builder for [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8171,7 +8171,7 @@ impl std::fmt::Debug for CreateFunctionDefinitionOutput {
 }
 /// See [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput)
 pub mod create_function_definition_output {
-    ///
+
     /// A builder for [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8331,7 +8331,7 @@ impl std::fmt::Debug for CreateDeviceDefinitionVersionOutput {
 }
 /// See [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput)
 pub mod create_device_definition_version_output {
-    ///
+
     /// A builder for [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8467,7 +8467,7 @@ impl std::fmt::Debug for CreateDeviceDefinitionOutput {
 }
 /// See [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput)
 pub mod create_device_definition_output {
-    ///
+
     /// A builder for [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8613,7 +8613,7 @@ impl std::fmt::Debug for CreateDeploymentOutput {
 }
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput)
 pub mod create_deployment_output {
-    ///
+
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8707,7 +8707,7 @@ impl std::fmt::Debug for CreateCoreDefinitionVersionOutput {
 }
 /// See [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput)
 pub mod create_core_definition_version_output {
-    ///
+
     /// A builder for [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8843,7 +8843,7 @@ impl std::fmt::Debug for CreateCoreDefinitionOutput {
 }
 /// See [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput)
 pub mod create_core_definition_output {
-    ///
+
     /// A builder for [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9003,7 +9003,7 @@ impl std::fmt::Debug for CreateConnectorDefinitionVersionOutput {
 }
 /// See [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput)
 pub mod create_connector_definition_version_output {
-    ///
+
     /// A builder for [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9139,7 +9139,7 @@ impl std::fmt::Debug for CreateConnectorDefinitionOutput {
 }
 /// See [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput)
 pub mod create_connector_definition_output {
-    ///
+
     /// A builder for [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9278,7 +9278,7 @@ impl std::fmt::Debug for AssociateServiceRoleToAccountOutput {
 }
 /// See [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
 pub mod associate_service_role_to_account_output {
-    ///
+
     /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9336,7 +9336,7 @@ impl std::fmt::Debug for AssociateRoleToGroupOutput {
 }
 /// See [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput)
 pub mod associate_role_to_group_output {
-    ///
+
     /// A builder for [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

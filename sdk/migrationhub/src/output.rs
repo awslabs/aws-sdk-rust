@@ -11,7 +11,7 @@ impl std::fmt::Debug for PutResourceAttributesOutput {
 }
 /// See [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
 pub mod put_resource_attributes_output {
-    ///
+
     /// A builder for [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for NotifyMigrationTaskStateOutput {
 }
 /// See [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
 pub mod notify_migration_task_state_output {
-    ///
+
     /// A builder for [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for NotifyApplicationStateOutput {
 }
 /// See [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
 pub mod notify_application_state_output {
-    ///
+
     /// A builder for [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -127,7 +127,7 @@ impl std::fmt::Debug for ListProgressUpdateStreamsOutput {
 }
 /// See [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput)
 pub mod list_progress_update_streams_output {
-    ///
+
     /// A builder for [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -220,7 +220,7 @@ impl std::fmt::Debug for ListMigrationTasksOutput {
 }
 /// See [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput)
 pub mod list_migration_tasks_output {
-    ///
+
     /// A builder for [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -310,7 +310,7 @@ impl std::fmt::Debug for ListDiscoveredResourcesOutput {
 }
 /// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
 pub mod list_discovered_resources_output {
-    ///
+
     /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -394,7 +394,7 @@ impl std::fmt::Debug for ListCreatedArtifactsOutput {
 }
 /// See [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput)
 pub mod list_created_artifacts_output {
-    ///
+
     /// A builder for [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -478,7 +478,7 @@ impl std::fmt::Debug for ListApplicationStatesOutput {
 }
 /// See [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput)
 pub mod list_application_states_output {
-    ///
+
     /// A builder for [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -545,7 +545,7 @@ impl std::fmt::Debug for ImportMigrationTaskOutput {
 }
 /// See [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
 pub mod import_migration_task_output {
-    ///
+
     /// A builder for [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -576,7 +576,7 @@ impl std::fmt::Debug for DisassociateDiscoveredResourceOutput {
 }
 /// See [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
 pub mod disassociate_discovered_resource_output {
-    ///
+
     /// A builder for [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -607,7 +607,7 @@ impl std::fmt::Debug for DisassociateCreatedArtifactOutput {
 }
 /// See [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
 pub mod disassociate_created_artifact_output {
-    ///
+
     /// A builder for [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -648,7 +648,7 @@ impl std::fmt::Debug for DescribeMigrationTaskOutput {
 }
 /// See [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput)
 pub mod describe_migration_task_output {
-    ///
+
     /// A builder for [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -713,7 +713,7 @@ impl std::fmt::Debug for DescribeApplicationStateOutput {
 }
 /// See [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput)
 pub mod describe_application_state_output {
-    ///
+
     /// A builder for [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -776,7 +776,7 @@ impl std::fmt::Debug for DeleteProgressUpdateStreamOutput {
 }
 /// See [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
 pub mod delete_progress_update_stream_output {
-    ///
+
     /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -807,7 +807,7 @@ impl std::fmt::Debug for CreateProgressUpdateStreamOutput {
 }
 /// See [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
 pub mod create_progress_update_stream_output {
-    ///
+
     /// A builder for [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -838,7 +838,7 @@ impl std::fmt::Debug for AssociateDiscoveredResourceOutput {
 }
 /// See [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
 pub mod associate_discovered_resource_output {
-    ///
+
     /// A builder for [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -869,7 +869,7 @@ impl std::fmt::Debug for AssociateCreatedArtifactOutput {
 }
 /// See [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
 pub mod associate_created_artifact_output {
-    ///
+
     /// A builder for [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

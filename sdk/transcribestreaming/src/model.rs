@@ -378,7 +378,7 @@ impl std::fmt::Debug for TranscriptEvent {
 }
 /// See [`TranscriptEvent`](crate::model::TranscriptEvent)
 pub mod transcript_event {
-    ///
+
     /// A builder for [`TranscriptEvent`](crate::model::TranscriptEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -436,7 +436,7 @@ impl std::fmt::Debug for Transcript {
 }
 /// See [`Transcript`](crate::model::Transcript)
 pub mod transcript {
-    ///
+
     /// A builder for [`Transcript`](crate::model::Transcript)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -556,7 +556,7 @@ impl std::fmt::Debug for Result {
 }
 /// See [`Result`](crate::model::Result)
 pub mod result {
-    ///
+
     /// A builder for [`Result`](crate::model::Result)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -728,7 +728,7 @@ impl std::fmt::Debug for LanguageWithScore {
 }
 /// See [`LanguageWithScore`](crate::model::LanguageWithScore)
 pub mod language_with_score {
-    ///
+
     /// A builder for [`LanguageWithScore`](crate::model::LanguageWithScore)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -812,7 +812,7 @@ impl std::fmt::Debug for Alternative {
 }
 /// See [`Alternative`](crate::model::Alternative)
 pub mod alternative {
-    ///
+
     /// A builder for [`Alternative`](crate::model::Alternative)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -944,7 +944,7 @@ impl std::fmt::Debug for Entity {
 }
 /// See [`Entity`](crate::model::Entity)
 pub mod entity {
-    ///
+
     /// A builder for [`Entity`](crate::model::Entity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1108,7 +1108,7 @@ impl std::fmt::Debug for Item {
 }
 /// See [`Item`](crate::model::Item)
 pub mod item {
-    ///
+
     /// A builder for [`Item`](crate::model::Item)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1401,7 +1401,7 @@ impl std::fmt::Debug for AudioEvent {
 }
 /// See [`AudioEvent`](crate::model::AudioEvent)
 pub mod audio_event {
-    ///
+
     /// A builder for [`AudioEvent`](crate::model::AudioEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1549,7 +1549,7 @@ impl std::fmt::Debug for MedicalTranscriptEvent {
 }
 /// See [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent)
 pub mod medical_transcript_event {
-    ///
+
     /// A builder for [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1607,7 +1607,7 @@ impl std::fmt::Debug for MedicalTranscript {
 }
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript)
 pub mod medical_transcript {
-    ///
+
     /// A builder for [`MedicalTranscript`](crate::model::MedicalTranscript)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1710,7 +1710,7 @@ impl std::fmt::Debug for MedicalResult {
 }
 /// See [`MedicalResult`](crate::model::MedicalResult)
 pub mod medical_result {
-    ///
+
     /// A builder for [`MedicalResult`](crate::model::MedicalResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1853,7 +1853,7 @@ impl std::fmt::Debug for MedicalAlternative {
 }
 /// See [`MedicalAlternative`](crate::model::MedicalAlternative)
 pub mod medical_alternative {
-    ///
+
     /// A builder for [`MedicalAlternative`](crate::model::MedicalAlternative)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1978,7 +1978,7 @@ impl std::fmt::Debug for MedicalEntity {
 }
 /// See [`MedicalEntity`](crate::model::MedicalEntity)
 pub mod medical_entity {
-    ///
+
     /// A builder for [`MedicalEntity`](crate::model::MedicalEntity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2116,7 +2116,7 @@ impl std::fmt::Debug for MedicalItem {
 }
 /// See [`MedicalItem`](crate::model::MedicalItem)
 pub mod medical_item {
-    ///
+
     /// A builder for [`MedicalItem`](crate::model::MedicalItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

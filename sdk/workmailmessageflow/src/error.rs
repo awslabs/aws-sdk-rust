@@ -252,7 +252,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl std::fmt::Display for MessageRejected {
 impl std::error::Error for MessageRejected {}
 /// See [`MessageRejected`](crate::error::MessageRejected)
 pub mod message_rejected {
-    ///
+
     /// A builder for [`MessageRejected`](crate::error::MessageRejected)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -382,7 +382,7 @@ impl std::fmt::Display for MessageFrozen {
 impl std::error::Error for MessageFrozen {}
 /// See [`MessageFrozen`](crate::error::MessageFrozen)
 pub mod message_frozen {
-    ///
+
     /// A builder for [`MessageFrozen`](crate::error::MessageFrozen)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -452,7 +452,7 @@ impl std::fmt::Display for InvalidContentLocation {
 impl std::error::Error for InvalidContentLocation {}
 /// See [`InvalidContentLocation`](crate::error::InvalidContentLocation)
 pub mod invalid_content_location {
-    ///
+
     /// A builder for [`InvalidContentLocation`](crate::error::InvalidContentLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

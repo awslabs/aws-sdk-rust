@@ -97,7 +97,7 @@ impl std::fmt::Debug for CapacityUpdate {
 }
 /// See [`CapacityUpdate`](crate::model::CapacityUpdate)
 pub mod capacity_update {
-    ///
+
     /// A builder for [`CapacityUpdate`](crate::model::CapacityUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -181,7 +181,7 @@ impl std::fmt::Debug for ProvisionedCapacityUpdate {
 }
 /// See [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate)
 pub mod provisioned_capacity_update {
-    ///
+
     /// A builder for [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -276,7 +276,7 @@ impl std::fmt::Debug for AutoScalingUpdate {
 }
 /// See [`AutoScalingUpdate`](crate::model::AutoScalingUpdate)
 pub mod auto_scaling_update {
-    ///
+
     /// A builder for [`AutoScalingUpdate`](crate::model::AutoScalingUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -388,7 +388,7 @@ impl std::fmt::Debug for ScaleOutPolicyUpdate {
 }
 /// See [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate)
 pub mod scale_out_policy_update {
-    ///
+
     /// A builder for [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -446,7 +446,7 @@ impl std::fmt::Debug for ScaleInPolicyUpdate {
 }
 /// See [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate)
 pub mod scale_in_policy_update {
-    ///
+
     /// A builder for [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -531,7 +531,7 @@ impl std::fmt::Debug for WorkerConfigurationSummary {
 }
 /// See [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary)
 pub mod worker_configuration_summary {
-    ///
+
     /// A builder for [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -661,7 +661,7 @@ impl std::fmt::Debug for WorkerConfigurationRevisionSummary {
 }
 /// See [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary)
 pub mod worker_configuration_revision_summary {
-    ///
+
     /// A builder for [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -780,7 +780,7 @@ impl std::fmt::Debug for CustomPluginSummary {
 }
 /// See [`CustomPluginSummary`](crate::model::CustomPluginSummary)
 pub mod custom_plugin_summary {
-    ///
+
     /// A builder for [`CustomPluginSummary`](crate::model::CustomPluginSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -944,7 +944,7 @@ impl std::fmt::Debug for CustomPluginRevisionSummary {
 }
 /// See [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary)
 pub mod custom_plugin_revision_summary {
-    ///
+
     /// A builder for [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1074,7 +1074,7 @@ impl std::fmt::Debug for CustomPluginLocationDescription {
 }
 /// See [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription)
 pub mod custom_plugin_location_description {
-    ///
+
     /// A builder for [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1146,7 +1146,7 @@ impl std::fmt::Debug for S3LocationDescription {
 }
 /// See [`S3LocationDescription`](crate::model::S3LocationDescription)
 pub mod s3_location_description {
-    ///
+
     /// A builder for [`S3LocationDescription`](crate::model::S3LocationDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1235,7 +1235,7 @@ impl std::fmt::Debug for CustomPluginFileDescription {
 }
 /// See [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription)
 pub mod custom_plugin_file_description {
-    ///
+
     /// A builder for [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1550,7 +1550,7 @@ impl std::fmt::Debug for ConnectorSummary {
 }
 /// See [`ConnectorSummary`](crate::model::ConnectorSummary)
 pub mod connector_summary {
-    ///
+
     /// A builder for [`ConnectorSummary`](crate::model::ConnectorSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1843,7 +1843,7 @@ impl std::fmt::Debug for WorkerConfigurationDescription {
 }
 /// See [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription)
 pub mod worker_configuration_description {
-    ///
+
     /// A builder for [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1913,7 +1913,7 @@ impl std::fmt::Debug for PluginDescription {
 }
 /// See [`PluginDescription`](crate::model::PluginDescription)
 pub mod plugin_description {
-    ///
+
     /// A builder for [`PluginDescription`](crate::model::PluginDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1978,7 +1978,7 @@ impl std::fmt::Debug for CustomPluginDescription {
 }
 /// See [`CustomPluginDescription`](crate::model::CustomPluginDescription)
 pub mod custom_plugin_description {
-    ///
+
     /// A builder for [`CustomPluginDescription`](crate::model::CustomPluginDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2050,7 +2050,7 @@ impl std::fmt::Debug for LogDeliveryDescription {
 }
 /// See [`LogDeliveryDescription`](crate::model::LogDeliveryDescription)
 pub mod log_delivery_description {
-    ///
+
     /// A builder for [`LogDeliveryDescription`](crate::model::LogDeliveryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2128,7 +2128,7 @@ impl std::fmt::Debug for WorkerLogDeliveryDescription {
 }
 /// See [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription)
 pub mod worker_log_delivery_description {
-    ///
+
     /// A builder for [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2234,7 +2234,7 @@ impl std::fmt::Debug for S3LogDeliveryDescription {
 }
 /// See [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription)
 pub mod s3_log_delivery_description {
-    ///
+
     /// A builder for [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2320,7 +2320,7 @@ impl std::fmt::Debug for FirehoseLogDeliveryDescription {
 }
 /// See [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription)
 pub mod firehose_log_delivery_description {
-    ///
+
     /// A builder for [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2397,7 +2397,7 @@ impl std::fmt::Debug for CloudWatchLogsLogDeliveryDescription {
 }
 /// See [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription)
 pub mod cloud_watch_logs_log_delivery_description {
-    ///
+
     /// A builder for [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2466,7 +2466,7 @@ impl std::fmt::Debug for KafkaClusterEncryptionInTransitDescription {
 }
 /// See [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription)
 pub mod kafka_cluster_encryption_in_transit_description {
-    ///
+
     /// A builder for [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2586,7 +2586,7 @@ impl std::fmt::Debug for KafkaClusterClientAuthenticationDescription {
 }
 /// See [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription)
 pub mod kafka_cluster_client_authentication_description {
-    ///
+
     /// A builder for [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2705,7 +2705,7 @@ impl std::fmt::Debug for KafkaClusterDescription {
 }
 /// See [`KafkaClusterDescription`](crate::model::KafkaClusterDescription)
 pub mod kafka_cluster_description {
-    ///
+
     /// A builder for [`KafkaClusterDescription`](crate::model::KafkaClusterDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2774,7 +2774,7 @@ impl std::fmt::Debug for ApacheKafkaClusterDescription {
 }
 /// See [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription)
 pub mod apache_kafka_cluster_description {
-    ///
+
     /// A builder for [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2851,7 +2851,7 @@ impl std::fmt::Debug for VpcDescription {
 }
 /// See [`VpcDescription`](crate::model::VpcDescription)
 pub mod vpc_description {
-    ///
+
     /// A builder for [`VpcDescription`](crate::model::VpcDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2945,7 +2945,7 @@ impl std::fmt::Debug for CapacityDescription {
 }
 /// See [`CapacityDescription`](crate::model::CapacityDescription)
 pub mod capacity_description {
-    ///
+
     /// A builder for [`CapacityDescription`](crate::model::CapacityDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3029,7 +3029,7 @@ impl std::fmt::Debug for ProvisionedCapacityDescription {
 }
 /// See [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription)
 pub mod provisioned_capacity_description {
-    ///
+
     /// A builder for [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3126,7 +3126,7 @@ impl std::fmt::Debug for AutoScalingDescription {
 }
 /// See [`AutoScalingDescription`](crate::model::AutoScalingDescription)
 pub mod auto_scaling_description {
-    ///
+
     /// A builder for [`AutoScalingDescription`](crate::model::AutoScalingDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3238,7 +3238,7 @@ impl std::fmt::Debug for ScaleOutPolicyDescription {
 }
 /// See [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription)
 pub mod scale_out_policy_description {
-    ///
+
     /// A builder for [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3296,7 +3296,7 @@ impl std::fmt::Debug for ScaleInPolicyDescription {
 }
 /// See [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription)
 pub mod scale_in_policy_description {
-    ///
+
     /// A builder for [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3375,7 +3375,7 @@ impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
 }
 /// See [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription)
 pub mod worker_configuration_revision_description {
-    ///
+
     /// A builder for [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3479,7 +3479,7 @@ impl std::fmt::Debug for StateDescription {
 }
 /// See [`StateDescription`](crate::model::StateDescription)
 pub mod state_description {
-    ///
+
     /// A builder for [`StateDescription`](crate::model::StateDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3546,7 +3546,7 @@ impl std::fmt::Debug for CustomPluginLocation {
 }
 /// See [`CustomPluginLocation`](crate::model::CustomPluginLocation)
 pub mod custom_plugin_location {
-    ///
+
     /// A builder for [`CustomPluginLocation`](crate::model::CustomPluginLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3618,7 +3618,7 @@ impl std::fmt::Debug for S3Location {
 }
 /// See [`S3Location`](crate::model::S3Location)
 pub mod s3_location {
-    ///
+
     /// A builder for [`S3Location`](crate::model::S3Location)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3707,7 +3707,7 @@ impl std::fmt::Debug for WorkerConfiguration {
 }
 /// See [`WorkerConfiguration`](crate::model::WorkerConfiguration)
 pub mod worker_configuration {
-    ///
+
     /// A builder for [`WorkerConfiguration`](crate::model::WorkerConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3777,7 +3777,7 @@ impl std::fmt::Debug for Plugin {
 }
 /// See [`Plugin`](crate::model::Plugin)
 pub mod plugin {
-    ///
+
     /// A builder for [`Plugin`](crate::model::Plugin)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3842,7 +3842,7 @@ impl std::fmt::Debug for CustomPlugin {
 }
 /// See [`CustomPlugin`](crate::model::CustomPlugin)
 pub mod custom_plugin {
-    ///
+
     /// A builder for [`CustomPlugin`](crate::model::CustomPlugin)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3912,7 +3912,7 @@ impl std::fmt::Debug for LogDelivery {
 }
 /// See [`LogDelivery`](crate::model::LogDelivery)
 pub mod log_delivery {
-    ///
+
     /// A builder for [`LogDelivery`](crate::model::LogDelivery)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3986,7 +3986,7 @@ impl std::fmt::Debug for WorkerLogDelivery {
 }
 /// See [`WorkerLogDelivery`](crate::model::WorkerLogDelivery)
 pub mod worker_log_delivery {
-    ///
+
     /// A builder for [`WorkerLogDelivery`](crate::model::WorkerLogDelivery)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4085,7 +4085,7 @@ impl std::fmt::Debug for S3LogDelivery {
 }
 /// See [`S3LogDelivery`](crate::model::S3LogDelivery)
 pub mod s3_log_delivery {
-    ///
+
     /// A builder for [`S3LogDelivery`](crate::model::S3LogDelivery)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4171,7 +4171,7 @@ impl std::fmt::Debug for FirehoseLogDelivery {
 }
 /// See [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery)
 pub mod firehose_log_delivery {
-    ///
+
     /// A builder for [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4248,7 +4248,7 @@ impl std::fmt::Debug for CloudWatchLogsLogDelivery {
 }
 /// See [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery)
 pub mod cloud_watch_logs_log_delivery {
-    ///
+
     /// A builder for [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4317,7 +4317,7 @@ impl std::fmt::Debug for KafkaClusterEncryptionInTransit {
 }
 /// See [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit)
 pub mod kafka_cluster_encryption_in_transit {
-    ///
+
     /// A builder for [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4382,7 +4382,7 @@ impl std::fmt::Debug for KafkaClusterClientAuthentication {
 }
 /// See [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication)
 pub mod kafka_cluster_client_authentication {
-    ///
+
     /// A builder for [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4444,7 +4444,7 @@ impl std::fmt::Debug for KafkaCluster {
 }
 /// See [`KafkaCluster`](crate::model::KafkaCluster)
 pub mod kafka_cluster {
-    ///
+
     /// A builder for [`KafkaCluster`](crate::model::KafkaCluster)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4509,7 +4509,7 @@ impl std::fmt::Debug for ApacheKafkaCluster {
 }
 /// See [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster)
 pub mod apache_kafka_cluster {
-    ///
+
     /// A builder for [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4586,7 +4586,7 @@ impl std::fmt::Debug for Vpc {
 }
 /// See [`Vpc`](crate::model::Vpc)
 pub mod vpc {
-    ///
+
     /// A builder for [`Vpc`](crate::model::Vpc)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4678,7 +4678,7 @@ impl std::fmt::Debug for Capacity {
 }
 /// See [`Capacity`](crate::model::Capacity)
 pub mod capacity {
-    ///
+
     /// A builder for [`Capacity`](crate::model::Capacity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4758,7 +4758,7 @@ impl std::fmt::Debug for ProvisionedCapacity {
 }
 /// See [`ProvisionedCapacity`](crate::model::ProvisionedCapacity)
 pub mod provisioned_capacity {
-    ///
+
     /// A builder for [`ProvisionedCapacity`](crate::model::ProvisionedCapacity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4853,7 +4853,7 @@ impl std::fmt::Debug for AutoScaling {
 }
 /// See [`AutoScaling`](crate::model::AutoScaling)
 pub mod auto_scaling {
-    ///
+
     /// A builder for [`AutoScaling`](crate::model::AutoScaling)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4965,7 +4965,7 @@ impl std::fmt::Debug for ScaleOutPolicy {
 }
 /// See [`ScaleOutPolicy`](crate::model::ScaleOutPolicy)
 pub mod scale_out_policy {
-    ///
+
     /// A builder for [`ScaleOutPolicy`](crate::model::ScaleOutPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5023,7 +5023,7 @@ impl std::fmt::Debug for ScaleInPolicy {
 }
 /// See [`ScaleInPolicy`](crate::model::ScaleInPolicy)
 pub mod scale_in_policy {
-    ///
+
     /// A builder for [`ScaleInPolicy`](crate::model::ScaleInPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -28,7 +28,7 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionOutput {
 }
 /// See [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput)
 pub mod update_cost_category_definition_output {
-    ///
+
     /// A builder for [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,7 +101,7 @@ impl std::fmt::Debug for UpdateAnomalySubscriptionOutput {
 }
 /// See [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput)
 pub mod update_anomaly_subscription_output {
-    ///
+
     /// A builder for [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -159,7 +159,7 @@ impl std::fmt::Debug for UpdateAnomalyMonitorOutput {
 }
 /// See [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput)
 pub mod update_anomaly_monitor_output {
-    ///
+
     /// A builder for [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -235,7 +235,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -276,7 +276,7 @@ impl std::fmt::Debug for ProvideAnomalyFeedbackOutput {
 }
 /// See [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput)
 pub mod provide_anomaly_feedback_output {
-    ///
+
     /// A builder for [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -331,7 +331,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -405,7 +405,7 @@ impl std::fmt::Debug for ListCostCategoryDefinitionsOutput {
 }
 /// See [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput)
 pub mod list_cost_category_definitions_output {
-    ///
+
     /// A builder for [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -492,7 +492,7 @@ impl std::fmt::Debug for GetUsageForecastOutput {
 }
 /// See [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput)
 pub mod get_usage_forecast_output {
-    ///
+
     /// A builder for [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -590,7 +590,7 @@ impl std::fmt::Debug for GetTagsOutput {
 }
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput)
 pub mod get_tags_output {
-    ///
+
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -720,7 +720,7 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationDetailsOutput {
 }
 /// See [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput)
 pub mod get_savings_plans_utilization_details_output {
-    ///
+
     /// A builder for [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -843,7 +843,7 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationOutput {
 }
 /// See [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput)
 pub mod get_savings_plans_utilization_output {
-    ///
+
     /// A builder for [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -948,7 +948,7 @@ impl std::fmt::Debug for GetSavingsPlansPurchaseRecommendationOutput {
 }
 /// See [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput)
 pub mod get_savings_plans_purchase_recommendation_output {
-    ///
+
     /// A builder for [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1054,7 +1054,7 @@ impl std::fmt::Debug for GetSavingsPlansCoverageOutput {
 }
 /// See [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput)
 pub mod get_savings_plans_coverage_output {
-    ///
+
     /// A builder for [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1172,7 +1172,7 @@ impl std::fmt::Debug for GetRightsizingRecommendationOutput {
 }
 /// See [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput)
 pub mod get_rightsizing_recommendation_output {
-    ///
+
     /// A builder for [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1318,7 +1318,7 @@ impl std::fmt::Debug for GetReservationUtilizationOutput {
 }
 /// See [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput)
 pub mod get_reservation_utilization_output {
-    ///
+
     /// A builder for [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1432,7 +1432,7 @@ impl std::fmt::Debug for GetReservationPurchaseRecommendationOutput {
 }
 /// See [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput)
 pub mod get_reservation_purchase_recommendation_output {
-    ///
+
     /// A builder for [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1550,7 +1550,7 @@ impl std::fmt::Debug for GetReservationCoverageOutput {
 }
 /// See [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput)
 pub mod get_reservation_coverage_output {
-    ///
+
     /// A builder for [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1744,7 +1744,7 @@ impl std::fmt::Debug for GetDimensionValuesOutput {
 }
 /// See [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput)
 pub mod get_dimension_values_output {
-    ///
+
     /// A builder for [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1936,7 +1936,7 @@ impl std::fmt::Debug for GetCostForecastOutput {
 }
 /// See [`GetCostForecastOutput`](crate::output::GetCostForecastOutput)
 pub mod get_cost_forecast_output {
-    ///
+
     /// A builder for [`GetCostForecastOutput`](crate::output::GetCostForecastOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2043,7 +2043,7 @@ impl std::fmt::Debug for GetCostCategoriesOutput {
 }
 /// See [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput)
 pub mod get_cost_categories_output {
-    ///
+
     /// A builder for [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2196,7 +2196,7 @@ impl std::fmt::Debug for GetCostAndUsageWithResourcesOutput {
 }
 /// See [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput)
 pub mod get_cost_and_usage_with_resources_output {
-    ///
+
     /// A builder for [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2349,7 +2349,7 @@ impl std::fmt::Debug for GetCostAndUsageOutput {
 }
 /// See [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput)
 pub mod get_cost_and_usage_output {
-    ///
+
     /// A builder for [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2485,7 +2485,7 @@ impl std::fmt::Debug for GetAnomalySubscriptionsOutput {
 }
 /// See [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput)
 pub mod get_anomaly_subscriptions_output {
-    ///
+
     /// A builder for [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2572,7 +2572,7 @@ impl std::fmt::Debug for GetAnomalyMonitorsOutput {
 }
 /// See [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput)
 pub mod get_anomaly_monitors_output {
-    ///
+
     /// A builder for [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2659,7 +2659,7 @@ impl std::fmt::Debug for GetAnomaliesOutput {
 }
 /// See [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput)
 pub mod get_anomalies_output {
-    ///
+
     /// A builder for [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2738,7 +2738,7 @@ impl std::fmt::Debug for DescribeCostCategoryDefinitionOutput {
 }
 /// See [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput)
 pub mod describe_cost_category_definition_output {
-    ///
+
     /// A builder for [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2803,7 +2803,7 @@ impl std::fmt::Debug for DeleteCostCategoryDefinitionOutput {
 }
 /// See [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput)
 pub mod delete_cost_category_definition_output {
-    ///
+
     /// A builder for [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2866,7 +2866,7 @@ impl std::fmt::Debug for DeleteAnomalySubscriptionOutput {
 }
 /// See [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput)
 pub mod delete_anomaly_subscription_output {
-    ///
+
     /// A builder for [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2897,7 +2897,7 @@ impl std::fmt::Debug for DeleteAnomalyMonitorOutput {
 }
 /// See [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput)
 pub mod delete_anomaly_monitor_output {
-    ///
+
     /// A builder for [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2945,7 +2945,7 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionOutput {
 }
 /// See [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput)
 pub mod create_cost_category_definition_output {
-    ///
+
     /// A builder for [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3018,7 +3018,7 @@ impl std::fmt::Debug for CreateAnomalySubscriptionOutput {
 }
 /// See [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput)
 pub mod create_anomaly_subscription_output {
-    ///
+
     /// A builder for [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3076,7 +3076,7 @@ impl std::fmt::Debug for CreateAnomalyMonitorOutput {
 }
 /// See [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput)
 pub mod create_anomaly_monitor_output {
-    ///
+
     /// A builder for [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

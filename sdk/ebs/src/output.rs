@@ -84,7 +84,7 @@ impl std::fmt::Debug for StartSnapshotOutput {
 }
 /// See [`StartSnapshotOutput`](crate::output::StartSnapshotOutput)
 pub mod start_snapshot_output {
-    ///
+
     /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -269,7 +269,7 @@ impl std::fmt::Debug for PutSnapshotBlockOutput {
 }
 /// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput)
 pub mod put_snapshot_block_output {
-    ///
+
     /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -367,7 +367,7 @@ impl std::fmt::Debug for ListSnapshotBlocksOutput {
 }
 /// See [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput)
 pub mod list_snapshot_blocks_output {
-    ///
+
     /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -510,7 +510,7 @@ impl std::fmt::Debug for ListChangedBlocksOutput {
 }
 /// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput)
 pub mod list_changed_blocks_output {
-    ///
+
     /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -645,7 +645,7 @@ impl std::fmt::Debug for GetSnapshotBlockOutput {
 }
 /// See [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput)
 pub mod get_snapshot_block_output {
-    ///
+
     /// A builder for [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -742,7 +742,7 @@ impl std::fmt::Debug for CompleteSnapshotOutput {
 }
 /// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput)
 pub mod complete_snapshot_output {
-    ///
+
     /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateResolverRuleOutput {
 }
 /// See [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput)
 pub mod update_resolver_rule_output {
-    ///
+
     /// A builder for [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -79,7 +79,7 @@ impl std::fmt::Debug for UpdateResolverEndpointOutput {
 }
 /// See [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput)
 pub mod update_resolver_endpoint_output {
-    ///
+
     /// A builder for [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -139,7 +139,7 @@ impl std::fmt::Debug for UpdateResolverDnssecConfigOutput {
 }
 /// See [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput)
 pub mod update_resolver_dnssec_config_output {
-    ///
+
     /// A builder for [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,7 +197,7 @@ impl std::fmt::Debug for UpdateResolverConfigOutput {
 }
 /// See [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput)
 pub mod update_resolver_config_output {
-    ///
+
     /// A builder for [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -261,7 +261,7 @@ impl std::fmt::Debug for UpdateFirewallRuleGroupAssociationOutput {
 }
 /// See [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput)
 pub mod update_firewall_rule_group_association_output {
-    ///
+
     /// A builder for [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -323,7 +323,7 @@ impl std::fmt::Debug for UpdateFirewallRuleOutput {
 }
 /// See [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput)
 pub mod update_firewall_rule_output {
-    ///
+
     /// A builder for [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -402,7 +402,7 @@ impl std::fmt::Debug for UpdateFirewallDomainsOutput {
 }
 /// See [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput)
 pub mod update_firewall_domains_output {
-    ///
+
     /// A builder for [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -499,7 +499,7 @@ impl std::fmt::Debug for UpdateFirewallConfigOutput {
 }
 /// See [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput)
 pub mod update_firewall_config_output {
-    ///
+
     /// A builder for [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -547,7 +547,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -619,7 +619,7 @@ impl std::fmt::Debug for PutResolverRulePolicyOutput {
 }
 /// See [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput)
 pub mod put_resolver_rule_policy_output {
-    ///
+
     /// A builder for [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl std::fmt::Debug for PutResolverQueryLogConfigPolicyOutput {
 }
 /// See [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput)
 pub mod put_resolver_query_log_config_policy_output {
-    ///
+
     /// A builder for [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -729,7 +729,7 @@ impl std::fmt::Debug for PutFirewallRuleGroupPolicyOutput {
 }
 /// See [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput)
 pub mod put_firewall_rule_group_policy_output {
-    ///
+
     /// A builder for [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -791,7 +791,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -881,7 +881,7 @@ impl std::fmt::Debug for ListResolverRulesOutput {
 }
 /// See [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput)
 pub mod list_resolver_rules_output {
-    ///
+
     /// A builder for [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -989,7 +989,7 @@ impl std::fmt::Debug for ListResolverRuleAssociationsOutput {
 }
 /// See [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput)
 pub mod list_resolver_rule_associations_output {
-    ///
+
     /// A builder for [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1108,7 +1108,7 @@ impl std::fmt::Debug for ListResolverQueryLogConfigsOutput {
 }
 /// See [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput)
 pub mod list_resolver_query_log_configs_output {
-    ///
+
     /// A builder for [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,7 +1239,7 @@ impl std::fmt::Debug for ListResolverQueryLogConfigAssociationsOutput {
 }
 /// See [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput)
 pub mod list_resolver_query_log_config_associations_output {
-    ///
+
     /// A builder for [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1361,7 +1361,7 @@ impl std::fmt::Debug for ListResolverEndpointsOutput {
 }
 /// See [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput)
 pub mod list_resolver_endpoints_output {
-    ///
+
     /// A builder for [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1464,7 +1464,7 @@ impl std::fmt::Debug for ListResolverEndpointIpAddressesOutput {
 }
 /// See [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput)
 pub mod list_resolver_endpoint_ip_addresses_output {
-    ///
+
     /// A builder for [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1565,7 +1565,7 @@ impl std::fmt::Debug for ListResolverDnssecConfigsOutput {
 }
 /// See [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput)
 pub mod list_resolver_dnssec_configs_output {
-    ///
+
     /// A builder for [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1656,7 +1656,7 @@ impl std::fmt::Debug for ListResolverConfigsOutput {
 }
 /// See [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput)
 pub mod list_resolver_configs_output {
-    ///
+
     /// A builder for [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1744,7 +1744,7 @@ impl std::fmt::Debug for ListFirewallRulesOutput {
 }
 /// See [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput)
 pub mod list_firewall_rules_output {
-    ///
+
     /// A builder for [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1834,7 +1834,7 @@ impl std::fmt::Debug for ListFirewallRuleGroupsOutput {
 }
 /// See [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput)
 pub mod list_firewall_rule_groups_output {
-    ///
+
     /// A builder for [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1931,7 +1931,7 @@ impl std::fmt::Debug for ListFirewallRuleGroupAssociationsOutput {
 }
 /// See [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput)
 pub mod list_firewall_rule_group_associations_output {
-    ///
+
     /// A builder for [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2022,7 +2022,7 @@ impl std::fmt::Debug for ListFirewallDomainsOutput {
 }
 /// See [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput)
 pub mod list_firewall_domains_output {
-    ///
+
     /// A builder for [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2112,7 +2112,7 @@ impl std::fmt::Debug for ListFirewallDomainListsOutput {
 }
 /// See [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput)
 pub mod list_firewall_domain_lists_output {
-    ///
+
     /// A builder for [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2201,7 +2201,7 @@ impl std::fmt::Debug for ListFirewallConfigsOutput {
 }
 /// See [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput)
 pub mod list_firewall_configs_output {
-    ///
+
     /// A builder for [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2299,7 +2299,7 @@ impl std::fmt::Debug for ImportFirewallDomainsOutput {
 }
 /// See [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput)
 pub mod import_firewall_domains_output {
-    ///
+
     /// A builder for [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2396,7 +2396,7 @@ impl std::fmt::Debug for GetResolverRulePolicyOutput {
 }
 /// See [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput)
 pub mod get_resolver_rule_policy_output {
-    ///
+
     /// A builder for [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2456,7 +2456,7 @@ impl std::fmt::Debug for GetResolverRuleAssociationOutput {
 }
 /// See [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput)
 pub mod get_resolver_rule_association_output {
-    ///
+
     /// A builder for [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2518,7 +2518,7 @@ impl std::fmt::Debug for GetResolverRuleOutput {
 }
 /// See [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput)
 pub mod get_resolver_rule_output {
-    ///
+
     /// A builder for [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2579,7 +2579,7 @@ impl std::fmt::Debug for GetResolverQueryLogConfigPolicyOutput {
 }
 /// See [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput)
 pub mod get_resolver_query_log_config_policy_output {
-    ///
+
     /// A builder for [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2646,7 +2646,7 @@ impl std::fmt::Debug for GetResolverQueryLogConfigAssociationOutput {
 }
 /// See [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput)
 pub mod get_resolver_query_log_config_association_output {
-    ///
+
     /// A builder for [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2710,7 +2710,7 @@ impl std::fmt::Debug for GetResolverQueryLogConfigOutput {
 }
 /// See [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput)
 pub mod get_resolver_query_log_config_output {
-    ///
+
     /// A builder for [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2772,7 +2772,7 @@ impl std::fmt::Debug for GetResolverEndpointOutput {
 }
 /// See [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput)
 pub mod get_resolver_endpoint_output {
-    ///
+
     /// A builder for [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2832,7 +2832,7 @@ impl std::fmt::Debug for GetResolverDnssecConfigOutput {
 }
 /// See [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput)
 pub mod get_resolver_dnssec_config_output {
-    ///
+
     /// A builder for [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2890,7 +2890,7 @@ impl std::fmt::Debug for GetResolverConfigOutput {
 }
 /// See [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput)
 pub mod get_resolver_config_output {
-    ///
+
     /// A builder for [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2951,7 +2951,7 @@ impl std::fmt::Debug for GetFirewallRuleGroupPolicyOutput {
 }
 /// See [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput)
 pub mod get_firewall_rule_group_policy_output {
-    ///
+
     /// A builder for [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3015,7 +3015,7 @@ impl std::fmt::Debug for GetFirewallRuleGroupAssociationOutput {
 }
 /// See [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput)
 pub mod get_firewall_rule_group_association_output {
-    ///
+
     /// A builder for [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3077,7 +3077,7 @@ impl std::fmt::Debug for GetFirewallRuleGroupOutput {
 }
 /// See [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput)
 pub mod get_firewall_rule_group_output {
-    ///
+
     /// A builder for [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3135,7 +3135,7 @@ impl std::fmt::Debug for GetFirewallDomainListOutput {
 }
 /// See [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput)
 pub mod get_firewall_domain_list_output {
-    ///
+
     /// A builder for [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3193,7 +3193,7 @@ impl std::fmt::Debug for GetFirewallConfigOutput {
 }
 /// See [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput)
 pub mod get_firewall_config_output {
-    ///
+
     /// A builder for [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3253,7 +3253,7 @@ impl std::fmt::Debug for DisassociateResolverRuleOutput {
 }
 /// See [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput)
 pub mod disassociate_resolver_rule_output {
-    ///
+
     /// A builder for [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3321,7 +3321,7 @@ impl std::fmt::Debug for DisassociateResolverQueryLogConfigOutput {
 }
 /// See [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput)
 pub mod disassociate_resolver_query_log_config_output {
-    ///
+
     /// A builder for [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3383,7 +3383,7 @@ impl std::fmt::Debug for DisassociateResolverEndpointIpAddressOutput {
 }
 /// See [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput)
 pub mod disassociate_resolver_endpoint_ip_address_output {
-    ///
+
     /// A builder for [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3447,7 +3447,7 @@ impl std::fmt::Debug for DisassociateFirewallRuleGroupOutput {
 }
 /// See [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput)
 pub mod disassociate_firewall_rule_group_output {
-    ///
+
     /// A builder for [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3509,7 +3509,7 @@ impl std::fmt::Debug for DeleteResolverRuleOutput {
 }
 /// See [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput)
 pub mod delete_resolver_rule_output {
-    ///
+
     /// A builder for [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3569,7 +3569,7 @@ impl std::fmt::Debug for DeleteResolverQueryLogConfigOutput {
 }
 /// See [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput)
 pub mod delete_resolver_query_log_config_output {
-    ///
+
     /// A builder for [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3631,7 +3631,7 @@ impl std::fmt::Debug for DeleteResolverEndpointOutput {
 }
 /// See [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput)
 pub mod delete_resolver_endpoint_output {
-    ///
+
     /// A builder for [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3689,7 +3689,7 @@ impl std::fmt::Debug for DeleteFirewallRuleGroupOutput {
 }
 /// See [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput)
 pub mod delete_firewall_rule_group_output {
-    ///
+
     /// A builder for [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3747,7 +3747,7 @@ impl std::fmt::Debug for DeleteFirewallRuleOutput {
 }
 /// See [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput)
 pub mod delete_firewall_rule_output {
-    ///
+
     /// A builder for [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3805,7 +3805,7 @@ impl std::fmt::Debug for DeleteFirewallDomainListOutput {
 }
 /// See [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput)
 pub mod delete_firewall_domain_list_output {
-    ///
+
     /// A builder for [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3863,7 +3863,7 @@ impl std::fmt::Debug for CreateResolverRuleOutput {
 }
 /// See [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput)
 pub mod create_resolver_rule_output {
-    ///
+
     /// A builder for [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3923,7 +3923,7 @@ impl std::fmt::Debug for CreateResolverQueryLogConfigOutput {
 }
 /// See [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput)
 pub mod create_resolver_query_log_config_output {
-    ///
+
     /// A builder for [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3985,7 +3985,7 @@ impl std::fmt::Debug for CreateResolverEndpointOutput {
 }
 /// See [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput)
 pub mod create_resolver_endpoint_output {
-    ///
+
     /// A builder for [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4043,7 +4043,7 @@ impl std::fmt::Debug for CreateFirewallRuleGroupOutput {
 }
 /// See [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput)
 pub mod create_firewall_rule_group_output {
-    ///
+
     /// A builder for [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4101,7 +4101,7 @@ impl std::fmt::Debug for CreateFirewallRuleOutput {
 }
 /// See [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput)
 pub mod create_firewall_rule_output {
-    ///
+
     /// A builder for [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4159,7 +4159,7 @@ impl std::fmt::Debug for CreateFirewallDomainListOutput {
 }
 /// See [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput)
 pub mod create_firewall_domain_list_output {
-    ///
+
     /// A builder for [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4219,7 +4219,7 @@ impl std::fmt::Debug for AssociateResolverRuleOutput {
 }
 /// See [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput)
 pub mod associate_resolver_rule_output {
-    ///
+
     /// A builder for [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4287,7 +4287,7 @@ impl std::fmt::Debug for AssociateResolverQueryLogConfigOutput {
 }
 /// See [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput)
 pub mod associate_resolver_query_log_config_output {
-    ///
+
     /// A builder for [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4349,7 +4349,7 @@ impl std::fmt::Debug for AssociateResolverEndpointIpAddressOutput {
 }
 /// See [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput)
 pub mod associate_resolver_endpoint_ip_address_output {
-    ///
+
     /// A builder for [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4413,7 +4413,7 @@ impl std::fmt::Debug for AssociateFirewallRuleGroupOutput {
 }
 /// See [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput)
 pub mod associate_firewall_rule_group_output {
-    ///
+
     /// A builder for [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

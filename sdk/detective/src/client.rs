@@ -328,14 +328,12 @@ impl Client {
     }
 }
 pub mod fluent_builders {
-    //!
-    //!
+
     //! Utilities to ergonomically construct a request to the service.
     //!
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
-    //!
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account. </p>

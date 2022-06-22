@@ -73,7 +73,7 @@ impl std::fmt::Debug for UpdateVodSourceOutput {
 }
 /// See [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput)
 pub mod update_vod_source_output {
-    ///
+
     /// A builder for [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -314,7 +314,7 @@ impl std::fmt::Debug for UpdateSourceLocationOutput {
 }
 /// See [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput)
 pub mod update_source_location_output {
-    ///
+
     /// A builder for [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -569,7 +569,7 @@ impl std::fmt::Debug for UpdateLiveSourceOutput {
 }
 /// See [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput)
 pub mod update_live_source_output {
-    ///
+
     /// A builder for [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -805,7 +805,7 @@ impl std::fmt::Debug for UpdateChannelOutput {
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
 pub mod update_channel_output {
-    ///
+
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -999,7 +999,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1030,7 +1030,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1061,7 +1061,7 @@ impl std::fmt::Debug for StopChannelOutput {
 }
 /// See [`StopChannelOutput`](crate::output::StopChannelOutput)
 pub mod stop_channel_output {
-    ///
+
     /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1092,7 +1092,7 @@ impl std::fmt::Debug for StartChannelOutput {
 }
 /// See [`StartChannelOutput`](crate::output::StartChannelOutput)
 pub mod start_channel_output {
-    ///
+
     /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1291,7 +1291,7 @@ impl std::fmt::Debug for PutPlaybackConfigurationOutput {
 }
 /// See [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput)
 pub mod put_playback_configuration_output {
-    ///
+
     /// A builder for [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1647,7 +1647,7 @@ impl std::fmt::Debug for PutChannelPolicyOutput {
 }
 /// See [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput)
 pub mod put_channel_policy_output {
-    ///
+
     /// A builder for [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1695,7 +1695,7 @@ impl std::fmt::Debug for ListVodSourcesOutput {
 }
 /// See [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput)
 pub mod list_vod_sources_output {
-    ///
+
     /// A builder for [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1775,7 +1775,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1852,7 +1852,7 @@ impl std::fmt::Debug for ListSourceLocationsOutput {
 }
 /// See [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput)
 pub mod list_source_locations_output {
-    ///
+
     /// A builder for [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1935,7 +1935,7 @@ impl std::fmt::Debug for ListPrefetchSchedulesOutput {
 }
 /// See [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput)
 pub mod list_prefetch_schedules_output {
-    ///
+
     /// A builder for [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2018,7 +2018,7 @@ impl std::fmt::Debug for ListPlaybackConfigurationsOutput {
 }
 /// See [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput)
 pub mod list_playback_configurations_output {
-    ///
+
     /// A builder for [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2101,7 +2101,7 @@ impl std::fmt::Debug for ListLiveSourcesOutput {
 }
 /// See [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput)
 pub mod list_live_sources_output {
-    ///
+
     /// A builder for [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2184,7 +2184,7 @@ impl std::fmt::Debug for ListChannelsOutput {
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput)
 pub mod list_channels_output {
-    ///
+
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2267,7 +2267,7 @@ impl std::fmt::Debug for ListAlertsOutput {
 }
 /// See [`ListAlertsOutput`](crate::output::ListAlertsOutput)
 pub mod list_alerts_output {
-    ///
+
     /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2381,7 +2381,7 @@ impl std::fmt::Debug for GetPrefetchScheduleOutput {
 }
 /// See [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput)
 pub mod get_prefetch_schedule_output {
-    ///
+
     /// A builder for [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2666,7 +2666,7 @@ impl std::fmt::Debug for GetPlaybackConfigurationOutput {
 }
 /// See [`GetPlaybackConfigurationOutput`](crate::output::GetPlaybackConfigurationOutput)
 pub mod get_playback_configuration_output {
-    ///
+
     /// A builder for [`GetPlaybackConfigurationOutput`](crate::output::GetPlaybackConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3039,7 +3039,7 @@ impl std::fmt::Debug for GetChannelScheduleOutput {
 }
 /// See [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput)
 pub mod get_channel_schedule_output {
-    ///
+
     /// A builder for [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3115,7 +3115,7 @@ impl std::fmt::Debug for GetChannelPolicyOutput {
 }
 /// See [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput)
 pub mod get_channel_policy_output {
-    ///
+
     /// A builder for [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3222,7 +3222,7 @@ impl std::fmt::Debug for DescribeVodSourceOutput {
 }
 /// See [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput)
 pub mod describe_vod_source_output {
-    ///
+
     /// A builder for [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3463,7 +3463,7 @@ impl std::fmt::Debug for DescribeSourceLocationOutput {
 }
 /// See [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput)
 pub mod describe_source_location_output {
-    ///
+
     /// A builder for [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3722,7 +3722,7 @@ impl std::fmt::Debug for DescribeProgramOutput {
 }
 /// See [`DescribeProgramOutput`](crate::output::DescribeProgramOutput)
 pub mod describe_program_output {
-    ///
+
     /// A builder for [`DescribeProgramOutput`](crate::output::DescribeProgramOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3949,7 +3949,7 @@ impl std::fmt::Debug for DescribeLiveSourceOutput {
 }
 /// See [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput)
 pub mod describe_live_source_output {
-    ///
+
     /// A builder for [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4185,7 +4185,7 @@ impl std::fmt::Debug for DescribeChannelOutput {
 }
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput)
 pub mod describe_channel_output {
-    ///
+
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4379,7 +4379,7 @@ impl std::fmt::Debug for DeleteVodSourceOutput {
 }
 /// See [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput)
 pub mod delete_vod_source_output {
-    ///
+
     /// A builder for [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4410,7 +4410,7 @@ impl std::fmt::Debug for DeleteSourceLocationOutput {
 }
 /// See [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput)
 pub mod delete_source_location_output {
-    ///
+
     /// A builder for [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4441,7 +4441,7 @@ impl std::fmt::Debug for DeleteProgramOutput {
 }
 /// See [`DeleteProgramOutput`](crate::output::DeleteProgramOutput)
 pub mod delete_program_output {
-    ///
+
     /// A builder for [`DeleteProgramOutput`](crate::output::DeleteProgramOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4472,7 +4472,7 @@ impl std::fmt::Debug for DeletePrefetchScheduleOutput {
 }
 /// See [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput)
 pub mod delete_prefetch_schedule_output {
-    ///
+
     /// A builder for [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4503,7 +4503,7 @@ impl std::fmt::Debug for DeletePlaybackConfigurationOutput {
 }
 /// See [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput)
 pub mod delete_playback_configuration_output {
-    ///
+
     /// A builder for [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4534,7 +4534,7 @@ impl std::fmt::Debug for DeleteLiveSourceOutput {
 }
 /// See [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
 pub mod delete_live_source_output {
-    ///
+
     /// A builder for [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4565,7 +4565,7 @@ impl std::fmt::Debug for DeleteChannelPolicyOutput {
 }
 /// See [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput)
 pub mod delete_channel_policy_output {
-    ///
+
     /// A builder for [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4596,7 +4596,7 @@ impl std::fmt::Debug for DeleteChannelOutput {
 }
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
 pub mod delete_channel_output {
-    ///
+
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4689,7 +4689,7 @@ impl std::fmt::Debug for CreateVodSourceOutput {
 }
 /// See [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput)
 pub mod create_vod_source_output {
-    ///
+
     /// A builder for [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4930,7 +4930,7 @@ impl std::fmt::Debug for CreateSourceLocationOutput {
 }
 /// See [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput)
 pub mod create_source_location_output {
-    ///
+
     /// A builder for [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5189,7 +5189,7 @@ impl std::fmt::Debug for CreateProgramOutput {
 }
 /// See [`CreateProgramOutput`](crate::output::CreateProgramOutput)
 pub mod create_program_output {
-    ///
+
     /// A builder for [`CreateProgramOutput`](crate::output::CreateProgramOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5402,7 +5402,7 @@ impl std::fmt::Debug for CreatePrefetchScheduleOutput {
 }
 /// See [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput)
 pub mod create_prefetch_schedule_output {
-    ///
+
     /// A builder for [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5581,7 +5581,7 @@ impl std::fmt::Debug for CreateLiveSourceOutput {
 }
 /// See [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput)
 pub mod create_live_source_output {
-    ///
+
     /// A builder for [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5817,7 +5817,7 @@ impl std::fmt::Debug for CreateChannelOutput {
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput)
 pub mod create_channel_output {
-    ///
+
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6031,7 +6031,7 @@ impl std::fmt::Debug for ConfigureLogsForPlaybackConfigurationOutput {
 }
 /// See [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput)
 pub mod configure_logs_for_playback_configuration_output {
-    ///
+
     /// A builder for [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

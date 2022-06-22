@@ -369,7 +369,7 @@ impl std::fmt::Display for PayloadTooLargeException {
 impl std::error::Error for PayloadTooLargeException {}
 /// See [`PayloadTooLargeException`](crate::error::PayloadTooLargeException)
 pub mod payload_too_large_exception {
-    ///
+
     /// A builder for [`PayloadTooLargeException`](crate::error::PayloadTooLargeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -434,7 +434,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -499,7 +499,7 @@ impl std::fmt::Display for GoneException {
 impl std::error::Error for GoneException {}
 /// See [`GoneException`](crate::error::GoneException)
 pub mod gone_exception {
-    ///
+
     /// A builder for [`GoneException`](crate::error::GoneException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -564,7 +564,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException)
 pub mod forbidden_exception {
-    ///
+
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

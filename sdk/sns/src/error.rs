@@ -5610,7 +5610,7 @@ impl std::fmt::Display for VerificationException {
 impl std::error::Error for VerificationException {}
 /// See [`VerificationException`](crate::error::VerificationException)
 pub mod verification_exception {
-    ///
+
     /// A builder for [`VerificationException`](crate::error::VerificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5687,7 +5687,7 @@ impl std::fmt::Display for ThrottledException {
 impl std::error::Error for ThrottledException {}
 /// See [`ThrottledException`](crate::error::ThrottledException)
 pub mod throttled_exception {
-    ///
+
     /// A builder for [`ThrottledException`](crate::error::ThrottledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5752,7 +5752,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5817,7 +5817,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
-    ///
+
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5882,7 +5882,7 @@ impl std::fmt::Display for InternalErrorException {
 impl std::error::Error for InternalErrorException {}
 /// See [`InternalErrorException`](crate::error::InternalErrorException)
 pub mod internal_error_exception {
-    ///
+
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5947,7 +5947,7 @@ impl std::fmt::Display for AuthorizationErrorException {
 impl std::error::Error for AuthorizationErrorException {}
 /// See [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
 pub mod authorization_error_exception {
-    ///
+
     /// A builder for [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6012,7 +6012,7 @@ impl std::fmt::Display for TagPolicyException {
 impl std::error::Error for TagPolicyException {}
 /// See [`TagPolicyException`](crate::error::TagPolicyException)
 pub mod tag_policy_exception {
-    ///
+
     /// A builder for [`TagPolicyException`](crate::error::TagPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6077,7 +6077,7 @@ impl std::fmt::Display for TagLimitExceededException {
 impl std::error::Error for TagLimitExceededException {}
 /// See [`TagLimitExceededException`](crate::error::TagLimitExceededException)
 pub mod tag_limit_exceeded_exception {
-    ///
+
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6142,7 +6142,7 @@ impl std::fmt::Display for StaleTagException {
 impl std::error::Error for StaleTagException {}
 /// See [`StaleTagException`](crate::error::StaleTagException)
 pub mod stale_tag_exception {
-    ///
+
     /// A builder for [`StaleTagException`](crate::error::StaleTagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6207,7 +6207,7 @@ impl std::fmt::Display for ConcurrentAccessException {
 impl std::error::Error for ConcurrentAccessException {}
 /// See [`ConcurrentAccessException`](crate::error::ConcurrentAccessException)
 pub mod concurrent_access_exception {
-    ///
+
     /// A builder for [`ConcurrentAccessException`](crate::error::ConcurrentAccessException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6272,7 +6272,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
-    ///
+
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6337,7 +6337,7 @@ impl std::fmt::Display for InvalidSecurityException {
 impl std::error::Error for InvalidSecurityException {}
 /// See [`InvalidSecurityException`](crate::error::InvalidSecurityException)
 pub mod invalid_security_exception {
-    ///
+
     /// A builder for [`InvalidSecurityException`](crate::error::InvalidSecurityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6402,7 +6402,7 @@ impl std::fmt::Display for SubscriptionLimitExceededException {
 impl std::error::Error for SubscriptionLimitExceededException {}
 /// See [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException)
 pub mod subscription_limit_exceeded_exception {
-    ///
+
     /// A builder for [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6467,7 +6467,7 @@ impl std::fmt::Display for FilterPolicyLimitExceededException {
 impl std::error::Error for FilterPolicyLimitExceededException {}
 /// See [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException)
 pub mod filter_policy_limit_exceeded_exception {
-    ///
+
     /// A builder for [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6532,7 +6532,7 @@ impl std::fmt::Display for TooManyEntriesInBatchRequestException {
 impl std::error::Error for TooManyEntriesInBatchRequestException {}
 /// See [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException)
 pub mod too_many_entries_in_batch_request_exception {
-    ///
+
     /// A builder for [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6597,7 +6597,7 @@ impl std::fmt::Display for PlatformApplicationDisabledException {
 impl std::error::Error for PlatformApplicationDisabledException {}
 /// See [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException)
 pub mod platform_application_disabled_exception {
-    ///
+
     /// A builder for [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6662,7 +6662,7 @@ impl std::fmt::Display for KmsThrottlingException {
 impl std::error::Error for KmsThrottlingException {}
 /// See [`KmsThrottlingException`](crate::error::KmsThrottlingException)
 pub mod kms_throttling_exception {
-    ///
+
     /// A builder for [`KmsThrottlingException`](crate::error::KmsThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6727,7 +6727,7 @@ impl std::fmt::Display for KmsOptInRequired {
 impl std::error::Error for KmsOptInRequired {}
 /// See [`KmsOptInRequired`](crate::error::KmsOptInRequired)
 pub mod kms_opt_in_required {
-    ///
+
     /// A builder for [`KmsOptInRequired`](crate::error::KmsOptInRequired)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6792,7 +6792,7 @@ impl std::fmt::Display for KmsNotFoundException {
 impl std::error::Error for KmsNotFoundException {}
 /// See [`KmsNotFoundException`](crate::error::KmsNotFoundException)
 pub mod kms_not_found_exception {
-    ///
+
     /// A builder for [`KmsNotFoundException`](crate::error::KmsNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6857,7 +6857,7 @@ impl std::fmt::Display for KmsInvalidStateException {
 impl std::error::Error for KmsInvalidStateException {}
 /// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
 pub mod kms_invalid_state_exception {
-    ///
+
     /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6922,7 +6922,7 @@ impl std::fmt::Display for KmsDisabledException {
 impl std::error::Error for KmsDisabledException {}
 /// See [`KmsDisabledException`](crate::error::KmsDisabledException)
 pub mod kms_disabled_exception {
-    ///
+
     /// A builder for [`KmsDisabledException`](crate::error::KmsDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6987,7 +6987,7 @@ impl std::fmt::Display for KmsAccessDeniedException {
 impl std::error::Error for KmsAccessDeniedException {}
 /// See [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
 pub mod kms_access_denied_exception {
-    ///
+
     /// A builder for [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7052,7 +7052,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
 pub mod invalid_parameter_value_exception {
-    ///
+
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7117,7 +7117,7 @@ impl std::fmt::Display for InvalidBatchEntryIdException {
 impl std::error::Error for InvalidBatchEntryIdException {}
 /// See [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException)
 pub mod invalid_batch_entry_id_exception {
-    ///
+
     /// A builder for [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7182,7 +7182,7 @@ impl std::fmt::Display for EndpointDisabledException {
 impl std::error::Error for EndpointDisabledException {}
 /// See [`EndpointDisabledException`](crate::error::EndpointDisabledException)
 pub mod endpoint_disabled_exception {
-    ///
+
     /// A builder for [`EndpointDisabledException`](crate::error::EndpointDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7247,7 +7247,7 @@ impl std::fmt::Display for EmptyBatchRequestException {
 impl std::error::Error for EmptyBatchRequestException {}
 /// See [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException)
 pub mod empty_batch_request_exception {
-    ///
+
     /// A builder for [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7312,7 +7312,7 @@ impl std::fmt::Display for BatchRequestTooLongException {
 impl std::error::Error for BatchRequestTooLongException {}
 /// See [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException)
 pub mod batch_request_too_long_exception {
-    ///
+
     /// A builder for [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7377,7 +7377,7 @@ impl std::fmt::Display for BatchEntryIdsNotDistinctException {
 impl std::error::Error for BatchEntryIdsNotDistinctException {}
 /// See [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException)
 pub mod batch_entry_ids_not_distinct_exception {
-    ///
+
     /// A builder for [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7442,7 +7442,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
-    ///
+
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7507,7 +7507,7 @@ impl std::fmt::Display for UserErrorException {
 impl std::error::Error for UserErrorException {}
 /// See [`UserErrorException`](crate::error::UserErrorException)
 pub mod user_error_exception {
-    ///
+
     /// A builder for [`UserErrorException`](crate::error::UserErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7572,7 +7572,7 @@ impl std::fmt::Display for TopicLimitExceededException {
 impl std::error::Error for TopicLimitExceededException {}
 /// See [`TopicLimitExceededException`](crate::error::TopicLimitExceededException)
 pub mod topic_limit_exceeded_exception {
-    ///
+
     /// A builder for [`TopicLimitExceededException`](crate::error::TopicLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7637,7 +7637,7 @@ impl std::fmt::Display for OptedOutException {
 impl std::error::Error for OptedOutException {}
 /// See [`OptedOutException`](crate::error::OptedOutException)
 pub mod opted_out_exception {
-    ///
+
     /// A builder for [`OptedOutException`](crate::error::OptedOutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

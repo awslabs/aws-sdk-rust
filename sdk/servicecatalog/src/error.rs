@@ -9820,7 +9820,7 @@ impl std::fmt::Display for TagOptionNotMigratedException {
 impl std::error::Error for TagOptionNotMigratedException {}
 /// See [`TagOptionNotMigratedException`](crate::error::TagOptionNotMigratedException)
 pub mod tag_option_not_migrated_exception {
-    ///
+
     /// A builder for [`TagOptionNotMigratedException`](crate::error::TagOptionNotMigratedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9885,7 +9885,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9950,7 +9950,7 @@ impl std::fmt::Display for InvalidParametersException {
 impl std::error::Error for InvalidParametersException {}
 /// See [`InvalidParametersException`](crate::error::InvalidParametersException)
 pub mod invalid_parameters_exception {
-    ///
+
     /// A builder for [`InvalidParametersException`](crate::error::InvalidParametersException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10015,7 +10015,7 @@ impl std::fmt::Display for DuplicateResourceException {
 impl std::error::Error for DuplicateResourceException {}
 /// See [`DuplicateResourceException`](crate::error::DuplicateResourceException)
 pub mod duplicate_resource_exception {
-    ///
+
     /// A builder for [`DuplicateResourceException`](crate::error::DuplicateResourceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10080,7 +10080,7 @@ impl std::fmt::Display for InvalidStateException {
 impl std::error::Error for InvalidStateException {}
 /// See [`InvalidStateException`](crate::error::InvalidStateException)
 pub mod invalid_state_exception {
-    ///
+
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10145,7 +10145,7 @@ impl std::fmt::Display for OperationNotSupportedException {
 impl std::error::Error for OperationNotSupportedException {}
 /// See [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
 pub mod operation_not_supported_exception {
-    ///
+
     /// A builder for [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10210,7 +10210,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10275,7 +10275,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException)
 pub mod resource_in_use_exception {
-    ///
+
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -189,7 +189,7 @@ impl std::fmt::Debug for ResourceTag {
 }
 /// See [`ResourceTag`](crate::model::ResourceTag)
 pub mod resource_tag {
-    ///
+
     /// A builder for [`ResourceTag`](crate::model::ResourceTag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -324,7 +324,7 @@ impl std::fmt::Debug for RetentionPeriod {
 }
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod)
 pub mod retention_period {
-    ///
+
     /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -503,7 +503,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
-    ///
+
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -584,7 +584,7 @@ impl std::fmt::Debug for RuleSummary {
 }
 /// See [`RuleSummary`](crate::model::RuleSummary)
 pub mod rule_summary {
-    ///
+
     /// A builder for [`RuleSummary`](crate::model::RuleSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

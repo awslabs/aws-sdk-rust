@@ -93,7 +93,7 @@ impl std::fmt::Debug for ImportOptions {
 }
 /// See [`ImportOptions`](crate::model::ImportOptions)
 pub mod import_options {
-    ///
+
     /// A builder for [`ImportOptions`](crate::model::ImportOptions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -193,7 +193,7 @@ impl std::fmt::Debug for DelimitedTextImportOptions {
 }
 /// See [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions)
 pub mod delimited_text_import_options {
-    ///
+
     /// A builder for [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -375,7 +375,7 @@ impl std::fmt::Debug for DestinationOptions {
 }
 /// See [`DestinationOptions`](crate::model::DestinationOptions)
 pub mod destination_options {
-    ///
+
     /// A builder for [`DestinationOptions`](crate::model::DestinationOptions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl std::fmt::Debug for SourceDataColumnProperties {
 }
 /// See [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties)
 pub mod source_data_column_properties {
-    ///
+
     /// A builder for [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -559,7 +559,7 @@ impl std::fmt::Debug for ImportDataSource {
 }
 /// See [`ImportDataSource`](crate::model::ImportDataSource)
 pub mod import_data_source {
-    ///
+
     /// A builder for [`ImportDataSource`](crate::model::ImportDataSource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -617,7 +617,7 @@ impl std::fmt::Debug for ImportDataSourceConfig {
 }
 /// See [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig)
 pub mod import_data_source_config {
-    ///
+
     /// A builder for [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -682,7 +682,7 @@ impl std::fmt::Debug for TableRow {
 }
 /// See [`TableRow`](crate::model::TableRow)
 pub mod table_row {
-    ///
+
     /// A builder for [`TableRow`](crate::model::TableRow)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -804,7 +804,7 @@ impl std::fmt::Debug for Cell {
 }
 /// See [`Cell`](crate::model::Cell)
 pub mod cell {
-    ///
+
     /// A builder for [`Cell`](crate::model::Cell)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1052,7 +1052,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter)
 pub mod filter {
-    ///
+
     /// A builder for [`Filter`](crate::model::Filter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1129,7 +1129,7 @@ impl std::fmt::Debug for Table {
 }
 /// See [`Table`](crate::model::Table)
 pub mod table {
-    ///
+
     /// A builder for [`Table`](crate::model::Table)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1210,7 +1210,7 @@ impl std::fmt::Debug for TableColumn {
 }
 /// See [`TableColumn`](crate::model::TableColumn)
 pub mod table_column {
-    ///
+
     /// A builder for [`TableColumn`](crate::model::TableColumn)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1295,7 +1295,7 @@ impl std::fmt::Debug for VariableValue {
 }
 /// See [`VariableValue`](crate::model::VariableValue)
 pub mod variable_value {
-    ///
+
     /// A builder for [`VariableValue`](crate::model::VariableValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1359,7 +1359,7 @@ impl std::fmt::Debug for ResultSet {
 }
 /// See [`ResultSet`](crate::model::ResultSet)
 pub mod result_set {
-    ///
+
     /// A builder for [`ResultSet`](crate::model::ResultSet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1453,7 +1453,7 @@ impl std::fmt::Debug for ResultRow {
 }
 /// See [`ResultRow`](crate::model::ResultRow)
 pub mod result_row {
-    ///
+
     /// A builder for [`ResultRow`](crate::model::ResultRow)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1543,7 +1543,7 @@ impl std::fmt::Debug for DataItem {
 }
 /// See [`DataItem`](crate::model::DataItem)
 pub mod data_item {
-    ///
+
     /// A builder for [`DataItem`](crate::model::DataItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1635,7 +1635,7 @@ impl std::fmt::Debug for ColumnMetadata {
 }
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata)
 pub mod column_metadata {
-    ///
+
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1841,7 +1841,7 @@ impl std::fmt::Debug for TableDataImportJobMetadata {
 }
 /// See [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata)
 pub mod table_data_import_job_metadata {
-    ///
+
     /// A builder for [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1951,7 +1951,7 @@ impl std::fmt::Debug for ImportJobSubmitter {
 }
 /// See [`ImportJobSubmitter`](crate::model::ImportJobSubmitter)
 pub mod import_job_submitter {
-    ///
+
     /// A builder for [`ImportJobSubmitter`](crate::model::ImportJobSubmitter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2025,7 +2025,7 @@ impl std::fmt::Debug for FailedBatchItem {
 }
 /// See [`FailedBatchItem`](crate::model::FailedBatchItem)
 pub mod failed_batch_item {
-    ///
+
     /// A builder for [`FailedBatchItem`](crate::model::FailedBatchItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2102,7 +2102,7 @@ impl std::fmt::Debug for UpsertRowsResult {
 }
 /// See [`UpsertRowsResult`](crate::model::UpsertRowsResult)
 pub mod upsert_rows_result {
-    ///
+
     /// A builder for [`UpsertRowsResult`](crate::model::UpsertRowsResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2257,7 +2257,7 @@ impl std::fmt::Debug for UpsertRowData {
 }
 /// See [`UpsertRowData`](crate::model::UpsertRowData)
 pub mod upsert_row_data {
-    ///
+
     /// A builder for [`UpsertRowData`](crate::model::UpsertRowData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2367,7 +2367,7 @@ impl std::fmt::Debug for CellInput {
 }
 /// See [`CellInput`](crate::model::CellInput)
 pub mod cell_input {
-    ///
+
     /// A builder for [`CellInput`](crate::model::CellInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2455,7 +2455,7 @@ impl std::fmt::Debug for UpdateRowData {
 }
 /// See [`UpdateRowData`](crate::model::UpdateRowData)
 pub mod update_row_data {
-    ///
+
     /// A builder for [`UpdateRowData`](crate::model::UpdateRowData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2551,7 +2551,7 @@ impl std::fmt::Debug for CreateRowData {
 }
 /// See [`CreateRowData`](crate::model::CreateRowData)
 pub mod create_row_data {
-    ///
+
     /// A builder for [`CreateRowData`](crate::model::CreateRowData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,7 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for StopAccessLoggingOutput {
 }
 /// See [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput)
 pub mod stop_access_logging_output {
-    ///
+
     /// A builder for [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for StartAccessLoggingOutput {
 }
 /// See [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput)
 pub mod start_access_logging_output {
-    ///
+
     /// A builder for [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for PutMetricPolicyOutput {
 }
 /// See [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput)
 pub mod put_metric_policy_output {
-    ///
+
     /// A builder for [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,7 +166,7 @@ impl std::fmt::Debug for PutLifecyclePolicyOutput {
 }
 /// See [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
 pub mod put_lifecycle_policy_output {
-    ///
+
     /// A builder for [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,7 +197,7 @@ impl std::fmt::Debug for PutCorsPolicyOutput {
 }
 /// See [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput)
 pub mod put_cors_policy_output {
-    ///
+
     /// A builder for [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -228,7 +228,7 @@ impl std::fmt::Debug for PutContainerPolicyOutput {
 }
 /// See [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput)
 pub mod put_container_policy_output {
-    ///
+
     /// A builder for [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -269,7 +269,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -338,7 +338,7 @@ impl std::fmt::Debug for ListContainersOutput {
 }
 /// See [`ListContainersOutput`](crate::output::ListContainersOutput)
 pub mod list_containers_output {
-    ///
+
     /// A builder for [`ListContainersOutput`](crate::output::ListContainersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl std::fmt::Debug for GetMetricPolicyOutput {
 }
 /// See [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput)
 pub mod get_metric_policy_output {
-    ///
+
     /// A builder for [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -472,7 +472,7 @@ impl std::fmt::Debug for GetLifecyclePolicyOutput {
 }
 /// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
 pub mod get_lifecycle_policy_output {
-    ///
+
     /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -530,7 +530,7 @@ impl std::fmt::Debug for GetCorsPolicyOutput {
 }
 /// See [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput)
 pub mod get_cors_policy_output {
-    ///
+
     /// A builder for [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -594,7 +594,7 @@ impl std::fmt::Debug for GetContainerPolicyOutput {
 }
 /// See [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput)
 pub mod get_container_policy_output {
-    ///
+
     /// A builder for [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -649,7 +649,7 @@ impl std::fmt::Debug for DescribeContainerOutput {
 }
 /// See [`DescribeContainerOutput`](crate::output::DescribeContainerOutput)
 pub mod describe_container_output {
-    ///
+
     /// A builder for [`DescribeContainerOutput`](crate::output::DescribeContainerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -697,7 +697,7 @@ impl std::fmt::Debug for DeleteMetricPolicyOutput {
 }
 /// See [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput)
 pub mod delete_metric_policy_output {
-    ///
+
     /// A builder for [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -728,7 +728,7 @@ impl std::fmt::Debug for DeleteLifecyclePolicyOutput {
 }
 /// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
 pub mod delete_lifecycle_policy_output {
-    ///
+
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -759,7 +759,7 @@ impl std::fmt::Debug for DeleteCorsPolicyOutput {
 }
 /// See [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput)
 pub mod delete_cors_policy_output {
-    ///
+
     /// A builder for [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -790,7 +790,7 @@ impl std::fmt::Debug for DeleteContainerPolicyOutput {
 }
 /// See [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput)
 pub mod delete_container_policy_output {
-    ///
+
     /// A builder for [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -821,7 +821,7 @@ impl std::fmt::Debug for DeleteContainerOutput {
 }
 /// See [`DeleteContainerOutput`](crate::output::DeleteContainerOutput)
 pub mod delete_container_output {
-    ///
+
     /// A builder for [`DeleteContainerOutput`](crate::output::DeleteContainerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -886,7 +886,7 @@ impl std::fmt::Debug for CreateContainerOutput {
 }
 /// See [`CreateContainerOutput`](crate::output::CreateContainerOutput)
 pub mod create_container_output {
-    ///
+
     /// A builder for [`CreateContainerOutput`](crate::output::CreateContainerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

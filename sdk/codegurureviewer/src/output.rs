@@ -11,7 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for PutRecommendationFeedbackOutput {
 }
 /// See [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput)
 pub mod put_recommendation_feedback_output {
-    ///
+
     /// A builder for [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -126,7 +126,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -217,7 +217,7 @@ impl std::fmt::Debug for ListRepositoryAssociationsOutput {
 }
 /// See [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput)
 pub mod list_repository_associations_output {
-    ///
+
     /// A builder for [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl std::fmt::Debug for ListRecommendationsOutput {
 }
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput)
 pub mod list_recommendations_output {
-    ///
+
     /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -400,7 +400,7 @@ impl std::fmt::Debug for ListRecommendationFeedbackOutput {
 }
 /// See [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput)
 pub mod list_recommendation_feedback_output {
-    ///
+
     /// A builder for [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -487,7 +487,7 @@ impl std::fmt::Debug for ListCodeReviewsOutput {
 }
 /// See [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput)
 pub mod list_code_reviews_output {
-    ///
+
     /// A builder for [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -585,7 +585,7 @@ impl std::fmt::Debug for DisassociateRepositoryOutput {
 }
 /// See [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput)
 pub mod disassociate_repository_output {
-    ///
+
     /// A builder for [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -704,7 +704,7 @@ impl std::fmt::Debug for DescribeRepositoryAssociationOutput {
 }
 /// See [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput)
 pub mod describe_repository_association_output {
-    ///
+
     /// A builder for [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -804,7 +804,7 @@ impl std::fmt::Debug for DescribeRecommendationFeedbackOutput {
 }
 /// See [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput)
 pub mod describe_recommendation_feedback_output {
-    ///
+
     /// A builder for [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl std::fmt::Debug for DescribeCodeReviewOutput {
 }
 /// See [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput)
 pub mod describe_code_review_output {
-    ///
+
     /// A builder for [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -924,7 +924,7 @@ impl std::fmt::Debug for CreateCodeReviewOutput {
 }
 /// See [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput)
 pub mod create_code_review_output {
-    ///
+
     /// A builder for [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1003,7 +1003,7 @@ impl std::fmt::Debug for AssociateRepositoryOutput {
 }
 /// See [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput)
 pub mod associate_repository_output {
-    ///
+
     /// A builder for [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

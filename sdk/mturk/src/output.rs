@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateQualificationTypeOutput {
 }
 /// See [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput)
 pub mod update_qualification_type_output {
-    ///
+
     /// A builder for [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -69,7 +69,7 @@ impl std::fmt::Debug for UpdateNotificationSettingsOutput {
 }
 /// See [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput)
 pub mod update_notification_settings_output {
-    ///
+
     /// A builder for [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -100,7 +100,7 @@ impl std::fmt::Debug for UpdateHitTypeOfHitOutput {
 }
 /// See [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput)
 pub mod update_hit_type_of_hit_output {
-    ///
+
     /// A builder for [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,7 +131,7 @@ impl std::fmt::Debug for UpdateHitReviewStatusOutput {
 }
 /// See [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput)
 pub mod update_hit_review_status_output {
-    ///
+
     /// A builder for [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl std::fmt::Debug for UpdateExpirationForHitOutput {
 }
 /// See [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput)
 pub mod update_expiration_for_hit_output {
-    ///
+
     /// A builder for [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -193,7 +193,7 @@ impl std::fmt::Debug for SendTestEventNotificationOutput {
 }
 /// See [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput)
 pub mod send_test_event_notification_output {
-    ///
+
     /// A builder for [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -224,7 +224,7 @@ impl std::fmt::Debug for SendBonusOutput {
 }
 /// See [`SendBonusOutput`](crate::output::SendBonusOutput)
 pub mod send_bonus_output {
-    ///
+
     /// A builder for [`SendBonusOutput`](crate::output::SendBonusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -255,7 +255,7 @@ impl std::fmt::Debug for RejectQualificationRequestOutput {
 }
 /// See [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput)
 pub mod reject_qualification_request_output {
-    ///
+
     /// A builder for [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -286,7 +286,7 @@ impl std::fmt::Debug for RejectAssignmentOutput {
 }
 /// See [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput)
 pub mod reject_assignment_output {
-    ///
+
     /// A builder for [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -333,7 +333,7 @@ impl std::fmt::Debug for NotifyWorkersOutput {
 }
 /// See [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput)
 pub mod notify_workers_output {
-    ///
+
     /// A builder for [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -415,7 +415,7 @@ impl std::fmt::Debug for ListWorkersWithQualificationTypeOutput {
 }
 /// See [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput)
 pub mod list_workers_with_qualification_type_output {
-    ///
+
     /// A builder for [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -517,7 +517,7 @@ impl std::fmt::Debug for ListWorkerBlocksOutput {
 }
 /// See [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput)
 pub mod list_worker_blocks_output {
-    ///
+
     /// A builder for [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -640,7 +640,7 @@ impl std::fmt::Debug for ListReviewPolicyResultsForHitOutput {
 }
 /// See [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput)
 pub mod list_review_policy_results_for_hit_output {
-    ///
+
     /// A builder for [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -781,7 +781,7 @@ impl std::fmt::Debug for ListReviewableHiTsOutput {
 }
 /// See [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput)
 pub mod list_reviewable_hi_ts_output {
-    ///
+
     /// A builder for [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -883,7 +883,7 @@ impl std::fmt::Debug for ListQualificationTypesOutput {
 }
 /// See [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput)
 pub mod list_qualification_types_output {
-    ///
+
     /// A builder for [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -989,7 +989,7 @@ impl std::fmt::Debug for ListQualificationRequestsOutput {
 }
 /// See [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput)
 pub mod list_qualification_requests_output {
-    ///
+
     /// A builder for [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1092,7 +1092,7 @@ impl std::fmt::Debug for ListHiTsForQualificationTypeOutput {
 }
 /// See [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput)
 pub mod list_hi_ts_for_qualification_type_output {
-    ///
+
     /// A builder for [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1194,7 +1194,7 @@ impl std::fmt::Debug for ListHiTsOutput {
 }
 /// See [`ListHiTsOutput`](crate::output::ListHiTsOutput)
 pub mod list_hi_ts_output {
-    ///
+
     /// A builder for [`ListHiTsOutput`](crate::output::ListHiTsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1296,7 +1296,7 @@ impl std::fmt::Debug for ListBonusPaymentsOutput {
 }
 /// See [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput)
 pub mod list_bonus_payments_output {
-    ///
+
     /// A builder for [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1398,7 +1398,7 @@ impl std::fmt::Debug for ListAssignmentsForHitOutput {
 }
 /// See [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput)
 pub mod list_assignments_for_hit_output {
-    ///
+
     /// A builder for [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1486,7 +1486,7 @@ impl std::fmt::Debug for GetQualificationTypeOutput {
 }
 /// See [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput)
 pub mod get_qualification_type_output {
-    ///
+
     /// A builder for [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1544,7 +1544,7 @@ impl std::fmt::Debug for GetQualificationScoreOutput {
 }
 /// See [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput)
 pub mod get_qualification_score_output {
-    ///
+
     /// A builder for [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1602,7 +1602,7 @@ impl std::fmt::Debug for GetHitOutput {
 }
 /// See [`GetHitOutput`](crate::output::GetHitOutput)
 pub mod get_hit_output {
-    ///
+
     /// A builder for [`GetHitOutput`](crate::output::GetHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1655,7 +1655,7 @@ impl std::fmt::Debug for GetFileUploadUrlOutput {
 }
 /// See [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput)
 pub mod get_file_upload_url_output {
-    ///
+
     /// A builder for [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1720,7 +1720,7 @@ impl std::fmt::Debug for GetAssignmentOutput {
 }
 /// See [`GetAssignmentOutput`](crate::output::GetAssignmentOutput)
 pub mod get_assignment_output {
-    ///
+
     /// A builder for [`GetAssignmentOutput`](crate::output::GetAssignmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1797,7 +1797,7 @@ impl std::fmt::Debug for GetAccountBalanceOutput {
 }
 /// See [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput)
 pub mod get_account_balance_output {
-    ///
+
     /// A builder for [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1860,7 +1860,7 @@ impl std::fmt::Debug for DisassociateQualificationFromWorkerOutput {
 }
 /// See [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput)
 pub mod disassociate_qualification_from_worker_output {
-    ///
+
     /// A builder for [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1891,7 +1891,7 @@ impl std::fmt::Debug for DeleteWorkerBlockOutput {
 }
 /// See [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput)
 pub mod delete_worker_block_output {
-    ///
+
     /// A builder for [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1922,7 +1922,7 @@ impl std::fmt::Debug for DeleteQualificationTypeOutput {
 }
 /// See [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput)
 pub mod delete_qualification_type_output {
-    ///
+
     /// A builder for [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1953,7 +1953,7 @@ impl std::fmt::Debug for DeleteHitOutput {
 }
 /// See [`DeleteHitOutput`](crate::output::DeleteHitOutput)
 pub mod delete_hit_output {
-    ///
+
     /// A builder for [`DeleteHitOutput`](crate::output::DeleteHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1984,7 +1984,7 @@ impl std::fmt::Debug for CreateWorkerBlockOutput {
 }
 /// See [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput)
 pub mod create_worker_block_output {
-    ///
+
     /// A builder for [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2025,7 +2025,7 @@ impl std::fmt::Debug for CreateQualificationTypeOutput {
 }
 /// See [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput)
 pub mod create_qualification_type_output {
-    ///
+
     /// A builder for [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2083,7 +2083,7 @@ impl std::fmt::Debug for CreateHitWithHitTypeOutput {
 }
 /// See [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput)
 pub mod create_hit_with_hit_type_output {
-    ///
+
     /// A builder for [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2136,7 +2136,7 @@ impl std::fmt::Debug for CreateHitTypeOutput {
 }
 /// See [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput)
 pub mod create_hit_type_output {
-    ///
+
     /// A builder for [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2191,7 +2191,7 @@ impl std::fmt::Debug for CreateHitOutput {
 }
 /// See [`CreateHitOutput`](crate::output::CreateHitOutput)
 pub mod create_hit_output {
-    ///
+
     /// A builder for [`CreateHitOutput`](crate::output::CreateHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2234,7 +2234,7 @@ impl std::fmt::Debug for CreateAdditionalAssignmentsForHitOutput {
 }
 /// See [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput)
 pub mod create_additional_assignments_for_hit_output {
-    ///
+
     /// A builder for [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2265,7 +2265,7 @@ impl std::fmt::Debug for AssociateQualificationWithWorkerOutput {
 }
 /// See [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput)
 pub mod associate_qualification_with_worker_output {
-    ///
+
     /// A builder for [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2296,7 +2296,7 @@ impl std::fmt::Debug for ApproveAssignmentOutput {
 }
 /// See [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput)
 pub mod approve_assignment_output {
-    ///
+
     /// A builder for [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2327,7 +2327,7 @@ impl std::fmt::Debug for AcceptQualificationRequestOutput {
 }
 /// See [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput)
 pub mod accept_qualification_request_output {
-    ///
+
     /// A builder for [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

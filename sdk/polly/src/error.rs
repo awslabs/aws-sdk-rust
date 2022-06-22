@@ -1234,7 +1234,7 @@ impl std::fmt::Display for TextLengthExceededException {
 impl std::error::Error for TextLengthExceededException {}
 /// See [`TextLengthExceededException`](crate::error::TextLengthExceededException)
 pub mod text_length_exceeded_exception {
-    ///
+
     /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1299,7 +1299,7 @@ impl std::fmt::Display for SsmlMarksNotSupportedForTextTypeException {
 impl std::error::Error for SsmlMarksNotSupportedForTextTypeException {}
 /// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
 pub mod ssml_marks_not_supported_for_text_type_exception {
-    ///
+
     /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1364,7 +1364,7 @@ impl std::fmt::Display for ServiceFailureException {
 impl std::error::Error for ServiceFailureException {}
 /// See [`ServiceFailureException`](crate::error::ServiceFailureException)
 pub mod service_failure_exception {
-    ///
+
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1429,7 +1429,7 @@ impl std::fmt::Display for MarksNotSupportedForFormatException {
 impl std::error::Error for MarksNotSupportedForFormatException {}
 /// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
 pub mod marks_not_supported_for_format_exception {
-    ///
+
     /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1495,7 +1495,7 @@ impl std::fmt::Display for LexiconNotFoundException {
 impl std::error::Error for LexiconNotFoundException {}
 /// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
 pub mod lexicon_not_found_exception {
-    ///
+
     /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1560,7 +1560,7 @@ impl std::fmt::Display for LanguageNotSupportedException {
 impl std::error::Error for LanguageNotSupportedException {}
 /// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
 pub mod language_not_supported_exception {
-    ///
+
     /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1625,7 +1625,7 @@ impl std::fmt::Display for InvalidSsmlException {
 impl std::error::Error for InvalidSsmlException {}
 /// See [`InvalidSsmlException`](crate::error::InvalidSsmlException)
 pub mod invalid_ssml_exception {
-    ///
+
     /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1690,7 +1690,7 @@ impl std::fmt::Display for InvalidSampleRateException {
 impl std::error::Error for InvalidSampleRateException {}
 /// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
 pub mod invalid_sample_rate_exception {
-    ///
+
     /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1755,7 +1755,7 @@ impl std::fmt::Display for EngineNotSupportedException {
 impl std::error::Error for EngineNotSupportedException {}
 /// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
 pub mod engine_not_supported_exception {
-    ///
+
     /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1820,7 +1820,7 @@ impl std::fmt::Display for InvalidSnsTopicArnException {
 impl std::error::Error for InvalidSnsTopicArnException {}
 /// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
 pub mod invalid_sns_topic_arn_exception {
-    ///
+
     /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1885,7 +1885,7 @@ impl std::fmt::Display for InvalidS3KeyException {
 impl std::error::Error for InvalidS3KeyException {}
 /// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
 pub mod invalid_s3_key_exception {
-    ///
+
     /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1950,7 +1950,7 @@ impl std::fmt::Display for InvalidS3BucketException {
 impl std::error::Error for InvalidS3BucketException {}
 /// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
 pub mod invalid_s3_bucket_exception {
-    ///
+
     /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2015,7 +2015,7 @@ impl std::fmt::Display for UnsupportedPlsLanguageException {
 impl std::error::Error for UnsupportedPlsLanguageException {}
 /// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
 pub mod unsupported_pls_language_exception {
-    ///
+
     /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2080,7 +2080,7 @@ impl std::fmt::Display for UnsupportedPlsAlphabetException {
 impl std::error::Error for UnsupportedPlsAlphabetException {}
 /// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
 pub mod unsupported_pls_alphabet_exception {
-    ///
+
     /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2145,7 +2145,7 @@ impl std::fmt::Display for MaxLexiconsNumberExceededException {
 impl std::error::Error for MaxLexiconsNumberExceededException {}
 /// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
 pub mod max_lexicons_number_exceeded_exception {
-    ///
+
     /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2210,7 +2210,7 @@ impl std::fmt::Display for MaxLexemeLengthExceededException {
 impl std::error::Error for MaxLexemeLengthExceededException {}
 /// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
 pub mod max_lexeme_length_exceeded_exception {
-    ///
+
     /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2275,7 +2275,7 @@ impl std::fmt::Display for LexiconSizeExceededException {
 impl std::error::Error for LexiconSizeExceededException {}
 /// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
 pub mod lexicon_size_exceeded_exception {
-    ///
+
     /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2340,7 +2340,7 @@ impl std::fmt::Display for InvalidLexiconException {
 impl std::error::Error for InvalidLexiconException {}
 /// See [`InvalidLexiconException`](crate::error::InvalidLexiconException)
 pub mod invalid_lexicon_exception {
-    ///
+
     /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2405,7 +2405,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
-    ///
+
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2470,7 +2470,7 @@ impl std::fmt::Display for SynthesisTaskNotFoundException {
 impl std::error::Error for SynthesisTaskNotFoundException {}
 /// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
 pub mod synthesis_task_not_found_exception {
-    ///
+
     /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2535,7 +2535,7 @@ impl std::fmt::Display for InvalidTaskIdException {
 impl std::error::Error for InvalidTaskIdException {}
 /// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
 pub mod invalid_task_id_exception {
-    ///
+
     /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,7 +11,7 @@ impl std::fmt::Debug for PutRawMessageContentOutput {
 }
 /// See [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
 pub mod put_raw_message_content_output {
-    ///
+
     /// A builder for [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -51,7 +51,7 @@ impl std::fmt::Debug for GetRawMessageContentOutput {
 }
 /// See [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput)
 pub mod get_raw_message_content_output {
-    ///
+
     /// A builder for [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]

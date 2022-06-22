@@ -3963,7 +3963,7 @@ impl std::fmt::Display for ServiceFault {
 impl std::error::Error for ServiceFault {}
 /// See [`ServiceFault`](crate::error::ServiceFault)
 pub mod service_fault {
-    ///
+
     /// A builder for [`ServiceFault`](crate::error::ServiceFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4052,7 +4052,7 @@ impl std::fmt::Display for RequestError {
 impl std::error::Error for RequestError {}
 /// See [`RequestError`](crate::error::RequestError)
 pub mod request_error {
-    ///
+
     /// A builder for [`RequestError`](crate::error::RequestError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

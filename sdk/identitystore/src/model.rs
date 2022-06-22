@@ -87,7 +87,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User)
 pub mod user {
-    ///
+
     /// A builder for [`User`](crate::model::User)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,7 +161,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter)
 pub mod filter {
-    ///
+
     /// A builder for [`Filter`](crate::model::Filter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl std::fmt::Debug for Group {
 }
 /// See [`Group`](crate::model::Group)
 pub mod group {
-    ///
+
     /// A builder for [`Group`](crate::model::Group)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

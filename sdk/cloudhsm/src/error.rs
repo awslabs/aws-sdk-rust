@@ -2243,7 +2243,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
-    ///
+
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2329,7 +2329,7 @@ impl std::fmt::Display for CloudHsmServiceException {
 impl std::error::Error for CloudHsmServiceException {}
 /// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
 pub mod cloud_hsm_service_exception {
-    ///
+
     /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2415,7 +2415,7 @@ impl std::fmt::Display for CloudHsmInternalException {
 impl std::error::Error for CloudHsmInternalException {}
 /// See [`CloudHsmInternalException`](crate::error::CloudHsmInternalException)
 pub mod cloud_hsm_internal_exception {
-    ///
+
     /// A builder for [`CloudHsmInternalException`](crate::error::CloudHsmInternalException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

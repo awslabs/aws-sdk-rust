@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateWebhookOutput {
 }
 /// See [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput)
 pub mod update_webhook_output {
-    ///
+
     /// A builder for [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl std::fmt::Debug for UpdateReportGroupOutput {
 }
 /// See [`UpdateReportGroupOutput`](crate::output::UpdateReportGroupOutput)
 pub mod update_report_group_output {
-    ///
+
     /// A builder for [`UpdateReportGroupOutput`](crate::output::UpdateReportGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -176,7 +176,7 @@ impl std::fmt::Debug for UpdateProjectVisibilityOutput {
 }
 /// See [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput)
 pub mod update_project_visibility_output {
-    ///
+
     /// A builder for [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -289,7 +289,7 @@ impl std::fmt::Debug for UpdateProjectOutput {
 }
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
 pub mod update_project_output {
-    ///
+
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl std::fmt::Debug for StopBuildBatchOutput {
 }
 /// See [`StopBuildBatchOutput`](crate::output::StopBuildBatchOutput)
 pub mod stop_build_batch_output {
-    ///
+
     /// A builder for [`StopBuildBatchOutput`](crate::output::StopBuildBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -406,7 +406,7 @@ impl std::fmt::Debug for StopBuildOutput {
 }
 /// See [`StopBuildOutput`](crate::output::StopBuildOutput)
 pub mod stop_build_output {
-    ///
+
     /// A builder for [`StopBuildOutput`](crate::output::StopBuildOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -461,7 +461,7 @@ impl std::fmt::Debug for StartBuildBatchOutput {
 }
 /// See [`StartBuildBatchOutput`](crate::output::StartBuildBatchOutput)
 pub mod start_build_batch_output {
-    ///
+
     /// A builder for [`StartBuildBatchOutput`](crate::output::StartBuildBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl std::fmt::Debug for StartBuildOutput {
 }
 /// See [`StartBuildOutput`](crate::output::StartBuildOutput)
 pub mod start_build_output {
-    ///
+
     /// A builder for [`StartBuildOutput`](crate::output::StartBuildOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl std::fmt::Debug for RetryBuildBatchOutput {
 }
 /// See [`RetryBuildBatchOutput`](crate::output::RetryBuildBatchOutput)
 pub mod retry_build_batch_output {
-    ///
+
     /// A builder for [`RetryBuildBatchOutput`](crate::output::RetryBuildBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -640,7 +640,7 @@ impl std::fmt::Debug for RetryBuildOutput {
 }
 /// See [`RetryBuildOutput`](crate::output::RetryBuildOutput)
 pub mod retry_build_output {
-    ///
+
     /// A builder for [`RetryBuildOutput`](crate::output::RetryBuildOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -695,7 +695,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 pub mod put_resource_policy_output {
-    ///
+
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -753,7 +753,7 @@ impl std::fmt::Debug for ListSourceCredentialsOutput {
 }
 /// See [`ListSourceCredentialsOutput`](crate::output::ListSourceCredentialsOutput)
 pub mod list_source_credentials_output {
-    ///
+
     /// A builder for [`ListSourceCredentialsOutput`](crate::output::ListSourceCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -828,7 +828,7 @@ impl std::fmt::Debug for ListSharedReportGroupsOutput {
 }
 /// See [`ListSharedReportGroupsOutput`](crate::output::ListSharedReportGroupsOutput)
 pub mod list_shared_report_groups_output {
-    ///
+
     /// A builder for [`ListSharedReportGroupsOutput`](crate::output::ListSharedReportGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -911,7 +911,7 @@ impl std::fmt::Debug for ListSharedProjectsOutput {
 }
 /// See [`ListSharedProjectsOutput`](crate::output::ListSharedProjectsOutput)
 pub mod list_shared_projects_output {
-    ///
+
     /// A builder for [`ListSharedProjectsOutput`](crate::output::ListSharedProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl std::fmt::Debug for ListReportsForReportGroupOutput {
 }
 /// See [`ListReportsForReportGroupOutput`](crate::output::ListReportsForReportGroupOutput)
 pub mod list_reports_for_report_group_output {
-    ///
+
     /// A builder for [`ListReportsForReportGroupOutput`](crate::output::ListReportsForReportGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1077,7 +1077,7 @@ impl std::fmt::Debug for ListReportsOutput {
 }
 /// See [`ListReportsOutput`](crate::output::ListReportsOutput)
 pub mod list_reports_output {
-    ///
+
     /// A builder for [`ListReportsOutput`](crate::output::ListReportsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1160,7 +1160,7 @@ impl std::fmt::Debug for ListReportGroupsOutput {
 }
 /// See [`ListReportGroupsOutput`](crate::output::ListReportGroupsOutput)
 pub mod list_report_groups_output {
-    ///
+
     /// A builder for [`ListReportGroupsOutput`](crate::output::ListReportGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1243,7 +1243,7 @@ impl std::fmt::Debug for ListProjectsOutput {
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput)
 pub mod list_projects_output {
-    ///
+
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1319,7 +1319,7 @@ impl std::fmt::Debug for ListCuratedEnvironmentImagesOutput {
 }
 /// See [`ListCuratedEnvironmentImagesOutput`](crate::output::ListCuratedEnvironmentImagesOutput)
 pub mod list_curated_environment_images_output {
-    ///
+
     /// A builder for [`ListCuratedEnvironmentImagesOutput`](crate::output::ListCuratedEnvironmentImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1390,7 +1390,7 @@ impl std::fmt::Debug for ListBuildsForProjectOutput {
 }
 /// See [`ListBuildsForProjectOutput`](crate::output::ListBuildsForProjectOutput)
 pub mod list_builds_for_project_output {
-    ///
+
     /// A builder for [`ListBuildsForProjectOutput`](crate::output::ListBuildsForProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1473,7 +1473,7 @@ impl std::fmt::Debug for ListBuildsOutput {
 }
 /// See [`ListBuildsOutput`](crate::output::ListBuildsOutput)
 pub mod list_builds_output {
-    ///
+
     /// A builder for [`ListBuildsOutput`](crate::output::ListBuildsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1556,7 +1556,7 @@ impl std::fmt::Debug for ListBuildBatchesForProjectOutput {
 }
 /// See [`ListBuildBatchesForProjectOutput`](crate::output::ListBuildBatchesForProjectOutput)
 pub mod list_build_batches_for_project_output {
-    ///
+
     /// A builder for [`ListBuildBatchesForProjectOutput`](crate::output::ListBuildBatchesForProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1639,7 +1639,7 @@ impl std::fmt::Debug for ListBuildBatchesOutput {
 }
 /// See [`ListBuildBatchesOutput`](crate::output::ListBuildBatchesOutput)
 pub mod list_build_batches_output {
-    ///
+
     /// A builder for [`ListBuildBatchesOutput`](crate::output::ListBuildBatchesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1705,7 +1705,7 @@ impl std::fmt::Debug for InvalidateProjectCacheOutput {
 }
 /// See [`InvalidateProjectCacheOutput`](crate::output::InvalidateProjectCacheOutput)
 pub mod invalidate_project_cache_output {
-    ///
+
     /// A builder for [`InvalidateProjectCacheOutput`](crate::output::InvalidateProjectCacheOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1746,7 +1746,7 @@ impl std::fmt::Debug for ImportSourceCredentialsOutput {
 }
 /// See [`ImportSourceCredentialsOutput`](crate::output::ImportSourceCredentialsOutput)
 pub mod import_source_credentials_output {
-    ///
+
     /// A builder for [`ImportSourceCredentialsOutput`](crate::output::ImportSourceCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1799,7 +1799,7 @@ impl std::fmt::Debug for GetResourcePolicyOutput {
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
 pub mod get_resource_policy_output {
-    ///
+
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1861,7 +1861,7 @@ impl std::fmt::Debug for GetReportGroupTrendOutput {
 }
 /// See [`GetReportGroupTrendOutput`](crate::output::GetReportGroupTrendOutput)
 pub mod get_report_group_trend_output {
-    ///
+
     /// A builder for [`GetReportGroupTrendOutput`](crate::output::GetReportGroupTrendOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1947,7 +1947,7 @@ impl std::fmt::Debug for DescribeTestCasesOutput {
 }
 /// See [`DescribeTestCasesOutput`](crate::output::DescribeTestCasesOutput)
 pub mod describe_test_cases_output {
-    ///
+
     /// A builder for [`DescribeTestCasesOutput`](crate::output::DescribeTestCasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2030,7 +2030,7 @@ impl std::fmt::Debug for DescribeCodeCoveragesOutput {
 }
 /// See [`DescribeCodeCoveragesOutput`](crate::output::DescribeCodeCoveragesOutput)
 pub mod describe_code_coverages_output {
-    ///
+
     /// A builder for [`DescribeCodeCoveragesOutput`](crate::output::DescribeCodeCoveragesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2096,7 +2096,7 @@ impl std::fmt::Debug for DeleteWebhookOutput {
 }
 /// See [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput)
 pub mod delete_webhook_output {
-    ///
+
     /// A builder for [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2137,7 +2137,7 @@ impl std::fmt::Debug for DeleteSourceCredentialsOutput {
 }
 /// See [`DeleteSourceCredentialsOutput`](crate::output::DeleteSourceCredentialsOutput)
 pub mod delete_source_credentials_output {
-    ///
+
     /// A builder for [`DeleteSourceCredentialsOutput`](crate::output::DeleteSourceCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2180,7 +2180,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 pub mod delete_resource_policy_output {
-    ///
+
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2211,7 +2211,7 @@ impl std::fmt::Debug for DeleteReportGroupOutput {
 }
 /// See [`DeleteReportGroupOutput`](crate::output::DeleteReportGroupOutput)
 pub mod delete_report_group_output {
-    ///
+
     /// A builder for [`DeleteReportGroupOutput`](crate::output::DeleteReportGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl std::fmt::Debug for DeleteReportOutput {
 }
 /// See [`DeleteReportOutput`](crate::output::DeleteReportOutput)
 pub mod delete_report_output {
-    ///
+
     /// A builder for [`DeleteReportOutput`](crate::output::DeleteReportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2273,7 +2273,7 @@ impl std::fmt::Debug for DeleteProjectOutput {
 }
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 pub mod delete_project_output {
-    ///
+
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2328,7 +2328,7 @@ impl std::fmt::Debug for DeleteBuildBatchOutput {
 }
 /// See [`DeleteBuildBatchOutput`](crate::output::DeleteBuildBatchOutput)
 pub mod delete_build_batch_output {
-    ///
+
     /// A builder for [`DeleteBuildBatchOutput`](crate::output::DeleteBuildBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2426,7 +2426,7 @@ impl std::fmt::Debug for CreateWebhookOutput {
 }
 /// See [`CreateWebhookOutput`](crate::output::CreateWebhookOutput)
 pub mod create_webhook_output {
-    ///
+
     /// A builder for [`CreateWebhookOutput`](crate::output::CreateWebhookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2481,7 +2481,7 @@ impl std::fmt::Debug for CreateReportGroupOutput {
 }
 /// See [`CreateReportGroupOutput`](crate::output::CreateReportGroupOutput)
 pub mod create_report_group_output {
-    ///
+
     /// A builder for [`CreateReportGroupOutput`](crate::output::CreateReportGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2539,7 +2539,7 @@ impl std::fmt::Debug for CreateProjectOutput {
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput)
 pub mod create_project_output {
-    ///
+
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2601,7 +2601,7 @@ impl std::fmt::Debug for BatchGetReportsOutput {
 }
 /// See [`BatchGetReportsOutput`](crate::output::BatchGetReportsOutput)
 pub mod batch_get_reports_output {
-    ///
+
     /// A builder for [`BatchGetReportsOutput`](crate::output::BatchGetReportsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2693,7 +2693,7 @@ impl std::fmt::Debug for BatchGetReportGroupsOutput {
 }
 /// See [`BatchGetReportGroupsOutput`](crate::output::BatchGetReportGroupsOutput)
 pub mod batch_get_report_groups_output {
-    ///
+
     /// A builder for [`BatchGetReportGroupsOutput`](crate::output::BatchGetReportGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2785,7 +2785,7 @@ impl std::fmt::Debug for BatchGetProjectsOutput {
 }
 /// See [`BatchGetProjectsOutput`](crate::output::BatchGetProjectsOutput)
 pub mod batch_get_projects_output {
-    ///
+
     /// A builder for [`BatchGetProjectsOutput`](crate::output::BatchGetProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2877,7 +2877,7 @@ impl std::fmt::Debug for BatchGetBuildsOutput {
 }
 /// See [`BatchGetBuildsOutput`](crate::output::BatchGetBuildsOutput)
 pub mod batch_get_builds_output {
-    ///
+
     /// A builder for [`BatchGetBuildsOutput`](crate::output::BatchGetBuildsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2969,7 +2969,7 @@ impl std::fmt::Debug for BatchGetBuildBatchesOutput {
 }
 /// See [`BatchGetBuildBatchesOutput`](crate::output::BatchGetBuildBatchesOutput)
 pub mod batch_get_build_batches_output {
-    ///
+
     /// A builder for [`BatchGetBuildBatchesOutput`](crate::output::BatchGetBuildBatchesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3061,7 +3061,7 @@ impl std::fmt::Debug for BatchDeleteBuildsOutput {
 }
 /// See [`BatchDeleteBuildsOutput`](crate::output::BatchDeleteBuildsOutput)
 pub mod batch_delete_builds_output {
-    ///
+
     /// A builder for [`BatchDeleteBuildsOutput`](crate::output::BatchDeleteBuildsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

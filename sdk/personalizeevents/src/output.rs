@@ -11,7 +11,7 @@ impl std::fmt::Debug for PutUsersOutput {
 }
 /// See [`PutUsersOutput`](crate::output::PutUsersOutput)
 pub mod put_users_output {
-    ///
+
     /// A builder for [`PutUsersOutput`](crate::output::PutUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for PutItemsOutput {
 }
 /// See [`PutItemsOutput`](crate::output::PutItemsOutput)
 pub mod put_items_output {
-    ///
+
     /// A builder for [`PutItemsOutput`](crate::output::PutItemsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for PutEventsOutput {
 }
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput)
 pub mod put_events_output {
-    ///
+
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

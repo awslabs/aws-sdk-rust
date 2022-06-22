@@ -180,7 +180,7 @@ impl std::fmt::Debug for ActiveContext {
 }
 /// See [`ActiveContext`](crate::model::ActiveContext)
 pub mod active_context {
-    ///
+
     /// A builder for [`ActiveContext`](crate::model::ActiveContext)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -286,7 +286,7 @@ impl std::fmt::Debug for ActiveContextTimeToLive {
 }
 /// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive)
 pub mod active_context_time_to_live {
-    ///
+
     /// A builder for [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -433,7 +433,7 @@ impl std::fmt::Debug for IntentSummary {
 }
 /// See [`IntentSummary`](crate::model::IntentSummary)
 pub mod intent_summary {
-    ///
+
     /// A builder for [`IntentSummary`](crate::model::IntentSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -897,7 +897,7 @@ impl std::fmt::Debug for DialogAction {
 }
 /// See [`DialogAction`](crate::model::DialogAction)
 pub mod dialog_action {
-    ///
+
     /// A builder for [`DialogAction`](crate::model::DialogAction)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1101,7 +1101,7 @@ impl std::fmt::Debug for ResponseCard {
 }
 /// See [`ResponseCard`](crate::model::ResponseCard)
 pub mod response_card {
-    ///
+
     /// A builder for [`ResponseCard`](crate::model::ResponseCard)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1221,7 +1221,7 @@ impl std::fmt::Debug for GenericAttachment {
 }
 /// See [`GenericAttachment`](crate::model::GenericAttachment)
 pub mod generic_attachment {
-    ///
+
     /// A builder for [`GenericAttachment`](crate::model::GenericAttachment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1343,7 +1343,7 @@ impl std::fmt::Debug for Button {
 }
 /// See [`Button`](crate::model::Button)
 pub mod button {
-    ///
+
     /// A builder for [`Button`](crate::model::Button)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1469,7 +1469,7 @@ impl std::fmt::Debug for SentimentResponse {
 }
 /// See [`SentimentResponse`](crate::model::SentimentResponse)
 pub mod sentiment_response {
-    ///
+
     /// A builder for [`SentimentResponse`](crate::model::SentimentResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1560,7 +1560,7 @@ impl std::fmt::Debug for PredictedIntent {
 }
 /// See [`PredictedIntent`](crate::model::PredictedIntent)
 pub mod predicted_intent {
-    ///
+
     /// A builder for [`PredictedIntent`](crate::model::PredictedIntent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1659,7 +1659,7 @@ impl std::fmt::Debug for IntentConfidence {
 }
 /// See [`IntentConfidence`](crate::model::IntentConfidence)
 pub mod intent_confidence {
-    ///
+
     /// A builder for [`IntentConfidence`](crate::model::IntentConfidence)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

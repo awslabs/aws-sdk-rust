@@ -1500,7 +1500,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError)
 pub mod internal_server_error {
-    ///
+
     /// A builder for [`InternalServerError`](crate::error::InternalServerError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1565,7 +1565,7 @@ impl std::fmt::Display for CaseIdNotFound {
 impl std::error::Error for CaseIdNotFound {}
 /// See [`CaseIdNotFound`](crate::error::CaseIdNotFound)
 pub mod case_id_not_found {
-    ///
+
     /// A builder for [`CaseIdNotFound`](crate::error::CaseIdNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1630,7 +1630,7 @@ impl std::fmt::Display for DescribeAttachmentLimitExceeded {
 impl std::error::Error for DescribeAttachmentLimitExceeded {}
 /// See [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded)
 pub mod describe_attachment_limit_exceeded {
-    ///
+
     /// A builder for [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1695,7 +1695,7 @@ impl std::fmt::Display for AttachmentIdNotFound {
 impl std::error::Error for AttachmentIdNotFound {}
 /// See [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound)
 pub mod attachment_id_not_found {
-    ///
+
     /// A builder for [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1760,7 +1760,7 @@ impl std::fmt::Display for CaseCreationLimitExceeded {
 impl std::error::Error for CaseCreationLimitExceeded {}
 /// See [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded)
 pub mod case_creation_limit_exceeded {
-    ///
+
     /// A builder for [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1825,7 +1825,7 @@ impl std::fmt::Display for AttachmentSetIdNotFound {
 impl std::error::Error for AttachmentSetIdNotFound {}
 /// See [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound)
 pub mod attachment_set_id_not_found {
-    ///
+
     /// A builder for [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl std::fmt::Display for AttachmentSetExpired {
 impl std::error::Error for AttachmentSetExpired {}
 /// See [`AttachmentSetExpired`](crate::error::AttachmentSetExpired)
 pub mod attachment_set_expired {
-    ///
+
     /// A builder for [`AttachmentSetExpired`](crate::error::AttachmentSetExpired)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1955,7 +1955,7 @@ impl std::fmt::Display for AttachmentSetSizeLimitExceeded {
 impl std::error::Error for AttachmentSetSizeLimitExceeded {}
 /// See [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded)
 pub mod attachment_set_size_limit_exceeded {
-    ///
+
     /// A builder for [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2020,7 +2020,7 @@ impl std::fmt::Display for AttachmentLimitExceeded {
 impl std::error::Error for AttachmentLimitExceeded {}
 /// See [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded)
 pub mod attachment_limit_exceeded {
-    ///
+
     /// A builder for [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

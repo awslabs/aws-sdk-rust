@@ -74,7 +74,7 @@ impl std::fmt::Debug for UpdateSchemaOutput {
 }
 /// See [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput)
 pub mod update_schema_output {
-    ///
+
     /// A builder for [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -264,7 +264,7 @@ impl std::fmt::Debug for UpdateRegistryOutput {
 }
 /// See [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput)
 pub mod update_registry_output {
-    ///
+
     /// A builder for [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -421,7 +421,7 @@ impl std::fmt::Debug for UpdateDiscovererOutput {
 }
 /// See [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput)
 pub mod update_discoverer_output {
-    ///
+
     /// A builder for [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -564,7 +564,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -595,7 +595,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -643,7 +643,7 @@ impl std::fmt::Debug for StopDiscovererOutput {
 }
 /// See [`StopDiscovererOutput`](crate::output::StopDiscovererOutput)
 pub mod stop_discoverer_output {
-    ///
+
     /// A builder for [`StopDiscovererOutput`](crate::output::StopDiscovererOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -723,7 +723,7 @@ impl std::fmt::Debug for StartDiscovererOutput {
 }
 /// See [`StartDiscovererOutput`](crate::output::StartDiscovererOutput)
 pub mod start_discoverer_output {
-    ///
+
     /// A builder for [`StartDiscovererOutput`](crate::output::StartDiscovererOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -803,7 +803,7 @@ impl std::fmt::Debug for SearchSchemasOutput {
 }
 /// See [`SearchSchemasOutput`](crate::output::SearchSchemasOutput)
 pub mod search_schemas_output {
-    ///
+
     /// A builder for [`SearchSchemasOutput`](crate::output::SearchSchemasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -886,7 +886,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 pub mod put_resource_policy_output {
-    ///
+
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -974,7 +974,7 @@ impl std::fmt::Debug for PutCodeBindingOutput {
 }
 /// See [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput)
 pub mod put_code_binding_output {
-    ///
+
     /// A builder for [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1081,7 +1081,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1158,7 +1158,7 @@ impl std::fmt::Debug for ListSchemaVersionsOutput {
 }
 /// See [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput)
 pub mod list_schema_versions_output {
-    ///
+
     /// A builder for [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1242,7 +1242,7 @@ impl std::fmt::Debug for ListSchemasOutput {
 }
 /// See [`ListSchemasOutput`](crate::output::ListSchemasOutput)
 pub mod list_schemas_output {
-    ///
+
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1325,7 +1325,7 @@ impl std::fmt::Debug for ListRegistriesOutput {
 }
 /// See [`ListRegistriesOutput`](crate::output::ListRegistriesOutput)
 pub mod list_registries_output {
-    ///
+
     /// A builder for [`ListRegistriesOutput`](crate::output::ListRegistriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1408,7 +1408,7 @@ impl std::fmt::Debug for ListDiscoverersOutput {
 }
 /// See [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput)
 pub mod list_discoverers_output {
-    ///
+
     /// A builder for [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1491,7 +1491,7 @@ impl std::fmt::Debug for GetResourcePolicyOutput {
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
 pub mod get_resource_policy_output {
-    ///
+
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1558,7 +1558,7 @@ impl std::fmt::Debug for GetDiscoveredSchemaOutput {
 }
 /// See [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput)
 pub mod get_discovered_schema_output {
-    ///
+
     /// A builder for [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1613,7 +1613,7 @@ impl std::fmt::Debug for GetCodeBindingSourceOutput {
 }
 /// See [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput)
 pub mod get_code_binding_source_output {
-    ///
+
     /// A builder for [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1694,7 +1694,7 @@ impl std::fmt::Debug for ExportSchemaOutput {
 }
 /// See [`ExportSchemaOutput`](crate::output::ExportSchemaOutput)
 pub mod export_schema_output {
-    ///
+
     /// A builder for [`ExportSchemaOutput`](crate::output::ExportSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1860,7 +1860,7 @@ impl std::fmt::Debug for DescribeSchemaOutput {
 }
 /// See [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput)
 pub mod describe_schema_output {
-    ///
+
     /// A builder for [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2062,7 +2062,7 @@ impl std::fmt::Debug for DescribeRegistryOutput {
 }
 /// See [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
 pub mod describe_registry_output {
-    ///
+
     /// A builder for [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2219,7 +2219,7 @@ impl std::fmt::Debug for DescribeDiscovererOutput {
 }
 /// See [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput)
 pub mod describe_discoverer_output {
-    ///
+
     /// A builder for [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2393,7 +2393,7 @@ impl std::fmt::Debug for DescribeCodeBindingOutput {
 }
 /// See [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput)
 pub mod describe_code_binding_output {
-    ///
+
     /// A builder for [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2486,7 +2486,7 @@ impl std::fmt::Debug for DeleteSchemaVersionOutput {
 }
 /// See [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput)
 pub mod delete_schema_version_output {
-    ///
+
     /// A builder for [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2517,7 +2517,7 @@ impl std::fmt::Debug for DeleteSchemaOutput {
 }
 /// See [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
 pub mod delete_schema_output {
-    ///
+
     /// A builder for [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2548,7 +2548,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 pub mod delete_resource_policy_output {
-    ///
+
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2579,7 +2579,7 @@ impl std::fmt::Debug for DeleteRegistryOutput {
 }
 /// See [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput)
 pub mod delete_registry_output {
-    ///
+
     /// A builder for [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2610,7 +2610,7 @@ impl std::fmt::Debug for DeleteDiscovererOutput {
 }
 /// See [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput)
 pub mod delete_discoverer_output {
-    ///
+
     /// A builder for [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2704,7 +2704,7 @@ impl std::fmt::Debug for CreateSchemaOutput {
 }
 /// See [`CreateSchemaOutput`](crate::output::CreateSchemaOutput)
 pub mod create_schema_output {
-    ///
+
     /// A builder for [`CreateSchemaOutput`](crate::output::CreateSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2894,7 +2894,7 @@ impl std::fmt::Debug for CreateRegistryOutput {
 }
 /// See [`CreateRegistryOutput`](crate::output::CreateRegistryOutput)
 pub mod create_registry_output {
-    ///
+
     /// A builder for [`CreateRegistryOutput`](crate::output::CreateRegistryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3051,7 +3051,7 @@ impl std::fmt::Debug for CreateDiscovererOutput {
 }
 /// See [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput)
 pub mod create_discoverer_output {
-    ///
+
     /// A builder for [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

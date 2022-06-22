@@ -95,7 +95,7 @@ impl std::fmt::Debug for ParallelDataConfig {
 }
 /// See [`ParallelDataConfig`](crate::model::ParallelDataConfig)
 pub mod parallel_data_config {
-    ///
+
     /// A builder for [`ParallelDataConfig`](crate::model::ParallelDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -235,7 +235,7 @@ impl std::fmt::Debug for TranslationSettings {
 }
 /// See [`TranslationSettings`](crate::model::TranslationSettings)
 pub mod translation_settings {
-    ///
+
     /// A builder for [`TranslationSettings`](crate::model::TranslationSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -425,7 +425,7 @@ impl std::fmt::Debug for AppliedTerminology {
 }
 /// See [`AppliedTerminology`](crate::model::AppliedTerminology)
 pub mod applied_terminology {
-    ///
+
     /// A builder for [`AppliedTerminology`](crate::model::AppliedTerminology)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -508,7 +508,7 @@ impl std::fmt::Debug for Term {
 }
 /// See [`Term`](crate::model::Term)
 pub mod term {
-    ///
+
     /// A builder for [`Term`](crate::model::Term)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -665,7 +665,7 @@ impl std::fmt::Debug for OutputDataConfig {
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig)
 pub mod output_data_config {
-    ///
+
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -742,7 +742,7 @@ impl std::fmt::Debug for EncryptionKey {
 }
 /// See [`EncryptionKey`](crate::model::EncryptionKey)
 pub mod encryption_key {
-    ///
+
     /// A builder for [`EncryptionKey`](crate::model::EncryptionKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -890,7 +890,7 @@ impl std::fmt::Debug for InputDataConfig {
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig)
 pub mod input_data_config {
-    ///
+
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1075,7 +1075,7 @@ impl std::fmt::Debug for TextTranslationJobProperties {
 }
 /// See [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties)
 pub mod text_translation_job_properties {
-    ///
+
     /// A builder for [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1372,7 +1372,7 @@ impl std::fmt::Debug for JobDetails {
 }
 /// See [`JobDetails`](crate::model::JobDetails)
 pub mod job_details {
-    ///
+
     /// A builder for [`JobDetails`](crate::model::JobDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1472,7 +1472,7 @@ impl std::fmt::Debug for TextTranslationJobFilter {
 }
 /// See [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter)
 pub mod text_translation_job_filter {
-    ///
+
     /// A builder for [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1691,7 +1691,7 @@ impl std::fmt::Debug for TerminologyProperties {
 }
 /// See [`TerminologyProperties`](crate::model::TerminologyProperties)
 pub mod terminology_properties {
-    ///
+
     /// A builder for [`TerminologyProperties`](crate::model::TerminologyProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2188,7 +2188,7 @@ impl std::fmt::Debug for ParallelDataProperties {
 }
 /// See [`ParallelDataProperties`](crate::model::ParallelDataProperties)
 pub mod parallel_data_properties {
-    ///
+
     /// A builder for [`ParallelDataProperties`](crate::model::ParallelDataProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2487,7 +2487,7 @@ impl std::fmt::Debug for TerminologyDataLocation {
 }
 /// See [`TerminologyDataLocation`](crate::model::TerminologyDataLocation)
 pub mod terminology_data_location {
-    ///
+
     /// A builder for [`TerminologyDataLocation`](crate::model::TerminologyDataLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2609,7 +2609,7 @@ impl std::fmt::Debug for TerminologyData {
 }
 /// See [`TerminologyData`](crate::model::TerminologyData)
 pub mod terminology_data {
-    ///
+
     /// A builder for [`TerminologyData`](crate::model::TerminologyData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2790,7 +2790,7 @@ impl std::fmt::Debug for ParallelDataDataLocation {
 }
 /// See [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation)
 pub mod parallel_data_data_location {
-    ///
+
     /// A builder for [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -86,7 +86,7 @@ impl std::fmt::Debug for UpdateRoomOutput {
 }
 /// See [`UpdateRoomOutput`](crate::output::UpdateRoomOutput)
 pub mod update_room_output {
-    ///
+
     /// A builder for [`UpdateRoomOutput`](crate::output::UpdateRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -289,7 +289,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -330,7 +330,7 @@ impl std::fmt::Debug for SendEventOutput {
 }
 /// See [`SendEventOutput`](crate::output::SendEventOutput)
 pub mod send_event_output {
-    ///
+
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -387,7 +387,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -464,7 +464,7 @@ impl std::fmt::Debug for ListRoomsOutput {
 }
 /// See [`ListRoomsOutput`](crate::output::ListRoomsOutput)
 pub mod list_rooms_output {
-    ///
+
     /// A builder for [`ListRoomsOutput`](crate::output::ListRoomsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -605,7 +605,7 @@ impl std::fmt::Debug for GetRoomOutput {
 }
 /// See [`GetRoomOutput`](crate::output::GetRoomOutput)
 pub mod get_room_output {
-    ///
+
     /// A builder for [`GetRoomOutput`](crate::output::GetRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -777,7 +777,7 @@ impl std::fmt::Debug for DisconnectUserOutput {
 }
 /// See [`DisconnectUserOutput`](crate::output::DisconnectUserOutput)
 pub mod disconnect_user_output {
-    ///
+
     /// A builder for [`DisconnectUserOutput`](crate::output::DisconnectUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -808,7 +808,7 @@ impl std::fmt::Debug for DeleteRoomOutput {
 }
 /// See [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
 pub mod delete_room_output {
-    ///
+
     /// A builder for [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -849,7 +849,7 @@ impl std::fmt::Debug for DeleteMessageOutput {
 }
 /// See [`DeleteMessageOutput`](crate::output::DeleteMessageOutput)
 pub mod delete_message_output {
-    ///
+
     /// A builder for [`DeleteMessageOutput`](crate::output::DeleteMessageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -967,7 +967,7 @@ impl std::fmt::Debug for CreateRoomOutput {
 }
 /// See [`CreateRoomOutput`](crate::output::CreateRoomOutput)
 pub mod create_room_output {
-    ///
+
     /// A builder for [`CreateRoomOutput`](crate::output::CreateRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1163,7 +1163,7 @@ impl std::fmt::Debug for CreateChatTokenOutput {
 }
 /// See [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput)
 pub mod create_chat_token_output {
-    ///
+
     /// A builder for [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

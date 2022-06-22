@@ -28,7 +28,7 @@ impl std::fmt::Debug for ListDetectorsOutput {
 }
 /// See [`ListDetectorsOutput`](crate::output::ListDetectorsOutput)
 pub mod list_detectors_output {
-    ///
+
     /// A builder for [`ListDetectorsOutput`](crate::output::ListDetectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -112,7 +112,7 @@ impl std::fmt::Debug for ListAlarmsOutput {
 }
 /// See [`ListAlarmsOutput`](crate::output::ListAlarmsOutput)
 pub mod list_alarms_output {
-    ///
+
     /// A builder for [`ListAlarmsOutput`](crate::output::ListAlarmsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -188,7 +188,7 @@ impl std::fmt::Debug for DescribeDetectorOutput {
 }
 /// See [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput)
 pub mod describe_detector_output {
-    ///
+
     /// A builder for [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl std::fmt::Debug for DescribeAlarmOutput {
 }
 /// See [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput)
 pub mod describe_alarm_output {
-    ///
+
     /// A builder for [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -302,7 +302,7 @@ impl std::fmt::Debug for BatchUpdateDetectorOutput {
 }
 /// See [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput)
 pub mod batch_update_detector_output {
-    ///
+
     /// A builder for [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -372,7 +372,7 @@ impl std::fmt::Debug for BatchSnoozeAlarmOutput {
 }
 /// See [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput)
 pub mod batch_snooze_alarm_output {
-    ///
+
     /// A builder for [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -439,7 +439,7 @@ impl std::fmt::Debug for BatchResetAlarmOutput {
 }
 /// See [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput)
 pub mod batch_reset_alarm_output {
-    ///
+
     /// A builder for [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -510,7 +510,7 @@ impl std::fmt::Debug for BatchPutMessageOutput {
 }
 /// See [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput)
 pub mod batch_put_message_output {
-    ///
+
     /// A builder for [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -580,7 +580,7 @@ impl std::fmt::Debug for BatchEnableAlarmOutput {
 }
 /// See [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput)
 pub mod batch_enable_alarm_output {
-    ///
+
     /// A builder for [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -647,7 +647,7 @@ impl std::fmt::Debug for BatchDisableAlarmOutput {
 }
 /// See [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput)
 pub mod batch_disable_alarm_output {
-    ///
+
     /// A builder for [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -718,7 +718,7 @@ impl std::fmt::Debug for BatchDeleteDetectorOutput {
 }
 /// See [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput)
 pub mod batch_delete_detector_output {
-    ///
+
     /// A builder for [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -788,7 +788,7 @@ impl std::fmt::Debug for BatchAcknowledgeAlarmOutput {
 }
 /// See [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput)
 pub mod batch_acknowledge_alarm_output {
-    ///
+
     /// A builder for [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

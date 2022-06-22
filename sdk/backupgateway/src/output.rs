@@ -28,7 +28,7 @@ impl std::fmt::Debug for ListHypervisorsOutput {
 }
 /// See [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput)
 pub mod list_hypervisors_output {
-    ///
+
     /// A builder for [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for ImportHypervisorConfigurationOutput {
 }
 /// See [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput)
 pub mod import_hypervisor_configuration_output {
-    ///
+
     /// A builder for [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl std::fmt::Debug for DeleteHypervisorOutput {
 }
 /// See [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput)
 pub mod delete_hypervisor_output {
-    ///
+
     /// A builder for [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -220,7 +220,7 @@ impl std::fmt::Debug for UpdateHypervisorOutput {
 }
 /// See [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput)
 pub mod update_hypervisor_output {
-    ///
+
     /// A builder for [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -268,7 +268,7 @@ impl std::fmt::Debug for TestHypervisorConfigurationOutput {
 }
 /// See [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput)
 pub mod test_hypervisor_configuration_output {
-    ///
+
     /// A builder for [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -309,7 +309,7 @@ impl std::fmt::Debug for PutMaintenanceStartTimeOutput {
 }
 /// See [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput)
 pub mod put_maintenance_start_time_output {
-    ///
+
     /// A builder for [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -364,7 +364,7 @@ impl std::fmt::Debug for DisassociateGatewayFromServerOutput {
 }
 /// See [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput)
 pub mod disassociate_gateway_from_server_output {
-    ///
+
     /// A builder for [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -419,7 +419,7 @@ impl std::fmt::Debug for AssociateGatewayToServerOutput {
 }
 /// See [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput)
 pub mod associate_gateway_to_server_output {
-    ///
+
     /// A builder for [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -481,7 +481,7 @@ impl std::fmt::Debug for ListGatewaysOutput {
 }
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput)
 pub mod list_gateways_output {
-    ///
+
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -557,7 +557,7 @@ impl std::fmt::Debug for CreateGatewayOutput {
 }
 /// See [`CreateGatewayOutput`](crate::output::CreateGatewayOutput)
 pub mod create_gateway_output {
-    ///
+
     /// A builder for [`CreateGatewayOutput`](crate::output::CreateGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -612,7 +612,7 @@ impl std::fmt::Debug for DeleteGatewayOutput {
 }
 /// See [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput)
 pub mod delete_gateway_output {
-    ///
+
     /// A builder for [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -667,7 +667,7 @@ impl std::fmt::Debug for UpdateGatewayInformationOutput {
 }
 /// See [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput)
 pub mod update_gateway_information_output {
-    ///
+
     /// A builder for [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -722,7 +722,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -777,7 +777,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -839,7 +839,7 @@ impl std::fmt::Debug for ListVirtualMachinesOutput {
 }
 /// See [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput)
 pub mod list_virtual_machines_output {
-    ///
+
     /// A builder for [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -923,7 +923,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateQueueOutput {
 }
 /// See [`UpdateQueueOutput`](crate::output::UpdateQueueOutput)
 pub mod update_queue_output {
-    ///
+
     /// A builder for [`UpdateQueueOutput`](crate::output::UpdateQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -74,7 +74,7 @@ impl std::fmt::Debug for UpdatePresetOutput {
 }
 /// See [`UpdatePresetOutput`](crate::output::UpdatePresetOutput)
 pub mod update_preset_output {
-    ///
+
     /// A builder for [`UpdatePresetOutput`](crate::output::UpdatePresetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -129,7 +129,7 @@ impl std::fmt::Debug for UpdateJobTemplateOutput {
 }
 /// See [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput)
 pub mod update_job_template_output {
-    ///
+
     /// A builder for [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -249,7 +249,7 @@ impl std::fmt::Debug for PutPolicyOutput {
 }
 /// See [`PutPolicyOutput`](crate::output::PutPolicyOutput)
 pub mod put_policy_output {
-    ///
+
     /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -304,7 +304,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -369,7 +369,7 @@ impl std::fmt::Debug for ListQueuesOutput {
 }
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput)
 pub mod list_queues_output {
-    ///
+
     /// A builder for [`ListQueuesOutput`](crate::output::ListQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -452,7 +452,7 @@ impl std::fmt::Debug for ListPresetsOutput {
 }
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput)
 pub mod list_presets_output {
-    ///
+
     /// A builder for [`ListPresetsOutput`](crate::output::ListPresetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -535,7 +535,7 @@ impl std::fmt::Debug for ListJobTemplatesOutput {
 }
 /// See [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput)
 pub mod list_job_templates_output {
-    ///
+
     /// A builder for [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -618,7 +618,7 @@ impl std::fmt::Debug for ListJobsOutput {
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput)
 pub mod list_jobs_output {
-    ///
+
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -694,7 +694,7 @@ impl std::fmt::Debug for GetQueueOutput {
 }
 /// See [`GetQueueOutput`](crate::output::GetQueueOutput)
 pub mod get_queue_output {
-    ///
+
     /// A builder for [`GetQueueOutput`](crate::output::GetQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -747,7 +747,7 @@ impl std::fmt::Debug for GetPresetOutput {
 }
 /// See [`GetPresetOutput`](crate::output::GetPresetOutput)
 pub mod get_preset_output {
-    ///
+
     /// A builder for [`GetPresetOutput`](crate::output::GetPresetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl std::fmt::Debug for GetPolicyOutput {
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput)
 pub mod get_policy_output {
-    ///
+
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -857,7 +857,7 @@ impl std::fmt::Debug for GetJobTemplateOutput {
 }
 /// See [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput)
 pub mod get_job_template_output {
-    ///
+
     /// A builder for [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -915,7 +915,7 @@ impl std::fmt::Debug for GetJobOutput {
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput)
 pub mod get_job_output {
-    ///
+
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -958,7 +958,7 @@ impl std::fmt::Debug for DisassociateCertificateOutput {
 }
 /// See [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput)
 pub mod disassociate_certificate_output {
-    ///
+
     /// A builder for [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1006,7 +1006,7 @@ impl std::fmt::Debug for DescribeEndpointsOutput {
 }
 /// See [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput)
 pub mod describe_endpoints_output {
-    ///
+
     /// A builder for [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1072,7 +1072,7 @@ impl std::fmt::Debug for DeleteQueueOutput {
 }
 /// See [`DeleteQueueOutput`](crate::output::DeleteQueueOutput)
 pub mod delete_queue_output {
-    ///
+
     /// A builder for [`DeleteQueueOutput`](crate::output::DeleteQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1103,7 +1103,7 @@ impl std::fmt::Debug for DeletePresetOutput {
 }
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput)
 pub mod delete_preset_output {
-    ///
+
     /// A builder for [`DeletePresetOutput`](crate::output::DeletePresetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1134,7 +1134,7 @@ impl std::fmt::Debug for DeletePolicyOutput {
 }
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
 pub mod delete_policy_output {
-    ///
+
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1165,7 +1165,7 @@ impl std::fmt::Debug for DeleteJobTemplateOutput {
 }
 /// See [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput)
 pub mod delete_job_template_output {
-    ///
+
     /// A builder for [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1206,7 +1206,7 @@ impl std::fmt::Debug for CreateQueueOutput {
 }
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput)
 pub mod create_queue_output {
-    ///
+
     /// A builder for [`CreateQueueOutput`](crate::output::CreateQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1259,7 +1259,7 @@ impl std::fmt::Debug for CreatePresetOutput {
 }
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput)
 pub mod create_preset_output {
-    ///
+
     /// A builder for [`CreatePresetOutput`](crate::output::CreatePresetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl std::fmt::Debug for CreateJobTemplateOutput {
 }
 /// See [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput)
 pub mod create_job_template_output {
-    ///
+
     /// A builder for [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1372,7 +1372,7 @@ impl std::fmt::Debug for CreateJobOutput {
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput)
 pub mod create_job_output {
-    ///
+
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1415,7 +1415,7 @@ impl std::fmt::Debug for CancelJobOutput {
 }
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput)
 pub mod cancel_job_output {
-    ///
+
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1446,7 +1446,7 @@ impl std::fmt::Debug for AssociateCertificateOutput {
 }
 /// See [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput)
 pub mod associate_certificate_output {
-    ///
+
     /// A builder for [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -4784,7 +4784,7 @@ impl std::fmt::Display for TooManyBucketsException {
 impl std::error::Error for TooManyBucketsException {}
 /// See [`TooManyBucketsException`](crate::error::TooManyBucketsException)
 pub mod too_many_buckets_exception {
-    ///
+
     /// A builder for [`TooManyBucketsException`](crate::error::TooManyBucketsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4849,7 +4849,7 @@ impl std::fmt::Display for InsufficientPrivilegesException {
 impl std::error::Error for InsufficientPrivilegesException {}
 /// See [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException)
 pub mod insufficient_privileges_exception {
-    ///
+
     /// A builder for [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4915,7 +4915,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
-    ///
+
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4980,7 +4980,7 @@ impl std::fmt::Display for ResourceTypeNotSupportedException {
 impl std::error::Error for ResourceTypeNotSupportedException {}
 /// See [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException)
 pub mod resource_type_not_supported_exception {
-    ///
+
     /// A builder for [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5045,7 +5045,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5110,7 +5110,7 @@ impl std::fmt::Display for OperationInProgressException {
 impl std::error::Error for OperationInProgressException {}
 /// See [`OperationInProgressException`](crate::error::OperationInProgressException)
 pub mod operation_in_progress_exception {
-    ///
+
     /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5175,7 +5175,7 @@ impl std::fmt::Display for ElasticBeanstalkServiceException {
 impl std::error::Error for ElasticBeanstalkServiceException {}
 /// See [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException)
 pub mod elastic_beanstalk_service_exception {
-    ///
+
     /// A builder for [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5240,7 +5240,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
-    ///
+
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5305,7 +5305,7 @@ impl std::fmt::Display for PlatformVersionStillReferencedException {
 impl std::error::Error for PlatformVersionStillReferencedException {}
 /// See [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException)
 pub mod platform_version_still_referenced_exception {
-    ///
+
     /// A builder for [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5370,7 +5370,7 @@ impl std::fmt::Display for SourceBundleDeletionException {
 impl std::error::Error for SourceBundleDeletionException {}
 /// See [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException)
 pub mod source_bundle_deletion_exception {
-    ///
+
     /// A builder for [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5440,7 +5440,7 @@ impl std::fmt::Display for S3LocationNotInServiceRegionException {
 impl std::error::Error for S3LocationNotInServiceRegionException {}
 /// See [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException)
 pub mod s3_location_not_in_service_region_exception {
-    ///
+
     /// A builder for [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5505,7 +5505,7 @@ impl std::fmt::Display for S3SubscriptionRequiredException {
 impl std::error::Error for S3SubscriptionRequiredException {}
 /// See [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException)
 pub mod s3_subscription_required_exception {
-    ///
+
     /// A builder for [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5570,7 +5570,7 @@ impl std::fmt::Display for TooManyPlatformsException {
 impl std::error::Error for TooManyPlatformsException {}
 /// See [`TooManyPlatformsException`](crate::error::TooManyPlatformsException)
 pub mod too_many_platforms_exception {
-    ///
+
     /// A builder for [`TooManyPlatformsException`](crate::error::TooManyPlatformsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5635,7 +5635,7 @@ impl std::fmt::Display for TooManyEnvironmentsException {
 impl std::error::Error for TooManyEnvironmentsException {}
 /// See [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException)
 pub mod too_many_environments_exception {
-    ///
+
     /// A builder for [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5700,7 +5700,7 @@ impl std::fmt::Display for TooManyConfigurationTemplatesException {
 impl std::error::Error for TooManyConfigurationTemplatesException {}
 /// See [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException)
 pub mod too_many_configuration_templates_exception {
-    ///
+
     /// A builder for [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5765,7 +5765,7 @@ impl std::fmt::Display for TooManyApplicationVersionsException {
 impl std::error::Error for TooManyApplicationVersionsException {}
 /// See [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException)
 pub mod too_many_application_versions_exception {
-    ///
+
     /// A builder for [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5830,7 +5830,7 @@ impl std::fmt::Display for TooManyApplicationsException {
 impl std::error::Error for TooManyApplicationsException {}
 /// See [`TooManyApplicationsException`](crate::error::TooManyApplicationsException)
 pub mod too_many_applications_exception {
-    ///
+
     /// A builder for [`TooManyApplicationsException`](crate::error::TooManyApplicationsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5895,7 +5895,7 @@ impl std::fmt::Display for CodeBuildNotInServiceRegionException {
 impl std::error::Error for CodeBuildNotInServiceRegionException {}
 /// See [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException)
 pub mod code_build_not_in_service_region_exception {
-    ///
+
     /// A builder for [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5960,7 +5960,7 @@ impl std::fmt::Display for ManagedActionInvalidStateException {
 impl std::error::Error for ManagedActionInvalidStateException {}
 /// See [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException)
 pub mod managed_action_invalid_state_exception {
-    ///
+
     /// A builder for [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

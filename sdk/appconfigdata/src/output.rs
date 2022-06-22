@@ -28,7 +28,7 @@ impl std::fmt::Debug for StartConfigurationSessionOutput {
 }
 /// See [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput)
 pub mod start_configuration_session_output {
-    ///
+
     /// A builder for [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -120,7 +120,7 @@ impl std::fmt::Debug for GetLatestConfigurationOutput {
 }
 /// See [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput)
 pub mod get_latest_configuration_output {
-    ///
+
     /// A builder for [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

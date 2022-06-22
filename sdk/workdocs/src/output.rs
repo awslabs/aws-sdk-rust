@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateUserOutput {
 }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput)
 pub mod update_user_output {
-    ///
+
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -64,7 +64,7 @@ impl std::fmt::Debug for UpdateFolderOutput {
 }
 /// See [`UpdateFolderOutput`](crate::output::UpdateFolderOutput)
 pub mod update_folder_output {
-    ///
+
     /// A builder for [`UpdateFolderOutput`](crate::output::UpdateFolderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -95,7 +95,7 @@ impl std::fmt::Debug for UpdateDocumentVersionOutput {
 }
 /// See [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput)
 pub mod update_document_version_output {
-    ///
+
     /// A builder for [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -126,7 +126,7 @@ impl std::fmt::Debug for UpdateDocumentOutput {
 }
 /// See [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput)
 pub mod update_document_output {
-    ///
+
     /// A builder for [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -157,7 +157,7 @@ impl std::fmt::Debug for RemoveResourcePermissionOutput {
 }
 /// See [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput)
 pub mod remove_resource_permission_output {
-    ///
+
     /// A builder for [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -188,7 +188,7 @@ impl std::fmt::Debug for RemoveAllResourcePermissionsOutput {
 }
 /// See [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput)
 pub mod remove_all_resource_permissions_output {
-    ///
+
     /// A builder for [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -236,7 +236,7 @@ impl std::fmt::Debug for InitiateDocumentVersionUploadOutput {
 }
 /// See [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput)
 pub mod initiate_document_version_upload_output {
-    ///
+
     /// A builder for [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -323,7 +323,7 @@ impl std::fmt::Debug for GetResourcesOutput {
 }
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput)
 pub mod get_resources_output {
-    ///
+
     /// A builder for [`GetResourcesOutput`](crate::output::GetResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl std::fmt::Debug for GetFolderPathOutput {
 }
 /// See [`GetFolderPathOutput`](crate::output::GetFolderPathOutput)
 pub mod get_folder_path_output {
-    ///
+
     /// A builder for [`GetFolderPathOutput`](crate::output::GetFolderPathOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -484,7 +484,7 @@ impl std::fmt::Debug for GetFolderOutput {
 }
 /// See [`GetFolderOutput`](crate::output::GetFolderOutput)
 pub mod get_folder_output {
-    ///
+
     /// A builder for [`GetFolderOutput`](crate::output::GetFolderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -582,7 +582,7 @@ impl std::fmt::Debug for GetDocumentVersionOutput {
 }
 /// See [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput)
 pub mod get_document_version_output {
-    ///
+
     /// A builder for [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -669,7 +669,7 @@ impl std::fmt::Debug for GetDocumentPathOutput {
 }
 /// See [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput)
 pub mod get_document_path_output {
-    ///
+
     /// A builder for [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -733,7 +733,7 @@ impl std::fmt::Debug for GetDocumentOutput {
 }
 /// See [`GetDocumentOutput`](crate::output::GetDocumentOutput)
 pub mod get_document_output {
-    ///
+
     /// A builder for [`GetDocumentOutput`](crate::output::GetDocumentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -820,7 +820,7 @@ impl std::fmt::Debug for GetCurrentUserOutput {
 }
 /// See [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput)
 pub mod get_current_user_output {
-    ///
+
     /// A builder for [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -887,7 +887,7 @@ impl std::fmt::Debug for DescribeUsersOutput {
 }
 /// See [`DescribeUsersOutput`](crate::output::DescribeUsersOutput)
 pub mod describe_users_output {
-    ///
+
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -982,7 +982,7 @@ impl std::fmt::Debug for DescribeRootFoldersOutput {
 }
 /// See [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput)
 pub mod describe_root_folders_output {
-    ///
+
     /// A builder for [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1065,7 +1065,7 @@ impl std::fmt::Debug for DescribeResourcePermissionsOutput {
 }
 /// See [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput)
 pub mod describe_resource_permissions_output {
-    ///
+
     /// A builder for [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1148,7 +1148,7 @@ impl std::fmt::Debug for DescribeNotificationSubscriptionsOutput {
 }
 /// See [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput)
 pub mod describe_notification_subscriptions_output {
-    ///
+
     /// A builder for [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1231,7 +1231,7 @@ impl std::fmt::Debug for DescribeGroupsOutput {
 }
 /// See [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput)
 pub mod describe_groups_output {
-    ///
+
     /// A builder for [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1321,7 +1321,7 @@ impl std::fmt::Debug for DescribeFolderContentsOutput {
 }
 /// See [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput)
 pub mod describe_folder_contents_output {
-    ///
+
     /// A builder for [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1428,7 +1428,7 @@ impl std::fmt::Debug for DescribeDocumentVersionsOutput {
 }
 /// See [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput)
 pub mod describe_document_versions_output {
-    ///
+
     /// A builder for [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1512,7 +1512,7 @@ impl std::fmt::Debug for DescribeCommentsOutput {
 }
 /// See [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput)
 pub mod describe_comments_output {
-    ///
+
     /// A builder for [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1595,7 +1595,7 @@ impl std::fmt::Debug for DescribeActivitiesOutput {
 }
 /// See [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput)
 pub mod describe_activities_output {
-    ///
+
     /// A builder for [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1661,7 +1661,7 @@ impl std::fmt::Debug for DeleteUserOutput {
 }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 pub mod delete_user_output {
-    ///
+
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1692,7 +1692,7 @@ impl std::fmt::Debug for DeleteNotificationSubscriptionOutput {
 }
 /// See [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput)
 pub mod delete_notification_subscription_output {
-    ///
+
     /// A builder for [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1723,7 +1723,7 @@ impl std::fmt::Debug for DeleteLabelsOutput {
 }
 /// See [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput)
 pub mod delete_labels_output {
-    ///
+
     /// A builder for [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1754,7 +1754,7 @@ impl std::fmt::Debug for DeleteFolderContentsOutput {
 }
 /// See [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput)
 pub mod delete_folder_contents_output {
-    ///
+
     /// A builder for [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1785,7 +1785,7 @@ impl std::fmt::Debug for DeleteFolderOutput {
 }
 /// See [`DeleteFolderOutput`](crate::output::DeleteFolderOutput)
 pub mod delete_folder_output {
-    ///
+
     /// A builder for [`DeleteFolderOutput`](crate::output::DeleteFolderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1816,7 +1816,7 @@ impl std::fmt::Debug for DeleteDocumentOutput {
 }
 /// See [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput)
 pub mod delete_document_output {
-    ///
+
     /// A builder for [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1847,7 +1847,7 @@ impl std::fmt::Debug for DeleteCustomMetadataOutput {
 }
 /// See [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput)
 pub mod delete_custom_metadata_output {
-    ///
+
     /// A builder for [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1878,7 +1878,7 @@ impl std::fmt::Debug for DeleteCommentOutput {
 }
 /// See [`DeleteCommentOutput`](crate::output::DeleteCommentOutput)
 pub mod delete_comment_output {
-    ///
+
     /// A builder for [`DeleteCommentOutput`](crate::output::DeleteCommentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1909,7 +1909,7 @@ impl std::fmt::Debug for DeactivateUserOutput {
 }
 /// See [`DeactivateUserOutput`](crate::output::DeactivateUserOutput)
 pub mod deactivate_user_output {
-    ///
+
     /// A builder for [`DeactivateUserOutput`](crate::output::DeactivateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1950,7 +1950,7 @@ impl std::fmt::Debug for CreateUserOutput {
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput)
 pub mod create_user_output {
-    ///
+
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2003,7 +2003,7 @@ impl std::fmt::Debug for CreateNotificationSubscriptionOutput {
 }
 /// See [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput)
 pub mod create_notification_subscription_output {
-    ///
+
     /// A builder for [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2051,7 +2051,7 @@ impl std::fmt::Debug for CreateLabelsOutput {
 }
 /// See [`CreateLabelsOutput`](crate::output::CreateLabelsOutput)
 pub mod create_labels_output {
-    ///
+
     /// A builder for [`CreateLabelsOutput`](crate::output::CreateLabelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2092,7 +2092,7 @@ impl std::fmt::Debug for CreateFolderOutput {
 }
 /// See [`CreateFolderOutput`](crate::output::CreateFolderOutput)
 pub mod create_folder_output {
-    ///
+
     /// A builder for [`CreateFolderOutput`](crate::output::CreateFolderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2140,7 +2140,7 @@ impl std::fmt::Debug for CreateCustomMetadataOutput {
 }
 /// See [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput)
 pub mod create_custom_metadata_output {
-    ///
+
     /// A builder for [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2181,7 +2181,7 @@ impl std::fmt::Debug for CreateCommentOutput {
 }
 /// See [`CreateCommentOutput`](crate::output::CreateCommentOutput)
 pub mod create_comment_output {
-    ///
+
     /// A builder for [`CreateCommentOutput`](crate::output::CreateCommentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2236,7 +2236,7 @@ impl std::fmt::Debug for AddResourcePermissionsOutput {
 }
 /// See [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput)
 pub mod add_resource_permissions_output {
-    ///
+
     /// A builder for [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2300,7 +2300,7 @@ impl std::fmt::Debug for ActivateUserOutput {
 }
 /// See [`ActivateUserOutput`](crate::output::ActivateUserOutput)
 pub mod activate_user_output {
-    ///
+
     /// A builder for [`ActivateUserOutput`](crate::output::ActivateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2343,7 +2343,7 @@ impl std::fmt::Debug for AbortDocumentVersionUploadOutput {
 }
 /// See [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput)
 pub mod abort_document_version_upload_output {
-    ///
+
     /// A builder for [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

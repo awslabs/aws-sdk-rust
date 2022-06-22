@@ -56,7 +56,7 @@ impl std::fmt::Debug for UpdateRuleOutput {
 }
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
 pub mod update_rule_output {
-    ///
+
     /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -176,7 +176,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -207,7 +207,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -248,7 +248,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl std::fmt::Debug for ListRulesOutput {
 }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput)
 pub mod list_rules_output {
-    ///
+
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -428,7 +428,7 @@ impl std::fmt::Debug for GetRuleOutput {
 }
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput)
 pub mod get_rule_output {
-    ///
+
     /// A builder for [`GetRuleOutput`](crate::output::GetRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -548,7 +548,7 @@ impl std::fmt::Debug for DeleteRuleOutput {
 }
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
 pub mod delete_rule_output {
-    ///
+
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -631,7 +631,7 @@ impl std::fmt::Debug for CreateRuleOutput {
 }
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput)
 pub mod create_rule_output {
-    ///
+
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

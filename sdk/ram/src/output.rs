@@ -28,7 +28,7 @@ impl std::fmt::Debug for UpdateResourceShareOutput {
 }
 /// See [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput)
 pub mod update_resource_share_output {
-    ///
+
     /// A builder for [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -88,7 +88,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -119,7 +119,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -169,7 +169,7 @@ impl std::fmt::Debug for RejectResourceShareInvitationOutput {
 }
 /// See [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput)
 pub mod reject_resource_share_invitation_output {
-    ///
+
     /// A builder for [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyOutput {
 }
 /// See [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput)
 pub mod promote_resource_share_created_from_policy_output {
-    ///
+
     /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -308,7 +308,7 @@ impl std::fmt::Debug for ListResourceTypesOutput {
 }
 /// See [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput)
 pub mod list_resource_types_output {
-    ///
+
     /// A builder for [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -395,7 +395,7 @@ impl std::fmt::Debug for ListResourceSharePermissionsOutput {
 }
 /// See [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput)
 pub mod list_resource_share_permissions_output {
-    ///
+
     /// A builder for [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -479,7 +479,7 @@ impl std::fmt::Debug for ListResourcesOutput {
 }
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput)
 pub mod list_resources_output {
-    ///
+
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -562,7 +562,7 @@ impl std::fmt::Debug for ListPrincipalsOutput {
 }
 /// See [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput)
 pub mod list_principals_output {
-    ///
+
     /// A builder for [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -648,7 +648,7 @@ impl std::fmt::Debug for ListPermissionVersionsOutput {
 }
 /// See [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
 pub mod list_permission_versions_output {
-    ///
+
     /// A builder for [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -735,7 +735,7 @@ impl std::fmt::Debug for ListPermissionsOutput {
 }
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
 pub mod list_permissions_output {
-    ///
+
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -819,7 +819,7 @@ impl std::fmt::Debug for ListPendingInvitationResourcesOutput {
 }
 /// See [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput)
 pub mod list_pending_invitation_resources_output {
-    ///
+
     /// A builder for [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -902,7 +902,7 @@ impl std::fmt::Debug for GetResourceSharesOutput {
 }
 /// See [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput)
 pub mod get_resource_shares_output {
-    ///
+
     /// A builder for [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -991,7 +991,7 @@ impl std::fmt::Debug for GetResourceShareInvitationsOutput {
 }
 /// See [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput)
 pub mod get_resource_share_invitations_output {
-    ///
+
     /// A builder for [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1084,7 +1084,7 @@ impl std::fmt::Debug for GetResourceShareAssociationsOutput {
 }
 /// See [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput)
 pub mod get_resource_share_associations_output {
-    ///
+
     /// A builder for [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1171,7 +1171,7 @@ impl std::fmt::Debug for GetResourcePoliciesOutput {
 }
 /// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput)
 pub mod get_resource_policies_output {
-    ///
+
     /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1247,7 +1247,7 @@ impl std::fmt::Debug for GetPermissionOutput {
 }
 /// See [`GetPermissionOutput`](crate::output::GetPermissionOutput)
 pub mod get_permission_output {
-    ///
+
     /// A builder for [`GetPermissionOutput`](crate::output::GetPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1305,7 +1305,7 @@ impl std::fmt::Debug for EnableSharingWithAwsOrganizationOutput {
 }
 /// See [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput)
 pub mod enable_sharing_with_aws_organization_output {
-    ///
+
     /// A builder for [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1367,7 +1367,7 @@ impl std::fmt::Debug for DisassociateResourceSharePermissionOutput {
 }
 /// See [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput)
 pub mod disassociate_resource_share_permission_output {
-    ///
+
     /// A builder for [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1447,7 +1447,7 @@ impl std::fmt::Debug for DisassociateResourceShareOutput {
 }
 /// See [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput)
 pub mod disassociate_resource_share_output {
-    ///
+
     /// A builder for [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1534,7 +1534,7 @@ impl std::fmt::Debug for DeleteResourceShareOutput {
 }
 /// See [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput)
 pub mod delete_resource_share_output {
-    ///
+
     /// A builder for [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1608,7 +1608,7 @@ impl std::fmt::Debug for CreateResourceShareOutput {
 }
 /// See [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput)
 pub mod create_resource_share_output {
-    ///
+
     /// A builder for [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1685,7 +1685,7 @@ impl std::fmt::Debug for AssociateResourceSharePermissionOutput {
 }
 /// See [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput)
 pub mod associate_resource_share_permission_output {
-    ///
+
     /// A builder for [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1765,7 +1765,7 @@ impl std::fmt::Debug for AssociateResourceShareOutput {
 }
 /// See [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput)
 pub mod associate_resource_share_output {
-    ///
+
     /// A builder for [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1854,7 +1854,7 @@ impl std::fmt::Debug for AcceptResourceShareInvitationOutput {
 }
 /// See [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput)
 pub mod accept_resource_share_invitation_output {
-    ///
+
     /// A builder for [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

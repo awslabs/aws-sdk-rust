@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateRepositoryNameOutput {
 }
 /// See [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput)
 pub mod update_repository_name_output {
-    ///
+
     /// A builder for [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UpdateRepositoryDescriptionOutput {
 }
 /// See [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput)
 pub mod update_repository_description_output {
-    ///
+
     /// A builder for [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -83,7 +83,7 @@ impl std::fmt::Debug for UpdatePullRequestTitleOutput {
 }
 /// See [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput)
 pub mod update_pull_request_title_output {
-    ///
+
     /// A builder for [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -141,7 +141,7 @@ impl std::fmt::Debug for UpdatePullRequestStatusOutput {
 }
 /// See [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput)
 pub mod update_pull_request_status_output {
-    ///
+
     /// A builder for [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -199,7 +199,7 @@ impl std::fmt::Debug for UpdatePullRequestDescriptionOutput {
 }
 /// See [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput)
 pub mod update_pull_request_description_output {
-    ///
+
     /// A builder for [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl std::fmt::Debug for UpdatePullRequestApprovalStateOutput {
 }
 /// See [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput)
 pub mod update_pull_request_approval_state_output {
-    ///
+
     /// A builder for [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -288,7 +288,7 @@ impl std::fmt::Debug for UpdatePullRequestApprovalRuleContentOutput {
 }
 /// See [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput)
 pub mod update_pull_request_approval_rule_content_output {
-    ///
+
     /// A builder for [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -336,7 +336,7 @@ impl std::fmt::Debug for UpdateDefaultBranchOutput {
 }
 /// See [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput)
 pub mod update_default_branch_output {
-    ///
+
     /// A builder for [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -377,7 +377,7 @@ impl std::fmt::Debug for UpdateCommentOutput {
 }
 /// See [`UpdateCommentOutput`](crate::output::UpdateCommentOutput)
 pub mod update_comment_output {
-    ///
+
     /// A builder for [`UpdateCommentOutput`](crate::output::UpdateCommentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -434,7 +434,7 @@ impl std::fmt::Debug for UpdateApprovalRuleTemplateNameOutput {
 }
 /// See [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput)
 pub mod update_approval_rule_template_name_output {
-    ///
+
     /// A builder for [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -494,7 +494,7 @@ impl std::fmt::Debug for UpdateApprovalRuleTemplateDescriptionOutput {
 }
 /// See [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput)
 pub mod update_approval_rule_template_description_output {
-    ///
+
     /// A builder for [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -554,7 +554,7 @@ impl std::fmt::Debug for UpdateApprovalRuleTemplateContentOutput {
 }
 /// See [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput)
 pub mod update_approval_rule_template_content_output {
-    ///
+
     /// A builder for [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -602,7 +602,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -653,7 +653,7 @@ impl std::fmt::Debug for TestRepositoryTriggersOutput {
 }
 /// See [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput)
 pub mod test_repository_triggers_output {
-    ///
+
     /// A builder for [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -734,7 +734,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -775,7 +775,7 @@ impl std::fmt::Debug for PutRepositoryTriggersOutput {
 }
 /// See [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput)
 pub mod put_repository_triggers_output {
-    ///
+
     /// A builder for [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -847,7 +847,7 @@ impl std::fmt::Debug for PutFileOutput {
 }
 /// See [`PutFileOutput`](crate::output::PutFileOutput)
 pub mod put_file_output {
-    ///
+
     /// A builder for [`PutFileOutput`](crate::output::PutFileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -916,7 +916,7 @@ impl std::fmt::Debug for PutCommentReactionOutput {
 }
 /// See [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput)
 pub mod put_comment_reaction_output {
-    ///
+
     /// A builder for [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -957,7 +957,7 @@ impl std::fmt::Debug for PostCommentReplyOutput {
 }
 /// See [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput)
 pub mod post_comment_reply_output {
-    ///
+
     /// A builder for [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1061,7 +1061,7 @@ impl std::fmt::Debug for PostCommentForPullRequestOutput {
 }
 /// See [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput)
 pub mod post_comment_for_pull_request_output {
-    ///
+
     /// A builder for [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1260,7 +1260,7 @@ impl std::fmt::Debug for PostCommentForComparedCommitOutput {
 }
 /// See [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput)
 pub mod post_comment_for_compared_commit_output {
-    ///
+
     /// A builder for [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1392,7 +1392,7 @@ impl std::fmt::Debug for OverridePullRequestApprovalRulesOutput {
 }
 /// See [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput)
 pub mod override_pull_request_approval_rules_output {
-    ///
+
     /// A builder for [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1433,7 +1433,7 @@ impl std::fmt::Debug for MergePullRequestByThreeWayOutput {
 }
 /// See [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput)
 pub mod merge_pull_request_by_three_way_output {
-    ///
+
     /// A builder for [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1491,7 +1491,7 @@ impl std::fmt::Debug for MergePullRequestBySquashOutput {
 }
 /// See [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput)
 pub mod merge_pull_request_by_squash_output {
-    ///
+
     /// A builder for [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1549,7 +1549,7 @@ impl std::fmt::Debug for MergePullRequestByFastForwardOutput {
 }
 /// See [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput)
 pub mod merge_pull_request_by_fast_forward_output {
-    ///
+
     /// A builder for [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1614,7 +1614,7 @@ impl std::fmt::Debug for MergeBranchesByThreeWayOutput {
 }
 /// See [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput)
 pub mod merge_branches_by_three_way_output {
-    ///
+
     /// A builder for [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1688,7 +1688,7 @@ impl std::fmt::Debug for MergeBranchesBySquashOutput {
 }
 /// See [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput)
 pub mod merge_branches_by_squash_output {
-    ///
+
     /// A builder for [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl std::fmt::Debug for MergeBranchesByFastForwardOutput {
 }
 /// See [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput)
 pub mod merge_branches_by_fast_forward_output {
-    ///
+
     /// A builder for [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1840,7 +1840,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1931,7 +1931,7 @@ impl std::fmt::Debug for ListRepositoriesForApprovalRuleTemplateOutput {
 }
 /// See [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput)
 pub mod list_repositories_for_approval_rule_template_output {
-    ///
+
     /// A builder for [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2015,7 +2015,7 @@ impl std::fmt::Debug for ListRepositoriesOutput {
 }
 /// See [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput)
 pub mod list_repositories_output {
-    ///
+
     /// A builder for [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2099,7 +2099,7 @@ impl std::fmt::Debug for ListPullRequestsOutput {
 }
 /// See [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput)
 pub mod list_pull_requests_output {
-    ///
+
     /// A builder for [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2182,7 +2182,7 @@ impl std::fmt::Debug for ListBranchesOutput {
 }
 /// See [`ListBranchesOutput`](crate::output::ListBranchesOutput)
 pub mod list_branches_output {
-    ///
+
     /// A builder for [`ListBranchesOutput`](crate::output::ListBranchesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2269,7 +2269,7 @@ impl std::fmt::Debug for ListAssociatedApprovalRuleTemplatesForRepositoryOutput 
 }
 /// See [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput)
 pub mod list_associated_approval_rule_templates_for_repository_output {
-    ///
+
     /// A builder for [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2362,7 +2362,7 @@ impl std::fmt::Debug for ListApprovalRuleTemplatesOutput {
 }
 /// See [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput)
 pub mod list_approval_rule_templates_output {
-    ///
+
     /// A builder for [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2449,7 +2449,7 @@ impl std::fmt::Debug for GetRepositoryTriggersOutput {
 }
 /// See [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput)
 pub mod get_repository_triggers_output {
-    ///
+
     /// A builder for [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2528,7 +2528,7 @@ impl std::fmt::Debug for GetRepositoryOutput {
 }
 /// See [`GetRepositoryOutput`](crate::output::GetRepositoryOutput)
 pub mod get_repository_output {
-    ///
+
     /// A builder for [`GetRepositoryOutput`](crate::output::GetRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2593,7 +2593,7 @@ impl std::fmt::Debug for GetPullRequestOverrideStateOutput {
 }
 /// See [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput)
 pub mod get_pull_request_override_state_output {
-    ///
+
     /// A builder for [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2660,7 +2660,7 @@ impl std::fmt::Debug for GetPullRequestApprovalStatesOutput {
 }
 /// See [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput)
 pub mod get_pull_request_approval_states_output {
-    ///
+
     /// A builder for [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2724,7 +2724,7 @@ impl std::fmt::Debug for GetPullRequestOutput {
 }
 /// See [`GetPullRequestOutput`](crate::output::GetPullRequestOutput)
 pub mod get_pull_request_output {
-    ///
+
     /// A builder for [`GetPullRequestOutput`](crate::output::GetPullRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2803,7 +2803,7 @@ impl std::fmt::Debug for GetMergeOptionsOutput {
 }
 /// See [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput)
 pub mod get_merge_options_output {
-    ///
+
     /// A builder for [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2948,7 +2948,7 @@ impl std::fmt::Debug for GetMergeConflictsOutput {
 }
 /// See [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput)
 pub mod get_merge_conflicts_output {
-    ///
+
     /// A builder for [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3103,7 +3103,7 @@ impl std::fmt::Debug for GetMergeCommitOutput {
 }
 /// See [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput)
 pub mod get_merge_commit_output {
-    ///
+
     /// A builder for [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3248,7 +3248,7 @@ impl std::fmt::Debug for GetFolderOutput {
 }
 /// See [`GetFolderOutput`](crate::output::GetFolderOutput)
 pub mod get_folder_output {
-    ///
+
     /// A builder for [`GetFolderOutput`](crate::output::GetFolderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3450,7 +3450,7 @@ impl std::fmt::Debug for GetFileOutput {
 }
 /// See [`GetFileOutput`](crate::output::GetFileOutput)
 pub mod get_file_output {
-    ///
+
     /// A builder for [`GetFileOutput`](crate::output::GetFileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3582,7 +3582,7 @@ impl std::fmt::Debug for GetDifferencesOutput {
 }
 /// See [`GetDifferencesOutput`](crate::output::GetDifferencesOutput)
 pub mod get_differences_output {
-    ///
+
     /// A builder for [`GetDifferencesOutput`](crate::output::GetDifferencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3658,7 +3658,7 @@ impl std::fmt::Debug for GetCommitOutput {
 }
 /// See [`GetCommitOutput`](crate::output::GetCommitOutput)
 pub mod get_commit_output {
-    ///
+
     /// A builder for [`GetCommitOutput`](crate::output::GetCommitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3726,7 +3726,7 @@ impl std::fmt::Debug for GetCommentsForPullRequestOutput {
 }
 /// See [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput)
 pub mod get_comments_for_pull_request_output {
-    ///
+
     /// A builder for [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3819,7 +3819,7 @@ impl std::fmt::Debug for GetCommentsForComparedCommitOutput {
 }
 /// See [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput)
 pub mod get_comments_for_compared_commit_output {
-    ///
+
     /// A builder for [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3908,7 +3908,7 @@ impl std::fmt::Debug for GetCommentReactionsOutput {
 }
 /// See [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput)
 pub mod get_comment_reactions_output {
-    ///
+
     /// A builder for [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3985,7 +3985,7 @@ impl std::fmt::Debug for GetCommentOutput {
 }
 /// See [`GetCommentOutput`](crate::output::GetCommentOutput)
 pub mod get_comment_output {
-    ///
+
     /// A builder for [`GetCommentOutput`](crate::output::GetCommentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4040,7 +4040,7 @@ impl std::fmt::Debug for GetBranchOutput {
 }
 /// See [`GetBranchOutput`](crate::output::GetBranchOutput)
 pub mod get_branch_output {
-    ///
+
     /// A builder for [`GetBranchOutput`](crate::output::GetBranchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4095,7 +4095,7 @@ impl std::fmt::Debug for GetBlobOutput {
 }
 /// See [`GetBlobOutput`](crate::output::GetBlobOutput)
 pub mod get_blob_output {
-    ///
+
     /// A builder for [`GetBlobOutput`](crate::output::GetBlobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4152,7 +4152,7 @@ impl std::fmt::Debug for GetApprovalRuleTemplateOutput {
 }
 /// See [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput)
 pub mod get_approval_rule_template_output {
-    ///
+
     /// A builder for [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4210,7 +4210,7 @@ impl std::fmt::Debug for EvaluatePullRequestApprovalRulesOutput {
 }
 /// See [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput)
 pub mod evaluate_pull_request_approval_rules_output {
-    ///
+
     /// A builder for [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4258,7 +4258,7 @@ impl std::fmt::Debug for DisassociateApprovalRuleTemplateFromRepositoryOutput {
 }
 /// See [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput)
 pub mod disassociate_approval_rule_template_from_repository_output {
-    ///
+
     /// A builder for [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4308,7 +4308,7 @@ impl std::fmt::Debug for DescribePullRequestEventsOutput {
 }
 /// See [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput)
 pub mod describe_pull_request_events_output {
-    ///
+
     /// A builder for [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4420,7 +4420,7 @@ impl std::fmt::Debug for DescribeMergeConflictsOutput {
 }
 /// See [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput)
 pub mod describe_merge_conflicts_output {
-    ///
+
     /// A builder for [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4556,7 +4556,7 @@ impl std::fmt::Debug for DeleteRepositoryOutput {
 }
 /// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
 pub mod delete_repository_output {
-    ///
+
     /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4618,7 +4618,7 @@ impl std::fmt::Debug for DeletePullRequestApprovalRuleOutput {
 }
 /// See [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput)
 pub mod delete_pull_request_approval_rule_output {
-    ///
+
     /// A builder for [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4701,7 +4701,7 @@ impl std::fmt::Debug for DeleteFileOutput {
 }
 /// See [`DeleteFileOutput`](crate::output::DeleteFileOutput)
 pub mod delete_file_output {
-    ///
+
     /// A builder for [`DeleteFileOutput`](crate::output::DeleteFileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4792,7 +4792,7 @@ impl std::fmt::Debug for DeleteCommentContentOutput {
 }
 /// See [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput)
 pub mod delete_comment_content_output {
-    ///
+
     /// A builder for [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4847,7 +4847,7 @@ impl std::fmt::Debug for DeleteBranchOutput {
 }
 /// See [`DeleteBranchOutput`](crate::output::DeleteBranchOutput)
 pub mod delete_branch_output {
-    ///
+
     /// A builder for [`DeleteBranchOutput`](crate::output::DeleteBranchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4905,7 +4905,7 @@ impl std::fmt::Debug for DeleteApprovalRuleTemplateOutput {
 }
 /// See [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput)
 pub mod delete_approval_rule_template_output {
-    ///
+
     /// A builder for [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4970,7 +4970,7 @@ impl std::fmt::Debug for CreateUnreferencedMergeCommitOutput {
 }
 /// See [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput)
 pub mod create_unreferenced_merge_commit_output {
-    ///
+
     /// A builder for [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5037,7 +5037,7 @@ impl std::fmt::Debug for CreateRepositoryOutput {
 }
 /// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
 pub mod create_repository_output {
-    ///
+
     /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5095,7 +5095,7 @@ impl std::fmt::Debug for CreatePullRequestApprovalRuleOutput {
 }
 /// See [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput)
 pub mod create_pull_request_approval_rule_output {
-    ///
+
     /// A builder for [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5153,7 +5153,7 @@ impl std::fmt::Debug for CreatePullRequestOutput {
 }
 /// See [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput)
 pub mod create_pull_request_output {
-    ///
+
     /// A builder for [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5239,7 +5239,7 @@ impl std::fmt::Debug for CreateCommitOutput {
 }
 /// See [`CreateCommitOutput`](crate::output::CreateCommitOutput)
 pub mod create_commit_output {
-    ///
+
     /// A builder for [`CreateCommitOutput`](crate::output::CreateCommitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5359,7 +5359,7 @@ impl std::fmt::Debug for CreateBranchOutput {
 }
 /// See [`CreateBranchOutput`](crate::output::CreateBranchOutput)
 pub mod create_branch_output {
-    ///
+
     /// A builder for [`CreateBranchOutput`](crate::output::CreateBranchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5402,7 +5402,7 @@ impl std::fmt::Debug for CreateApprovalRuleTemplateOutput {
 }
 /// See [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput)
 pub mod create_approval_rule_template_output {
-    ///
+
     /// A builder for [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5467,7 +5467,7 @@ impl std::fmt::Debug for BatchGetRepositoriesOutput {
 }
 /// See [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput)
 pub mod batch_get_repositories_output {
-    ///
+
     /// A builder for [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5560,7 +5560,7 @@ impl std::fmt::Debug for BatchGetCommitsOutput {
 }
 /// See [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput)
 pub mod batch_get_commits_output {
-    ///
+
     /// A builder for [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5662,7 +5662,7 @@ impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesOu
 }
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput)
 pub mod batch_disassociate_approval_rule_template_from_repositories_output {
-    ///
+
     /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5799,7 +5799,7 @@ impl std::fmt::Debug for BatchDescribeMergeConflictsOutput {
 }
 /// See [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput)
 pub mod batch_describe_merge_conflicts_output {
-    ///
+
     /// A builder for [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5960,7 +5960,7 @@ impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesOutpu
 }
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput)
 pub mod batch_associate_approval_rule_template_with_repositories_output {
-    ///
+
     /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6052,7 +6052,7 @@ impl std::fmt::Debug for AssociateApprovalRuleTemplateWithRepositoryOutput {
 }
 /// See [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput)
 pub mod associate_approval_rule_template_with_repository_output {
-    ///
+
     /// A builder for [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

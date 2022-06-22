@@ -1670,7 +1670,7 @@ impl std::fmt::Display for UnsupportedActionException {
 impl std::error::Error for UnsupportedActionException {}
 /// See [`UnsupportedActionException`](crate::error::UnsupportedActionException)
 pub mod unsupported_action_exception {
-    ///
+
     /// A builder for [`UnsupportedActionException`](crate::error::UnsupportedActionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1735,7 +1735,7 @@ impl std::fmt::Display for TypeNotFoundException {
 impl std::error::Error for TypeNotFoundException {}
 /// See [`TypeNotFoundException`](crate::error::TypeNotFoundException)
 pub mod type_not_found_exception {
-    ///
+
     /// A builder for [`TypeNotFoundException`](crate::error::TypeNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1800,7 +1800,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException)
 pub mod throttling_exception {
-    ///
+
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1865,7 +1865,7 @@ impl std::fmt::Display for ServiceLimitExceededException {
 impl std::error::Error for ServiceLimitExceededException {}
 /// See [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException)
 pub mod service_limit_exceeded_exception {
-    ///
+
     /// A builder for [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1930,7 +1930,7 @@ impl std::fmt::Display for ServiceInternalErrorException {
 impl std::error::Error for ServiceInternalErrorException {}
 /// See [`ServiceInternalErrorException`](crate::error::ServiceInternalErrorException)
 pub mod service_internal_error_exception {
-    ///
+
     /// A builder for [`ServiceInternalErrorException`](crate::error::ServiceInternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1995,7 +1995,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2060,7 +2060,7 @@ impl std::fmt::Display for ResourceConflictException {
 impl std::error::Error for ResourceConflictException {}
 /// See [`ResourceConflictException`](crate::error::ResourceConflictException)
 pub mod resource_conflict_exception {
-    ///
+
     /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2125,7 +2125,7 @@ impl std::fmt::Display for PrivateTypeException {
 impl std::error::Error for PrivateTypeException {}
 /// See [`PrivateTypeException`](crate::error::PrivateTypeException)
 pub mod private_type_exception {
-    ///
+
     /// A builder for [`PrivateTypeException`](crate::error::PrivateTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2190,7 +2190,7 @@ impl std::fmt::Display for NotUpdatableException {
 impl std::error::Error for NotUpdatableException {}
 /// See [`NotUpdatableException`](crate::error::NotUpdatableException)
 pub mod not_updatable_exception {
-    ///
+
     /// A builder for [`NotUpdatableException`](crate::error::NotUpdatableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2255,7 +2255,7 @@ impl std::fmt::Display for NotStabilizedException {
 impl std::error::Error for NotStabilizedException {}
 /// See [`NotStabilizedException`](crate::error::NotStabilizedException)
 pub mod not_stabilized_exception {
-    ///
+
     /// A builder for [`NotStabilizedException`](crate::error::NotStabilizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2320,7 +2320,7 @@ impl std::fmt::Display for NetworkFailureException {
 impl std::error::Error for NetworkFailureException {}
 /// See [`NetworkFailureException`](crate::error::NetworkFailureException)
 pub mod network_failure_exception {
-    ///
+
     /// A builder for [`NetworkFailureException`](crate::error::NetworkFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2385,7 +2385,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
-    ///
+
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2450,7 +2450,7 @@ impl std::fmt::Display for InvalidCredentialsException {
 impl std::error::Error for InvalidCredentialsException {}
 /// See [`InvalidCredentialsException`](crate::error::InvalidCredentialsException)
 pub mod invalid_credentials_exception {
-    ///
+
     /// A builder for [`InvalidCredentialsException`](crate::error::InvalidCredentialsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2515,7 +2515,7 @@ impl std::fmt::Display for HandlerInternalFailureException {
 impl std::error::Error for HandlerInternalFailureException {}
 /// See [`HandlerInternalFailureException`](crate::error::HandlerInternalFailureException)
 pub mod handler_internal_failure_exception {
-    ///
+
     /// A builder for [`HandlerInternalFailureException`](crate::error::HandlerInternalFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2580,7 +2580,7 @@ impl std::fmt::Display for HandlerFailureException {
 impl std::error::Error for HandlerFailureException {}
 /// See [`HandlerFailureException`](crate::error::HandlerFailureException)
 pub mod handler_failure_exception {
-    ///
+
     /// A builder for [`HandlerFailureException`](crate::error::HandlerFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2645,7 +2645,7 @@ impl std::fmt::Display for GeneralServiceException {
 impl std::error::Error for GeneralServiceException {}
 /// See [`GeneralServiceException`](crate::error::GeneralServiceException)
 pub mod general_service_exception {
-    ///
+
     /// A builder for [`GeneralServiceException`](crate::error::GeneralServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2710,7 +2710,7 @@ impl std::fmt::Display for ConcurrentOperationException {
 impl std::error::Error for ConcurrentOperationException {}
 /// See [`ConcurrentOperationException`](crate::error::ConcurrentOperationException)
 pub mod concurrent_operation_exception {
-    ///
+
     /// A builder for [`ConcurrentOperationException`](crate::error::ConcurrentOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2776,7 +2776,7 @@ impl std::fmt::Display for ClientTokenConflictException {
 impl std::error::Error for ClientTokenConflictException {}
 /// See [`ClientTokenConflictException`](crate::error::ClientTokenConflictException)
 pub mod client_token_conflict_exception {
-    ///
+
     /// A builder for [`ClientTokenConflictException`](crate::error::ClientTokenConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2841,7 +2841,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
-    ///
+
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2906,7 +2906,7 @@ impl std::fmt::Display for RequestTokenNotFoundException {
 impl std::error::Error for RequestTokenNotFoundException {}
 /// See [`RequestTokenNotFoundException`](crate::error::RequestTokenNotFoundException)
 pub mod request_token_not_found_exception {
-    ///
+
     /// A builder for [`RequestTokenNotFoundException`](crate::error::RequestTokenNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2971,7 +2971,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
-    ///
+
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

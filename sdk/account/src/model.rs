@@ -110,7 +110,7 @@ impl std::fmt::Debug for AlternateContact {
 }
 /// See [`AlternateContact`](crate::model::AlternateContact)
 pub mod alternate_contact {
-    ///
+
     /// A builder for [`AlternateContact`](crate::model::AlternateContact)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -625,14 +625,12 @@ impl Client {
     }
 }
 pub mod fluent_builders {
-    //!
-    //!
+
     //! Utilities to ergonomically construct a request to the service.
     //!
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
-    //!
     /// Fluent builder constructing a request to `CreateCallAnalyticsCategory`.
     ///
     /// <p>Creates a call analytics category. Amazon Transcribe applies the conditions specified by your call analytics categories to your call analytics jobs. For each analytics category, you must create between 1 and 20 rules. For example, you can create a 'greeting' category with a rule that flags calls in which your agent does not use a specified phrase (for example: "Please note this call may be recorded.") in the first 15 seconds of the call. When you start a call analytics job, Amazon Transcribe applies all your existing call analytics categories to that job.</p>

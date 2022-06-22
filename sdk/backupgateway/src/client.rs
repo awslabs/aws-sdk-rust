@@ -289,14 +289,12 @@ impl Client {
     }
 }
 pub mod fluent_builders {
-    //!
-    //!
+
     //! Utilities to ergonomically construct a request to the service.
     //!
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
-    //!
     /// Fluent builder constructing a request to `AssociateGatewayToServer`.
     ///
     /// <p>Associates a backup gateway with your server. After you complete the association process, you can back up and restore your VMs through the gateway.</p>

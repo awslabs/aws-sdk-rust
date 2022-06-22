@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateServiceOutput {
 }
 /// See [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
 pub mod update_service_output {
-    ///
+
     /// A builder for [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl std::fmt::Debug for UpdatePublicDnsNamespaceOutput {
 }
 /// See [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput)
 pub mod update_public_dns_namespace_output {
-    ///
+
     /// A builder for [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,7 +131,7 @@ impl std::fmt::Debug for UpdatePrivateDnsNamespaceOutput {
 }
 /// See [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput)
 pub mod update_private_dns_namespace_output {
-    ///
+
     /// A builder for [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -176,7 +176,7 @@ impl std::fmt::Debug for UpdateInstanceCustomHealthStatusOutput {
 }
 /// See [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
 pub mod update_instance_custom_health_status_output {
-    ///
+
     /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -217,7 +217,7 @@ impl std::fmt::Debug for UpdateHttpNamespaceOutput {
 }
 /// See [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput)
 pub mod update_http_namespace_output {
-    ///
+
     /// A builder for [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -262,7 +262,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -293,7 +293,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -334,7 +334,7 @@ impl std::fmt::Debug for RegisterInstanceOutput {
 }
 /// See [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput)
 pub mod register_instance_output {
-    ///
+
     /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -389,7 +389,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -462,7 +462,7 @@ impl std::fmt::Debug for ListServicesOutput {
 }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput)
 pub mod list_services_output {
-    ///
+
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -553,7 +553,7 @@ impl std::fmt::Debug for ListOperationsOutput {
 }
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput)
 pub mod list_operations_output {
-    ///
+
     /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -644,7 +644,7 @@ impl std::fmt::Debug for ListNamespacesOutput {
 }
 /// See [`ListNamespacesOutput`](crate::output::ListNamespacesOutput)
 pub mod list_namespaces_output {
-    ///
+
     /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -731,7 +731,7 @@ impl std::fmt::Debug for ListInstancesOutput {
 }
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput)
 pub mod list_instances_output {
-    ///
+
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -807,7 +807,7 @@ impl std::fmt::Debug for GetServiceOutput {
 }
 /// See [`GetServiceOutput`](crate::output::GetServiceOutput)
 pub mod get_service_output {
-    ///
+
     /// A builder for [`GetServiceOutput`](crate::output::GetServiceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -862,7 +862,7 @@ impl std::fmt::Debug for GetOperationOutput {
 }
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput)
 pub mod get_operation_output {
-    ///
+
     /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -920,7 +920,7 @@ impl std::fmt::Debug for GetNamespaceOutput {
 }
 /// See [`GetNamespaceOutput`](crate::output::GetNamespaceOutput)
 pub mod get_namespace_output {
-    ///
+
     /// A builder for [`GetNamespaceOutput`](crate::output::GetNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -991,7 +991,7 @@ impl std::fmt::Debug for GetInstancesHealthStatusOutput {
 }
 /// See [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput)
 pub mod get_instances_health_status_output {
-    ///
+
     /// A builder for [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1075,7 +1075,7 @@ impl std::fmt::Debug for GetInstanceOutput {
 }
 /// See [`GetInstanceOutput`](crate::output::GetInstanceOutput)
 pub mod get_instance_output {
-    ///
+
     /// A builder for [`GetInstanceOutput`](crate::output::GetInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1130,7 +1130,7 @@ impl std::fmt::Debug for DiscoverInstancesOutput {
 }
 /// See [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput)
 pub mod discover_instances_output {
-    ///
+
     /// A builder for [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1194,7 +1194,7 @@ impl std::fmt::Debug for DeregisterInstanceOutput {
 }
 /// See [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
 pub mod deregister_instance_output {
-    ///
+
     /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,7 +1239,7 @@ impl std::fmt::Debug for DeleteServiceOutput {
 }
 /// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
 pub mod delete_service_output {
-    ///
+
     /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1280,7 +1280,7 @@ impl std::fmt::Debug for DeleteNamespaceOutput {
 }
 /// See [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput)
 pub mod delete_namespace_output {
-    ///
+
     /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1335,7 +1335,7 @@ impl std::fmt::Debug for CreateServiceOutput {
 }
 /// See [`CreateServiceOutput`](crate::output::CreateServiceOutput)
 pub mod create_service_output {
-    ///
+
     /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1390,7 +1390,7 @@ impl std::fmt::Debug for CreatePublicDnsNamespaceOutput {
 }
 /// See [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput)
 pub mod create_public_dns_namespace_output {
-    ///
+
     /// A builder for [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1445,7 +1445,7 @@ impl std::fmt::Debug for CreatePrivateDnsNamespaceOutput {
 }
 /// See [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput)
 pub mod create_private_dns_namespace_output {
-    ///
+
     /// A builder for [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1500,7 +1500,7 @@ impl std::fmt::Debug for CreateHttpNamespaceOutput {
 }
 /// See [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput)
 pub mod create_http_namespace_output {
-    ///
+
     /// A builder for [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -33084,7 +33084,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException)
 pub mod throttling_exception {
-    ///
+
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33149,7 +33149,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
-    ///
+
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33214,7 +33214,7 @@ impl std::fmt::Display for InternalFailureException {
 impl std::error::Error for InternalFailureException {}
 /// See [`InternalFailureException`](crate::error::InternalFailureException)
 pub mod internal_failure_exception {
-    ///
+
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33279,7 +33279,7 @@ impl std::fmt::Display for UnauthorizedException {
 impl std::error::Error for UnauthorizedException {}
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException)
 pub mod unauthorized_exception {
-    ///
+
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33344,7 +33344,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
 pub mod service_unavailable_exception {
-    ///
+
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33409,7 +33409,7 @@ impl std::fmt::Display for InternalException {
 impl std::error::Error for InternalException {}
 /// See [`InternalException`](crate::error::InternalException)
 pub mod internal_exception {
-    ///
+
     /// A builder for [`InternalException`](crate::error::InternalException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33474,7 +33474,7 @@ impl std::fmt::Display for ConflictingResourceUpdateException {
 impl std::error::Error for ConflictingResourceUpdateException {}
 /// See [`ConflictingResourceUpdateException`](crate::error::ConflictingResourceUpdateException)
 pub mod conflicting_resource_update_exception {
-    ///
+
     /// A builder for [`ConflictingResourceUpdateException`](crate::error::ConflictingResourceUpdateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33539,7 +33539,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33604,7 +33604,7 @@ impl std::fmt::Display for VersionConflictException {
 impl std::error::Error for VersionConflictException {}
 /// See [`VersionConflictException`](crate::error::VersionConflictException)
 pub mod version_conflict_exception {
-    ///
+
     /// A builder for [`VersionConflictException`](crate::error::VersionConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33669,7 +33669,7 @@ impl std::fmt::Display for InvalidQueryException {
 impl std::error::Error for InvalidQueryException {}
 /// See [`InvalidQueryException`](crate::error::InvalidQueryException)
 pub mod invalid_query_exception {
-    ///
+
     /// A builder for [`InvalidQueryException`](crate::error::InvalidQueryException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33734,7 +33734,7 @@ impl std::fmt::Display for InvalidAggregationException {
 impl std::error::Error for InvalidAggregationException {}
 /// See [`InvalidAggregationException`](crate::error::InvalidAggregationException)
 pub mod invalid_aggregation_exception {
-    ///
+
     /// A builder for [`InvalidAggregationException`](crate::error::InvalidAggregationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33799,7 +33799,7 @@ impl std::fmt::Display for IndexNotReadyException {
 impl std::error::Error for IndexNotReadyException {}
 /// See [`IndexNotReadyException`](crate::error::IndexNotReadyException)
 pub mod index_not_ready_exception {
-    ///
+
     /// A builder for [`IndexNotReadyException`](crate::error::IndexNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33864,7 +33864,7 @@ impl std::fmt::Display for CertificateValidationException {
 impl std::error::Error for CertificateValidationException {}
 /// See [`CertificateValidationException`](crate::error::CertificateValidationException)
 pub mod certificate_validation_exception {
-    ///
+
     /// A builder for [`CertificateValidationException`](crate::error::CertificateValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33929,7 +33929,7 @@ impl std::fmt::Display for CertificateStateException {
 impl std::error::Error for CertificateStateException {}
 /// See [`CertificateStateException`](crate::error::CertificateStateException)
 pub mod certificate_state_exception {
-    ///
+
     /// A builder for [`CertificateStateException`](crate::error::CertificateStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -33994,7 +33994,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34059,7 +34059,7 @@ impl std::fmt::Display for TransferConflictException {
 impl std::error::Error for TransferConflictException {}
 /// See [`TransferConflictException`](crate::error::TransferConflictException)
 pub mod transfer_conflict_exception {
-    ///
+
     /// A builder for [`TransferConflictException`](crate::error::TransferConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34124,7 +34124,7 @@ impl std::fmt::Display for InvalidResponseException {
 impl std::error::Error for InvalidResponseException {}
 /// See [`InvalidResponseException`](crate::error::InvalidResponseException)
 pub mod invalid_response_exception {
-    ///
+
     /// A builder for [`InvalidResponseException`](crate::error::InvalidResponseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34189,7 +34189,7 @@ impl std::fmt::Display for TaskAlreadyExistsException {
 impl std::error::Error for TaskAlreadyExistsException {}
 /// See [`TaskAlreadyExistsException`](crate::error::TaskAlreadyExistsException)
 pub mod task_already_exists_exception {
-    ///
+
     /// A builder for [`TaskAlreadyExistsException`](crate::error::TaskAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34254,7 +34254,7 @@ impl std::fmt::Display for NotConfiguredException {
 impl std::error::Error for NotConfiguredException {}
 /// See [`NotConfiguredException`](crate::error::NotConfiguredException)
 pub mod not_configured_exception {
-    ///
+
     /// A builder for [`NotConfiguredException`](crate::error::NotConfiguredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34335,7 +34335,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
-    ///
+
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34424,7 +34424,7 @@ impl std::fmt::Display for SqlParseException {
 impl std::error::Error for SqlParseException {}
 /// See [`SqlParseException`](crate::error::SqlParseException)
 pub mod sql_parse_exception {
-    ///
+
     /// A builder for [`SqlParseException`](crate::error::SqlParseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34489,7 +34489,7 @@ impl std::fmt::Display for TransferAlreadyCompletedException {
 impl std::error::Error for TransferAlreadyCompletedException {}
 /// See [`TransferAlreadyCompletedException`](crate::error::TransferAlreadyCompletedException)
 pub mod transfer_already_completed_exception {
-    ///
+
     /// A builder for [`TransferAlreadyCompletedException`](crate::error::TransferAlreadyCompletedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34554,7 +34554,7 @@ impl std::fmt::Display for ResourceRegistrationFailureException {
 impl std::error::Error for ResourceRegistrationFailureException {}
 /// See [`ResourceRegistrationFailureException`](crate::error::ResourceRegistrationFailureException)
 pub mod resource_registration_failure_exception {
-    ///
+
     /// A builder for [`ResourceRegistrationFailureException`](crate::error::ResourceRegistrationFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34619,7 +34619,7 @@ impl std::fmt::Display for CertificateConflictException {
 impl std::error::Error for CertificateConflictException {}
 /// See [`CertificateConflictException`](crate::error::CertificateConflictException)
 pub mod certificate_conflict_exception {
-    ///
+
     /// A builder for [`CertificateConflictException`](crate::error::CertificateConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34684,7 +34684,7 @@ impl std::fmt::Display for RegistrationCodeValidationException {
 impl std::error::Error for RegistrationCodeValidationException {}
 /// See [`RegistrationCodeValidationException`](crate::error::RegistrationCodeValidationException)
 pub mod registration_code_validation_exception {
-    ///
+
     /// A builder for [`RegistrationCodeValidationException`](crate::error::RegistrationCodeValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34749,7 +34749,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException)
 pub mod internal_server_exception {
-    ///
+
     /// A builder for [`InternalServerException`](crate::error::InternalServerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34814,7 +34814,7 @@ impl std::fmt::Display for DeleteConflictException {
 impl std::error::Error for DeleteConflictException {}
 /// See [`DeleteConflictException`](crate::error::DeleteConflictException)
 pub mod delete_conflict_exception {
-    ///
+
     /// A builder for [`DeleteConflictException`](crate::error::DeleteConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34879,7 +34879,7 @@ impl std::fmt::Display for InvalidStateTransitionException {
 impl std::error::Error for InvalidStateTransitionException {}
 /// See [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
 pub mod invalid_state_transition_exception {
-    ///
+
     /// A builder for [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -34944,7 +34944,7 @@ impl std::fmt::Display for VersionsLimitExceededException {
 impl std::error::Error for VersionsLimitExceededException {}
 /// See [`VersionsLimitExceededException`](crate::error::VersionsLimitExceededException)
 pub mod versions_limit_exceeded_exception {
-    ///
+
     /// A builder for [`VersionsLimitExceededException`](crate::error::VersionsLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -35009,7 +35009,7 @@ impl std::fmt::Display for MalformedPolicyException {
 impl std::error::Error for MalformedPolicyException {}
 /// See [`MalformedPolicyException`](crate::error::MalformedPolicyException)
 pub mod malformed_policy_exception {
-    ///
+
     /// A builder for [`MalformedPolicyException`](crate::error::MalformedPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -35074,7 +35074,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
-    ///
+
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,7 +11,7 @@ impl std::fmt::Debug for WriteGetObjectResponseOutput {
 }
 /// See [`WriteGetObjectResponseOutput`](crate::output::WriteGetObjectResponseOutput)
 pub mod write_get_object_response_output {
-    ///
+
     /// A builder for [`WriteGetObjectResponseOutput`](crate::output::WriteGetObjectResponseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl std::fmt::Debug for UploadPartCopyOutput {
 }
 /// See [`UploadPartCopyOutput`](crate::output::UploadPartCopyOutput)
 pub mod upload_part_copy_output {
-    ///
+
     /// A builder for [`UploadPartCopyOutput`](crate::output::UploadPartCopyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl std::fmt::Debug for UploadPartOutput {
 }
 /// See [`UploadPartOutput`](crate::output::UploadPartOutput)
 pub mod upload_part_output {
-    ///
+
     /// A builder for [`UploadPartOutput`](crate::output::UploadPartOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -456,7 +456,7 @@ impl std::fmt::Debug for SelectObjectContentOutput {
 }
 /// See [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput)
 pub mod select_object_content_output {
-    ///
+
     /// A builder for [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -548,7 +548,7 @@ impl std::fmt::Debug for RestoreObjectOutput {
 }
 /// See [`RestoreObjectOutput`](crate::output::RestoreObjectOutput)
 pub mod restore_object_output {
-    ///
+
     /// A builder for [`RestoreObjectOutput`](crate::output::RestoreObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -611,7 +611,7 @@ impl std::fmt::Debug for PutPublicAccessBlockOutput {
 }
 /// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
 pub mod put_public_access_block_output {
-    ///
+
     /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -652,7 +652,7 @@ impl std::fmt::Debug for PutObjectTaggingOutput {
 }
 /// See [`PutObjectTaggingOutput`](crate::output::PutObjectTaggingOutput)
 pub mod put_object_tagging_output {
-    ///
+
     /// A builder for [`PutObjectTaggingOutput`](crate::output::PutObjectTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -707,7 +707,7 @@ impl std::fmt::Debug for PutObjectRetentionOutput {
 }
 /// See [`PutObjectRetentionOutput`](crate::output::PutObjectRetentionOutput)
 pub mod put_object_retention_output {
-    ///
+
     /// A builder for [`PutObjectRetentionOutput`](crate::output::PutObjectRetentionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -765,7 +765,7 @@ impl std::fmt::Debug for PutObjectLockConfigurationOutput {
 }
 /// See [`PutObjectLockConfigurationOutput`](crate::output::PutObjectLockConfigurationOutput)
 pub mod put_object_lock_configuration_output {
-    ///
+
     /// A builder for [`PutObjectLockConfigurationOutput`](crate::output::PutObjectLockConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -823,7 +823,7 @@ impl std::fmt::Debug for PutObjectLegalHoldOutput {
 }
 /// See [`PutObjectLegalHoldOutput`](crate::output::PutObjectLegalHoldOutput)
 pub mod put_object_legal_hold_output {
-    ///
+
     /// A builder for [`PutObjectLegalHoldOutput`](crate::output::PutObjectLegalHoldOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -881,7 +881,7 @@ impl std::fmt::Debug for PutObjectAclOutput {
 }
 /// See [`PutObjectAclOutput`](crate::output::PutObjectAclOutput)
 pub mod put_object_acl_output {
-    ///
+
     /// A builder for [`PutObjectAclOutput`](crate::output::PutObjectAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1007,7 +1007,7 @@ impl std::fmt::Debug for PutObjectOutput {
 }
 /// See [`PutObjectOutput`](crate::output::PutObjectOutput)
 pub mod put_object_output {
-    ///
+
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1178,7 +1178,7 @@ impl std::fmt::Debug for PutBucketWebsiteOutput {
 }
 /// See [`PutBucketWebsiteOutput`](crate::output::PutBucketWebsiteOutput)
 pub mod put_bucket_website_output {
-    ///
+
     /// A builder for [`PutBucketWebsiteOutput`](crate::output::PutBucketWebsiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1209,7 +1209,7 @@ impl std::fmt::Debug for PutBucketVersioningOutput {
 }
 /// See [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput)
 pub mod put_bucket_versioning_output {
-    ///
+
     /// A builder for [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1240,7 +1240,7 @@ impl std::fmt::Debug for PutBucketTaggingOutput {
 }
 /// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
 pub mod put_bucket_tagging_output {
-    ///
+
     /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1271,7 +1271,7 @@ impl std::fmt::Debug for PutBucketRequestPaymentOutput {
 }
 /// See [`PutBucketRequestPaymentOutput`](crate::output::PutBucketRequestPaymentOutput)
 pub mod put_bucket_request_payment_output {
-    ///
+
     /// A builder for [`PutBucketRequestPaymentOutput`](crate::output::PutBucketRequestPaymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1302,7 +1302,7 @@ impl std::fmt::Debug for PutBucketReplicationOutput {
 }
 /// See [`PutBucketReplicationOutput`](crate::output::PutBucketReplicationOutput)
 pub mod put_bucket_replication_output {
-    ///
+
     /// A builder for [`PutBucketReplicationOutput`](crate::output::PutBucketReplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1333,7 +1333,7 @@ impl std::fmt::Debug for PutBucketPolicyOutput {
 }
 /// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
 pub mod put_bucket_policy_output {
-    ///
+
     /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1364,7 +1364,7 @@ impl std::fmt::Debug for PutBucketOwnershipControlsOutput {
 }
 /// See [`PutBucketOwnershipControlsOutput`](crate::output::PutBucketOwnershipControlsOutput)
 pub mod put_bucket_ownership_controls_output {
-    ///
+
     /// A builder for [`PutBucketOwnershipControlsOutput`](crate::output::PutBucketOwnershipControlsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1395,7 +1395,7 @@ impl std::fmt::Debug for PutBucketNotificationConfigurationOutput {
 }
 /// See [`PutBucketNotificationConfigurationOutput`](crate::output::PutBucketNotificationConfigurationOutput)
 pub mod put_bucket_notification_configuration_output {
-    ///
+
     /// A builder for [`PutBucketNotificationConfigurationOutput`](crate::output::PutBucketNotificationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1426,7 +1426,7 @@ impl std::fmt::Debug for PutBucketMetricsConfigurationOutput {
 }
 /// See [`PutBucketMetricsConfigurationOutput`](crate::output::PutBucketMetricsConfigurationOutput)
 pub mod put_bucket_metrics_configuration_output {
-    ///
+
     /// A builder for [`PutBucketMetricsConfigurationOutput`](crate::output::PutBucketMetricsConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1457,7 +1457,7 @@ impl std::fmt::Debug for PutBucketLoggingOutput {
 }
 /// See [`PutBucketLoggingOutput`](crate::output::PutBucketLoggingOutput)
 pub mod put_bucket_logging_output {
-    ///
+
     /// A builder for [`PutBucketLoggingOutput`](crate::output::PutBucketLoggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1488,7 +1488,7 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationOutput {
 }
 /// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
 pub mod put_bucket_lifecycle_configuration_output {
-    ///
+
     /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1519,7 +1519,7 @@ impl std::fmt::Debug for PutBucketInventoryConfigurationOutput {
 }
 /// See [`PutBucketInventoryConfigurationOutput`](crate::output::PutBucketInventoryConfigurationOutput)
 pub mod put_bucket_inventory_configuration_output {
-    ///
+
     /// A builder for [`PutBucketInventoryConfigurationOutput`](crate::output::PutBucketInventoryConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1550,7 +1550,7 @@ impl std::fmt::Debug for PutBucketIntelligentTieringConfigurationOutput {
 }
 /// See [`PutBucketIntelligentTieringConfigurationOutput`](crate::output::PutBucketIntelligentTieringConfigurationOutput)
 pub mod put_bucket_intelligent_tiering_configuration_output {
-    ///
+
     /// A builder for [`PutBucketIntelligentTieringConfigurationOutput`](crate::output::PutBucketIntelligentTieringConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1582,7 +1582,7 @@ impl std::fmt::Debug for PutBucketEncryptionOutput {
 }
 /// See [`PutBucketEncryptionOutput`](crate::output::PutBucketEncryptionOutput)
 pub mod put_bucket_encryption_output {
-    ///
+
     /// A builder for [`PutBucketEncryptionOutput`](crate::output::PutBucketEncryptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1613,7 +1613,7 @@ impl std::fmt::Debug for PutBucketCorsOutput {
 }
 /// See [`PutBucketCorsOutput`](crate::output::PutBucketCorsOutput)
 pub mod put_bucket_cors_output {
-    ///
+
     /// A builder for [`PutBucketCorsOutput`](crate::output::PutBucketCorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1644,7 +1644,7 @@ impl std::fmt::Debug for PutBucketAnalyticsConfigurationOutput {
 }
 /// See [`PutBucketAnalyticsConfigurationOutput`](crate::output::PutBucketAnalyticsConfigurationOutput)
 pub mod put_bucket_analytics_configuration_output {
-    ///
+
     /// A builder for [`PutBucketAnalyticsConfigurationOutput`](crate::output::PutBucketAnalyticsConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1675,7 +1675,7 @@ impl std::fmt::Debug for PutBucketAclOutput {
 }
 /// See [`PutBucketAclOutput`](crate::output::PutBucketAclOutput)
 pub mod put_bucket_acl_output {
-    ///
+
     /// A builder for [`PutBucketAclOutput`](crate::output::PutBucketAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1706,7 +1706,7 @@ impl std::fmt::Debug for PutBucketAccelerateConfigurationOutput {
 }
 /// See [`PutBucketAccelerateConfigurationOutput`](crate::output::PutBucketAccelerateConfigurationOutput)
 pub mod put_bucket_accelerate_configuration_output {
-    ///
+
     /// A builder for [`PutBucketAccelerateConfigurationOutput`](crate::output::PutBucketAccelerateConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1840,7 +1840,7 @@ impl std::fmt::Debug for ListPartsOutput {
 }
 /// See [`ListPartsOutput`](crate::output::ListPartsOutput)
 pub mod list_parts_output {
-    ///
+
     /// A builder for [`ListPartsOutput`](crate::output::ListPartsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2171,7 +2171,7 @@ impl std::fmt::Debug for ListObjectVersionsOutput {
 }
 /// See [`ListObjectVersionsOutput`](crate::output::ListObjectVersionsOutput)
 pub mod list_object_versions_output {
-    ///
+
     /// A builder for [`ListObjectVersionsOutput`](crate::output::ListObjectVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2507,7 +2507,7 @@ impl std::fmt::Debug for ListObjectsV2Output {
 }
 /// See [`ListObjectsV2Output`](crate::output::ListObjectsV2Output)
 pub mod list_objects_v2_output {
-    ///
+
     /// A builder for [`ListObjectsV2Output`](crate::output::ListObjectsV2Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2808,7 +2808,7 @@ impl std::fmt::Debug for ListObjectsOutput {
 }
 /// See [`ListObjectsOutput`](crate::output::ListObjectsOutput)
 pub mod list_objects_output {
-    ///
+
     /// A builder for [`ListObjectsOutput`](crate::output::ListObjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3081,7 +3081,7 @@ impl std::fmt::Debug for ListMultipartUploadsOutput {
 }
 /// See [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput)
 pub mod list_multipart_uploads_output {
-    ///
+
     /// A builder for [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3309,7 +3309,7 @@ impl std::fmt::Debug for ListBucketsOutput {
 }
 /// See [`ListBucketsOutput`](crate::output::ListBucketsOutput)
 pub mod list_buckets_output {
-    ///
+
     /// A builder for [`ListBucketsOutput`](crate::output::ListBucketsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3412,7 +3412,7 @@ impl std::fmt::Debug for ListBucketMetricsConfigurationsOutput {
 }
 /// See [`ListBucketMetricsConfigurationsOutput`](crate::output::ListBucketMetricsConfigurationsOutput)
 pub mod list_bucket_metrics_configurations_output {
-    ///
+
     /// A builder for [`ListBucketMetricsConfigurationsOutput`](crate::output::ListBucketMetricsConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3549,7 +3549,7 @@ impl std::fmt::Debug for ListBucketInventoryConfigurationsOutput {
 }
 /// See [`ListBucketInventoryConfigurationsOutput`](crate::output::ListBucketInventoryConfigurationsOutput)
 pub mod list_bucket_inventory_configurations_output {
-    ///
+
     /// A builder for [`ListBucketInventoryConfigurationsOutput`](crate::output::ListBucketInventoryConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3686,7 +3686,7 @@ impl std::fmt::Debug for ListBucketIntelligentTieringConfigurationsOutput {
 }
 /// See [`ListBucketIntelligentTieringConfigurationsOutput`](crate::output::ListBucketIntelligentTieringConfigurationsOutput)
 pub mod list_bucket_intelligent_tiering_configurations_output {
-    ///
+
     /// A builder for [`ListBucketIntelligentTieringConfigurationsOutput`](crate::output::ListBucketIntelligentTieringConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3828,7 +3828,7 @@ impl std::fmt::Debug for ListBucketAnalyticsConfigurationsOutput {
 }
 /// See [`ListBucketAnalyticsConfigurationsOutput`](crate::output::ListBucketAnalyticsConfigurationsOutput)
 pub mod list_bucket_analytics_configurations_output {
-    ///
+
     /// A builder for [`ListBucketAnalyticsConfigurationsOutput`](crate::output::ListBucketAnalyticsConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4181,7 +4181,7 @@ impl std::fmt::Debug for HeadObjectOutput {
 }
 /// See [`HeadObjectOutput`](crate::output::HeadObjectOutput)
 pub mod head_object_output {
-    ///
+
     /// A builder for [`HeadObjectOutput`](crate::output::HeadObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4676,7 +4676,7 @@ impl std::fmt::Debug for HeadBucketOutput {
 }
 /// See [`HeadBucketOutput`](crate::output::HeadBucketOutput)
 pub mod head_bucket_output {
-    ///
+
     /// A builder for [`HeadBucketOutput`](crate::output::HeadBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4723,7 +4723,7 @@ impl std::fmt::Debug for GetPublicAccessBlockOutput {
 }
 /// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
 pub mod get_public_access_block_output {
-    ///
+
     /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4791,7 +4791,7 @@ impl std::fmt::Debug for GetObjectTorrentOutput {
 }
 /// See [`GetObjectTorrentOutput`](crate::output::GetObjectTorrentOutput)
 pub mod get_object_torrent_output {
-    ///
+
     /// A builder for [`GetObjectTorrentOutput`](crate::output::GetObjectTorrentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -4871,7 +4871,7 @@ impl std::fmt::Debug for GetObjectTaggingOutput {
 }
 /// See [`GetObjectTaggingOutput`](crate::output::GetObjectTaggingOutput)
 pub mod get_object_tagging_output {
-    ///
+
     /// A builder for [`GetObjectTaggingOutput`](crate::output::GetObjectTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4947,7 +4947,7 @@ impl std::fmt::Debug for GetObjectRetentionOutput {
 }
 /// See [`GetObjectRetentionOutput`](crate::output::GetObjectRetentionOutput)
 pub mod get_object_retention_output {
-    ///
+
     /// A builder for [`GetObjectRetentionOutput`](crate::output::GetObjectRetentionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5007,7 +5007,7 @@ impl std::fmt::Debug for GetObjectLockConfigurationOutput {
 }
 /// See [`GetObjectLockConfigurationOutput`](crate::output::GetObjectLockConfigurationOutput)
 pub mod get_object_lock_configuration_output {
-    ///
+
     /// A builder for [`GetObjectLockConfigurationOutput`](crate::output::GetObjectLockConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5069,7 +5069,7 @@ impl std::fmt::Debug for GetObjectLegalHoldOutput {
 }
 /// See [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput)
 pub mod get_object_legal_hold_output {
-    ///
+
     /// A builder for [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5141,7 +5141,7 @@ impl std::fmt::Debug for GetObjectAclOutput {
 }
 /// See [`GetObjectAclOutput`](crate::output::GetObjectAclOutput)
 pub mod get_object_acl_output {
-    ///
+
     /// A builder for [`GetObjectAclOutput`](crate::output::GetObjectAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5464,7 +5464,7 @@ impl std::fmt::Debug for GetObjectOutput {
 }
 /// See [`GetObjectOutput`](crate::output::GetObjectOutput)
 pub mod get_object_output {
-    ///
+
     /// A builder for [`GetObjectOutput`](crate::output::GetObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -5995,7 +5995,7 @@ impl std::fmt::Debug for GetBucketWebsiteOutput {
 }
 /// See [`GetBucketWebsiteOutput`](crate::output::GetBucketWebsiteOutput)
 pub mod get_bucket_website_output {
-    ///
+
     /// A builder for [`GetBucketWebsiteOutput`](crate::output::GetBucketWebsiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6115,7 +6115,7 @@ impl std::fmt::Debug for GetBucketVersioningOutput {
 }
 /// See [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput)
 pub mod get_bucket_versioning_output {
-    ///
+
     /// A builder for [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6188,7 +6188,7 @@ impl std::fmt::Debug for GetBucketTaggingOutput {
 }
 /// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
 pub mod get_bucket_tagging_output {
-    ///
+
     /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6252,7 +6252,7 @@ impl std::fmt::Debug for GetBucketRequestPaymentOutput {
 }
 /// See [`GetBucketRequestPaymentOutput`](crate::output::GetBucketRequestPaymentOutput)
 pub mod get_bucket_request_payment_output {
-    ///
+
     /// A builder for [`GetBucketRequestPaymentOutput`](crate::output::GetBucketRequestPaymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6307,7 +6307,7 @@ impl std::fmt::Debug for GetBucketReplicationOutput {
 }
 /// See [`GetBucketReplicationOutput`](crate::output::GetBucketReplicationOutput)
 pub mod get_bucket_replication_output {
-    ///
+
     /// A builder for [`GetBucketReplicationOutput`](crate::output::GetBucketReplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6369,7 +6369,7 @@ impl std::fmt::Debug for GetBucketPolicyStatusOutput {
 }
 /// See [`GetBucketPolicyStatusOutput`](crate::output::GetBucketPolicyStatusOutput)
 pub mod get_bucket_policy_status_output {
-    ///
+
     /// A builder for [`GetBucketPolicyStatusOutput`](crate::output::GetBucketPolicyStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6427,7 +6427,7 @@ impl std::fmt::Debug for GetBucketPolicyOutput {
 }
 /// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
 pub mod get_bucket_policy_output {
-    ///
+
     /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6482,7 +6482,7 @@ impl std::fmt::Debug for GetBucketOwnershipControlsOutput {
 }
 /// See [`GetBucketOwnershipControlsOutput`](crate::output::GetBucketOwnershipControlsOutput)
 pub mod get_bucket_ownership_controls_output {
-    ///
+
     /// A builder for [`GetBucketOwnershipControlsOutput`](crate::output::GetBucketOwnershipControlsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6572,7 +6572,7 @@ impl std::fmt::Debug for GetBucketNotificationConfigurationOutput {
 }
 /// See [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput)
 pub mod get_bucket_notification_configuration_output {
-    ///
+
     /// A builder for [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6705,7 +6705,7 @@ impl std::fmt::Debug for GetBucketMetricsConfigurationOutput {
 }
 /// See [`GetBucketMetricsConfigurationOutput`](crate::output::GetBucketMetricsConfigurationOutput)
 pub mod get_bucket_metrics_configuration_output {
-    ///
+
     /// A builder for [`GetBucketMetricsConfigurationOutput`](crate::output::GetBucketMetricsConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6763,7 +6763,7 @@ impl std::fmt::Debug for GetBucketLoggingOutput {
 }
 /// See [`GetBucketLoggingOutput`](crate::output::GetBucketLoggingOutput)
 pub mod get_bucket_logging_output {
-    ///
+
     /// A builder for [`GetBucketLoggingOutput`](crate::output::GetBucketLoggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6823,7 +6823,7 @@ impl std::fmt::Debug for GetBucketLocationOutput {
 }
 /// See [`GetBucketLocationOutput`](crate::output::GetBucketLocationOutput)
 pub mod get_bucket_location_output {
-    ///
+
     /// A builder for [`GetBucketLocationOutput`](crate::output::GetBucketLocationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6884,7 +6884,7 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationOutput {
 }
 /// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
 pub mod get_bucket_lifecycle_configuration_output {
-    ///
+
     /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6948,7 +6948,7 @@ impl std::fmt::Debug for GetBucketInventoryConfigurationOutput {
 }
 /// See [`GetBucketInventoryConfigurationOutput`](crate::output::GetBucketInventoryConfigurationOutput)
 pub mod get_bucket_inventory_configuration_output {
-    ///
+
     /// A builder for [`GetBucketInventoryConfigurationOutput`](crate::output::GetBucketInventoryConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7016,7 +7016,7 @@ impl std::fmt::Debug for GetBucketIntelligentTieringConfigurationOutput {
 }
 /// See [`GetBucketIntelligentTieringConfigurationOutput`](crate::output::GetBucketIntelligentTieringConfigurationOutput)
 pub mod get_bucket_intelligent_tiering_configuration_output {
-    ///
+
     /// A builder for [`GetBucketIntelligentTieringConfigurationOutput`](crate::output::GetBucketIntelligentTieringConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7085,7 +7085,7 @@ impl std::fmt::Debug for GetBucketEncryptionOutput {
 }
 /// See [`GetBucketEncryptionOutput`](crate::output::GetBucketEncryptionOutput)
 pub mod get_bucket_encryption_output {
-    ///
+
     /// A builder for [`GetBucketEncryptionOutput`](crate::output::GetBucketEncryptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7147,7 +7147,7 @@ impl std::fmt::Debug for GetBucketCorsOutput {
 }
 /// See [`GetBucketCorsOutput`](crate::output::GetBucketCorsOutput)
 pub mod get_bucket_cors_output {
-    ///
+
     /// A builder for [`GetBucketCorsOutput`](crate::output::GetBucketCorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7213,7 +7213,7 @@ impl std::fmt::Debug for GetBucketAnalyticsConfigurationOutput {
 }
 /// See [`GetBucketAnalyticsConfigurationOutput`](crate::output::GetBucketAnalyticsConfigurationOutput)
 pub mod get_bucket_analytics_configuration_output {
-    ///
+
     /// A builder for [`GetBucketAnalyticsConfigurationOutput`](crate::output::GetBucketAnalyticsConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7282,7 +7282,7 @@ impl std::fmt::Debug for GetBucketAclOutput {
 }
 /// See [`GetBucketAclOutput`](crate::output::GetBucketAclOutput)
 pub mod get_bucket_acl_output {
-    ///
+
     /// A builder for [`GetBucketAclOutput`](crate::output::GetBucketAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7358,7 +7358,7 @@ impl std::fmt::Debug for GetBucketAccelerateConfigurationOutput {
 }
 /// See [`GetBucketAccelerateConfigurationOutput`](crate::output::GetBucketAccelerateConfigurationOutput)
 pub mod get_bucket_accelerate_configuration_output {
-    ///
+
     /// A builder for [`GetBucketAccelerateConfigurationOutput`](crate::output::GetBucketAccelerateConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7406,7 +7406,7 @@ impl std::fmt::Debug for DeletePublicAccessBlockOutput {
 }
 /// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
 pub mod delete_public_access_block_output {
-    ///
+
     /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7447,7 +7447,7 @@ impl std::fmt::Debug for DeleteObjectTaggingOutput {
 }
 /// See [`DeleteObjectTaggingOutput`](crate::output::DeleteObjectTaggingOutput)
 pub mod delete_object_tagging_output {
-    ///
+
     /// A builder for [`DeleteObjectTaggingOutput`](crate::output::DeleteObjectTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7516,7 +7516,7 @@ impl std::fmt::Debug for DeleteObjectsOutput {
 }
 /// See [`DeleteObjectsOutput`](crate::output::DeleteObjectsOutput)
 pub mod delete_objects_output {
-    ///
+
     /// A builder for [`DeleteObjectsOutput`](crate::output::DeleteObjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7630,7 +7630,7 @@ impl std::fmt::Debug for DeleteObjectOutput {
 }
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
 pub mod delete_object_output {
-    ///
+
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7702,7 +7702,7 @@ impl std::fmt::Debug for DeleteBucketWebsiteOutput {
 }
 /// See [`DeleteBucketWebsiteOutput`](crate::output::DeleteBucketWebsiteOutput)
 pub mod delete_bucket_website_output {
-    ///
+
     /// A builder for [`DeleteBucketWebsiteOutput`](crate::output::DeleteBucketWebsiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7733,7 +7733,7 @@ impl std::fmt::Debug for DeleteBucketTaggingOutput {
 }
 /// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
 pub mod delete_bucket_tagging_output {
-    ///
+
     /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7764,7 +7764,7 @@ impl std::fmt::Debug for DeleteBucketReplicationOutput {
 }
 /// See [`DeleteBucketReplicationOutput`](crate::output::DeleteBucketReplicationOutput)
 pub mod delete_bucket_replication_output {
-    ///
+
     /// A builder for [`DeleteBucketReplicationOutput`](crate::output::DeleteBucketReplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7795,7 +7795,7 @@ impl std::fmt::Debug for DeleteBucketPolicyOutput {
 }
 /// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
 pub mod delete_bucket_policy_output {
-    ///
+
     /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7826,7 +7826,7 @@ impl std::fmt::Debug for DeleteBucketOwnershipControlsOutput {
 }
 /// See [`DeleteBucketOwnershipControlsOutput`](crate::output::DeleteBucketOwnershipControlsOutput)
 pub mod delete_bucket_ownership_controls_output {
-    ///
+
     /// A builder for [`DeleteBucketOwnershipControlsOutput`](crate::output::DeleteBucketOwnershipControlsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7857,7 +7857,7 @@ impl std::fmt::Debug for DeleteBucketMetricsConfigurationOutput {
 }
 /// See [`DeleteBucketMetricsConfigurationOutput`](crate::output::DeleteBucketMetricsConfigurationOutput)
 pub mod delete_bucket_metrics_configuration_output {
-    ///
+
     /// A builder for [`DeleteBucketMetricsConfigurationOutput`](crate::output::DeleteBucketMetricsConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7888,7 +7888,7 @@ impl std::fmt::Debug for DeleteBucketLifecycleOutput {
 }
 /// See [`DeleteBucketLifecycleOutput`](crate::output::DeleteBucketLifecycleOutput)
 pub mod delete_bucket_lifecycle_output {
-    ///
+
     /// A builder for [`DeleteBucketLifecycleOutput`](crate::output::DeleteBucketLifecycleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7919,7 +7919,7 @@ impl std::fmt::Debug for DeleteBucketInventoryConfigurationOutput {
 }
 /// See [`DeleteBucketInventoryConfigurationOutput`](crate::output::DeleteBucketInventoryConfigurationOutput)
 pub mod delete_bucket_inventory_configuration_output {
-    ///
+
     /// A builder for [`DeleteBucketInventoryConfigurationOutput`](crate::output::DeleteBucketInventoryConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7950,7 +7950,7 @@ impl std::fmt::Debug for DeleteBucketIntelligentTieringConfigurationOutput {
 }
 /// See [`DeleteBucketIntelligentTieringConfigurationOutput`](crate::output::DeleteBucketIntelligentTieringConfigurationOutput)
 pub mod delete_bucket_intelligent_tiering_configuration_output {
-    ///
+
     /// A builder for [`DeleteBucketIntelligentTieringConfigurationOutput`](crate::output::DeleteBucketIntelligentTieringConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7982,7 +7982,7 @@ impl std::fmt::Debug for DeleteBucketEncryptionOutput {
 }
 /// See [`DeleteBucketEncryptionOutput`](crate::output::DeleteBucketEncryptionOutput)
 pub mod delete_bucket_encryption_output {
-    ///
+
     /// A builder for [`DeleteBucketEncryptionOutput`](crate::output::DeleteBucketEncryptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8013,7 +8013,7 @@ impl std::fmt::Debug for DeleteBucketCorsOutput {
 }
 /// See [`DeleteBucketCorsOutput`](crate::output::DeleteBucketCorsOutput)
 pub mod delete_bucket_cors_output {
-    ///
+
     /// A builder for [`DeleteBucketCorsOutput`](crate::output::DeleteBucketCorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8044,7 +8044,7 @@ impl std::fmt::Debug for DeleteBucketAnalyticsConfigurationOutput {
 }
 /// See [`DeleteBucketAnalyticsConfigurationOutput`](crate::output::DeleteBucketAnalyticsConfigurationOutput)
 pub mod delete_bucket_analytics_configuration_output {
-    ///
+
     /// A builder for [`DeleteBucketAnalyticsConfigurationOutput`](crate::output::DeleteBucketAnalyticsConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8075,7 +8075,7 @@ impl std::fmt::Debug for DeleteBucketOutput {
 }
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
 pub mod delete_bucket_output {
-    ///
+
     /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8204,7 +8204,7 @@ impl std::fmt::Debug for CreateMultipartUploadOutput {
 }
 /// See [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput)
 pub mod create_multipart_upload_output {
-    ///
+
     /// A builder for [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8421,7 +8421,7 @@ impl std::fmt::Debug for CreateBucketOutput {
 }
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput)
 pub mod create_bucket_output {
-    ///
+
     /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8551,7 +8551,7 @@ impl std::fmt::Debug for CopyObjectOutput {
 }
 /// See [`CopyObjectOutput`](crate::output::CopyObjectOutput)
 pub mod copy_object_output {
-    ///
+
     /// A builder for [`CopyObjectOutput`](crate::output::CopyObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8819,7 +8819,7 @@ impl std::fmt::Debug for CompleteMultipartUploadOutput {
 }
 /// See [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput)
 pub mod complete_multipart_upload_output {
-    ///
+
     /// A builder for [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8995,7 +8995,7 @@ impl std::fmt::Debug for AbortMultipartUploadOutput {
 }
 /// See [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput)
 pub mod abort_multipart_upload_output {
-    ///
+
     /// A builder for [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -949,7 +949,7 @@ impl std::fmt::Display for RegionDisabledException {
 impl std::error::Error for RegionDisabledException {}
 /// See [`RegionDisabledException`](crate::error::RegionDisabledException)
 pub mod region_disabled_exception {
-    ///
+
     /// A builder for [`RegionDisabledException`](crate::error::RegionDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1015,7 +1015,7 @@ impl std::fmt::Display for PackedPolicyTooLargeException {
 impl std::error::Error for PackedPolicyTooLargeException {}
 /// See [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException)
 pub mod packed_policy_too_large_exception {
-    ///
+
     /// A builder for [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1080,7 +1080,7 @@ impl std::fmt::Display for MalformedPolicyDocumentException {
 impl std::error::Error for MalformedPolicyDocumentException {}
 /// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
 pub mod malformed_policy_document_exception {
-    ///
+
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1145,7 +1145,7 @@ impl std::fmt::Display for InvalidAuthorizationMessageException {
 impl std::error::Error for InvalidAuthorizationMessageException {}
 /// See [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException)
 pub mod invalid_authorization_message_exception {
-    ///
+
     /// A builder for [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1210,7 +1210,7 @@ impl std::fmt::Display for InvalidIdentityTokenException {
 impl std::error::Error for InvalidIdentityTokenException {}
 /// See [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException)
 pub mod invalid_identity_token_exception {
-    ///
+
     /// A builder for [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1276,7 +1276,7 @@ impl std::fmt::Display for IdpRejectedClaimException {
 impl std::error::Error for IdpRejectedClaimException {}
 /// See [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException)
 pub mod idp_rejected_claim_exception {
-    ///
+
     /// A builder for [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1344,7 +1344,7 @@ impl std::fmt::Display for IdpCommunicationErrorException {
 impl std::error::Error for IdpCommunicationErrorException {}
 /// See [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException)
 pub mod idp_communication_error_exception {
-    ///
+
     /// A builder for [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1409,7 +1409,7 @@ impl std::fmt::Display for ExpiredTokenException {
 impl std::error::Error for ExpiredTokenException {}
 /// See [`ExpiredTokenException`](crate::error::ExpiredTokenException)
 pub mod expired_token_exception {
-    ///
+
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -105,7 +105,7 @@ impl std::fmt::Debug for PatchOperation {
 }
 /// See [`PatchOperation`](crate::model::PatchOperation)
 pub mod patch_operation {
-    ///
+
     /// A builder for [`PatchOperation`](crate::model::PatchOperation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -281,7 +281,7 @@ impl std::fmt::Debug for QuotaSettings {
 }
 /// See [`QuotaSettings`](crate::model::QuotaSettings)
 pub mod quota_settings {
-    ///
+
     /// A builder for [`QuotaSettings`](crate::model::QuotaSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -429,7 +429,7 @@ impl std::fmt::Debug for ThrottleSettings {
 }
 /// See [`ThrottleSettings`](crate::model::ThrottleSettings)
 pub mod throttle_settings {
-    ///
+
     /// A builder for [`ThrottleSettings`](crate::model::ThrottleSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -516,7 +516,7 @@ impl std::fmt::Debug for ApiStage {
 }
 /// See [`ApiStage`](crate::model::ApiStage)
 pub mod api_stage {
-    ///
+
     /// A builder for [`ApiStage`](crate::model::ApiStage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -637,7 +637,7 @@ impl std::fmt::Debug for CanarySettings {
 }
 /// See [`CanarySettings`](crate::model::CanarySettings)
 pub mod canary_settings {
-    ///
+
     /// A builder for [`CanarySettings`](crate::model::CanarySettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -755,7 +755,7 @@ impl std::fmt::Debug for AccessLogSettings {
 }
 /// See [`AccessLogSettings`](crate::model::AccessLogSettings)
 pub mod access_log_settings {
-    ///
+
     /// A builder for [`AccessLogSettings`](crate::model::AccessLogSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -897,7 +897,7 @@ impl std::fmt::Debug for MethodSetting {
 }
 /// See [`MethodSetting`](crate::model::MethodSetting)
 pub mod method_setting {
-    ///
+
     /// A builder for [`MethodSetting`](crate::model::MethodSetting)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1306,7 +1306,7 @@ impl std::fmt::Debug for EndpointConfiguration {
 }
 /// See [`EndpointConfiguration`](crate::model::EndpointConfiguration)
 pub mod endpoint_configuration {
-    ///
+
     /// A builder for [`EndpointConfiguration`](crate::model::EndpointConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1588,7 +1588,7 @@ impl std::fmt::Debug for Method {
 }
 /// See [`Method`](crate::model::Method)
 pub mod method {
-    ///
+
     /// A builder for [`Method`](crate::model::Method)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1949,7 +1949,7 @@ impl std::fmt::Debug for Integration {
 }
 /// See [`Integration`](crate::model::Integration)
 pub mod integration {
-    ///
+
     /// A builder for [`Integration`](crate::model::Integration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2262,7 +2262,7 @@ impl std::fmt::Debug for TlsConfig {
 }
 /// See [`TlsConfig`](crate::model::TlsConfig)
 pub mod tls_config {
-    ///
+
     /// A builder for [`TlsConfig`](crate::model::TlsConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2355,7 +2355,7 @@ impl std::fmt::Debug for IntegrationResponse {
 }
 /// See [`IntegrationResponse`](crate::model::IntegrationResponse)
 pub mod integration_response {
-    ///
+
     /// A builder for [`IntegrationResponse`](crate::model::IntegrationResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2698,7 +2698,7 @@ impl std::fmt::Debug for MethodResponse {
 }
 /// See [`MethodResponse`](crate::model::MethodResponse)
 pub mod method_response {
-    ///
+
     /// A builder for [`MethodResponse`](crate::model::MethodResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2971,7 +2971,7 @@ impl std::fmt::Debug for MutualTlsAuthentication {
 }
 /// See [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication)
 pub mod mutual_tls_authentication {
-    ///
+
     /// A builder for [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3221,7 +3221,7 @@ impl std::fmt::Debug for DocumentationPartLocation {
 }
 /// See [`DocumentationPartLocation`](crate::model::DocumentationPartLocation)
 pub mod documentation_part_location {
-    ///
+
     /// A builder for [`DocumentationPartLocation`](crate::model::DocumentationPartLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3442,7 +3442,7 @@ impl std::fmt::Debug for MethodSnapshot {
 }
 /// See [`MethodSnapshot`](crate::model::MethodSnapshot)
 pub mod method_snapshot {
-    ///
+
     /// A builder for [`MethodSnapshot`](crate::model::MethodSnapshot)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3723,7 +3723,7 @@ impl std::fmt::Debug for VpcLink {
 }
 /// See [`VpcLink`](crate::model::VpcLink)
 pub mod vpc_link {
-    ///
+
     /// A builder for [`VpcLink`](crate::model::VpcLink)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3935,7 +3935,7 @@ impl std::fmt::Debug for UsagePlan {
 }
 /// See [`UsagePlan`](crate::model::UsagePlan)
 pub mod usage_plan {
-    ///
+
     /// A builder for [`UsagePlan`](crate::model::UsagePlan)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4127,7 +4127,7 @@ impl std::fmt::Debug for UsagePlanKey {
 }
 /// See [`UsagePlanKey`](crate::model::UsagePlanKey)
 pub mod usage_plan_key {
-    ///
+
     /// A builder for [`UsagePlanKey`](crate::model::UsagePlanKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4344,7 +4344,7 @@ impl std::fmt::Debug for Stage {
 }
 /// See [`Stage`](crate::model::Stage)
 pub mod stage {
-    ///
+
     /// A builder for [`Stage`](crate::model::Stage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4693,7 +4693,7 @@ impl std::fmt::Debug for SdkType {
 }
 /// See [`SdkType`](crate::model::SdkType)
 pub mod sdk_type {
-    ///
+
     /// A builder for [`SdkType`](crate::model::SdkType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4828,7 +4828,7 @@ impl std::fmt::Debug for SdkConfigurationProperty {
 }
 /// See [`SdkConfigurationProperty`](crate::model::SdkConfigurationProperty)
 pub mod sdk_configuration_property {
-    ///
+
     /// A builder for [`SdkConfigurationProperty`](crate::model::SdkConfigurationProperty)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5030,7 +5030,7 @@ impl std::fmt::Debug for RestApi {
 }
 /// See [`RestApi`](crate::model::RestApi)
 pub mod rest_api {
-    ///
+
     /// A builder for [`RestApi`](crate::model::RestApi)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5311,7 +5311,7 @@ impl std::fmt::Debug for Resource {
 }
 /// See [`Resource`](crate::model::Resource)
 pub mod resource {
-    ///
+
     /// A builder for [`Resource`](crate::model::Resource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5455,7 +5455,7 @@ impl std::fmt::Debug for RequestValidator {
 }
 /// See [`RequestValidator`](crate::model::RequestValidator)
 pub mod request_validator {
-    ///
+
     /// A builder for [`RequestValidator`](crate::model::RequestValidator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5574,7 +5574,7 @@ impl std::fmt::Debug for Model {
 }
 /// See [`Model`](crate::model::Model)
 pub mod model {
-    ///
+
     /// A builder for [`Model`](crate::model::Model)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5713,7 +5713,7 @@ impl std::fmt::Debug for GatewayResponse {
 }
 /// See [`GatewayResponse`](crate::model::GatewayResponse)
 pub mod gateway_response {
-    ///
+
     /// A builder for [`GatewayResponse`](crate::model::GatewayResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5982,7 +5982,7 @@ impl std::fmt::Debug for DomainName {
 }
 /// See [`DomainName`](crate::model::DomainName)
 pub mod domain_name {
-    ///
+
     /// A builder for [`DomainName`](crate::model::DomainName)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6318,7 +6318,7 @@ impl std::fmt::Debug for DocumentationVersion {
 }
 /// See [`DocumentationVersion`](crate::model::DocumentationVersion)
 pub mod documentation_version {
-    ///
+
     /// A builder for [`DocumentationVersion`](crate::model::DocumentationVersion)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6414,7 +6414,7 @@ impl std::fmt::Debug for DocumentationPart {
 }
 /// See [`DocumentationPart`](crate::model::DocumentationPart)
 pub mod documentation_part {
-    ///
+
     /// A builder for [`DocumentationPart`](crate::model::DocumentationPart)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6584,7 +6584,7 @@ impl std::fmt::Debug for Deployment {
 }
 /// See [`Deployment`](crate::model::Deployment)
 pub mod deployment {
-    ///
+
     /// A builder for [`Deployment`](crate::model::Deployment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6740,7 +6740,7 @@ impl std::fmt::Debug for ClientCertificate {
 }
 /// See [`ClientCertificate`](crate::model::ClientCertificate)
 pub mod client_certificate {
-    ///
+
     /// A builder for [`ClientCertificate`](crate::model::ClientCertificate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6898,7 +6898,7 @@ impl std::fmt::Debug for BasePathMapping {
 }
 /// See [`BasePathMapping`](crate::model::BasePathMapping)
 pub mod base_path_mapping {
-    ///
+
     /// A builder for [`BasePathMapping`](crate::model::BasePathMapping)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7046,7 +7046,7 @@ impl std::fmt::Debug for Authorizer {
 }
 /// See [`Authorizer`](crate::model::Authorizer)
 pub mod authorizer {
-    ///
+
     /// A builder for [`Authorizer`](crate::model::Authorizer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7306,7 +7306,7 @@ impl std::fmt::Debug for ApiKey {
 }
 /// See [`ApiKey`](crate::model::ApiKey)
 pub mod api_key {
-    ///
+
     /// A builder for [`ApiKey`](crate::model::ApiKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7508,7 +7508,7 @@ impl std::fmt::Debug for MutualTlsAuthenticationInput {
 }
 /// See [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput)
 pub mod mutual_tls_authentication_input {
-    ///
+
     /// A builder for [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7599,7 +7599,7 @@ impl std::fmt::Debug for DeploymentCanarySettings {
 }
 /// See [`DeploymentCanarySettings`](crate::model::DeploymentCanarySettings)
 pub mod deployment_canary_settings {
-    ///
+
     /// A builder for [`DeploymentCanarySettings`](crate::model::DeploymentCanarySettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7702,7 +7702,7 @@ impl std::fmt::Debug for StageKey {
 }
 /// See [`StageKey`](crate::model::StageKey)
 pub mod stage_key {
-    ///
+
     /// A builder for [`StageKey`](crate::model::StageKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

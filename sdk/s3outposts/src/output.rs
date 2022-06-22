@@ -28,7 +28,7 @@ impl std::fmt::Debug for ListSharedEndpointsOutput {
 }
 /// See [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
 pub mod list_shared_endpoints_output {
-    ///
+
     /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -111,7 +111,7 @@ impl std::fmt::Debug for ListEndpointsOutput {
 }
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
 pub mod list_endpoints_output {
-    ///
+
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl std::fmt::Debug for DeleteEndpointOutput {
 }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
 pub mod delete_endpoint_output {
-    ///
+
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -218,7 +218,7 @@ impl std::fmt::Debug for CreateEndpointOutput {
 }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
 pub mod create_endpoint_output {
-    ///
+
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

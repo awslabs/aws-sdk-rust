@@ -523,14 +523,12 @@ impl Client {
     }
 }
 pub mod fluent_builders {
-    //!
-    //!
+
     //! Utilities to ergonomically construct a request to the service.
     //!
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
-    //!
     /// Fluent builder constructing a request to `BatchGetNamedQuery`.
     ///
     /// <p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <code>ListNamedQueriesInput</code> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <code>UnprocessedNamedQueryId</code>. Named queries differ from executed queries. Use <code>BatchGetQueryExecutionInput</code> to get details about each unique query execution, and <code>ListQueryExecutionsInput</code> to get a list of query execution IDs.</p>

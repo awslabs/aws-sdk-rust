@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateEnvironmentOutput {
 }
 /// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
 pub mod update_environment_output {
-    ///
+
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -64,7 +64,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -95,7 +95,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -126,7 +126,7 @@ impl std::fmt::Debug for PublishMetricsOutput {
 }
 /// See [`PublishMetricsOutput`](crate::output::PublishMetricsOutput)
 pub mod publish_metrics_output {
-    ///
+
     /// A builder for [`PublishMetricsOutput`](crate::output::PublishMetricsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -248,7 +248,7 @@ impl std::fmt::Debug for ListEnvironmentsOutput {
 }
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput)
 pub mod list_environments_output {
-    ///
+
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -324,7 +324,7 @@ impl std::fmt::Debug for GetEnvironmentOutput {
 }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput)
 pub mod get_environment_output {
-    ///
+
     /// A builder for [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -372,7 +372,7 @@ impl std::fmt::Debug for DeleteEnvironmentOutput {
 }
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
 pub mod delete_environment_output {
-    ///
+
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl std::fmt::Debug for CreateWebLoginTokenOutput {
 }
 /// See [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput)
 pub mod create_web_login_token_output {
-    ///
+
     /// A builder for [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -490,7 +490,7 @@ impl std::fmt::Debug for CreateEnvironmentOutput {
 }
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput)
 pub mod create_environment_output {
-    ///
+
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -550,7 +550,7 @@ impl std::fmt::Debug for CreateCliTokenOutput {
 }
 /// See [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput)
 pub mod create_cli_token_output {
-    ///
+
     /// A builder for [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

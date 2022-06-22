@@ -131,7 +131,7 @@ impl std::fmt::Debug for PutSessionOutput {
 }
 /// See [`PutSessionOutput`](crate::output::PutSessionOutput)
 pub mod put_session_output {
-    ///
+
     /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -516,7 +516,7 @@ impl std::fmt::Debug for PostTextOutput {
 }
 /// See [`PostTextOutput`](crate::output::PostTextOutput)
 pub mod post_text_output {
-    ///
+
     /// A builder for [`PostTextOutput`](crate::output::PostTextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1025,7 +1025,7 @@ impl std::fmt::Debug for PostContentOutput {
 }
 /// See [`PostContentOutput`](crate::output::PostContentOutput)
 pub mod post_content_output {
-    ///
+
     /// A builder for [`PostContentOutput`](crate::output::PostContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -1423,7 +1423,7 @@ impl std::fmt::Debug for GetSessionOutput {
 }
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput)
 pub mod get_session_output {
-    ///
+
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1590,7 +1590,7 @@ impl std::fmt::Debug for DeleteSessionOutput {
 }
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
 pub mod delete_session_output {
-    ///
+
     /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

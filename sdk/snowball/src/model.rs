@@ -238,7 +238,7 @@ impl std::fmt::Debug for OnDeviceServiceConfiguration {
 }
 /// See [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration)
 pub mod on_device_service_configuration {
-    ///
+
     /// A builder for [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -326,7 +326,7 @@ impl std::fmt::Debug for TgwOnDeviceServiceConfiguration {
 }
 /// See [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration)
 pub mod tgw_on_device_service_configuration {
-    ///
+
     /// A builder for [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -456,7 +456,7 @@ impl std::fmt::Debug for NfsOnDeviceServiceConfiguration {
 }
 /// See [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
 pub mod nfs_on_device_service_configuration {
-    ///
+
     /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -542,7 +542,7 @@ impl std::fmt::Debug for JobResource {
 }
 /// See [`JobResource`](crate::model::JobResource)
 pub mod job_resource {
-    ///
+
     /// A builder for [`JobResource`](crate::model::JobResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -657,7 +657,7 @@ impl std::fmt::Debug for Ec2AmiResource {
 }
 /// See [`Ec2AmiResource`](crate::model::Ec2AmiResource)
 pub mod ec2_ami_resource {
-    ///
+
     /// A builder for [`Ec2AmiResource`](crate::model::Ec2AmiResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -734,7 +734,7 @@ impl std::fmt::Debug for LambdaResource {
 }
 /// See [`LambdaResource`](crate::model::LambdaResource)
 pub mod lambda_resource {
-    ///
+
     /// A builder for [`LambdaResource`](crate::model::LambdaResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -811,7 +811,7 @@ impl std::fmt::Debug for EventTriggerDefinition {
 }
 /// See [`EventTriggerDefinition`](crate::model::EventTriggerDefinition)
 pub mod event_trigger_definition {
-    ///
+
     /// A builder for [`EventTriggerDefinition`](crate::model::EventTriggerDefinition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -886,7 +886,7 @@ impl std::fmt::Debug for S3Resource {
 }
 /// See [`S3Resource`](crate::model::S3Resource)
 pub mod s3_resource {
-    ///
+
     /// A builder for [`S3Resource`](crate::model::S3Resource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -985,7 +985,7 @@ impl std::fmt::Debug for TargetOnDeviceService {
 }
 /// See [`TargetOnDeviceService`](crate::model::TargetOnDeviceService)
 pub mod target_on_device_service {
-    ///
+
     /// A builder for [`TargetOnDeviceService`](crate::model::TargetOnDeviceService)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1179,7 +1179,7 @@ impl std::fmt::Debug for KeyRange {
 }
 /// See [`KeyRange`](crate::model::KeyRange)
 pub mod key_range {
-    ///
+
     /// A builder for [`KeyRange`](crate::model::KeyRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1263,7 +1263,7 @@ impl std::fmt::Debug for Notification {
 }
 /// See [`Notification`](crate::model::Notification)
 pub mod notification {
-    ///
+
     /// A builder for [`Notification`](crate::model::Notification)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1543,7 +1543,7 @@ impl std::fmt::Debug for LongTermPricingListEntry {
 }
 /// See [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry)
 pub mod long_term_pricing_list_entry {
-    ///
+
     /// A builder for [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1916,7 +1916,7 @@ impl std::fmt::Debug for JobListEntry {
 }
 /// See [`JobListEntry`](crate::model::JobListEntry)
 pub mod job_list_entry {
-    ///
+
     /// A builder for [`JobListEntry`](crate::model::JobListEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2115,7 +2115,7 @@ impl std::fmt::Debug for CompatibleImage {
 }
 /// See [`CompatibleImage`](crate::model::CompatibleImage)
 pub mod compatible_image {
-    ///
+
     /// A builder for [`CompatibleImage`](crate::model::CompatibleImage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2203,7 +2203,7 @@ impl std::fmt::Debug for ClusterListEntry {
 }
 /// See [`ClusterListEntry`](crate::model::ClusterListEntry)
 pub mod cluster_list_entry {
-    ///
+
     /// A builder for [`ClusterListEntry`](crate::model::ClusterListEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2596,7 +2596,7 @@ impl std::fmt::Debug for JobMetadata {
 }
 /// See [`JobMetadata`](crate::model::JobMetadata)
 pub mod job_metadata {
-    ///
+
     /// A builder for [`JobMetadata`](crate::model::JobMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3016,7 +3016,7 @@ impl std::fmt::Debug for DeviceConfiguration {
 }
 /// See [`DeviceConfiguration`](crate::model::DeviceConfiguration)
 pub mod device_configuration {
-    ///
+
     /// A builder for [`DeviceConfiguration`](crate::model::DeviceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3078,7 +3078,7 @@ impl std::fmt::Debug for SnowconeDeviceConfiguration {
 }
 /// See [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration)
 pub mod snowcone_device_configuration {
-    ///
+
     /// A builder for [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3136,7 +3136,7 @@ impl std::fmt::Debug for WirelessConnection {
 }
 /// See [`WirelessConnection`](crate::model::WirelessConnection)
 pub mod wireless_connection {
-    ///
+
     /// A builder for [`WirelessConnection`](crate::model::WirelessConnection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3191,7 +3191,7 @@ impl std::fmt::Debug for TaxDocuments {
 }
 /// See [`TaxDocuments`](crate::model::TaxDocuments)
 pub mod tax_documents {
-    ///
+
     /// A builder for [`TaxDocuments`](crate::model::TaxDocuments)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3247,7 +3247,7 @@ impl std::fmt::Debug for IndTaxDocuments {
 }
 /// See [`IndTaxDocuments`](crate::model::IndTaxDocuments)
 pub mod ind_tax_documents {
-    ///
+
     /// A builder for [`IndTaxDocuments`](crate::model::IndTaxDocuments)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3317,7 +3317,7 @@ impl std::fmt::Debug for JobLogs {
 }
 /// See [`JobLogs`](crate::model::JobLogs)
 pub mod job_logs {
-    ///
+
     /// A builder for [`JobLogs`](crate::model::JobLogs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3426,7 +3426,7 @@ impl std::fmt::Debug for DataTransfer {
 }
 /// See [`DataTransfer`](crate::model::DataTransfer)
 pub mod data_transfer {
-    ///
+
     /// A builder for [`DataTransfer`](crate::model::DataTransfer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3543,7 +3543,7 @@ impl std::fmt::Debug for ShippingDetails {
 }
 /// See [`ShippingDetails`](crate::model::ShippingDetails)
 pub mod shipping_details {
-    ///
+
     /// A builder for [`ShippingDetails`](crate::model::ShippingDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3652,7 +3652,7 @@ impl std::fmt::Debug for Shipment {
 }
 /// See [`Shipment`](crate::model::Shipment)
 pub mod shipment {
-    ///
+
     /// A builder for [`Shipment`](crate::model::Shipment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3844,7 +3844,7 @@ impl std::fmt::Debug for ClusterMetadata {
 }
 /// See [`ClusterMetadata`](crate::model::ClusterMetadata)
 pub mod cluster_metadata {
-    ///
+
     /// A builder for [`ClusterMetadata`](crate::model::ClusterMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4205,7 +4205,7 @@ impl std::fmt::Debug for Address {
 }
 /// See [`Address`](crate::model::Address)
 pub mod address {
-    ///
+
     /// A builder for [`Address`](crate::model::Address)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateKnowledgeBaseTemplateUriOutput {
 }
 /// See [`UpdateKnowledgeBaseTemplateUriOutput`](crate::output::UpdateKnowledgeBaseTemplateUriOutput)
 pub mod update_knowledge_base_template_uri_output {
-    ///
+
     /// A builder for [`UpdateKnowledgeBaseTemplateUriOutput`](crate::output::UpdateKnowledgeBaseTemplateUriOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for StartContentUploadOutput {
 }
 /// See [`StartContentUploadOutput`](crate::output::StartContentUploadOutput)
 pub mod start_content_upload_output {
-    ///
+
     /// A builder for [`StartContentUploadOutput`](crate::output::StartContentUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -222,7 +222,7 @@ impl std::fmt::Debug for SearchContentOutput {
 }
 /// See [`SearchContentOutput`](crate::output::SearchContentOutput)
 pub mod search_content_output {
-    ///
+
     /// A builder for [`SearchContentOutput`](crate::output::SearchContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -289,7 +289,7 @@ impl std::fmt::Debug for RemoveKnowledgeBaseTemplateUriOutput {
 }
 /// See [`RemoveKnowledgeBaseTemplateUriOutput`](crate::output::RemoveKnowledgeBaseTemplateUriOutput)
 pub mod remove_knowledge_base_template_uri_output {
-    ///
+
     /// A builder for [`RemoveKnowledgeBaseTemplateUriOutput`](crate::output::RemoveKnowledgeBaseTemplateUriOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -340,7 +340,7 @@ impl std::fmt::Debug for ListKnowledgeBasesOutput {
 }
 /// See [`ListKnowledgeBasesOutput`](crate::output::ListKnowledgeBasesOutput)
 pub mod list_knowledge_bases_output {
-    ///
+
     /// A builder for [`ListKnowledgeBasesOutput`](crate::output::ListKnowledgeBasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl std::fmt::Debug for CreateKnowledgeBaseOutput {
 }
 /// See [`CreateKnowledgeBaseOutput`](crate::output::CreateKnowledgeBaseOutput)
 pub mod create_knowledge_base_output {
-    ///
+
     /// A builder for [`CreateKnowledgeBaseOutput`](crate::output::CreateKnowledgeBaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -468,7 +468,7 @@ impl std::fmt::Debug for DeleteKnowledgeBaseOutput {
 }
 /// See [`DeleteKnowledgeBaseOutput`](crate::output::DeleteKnowledgeBaseOutput)
 pub mod delete_knowledge_base_output {
-    ///
+
     /// A builder for [`DeleteKnowledgeBaseOutput`](crate::output::DeleteKnowledgeBaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -509,7 +509,7 @@ impl std::fmt::Debug for GetKnowledgeBaseOutput {
 }
 /// See [`GetKnowledgeBaseOutput`](crate::output::GetKnowledgeBaseOutput)
 pub mod get_knowledge_base_output {
-    ///
+
     /// A builder for [`GetKnowledgeBaseOutput`](crate::output::GetKnowledgeBaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -567,7 +567,7 @@ impl std::fmt::Debug for GetContentSummaryOutput {
 }
 /// See [`GetContentSummaryOutput`](crate::output::GetContentSummaryOutput)
 pub mod get_content_summary_output {
-    ///
+
     /// A builder for [`GetContentSummaryOutput`](crate::output::GetContentSummaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -632,7 +632,7 @@ impl std::fmt::Debug for ListContentsOutput {
 }
 /// See [`ListContentsOutput`](crate::output::ListContentsOutput)
 pub mod list_contents_output {
-    ///
+
     /// A builder for [`ListContentsOutput`](crate::output::ListContentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -709,7 +709,7 @@ impl std::fmt::Debug for CreateContentOutput {
 }
 /// See [`CreateContentOutput`](crate::output::CreateContentOutput)
 pub mod create_content_output {
-    ///
+
     /// A builder for [`CreateContentOutput`](crate::output::CreateContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -757,7 +757,7 @@ impl std::fmt::Debug for DeleteContentOutput {
 }
 /// See [`DeleteContentOutput`](crate::output::DeleteContentOutput)
 pub mod delete_content_output {
-    ///
+
     /// A builder for [`DeleteContentOutput`](crate::output::DeleteContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -798,7 +798,7 @@ impl std::fmt::Debug for UpdateContentOutput {
 }
 /// See [`UpdateContentOutput`](crate::output::UpdateContentOutput)
 pub mod update_content_output {
-    ///
+
     /// A builder for [`UpdateContentOutput`](crate::output::UpdateContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -856,7 +856,7 @@ impl std::fmt::Debug for GetContentOutput {
 }
 /// See [`GetContentOutput`](crate::output::GetContentOutput)
 pub mod get_content_output {
-    ///
+
     /// A builder for [`GetContentOutput`](crate::output::GetContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -921,7 +921,7 @@ impl std::fmt::Debug for SearchSessionsOutput {
 }
 /// See [`SearchSessionsOutput`](crate::output::SearchSessionsOutput)
 pub mod search_sessions_output {
-    ///
+
     /// A builder for [`SearchSessionsOutput`](crate::output::SearchSessionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1005,7 +1005,7 @@ impl std::fmt::Debug for QueryAssistantOutput {
 }
 /// See [`QueryAssistantOutput`](crate::output::QueryAssistantOutput)
 pub mod query_assistant_output {
-    ///
+
     /// A builder for [`QueryAssistantOutput`](crate::output::QueryAssistantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1091,7 +1091,7 @@ impl std::fmt::Debug for NotifyRecommendationsReceivedOutput {
 }
 /// See [`NotifyRecommendationsReceivedOutput`](crate::output::NotifyRecommendationsReceivedOutput)
 pub mod notify_recommendations_received_output {
-    ///
+
     /// A builder for [`NotifyRecommendationsReceivedOutput`](crate::output::NotifyRecommendationsReceivedOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl std::fmt::Debug for GetRecommendationsOutput {
 }
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput)
 pub mod get_recommendations_output {
-    ///
+
     /// A builder for [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1280,7 +1280,7 @@ impl std::fmt::Debug for ListAssistantsOutput {
 }
 /// See [`ListAssistantsOutput`](crate::output::ListAssistantsOutput)
 pub mod list_assistants_output {
-    ///
+
     /// A builder for [`ListAssistantsOutput`](crate::output::ListAssistantsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1357,7 +1357,7 @@ impl std::fmt::Debug for CreateAssistantOutput {
 }
 /// See [`CreateAssistantOutput`](crate::output::CreateAssistantOutput)
 pub mod create_assistant_output {
-    ///
+
     /// A builder for [`CreateAssistantOutput`](crate::output::CreateAssistantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1405,7 +1405,7 @@ impl std::fmt::Debug for DeleteAssistantOutput {
 }
 /// See [`DeleteAssistantOutput`](crate::output::DeleteAssistantOutput)
 pub mod delete_assistant_output {
-    ///
+
     /// A builder for [`DeleteAssistantOutput`](crate::output::DeleteAssistantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1446,7 +1446,7 @@ impl std::fmt::Debug for GetAssistantOutput {
 }
 /// See [`GetAssistantOutput`](crate::output::GetAssistantOutput)
 pub mod get_assistant_output {
-    ///
+
     /// A builder for [`GetAssistantOutput`](crate::output::GetAssistantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1504,7 +1504,7 @@ impl std::fmt::Debug for CreateSessionOutput {
 }
 /// See [`CreateSessionOutput`](crate::output::CreateSessionOutput)
 pub mod create_session_output {
-    ///
+
     /// A builder for [`CreateSessionOutput`](crate::output::CreateSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1562,7 +1562,7 @@ impl std::fmt::Debug for GetSessionOutput {
 }
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput)
 pub mod get_session_output {
-    ///
+
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1633,7 +1633,7 @@ impl std::fmt::Debug for ListAssistantAssociationsOutput {
 }
 /// See [`ListAssistantAssociationsOutput`](crate::output::ListAssistantAssociationsOutput)
 pub mod list_assistant_associations_output {
-    ///
+
     /// A builder for [`ListAssistantAssociationsOutput`](crate::output::ListAssistantAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1715,7 +1715,7 @@ impl std::fmt::Debug for CreateAssistantAssociationOutput {
 }
 /// See [`CreateAssistantAssociationOutput`](crate::output::CreateAssistantAssociationOutput)
 pub mod create_assistant_association_output {
-    ///
+
     /// A builder for [`CreateAssistantAssociationOutput`](crate::output::CreateAssistantAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1767,7 +1767,7 @@ impl std::fmt::Debug for DeleteAssistantAssociationOutput {
 }
 /// See [`DeleteAssistantAssociationOutput`](crate::output::DeleteAssistantAssociationOutput)
 pub mod delete_assistant_association_output {
-    ///
+
     /// A builder for [`DeleteAssistantAssociationOutput`](crate::output::DeleteAssistantAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1810,7 +1810,7 @@ impl std::fmt::Debug for GetAssistantAssociationOutput {
 }
 /// See [`GetAssistantAssociationOutput`](crate::output::GetAssistantAssociationOutput)
 pub mod get_assistant_association_output {
-    ///
+
     /// A builder for [`GetAssistantAssociationOutput`](crate::output::GetAssistantAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1862,7 +1862,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1893,7 +1893,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1938,7 +1938,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

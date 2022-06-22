@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateIdentityProviderConfigurationOutput {
 }
 /// See [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput)
 pub mod update_identity_provider_configuration_output {
-    ///
+
     /// A builder for [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UpdateFleetMetadataOutput {
 }
 /// See [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput)
 pub mod update_fleet_metadata_output {
-    ///
+
     /// A builder for [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for UpdateDomainMetadataOutput {
 }
 /// See [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput)
 pub mod update_domain_metadata_output {
-    ///
+
     /// A builder for [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for UpdateDevicePolicyConfigurationOutput {
 }
 /// See [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput)
 pub mod update_device_policy_configuration_output {
-    ///
+
     /// A builder for [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for UpdateCompanyNetworkConfigurationOutput {
 }
 /// See [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput)
 pub mod update_company_network_configuration_output {
-    ///
+
     /// A builder for [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,7 +166,7 @@ impl std::fmt::Debug for UpdateAuditStreamConfigurationOutput {
 }
 /// See [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput)
 pub mod update_audit_stream_configuration_output {
-    ///
+
     /// A builder for [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,7 +197,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -228,7 +228,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -259,7 +259,7 @@ impl std::fmt::Debug for SignOutUserOutput {
 }
 /// See [`SignOutUserOutput`](crate::output::SignOutUserOutput)
 pub mod sign_out_user_output {
-    ///
+
     /// A builder for [`SignOutUserOutput`](crate::output::SignOutUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl std::fmt::Debug for RevokeDomainAccessOutput {
 }
 /// See [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput)
 pub mod revoke_domain_access_output {
-    ///
+
     /// A builder for [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -321,7 +321,7 @@ impl std::fmt::Debug for RestoreDomainAccessOutput {
 }
 /// See [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput)
 pub mod restore_domain_access_output {
-    ///
+
     /// A builder for [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -375,7 +375,7 @@ impl std::fmt::Debug for ListWebsiteCertificateAuthoritiesOutput {
 }
 /// See [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput)
 pub mod list_website_certificate_authorities_output {
-    ///
+
     /// A builder for [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -468,7 +468,7 @@ impl std::fmt::Debug for ListWebsiteAuthorizationProvidersOutput {
 }
 /// See [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput)
 pub mod list_website_authorization_providers_output {
-    ///
+
     /// A builder for [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -554,7 +554,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -631,7 +631,7 @@ impl std::fmt::Debug for ListFleetsOutput {
 }
 /// See [`ListFleetsOutput`](crate::output::ListFleetsOutput)
 pub mod list_fleets_output {
-    ///
+
     /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -715,7 +715,7 @@ impl std::fmt::Debug for ListDomainsOutput {
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput)
 pub mod list_domains_output {
-    ///
+
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -798,7 +798,7 @@ impl std::fmt::Debug for ListDevicesOutput {
 }
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput)
 pub mod list_devices_output {
-    ///
+
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -864,7 +864,7 @@ impl std::fmt::Debug for DisassociateWebsiteCertificateAuthorityOutput {
 }
 /// See [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput)
 pub mod disassociate_website_certificate_authority_output {
-    ///
+
     /// A builder for [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -895,7 +895,7 @@ impl std::fmt::Debug for DisassociateWebsiteAuthorizationProviderOutput {
 }
 /// See [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput)
 pub mod disassociate_website_authorization_provider_output {
-    ///
+
     /// A builder for [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -926,7 +926,7 @@ impl std::fmt::Debug for DisassociateDomainOutput {
 }
 /// See [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput)
 pub mod disassociate_domain_output {
-    ///
+
     /// A builder for [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -981,7 +981,7 @@ impl std::fmt::Debug for DescribeWebsiteCertificateAuthorityOutput {
 }
 /// See [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput)
 pub mod describe_website_certificate_authority_output {
-    ///
+
     /// A builder for [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1085,7 +1085,7 @@ impl std::fmt::Debug for DescribeIdentityProviderConfigurationOutput {
 }
 /// See [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput)
 pub mod describe_identity_provider_configuration_output {
-    ///
+
     /// A builder for [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1235,7 +1235,7 @@ impl std::fmt::Debug for DescribeFleetMetadataOutput {
 }
 /// See [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput)
 pub mod describe_fleet_metadata_output {
-    ///
+
     /// A builder for [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1431,7 +1431,7 @@ impl std::fmt::Debug for DescribeDomainOutput {
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
 pub mod describe_domain_output {
-    ///
+
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1543,7 +1543,7 @@ impl std::fmt::Debug for DescribeDevicePolicyConfigurationOutput {
 }
 /// See [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput)
 pub mod describe_device_policy_configuration_output {
-    ///
+
     /// A builder for [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1657,7 +1657,7 @@ impl std::fmt::Debug for DescribeDeviceOutput {
 }
 /// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
 pub mod describe_device_output {
-    ///
+
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1837,7 +1837,7 @@ impl std::fmt::Debug for DescribeCompanyNetworkConfigurationOutput {
 }
 /// See [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput)
 pub mod describe_company_network_configuration_output {
-    ///
+
     /// A builder for [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1934,7 +1934,7 @@ impl std::fmt::Debug for DescribeAuditStreamConfigurationOutput {
 }
 /// See [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput)
 pub mod describe_audit_stream_configuration_output {
-    ///
+
     /// A builder for [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1982,7 +1982,7 @@ impl std::fmt::Debug for DeleteFleetOutput {
 }
 /// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
 pub mod delete_fleet_output {
-    ///
+
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2023,7 +2023,7 @@ impl std::fmt::Debug for CreateFleetOutput {
 }
 /// See [`CreateFleetOutput`](crate::output::CreateFleetOutput)
 pub mod create_fleet_output {
-    ///
+
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2078,7 +2078,7 @@ impl std::fmt::Debug for AssociateWebsiteCertificateAuthorityOutput {
 }
 /// See [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput)
 pub mod associate_website_certificate_authority_output {
-    ///
+
     /// A builder for [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2136,7 +2136,7 @@ impl std::fmt::Debug for AssociateWebsiteAuthorizationProviderOutput {
 }
 /// See [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput)
 pub mod associate_website_authorization_provider_output {
-    ///
+
     /// A builder for [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2184,7 +2184,7 @@ impl std::fmt::Debug for AssociateDomainOutput {
 }
 /// See [`AssociateDomainOutput`](crate::output::AssociateDomainOutput)
 pub mod associate_domain_output {
-    ///
+
     /// A builder for [`AssociateDomainOutput`](crate::output::AssociateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateTableStorageOptimizerOutput {
 }
 /// See [`UpdateTableStorageOptimizerOutput`](crate::output::UpdateTableStorageOptimizerOutput)
 pub mod update_table_storage_optimizer_output {
-    ///
+
     /// A builder for [`UpdateTableStorageOptimizerOutput`](crate::output::UpdateTableStorageOptimizerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl std::fmt::Debug for UpdateTableObjectsOutput {
 }
 /// See [`UpdateTableObjectsOutput`](crate::output::UpdateTableObjectsOutput)
 pub mod update_table_objects_output {
-    ///
+
     /// A builder for [`UpdateTableObjectsOutput`](crate::output::UpdateTableObjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -97,7 +97,7 @@ impl std::fmt::Debug for UpdateResourceOutput {
 }
 /// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
 pub mod update_resource_output {
-    ///
+
     /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -128,7 +128,7 @@ impl std::fmt::Debug for UpdateLfTagOutput {
 }
 /// See [`UpdateLfTagOutput`](crate::output::UpdateLfTagOutput)
 pub mod update_lf_tag_output {
-    ///
+
     /// A builder for [`UpdateLfTagOutput`](crate::output::UpdateLfTagOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -169,7 +169,7 @@ impl std::fmt::Debug for StartTransactionOutput {
 }
 /// See [`StartTransactionOutput`](crate::output::StartTransactionOutput)
 pub mod start_transaction_output {
-    ///
+
     /// A builder for [`StartTransactionOutput`](crate::output::StartTransactionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -227,7 +227,7 @@ impl std::fmt::Debug for StartQueryPlanningOutput {
 }
 /// See [`StartQueryPlanningOutput`](crate::output::StartQueryPlanningOutput)
 pub mod start_query_planning_output {
-    ///
+
     /// A builder for [`StartQueryPlanningOutput`](crate::output::StartQueryPlanningOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -289,7 +289,7 @@ impl std::fmt::Debug for SearchTablesByLfTagsOutput {
 }
 /// See [`SearchTablesByLfTagsOutput`](crate::output::SearchTablesByLfTagsOutput)
 pub mod search_tables_by_lf_tags_output {
-    ///
+
     /// A builder for [`SearchTablesByLfTagsOutput`](crate::output::SearchTablesByLfTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -372,7 +372,7 @@ impl std::fmt::Debug for SearchDatabasesByLfTagsOutput {
 }
 /// See [`SearchDatabasesByLfTagsOutput`](crate::output::SearchDatabasesByLfTagsOutput)
 pub mod search_databases_by_lf_tags_output {
-    ///
+
     /// A builder for [`SearchDatabasesByLfTagsOutput`](crate::output::SearchDatabasesByLfTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -438,7 +438,7 @@ impl std::fmt::Debug for RevokePermissionsOutput {
 }
 /// See [`RevokePermissionsOutput`](crate::output::RevokePermissionsOutput)
 pub mod revoke_permissions_output {
-    ///
+
     /// A builder for [`RevokePermissionsOutput`](crate::output::RevokePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -479,7 +479,7 @@ impl std::fmt::Debug for RemoveLfTagsFromResourceOutput {
 }
 /// See [`RemoveLfTagsFromResourceOutput`](crate::output::RemoveLfTagsFromResourceOutput)
 pub mod remove_lf_tags_from_resource_output {
-    ///
+
     /// A builder for [`RemoveLfTagsFromResourceOutput`](crate::output::RemoveLfTagsFromResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -533,7 +533,7 @@ impl std::fmt::Debug for RegisterResourceOutput {
 }
 /// See [`RegisterResourceOutput`](crate::output::RegisterResourceOutput)
 pub mod register_resource_output {
-    ///
+
     /// A builder for [`RegisterResourceOutput`](crate::output::RegisterResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -564,7 +564,7 @@ impl std::fmt::Debug for PutDataLakeSettingsOutput {
 }
 /// See [`PutDataLakeSettingsOutput`](crate::output::PutDataLakeSettingsOutput)
 pub mod put_data_lake_settings_output {
-    ///
+
     /// A builder for [`PutDataLakeSettingsOutput`](crate::output::PutDataLakeSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -612,7 +612,7 @@ impl std::fmt::Debug for ListTransactionsOutput {
 }
 /// See [`ListTransactionsOutput`](crate::output::ListTransactionsOutput)
 pub mod list_transactions_output {
-    ///
+
     /// A builder for [`ListTransactionsOutput`](crate::output::ListTransactionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -696,7 +696,7 @@ impl std::fmt::Debug for ListTableStorageOptimizersOutput {
 }
 /// See [`ListTableStorageOptimizersOutput`](crate::output::ListTableStorageOptimizersOutput)
 pub mod list_table_storage_optimizers_output {
-    ///
+
     /// A builder for [`ListTableStorageOptimizersOutput`](crate::output::ListTableStorageOptimizersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -780,7 +780,7 @@ impl std::fmt::Debug for ListResourcesOutput {
 }
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput)
 pub mod list_resources_output {
-    ///
+
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -870,7 +870,7 @@ impl std::fmt::Debug for ListPermissionsOutput {
 }
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
 pub mod list_permissions_output {
-    ///
+
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -957,7 +957,7 @@ impl std::fmt::Debug for ListLfTagsOutput {
 }
 /// See [`ListLfTagsOutput`](crate::output::ListLfTagsOutput)
 pub mod list_lf_tags_output {
-    ///
+
     /// A builder for [`ListLfTagsOutput`](crate::output::ListLfTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1040,7 +1040,7 @@ impl std::fmt::Debug for ListDataCellsFilterOutput {
 }
 /// See [`ListDataCellsFilterOutput`](crate::output::ListDataCellsFilterOutput)
 pub mod list_data_cells_filter_output {
-    ///
+
     /// A builder for [`ListDataCellsFilterOutput`](crate::output::ListDataCellsFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1107,7 +1107,7 @@ impl std::fmt::Debug for GrantPermissionsOutput {
 }
 /// See [`GrantPermissionsOutput`](crate::output::GrantPermissionsOutput)
 pub mod grant_permissions_output {
-    ///
+
     /// A builder for [`GrantPermissionsOutput`](crate::output::GrantPermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1162,7 +1162,7 @@ impl std::fmt::Debug for GetWorkUnitsOutput {
 }
 /// See [`GetWorkUnitsOutput`](crate::output::GetWorkUnitsOutput)
 pub mod get_work_units_output {
-    ///
+
     /// A builder for [`GetWorkUnitsOutput`](crate::output::GetWorkUnitsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl std::fmt::Debug for GetWorkUnitResultsOutput {
 }
 /// See [`GetWorkUnitResultsOutput`](crate::output::GetWorkUnitResultsOutput)
 pub mod get_work_unit_results_output {
-    ///
+
     /// A builder for [`GetWorkUnitResultsOutput`](crate::output::GetWorkUnitResultsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -1329,7 +1329,7 @@ impl std::fmt::Debug for GetTemporaryGlueTableCredentialsOutput {
 }
 /// See [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput)
 pub mod get_temporary_glue_table_credentials_output {
-    ///
+
     /// A builder for [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1453,7 +1453,7 @@ impl std::fmt::Debug for GetTemporaryGluePartitionCredentialsOutput {
 }
 /// See [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput)
 pub mod get_temporary_glue_partition_credentials_output {
-    ///
+
     /// A builder for [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1563,7 +1563,7 @@ impl std::fmt::Debug for GetTableObjectsOutput {
 }
 /// See [`GetTableObjectsOutput`](crate::output::GetTableObjectsOutput)
 pub mod get_table_objects_output {
-    ///
+
     /// A builder for [`GetTableObjectsOutput`](crate::output::GetTableObjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1653,7 +1653,7 @@ impl std::fmt::Debug for GetResourceLfTagsOutput {
 }
 /// See [`GetResourceLfTagsOutput`](crate::output::GetResourceLfTagsOutput)
 pub mod get_resource_lf_tags_output {
-    ///
+
     /// A builder for [`GetResourceLfTagsOutput`](crate::output::GetResourceLfTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1774,7 +1774,7 @@ impl std::fmt::Debug for GetQueryStatisticsOutput {
 }
 /// See [`GetQueryStatisticsOutput`](crate::output::GetQueryStatisticsOutput)
 pub mod get_query_statistics_output {
-    ///
+
     /// A builder for [`GetQueryStatisticsOutput`](crate::output::GetQueryStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1881,7 +1881,7 @@ impl std::fmt::Debug for GetQueryStateOutput {
 }
 /// See [`GetQueryStateOutput`](crate::output::GetQueryStateOutput)
 pub mod get_query_state_output {
-    ///
+
     /// A builder for [`GetQueryStateOutput`](crate::output::GetQueryStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1977,7 +1977,7 @@ impl std::fmt::Debug for GetLfTagOutput {
 }
 /// See [`GetLfTagOutput`](crate::output::GetLfTagOutput)
 pub mod get_lf_tag_output {
-    ///
+
     /// A builder for [`GetLfTagOutput`](crate::output::GetLfTagOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2074,7 +2074,7 @@ impl std::fmt::Debug for GetEffectivePermissionsForPathOutput {
 }
 /// See [`GetEffectivePermissionsForPathOutput`](crate::output::GetEffectivePermissionsForPathOutput)
 pub mod get_effective_permissions_for_path_output {
-    ///
+
     /// A builder for [`GetEffectivePermissionsForPathOutput`](crate::output::GetEffectivePermissionsForPathOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2151,7 +2151,7 @@ impl std::fmt::Debug for GetDataLakeSettingsOutput {
 }
 /// See [`GetDataLakeSettingsOutput`](crate::output::GetDataLakeSettingsOutput)
 pub mod get_data_lake_settings_output {
-    ///
+
     /// A builder for [`GetDataLakeSettingsOutput`](crate::output::GetDataLakeSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2199,7 +2199,7 @@ impl std::fmt::Debug for ExtendTransactionOutput {
 }
 /// See [`ExtendTransactionOutput`](crate::output::ExtendTransactionOutput)
 pub mod extend_transaction_output {
-    ///
+
     /// A builder for [`ExtendTransactionOutput`](crate::output::ExtendTransactionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl std::fmt::Debug for DescribeTransactionOutput {
 }
 /// See [`DescribeTransactionOutput`](crate::output::DescribeTransactionOutput)
 pub mod describe_transaction_output {
-    ///
+
     /// A builder for [`DescribeTransactionOutput`](crate::output::DescribeTransactionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2304,7 +2304,7 @@ impl std::fmt::Debug for DescribeResourceOutput {
 }
 /// See [`DescribeResourceOutput`](crate::output::DescribeResourceOutput)
 pub mod describe_resource_output {
-    ///
+
     /// A builder for [`DescribeResourceOutput`](crate::output::DescribeResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2352,7 +2352,7 @@ impl std::fmt::Debug for DeregisterResourceOutput {
 }
 /// See [`DeregisterResourceOutput`](crate::output::DeregisterResourceOutput)
 pub mod deregister_resource_output {
-    ///
+
     /// A builder for [`DeregisterResourceOutput`](crate::output::DeregisterResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2383,7 +2383,7 @@ impl std::fmt::Debug for DeleteObjectsOnCancelOutput {
 }
 /// See [`DeleteObjectsOnCancelOutput`](crate::output::DeleteObjectsOnCancelOutput)
 pub mod delete_objects_on_cancel_output {
-    ///
+
     /// A builder for [`DeleteObjectsOnCancelOutput`](crate::output::DeleteObjectsOnCancelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2414,7 +2414,7 @@ impl std::fmt::Debug for DeleteLfTagOutput {
 }
 /// See [`DeleteLfTagOutput`](crate::output::DeleteLfTagOutput)
 pub mod delete_lf_tag_output {
-    ///
+
     /// A builder for [`DeleteLfTagOutput`](crate::output::DeleteLfTagOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2445,7 +2445,7 @@ impl std::fmt::Debug for DeleteDataCellsFilterOutput {
 }
 /// See [`DeleteDataCellsFilterOutput`](crate::output::DeleteDataCellsFilterOutput)
 pub mod delete_data_cells_filter_output {
-    ///
+
     /// A builder for [`DeleteDataCellsFilterOutput`](crate::output::DeleteDataCellsFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2476,7 +2476,7 @@ impl std::fmt::Debug for CreateLfTagOutput {
 }
 /// See [`CreateLfTagOutput`](crate::output::CreateLfTagOutput)
 pub mod create_lf_tag_output {
-    ///
+
     /// A builder for [`CreateLfTagOutput`](crate::output::CreateLfTagOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2507,7 +2507,7 @@ impl std::fmt::Debug for CreateDataCellsFilterOutput {
 }
 /// See [`CreateDataCellsFilterOutput`](crate::output::CreateDataCellsFilterOutput)
 pub mod create_data_cells_filter_output {
-    ///
+
     /// A builder for [`CreateDataCellsFilterOutput`](crate::output::CreateDataCellsFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2548,7 +2548,7 @@ impl std::fmt::Debug for CommitTransactionOutput {
 }
 /// See [`CommitTransactionOutput`](crate::output::CommitTransactionOutput)
 pub mod commit_transaction_output {
-    ///
+
     /// A builder for [`CommitTransactionOutput`](crate::output::CommitTransactionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2596,7 +2596,7 @@ impl std::fmt::Debug for CancelTransactionOutput {
 }
 /// See [`CancelTransactionOutput`](crate::output::CancelTransactionOutput)
 pub mod cancel_transaction_output {
-    ///
+
     /// A builder for [`CancelTransactionOutput`](crate::output::CancelTransactionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2637,7 +2637,7 @@ impl std::fmt::Debug for BatchRevokePermissionsOutput {
 }
 /// See [`BatchRevokePermissionsOutput`](crate::output::BatchRevokePermissionsOutput)
 pub mod batch_revoke_permissions_output {
-    ///
+
     /// A builder for [`BatchRevokePermissionsOutput`](crate::output::BatchRevokePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2702,7 +2702,7 @@ impl std::fmt::Debug for BatchGrantPermissionsOutput {
 }
 /// See [`BatchGrantPermissionsOutput`](crate::output::BatchGrantPermissionsOutput)
 pub mod batch_grant_permissions_output {
-    ///
+
     /// A builder for [`BatchGrantPermissionsOutput`](crate::output::BatchGrantPermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2767,7 +2767,7 @@ impl std::fmt::Debug for AddLfTagsToResourceOutput {
 }
 /// See [`AddLfTagsToResourceOutput`](crate::output::AddLfTagsToResourceOutput)
 pub mod add_lf_tags_to_resource_output {
-    ///
+
     /// A builder for [`AddLfTagsToResourceOutput`](crate::output::AddLfTagsToResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

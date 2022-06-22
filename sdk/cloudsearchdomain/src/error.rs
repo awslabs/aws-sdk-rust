@@ -313,7 +313,7 @@ impl std::fmt::Display for DocumentServiceException {
 impl std::error::Error for DocumentServiceException {}
 /// See [`DocumentServiceException`](crate::error::DocumentServiceException)
 pub mod document_service_exception {
-    ///
+
     /// A builder for [`DocumentServiceException`](crate::error::DocumentServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -390,7 +390,7 @@ impl std::fmt::Display for SearchException {
 impl std::error::Error for SearchException {}
 /// See [`SearchException`](crate::error::SearchException)
 pub mod search_exception {
-    ///
+
     /// A builder for [`SearchException`](crate::error::SearchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

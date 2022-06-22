@@ -28,7 +28,7 @@ impl std::fmt::Debug for UpdateEnrollmentStatusOutput {
 }
 /// See [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput)
 pub mod update_enrollment_status_output {
-    ///
+
     /// A builder for [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -88,7 +88,7 @@ impl std::fmt::Debug for PutRecommendationPreferencesOutput {
 }
 /// See [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
 pub mod put_recommendation_preferences_output {
-    ///
+
     /// A builder for [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -141,7 +141,7 @@ impl std::fmt::Debug for GetRecommendationSummariesOutput {
 }
 /// See [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput)
 pub mod get_recommendation_summaries_output {
-    ///
+
     /// A builder for [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl std::fmt::Debug for GetRecommendationPreferencesOutput {
 }
 /// See [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
 pub mod get_recommendation_preferences_output {
-    ///
+
     /// A builder for [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -337,7 +337,7 @@ impl std::fmt::Debug for GetLambdaFunctionRecommendationsOutput {
 }
 /// See [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput)
 pub mod get_lambda_function_recommendations_output {
-    ///
+
     /// A builder for [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -434,7 +434,7 @@ impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationOutput {
 }
 /// See [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
 pub mod get_enrollment_statuses_for_organization_output {
-    ///
+
     /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -549,7 +549,7 @@ impl std::fmt::Debug for GetEnrollmentStatusOutput {
 }
 /// See [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
 pub mod get_enrollment_status_output {
-    ///
+
     /// A builder for [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -675,7 +675,7 @@ impl std::fmt::Debug for GetEffectiveRecommendationPreferencesOutput {
 }
 /// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
 pub mod get_effective_recommendation_preferences_output {
-    ///
+
     /// A builder for [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -749,7 +749,7 @@ impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsOutput {
 }
 /// See [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput)
 pub mod get_ec2_recommendation_projected_metrics_output {
-    ///
+
     /// A builder for [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -842,7 +842,7 @@ impl std::fmt::Debug for GetEc2InstanceRecommendationsOutput {
 }
 /// See [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput)
 pub mod get_ec2_instance_recommendations_output {
-    ///
+
     /// A builder for [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -968,7 +968,7 @@ impl std::fmt::Debug for GetEbsVolumeRecommendationsOutput {
 }
 /// See [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput)
 pub mod get_ebs_volume_recommendations_output {
-    ///
+
     /// A builder for [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1094,7 +1094,7 @@ impl std::fmt::Debug for GetAutoScalingGroupRecommendationsOutput {
 }
 /// See [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput)
 pub mod get_auto_scaling_group_recommendations_output {
-    ///
+
     /// A builder for [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1208,7 +1208,7 @@ impl std::fmt::Debug for ExportLambdaFunctionRecommendationsOutput {
 }
 /// See [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput)
 pub mod export_lambda_function_recommendations_output {
-    ///
+
     /// A builder for [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1289,7 +1289,7 @@ impl std::fmt::Debug for ExportEc2InstanceRecommendationsOutput {
 }
 /// See [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput)
 pub mod export_ec2_instance_recommendations_output {
-    ///
+
     /// A builder for [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1370,7 +1370,7 @@ impl std::fmt::Debug for ExportEbsVolumeRecommendationsOutput {
 }
 /// See [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput)
 pub mod export_ebs_volume_recommendations_output {
-    ///
+
     /// A builder for [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1451,7 +1451,7 @@ impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsOutput {
 }
 /// See [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput)
 pub mod export_auto_scaling_group_recommendations_output {
-    ///
+
     /// A builder for [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl std::fmt::Debug for DescribeRecommendationExportJobsOutput {
 }
 /// See [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
 pub mod describe_recommendation_export_jobs_output {
-    ///
+
     /// A builder for [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1610,7 +1610,7 @@ impl std::fmt::Debug for DeleteRecommendationPreferencesOutput {
 }
 /// See [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
 pub mod delete_recommendation_preferences_output {
-    ///
+
     /// A builder for [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

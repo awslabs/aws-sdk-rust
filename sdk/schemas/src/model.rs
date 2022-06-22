@@ -155,7 +155,7 @@ impl std::fmt::Debug for SearchSchemaSummary {
 }
 /// See [`SearchSchemaSummary`](crate::model::SearchSchemaSummary)
 pub mod search_schema_summary {
-    ///
+
     /// A builder for [`SearchSchemaSummary`](crate::model::SearchSchemaSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -273,7 +273,7 @@ impl std::fmt::Debug for SearchSchemaVersionSummary {
 }
 /// See [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary)
 pub mod search_schema_version_summary {
-    ///
+
     /// A builder for [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -438,7 +438,7 @@ impl std::fmt::Debug for SchemaVersionSummary {
 }
 /// See [`SchemaVersionSummary`](crate::model::SchemaVersionSummary)
 pub mod schema_version_summary {
-    ///
+
     /// A builder for [`SchemaVersionSummary`](crate::model::SchemaVersionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -564,7 +564,7 @@ impl std::fmt::Debug for SchemaSummary {
 }
 /// See [`SchemaSummary`](crate::model::SchemaSummary)
 pub mod schema_summary {
-    ///
+
     /// A builder for [`SchemaSummary`](crate::model::SchemaSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -705,7 +705,7 @@ impl std::fmt::Debug for RegistrySummary {
 }
 /// See [`RegistrySummary`](crate::model::RegistrySummary)
 pub mod registry_summary {
-    ///
+
     /// A builder for [`RegistrySummary`](crate::model::RegistrySummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -843,7 +843,7 @@ impl std::fmt::Debug for DiscovererSummary {
 }
 /// See [`DiscovererSummary`](crate::model::DiscovererSummary)
 pub mod discoverer_summary {
-    ///
+
     /// A builder for [`DiscovererSummary`](crate::model::DiscovererSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

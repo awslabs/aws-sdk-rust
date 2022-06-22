@@ -143,7 +143,7 @@ impl std::fmt::Debug for Event {
 }
 /// See [`Event`](crate::model::Event)
 pub mod event {
-    ///
+
     /// A builder for [`Event`](crate::model::Event)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -201,7 +201,7 @@ impl std::fmt::Debug for RevisionPublished {
 }
 /// See [`RevisionPublished`](crate::model::RevisionPublished)
 pub mod revision_published {
-    ///
+
     /// A builder for [`RevisionPublished`](crate::model::RevisionPublished)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -259,7 +259,7 @@ impl std::fmt::Debug for Action {
 }
 /// See [`Action`](crate::model::Action)
 pub mod action {
-    ///
+
     /// A builder for [`Action`](crate::model::Action)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -330,7 +330,7 @@ impl std::fmt::Debug for AutoExportRevisionToS3RequestDetails {
 }
 /// See [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
 pub mod auto_export_revision_to_s3_request_details {
-    ///
+
     /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl std::fmt::Debug for AutoExportRevisionDestinationEntry {
 }
 /// See [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
 pub mod auto_export_revision_destination_entry {
-    ///
+
     /// A builder for [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl std::fmt::Debug for ExportServerSideEncryption {
 }
 /// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
 pub mod export_server_side_encryption {
-    ///
+
     /// A builder for [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -613,7 +613,7 @@ impl std::fmt::Debug for OriginDetails {
 }
 /// See [`OriginDetails`](crate::model::OriginDetails)
 pub mod origin_details {
-    ///
+
     /// A builder for [`OriginDetails`](crate::model::OriginDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -798,7 +798,7 @@ impl std::fmt::Debug for AssetDetails {
 }
 /// See [`AssetDetails`](crate::model::AssetDetails)
 pub mod asset_details {
-    ///
+
     /// A builder for [`AssetDetails`](crate::model::AssetDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -954,7 +954,7 @@ impl std::fmt::Debug for ApiGatewayApiAsset {
 }
 /// See [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
 pub mod api_gateway_api_asset {
-    ///
+
     /// A builder for [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1176,7 +1176,7 @@ impl std::fmt::Debug for RedshiftDataShareAsset {
 }
 /// See [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset)
 pub mod redshift_data_share_asset {
-    ///
+
     /// A builder for [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1229,7 +1229,7 @@ impl std::fmt::Debug for S3SnapshotAsset {
 }
 /// See [`S3SnapshotAsset`](crate::model::S3SnapshotAsset)
 pub mod s3_snapshot_asset {
-    ///
+
     /// A builder for [`S3SnapshotAsset`](crate::model::S3SnapshotAsset)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1347,7 +1347,7 @@ impl std::fmt::Debug for AssetEntry {
 }
 /// See [`AssetEntry`](crate::model::AssetEntry)
 pub mod asset_entry {
-    ///
+
     /// A builder for [`AssetEntry`](crate::model::AssetEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1571,7 +1571,7 @@ impl std::fmt::Debug for JobEntry {
 }
 /// See [`JobEntry`](crate::model::JobEntry)
 pub mod job_entry {
-    ///
+
     /// A builder for [`JobEntry`](crate::model::JobEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1931,7 +1931,7 @@ impl std::fmt::Debug for JobError {
 }
 /// See [`JobError`](crate::model::JobError)
 pub mod job_error {
-    ///
+
     /// A builder for [`JobError`](crate::model::JobError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2209,7 +2209,7 @@ impl std::fmt::Debug for Details {
 }
 /// See [`Details`](crate::model::Details)
 pub mod details {
-    ///
+
     /// A builder for [`Details`](crate::model::Details)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2307,7 +2307,7 @@ impl std::fmt::Debug for AssetSourceEntry {
 }
 /// See [`AssetSourceEntry`](crate::model::AssetSourceEntry)
 pub mod asset_source_entry {
-    ///
+
     /// A builder for [`AssetSourceEntry`](crate::model::AssetSourceEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2374,7 +2374,7 @@ impl std::fmt::Debug for ImportAssetFromSignedUrlJobErrorDetails {
 }
 /// See [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails)
 pub mod import_asset_from_signed_url_job_error_details {
-    ///
+
     /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2585,7 +2585,7 @@ impl std::fmt::Debug for ResponseDetails {
 }
 /// See [`ResponseDetails`](crate::model::ResponseDetails)
 pub mod response_details {
-    ///
+
     /// A builder for [`ResponseDetails`](crate::model::ResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2845,7 +2845,7 @@ impl std::fmt::Debug for ImportAssetFromApiGatewayApiResponseDetails {
 }
 /// See [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
 pub mod import_asset_from_api_gateway_api_response_details {
-    ///
+
     /// A builder for [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3060,7 +3060,7 @@ impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesResponseDetails {
 }
 /// See [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails)
 pub mod import_assets_from_redshift_data_shares_response_details {
-    ///
+
     /// A builder for [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3155,7 +3155,7 @@ impl std::fmt::Debug for RedshiftDataShareAssetSourceEntry {
 }
 /// See [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry)
 pub mod redshift_data_share_asset_source_entry {
-    ///
+
     /// A builder for [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3227,7 +3227,7 @@ impl std::fmt::Debug for ImportAssetsFromS3ResponseDetails {
 }
 /// See [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails)
 pub mod import_assets_from_s3_response_details {
-    ///
+
     /// A builder for [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3351,7 +3351,7 @@ impl std::fmt::Debug for ImportAssetFromSignedUrlResponseDetails {
 }
 /// See [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails)
 pub mod import_asset_from_signed_url_response_details {
-    ///
+
     /// A builder for [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3493,7 +3493,7 @@ impl std::fmt::Debug for ExportRevisionsToS3ResponseDetails {
 }
 /// See [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails)
 pub mod export_revisions_to_s3_response_details {
-    ///
+
     /// A builder for [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3617,7 +3617,7 @@ impl std::fmt::Debug for RevisionDestinationEntry {
 }
 /// See [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry)
 pub mod revision_destination_entry {
-    ///
+
     /// A builder for [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3719,7 +3719,7 @@ impl std::fmt::Debug for ExportAssetsToS3ResponseDetails {
 }
 /// See [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails)
 pub mod export_assets_to_s3_response_details {
-    ///
+
     /// A builder for [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3837,7 +3837,7 @@ impl std::fmt::Debug for AssetDestinationEntry {
 }
 /// See [`AssetDestinationEntry`](crate::model::AssetDestinationEntry)
 pub mod asset_destination_entry {
-    ///
+
     /// A builder for [`AssetDestinationEntry`](crate::model::AssetDestinationEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3944,7 +3944,7 @@ impl std::fmt::Debug for ExportAssetToSignedUrlResponseDetails {
 }
 /// See [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
 pub mod export_asset_to_signed_url_response_details {
-    ///
+
     /// A builder for [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4085,7 +4085,7 @@ impl std::fmt::Debug for EventActionEntry {
 }
 /// See [`EventActionEntry`](crate::model::EventActionEntry)
 pub mod event_action_entry {
-    ///
+
     /// A builder for [`EventActionEntry`](crate::model::EventActionEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4269,7 +4269,7 @@ impl std::fmt::Debug for DataSetEntry {
 }
 /// See [`DataSetEntry`](crate::model::DataSetEntry)
 pub mod data_set_entry {
-    ///
+
     /// A builder for [`DataSetEntry`](crate::model::DataSetEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4516,7 +4516,7 @@ impl std::fmt::Debug for RevisionEntry {
 }
 /// See [`RevisionEntry`](crate::model::RevisionEntry)
 pub mod revision_entry {
-    ///
+
     /// A builder for [`RevisionEntry`](crate::model::RevisionEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4778,7 +4778,7 @@ impl std::fmt::Debug for RequestDetails {
 }
 /// See [`RequestDetails`](crate::model::RequestDetails)
 pub mod request_details {
-    ///
+
     /// A builder for [`RequestDetails`](crate::model::RequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5016,7 +5016,7 @@ impl std::fmt::Debug for ImportAssetFromApiGatewayApiRequestDetails {
 }
 /// See [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
 pub mod import_asset_from_api_gateway_api_request_details {
-    ///
+
     /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5193,7 +5193,7 @@ impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesRequestDetails {
 }
 /// See [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails)
 pub mod import_assets_from_redshift_data_shares_request_details {
-    ///
+
     /// A builder for [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5302,7 +5302,7 @@ impl std::fmt::Debug for ImportAssetsFromS3RequestDetails {
 }
 /// See [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails)
 pub mod import_assets_from_s3_request_details {
-    ///
+
     /// A builder for [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5412,7 +5412,7 @@ impl std::fmt::Debug for ImportAssetFromSignedUrlRequestDetails {
 }
 /// See [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails)
 pub mod import_asset_from_signed_url_request_details {
-    ///
+
     /// A builder for [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5520,7 +5520,7 @@ impl std::fmt::Debug for ExportRevisionsToS3RequestDetails {
 }
 /// See [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails)
 pub mod export_revisions_to_s3_request_details {
-    ///
+
     /// A builder for [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5638,7 +5638,7 @@ impl std::fmt::Debug for ExportAssetsToS3RequestDetails {
 }
 /// See [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails)
 pub mod export_assets_to_s3_request_details {
-    ///
+
     /// A builder for [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5756,7 +5756,7 @@ impl std::fmt::Debug for ExportAssetToSignedUrlRequestDetails {
 }
 /// See [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails)
 pub mod export_asset_to_signed_url_request_details {
-    ///
+
     /// A builder for [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

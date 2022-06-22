@@ -3342,7 +3342,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
 pub mod too_many_requests_exception {
-    ///
+
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3407,7 +3407,7 @@ impl std::fmt::Display for ServiceException {
 impl std::error::Error for ServiceException {}
 /// See [`ServiceException`](crate::error::ServiceException)
 pub mod service_exception {
-    ///
+
     /// A builder for [`ServiceException`](crate::error::ServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3472,7 +3472,7 @@ impl std::fmt::Display for NoSuchResourceException {
 impl std::error::Error for NoSuchResourceException {}
 /// See [`NoSuchResourceException`](crate::error::NoSuchResourceException)
 pub mod no_such_resource_exception {
-    ///
+
     /// A builder for [`NoSuchResourceException`](crate::error::NoSuchResourceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3537,7 +3537,7 @@ impl std::fmt::Display for IllegalArgumentException {
 impl std::error::Error for IllegalArgumentException {}
 /// See [`IllegalArgumentException`](crate::error::IllegalArgumentException)
 pub mod illegal_argument_exception {
-    ///
+
     /// A builder for [`IllegalArgumentException`](crate::error::IllegalArgumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3602,7 +3602,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
-    ///
+
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3667,7 +3667,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
-    ///
+
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3732,7 +3732,7 @@ impl std::fmt::Display for TagPolicyViolationException {
 impl std::error::Error for TagPolicyViolationException {}
 /// See [`TagPolicyViolationException`](crate::error::TagPolicyViolationException)
 pub mod tag_policy_violation_exception {
-    ///
+
     /// A builder for [`TagPolicyViolationException`](crate::error::TagPolicyViolationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3797,7 +3797,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
-    ///
+
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3862,7 +3862,7 @@ impl std::fmt::Display for QuotaExceededException {
 impl std::error::Error for QuotaExceededException {}
 /// See [`QuotaExceededException`](crate::error::QuotaExceededException)
 pub mod quota_exceeded_exception {
-    ///
+
     /// A builder for [`QuotaExceededException`](crate::error::QuotaExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3927,7 +3927,7 @@ impl std::fmt::Display for InvalidResourceStateException {
 impl std::error::Error for InvalidResourceStateException {}
 /// See [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
 pub mod invalid_resource_state_exception {
-    ///
+
     /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3992,7 +3992,7 @@ impl std::fmt::Display for DependencyAccessDeniedException {
 impl std::error::Error for DependencyAccessDeniedException {}
 /// See [`DependencyAccessDeniedException`](crate::error::DependencyAccessDeniedException)
 pub mod dependency_access_denied_exception {
-    ///
+
     /// A builder for [`DependencyAccessDeniedException`](crate::error::DependencyAccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4057,7 +4057,7 @@ impl std::fmt::Display for TemplatesNotAvailableInRegionException {
 impl std::error::Error for TemplatesNotAvailableInRegionException {}
 /// See [`TemplatesNotAvailableInRegionException`](crate::error::TemplatesNotAvailableInRegionException)
 pub mod templates_not_available_in_region_exception {
-    ///
+
     /// A builder for [`TemplatesNotAvailableInRegionException`](crate::error::TemplatesNotAvailableInRegionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4122,7 +4122,7 @@ impl std::fmt::Display for NoAvailableOrganizationException {
 impl std::error::Error for NoAvailableOrganizationException {}
 /// See [`NoAvailableOrganizationException`](crate::error::NoAvailableOrganizationException)
 pub mod no_available_organization_exception {
-    ///
+
     /// A builder for [`NoAvailableOrganizationException`](crate::error::NoAvailableOrganizationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4190,7 +4190,7 @@ impl std::fmt::Display for AwsServiceAccessNotEnabledException {
 impl std::error::Error for AwsServiceAccessNotEnabledException {}
 /// See [`AwsServiceAccessNotEnabledException`](crate::error::AwsServiceAccessNotEnabledException)
 pub mod aws_service_access_not_enabled_exception {
-    ///
+
     /// A builder for [`AwsServiceAccessNotEnabledException`](crate::error::AwsServiceAccessNotEnabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4255,7 +4255,7 @@ impl std::fmt::Display for InvalidPaginationTokenException {
 impl std::error::Error for InvalidPaginationTokenException {}
 /// See [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
 pub mod invalid_pagination_token_exception {
-    ///
+
     /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4320,7 +4320,7 @@ impl std::fmt::Display for ServiceQuotaTemplateNotInUseException {
 impl std::error::Error for ServiceQuotaTemplateNotInUseException {}
 /// See [`ServiceQuotaTemplateNotInUseException`](crate::error::ServiceQuotaTemplateNotInUseException)
 pub mod service_quota_template_not_in_use_exception {
-    ///
+
     /// A builder for [`ServiceQuotaTemplateNotInUseException`](crate::error::ServiceQuotaTemplateNotInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4385,7 +4385,7 @@ impl std::fmt::Display for OrganizationNotInAllFeaturesModeException {
 impl std::error::Error for OrganizationNotInAllFeaturesModeException {}
 /// See [`OrganizationNotInAllFeaturesModeException`](crate::error::OrganizationNotInAllFeaturesModeException)
 pub mod organization_not_in_all_features_mode_exception {
-    ///
+
     /// A builder for [`OrganizationNotInAllFeaturesModeException`](crate::error::OrganizationNotInAllFeaturesModeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

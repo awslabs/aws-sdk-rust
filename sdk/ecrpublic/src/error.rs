@@ -2979,7 +2979,7 @@ impl std::fmt::Display for UploadNotFoundException {
 impl std::error::Error for UploadNotFoundException {}
 /// See [`UploadNotFoundException`](crate::error::UploadNotFoundException)
 pub mod upload_not_found_exception {
-    ///
+
     /// A builder for [`UploadNotFoundException`](crate::error::UploadNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3044,7 +3044,7 @@ impl std::fmt::Display for UnsupportedCommandException {
 impl std::error::Error for UnsupportedCommandException {}
 /// See [`UnsupportedCommandException`](crate::error::UnsupportedCommandException)
 pub mod unsupported_command_exception {
-    ///
+
     /// A builder for [`UnsupportedCommandException`](crate::error::UnsupportedCommandException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3109,7 +3109,7 @@ impl std::fmt::Display for ServerException {
 impl std::error::Error for ServerException {}
 /// See [`ServerException`](crate::error::ServerException)
 pub mod server_exception {
-    ///
+
     /// A builder for [`ServerException`](crate::error::ServerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3174,7 +3174,7 @@ impl std::fmt::Display for RepositoryNotFoundException {
 impl std::error::Error for RepositoryNotFoundException {}
 /// See [`RepositoryNotFoundException`](crate::error::RepositoryNotFoundException)
 pub mod repository_not_found_exception {
-    ///
+
     /// A builder for [`RepositoryNotFoundException`](crate::error::RepositoryNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3239,7 +3239,7 @@ impl std::fmt::Display for RegistryNotFoundException {
 impl std::error::Error for RegistryNotFoundException {}
 /// See [`RegistryNotFoundException`](crate::error::RegistryNotFoundException)
 pub mod registry_not_found_exception {
-    ///
+
     /// A builder for [`RegistryNotFoundException`](crate::error::RegistryNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3304,7 +3304,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3369,7 +3369,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
-    ///
+
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3464,7 +3464,7 @@ impl std::fmt::Display for InvalidLayerPartException {
 impl std::error::Error for InvalidLayerPartException {}
 /// See [`InvalidLayerPartException`](crate::error::InvalidLayerPartException)
 pub mod invalid_layer_part_exception {
-    ///
+
     /// A builder for [`InvalidLayerPartException`](crate::error::InvalidLayerPartException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3580,7 +3580,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
-    ///
+
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3645,7 +3645,7 @@ impl std::fmt::Display for InvalidTagParameterException {
 impl std::error::Error for InvalidTagParameterException {}
 /// See [`InvalidTagParameterException`](crate::error::InvalidTagParameterException)
 pub mod invalid_tag_parameter_exception {
-    ///
+
     /// A builder for [`InvalidTagParameterException`](crate::error::InvalidTagParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3710,7 +3710,7 @@ impl std::fmt::Display for ReferencedImagesNotFoundException {
 impl std::error::Error for ReferencedImagesNotFoundException {}
 /// See [`ReferencedImagesNotFoundException`](crate::error::ReferencedImagesNotFoundException)
 pub mod referenced_images_not_found_exception {
-    ///
+
     /// A builder for [`ReferencedImagesNotFoundException`](crate::error::ReferencedImagesNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3775,7 +3775,7 @@ impl std::fmt::Display for LayersNotFoundException {
 impl std::error::Error for LayersNotFoundException {}
 /// See [`LayersNotFoundException`](crate::error::LayersNotFoundException)
 pub mod layers_not_found_exception {
-    ///
+
     /// A builder for [`LayersNotFoundException`](crate::error::LayersNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3840,7 +3840,7 @@ impl std::fmt::Display for ImageTagAlreadyExistsException {
 impl std::error::Error for ImageTagAlreadyExistsException {}
 /// See [`ImageTagAlreadyExistsException`](crate::error::ImageTagAlreadyExistsException)
 pub mod image_tag_already_exists_exception {
-    ///
+
     /// A builder for [`ImageTagAlreadyExistsException`](crate::error::ImageTagAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3905,7 +3905,7 @@ impl std::fmt::Display for ImageDigestDoesNotMatchException {
 impl std::error::Error for ImageDigestDoesNotMatchException {}
 /// See [`ImageDigestDoesNotMatchException`](crate::error::ImageDigestDoesNotMatchException)
 pub mod image_digest_does_not_match_exception {
-    ///
+
     /// A builder for [`ImageDigestDoesNotMatchException`](crate::error::ImageDigestDoesNotMatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3970,7 +3970,7 @@ impl std::fmt::Display for ImageAlreadyExistsException {
 impl std::error::Error for ImageAlreadyExistsException {}
 /// See [`ImageAlreadyExistsException`](crate::error::ImageAlreadyExistsException)
 pub mod image_already_exists_exception {
-    ///
+
     /// A builder for [`ImageAlreadyExistsException`](crate::error::ImageAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4035,7 +4035,7 @@ impl std::fmt::Display for RepositoryPolicyNotFoundException {
 impl std::error::Error for RepositoryPolicyNotFoundException {}
 /// See [`RepositoryPolicyNotFoundException`](crate::error::RepositoryPolicyNotFoundException)
 pub mod repository_policy_not_found_exception {
-    ///
+
     /// A builder for [`RepositoryPolicyNotFoundException`](crate::error::RepositoryPolicyNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4100,7 +4100,7 @@ impl std::fmt::Display for ImageNotFoundException {
 impl std::error::Error for ImageNotFoundException {}
 /// See [`ImageNotFoundException`](crate::error::ImageNotFoundException)
 pub mod image_not_found_exception {
-    ///
+
     /// A builder for [`ImageNotFoundException`](crate::error::ImageNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4165,7 +4165,7 @@ impl std::fmt::Display for RepositoryNotEmptyException {
 impl std::error::Error for RepositoryNotEmptyException {}
 /// See [`RepositoryNotEmptyException`](crate::error::RepositoryNotEmptyException)
 pub mod repository_not_empty_exception {
-    ///
+
     /// A builder for [`RepositoryNotEmptyException`](crate::error::RepositoryNotEmptyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4230,7 +4230,7 @@ impl std::fmt::Display for RepositoryAlreadyExistsException {
 impl std::error::Error for RepositoryAlreadyExistsException {}
 /// See [`RepositoryAlreadyExistsException`](crate::error::RepositoryAlreadyExistsException)
 pub mod repository_already_exists_exception {
-    ///
+
     /// A builder for [`RepositoryAlreadyExistsException`](crate::error::RepositoryAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4295,7 +4295,7 @@ impl std::fmt::Display for LayerPartTooSmallException {
 impl std::error::Error for LayerPartTooSmallException {}
 /// See [`LayerPartTooSmallException`](crate::error::LayerPartTooSmallException)
 pub mod layer_part_too_small_exception {
-    ///
+
     /// A builder for [`LayerPartTooSmallException`](crate::error::LayerPartTooSmallException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4360,7 +4360,7 @@ impl std::fmt::Display for LayerAlreadyExistsException {
 impl std::error::Error for LayerAlreadyExistsException {}
 /// See [`LayerAlreadyExistsException`](crate::error::LayerAlreadyExistsException)
 pub mod layer_already_exists_exception {
-    ///
+
     /// A builder for [`LayerAlreadyExistsException`](crate::error::LayerAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4425,7 +4425,7 @@ impl std::fmt::Display for InvalidLayerException {
 impl std::error::Error for InvalidLayerException {}
 /// See [`InvalidLayerException`](crate::error::InvalidLayerException)
 pub mod invalid_layer_exception {
-    ///
+
     /// A builder for [`InvalidLayerException`](crate::error::InvalidLayerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4490,7 +4490,7 @@ impl std::fmt::Display for EmptyUploadException {
 impl std::error::Error for EmptyUploadException {}
 /// See [`EmptyUploadException`](crate::error::EmptyUploadException)
 pub mod empty_upload_exception {
-    ///
+
     /// A builder for [`EmptyUploadException`](crate::error::EmptyUploadException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

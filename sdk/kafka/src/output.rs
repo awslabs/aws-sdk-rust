@@ -28,7 +28,7 @@ impl std::fmt::Debug for UpdateSecurityOutput {
 }
 /// See [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput)
 pub mod update_security_output {
-    ///
+
     /// A builder for [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl std::fmt::Debug for UpdateMonitoringOutput {
 }
 /// See [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput)
 pub mod update_monitoring_output {
-    ///
+
     /// A builder for [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -182,7 +182,7 @@ impl std::fmt::Debug for UpdateConnectivityOutput {
 }
 /// See [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput)
 pub mod update_connectivity_output {
-    ///
+
     /// A builder for [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -259,7 +259,7 @@ impl std::fmt::Debug for UpdateConfigurationOutput {
 }
 /// See [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput)
 pub mod update_configuration_output {
-    ///
+
     /// A builder for [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -336,7 +336,7 @@ impl std::fmt::Debug for UpdateClusterKafkaVersionOutput {
 }
 /// See [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput)
 pub mod update_cluster_kafka_version_output {
-    ///
+
     /// A builder for [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -413,7 +413,7 @@ impl std::fmt::Debug for UpdateClusterConfigurationOutput {
 }
 /// See [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput)
 pub mod update_cluster_configuration_output {
-    ///
+
     /// A builder for [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -490,7 +490,7 @@ impl std::fmt::Debug for UpdateBrokerTypeOutput {
 }
 /// See [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput)
 pub mod update_broker_type_output {
-    ///
+
     /// A builder for [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -567,7 +567,7 @@ impl std::fmt::Debug for UpdateBrokerStorageOutput {
 }
 /// See [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput)
 pub mod update_broker_storage_output {
-    ///
+
     /// A builder for [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -644,7 +644,7 @@ impl std::fmt::Debug for UpdateBrokerCountOutput {
 }
 /// See [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput)
 pub mod update_broker_count_output {
-    ///
+
     /// A builder for [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -704,7 +704,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -735,7 +735,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -783,7 +783,7 @@ impl std::fmt::Debug for RebootBrokerOutput {
 }
 /// See [`RebootBrokerOutput`](crate::output::RebootBrokerOutput)
 pub mod reboot_broker_output {
-    ///
+
     /// A builder for [`RebootBrokerOutput`](crate::output::RebootBrokerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -857,7 +857,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -934,7 +934,7 @@ impl std::fmt::Debug for ListScramSecretsOutput {
 }
 /// See [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput)
 pub mod list_scram_secrets_output {
-    ///
+
     /// A builder for [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1017,7 +1017,7 @@ impl std::fmt::Debug for ListNodesOutput {
 }
 /// See [`ListNodesOutput`](crate::output::ListNodesOutput)
 pub mod list_nodes_output {
-    ///
+
     /// A builder for [`ListNodesOutput`](crate::output::ListNodesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1100,7 +1100,7 @@ impl std::fmt::Debug for ListKafkaVersionsOutput {
 }
 /// See [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput)
 pub mod list_kafka_versions_output {
-    ///
+
     /// A builder for [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1182,7 +1182,7 @@ impl std::fmt::Debug for ListConfigurationsOutput {
 }
 /// See [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput)
 pub mod list_configurations_output {
-    ///
+
     /// A builder for [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1265,7 +1265,7 @@ impl std::fmt::Debug for ListConfigurationRevisionsOutput {
 }
 /// See [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput)
 pub mod list_configuration_revisions_output {
-    ///
+
     /// A builder for [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1349,7 +1349,7 @@ impl std::fmt::Debug for ListClustersV2Output {
 }
 /// See [`ListClustersV2Output`](crate::output::ListClustersV2Output)
 pub mod list_clusters_v2_output {
-    ///
+
     /// A builder for [`ListClustersV2Output`](crate::output::ListClustersV2Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1432,7 +1432,7 @@ impl std::fmt::Debug for ListClustersOutput {
 }
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput)
 pub mod list_clusters_output {
-    ///
+
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1521,7 +1521,7 @@ impl std::fmt::Debug for ListClusterOperationsOutput {
 }
 /// See [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput)
 pub mod list_cluster_operations_output {
-    ///
+
     /// A builder for [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1604,7 +1604,7 @@ impl std::fmt::Debug for GetCompatibleKafkaVersionsOutput {
 }
 /// See [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput)
 pub mod get_compatible_kafka_versions_output {
-    ///
+
     /// A builder for [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1732,7 +1732,7 @@ impl std::fmt::Debug for GetBootstrapBrokersOutput {
 }
 /// See [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput)
 pub mod get_bootstrap_brokers_output {
-    ///
+
     /// A builder for [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1938,7 +1938,7 @@ impl std::fmt::Debug for DescribeConfigurationRevisionOutput {
 }
 /// See [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput)
 pub mod describe_configuration_revision_output {
-    ///
+
     /// A builder for [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2097,7 +2097,7 @@ impl std::fmt::Debug for DescribeConfigurationOutput {
 }
 /// See [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput)
 pub mod describe_configuration_output {
-    ///
+
     /// A builder for [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl std::fmt::Debug for DescribeClusterV2Output {
 }
 /// See [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output)
 pub mod describe_cluster_v2_output {
-    ///
+
     /// A builder for [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2302,7 +2302,7 @@ impl std::fmt::Debug for DescribeClusterOperationOutput {
 }
 /// See [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput)
 pub mod describe_cluster_operation_output {
-    ///
+
     /// A builder for [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2360,7 +2360,7 @@ impl std::fmt::Debug for DescribeClusterOutput {
 }
 /// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
 pub mod describe_cluster_output {
-    ///
+
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2425,7 +2425,7 @@ impl std::fmt::Debug for DeleteConfigurationOutput {
 }
 /// See [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput)
 pub mod delete_configuration_output {
-    ///
+
     /// A builder for [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2502,7 +2502,7 @@ impl std::fmt::Debug for DeleteClusterOutput {
 }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
 pub mod delete_cluster_output {
-    ///
+
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2597,7 +2597,7 @@ impl std::fmt::Debug for CreateConfigurationOutput {
 }
 /// See [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput)
 pub mod create_configuration_output {
-    ///
+
     /// A builder for [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2730,7 +2730,7 @@ impl std::fmt::Debug for CreateClusterV2Output {
 }
 /// See [`CreateClusterV2Output`](crate::output::CreateClusterV2Output)
 pub mod create_cluster_v2_output {
-    ///
+
     /// A builder for [`CreateClusterV2Output`](crate::output::CreateClusterV2Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2838,7 +2838,7 @@ impl std::fmt::Debug for CreateClusterOutput {
 }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput)
 pub mod create_cluster_output {
-    ///
+
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2927,7 +2927,7 @@ impl std::fmt::Debug for BatchDisassociateScramSecretOutput {
 }
 /// See [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput)
 pub mod batch_disassociate_scram_secret_output {
-    ///
+
     /// A builder for [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3017,7 +3017,7 @@ impl std::fmt::Debug for BatchAssociateScramSecretOutput {
 }
 /// See [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput)
 pub mod batch_associate_scram_secret_output {
-    ///
+
     /// A builder for [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

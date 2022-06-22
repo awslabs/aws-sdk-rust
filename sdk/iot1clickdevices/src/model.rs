@@ -71,7 +71,7 @@ impl std::fmt::Debug for DeviceDescription {
 }
 /// See [`DeviceDescription`](crate::model::DeviceDescription)
 pub mod device_description {
-    ///
+
     /// A builder for [`DeviceDescription`](crate::model::DeviceDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl std::fmt::Debug for DeviceEvent {
 }
 /// See [`DeviceEvent`](crate::model::DeviceEvent)
 pub mod device_event {
-    ///
+
     /// A builder for [`DeviceEvent`](crate::model::DeviceEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -320,7 +320,7 @@ impl std::fmt::Debug for Device {
 }
 /// See [`Device`](crate::model::Device)
 pub mod device {
-    ///
+
     /// A builder for [`Device`](crate::model::Device)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -392,7 +392,7 @@ impl std::fmt::Debug for Attributes {
 }
 /// See [`Attributes`](crate::model::Attributes)
 pub mod attributes {
-    ///
+
     /// A builder for [`Attributes`](crate::model::Attributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -440,7 +440,7 @@ impl std::fmt::Debug for DeviceMethod {
 }
 /// See [`DeviceMethod`](crate::model::DeviceMethod)
 pub mod device_method {
-    ///
+
     /// A builder for [`DeviceMethod`](crate::model::DeviceMethod)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

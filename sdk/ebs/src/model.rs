@@ -372,7 +372,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
-    ///
+
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -556,7 +556,7 @@ impl std::fmt::Debug for Block {
 }
 /// See [`Block`](crate::model::Block)
 pub mod block {
-    ///
+
     /// A builder for [`Block`](crate::model::Block)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -637,7 +637,7 @@ impl std::fmt::Debug for ChangedBlock {
 }
 /// See [`ChangedBlock`](crate::model::ChangedBlock)
 pub mod changed_block {
-    ///
+
     /// A builder for [`ChangedBlock`](crate::model::ChangedBlock)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

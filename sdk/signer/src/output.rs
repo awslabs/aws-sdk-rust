@@ -11,7 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -90,7 +90,7 @@ impl std::fmt::Debug for StartSigningJobOutput {
 }
 /// See [`StartSigningJobOutput`](crate::output::StartSigningJobOutput)
 pub mod start_signing_job_output {
-    ///
+
     /// A builder for [`StartSigningJobOutput`](crate::output::StartSigningJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -147,7 +147,7 @@ impl std::fmt::Debug for RevokeSigningProfileOutput {
 }
 /// See [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput)
 pub mod revoke_signing_profile_output {
-    ///
+
     /// A builder for [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -178,7 +178,7 @@ impl std::fmt::Debug for RevokeSignatureOutput {
 }
 /// See [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput)
 pub mod revoke_signature_output {
-    ///
+
     /// A builder for [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -219,7 +219,7 @@ impl std::fmt::Debug for RemoveProfilePermissionOutput {
 }
 /// See [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput)
 pub mod remove_profile_permission_output {
-    ///
+
     /// A builder for [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -288,7 +288,7 @@ impl std::fmt::Debug for PutSigningProfileOutput {
 }
 /// See [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput)
 pub mod put_signing_profile_output {
-    ///
+
     /// A builder for [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -377,7 +377,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -454,7 +454,7 @@ impl std::fmt::Debug for ListSigningProfilesOutput {
 }
 /// See [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput)
 pub mod list_signing_profiles_output {
-    ///
+
     /// A builder for [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -537,7 +537,7 @@ impl std::fmt::Debug for ListSigningPlatformsOutput {
 }
 /// See [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput)
 pub mod list_signing_platforms_output {
-    ///
+
     /// A builder for [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -620,7 +620,7 @@ impl std::fmt::Debug for ListSigningJobsOutput {
 }
 /// See [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput)
 pub mod list_signing_jobs_output {
-    ///
+
     /// A builder for [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -717,7 +717,7 @@ impl std::fmt::Debug for ListProfilePermissionsOutput {
 }
 /// See [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput)
 pub mod list_profile_permissions_output {
-    ///
+
     /// A builder for [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -920,7 +920,7 @@ impl std::fmt::Debug for GetSigningProfileOutput {
 }
 /// See [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput)
 pub mod get_signing_profile_output {
-    ///
+
     /// A builder for [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1258,7 +1258,7 @@ impl std::fmt::Debug for GetSigningPlatformOutput {
 }
 /// See [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput)
 pub mod get_signing_platform_output {
-    ///
+
     /// A builder for [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1547,7 +1547,7 @@ impl std::fmt::Debug for DescribeSigningJobOutput {
 }
 /// See [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput)
 pub mod describe_signing_job_output {
-    ///
+
     /// A builder for [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1861,7 +1861,7 @@ impl std::fmt::Debug for CancelSigningProfileOutput {
 }
 /// See [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput)
 pub mod cancel_signing_profile_output {
-    ///
+
     /// A builder for [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1902,7 +1902,7 @@ impl std::fmt::Debug for AddProfilePermissionOutput {
 }
 /// See [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput)
 pub mod add_profile_permission_output {
-    ///
+
     /// A builder for [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

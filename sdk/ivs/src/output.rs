@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateChannelOutput {
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
 pub mod update_channel_output {
-    ///
+
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -97,7 +97,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -128,7 +128,7 @@ impl std::fmt::Debug for StopStreamOutput {
 }
 /// See [`StopStreamOutput`](crate::output::StopStreamOutput)
 pub mod stop_stream_output {
-    ///
+
     /// A builder for [`StopStreamOutput`](crate::output::StopStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -159,7 +159,7 @@ impl std::fmt::Debug for PutMetadataOutput {
 }
 /// See [`PutMetadataOutput`](crate::output::PutMetadataOutput)
 pub mod put_metadata_output {
-    ///
+
     /// A builder for [`PutMetadataOutput`](crate::output::PutMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -281,7 +281,7 @@ impl std::fmt::Debug for ListStreamSessionsOutput {
 }
 /// See [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput)
 pub mod list_stream_sessions_output {
-    ///
+
     /// A builder for [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -365,7 +365,7 @@ impl std::fmt::Debug for ListStreamsOutput {
 }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput)
 pub mod list_streams_output {
-    ///
+
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -448,7 +448,7 @@ impl std::fmt::Debug for ListStreamKeysOutput {
 }
 /// See [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput)
 pub mod list_stream_keys_output {
-    ///
+
     /// A builder for [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -534,7 +534,7 @@ impl std::fmt::Debug for ListRecordingConfigurationsOutput {
 }
 /// See [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput)
 pub mod list_recording_configurations_output {
-    ///
+
     /// A builder for [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -621,7 +621,7 @@ impl std::fmt::Debug for ListPlaybackKeyPairsOutput {
 }
 /// See [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput)
 pub mod list_playback_key_pairs_output {
-    ///
+
     /// A builder for [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -705,7 +705,7 @@ impl std::fmt::Debug for ListChannelsOutput {
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput)
 pub mod list_channels_output {
-    ///
+
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -781,7 +781,7 @@ impl std::fmt::Debug for ImportPlaybackKeyPairOutput {
 }
 /// See [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput)
 pub mod import_playback_key_pair_output {
-    ///
+
     /// A builder for [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -839,7 +839,7 @@ impl std::fmt::Debug for GetStreamSessionOutput {
 }
 /// See [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput)
 pub mod get_stream_session_output {
-    ///
+
     /// A builder for [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -897,7 +897,7 @@ impl std::fmt::Debug for GetStreamKeyOutput {
 }
 /// See [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput)
 pub mod get_stream_key_output {
-    ///
+
     /// A builder for [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -955,7 +955,7 @@ impl std::fmt::Debug for GetStreamOutput {
 }
 /// See [`GetStreamOutput`](crate::output::GetStreamOutput)
 pub mod get_stream_output {
-    ///
+
     /// A builder for [`GetStreamOutput`](crate::output::GetStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1012,7 +1012,7 @@ impl std::fmt::Debug for GetRecordingConfigurationOutput {
 }
 /// See [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput)
 pub mod get_recording_configuration_output {
-    ///
+
     /// A builder for [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1074,7 +1074,7 @@ impl std::fmt::Debug for GetPlaybackKeyPairOutput {
 }
 /// See [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput)
 pub mod get_playback_key_pair_output {
-    ///
+
     /// A builder for [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1132,7 +1132,7 @@ impl std::fmt::Debug for GetChannelOutput {
 }
 /// See [`GetChannelOutput`](crate::output::GetChannelOutput)
 pub mod get_channel_output {
-    ///
+
     /// A builder for [`GetChannelOutput`](crate::output::GetChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1177,7 +1177,7 @@ impl std::fmt::Debug for DeleteStreamKeyOutput {
 }
 /// See [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput)
 pub mod delete_stream_key_output {
-    ///
+
     /// A builder for [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1208,7 +1208,7 @@ impl std::fmt::Debug for DeleteRecordingConfigurationOutput {
 }
 /// See [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput)
 pub mod delete_recording_configuration_output {
-    ///
+
     /// A builder for [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,7 +1239,7 @@ impl std::fmt::Debug for DeletePlaybackKeyPairOutput {
 }
 /// See [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput)
 pub mod delete_playback_key_pair_output {
-    ///
+
     /// A builder for [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1270,7 +1270,7 @@ impl std::fmt::Debug for DeleteChannelOutput {
 }
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
 pub mod delete_channel_output {
-    ///
+
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1311,7 +1311,7 @@ impl std::fmt::Debug for CreateStreamKeyOutput {
 }
 /// See [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput)
 pub mod create_stream_key_output {
-    ///
+
     /// A builder for [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1371,7 +1371,7 @@ impl std::fmt::Debug for CreateRecordingConfigurationOutput {
 }
 /// See [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput)
 pub mod create_recording_configuration_output {
-    ///
+
     /// A builder for [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1440,7 +1440,7 @@ impl std::fmt::Debug for CreateChannelOutput {
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput)
 pub mod create_channel_output {
-    ///
+
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1517,7 +1517,7 @@ impl std::fmt::Debug for BatchGetStreamKeyOutput {
 }
 /// See [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput)
 pub mod batch_get_stream_key_output {
-    ///
+
     /// A builder for [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1609,7 +1609,7 @@ impl std::fmt::Debug for BatchGetChannelOutput {
 }
 /// See [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput)
 pub mod batch_get_channel_output {
-    ///
+
     /// A builder for [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

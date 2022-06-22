@@ -276,7 +276,7 @@ impl std::fmt::Display for ValidationError {
 impl std::error::Error for ValidationError {}
 /// See [`ValidationError`](crate::error::ValidationError)
 pub mod validation_error {
-    ///
+
     /// A builder for [`ValidationError`](crate::error::ValidationError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -341,7 +341,7 @@ impl std::fmt::Display for ServiceUnavailable {
 impl std::error::Error for ServiceUnavailable {}
 /// See [`ServiceUnavailable`](crate::error::ServiceUnavailable)
 pub mod service_unavailable {
-    ///
+
     /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -406,7 +406,7 @@ impl std::fmt::Display for InternalFailure {
 impl std::error::Error for InternalFailure {}
 /// See [`InternalFailure`](crate::error::InternalFailure)
 pub mod internal_failure {
-    ///
+
     /// A builder for [`InternalFailure`](crate::error::InternalFailure)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -471,7 +471,7 @@ impl std::fmt::Display for ModelNotReadyException {
 impl std::error::Error for ModelNotReadyException {}
 /// See [`ModelNotReadyException`](crate::error::ModelNotReadyException)
 pub mod model_not_ready_exception {
-    ///
+
     /// A builder for [`ModelNotReadyException`](crate::error::ModelNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -559,7 +559,7 @@ impl std::fmt::Display for ModelError {
 impl std::error::Error for ModelError {}
 /// See [`ModelError`](crate::error::ModelError)
 pub mod model_error {
-    ///
+
     /// A builder for [`ModelError`](crate::error::ModelError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -666,7 +666,7 @@ impl std::fmt::Display for InternalDependencyException {
 impl std::error::Error for InternalDependencyException {}
 /// See [`InternalDependencyException`](crate::error::InternalDependencyException)
 pub mod internal_dependency_exception {
-    ///
+
     /// A builder for [`InternalDependencyException`](crate::error::InternalDependencyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

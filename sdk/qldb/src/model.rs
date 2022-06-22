@@ -108,7 +108,7 @@ impl std::fmt::Debug for LedgerEncryptionDescription {
 }
 /// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
 pub mod ledger_encryption_description {
-    ///
+
     /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -336,7 +336,7 @@ impl std::fmt::Debug for KinesisConfiguration {
 }
 /// See [`KinesisConfiguration`](crate::model::KinesisConfiguration)
 pub mod kinesis_configuration {
-    ///
+
     /// A builder for [`KinesisConfiguration`](crate::model::KinesisConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -419,7 +419,7 @@ impl std::fmt::Debug for LedgerSummary {
 }
 /// See [`LedgerSummary`](crate::model::LedgerSummary)
 pub mod ledger_summary {
-    ///
+
     /// A builder for [`LedgerSummary`](crate::model::LedgerSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -567,7 +567,7 @@ impl std::fmt::Debug for JournalS3ExportDescription {
 }
 /// See [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
 pub mod journal_s3_export_description {
-    ///
+
     /// A builder for [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -839,7 +839,7 @@ impl std::fmt::Debug for S3ExportConfiguration {
 }
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
 pub mod s3_export_configuration {
-    ///
+
     /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -956,7 +956,7 @@ impl std::fmt::Debug for S3EncryptionConfiguration {
 }
 /// See [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
 pub mod s3_encryption_configuration {
-    ///
+
     /// A builder for [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1226,7 +1226,7 @@ impl std::fmt::Debug for JournalKinesisStreamDescription {
 }
 /// See [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
 pub mod journal_kinesis_stream_description {
-    ///
+
     /// A builder for [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1541,7 +1541,7 @@ impl std::fmt::Debug for ValueHolder {
 }
 /// See [`ValueHolder`](crate::model::ValueHolder)
 pub mod value_holder {
-    ///
+
     /// A builder for [`ValueHolder`](crate::model::ValueHolder)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

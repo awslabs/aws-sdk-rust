@@ -77,7 +77,7 @@ impl std::fmt::Debug for GetMediaOutput {
 }
 /// See [`GetMediaOutput`](crate::output::GetMediaOutput)
 pub mod get_media_output {
-    ///
+
     /// A builder for [`GetMediaOutput`](crate::output::GetMediaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]

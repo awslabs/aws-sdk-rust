@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateDeviceStateOutput {
 }
 /// See [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
 pub mod update_device_state_output {
-    ///
+
     /// A builder for [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -83,7 +83,7 @@ impl std::fmt::Debug for UnclaimDeviceOutput {
 }
 /// See [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput)
 pub mod unclaim_device_output {
-    ///
+
     /// A builder for [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -126,7 +126,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -252,7 +252,7 @@ impl std::fmt::Debug for ListDevicesOutput {
 }
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput)
 pub mod list_devices_output {
-    ///
+
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -335,7 +335,7 @@ impl std::fmt::Debug for ListDeviceEventsOutput {
 }
 /// See [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
 pub mod list_device_events_output {
-    ///
+
     /// A builder for [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -411,7 +411,7 @@ impl std::fmt::Debug for InvokeDeviceMethodOutput {
 }
 /// See [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput)
 pub mod invoke_device_method_output {
-    ///
+
     /// A builder for [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -469,7 +469,7 @@ impl std::fmt::Debug for InitiateDeviceClaimOutput {
 }
 /// See [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput)
 pub mod initiate_device_claim_output {
-    ///
+
     /// A builder for [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -522,7 +522,7 @@ impl std::fmt::Debug for GetDeviceMethodsOutput {
 }
 /// See [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput)
 pub mod get_device_methods_output {
-    ///
+
     /// A builder for [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -586,7 +586,7 @@ impl std::fmt::Debug for FinalizeDeviceClaimOutput {
 }
 /// See [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput)
 pub mod finalize_device_claim_output {
-    ///
+
     /// A builder for [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -639,7 +639,7 @@ impl std::fmt::Debug for DescribeDeviceOutput {
 }
 /// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
 pub mod describe_device_output {
-    ///
+
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -704,7 +704,7 @@ impl std::fmt::Debug for ClaimDevicesByClaimCodeOutput {
 }
 /// See [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput)
 pub mod claim_devices_by_claim_code_output {
-    ///
+
     /// A builder for [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

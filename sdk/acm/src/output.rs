@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateCertificateOptionsOutput {
 }
 /// See [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput)
 pub mod update_certificate_options_output {
-    ///
+
     /// A builder for [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for ResendValidationEmailOutput {
 }
 /// See [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput)
 pub mod resend_validation_email_output {
-    ///
+
     /// A builder for [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -85,7 +85,7 @@ impl std::fmt::Debug for RequestCertificateOutput {
 }
 /// See [`RequestCertificateOutput`](crate::output::RequestCertificateOutput)
 pub mod request_certificate_output {
-    ///
+
     /// A builder for [`RequestCertificateOutput`](crate::output::RequestCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for RenewCertificateOutput {
 }
 /// See [`RenewCertificateOutput`](crate::output::RenewCertificateOutput)
 pub mod renew_certificate_output {
-    ///
+
     /// A builder for [`RenewCertificateOutput`](crate::output::RenewCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,7 +166,7 @@ impl std::fmt::Debug for RemoveTagsFromCertificateOutput {
 }
 /// See [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput)
 pub mod remove_tags_from_certificate_output {
-    ///
+
     /// A builder for [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,7 +197,7 @@ impl std::fmt::Debug for PutAccountConfigurationOutput {
 }
 /// See [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput)
 pub mod put_account_configuration_output {
-    ///
+
     /// A builder for [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl std::fmt::Debug for ListTagsForCertificateOutput {
 }
 /// See [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput)
 pub mod list_tags_for_certificate_output {
-    ///
+
     /// A builder for [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -310,7 +310,7 @@ impl std::fmt::Debug for ListCertificatesOutput {
 }
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput)
 pub mod list_certificates_output {
-    ///
+
     /// A builder for [`ListCertificatesOutput`](crate::output::ListCertificatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -387,7 +387,7 @@ impl std::fmt::Debug for ImportCertificateOutput {
 }
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput)
 pub mod import_certificate_output {
-    ///
+
     /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -452,7 +452,7 @@ impl std::fmt::Debug for GetCertificateOutput {
 }
 /// See [`GetCertificateOutput`](crate::output::GetCertificateOutput)
 pub mod get_certificate_output {
-    ///
+
     /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -522,7 +522,7 @@ impl std::fmt::Debug for GetAccountConfigurationOutput {
 }
 /// See [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput)
 pub mod get_account_configuration_output {
-    ///
+
     /// A builder for [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -594,7 +594,7 @@ impl std::fmt::Debug for ExportCertificateOutput {
 }
 /// See [`ExportCertificateOutput`](crate::output::ExportCertificateOutput)
 pub mod export_certificate_output {
-    ///
+
     /// A builder for [`ExportCertificateOutput`](crate::output::ExportCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -676,7 +676,7 @@ impl std::fmt::Debug for DescribeCertificateOutput {
 }
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput)
 pub mod describe_certificate_output {
-    ///
+
     /// A builder for [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -724,7 +724,7 @@ impl std::fmt::Debug for DeleteCertificateOutput {
 }
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput)
 pub mod delete_certificate_output {
-    ///
+
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -755,7 +755,7 @@ impl std::fmt::Debug for AddTagsToCertificateOutput {
 }
 /// See [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput)
 pub mod add_tags_to_certificate_output {
-    ///
+
     /// A builder for [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

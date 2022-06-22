@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateTableOutput {
 }
 /// See [`UpdateTableOutput`](crate::output::UpdateTableOutput)
 pub mod update_table_output {
-    ///
+
     /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -97,7 +97,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl std::fmt::Debug for RestoreTableOutput {
 }
 /// See [`RestoreTableOutput`](crate::output::RestoreTableOutput)
 pub mod restore_table_output {
-    ///
+
     /// A builder for [`RestoreTableOutput`](crate::output::RestoreTableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -203,7 +203,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -286,7 +286,7 @@ impl std::fmt::Debug for ListTablesOutput {
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput)
 pub mod list_tables_output {
-    ///
+
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -369,7 +369,7 @@ impl std::fmt::Debug for ListKeyspacesOutput {
 }
 /// See [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput)
 pub mod list_keyspaces_output {
-    ///
+
     /// A builder for [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -532,7 +532,7 @@ impl std::fmt::Debug for GetTableOutput {
 }
 /// See [`GetTableOutput`](crate::output::GetTableOutput)
 pub mod get_table_output {
-    ///
+
     /// A builder for [`GetTableOutput`](crate::output::GetTableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -760,7 +760,7 @@ impl std::fmt::Debug for GetKeyspaceOutput {
 }
 /// See [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput)
 pub mod get_keyspace_output {
-    ///
+
     /// A builder for [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -820,7 +820,7 @@ impl std::fmt::Debug for DeleteTableOutput {
 }
 /// See [`DeleteTableOutput`](crate::output::DeleteTableOutput)
 pub mod delete_table_output {
-    ///
+
     /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -851,7 +851,7 @@ impl std::fmt::Debug for DeleteKeyspaceOutput {
 }
 /// See [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
 pub mod delete_keyspace_output {
-    ///
+
     /// A builder for [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -892,7 +892,7 @@ impl std::fmt::Debug for CreateTableOutput {
 }
 /// See [`CreateTableOutput`](crate::output::CreateTableOutput)
 pub mod create_table_output {
-    ///
+
     /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -947,7 +947,7 @@ impl std::fmt::Debug for CreateKeyspaceOutput {
 }
 /// See [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput)
 pub mod create_keyspace_output {
-    ///
+
     /// A builder for [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

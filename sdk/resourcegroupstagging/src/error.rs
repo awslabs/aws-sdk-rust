@@ -1084,7 +1084,7 @@ impl std::fmt::Display for ThrottledException {
 impl std::error::Error for ThrottledException {}
 /// See [`ThrottledException`](crate::error::ThrottledException)
 pub mod throttled_exception {
-    ///
+
     /// A builder for [`ThrottledException`](crate::error::ThrottledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1156,7 +1156,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
-    ///
+
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1221,7 +1221,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
-    ///
+
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1292,7 +1292,7 @@ impl std::fmt::Display for ConstraintViolationException {
 impl std::error::Error for ConstraintViolationException {}
 /// See [`ConstraintViolationException`](crate::error::ConstraintViolationException)
 pub mod constraint_violation_exception {
-    ///
+
     /// A builder for [`ConstraintViolationException`](crate::error::ConstraintViolationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1357,7 +1357,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
-    ///
+
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1422,7 +1422,7 @@ impl std::fmt::Display for PaginationTokenExpiredException {
 impl std::error::Error for PaginationTokenExpiredException {}
 /// See [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException)
 pub mod pagination_token_expired_exception {
-    ///
+
     /// A builder for [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

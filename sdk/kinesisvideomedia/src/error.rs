@@ -167,7 +167,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -232,7 +232,7 @@ impl std::fmt::Display for NotAuthorizedException {
 impl std::error::Error for NotAuthorizedException {}
 /// See [`NotAuthorizedException`](crate::error::NotAuthorizedException)
 pub mod not_authorized_exception {
-    ///
+
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -297,7 +297,7 @@ impl std::fmt::Display for InvalidEndpointException {
 impl std::error::Error for InvalidEndpointException {}
 /// See [`InvalidEndpointException`](crate::error::InvalidEndpointException)
 pub mod invalid_endpoint_exception {
-    ///
+
     /// A builder for [`InvalidEndpointException`](crate::error::InvalidEndpointException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -362,7 +362,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException)
 pub mod invalid_argument_exception {
-    ///
+
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -427,7 +427,7 @@ impl std::fmt::Display for ConnectionLimitExceededException {
 impl std::error::Error for ConnectionLimitExceededException {}
 /// See [`ConnectionLimitExceededException`](crate::error::ConnectionLimitExceededException)
 pub mod connection_limit_exceeded_exception {
-    ///
+
     /// A builder for [`ConnectionLimitExceededException`](crate::error::ConnectionLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -492,7 +492,7 @@ impl std::fmt::Display for ClientLimitExceededException {
 impl std::error::Error for ClientLimitExceededException {}
 /// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
 pub mod client_limit_exceeded_exception {
-    ///
+
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

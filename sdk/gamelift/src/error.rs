@@ -12593,7 +12593,7 @@ impl std::fmt::Display for UnsupportedRegionException {
 impl std::error::Error for UnsupportedRegionException {}
 /// See [`UnsupportedRegionException`](crate::error::UnsupportedRegionException)
 pub mod unsupported_region_exception {
-    ///
+
     /// A builder for [`UnsupportedRegionException`](crate::error::UnsupportedRegionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12658,7 +12658,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
-    ///
+
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12723,7 +12723,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
-    ///
+
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12788,7 +12788,7 @@ impl std::fmt::Display for UnauthorizedException {
 impl std::error::Error for UnauthorizedException {}
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException)
 pub mod unauthorized_exception {
-    ///
+
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12853,7 +12853,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
-    ///
+
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12918,7 +12918,7 @@ impl std::fmt::Display for InvalidFleetStatusException {
 impl std::error::Error for InvalidFleetStatusException {}
 /// See [`InvalidFleetStatusException`](crate::error::InvalidFleetStatusException)
 pub mod invalid_fleet_status_exception {
-    ///
+
     /// A builder for [`InvalidFleetStatusException`](crate::error::InvalidFleetStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12983,7 +12983,7 @@ impl std::fmt::Display for InvalidGameSessionStatusException {
 impl std::error::Error for InvalidGameSessionStatusException {}
 /// See [`InvalidGameSessionStatusException`](crate::error::InvalidGameSessionStatusException)
 pub mod invalid_game_session_status_exception {
-    ///
+
     /// A builder for [`InvalidGameSessionStatusException`](crate::error::InvalidGameSessionStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13048,7 +13048,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
-    ///
+
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13113,7 +13113,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13178,7 +13178,7 @@ impl std::fmt::Display for TaggingFailedException {
 impl std::error::Error for TaggingFailedException {}
 /// See [`TaggingFailedException`](crate::error::TaggingFailedException)
 pub mod tagging_failed_exception {
-    ///
+
     /// A builder for [`TaggingFailedException`](crate::error::TaggingFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13243,7 +13243,7 @@ impl std::fmt::Display for TerminalRoutingStrategyException {
 impl std::error::Error for TerminalRoutingStrategyException {}
 /// See [`TerminalRoutingStrategyException`](crate::error::TerminalRoutingStrategyException)
 pub mod terminal_routing_strategy_exception {
-    ///
+
     /// A builder for [`TerminalRoutingStrategyException`](crate::error::TerminalRoutingStrategyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13308,7 +13308,7 @@ impl std::fmt::Display for GameSessionFullException {
 impl std::error::Error for GameSessionFullException {}
 /// See [`GameSessionFullException`](crate::error::GameSessionFullException)
 pub mod game_session_full_exception {
-    ///
+
     /// A builder for [`GameSessionFullException`](crate::error::GameSessionFullException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13373,7 +13373,7 @@ impl std::fmt::Display for IdempotentParameterMismatchException {
 impl std::error::Error for IdempotentParameterMismatchException {}
 /// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
 pub mod idempotent_parameter_mismatch_exception {
-    ///
+
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13438,7 +13438,7 @@ impl std::fmt::Display for FleetCapacityExceededException {
 impl std::error::Error for FleetCapacityExceededException {}
 /// See [`FleetCapacityExceededException`](crate::error::FleetCapacityExceededException)
 pub mod fleet_capacity_exceeded_exception {
-    ///
+
     /// A builder for [`FleetCapacityExceededException`](crate::error::FleetCapacityExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13503,7 +13503,7 @@ impl std::fmt::Display for OutOfCapacityException {
 impl std::error::Error for OutOfCapacityException {}
 /// See [`OutOfCapacityException`](crate::error::OutOfCapacityException)
 pub mod out_of_capacity_exception {
-    ///
+
     /// A builder for [`OutOfCapacityException`](crate::error::OutOfCapacityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

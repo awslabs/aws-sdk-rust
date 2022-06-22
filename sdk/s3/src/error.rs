@@ -7769,7 +7769,7 @@ impl std::fmt::Display for ObjectAlreadyInActiveTierError {
 impl std::error::Error for ObjectAlreadyInActiveTierError {}
 /// See [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
 pub mod object_already_in_active_tier_error {
-    ///
+
     /// A builder for [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7834,7 +7834,7 @@ impl std::fmt::Display for NoSuchKey {
 impl std::error::Error for NoSuchKey {}
 /// See [`NoSuchKey`](crate::error::NoSuchKey)
 pub mod no_such_key {
-    ///
+
     /// A builder for [`NoSuchKey`](crate::error::NoSuchKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7899,7 +7899,7 @@ impl std::fmt::Display for NoSuchBucket {
 impl std::error::Error for NoSuchBucket {}
 /// See [`NoSuchBucket`](crate::error::NoSuchBucket)
 pub mod no_such_bucket {
-    ///
+
     /// A builder for [`NoSuchBucket`](crate::error::NoSuchBucket)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7964,7 +7964,7 @@ impl std::fmt::Display for NotFound {
 impl std::error::Error for NotFound {}
 /// See [`NotFound`](crate::error::NotFound)
 pub mod not_found {
-    ///
+
     /// A builder for [`NotFound`](crate::error::NotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8045,7 +8045,7 @@ impl std::fmt::Display for InvalidObjectState {
 impl std::error::Error for InvalidObjectState {}
 /// See [`InvalidObjectState`](crate::error::InvalidObjectState)
 pub mod invalid_object_state {
-    ///
+
     /// A builder for [`InvalidObjectState`](crate::error::InvalidObjectState)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8140,7 +8140,7 @@ impl std::fmt::Display for BucketAlreadyOwnedByYou {
 impl std::error::Error for BucketAlreadyOwnedByYou {}
 /// See [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
 pub mod bucket_already_owned_by_you {
-    ///
+
     /// A builder for [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8205,7 +8205,7 @@ impl std::fmt::Display for BucketAlreadyExists {
 impl std::error::Error for BucketAlreadyExists {}
 /// See [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
 pub mod bucket_already_exists {
-    ///
+
     /// A builder for [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8270,7 +8270,7 @@ impl std::fmt::Display for ObjectNotInActiveTierError {
 impl std::error::Error for ObjectNotInActiveTierError {}
 /// See [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
 pub mod object_not_in_active_tier_error {
-    ///
+
     /// A builder for [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8335,7 +8335,7 @@ impl std::fmt::Display for NoSuchUpload {
 impl std::error::Error for NoSuchUpload {}
 /// See [`NoSuchUpload`](crate::error::NoSuchUpload)
 pub mod no_such_upload {
-    ///
+
     /// A builder for [`NoSuchUpload`](crate::error::NoSuchUpload)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

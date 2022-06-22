@@ -5053,7 +5053,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
-    ///
+
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5118,7 +5118,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
 pub mod service_unavailable_exception {
-    ///
+
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5183,7 +5183,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
-    ///
+
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5258,7 +5258,7 @@ impl std::fmt::Display for MalformedQueryException {
 impl std::error::Error for MalformedQueryException {}
 /// See [`MalformedQueryException`](crate::error::MalformedQueryException)
 pub mod malformed_query_exception {
-    ///
+
     /// A builder for [`MalformedQueryException`](crate::error::MalformedQueryException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5338,7 +5338,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5403,7 +5403,7 @@ impl std::fmt::Display for OperationAbortedException {
 impl std::error::Error for OperationAbortedException {}
 /// See [`OperationAbortedException`](crate::error::OperationAbortedException)
 pub mod operation_aborted_exception {
-    ///
+
     /// A builder for [`OperationAbortedException`](crate::error::OperationAbortedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5468,7 +5468,7 @@ impl std::fmt::Display for UnrecognizedClientException {
 impl std::error::Error for UnrecognizedClientException {}
 /// See [`UnrecognizedClientException`](crate::error::UnrecognizedClientException)
 pub mod unrecognized_client_exception {
-    ///
+
     /// A builder for [`UnrecognizedClientException`](crate::error::UnrecognizedClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5542,7 +5542,7 @@ impl std::fmt::Display for InvalidSequenceTokenException {
 impl std::error::Error for InvalidSequenceTokenException {}
 /// See [`InvalidSequenceTokenException`](crate::error::InvalidSequenceTokenException)
 pub mod invalid_sequence_token_exception {
-    ///
+
     /// A builder for [`InvalidSequenceTokenException`](crate::error::InvalidSequenceTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5631,7 +5631,7 @@ impl std::fmt::Display for DataAlreadyAcceptedException {
 impl std::error::Error for DataAlreadyAcceptedException {}
 /// See [`DataAlreadyAcceptedException`](crate::error::DataAlreadyAcceptedException)
 pub mod data_already_accepted_exception {
-    ///
+
     /// A builder for [`DataAlreadyAcceptedException`](crate::error::DataAlreadyAcceptedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5711,7 +5711,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
-    ///
+
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5776,7 +5776,7 @@ impl std::fmt::Display for InvalidOperationException {
 impl std::error::Error for InvalidOperationException {}
 /// See [`InvalidOperationException`](crate::error::InvalidOperationException)
 pub mod invalid_operation_exception {
-    ///
+
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

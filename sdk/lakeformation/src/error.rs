@@ -6025,7 +6025,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException)
 pub mod invalid_input_exception {
-    ///
+
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6090,7 +6090,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
-    ///
+
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6155,7 +6155,7 @@ impl std::fmt::Display for EntityNotFoundException {
 impl std::error::Error for EntityNotFoundException {}
 /// See [`EntityNotFoundException`](crate::error::EntityNotFoundException)
 pub mod entity_not_found_exception {
-    ///
+
     /// A builder for [`EntityNotFoundException`](crate::error::EntityNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6220,7 +6220,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
-    ///
+
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6285,7 +6285,7 @@ impl std::fmt::Display for TransactionCommittedException {
 impl std::error::Error for TransactionCommittedException {}
 /// See [`TransactionCommittedException`](crate::error::TransactionCommittedException)
 pub mod transaction_committed_exception {
-    ///
+
     /// A builder for [`TransactionCommittedException`](crate::error::TransactionCommittedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6350,7 +6350,7 @@ impl std::fmt::Display for TransactionCommitInProgressException {
 impl std::error::Error for TransactionCommitInProgressException {}
 /// See [`TransactionCommitInProgressException`](crate::error::TransactionCommitInProgressException)
 pub mod transaction_commit_in_progress_exception {
-    ///
+
     /// A builder for [`TransactionCommitInProgressException`](crate::error::TransactionCommitInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6415,7 +6415,7 @@ impl std::fmt::Display for TransactionCanceledException {
 impl std::error::Error for TransactionCanceledException {}
 /// See [`TransactionCanceledException`](crate::error::TransactionCanceledException)
 pub mod transaction_canceled_exception {
-    ///
+
     /// A builder for [`TransactionCanceledException`](crate::error::TransactionCanceledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6480,7 +6480,7 @@ impl std::fmt::Display for ResourceNotReadyException {
 impl std::error::Error for ResourceNotReadyException {}
 /// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
 pub mod resource_not_ready_exception {
-    ///
+
     /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6545,7 +6545,7 @@ impl std::fmt::Display for OperationTimeoutException {
 impl std::error::Error for OperationTimeoutException {}
 /// See [`OperationTimeoutException`](crate::error::OperationTimeoutException)
 pub mod operation_timeout_exception {
-    ///
+
     /// A builder for [`OperationTimeoutException`](crate::error::OperationTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6610,7 +6610,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
-    ///
+
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6679,7 +6679,7 @@ impl std::fmt::Display for ThrottledException {
 impl std::error::Error for ThrottledException {}
 /// See [`ThrottledException`](crate::error::ThrottledException)
 pub mod throttled_exception {
-    ///
+
     /// A builder for [`ThrottledException`](crate::error::ThrottledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6744,7 +6744,7 @@ impl std::fmt::Display for GlueEncryptionException {
 impl std::error::Error for GlueEncryptionException {}
 /// See [`GlueEncryptionException`](crate::error::GlueEncryptionException)
 pub mod glue_encryption_exception {
-    ///
+
     /// A builder for [`GlueEncryptionException`](crate::error::GlueEncryptionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6809,7 +6809,7 @@ impl std::fmt::Display for ResourceNumberLimitExceededException {
 impl std::error::Error for ResourceNumberLimitExceededException {}
 /// See [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
 pub mod resource_number_limit_exceeded_exception {
-    ///
+
     /// A builder for [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6874,7 +6874,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
-    ///
+
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6939,7 +6939,7 @@ impl std::fmt::Display for WorkUnitsNotReadyYetException {
 impl std::error::Error for WorkUnitsNotReadyYetException {}
 /// See [`WorkUnitsNotReadyYetException`](crate::error::WorkUnitsNotReadyYetException)
 pub mod work_units_not_ready_yet_exception {
-    ///
+
     /// A builder for [`WorkUnitsNotReadyYetException`](crate::error::WorkUnitsNotReadyYetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7004,7 +7004,7 @@ impl std::fmt::Display for ExpiredException {
 impl std::error::Error for ExpiredException {}
 /// See [`ExpiredException`](crate::error::ExpiredException)
 pub mod expired_exception {
-    ///
+
     /// A builder for [`ExpiredException`](crate::error::ExpiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7069,7 +7069,7 @@ impl std::fmt::Display for PermissionTypeMismatchException {
 impl std::error::Error for PermissionTypeMismatchException {}
 /// See [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
 pub mod permission_type_mismatch_exception {
-    ///
+
     /// A builder for [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7134,7 +7134,7 @@ impl std::fmt::Display for StatisticsNotReadyYetException {
 impl std::error::Error for StatisticsNotReadyYetException {}
 /// See [`StatisticsNotReadyYetException`](crate::error::StatisticsNotReadyYetException)
 pub mod statistics_not_ready_yet_exception {
-    ///
+
     /// A builder for [`StatisticsNotReadyYetException`](crate::error::StatisticsNotReadyYetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

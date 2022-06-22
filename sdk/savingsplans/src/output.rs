@@ -11,7 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -87,7 +87,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -164,7 +164,7 @@ impl std::fmt::Debug for DescribeSavingsPlansOfferingsOutput {
 }
 /// See [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput)
 pub mod describe_savings_plans_offerings_output {
-    ///
+
     /// A builder for [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -248,7 +248,7 @@ impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesOutput {
 }
 /// See [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput)
 pub mod describe_savings_plans_offering_rates_output {
-    ///
+
     /// A builder for [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -332,7 +332,7 @@ impl std::fmt::Debug for DescribeSavingsPlansOutput {
 }
 /// See [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput)
 pub mod describe_savings_plans_output {
-    ///
+
     /// A builder for [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -422,7 +422,7 @@ impl std::fmt::Debug for DescribeSavingsPlanRatesOutput {
 }
 /// See [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput)
 pub mod describe_savings_plan_rates_output {
-    ///
+
     /// A builder for [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -504,7 +504,7 @@ impl std::fmt::Debug for DeleteQueuedSavingsPlanOutput {
 }
 /// See [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput)
 pub mod delete_queued_savings_plan_output {
-    ///
+
     /// A builder for [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -545,7 +545,7 @@ impl std::fmt::Debug for CreateSavingsPlanOutput {
 }
 /// See [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput)
 pub mod create_savings_plan_output {
-    ///
+
     /// A builder for [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

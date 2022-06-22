@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateApplicationOutput {
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
 pub mod update_application_output {
-    ///
+
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for StopApplicationOutput {
 }
 /// See [`StopApplicationOutput`](crate::output::StopApplicationOutput)
 pub mod stop_application_output {
-    ///
+
     /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for StartApplicationOutput {
 }
 /// See [`StartApplicationOutput`](crate::output::StartApplicationOutput)
 pub mod start_application_output {
-    ///
+
     /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -176,7 +176,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl std::fmt::Debug for ListApplicationsOutput {
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
 pub mod list_applications_output {
-    ///
+
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl std::fmt::Debug for DiscoverInputSchemaOutput {
 }
 /// See [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput)
 pub mod discover_input_schema_output {
-    ///
+
     /// A builder for [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -470,7 +470,7 @@ impl std::fmt::Debug for DescribeApplicationOutput {
 }
 /// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput)
 pub mod describe_application_output {
-    ///
+
     /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -518,7 +518,7 @@ impl std::fmt::Debug for DeleteApplicationReferenceDataSourceOutput {
 }
 /// See [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput)
 pub mod delete_application_reference_data_source_output {
-    ///
+
     /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -549,7 +549,7 @@ impl std::fmt::Debug for DeleteApplicationOutputOutput {
 }
 /// See [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput)
 pub mod delete_application_output_output {
-    ///
+
     /// A builder for [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -580,7 +580,7 @@ impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationOutput {
 }
 /// See [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput)
 pub mod delete_application_input_processing_configuration_output {
-    ///
+
     /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -612,7 +612,7 @@ impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionOutput {
 }
 /// See [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput)
 pub mod delete_application_cloud_watch_logging_option_output {
-    ///
+
     /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -644,7 +644,7 @@ impl std::fmt::Debug for DeleteApplicationOutput {
 }
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 pub mod delete_application_output {
-    ///
+
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -685,7 +685,7 @@ impl std::fmt::Debug for CreateApplicationOutput {
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
 pub mod create_application_output {
-    ///
+
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -733,7 +733,7 @@ impl std::fmt::Debug for AddApplicationReferenceDataSourceOutput {
 }
 /// See [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput)
 pub mod add_application_reference_data_source_output {
-    ///
+
     /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -764,7 +764,7 @@ impl std::fmt::Debug for AddApplicationOutputOutput {
 }
 /// See [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput)
 pub mod add_application_output_output {
-    ///
+
     /// A builder for [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -795,7 +795,7 @@ impl std::fmt::Debug for AddApplicationInputProcessingConfigurationOutput {
 }
 /// See [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput)
 pub mod add_application_input_processing_configuration_output {
-    ///
+
     /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -827,7 +827,7 @@ impl std::fmt::Debug for AddApplicationInputOutput {
 }
 /// See [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput)
 pub mod add_application_input_output {
-    ///
+
     /// A builder for [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -858,7 +858,7 @@ impl std::fmt::Debug for AddApplicationCloudWatchLoggingOptionOutput {
 }
 /// See [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput)
 pub mod add_application_cloud_watch_logging_option_output {
-    ///
+
     /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

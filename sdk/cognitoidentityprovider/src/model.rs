@@ -76,7 +76,7 @@ impl std::fmt::Debug for CustomDomainConfigType {
 }
 /// See [`CustomDomainConfigType`](crate::model::CustomDomainConfigType)
 pub mod custom_domain_config_type {
-    ///
+
     /// A builder for [`CustomDomainConfigType`](crate::model::CustomDomainConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -425,7 +425,7 @@ impl std::fmt::Debug for UserPoolClientType {
 }
 /// See [`UserPoolClientType`](crate::model::UserPoolClientType)
 pub mod user_pool_client_type {
-    ///
+
     /// A builder for [`UserPoolClientType`](crate::model::UserPoolClientType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1057,7 +1057,7 @@ impl std::fmt::Debug for AnalyticsConfigurationType {
 }
 /// See [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType)
 pub mod analytics_configuration_type {
-    ///
+
     /// A builder for [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1327,7 +1327,7 @@ impl std::fmt::Debug for TokenValidityUnitsType {
 }
 /// See [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType)
 pub mod token_validity_units_type {
-    ///
+
     /// A builder for [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1478,7 +1478,7 @@ impl std::fmt::Debug for AccountRecoverySettingType {
 }
 /// See [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType)
 pub mod account_recovery_setting_type {
-    ///
+
     /// A builder for [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1550,7 +1550,7 @@ impl std::fmt::Debug for RecoveryOptionType {
 }
 /// See [`RecoveryOptionType`](crate::model::RecoveryOptionType)
 pub mod recovery_option_type {
-    ///
+
     /// A builder for [`RecoveryOptionType`](crate::model::RecoveryOptionType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1681,7 +1681,7 @@ impl std::fmt::Debug for UserPoolAddOnsType {
 }
 /// See [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType)
 pub mod user_pool_add_ons_type {
-    ///
+
     /// A builder for [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1830,7 +1830,7 @@ impl std::fmt::Debug for AdminCreateUserConfigType {
 }
 /// See [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType)
 pub mod admin_create_user_config_type {
-    ///
+
     /// A builder for [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1935,7 +1935,7 @@ impl std::fmt::Debug for MessageTemplateType {
 }
 /// See [`MessageTemplateType`](crate::model::MessageTemplateType)
 pub mod message_template_type {
-    ///
+
     /// A builder for [`MessageTemplateType`](crate::model::MessageTemplateType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2038,7 +2038,7 @@ impl std::fmt::Debug for SmsConfigurationType {
 }
 /// See [`SmsConfigurationType`](crate::model::SmsConfigurationType)
 pub mod sms_configuration_type {
-    ///
+
     /// A builder for [`SmsConfigurationType`](crate::model::SmsConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2232,7 +2232,7 @@ impl std::fmt::Debug for EmailConfigurationType {
 }
 /// See [`EmailConfigurationType`](crate::model::EmailConfigurationType)
 pub mod email_configuration_type {
-    ///
+
     /// A builder for [`EmailConfigurationType`](crate::model::EmailConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2498,7 +2498,7 @@ impl std::fmt::Debug for DeviceConfigurationType {
 }
 /// See [`DeviceConfigurationType`](crate::model::DeviceConfigurationType)
 pub mod device_configuration_type {
-    ///
+
     /// A builder for [`DeviceConfigurationType`](crate::model::DeviceConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2649,7 +2649,7 @@ impl std::fmt::Debug for UserAttributeUpdateSettingsType {
 }
 /// See [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType)
 pub mod user_attribute_update_settings_type {
-    ///
+
     /// A builder for [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2816,7 +2816,7 @@ impl std::fmt::Debug for VerificationMessageTemplateType {
 }
 /// See [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType)
 pub mod verification_message_template_type {
-    ///
+
     /// A builder for [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3092,7 +3092,7 @@ impl std::fmt::Debug for LambdaConfigType {
 }
 /// See [`LambdaConfigType`](crate::model::LambdaConfigType)
 pub mod lambda_config_type {
-    ///
+
     /// A builder for [`LambdaConfigType`](crate::model::LambdaConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3344,7 +3344,7 @@ impl std::fmt::Debug for CustomEmailLambdaVersionConfigType {
 }
 /// See [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType)
 pub mod custom_email_lambda_version_config_type {
-    ///
+
     /// A builder for [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3478,7 +3478,7 @@ impl std::fmt::Debug for CustomSmsLambdaVersionConfigType {
 }
 /// See [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType)
 pub mod custom_sms_lambda_version_config_type {
-    ///
+
     /// A builder for [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3603,7 +3603,7 @@ impl std::fmt::Debug for UserPoolPolicyType {
 }
 /// See [`UserPoolPolicyType`](crate::model::UserPoolPolicyType)
 pub mod user_pool_policy_type {
-    ///
+
     /// A builder for [`UserPoolPolicyType`](crate::model::UserPoolPolicyType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3703,7 +3703,7 @@ impl std::fmt::Debug for PasswordPolicyType {
 }
 /// See [`PasswordPolicyType`](crate::model::PasswordPolicyType)
 pub mod password_policy_type {
-    ///
+
     /// A builder for [`PasswordPolicyType`](crate::model::PasswordPolicyType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3841,7 +3841,7 @@ impl std::fmt::Debug for CodeDeliveryDetailsType {
 }
 /// See [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType)
 pub mod code_delivery_details_type {
-    ///
+
     /// A builder for [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3988,7 +3988,7 @@ impl std::fmt::Debug for AttributeType {
 }
 /// See [`AttributeType`](crate::model::AttributeType)
 pub mod attribute_type {
-    ///
+
     /// A builder for [`AttributeType`](crate::model::AttributeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4076,7 +4076,7 @@ impl std::fmt::Debug for ResourceServerType {
 }
 /// See [`ResourceServerType`](crate::model::ResourceServerType)
 pub mod resource_server_type {
-    ///
+
     /// A builder for [`ResourceServerType`](crate::model::ResourceServerType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4184,7 +4184,7 @@ impl std::fmt::Debug for ResourceServerScopeType {
 }
 /// See [`ResourceServerScopeType`](crate::model::ResourceServerScopeType)
 pub mod resource_server_scope_type {
-    ///
+
     /// A builder for [`ResourceServerScopeType`](crate::model::ResourceServerScopeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4405,7 +4405,7 @@ impl std::fmt::Debug for IdentityProviderType {
 }
 /// See [`IdentityProviderType`](crate::model::IdentityProviderType)
 pub mod identity_provider_type {
-    ///
+
     /// A builder for [`IdentityProviderType`](crate::model::IdentityProviderType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4817,7 +4817,7 @@ impl std::fmt::Debug for GroupType {
 }
 /// See [`GroupType`](crate::model::GroupType)
 pub mod group_type {
-    ///
+
     /// A builder for [`GroupType`](crate::model::GroupType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5168,7 +5168,7 @@ impl std::fmt::Debug for UserImportJobType {
 }
 /// See [`UserImportJobType`](crate::model::UserImportJobType)
 pub mod user_import_job_type {
-    ///
+
     /// A builder for [`UserImportJobType`](crate::model::UserImportJobType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5496,7 +5496,7 @@ impl std::fmt::Debug for UserContextDataType {
 }
 /// See [`UserContextDataType`](crate::model::UserContextDataType)
 pub mod user_context_data_type {
-    ///
+
     /// A builder for [`UserContextDataType`](crate::model::UserContextDataType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5552,7 +5552,7 @@ impl std::fmt::Debug for AnalyticsMetadataType {
 }
 /// See [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType)
 pub mod analytics_metadata_type {
-    ///
+
     /// A builder for [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5617,7 +5617,7 @@ impl std::fmt::Debug for MfaOptionType {
 }
 /// See [`MfaOptionType`](crate::model::MfaOptionType)
 pub mod mfa_option_type {
-    ///
+
     /// A builder for [`MfaOptionType`](crate::model::MfaOptionType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5690,7 +5690,7 @@ impl std::fmt::Debug for SoftwareTokenMfaConfigType {
 }
 /// See [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType)
 pub mod software_token_mfa_config_type {
-    ///
+
     /// A builder for [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5755,7 +5755,7 @@ impl std::fmt::Debug for SmsMfaConfigType {
 }
 /// See [`SmsMfaConfigType`](crate::model::SmsMfaConfigType)
 pub mod sms_mfa_config_type {
-    ///
+
     /// A builder for [`SmsMfaConfigType`](crate::model::SmsMfaConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5835,7 +5835,7 @@ impl std::fmt::Debug for SoftwareTokenMfaSettingsType {
 }
 /// See [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType)
 pub mod software_token_mfa_settings_type {
-    ///
+
     /// A builder for [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5909,7 +5909,7 @@ impl std::fmt::Debug for SmsMfaSettingsType {
 }
 /// See [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType)
 pub mod sms_mfa_settings_type {
-    ///
+
     /// A builder for [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6018,7 +6018,7 @@ impl std::fmt::Debug for UiCustomizationType {
 }
 /// See [`UiCustomizationType`](crate::model::UiCustomizationType)
 pub mod ui_customization_type {
-    ///
+
     /// A builder for [`UiCustomizationType`](crate::model::UiCustomizationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6204,7 +6204,7 @@ impl std::fmt::Debug for RiskConfigurationType {
 }
 /// See [`RiskConfigurationType`](crate::model::RiskConfigurationType)
 pub mod risk_configuration_type {
-    ///
+
     /// A builder for [`RiskConfigurationType`](crate::model::RiskConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6351,7 +6351,7 @@ impl std::fmt::Debug for RiskExceptionConfigurationType {
 }
 /// See [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType)
 pub mod risk_exception_configuration_type {
-    ///
+
     /// A builder for [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6445,7 +6445,7 @@ impl std::fmt::Debug for AccountTakeoverRiskConfigurationType {
 }
 /// See [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType)
 pub mod account_takeover_risk_configuration_type {
-    ///
+
     /// A builder for [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6535,7 +6535,7 @@ impl std::fmt::Debug for AccountTakeoverActionsType {
 }
 /// See [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType)
 pub mod account_takeover_actions_type {
-    ///
+
     /// A builder for [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6644,7 +6644,7 @@ impl std::fmt::Debug for AccountTakeoverActionType {
 }
 /// See [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType)
 pub mod account_takeover_action_type {
-    ///
+
     /// A builder for [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6824,7 +6824,7 @@ impl std::fmt::Debug for NotifyConfigurationType {
 }
 /// See [`NotifyConfigurationType`](crate::model::NotifyConfigurationType)
 pub mod notify_configuration_type {
-    ///
+
     /// A builder for [`NotifyConfigurationType`](crate::model::NotifyConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6962,7 +6962,7 @@ impl std::fmt::Debug for NotifyEmailType {
 }
 /// See [`NotifyEmailType`](crate::model::NotifyEmailType)
 pub mod notify_email_type {
-    ///
+
     /// A builder for [`NotifyEmailType`](crate::model::NotifyEmailType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7048,7 +7048,7 @@ impl std::fmt::Debug for CompromisedCredentialsRiskConfigurationType {
 }
 /// See [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType)
 pub mod compromised_credentials_risk_configuration_type {
-    ///
+
     /// A builder for [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7129,7 +7129,7 @@ impl std::fmt::Debug for CompromisedCredentialsActionsType {
 }
 /// See [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType)
 pub mod compromised_credentials_actions_type {
-    ///
+
     /// A builder for [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7340,7 +7340,7 @@ impl std::fmt::Debug for AuthenticationResultType {
 }
 /// See [`AuthenticationResultType`](crate::model::AuthenticationResultType)
 pub mod authentication_result_type {
-    ///
+
     /// A builder for [`AuthenticationResultType`](crate::model::AuthenticationResultType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7468,7 +7468,7 @@ impl std::fmt::Debug for NewDeviceMetadataType {
 }
 /// See [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType)
 pub mod new_device_metadata_type {
-    ///
+
     /// A builder for [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7696,7 +7696,7 @@ impl std::fmt::Debug for UserType {
 }
 /// See [`UserType`](crate::model::UserType)
 pub mod user_type {
-    ///
+
     /// A builder for [`UserType`](crate::model::UserType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7986,7 +7986,7 @@ impl std::fmt::Debug for UserPoolDescriptionType {
 }
 /// See [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType)
 pub mod user_pool_description_type {
-    ///
+
     /// A builder for [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8179,7 +8179,7 @@ impl std::fmt::Debug for UserPoolClientDescription {
 }
 /// See [`UserPoolClientDescription`](crate::model::UserPoolClientDescription)
 pub mod user_pool_client_description {
-    ///
+
     /// A builder for [`UserPoolClientDescription`](crate::model::UserPoolClientDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8279,7 +8279,7 @@ impl std::fmt::Debug for ProviderDescription {
 }
 /// See [`ProviderDescription`](crate::model::ProviderDescription)
 pub mod provider_description {
-    ///
+
     /// A builder for [`ProviderDescription`](crate::model::ProviderDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8415,7 +8415,7 @@ impl std::fmt::Debug for DeviceType {
 }
 /// See [`DeviceType`](crate::model::DeviceType)
 pub mod device_type {
-    ///
+
     /// A builder for [`DeviceType`](crate::model::DeviceType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8671,7 +8671,7 @@ impl std::fmt::Debug for DomainDescriptionType {
 }
 /// See [`DomainDescriptionType`](crate::model::DomainDescriptionType)
 pub mod domain_description_type {
-    ///
+
     /// A builder for [`DomainDescriptionType`](crate::model::DomainDescriptionType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9192,7 +9192,7 @@ impl std::fmt::Debug for UserPoolType {
 }
 /// See [`UserPoolType`](crate::model::UserPoolType)
 pub mod user_pool_type {
-    ///
+
     /// A builder for [`UserPoolType`](crate::model::UserPoolType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9840,7 +9840,7 @@ impl std::fmt::Debug for UsernameConfigurationType {
 }
 /// See [`UsernameConfigurationType`](crate::model::UsernameConfigurationType)
 pub mod username_configuration_type {
-    ///
+
     /// A builder for [`UsernameConfigurationType`](crate::model::UsernameConfigurationType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10101,7 +10101,7 @@ impl std::fmt::Debug for SchemaAttributeType {
 }
 /// See [`SchemaAttributeType`](crate::model::SchemaAttributeType)
 pub mod schema_attribute_type {
-    ///
+
     /// A builder for [`SchemaAttributeType`](crate::model::SchemaAttributeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10260,7 +10260,7 @@ impl std::fmt::Debug for StringAttributeConstraintsType {
 }
 /// See [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType)
 pub mod string_attribute_constraints_type {
-    ///
+
     /// A builder for [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10334,7 +10334,7 @@ impl std::fmt::Debug for NumberAttributeConstraintsType {
 }
 /// See [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType)
 pub mod number_attribute_constraints_type {
-    ///
+
     /// A builder for [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10471,7 +10471,7 @@ impl std::fmt::Debug for DeviceSecretVerifierConfigType {
 }
 /// See [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType)
 pub mod device_secret_verifier_config_type {
-    ///
+
     /// A builder for [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10569,7 +10569,7 @@ impl std::fmt::Debug for ContextDataType {
 }
 /// See [`ContextDataType`](crate::model::ContextDataType)
 pub mod context_data_type {
-    ///
+
     /// A builder for [`ContextDataType`](crate::model::ContextDataType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10688,7 +10688,7 @@ impl std::fmt::Debug for HttpHeader {
 }
 /// See [`HttpHeader`](crate::model::HttpHeader)
 pub mod http_header {
-    ///
+
     /// A builder for [`HttpHeader`](crate::model::HttpHeader)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10807,7 +10807,7 @@ impl std::fmt::Debug for AuthEventType {
 }
 /// See [`AuthEventType`](crate::model::AuthEventType)
 pub mod auth_event_type {
-    ///
+
     /// A builder for [`AuthEventType`](crate::model::AuthEventType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10988,7 +10988,7 @@ impl std::fmt::Debug for EventFeedbackType {
 }
 /// See [`EventFeedbackType`](crate::model::EventFeedbackType)
 pub mod event_feedback_type {
-    ///
+
     /// A builder for [`EventFeedbackType`](crate::model::EventFeedbackType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11101,7 +11101,7 @@ impl std::fmt::Debug for EventContextDataType {
 }
 /// See [`EventContextDataType`](crate::model::EventContextDataType)
 pub mod event_context_data_type {
-    ///
+
     /// A builder for [`EventContextDataType`](crate::model::EventContextDataType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11211,7 +11211,7 @@ impl std::fmt::Debug for ChallengeResponseType {
 }
 /// See [`ChallengeResponseType`](crate::model::ChallengeResponseType)
 pub mod challenge_response_type {
-    ///
+
     /// A builder for [`ChallengeResponseType`](crate::model::ChallengeResponseType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11411,7 +11411,7 @@ impl std::fmt::Debug for EventRiskType {
 }
 /// See [`EventRiskType`](crate::model::EventRiskType)
 pub mod event_risk_type {
-    ///
+
     /// A builder for [`EventRiskType`](crate::model::EventRiskType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11745,7 +11745,7 @@ impl std::fmt::Debug for ProviderUserIdentifierType {
 }
 /// See [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType)
 pub mod provider_user_identifier_type {
-    ///
+
     /// A builder for [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

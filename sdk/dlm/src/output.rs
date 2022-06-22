@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateLifecyclePolicyOutput {
 }
 /// See [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput)
 pub mod update_lifecycle_policy_output {
-    ///
+
     /// A builder for [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -118,7 +118,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -188,7 +188,7 @@ impl std::fmt::Debug for GetLifecyclePolicyOutput {
 }
 /// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
 pub mod get_lifecycle_policy_output {
-    ///
+
     /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -246,7 +246,7 @@ impl std::fmt::Debug for GetLifecyclePoliciesOutput {
 }
 /// See [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput)
 pub mod get_lifecycle_policies_output {
-    ///
+
     /// A builder for [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -301,7 +301,7 @@ impl std::fmt::Debug for DeleteLifecyclePolicyOutput {
 }
 /// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
 pub mod delete_lifecycle_policy_output {
-    ///
+
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -342,7 +342,7 @@ impl std::fmt::Debug for CreateLifecyclePolicyOutput {
 }
 /// See [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput)
 pub mod create_lifecycle_policy_output {
-    ///
+
     /// A builder for [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

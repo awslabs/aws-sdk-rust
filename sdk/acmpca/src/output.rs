@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateCertificateAuthorityOutput {
 }
 /// See [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
 pub mod update_certificate_authority_output {
-    ///
+
     /// A builder for [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UntagCertificateAuthorityOutput {
 }
 /// See [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
 pub mod untag_certificate_authority_output {
-    ///
+
     /// A builder for [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for TagCertificateAuthorityOutput {
 }
 /// See [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
 pub mod tag_certificate_authority_output {
-    ///
+
     /// A builder for [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for RevokeCertificateOutput {
 }
 /// See [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
 pub mod revoke_certificate_output {
-    ///
+
     /// A builder for [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for RestoreCertificateAuthorityOutput {
 }
 /// See [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
 pub mod restore_certificate_authority_output {
-    ///
+
     /// A builder for [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,7 +166,7 @@ impl std::fmt::Debug for PutPolicyOutput {
 }
 /// See [`PutPolicyOutput`](crate::output::PutPolicyOutput)
 pub mod put_policy_output {
-    ///
+
     /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -214,7 +214,7 @@ impl std::fmt::Debug for ListTagsOutput {
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput)
 pub mod list_tags_output {
-    ///
+
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -297,7 +297,7 @@ impl std::fmt::Debug for ListPermissionsOutput {
 }
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
 pub mod list_permissions_output {
-    ///
+
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl std::fmt::Debug for ListCertificateAuthoritiesOutput {
 }
 /// See [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput)
 pub mod list_certificate_authorities_output {
-    ///
+
     /// A builder for [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -465,7 +465,7 @@ impl std::fmt::Debug for IssueCertificateOutput {
 }
 /// See [`IssueCertificateOutput`](crate::output::IssueCertificateOutput)
 pub mod issue_certificate_output {
-    ///
+
     /// A builder for [`IssueCertificateOutput`](crate::output::IssueCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -515,7 +515,7 @@ impl std::fmt::Debug for ImportCertificateAuthorityCertificateOutput {
 }
 /// See [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
 pub mod import_certificate_authority_certificate_output {
-    ///
+
     /// A builder for [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -556,7 +556,7 @@ impl std::fmt::Debug for GetPolicyOutput {
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput)
 pub mod get_policy_output {
-    ///
+
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -611,7 +611,7 @@ impl std::fmt::Debug for GetCertificateAuthorityCsrOutput {
 }
 /// See [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput)
 pub mod get_certificate_authority_csr_output {
-    ///
+
     /// A builder for [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -671,7 +671,7 @@ impl std::fmt::Debug for GetCertificateAuthorityCertificateOutput {
 }
 /// See [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput)
 pub mod get_certificate_authority_certificate_output {
-    ///
+
     /// A builder for [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -748,7 +748,7 @@ impl std::fmt::Debug for GetCertificateOutput {
 }
 /// See [`GetCertificateOutput`](crate::output::GetCertificateOutput)
 pub mod get_certificate_output {
-    ///
+
     /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -839,7 +839,7 @@ impl std::fmt::Debug for DescribeCertificateAuthorityAuditReportOutput {
 }
 /// See [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput)
 pub mod describe_certificate_authority_audit_report_output {
-    ///
+
     /// A builder for [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -941,7 +941,7 @@ impl std::fmt::Debug for DescribeCertificateAuthorityOutput {
 }
 /// See [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput)
 pub mod describe_certificate_authority_output {
-    ///
+
     /// A builder for [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -989,7 +989,7 @@ impl std::fmt::Debug for DeletePolicyOutput {
 }
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
 pub mod delete_policy_output {
-    ///
+
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1020,7 +1020,7 @@ impl std::fmt::Debug for DeletePermissionOutput {
 }
 /// See [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
 pub mod delete_permission_output {
-    ///
+
     /// A builder for [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1051,7 +1051,7 @@ impl std::fmt::Debug for DeleteCertificateAuthorityOutput {
 }
 /// See [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
 pub mod delete_certificate_authority_output {
-    ///
+
     /// A builder for [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1082,7 +1082,7 @@ impl std::fmt::Debug for CreatePermissionOutput {
 }
 /// See [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
 pub mod create_permission_output {
-    ///
+
     /// A builder for [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1130,7 +1130,7 @@ impl std::fmt::Debug for CreateCertificateAuthorityAuditReportOutput {
 }
 /// See [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput)
 pub mod create_certificate_authority_audit_report_output {
-    ///
+
     /// A builder for [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1202,7 +1202,7 @@ impl std::fmt::Debug for CreateCertificateAuthorityOutput {
 }
 /// See [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput)
 pub mod create_certificate_authority_output {
-    ///
+
     /// A builder for [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

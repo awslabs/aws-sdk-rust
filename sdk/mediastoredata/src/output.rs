@@ -35,7 +35,7 @@ impl std::fmt::Debug for PutObjectOutput {
 }
 /// See [`PutObjectOutput`](crate::output::PutObjectOutput)
 pub mod put_object_output {
-    ///
+
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -127,7 +127,7 @@ impl std::fmt::Debug for ListItemsOutput {
 }
 /// See [`ListItemsOutput`](crate::output::ListItemsOutput)
 pub mod list_items_output {
-    ///
+
     /// A builder for [`ListItemsOutput`](crate::output::ListItemsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -253,7 +253,7 @@ impl std::fmt::Debug for GetObjectOutput {
 }
 /// See [`GetObjectOutput`](crate::output::GetObjectOutput)
 pub mod get_object_output {
-    ///
+
     /// A builder for [`GetObjectOutput`](crate::output::GetObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -436,7 +436,7 @@ impl std::fmt::Debug for DescribeObjectOutput {
 }
 /// See [`DescribeObjectOutput`](crate::output::DescribeObjectOutput)
 pub mod describe_object_output {
-    ///
+
     /// A builder for [`DescribeObjectOutput`](crate::output::DescribeObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -537,7 +537,7 @@ impl std::fmt::Debug for DeleteObjectOutput {
 }
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
 pub mod delete_object_output {
-    ///
+
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

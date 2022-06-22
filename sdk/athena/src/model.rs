@@ -135,7 +135,7 @@ impl std::fmt::Debug for WorkGroupConfigurationUpdates {
 }
 /// See [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates)
 pub mod work_group_configuration_updates {
-    ///
+
     /// A builder for [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -291,7 +291,7 @@ impl std::fmt::Debug for EngineVersion {
 }
 /// See [`EngineVersion`](crate::model::EngineVersion)
 pub mod engine_version {
-    ///
+
     /// A builder for [`EngineVersion`](crate::model::EngineVersion)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -423,7 +423,7 @@ impl std::fmt::Debug for ResultConfigurationUpdates {
 }
 /// See [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates)
 pub mod result_configuration_updates {
-    ///
+
     /// A builder for [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -586,7 +586,7 @@ impl std::fmt::Debug for AclConfiguration {
 }
 /// See [`AclConfiguration`](crate::model::AclConfiguration)
 pub mod acl_configuration {
-    ///
+
     /// A builder for [`AclConfiguration`](crate::model::AclConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -704,7 +704,7 @@ impl std::fmt::Debug for EncryptionConfiguration {
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
 pub mod encryption_configuration {
-    ///
+
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -901,7 +901,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
-    ///
+
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1045,7 +1045,7 @@ impl std::fmt::Debug for ResultConfiguration {
 }
 /// See [`ResultConfiguration`](crate::model::ResultConfiguration)
 pub mod result_configuration {
-    ///
+
     /// A builder for [`ResultConfiguration`](crate::model::ResultConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1161,7 +1161,7 @@ impl std::fmt::Debug for QueryExecutionContext {
 }
 /// See [`QueryExecutionContext`](crate::model::QueryExecutionContext)
 pub mod query_execution_context {
-    ///
+
     /// A builder for [`QueryExecutionContext`](crate::model::QueryExecutionContext)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1256,7 +1256,7 @@ impl std::fmt::Debug for WorkGroupSummary {
 }
 /// See [`WorkGroupSummary`](crate::model::WorkGroupSummary)
 pub mod work_group_summary {
-    ///
+
     /// A builder for [`WorkGroupSummary`](crate::model::WorkGroupSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1414,7 +1414,7 @@ impl std::fmt::Debug for TableMetadata {
 }
 /// See [`TableMetadata`](crate::model::TableMetadata)
 pub mod table_metadata {
-    ///
+
     /// A builder for [`TableMetadata`](crate::model::TableMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1596,7 +1596,7 @@ impl std::fmt::Debug for Column {
 }
 /// See [`Column`](crate::model::Column)
 pub mod column {
-    ///
+
     /// A builder for [`Column`](crate::model::Column)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1682,7 +1682,7 @@ impl std::fmt::Debug for PreparedStatementSummary {
 }
 /// See [`PreparedStatementSummary`](crate::model::PreparedStatementSummary)
 pub mod prepared_statement_summary {
-    ///
+
     /// A builder for [`PreparedStatementSummary`](crate::model::PreparedStatementSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl std::fmt::Debug for DataCatalogSummary {
 }
 /// See [`DataCatalogSummary`](crate::model::DataCatalogSummary)
 pub mod data_catalog_summary {
-    ///
+
     /// A builder for [`DataCatalogSummary`](crate::model::DataCatalogSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1850,7 +1850,7 @@ impl std::fmt::Debug for Database {
 }
 /// See [`Database`](crate::model::Database)
 pub mod database {
-    ///
+
     /// A builder for [`Database`](crate::model::Database)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1974,7 +1974,7 @@ impl std::fmt::Debug for WorkGroup {
 }
 /// See [`WorkGroup`](crate::model::WorkGroup)
 pub mod work_group {
-    ///
+
     /// A builder for [`WorkGroup`](crate::model::WorkGroup)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2130,7 +2130,7 @@ impl std::fmt::Debug for WorkGroupConfiguration {
 }
 /// See [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration)
 pub mod work_group_configuration {
-    ///
+
     /// A builder for [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2267,7 +2267,7 @@ impl std::fmt::Debug for ResultSet {
 }
 /// See [`ResultSet`](crate::model::ResultSet)
 pub mod result_set {
-    ///
+
     /// A builder for [`ResultSet`](crate::model::ResultSet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2346,7 +2346,7 @@ impl std::fmt::Debug for ResultSetMetadata {
 }
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata)
 pub mod result_set_metadata {
-    ///
+
     /// A builder for [`ResultSetMetadata`](crate::model::ResultSetMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2473,7 +2473,7 @@ impl std::fmt::Debug for ColumnInfo {
 }
 /// See [`ColumnInfo`](crate::model::ColumnInfo)
 pub mod column_info {
-    ///
+
     /// A builder for [`ColumnInfo`](crate::model::ColumnInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2698,7 +2698,7 @@ impl std::fmt::Debug for Row {
 }
 /// See [`Row`](crate::model::Row)
 pub mod row {
-    ///
+
     /// A builder for [`Row`](crate::model::Row)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2760,7 +2760,7 @@ impl std::fmt::Debug for Datum {
 }
 /// See [`Datum`](crate::model::Datum)
 pub mod datum {
-    ///
+
     /// A builder for [`Datum`](crate::model::Datum)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2876,7 +2876,7 @@ impl std::fmt::Debug for QueryExecution {
 }
 /// See [`QueryExecution`](crate::model::QueryExecution)
 pub mod query_execution {
-    ///
+
     /// A builder for [`QueryExecution`](crate::model::QueryExecution)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3109,7 +3109,7 @@ impl std::fmt::Debug for QueryExecutionStatistics {
 }
 /// See [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics)
 pub mod query_execution_statistics {
-    ///
+
     /// A builder for [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3283,7 +3283,7 @@ impl std::fmt::Debug for QueryExecutionStatus {
 }
 /// See [`QueryExecutionStatus`](crate::model::QueryExecutionStatus)
 pub mod query_execution_status {
-    ///
+
     /// A builder for [`QueryExecutionStatus`](crate::model::QueryExecutionStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3432,7 +3432,7 @@ impl std::fmt::Debug for AthenaError {
 }
 /// See [`AthenaError`](crate::model::AthenaError)
 pub mod athena_error {
-    ///
+
     /// A builder for [`AthenaError`](crate::model::AthenaError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3686,7 +3686,7 @@ impl std::fmt::Debug for PreparedStatement {
 }
 /// See [`PreparedStatement`](crate::model::PreparedStatement)
 pub mod prepared_statement {
-    ///
+
     /// A builder for [`PreparedStatement`](crate::model::PreparedStatement)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3836,7 +3836,7 @@ impl std::fmt::Debug for NamedQuery {
 }
 /// See [`NamedQuery`](crate::model::NamedQuery)
 pub mod named_query {
-    ///
+
     /// A builder for [`NamedQuery`](crate::model::NamedQuery)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4005,7 +4005,7 @@ impl std::fmt::Debug for DataCatalog {
 }
 /// See [`DataCatalog`](crate::model::DataCatalog)
 pub mod data_catalog {
-    ///
+
     /// A builder for [`DataCatalog`](crate::model::DataCatalog)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4156,7 +4156,7 @@ impl std::fmt::Debug for UnprocessedQueryExecutionId {
 }
 /// See [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId)
 pub mod unprocessed_query_execution_id {
-    ///
+
     /// A builder for [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4255,7 +4255,7 @@ impl std::fmt::Debug for UnprocessedNamedQueryId {
 }
 /// See [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId)
 pub mod unprocessed_named_query_id {
-    ///
+
     /// A builder for [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

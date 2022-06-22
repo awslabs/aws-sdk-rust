@@ -21,7 +21,7 @@ impl std::fmt::Debug for UpdateReportDefinitionOutput {
 }
 /// See [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput)
 pub mod update_report_definition_output {
-    ///
+
     /// A builder for [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl std::fmt::Debug for PutReportDefinitionOutput {
 }
 /// See [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
 pub mod put_report_definition_output {
-    ///
+
     /// A builder for [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl std::fmt::Debug for ListReportDefinitionsOutput {
 }
 /// See [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput)
 pub mod list_report_definitions_output {
-    ///
+
     /// A builder for [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -215,7 +215,7 @@ impl std::fmt::Debug for ImportApplicationUsageOutput {
 }
 /// See [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput)
 pub mod import_application_usage_output {
-    ///
+
     /// A builder for [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -312,7 +312,7 @@ impl std::fmt::Debug for GetReportDefinitionOutput {
 }
 /// See [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput)
 pub mod get_report_definition_output {
-    ///
+
     /// A builder for [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -454,7 +454,7 @@ impl std::fmt::Debug for DeleteReportDefinitionOutput {
 }
 /// See [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput)
 pub mod delete_report_definition_output {
-    ///
+
     /// A builder for [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

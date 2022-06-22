@@ -396,7 +396,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException)
 pub mod throttling_exception {
-    ///
+
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -461,7 +461,7 @@ impl std::fmt::Display for ServiceException {
 impl std::error::Error for ServiceException {}
 /// See [`ServiceException`](crate::error::ServiceException)
 pub mod service_exception {
-    ///
+
     /// A builder for [`ServiceException`](crate::error::ServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -526,7 +526,7 @@ impl std::fmt::Display for InvalidArgsException {
 impl std::error::Error for InvalidArgsException {}
 /// See [`InvalidArgsException`](crate::error::InvalidArgsException)
 pub mod invalid_args_exception {
-    ///
+
     /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -594,7 +594,7 @@ impl std::fmt::Display for Ec2InstanceStateInvalidException {
 impl std::error::Error for Ec2InstanceStateInvalidException {}
 /// See [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException)
 pub mod ec2_instance_state_invalid_exception {
-    ///
+
     /// A builder for [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -662,7 +662,7 @@ impl std::fmt::Display for Ec2InstanceNotFoundException {
 impl std::error::Error for Ec2InstanceNotFoundException {}
 /// See [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException)
 pub mod ec2_instance_not_found_exception {
-    ///
+
     /// A builder for [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -727,7 +727,7 @@ impl std::fmt::Display for AuthException {
 impl std::error::Error for AuthException {}
 /// See [`AuthException`](crate::error::AuthException)
 pub mod auth_exception {
-    ///
+
     /// A builder for [`AuthException`](crate::error::AuthException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -792,7 +792,7 @@ impl std::fmt::Display for SerialConsoleSessionUnavailableException {
 impl std::error::Error for SerialConsoleSessionUnavailableException {}
 /// See [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException)
 pub mod serial_console_session_unavailable_exception {
-    ///
+
     /// A builder for [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -857,7 +857,7 @@ impl std::fmt::Display for SerialConsoleSessionLimitExceededException {
 impl std::error::Error for SerialConsoleSessionLimitExceededException {}
 /// See [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException)
 pub mod serial_console_session_limit_exceeded_exception {
-    ///
+
     /// A builder for [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -922,7 +922,7 @@ impl std::fmt::Display for SerialConsoleAccessDisabledException {
 impl std::error::Error for SerialConsoleAccessDisabledException {}
 /// See [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException)
 pub mod serial_console_access_disabled_exception {
-    ///
+
     /// A builder for [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -990,7 +990,7 @@ impl std::fmt::Display for Ec2InstanceTypeInvalidException {
 impl std::error::Error for Ec2InstanceTypeInvalidException {}
 /// See [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException)
 pub mod ec2_instance_type_invalid_exception {
-    ///
+
     /// A builder for [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

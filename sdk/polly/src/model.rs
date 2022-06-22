@@ -957,7 +957,7 @@ impl std::fmt::Debug for SynthesisTask {
 }
 /// See [`SynthesisTask`](crate::model::SynthesisTask)
 pub mod synthesis_task {
-    ///
+
     /// A builder for [`SynthesisTask`](crate::model::SynthesisTask)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1293,7 +1293,7 @@ impl std::fmt::Debug for LexiconDescription {
 }
 /// See [`LexiconDescription`](crate::model::LexiconDescription)
 pub mod lexicon_description {
-    ///
+
     /// A builder for [`LexiconDescription`](crate::model::LexiconDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1398,7 +1398,7 @@ impl std::fmt::Debug for LexiconAttributes {
 }
 /// See [`LexiconAttributes`](crate::model::LexiconAttributes)
 pub mod lexicon_attributes {
-    ///
+
     /// A builder for [`LexiconAttributes`](crate::model::LexiconAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1526,7 +1526,7 @@ impl std::fmt::Debug for Lexicon {
 }
 /// See [`Lexicon`](crate::model::Lexicon)
 pub mod lexicon {
-    ///
+
     /// A builder for [`Lexicon`](crate::model::Lexicon)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1637,7 +1637,7 @@ impl std::fmt::Debug for Voice {
 }
 /// See [`Voice`](crate::model::Voice)
 pub mod voice {
-    ///
+
     /// A builder for [`Voice`](crate::model::Voice)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

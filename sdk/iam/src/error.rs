@@ -18659,7 +18659,7 @@ impl std::fmt::Display for UnrecognizedPublicKeyEncodingException {
 impl std::error::Error for UnrecognizedPublicKeyEncodingException {}
 /// See [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException)
 pub mod unrecognized_public_key_encoding_exception {
-    ///
+
     /// A builder for [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18724,7 +18724,7 @@ impl std::fmt::Display for NoSuchEntityException {
 impl std::error::Error for NoSuchEntityException {}
 /// See [`NoSuchEntityException`](crate::error::NoSuchEntityException)
 pub mod no_such_entity_exception {
-    ///
+
     /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18789,7 +18789,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
-    ///
+
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18854,7 +18854,7 @@ impl std::fmt::Display for InvalidPublicKeyException {
 impl std::error::Error for InvalidPublicKeyException {}
 /// See [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException)
 pub mod invalid_public_key_exception {
-    ///
+
     /// A builder for [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18922,7 +18922,7 @@ impl std::fmt::Display for DuplicateSshPublicKeyException {
 impl std::error::Error for DuplicateSshPublicKeyException {}
 /// See [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException)
 pub mod duplicate_ssh_public_key_exception {
-    ///
+
     /// A builder for [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18987,7 +18987,7 @@ impl std::fmt::Display for ServiceFailureException {
 impl std::error::Error for ServiceFailureException {}
 /// See [`ServiceFailureException`](crate::error::ServiceFailureException)
 pub mod service_failure_exception {
-    ///
+
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19052,7 +19052,7 @@ impl std::fmt::Display for MalformedCertificateException {
 impl std::error::Error for MalformedCertificateException {}
 /// See [`MalformedCertificateException`](crate::error::MalformedCertificateException)
 pub mod malformed_certificate_exception {
-    ///
+
     /// A builder for [`MalformedCertificateException`](crate::error::MalformedCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19117,7 +19117,7 @@ impl std::fmt::Display for InvalidCertificateException {
 impl std::error::Error for InvalidCertificateException {}
 /// See [`InvalidCertificateException`](crate::error::InvalidCertificateException)
 pub mod invalid_certificate_exception {
-    ///
+
     /// A builder for [`InvalidCertificateException`](crate::error::InvalidCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19182,7 +19182,7 @@ impl std::fmt::Display for EntityAlreadyExistsException {
 impl std::error::Error for EntityAlreadyExistsException {}
 /// See [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
 pub mod entity_already_exists_exception {
-    ///
+
     /// A builder for [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19247,7 +19247,7 @@ impl std::fmt::Display for DuplicateCertificateException {
 impl std::error::Error for DuplicateCertificateException {}
 /// See [`DuplicateCertificateException`](crate::error::DuplicateCertificateException)
 pub mod duplicate_certificate_exception {
-    ///
+
     /// A builder for [`DuplicateCertificateException`](crate::error::DuplicateCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19312,7 +19312,7 @@ impl std::fmt::Display for KeyPairMismatchException {
 impl std::error::Error for KeyPairMismatchException {}
 /// See [`KeyPairMismatchException`](crate::error::KeyPairMismatchException)
 pub mod key_pair_mismatch_exception {
-    ///
+
     /// A builder for [`KeyPairMismatchException`](crate::error::KeyPairMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19377,7 +19377,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException)
 pub mod invalid_input_exception {
-    ///
+
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19442,7 +19442,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
-    ///
+
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19507,7 +19507,7 @@ impl std::fmt::Display for EntityTemporarilyUnmodifiableException {
 impl std::error::Error for EntityTemporarilyUnmodifiableException {}
 /// See [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException)
 pub mod entity_temporarily_unmodifiable_exception {
-    ///
+
     /// A builder for [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19572,7 +19572,7 @@ impl std::fmt::Display for UnmodifiableEntityException {
 impl std::error::Error for UnmodifiableEntityException {}
 /// See [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException)
 pub mod unmodifiable_entity_exception {
-    ///
+
     /// A builder for [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19637,7 +19637,7 @@ impl std::fmt::Display for PasswordPolicyViolationException {
 impl std::error::Error for PasswordPolicyViolationException {}
 /// See [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException)
 pub mod password_policy_violation_exception {
-    ///
+
     /// A builder for [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19702,7 +19702,7 @@ impl std::fmt::Display for MalformedPolicyDocumentException {
 impl std::error::Error for MalformedPolicyDocumentException {}
 /// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
 pub mod malformed_policy_document_exception {
-    ///
+
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19767,7 +19767,7 @@ impl std::fmt::Display for PolicyEvaluationException {
 impl std::error::Error for PolicyEvaluationException {}
 /// See [`PolicyEvaluationException`](crate::error::PolicyEvaluationException)
 pub mod policy_evaluation_exception {
-    ///
+
     /// A builder for [`PolicyEvaluationException`](crate::error::PolicyEvaluationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19832,7 +19832,7 @@ impl std::fmt::Display for InvalidAuthenticationCodeException {
 impl std::error::Error for InvalidAuthenticationCodeException {}
 /// See [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException)
 pub mod invalid_authentication_code_exception {
-    ///
+
     /// A builder for [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19897,7 +19897,7 @@ impl std::fmt::Display for PolicyNotAttachableException {
 impl std::error::Error for PolicyNotAttachableException {}
 /// See [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException)
 pub mod policy_not_attachable_exception {
-    ///
+
     /// A builder for [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19962,7 +19962,7 @@ impl std::fmt::Display for ServiceNotSupportedException {
 impl std::error::Error for ServiceNotSupportedException {}
 /// See [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException)
 pub mod service_not_supported_exception {
-    ///
+
     /// A builder for [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -20027,7 +20027,7 @@ impl std::fmt::Display for CredentialReportNotReadyException {
 impl std::error::Error for CredentialReportNotReadyException {}
 /// See [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException)
 pub mod credential_report_not_ready_exception {
-    ///
+
     /// A builder for [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -20092,7 +20092,7 @@ impl std::fmt::Display for CredentialReportNotPresentException {
 impl std::error::Error for CredentialReportNotPresentException {}
 /// See [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException)
 pub mod credential_report_not_present_exception {
-    ///
+
     /// A builder for [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -20157,7 +20157,7 @@ impl std::fmt::Display for CredentialReportExpiredException {
 impl std::error::Error for CredentialReportExpiredException {}
 /// See [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException)
 pub mod credential_report_expired_exception {
-    ///
+
     /// A builder for [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -20222,7 +20222,7 @@ impl std::fmt::Display for ReportGenerationLimitExceededException {
 impl std::error::Error for ReportGenerationLimitExceededException {}
 /// See [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException)
 pub mod report_generation_limit_exceeded_exception {
-    ///
+
     /// A builder for [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -20287,7 +20287,7 @@ impl std::fmt::Display for DeleteConflictException {
 impl std::error::Error for DeleteConflictException {}
 /// See [`DeleteConflictException`](crate::error::DeleteConflictException)
 pub mod delete_conflict_exception {
-    ///
+
     /// A builder for [`DeleteConflictException`](crate::error::DeleteConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -20352,7 +20352,7 @@ impl std::fmt::Display for InvalidUserTypeException {
 impl std::error::Error for InvalidUserTypeException {}
 /// See [`InvalidUserTypeException`](crate::error::InvalidUserTypeException)
 pub mod invalid_user_type_exception {
-    ///
+
     /// A builder for [`InvalidUserTypeException`](crate::error::InvalidUserTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,7 +11,7 @@ impl std::fmt::Debug for UpdateSubscriptionOutput {
 }
 /// See [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
 pub mod update_subscription_output {
-    ///
+
     /// A builder for [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl std::fmt::Debug for UpdateProtectionGroupOutput {
 }
 /// See [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
 pub mod update_protection_group_output {
-    ///
+
     /// A builder for [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,7 +73,7 @@ impl std::fmt::Debug for UpdateEmergencyContactSettingsOutput {
 }
 /// See [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
 pub mod update_emergency_contact_settings_output {
-    ///
+
     /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl std::fmt::Debug for UpdateApplicationLayerAutomaticResponseOutput {
 }
 /// See [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
 pub mod update_application_layer_automatic_response_output {
-    ///
+
     /// A builder for [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
-    ///
+
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,7 +166,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
-    ///
+
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -207,7 +207,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
-    ///
+
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl std::fmt::Debug for ListResourcesInProtectionGroupOutput {
 }
 /// See [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput)
 pub mod list_resources_in_protection_group_output {
-    ///
+
     /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -371,7 +371,7 @@ impl std::fmt::Debug for ListProtectionsOutput {
 }
 /// See [`ListProtectionsOutput`](crate::output::ListProtectionsOutput)
 pub mod list_protections_output {
-    ///
+
     /// A builder for [`ListProtectionsOutput`](crate::output::ListProtectionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -462,7 +462,7 @@ impl std::fmt::Debug for ListProtectionGroupsOutput {
 }
 /// See [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput)
 pub mod list_protection_groups_output {
-    ///
+
     /// A builder for [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -554,7 +554,7 @@ impl std::fmt::Debug for ListAttacksOutput {
 }
 /// See [`ListAttacksOutput`](crate::output::ListAttacksOutput)
 pub mod list_attacks_output {
-    ///
+
     /// A builder for [`ListAttacksOutput`](crate::output::ListAttacksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -635,7 +635,7 @@ impl std::fmt::Debug for GetSubscriptionStateOutput {
 }
 /// See [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput)
 pub mod get_subscription_state_output {
-    ///
+
     /// A builder for [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -683,7 +683,7 @@ impl std::fmt::Debug for EnableProactiveEngagementOutput {
 }
 /// See [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
 pub mod enable_proactive_engagement_output {
-    ///
+
     /// A builder for [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -714,7 +714,7 @@ impl std::fmt::Debug for EnableApplicationLayerAutomaticResponseOutput {
 }
 /// See [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
 pub mod enable_application_layer_automatic_response_output {
-    ///
+
     /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -745,7 +745,7 @@ impl std::fmt::Debug for DisassociateHealthCheckOutput {
 }
 /// See [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
 pub mod disassociate_health_check_output {
-    ///
+
     /// A builder for [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -776,7 +776,7 @@ impl std::fmt::Debug for DisassociateDrtRoleOutput {
 }
 /// See [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
 pub mod disassociate_drt_role_output {
-    ///
+
     /// A builder for [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -807,7 +807,7 @@ impl std::fmt::Debug for DisassociateDrtLogBucketOutput {
 }
 /// See [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
 pub mod disassociate_drt_log_bucket_output {
-    ///
+
     /// A builder for [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -838,7 +838,7 @@ impl std::fmt::Debug for DisableProactiveEngagementOutput {
 }
 /// See [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
 pub mod disable_proactive_engagement_output {
-    ///
+
     /// A builder for [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -869,7 +869,7 @@ impl std::fmt::Debug for DisableApplicationLayerAutomaticResponseOutput {
 }
 /// See [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
 pub mod disable_application_layer_automatic_response_output {
-    ///
+
     /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -911,7 +911,7 @@ impl std::fmt::Debug for DescribeSubscriptionOutput {
 }
 /// See [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput)
 pub mod describe_subscription_output {
-    ///
+
     /// A builder for [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -969,7 +969,7 @@ impl std::fmt::Debug for DescribeProtectionGroupOutput {
 }
 /// See [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput)
 pub mod describe_protection_group_output {
-    ///
+
     /// A builder for [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1027,7 +1027,7 @@ impl std::fmt::Debug for DescribeProtectionOutput {
 }
 /// See [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput)
 pub mod describe_protection_output {
-    ///
+
     /// A builder for [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1085,7 +1085,7 @@ impl std::fmt::Debug for DescribeEmergencyContactSettingsOutput {
 }
 /// See [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput)
 pub mod describe_emergency_contact_settings_output {
-    ///
+
     /// A builder for [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1157,7 +1157,7 @@ impl std::fmt::Debug for DescribeDrtAccessOutput {
 }
 /// See [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput)
 pub mod describe_drt_access_output {
-    ///
+
     /// A builder for [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1240,7 +1240,7 @@ impl std::fmt::Debug for DescribeAttackStatisticsOutput {
 }
 /// See [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput)
 pub mod describe_attack_statistics_output {
-    ///
+
     /// A builder for [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1320,7 +1320,7 @@ impl std::fmt::Debug for DescribeAttackOutput {
 }
 /// See [`DescribeAttackOutput`](crate::output::DescribeAttackOutput)
 pub mod describe_attack_output {
-    ///
+
     /// A builder for [`DescribeAttackOutput`](crate::output::DescribeAttackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1368,7 +1368,7 @@ impl std::fmt::Debug for DeleteSubscriptionOutput {
 }
 /// See [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
 pub mod delete_subscription_output {
-    ///
+
     /// A builder for [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1399,7 +1399,7 @@ impl std::fmt::Debug for DeleteProtectionGroupOutput {
 }
 /// See [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
 pub mod delete_protection_group_output {
-    ///
+
     /// A builder for [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1430,7 +1430,7 @@ impl std::fmt::Debug for DeleteProtectionOutput {
 }
 /// See [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
 pub mod delete_protection_output {
-    ///
+
     /// A builder for [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1461,7 +1461,7 @@ impl std::fmt::Debug for CreateSubscriptionOutput {
 }
 /// See [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
 pub mod create_subscription_output {
-    ///
+
     /// A builder for [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1492,7 +1492,7 @@ impl std::fmt::Debug for CreateProtectionGroupOutput {
 }
 /// See [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
 pub mod create_protection_group_output {
-    ///
+
     /// A builder for [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1533,7 +1533,7 @@ impl std::fmt::Debug for CreateProtectionOutput {
 }
 /// See [`CreateProtectionOutput`](crate::output::CreateProtectionOutput)
 pub mod create_protection_output {
-    ///
+
     /// A builder for [`CreateProtectionOutput`](crate::output::CreateProtectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1581,7 +1581,7 @@ impl std::fmt::Debug for AssociateProactiveEngagementDetailsOutput {
 }
 /// See [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
 pub mod associate_proactive_engagement_details_output {
-    ///
+
     /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1612,7 +1612,7 @@ impl std::fmt::Debug for AssociateHealthCheckOutput {
 }
 /// See [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
 pub mod associate_health_check_output {
-    ///
+
     /// A builder for [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1643,7 +1643,7 @@ impl std::fmt::Debug for AssociateDrtRoleOutput {
 }
 /// See [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
 pub mod associate_drt_role_output {
-    ///
+
     /// A builder for [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1674,7 +1674,7 @@ impl std::fmt::Debug for AssociateDrtLogBucketOutput {
 }
 /// See [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
 pub mod associate_drt_log_bucket_output {
-    ///
+
     /// A builder for [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
