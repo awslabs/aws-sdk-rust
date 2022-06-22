@@ -121,7 +121,7 @@ pub(crate) enum JsonCredentials<'a> {
 /// Keys are case insensitive.
 pub(crate) fn parse_json_credentials(
     credentials_response: &str,
-) -> Result<JsonCredentials, InvalidJsonCredentials> {
+) -> Result<JsonCredentials<'_>, InvalidJsonCredentials> {
     let mut code = None;
     let mut access_key_id = None;
     let mut secret_access_key = None;

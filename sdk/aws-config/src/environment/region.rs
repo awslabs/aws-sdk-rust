@@ -32,7 +32,7 @@ impl EnvironmentVariableRegionProvider {
 }
 
 impl ProvideRegion for EnvironmentVariableRegionProvider {
-    fn region(&self) -> future::ProvideRegion {
+    fn region(&self) -> future::ProvideRegion<'_> {
         let region = self
             .env
             .get("AWS_REGION")

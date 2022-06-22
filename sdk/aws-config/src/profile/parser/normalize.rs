@@ -20,7 +20,7 @@ struct ProfileName<'a> {
 }
 
 impl ProfileName<'_> {
-    fn parse(input: &str) -> ProfileName {
+    fn parse(input: &str) -> ProfileName<'_> {
         let input = input.trim_matches(WHITESPACE);
         let (name, has_profile_prefix) = match input.strip_prefix(PROFILE_PREFIX) {
             // profilefoo isn't considered as having the profile prefix
@@ -68,7 +68,7 @@ impl ProfileName<'_> {
 /// - Profile names are validated (see `validate_profile_name`)
 /// - A profile named `profile default` takes priority over a profile named `default`.
 /// - Profiles with identical names are merged
-pub fn merge_in(base: &mut ProfileSet, raw_profile_set: RawProfileSet, kind: FileKind) {
+pub(super) fn merge_in(base: &mut ProfileSet, raw_profile_set: RawProfileSet<'_>, kind: FileKind) {
     // parse / validate profile names
     let validated_profiles = raw_profile_set
         .into_iter()
@@ -212,7 +212,7 @@ mod tests {
     #[test]
     #[traced_test]
     fn ignored_key_generates_warning() {
-        let mut profile: RawProfileSet = HashMap::new();
+        let mut profile: RawProfileSet<'_> = HashMap::new();
         profile.insert("default", {
             let mut out = HashMap::new();
             out.insert("invalid key", "value".into());
@@ -233,7 +233,7 @@ mod tests {
     #[test]
     #[traced_test]
     fn invalid_profile_generates_warning() {
-        let mut profile: RawProfileSet = HashMap::new();
+        let mut profile: RawProfileSet<'_> = HashMap::new();
         profile.insert("foo", HashMap::new());
         merge_in(&mut ProfileSet::empty(), profile, FileKind::Config);
         assert!(logs_contain("profile `foo` ignored"));

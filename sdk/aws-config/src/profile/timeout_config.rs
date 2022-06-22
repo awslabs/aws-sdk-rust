@@ -56,7 +56,7 @@ pub struct ProfileFileTimeoutConfigProvider {
 }
 
 /// Builder for [`ProfileFileTimeoutConfigProvider`]
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     config: Option<ProviderConfig>,
     profile_override: Option<String>,

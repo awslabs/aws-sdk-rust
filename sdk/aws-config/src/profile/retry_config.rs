@@ -41,7 +41,7 @@ pub struct ProfileFileRetryConfigProvider {
 }
 
 /// Builder for [ProfileFileRetryConfigProvider]
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     config: Option<ProviderConfig>,
     profile_override: Option<String>,

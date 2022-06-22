@@ -155,7 +155,7 @@ impl ImdsCredentialsProvider {
             ));
         }
         tracing::debug!("loading credentials from IMDS");
-        let profile: Cow<str> = match &self.profile {
+        let profile: Cow<'_, str> = match &self.profile {
             Some(profile) => profile.into(),
             None => self.get_profile_uncached().await?.into(),
         };

@@ -45,7 +45,7 @@ pub fn default_provider() -> Builder {
 }
 
 /// Builder for [`timeout::Config`](aws_smithy_types::timeout::Config) that checks the environment variables and AWS profile files for configuration
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     env_provider: EnvironmentVariableTimeoutConfigProvider,
     profile_file: profile::timeout_config::Builder,

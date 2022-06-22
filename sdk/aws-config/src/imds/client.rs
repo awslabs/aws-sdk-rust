@@ -132,7 +132,7 @@ pub(super) struct LazyClient {
 }
 
 impl LazyClient {
-    pub fn from_ready_client(client: Client) -> Self {
+    pub(super) fn from_ready_client(client: Client) -> Self {
         Self {
             client: OnceCell::from(Ok(client)),
             // the builder will never be used in this case
@@ -575,13 +575,13 @@ impl Builder {
 }
 
 mod env {
-    pub const ENDPOINT: &str = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
-    pub const ENDPOINT_MODE: &str = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
+    pub(super) const ENDPOINT: &str = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
+    pub(super) const ENDPOINT_MODE: &str = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
 }
 
 mod profile_keys {
-    pub const ENDPOINT: &str = "ec2_metadata_service_endpoint";
-    pub const ENDPOINT_MODE: &str = "ec2_metadata_service_endpoint_mode";
+    pub(super) const ENDPOINT: &str = "ec2_metadata_service_endpoint";
+    pub(super) const ENDPOINT_MODE: &str = "ec2_metadata_service_endpoint_mode";
 }
 
 /// Endpoint Configuration Abstraction

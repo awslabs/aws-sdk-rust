@@ -18,7 +18,7 @@ pub fn default_provider() -> Builder {
 }
 
 /// Default provider builder for [`AppName`]
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     env_provider: EnvironmentVariableAppNameProvider,
     profile_file: app_name::Builder,

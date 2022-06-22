@@ -38,7 +38,7 @@ impl<T, E> ExpiringCache<T, E>
 where
     T: Clone,
 {
-    pub fn new(buffer_time: Duration) -> Self {
+    pub(crate) fn new(buffer_time: Duration) -> Self {
         ExpiringCache {
             buffer_time,
             value: Arc::new(RwLock::new(OnceCell::new())),
@@ -64,7 +64,7 @@ where
     /// and the others will await that thread's result rather than multiple refreshes occurring.
     /// The function given to acquire a value future, `f`, will not be called
     /// if another thread is chosen to load the value.
-    pub async fn get_or_load<F, Fut>(&self, f: F) -> Result<T, E>
+    pub(crate) async fn get_or_load<F, Fut>(&self, f: F) -> Result<T, E>
     where
         F: FnOnce() -> Fut,
         Fut: Future<Output = Result<(T, SystemTime), E>>,
@@ -75,7 +75,7 @@ where
     }
 
     /// If the value is expired, clears the cache. Otherwise, yields the current value.
-    pub async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<T> {
+    pub(crate) async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<T> {
         // Short-circuit if the value is not expired
         if let Some((value, expiry)) = self.value.read().await.get() {
             if !expired(*expiry, self.buffer_time, now) {

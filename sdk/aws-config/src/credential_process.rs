@@ -178,7 +178,7 @@ impl CredentialProcessProvider {
 /// Keys are case insensitive.
 pub(crate) fn parse_credential_process_json_credentials(
     credentials_response: &str,
-) -> Result<RefreshableCredentials, InvalidJsonCredentials> {
+) -> Result<RefreshableCredentials<'_>, InvalidJsonCredentials> {
     let mut version = None;
     let mut access_key_id = None;
     let mut secret_access_key = None;

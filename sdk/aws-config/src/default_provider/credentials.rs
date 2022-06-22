@@ -85,7 +85,7 @@ impl ProvideCredentials for DefaultCredentialsChain {
 }
 
 /// Builder for [`DefaultCredentialsChain`](DefaultCredentialsChain)
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     profile_file_builder: crate::profile::credentials::Builder,
     web_identity_builder: crate::web_identity_token::Builder,

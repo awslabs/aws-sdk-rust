@@ -42,11 +42,11 @@ pub(crate) struct HttpCredentialProvider {
 }
 
 impl HttpCredentialProvider {
-    pub fn builder() -> Builder {
+    pub(crate) fn builder() -> Builder {
         Builder::default()
     }
 
-    pub async fn credentials(&self, auth: Option<HeaderValue>) -> credentials::Result {
+    pub(crate) async fn credentials(&self, auth: Option<HeaderValue>) -> credentials::Result {
         let credentials = self.client.call(self.operation(auth)).await;
         match credentials {
             Ok(creds) => Ok(creds),

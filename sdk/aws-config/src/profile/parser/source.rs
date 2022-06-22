@@ -11,27 +11,27 @@ use std::path::{Component, Path, PathBuf};
 use tracing::Instrument;
 
 /// In-memory source of profile data
-pub struct Source {
+pub(super) struct Source {
     /// Contents and path of ~/.aws/config
-    pub config_file: File,
+    pub(super) config_file: File,
 
     /// Contents and path of ~/.aws/credentials
-    pub credentials_file: File,
+    pub(super) credentials_file: File,
 
     /// Profile to use
     ///
     /// Overridden via `$AWS_PROFILE`, defaults to `default`
-    pub profile: Cow<'static, str>,
+    pub(super) profile: Cow<'static, str>,
 }
 
 /// In-memory configuration file
-pub struct File {
-    pub path: String,
-    pub contents: String,
+pub(super) struct File {
+    pub(super) path: String,
+    pub(super) contents: String,
 }
 
 #[derive(Clone, Copy)]
-pub enum FileKind {
+pub(super) enum FileKind {
     Config,
     Credentials,
 }
@@ -53,7 +53,7 @@ impl FileKind {
 }
 
 /// Load a [Source](Source) from a given environment and filesystem.
-pub async fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
+pub(super) async fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
     let home = home_dir(proc_env, Os::real());
     let config = load_config_file(FileKind::Config, &home, fs, proc_env)
         .instrument(tracing::debug_span!("load_config_file"))

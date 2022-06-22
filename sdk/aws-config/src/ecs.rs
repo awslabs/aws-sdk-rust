@@ -154,7 +154,7 @@ impl Provider {
         }
     }
 
-    pub async fn make(builder: Builder) -> Self {
+    async fn make(builder: Builder) -> Self {
         let provider_config = builder.provider_config.unwrap_or_default();
         let env = provider_config.env();
         let uri = match Self::uri(env, builder.dns).await {

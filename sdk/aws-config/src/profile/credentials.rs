@@ -340,7 +340,7 @@ impl Error for ProfileFileError {
 }
 
 /// Builder for [`ProfileFileCredentialsProvider`]
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     provider_config: Option<ProviderConfig>,
     profile_override: Option<String>,

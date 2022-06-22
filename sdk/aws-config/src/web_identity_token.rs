@@ -124,7 +124,7 @@ impl ProvideCredentials for WebIdentityTokenCredentialsProvider {
 }
 
 impl WebIdentityTokenCredentialsProvider {
-    fn source(&self) -> Result<Cow<StaticConfiguration>, CredentialsError> {
+    fn source(&self) -> Result<Cow<'_, StaticConfiguration>, CredentialsError> {
         match &self.source {
             Source::Env(env) => {
                 let token_file = env.get(ENV_VAR_TOKEN_FILE).map_err(|_| {
@@ -170,7 +170,7 @@ impl WebIdentityTokenCredentialsProvider {
 }
 
 /// Builder for [`WebIdentityTokenCredentialsProvider`](WebIdentityTokenCredentialsProvider)
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     source: Option<Source>,
     config: Option<ProviderConfig>,

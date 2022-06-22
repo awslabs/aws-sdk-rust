@@ -50,7 +50,7 @@ pub fn default_provider() -> Builder {
 }
 
 /// Builder for RetryConfig that checks the environment and aws profile for configuration
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     env_provider: EnvironmentVariableRetryConfigProvider,
     profile_file: profile::retry_config::Builder,

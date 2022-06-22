@@ -12,7 +12,7 @@ pub(crate) enum Os {
 }
 
 impl Os {
-    pub fn real() -> Self {
+    pub(crate) fn real() -> Self {
         match std::env::consts::OS {
             "windows" => Os::Windows,
             _ => Os::NotWindows,

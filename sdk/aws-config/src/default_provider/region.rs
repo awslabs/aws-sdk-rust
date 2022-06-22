@@ -37,7 +37,7 @@ impl DefaultRegionChain {
 }
 
 /// Builder for [DefaultRegionChain]
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Builder {
     env_provider: EnvironmentVariableRegionProvider,
     profile_file: profile::region::Builder,
@@ -73,7 +73,7 @@ impl Builder {
 }
 
 impl ProvideRegion for DefaultRegionChain {
-    fn region(&self) -> crate::meta::region::future::ProvideRegion {
+    fn region(&self) -> crate::meta::region::future::ProvideRegion<'_> {
         ProvideRegion::region(&self.0)
     }
 }

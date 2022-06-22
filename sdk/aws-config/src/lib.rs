@@ -2,7 +2,14 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-#![warn(missing_docs)]
+
+#![warn(
+    missing_debug_implementations,
+    missing_docs,
+    rust_2018_idioms,
+    rustdoc::missing_crate_level_docs,
+    unreachable_pub
+)]
 
 //! `aws-config` provides implementations of region, credential resolution.
 //!

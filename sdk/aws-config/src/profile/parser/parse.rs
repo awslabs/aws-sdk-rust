@@ -19,13 +19,13 @@ use std::error::Error;
 use std::fmt::{self, Display, Formatter};
 
 /// A set of profiles that still carries a reference to the underlying data
-pub type RawProfileSet<'a> = HashMap<&'a str, HashMap<&'a str, Cow<'a, str>>>;
+pub(super) type RawProfileSet<'a> = HashMap<&'a str, HashMap<&'a str, Cow<'a, str>>>;
 
 /// Characters considered to be whitespace by the spec
 ///
 /// Profile parsing is actually quite strict about what is and is not whitespace, so use this instead
 /// of `.is_whitespace()` / `.trim()`
-pub const WHITESPACE: &[char] = &[' ', '\t'];
+pub(super) const WHITESPACE: &[char] = &[' ', '\t'];
 const COMMENT: &[char] = &['#', ';'];
 
 /// Location for use during error reporting
@@ -104,7 +104,7 @@ enum State<'a> {
 }
 
 /// Parse `file` into a `RawProfileSet`
-pub fn parse_profile_file(file: &File) -> Result<RawProfileSet, ProfileParseError> {
+pub(super) fn parse_profile_file(file: &File) -> Result<RawProfileSet<'_>, ProfileParseError> {
     let mut parser = Parser {
         data: HashMap::new(),
         state: State::Starting,
